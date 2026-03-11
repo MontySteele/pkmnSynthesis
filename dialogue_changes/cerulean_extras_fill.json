@@ -1,0 +1,1785 @@
+{
+  "_implementation_notes": [
+    "CERULEAN EXTRAS FILL — Maps 2 (PokeMart), 3 (Player's House), 6 (Team Rocket HQ).",
+    "",
+    "Map 2 (PokeMart):",
+    "  - EV016/017/018/020/024/025: Shelf text ('The shelves are filled...'). MECHANICAL — preserved exactly.",
+    "  - EV028: Plant decoration text. MECHANICAL — preserved exactly.",
+    "  - EV019: Exotic Pokemon NPC (Johto outfit unlock quest). MECHANICAL quest — preserved all",
+    "    start_indices, choices, and unlock messages. Lightly rewrote flavor intro lines only.",
+    "  - EV003 (Deliveryman): Mystery gift delivery system. MECHANICAL — preserved exactly.",
+    "  - EV004: DNA Reverser tip NPC. Rewritten with Synthesis flavor.",
+    "",
+    "Map 3 (Player's House):",
+    "  - EV003: Mom NPC. Page 0 = running shoes gift + goodbye (MECHANICAL gift preserved,",
+    "    flavor rewritten). Page 1 = heal at home (MECHANICAL heal preserved, flavor rewritten).",
+    "",
+    "Map 6 (Team Rocket HQ):",
+    "  - EV016: Debug/testing event. MECHANICAL — preserved exactly.",
+    "  - EV027/028: Vent/pipe foul odor flavor text. Rewritten with Synthesis grit.",
+    "  - EV005: Window reflection text. Rewritten.",
+    "  - EV011: Grunt yelling about uniform. Rewritten with ideologue tone.",
+    "  - EV017: Cutscene — bug infestation panic. Rewritten with hired-muscle tone.",
+    "  - EV006 (Petrel): Major NPC, squad captain intro + bug quest. MECHANICAL choices preserved.",
+    "    All dialogue rewritten with Synthesis Petrel voice — sardonic, competent, not cartoon villain.",
+    "  - EV018/010: Grunts referencing 'situation downstairs'. Rewritten with professional tone.",
+    "  - EV007 (Trainer/Guard): Gate guard across 6 pages. All mechanical references to Captain Petrel,",
+    "    switch logic preserved. Flavor rewritten.",
+    "  - EV002: Confidential mission brief document. MECHANICAL document content preserved.",
+    "    Flavor text around it rewritten.",
+    "  - EV008: Grunt claiming HQ. Rewritten across 3 pages.",
+    "  - EV003/004: Giovanni speech grunts. Rewritten.",
+    "  - EV009: Employee Handbook + hidden note. MECHANICAL password/variable preserved. Flavor rewritten.",
+    "  - EV021 (Petrel downstairs): Post-bug-quest + mission assignments. MECHANICAL choices, gold",
+    "    rewards (\\G), variable refs (\\V[]) all preserved exactly. Flavor rewritten.",
+    "",
+    "Tone: Cerulean PokeMart is routine commerce. Player's House is warm but bittersweet — Mom knows",
+    "  this journey is real. Team Rocket HQ grunts are working people in a bad organization, not",
+    "  caricatures. Petrel is sharp and sardonic.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "2": {
+      "name": "PokeMart (Cerulean)",
+      "events": {
+        "16": {
+          "name": "EV016 (shelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with Pokémon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 (plant)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "What a lovely plant!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 (shelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with Pokémon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 (shelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with Pokémon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 (shelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with Pokémon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 (Exotic Pokemon NPC — Johto quest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've been everywhere — Johto,",
+                    "Hoenn, places most Kantonians",
+                    "never see. I collect memories."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll trade you something special",
+                    "if you show me a Pokémon native",
+                    "to Johto. Interested?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Could you show me such a Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "That's not quite right. I need",
+                    "one native to Johto — you can",
+                    "tell by the way they carry",
+                    "themselves."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "As a token of my appreciation, I'll teach you about some ",
+                    "new hairstyles that I came across during my travels!"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Johto outfits collection!"
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Johto hairstyles collection!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "As a token of my appreciation, I'll teach you about some ",
+                    "new hairstyles that I came across during my travels!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Johto outfits collection!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Johto hairstyles collection!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Kanto's beautiful, but small.",
+                    "Someday I'll cross the sea again",
+                    "and find Pokémon no one here",
+                    "has ever dreamed of."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Deliveryman (Mystery Gift)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 30
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\bHello. You must be \\PN."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\bI've received a gift for you.\\nHere you go!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\bI haven't received any other gifts for you."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\bWe look forward to your next visit."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Sorry I need the correct password"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 (shelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with Pokémon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 (shelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with Pokémon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (DNA Reverser tip NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "DNA Reversers can undo a fusion",
+                    "you regret. Handy if the result",
+                    "wasn't what you'd hoped."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "3": {
+      "name": "\\PN's House",
+      "events": {
+        "3": {
+          "name": "EV003 (Mom)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Before you head to Professor",
+                    "Oak's, I want you to have",
+                    "something."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Here are some running shoes!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "The world's bigger than it",
+                    "looks from here. Be careful,",
+                    "and come home sometimes."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 76
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh, \\PN — your team looks",
+                    "exhausted. Rest here while",
+                    "they recover. I'll make tea."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "name": "Team Rocket HQ",
+      "events": {
+        "16": {
+          "name": "EV016 (Debug/testing — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Set next mission? (For testing - this will mess up game ",
+                    "progression)"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 27,
+                  "type": "choices",
+                  "choices": [
+                    "Mission 1",
+                    "Mission 2",
+                    "Mission 3",
+                    "Mission 4"
+                  ],
+                  "cancel_type": 5
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 (vent)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Something chemical seeps from",
+                    "the vent. It stings your eyes."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (window)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your reflection stares back",
+                    "in a Rocket uniform."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...It fits better than you'd",
+                    "like."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (grunt — uniform discipline)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 1042,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Uniform stays on during",
+                    "ops. That's not a suggestion —",
+                    "it's protocol."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 (pipe)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A sour, organic smell drifts",
+                    "from the pipe. Grimer, maybe."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The smell from this pipe hasn't",
+                    "improved. If anything, worse."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "cutscene (bug panic)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1043
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Another one! They just keep",
+                    "coming!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Where are they all crawling",
+                    "out of!?"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Don't just stand there — do",
+                    "something useful!"
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "AAHH!"
+                  ]
+                },
+                {
+                  "start_index": 58,
+                  "type": "text",
+                  "lines": [
+                    "No. Absolutely not. I'm out."
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "That's it. I didn't sign on to",
+                    "fight bugs in some basement.",
+                    "I'm done."
+                  ]
+                },
+                {
+                  "start_index": 84,
+                  "type": "text",
+                  "lines": [
+                    "\\C[7]Every squad I get... not one",
+                    "of them can handle a Spinarak."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Petrel (upstairs intro)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hold on. Who are you?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "New blood from Nugget Bridge?",
+                    "About time those recruitment",
+                    "drives paid off."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Name's \\C[2]Petrel\\C[0]. I run",
+                    "this squad. Captain rank."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "You follow my orders exactly,",
+                    "or I'll have you cleaning the",
+                    "Grimer tanks. Clear?"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Hah. Relax. Mostly kidding.",
+                    "Mostly."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "We commandeered this house as",
+                    "a temporary base, but the",
+                    "basement's crawling with bugs.",
+                    "Real infestation."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Newest recruit means it's your",
+                    "problem. That's how it works."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "You're the newest recruit, so that means it's your job to ",
+                    "deal with the basement infestation."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "First impressions matter here.",
+                    "Don't disappoint me."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Crush them, burn them, catch",
+                    "them — I don't care how. Just",
+                    "make sure none are left."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Report back when it's done."
+                  ]
+                },
+                {
+                  "start_index": 55,
+                  "type": "text",
+                  "lines": [
+                    "Getting cold feet already?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "grunt (situation downstairs)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We've got a pest problem in",
+                    "the basement. Captain's handling",
+                    "it. Should be sorted soon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(4) — gate guard",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "State your business."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "The new recruit, right... \\C[2]Captain Petrel\\C[0] is ",
+                    "waiting for you."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "The new recruit, right... \\C[2]Captain Petrel\\C[0] is ",
+                    "downstairs if you're looking for him."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Fresh recruit, huh."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Captain Petrel\\C[0]'s occupied",
+                    "right now."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Try him downstairs if you need",
+                    "something."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Private property. Walk away."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1045
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "State your business."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25]... \\C[2]Captain Petrel\\C[0] got busted on his last ",
+                    "mission... But sure, you can come in."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "The new recruit, right... \\C[2]Captain Petrel\\C[0] is waiting ",
+                    "for you."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Private property. Walk away."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 15
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Fine. Come in."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Fresh recruit, huh."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Captain Petrel\\C[0]'s occupied",
+                    "right now."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Try him downstairs if you need",
+                    "something."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Private property. Walk away."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 15,
+                "switch2_id": 1045
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25]... \\C[2]Captain Petrel\\C[0] got busted on his last ",
+                    "mission... But sure, you can come in."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "The new recruit, right... \\C[2]Captain Petrel\\C[0] is waiting ",
+                    "for you."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Private property. Walk away."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "switch1_id": 1042
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Wait... have I seen you before?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "No. Must be imagining things.",
+                    "Carry on."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": {
+                "switch1_id": 15,
+                "switch2_id": 1042
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "What's even the point of",
+                    "guarding this place now that",
+                    "the captain got picked up?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "New recruit, huh? Keep your",
+                    "head down and follow the",
+                    "captain's lead. That's the job."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 (Confidential mission brief)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1044
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "<b>Confidential</b>\\nTeam Rocket Cerulean Division: ",
+                    "Operational Directive"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Read it?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "<b>Cerulean Division Mission Brief</b>"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Your mission is to grow Team Rocket's ranks and build a ",
+                    "roster of strong Pokémon to support \\C[1]Operation 3F",
+                    "\\C[0]."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "1. Use Cerulean's Nugget Bridge and other popular spots to ",
+                    "find and recruit skilled trainers."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "2. Monitor local trainers to identify strong Pokémon. Focus ",
+                    "on targets who are less likely to draw attention from law ",
+                    "enforcement."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Ensure all efforts are carried out effectively and discreetly."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "<b>For the glory of Team Rocket.</b>"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Eyes off that document.",
+                    "That's classified."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (grunt — HQ claim)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We claimed this house. It's",
+                    "our forward operating base now.",
+                    "Temporary, but it works."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We claimed this house. It's",
+                    "our forward operating base now.",
+                    "Temporary, but it works."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1116
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Captain got picked up. So now",
+                    "what? Nobody's giving orders."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Maybe I'll head to",
+                    "\\C[1]Celadon City\\C[0]. Heard",
+                    "they're still hiring there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (grunt — Giovanni speech)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The boss is addressing the",
+                    "division. Quiet."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Move out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Employee Handbook + hidden note)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\"Team Rocket Employee Handbook\"",
+                    "\\n Rules and operational code",
+                    "for all personnel."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Someone scrawled a note in the",
+                    "margin and tried to scratch it",
+                    "out. You can still read some",
+                    "of it..."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "...\\V[1]..."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "That's a restricted file.",
+                    "Put it down and move along."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (grunt — Giovanni speech)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The boss is speaking. Show some",
+                    "respect."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Let's move."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Petrel (downstairs — missions)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1045
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The skittering stopped. You",
+                    "actually got them all. Not bad."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Bugs are out. The house is ours",
+                    "now — once we sweep the",
+                    "cobwebs, anyway."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Decent work for a first day.",
+                    "You might have some potential.",
+                    "Come back when you're ready for",
+                    "a real assignment."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Is the basement clear yet?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "I can still hear them down",
+                    "there. Clear out ALL the bugs",
+                    "before you report back."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "variable_id": 288,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Not bad for someone fresh off",
+                    "the bridge."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "And you brought your own",
+                    "Pokémon? Good initiative. Most",
+                    "new recruits show up empty-",
+                    "handed."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Keep this up and maybe you'll",
+                    "make captain someday."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hah. Probably not. But it's",
+                    "good to have ambition."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Didn't catch your name. What",
+                    "is it?"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "choices",
+                  "choices": [
+                    "Give a fake name",
+                    "Give your real name"
+                  ],
+                  "cancel_type": 0
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25]? Same name as that kid",
+                    "who caused trouble in Mt. Moon.",
+                    "Small world."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "About your age too. Looks like",
+                    "you've already got a rival."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Alright, \\V[25]. Your first",
+                    "real mission. Listen carefully."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "Our scout at Nugget Bridge",
+                    "spotted some fishermen working",
+                    "the river nearby."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "That water is full of rare",
+                    "Pokémon. We need those fishermen",
+                    "gone so we can collect them",
+                    "ourselves."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "Simple job. Go there, lean on",
+                    "them a bit until they leave."
+                  ]
+                },
+                {
+                  "start_index": 54,
+                  "type": "text",
+                  "lines": [
+                    "The uniform alone should send",
+                    "a message, but bring a Pokémon",
+                    "in case someone gets brave."
+                  ]
+                },
+                {
+                  "start_index": 58,
+                  "type": "text",
+                  "lines": [
+                    "Link up with the grunt at",
+                    "Nugget Bridge. Follow his lead."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1046,
+                "switch2_id": 1044
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25]!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Bad news. The mission's off."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Your partner at Nugget Bridge",
+                    "got picked up before you could",
+                    "move."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "He was never the sharpest, but",
+                    "still... lucky you weren't",
+                    "there when it happened."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Don't dwell on it. These things",
+                    "happen in this line of work."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Come see me when you're ready",
+                    "for the next assignment."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 1044,
+                "switch2_id": 1047
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\GGood work out there. Here's",
+                    "your cut."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\PN obtained $\\V[5]"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Come find me when you're ready",
+                    "for the next job."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "variable_id": 288,
+                "variable_value": 2
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25]! New mission."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Should be straightforward."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Our supplier dropped off a",
+                    "batch of Pokémon, but one of",
+                    "them won't listen to anybody."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Stubborn little thing. Take it",
+                    "and teach it some discipline."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Bring it back fainted."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Did you handle that Pokémon",
+                    "like I asked?"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "You lost the Pokémon? Seriously?"
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Wait — you evolved it? That's",
+                    "the opposite of what I said.",
+                    "You were supposed to break it."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "And it's staring right at me.",
+                    "I said bring it back fainted!"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "At least it's down. Good."
+                  ]
+                },
+                {
+                  "start_index": 60,
+                  "type": "text",
+                  "lines": [
+                    "Hey! That thing's staring at",
+                    "me. I said fainted!"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "Heh. That's what I like to see."
+                  ]
+                },
+                {
+                  "start_index": 68,
+                  "type": "text",
+                  "lines": [
+                    "It'll think twice before",
+                    "disobeying orders again."
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "\\GHere's your pay for this one."
+                  ]
+                },
+                {
+                  "start_index": 73,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\PN obtained $4000"
+                  ]
+                },
+                {
+                  "start_index": 75,
+                  "type": "text",
+                  "lines": [
+                    "You never got an assigned",
+                    "Pokémon as a recruit, so keep",
+                    "this one. Consider it a bonus."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "Worked out nicely, actually."
+                  ]
+                },
+                {
+                  "start_index": 80,
+                  "type": "text",
+                  "lines": [
+                    "Think of it as extra payment",
+                    "for completing the mission."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": {
+                "switch1_id": 1049
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You lost the Pokémon I gave",
+                    "you? Seriously?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The quality of recruits keeps",
+                    "dropping..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "...Fine. On to the next one."
+                  ]
+                }
+              ]
+            },
+            "6": {
+              "conditions": {
+                "variable_id": 288,
+                "variable_value": 3
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25], I need a bit more time",
+                    "to plan your next assignment."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Go challenge the Gym or",
+                    "something while you wait."
+                  ]
+                }
+              ]
+            },
+            "7": {
+              "conditions": {
+                "switch1_id": 5,
+                "variable_id": 288,
+                "variable_value": 3
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\V[25]! New mission. Ready?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I've been scouting Cerulean",
+                    "for rare Pokémon. Found a",
+                    "promising target."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "There's an Electrode/Slowbro",
+                    "fusion that belongs to a girl",
+                    "here in the city."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "She can barely control the",
+                    "thing. Should be easy to take."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Unfortunately, your last",
+                    "partner got busted after the",
+                    "fisherman job..."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "...So I'll be running this one",
+                    "with you personally."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Follow me outside. We'll plan",
+                    "our approach."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "grunt (situation downstairs, alt)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We've got an issue downstairs.",
+                    "It's being handled."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

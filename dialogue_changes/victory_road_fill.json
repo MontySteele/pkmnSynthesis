@@ -1,0 +1,1571 @@
+{
+  "_implementation_notes": [
+    "VICTORY ROAD & ROUTE 23 FILL -- Maps 143, 148, 304, 306, 307.",
+    "Phase 4 (Endgame): Player has all 8 badges, heading to the League.",
+    "",
+    "Map 143: Route 23. Mostly water trainers and Shellder quest events.",
+    "  EV005/EV006/EV001/EV002/EV003/EV004 (Shellder quest): MECHANICAL -- all quest text preserved exactly.",
+    "  E28 (nest/egg): MECHANICAL -- egg pickup preserved exactly.",
+    "  E32 (pokemom): MECHANICAL -- wild battle trigger preserved exactly.",
+    "  E12 (ball seller): MECHANICAL -- shop preserved. Page 1 shop trigger preserved. Flavor rethemed.",
+    "  E10 (Pokemon GO ref): Rethemed to Synthesis tone, item gift preserved.",
+    "  E9 (north coast NPC): MECHANICAL item gift preserved. Flavor rethemed.",
+    "  Trainers E11, E13, E8, E14, E15: Pre-battle rethemed. Post-battle rematch mechanics PRESERVED (choices, heal, ready text). Flavor lines rethemed.",
+    "",
+    "Map 148: Pokemon League Entrance. Badge check gates.",
+    "  E5, E9 (badge check guards): MECHANICAL badge check logic preserved. Flavor text rethemed.",
+    "  E7 (second guard): MECHANICAL badge check preserved. Flavor rethemed.",
+    "  E14 (aspiring trainer): Flavor rethemed.",
+    "",
+    "Map 304: Victory Road 1F.",
+    "  E5 (switch): MECHANICAL -- preserved exactly.",
+    "  E13 (trainer): Pre/post battle rethemed.",
+    "",
+    "Map 306: Victory Road 2F.",
+    "  E7, E8 (switches): MECHANICAL -- preserved exactly.",
+    "  E21 (Entei): MECHANICAL -- Pokemon cry and flee text preserved exactly.",
+    "  E16 (boulder trickster): Rethemed with VR flavor.",
+    "  E17, E18, E19, E20, E15 (trainers): Pre/post battle rethemed.",
+    "",
+    "Map 307: Victory Road 3F.",
+    "  E9 (switch): MECHANICAL -- preserved exactly.",
+    "  E22 (fusion trainer): Rematch mechanics preserved (choices). Flavor rethemed.",
+    "  All other trainers: Pre/post battle rethemed.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "143": {
+      "name": "Route 23",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shellder is struggling to get",
+                    "back in the water."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN pushed Shellder back",
+                    "in the water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All the Shellders have been",
+                    "put back in the water!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Shellders",
+                    "to help out there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "There's a strange nest past",
+                    "me. I saw it first -- you'll",
+                    "have to earn the right!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fine, go check the nest.",
+                    "But I'd rather fight again.",
+                    "Up for it?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "So, you want a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Hold on, healing up first..."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "All ready, let's go!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here training if",
+                    "you want another round!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shellder is struggling to get",
+                    "back in the water."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN pushed Shellder back",
+                    "in the water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All the Shellders have been",
+                    "put back in the water!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Shellders",
+                    "to help out there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "nest",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's a Pok\u00e9mon egg... Take it?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Obtained a Pok\u00e9mon egg!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "You have no room in your",
+                    "party to store the egg."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's an empty Pok\u00e9mon nest..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Eight badges, and you still",
+                    "need supplies? Good thing",
+                    "I stocked up!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Pok\u00e9 Balls, Great Balls,",
+                    "Ultras -- I carry them all."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Here! Take a look!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Can't challenge the League",
+                    "empty-handed. Stock up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shellder is struggling to get",
+                    "back in the water."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN pushed Shellder back",
+                    "in the water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All the Shellders have been",
+                    "put back in the water!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Shellders",
+                    "to help out there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The current runs cold this",
+                    "far north. Makes for tough",
+                    "training, though."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So, you want a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hold on, healing up first..."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "All ready, let's go!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "A-another round would really",
+                    "h-help me warm up out here!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shellder is struggling to get",
+                    "back in the water."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN pushed Shellder back",
+                    "in the water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All the Shellders have been",
+                    "put back in the water!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Shellders",
+                    "to help out there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Fusion's just a shortcut for",
+                    "trainers who can't win on",
+                    "fundamentals alone!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So, you want a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hold on, healing up first..."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "All ready, let's go!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Shame. Was hoping to prove",
+                    "my point in a rematch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You learn to read the water",
+                    "out here. Every ripple means",
+                    "something."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Must be nice riding on a",
+                    "Pok\u00e9mon. I swim the old-",
+                    "fashioned way."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "So, you want a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Hold on, healing up first..."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "All ready, let's go!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Try getting off your Pok\u00e9mon",
+                    "and swimming sometime. Builds",
+                    "character."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shellder is struggling to get",
+                    "back in the water."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN pushed Shellder back",
+                    "in the water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All the Shellders have been",
+                    "put back in the water!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Shellders",
+                    "to help out there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Not many make it this far",
+                    "north. Welcome to the edge",
+                    "of Kanto."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Here's a token to remember",
+                    "your trip to the north coast!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Keep heading north and you'll",
+                    "reach Crimson City eventually."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I've trained out here for",
+                    "months. The cold makes you",
+                    "sharper. Ready?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Cold water's good for you.",
+                    "Keeps the blood moving."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "So, you want a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Hold on, healing up first..."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All ready, let's go!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shellder is struggling to get",
+                    "back in the water."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN pushed Shellder back",
+                    "in the water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All the Shellders have been",
+                    "put back in the water!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Shellders",
+                    "to help out there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "pokemom",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "The angry parent attacked!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Eight badges already? Then",
+                    "you know what real training",
+                    "looks like."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League's a different world.",
+                    "Nothing like the gym circuit."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Here, take these. You'll need",
+                    "them more than I will."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League's a different world.",
+                    "Nothing like the gym circuit."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "148": {
+      "name": "Pokemon League Entrance",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the Pok\u00e9mon League."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Only trainers who have earned",
+                    "all 8 badges from this region",
+                    "may proceed beyond this point."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Let me verify your badges."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Everything checks out. You",
+                    "may proceed. Good luck."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Take this officially-licensed",
+                    "Pok\u00e9mon League hat. You've",
+                    "earned it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the Pok\u00e9mon League."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Only trainers who have earned",
+                    "all 8 badges from this region",
+                    "may proceed beyond this point."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Take this officially-licensed",
+                    "Pok\u00e9mon League hat. You've",
+                    "earned it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "event",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So this is the Pok\u00e9mon",
+                    "League gate... I can feel",
+                    "the weight of it from here."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "They won't let me through.",
+                    "Still need more badges."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the Pok\u00e9mon League."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Only trainers who have earned",
+                    "all 8 badges from this region",
+                    "may proceed beyond this point."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Let me verify your badges."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Everything checks out. You",
+                    "may proceed. Good luck."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Take this officially-licensed",
+                    "Pok\u00e9mon League hat. You've",
+                    "earned it."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "304": {
+      "name": "Victory Road 1F",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It appears to be connected",
+                    "to a switch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(5)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Victory Road is your last",
+                    "trial before the Elite Four.",
+                    "Show me what you've got."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You might actually have a",
+                    "chance against the Four."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "306": {
+      "name": "Victory Road 2F",
+      "events": {
+        "16": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Looking for the boulder to",
+                    "trip that switch, aren't you?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Too bad -- I shoved it all",
+                    "the way to the top floor!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good luck finding that",
+                    "boulder! Heh."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You threw the boulder down",
+                    "through the hole! Impressive."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Trainer(5)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Fu... sion... HA!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You're the real deal. No",
+                    "doubt about it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Trainer(6)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Victory Road weeds out the",
+                    "pretenders. Let's see which",
+                    "one you are."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If you get stuck, try moving",
+                    "some boulders around."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It appears to be connected",
+                    "to a switch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Trainer(5)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Something powerful is lurking",
+                    "over there. Stay back -- I'll",
+                    "handle it."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I wouldn't get too close to",
+                    "that Pok\u00e9mon. It looks",
+                    "dangerous."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You scared it off. Wonder",
+                    "where it went..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It appears to be connected",
+                    "to a switch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "So you're here to challenge",
+                    "the Elite Four. Prove you",
+                    "belong."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A kid named \\V[12] came",
+                    "through here too."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I can tell you're good.",
+                    "Let me see exactly how good."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I concede. You're better",
+                    "than me."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "entei",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Roooar!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Entei fled somewhere..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "307": {
+      "name": "Victory Road 3F",
+      "events": {
+        "16": {
+          "name": "Trainer(5)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "This climb takes everything",
+                    "out of you. Don't expect",
+                    "mercy from me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The mountain air up here...",
+                    "it fills your lungs differently."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I raised a Venusaur and a",
+                    "Blastoise from scratch."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Then I fused them. One",
+                    "Pok\u00e9mon with both their",
+                    "strengths. Try that on."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "How about another round to",
+                    "make sure you're ready for",
+                    "the Elite Four?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Confident. I respect that."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Venustoise and I will take",
+                    "the League by storm someday."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Almost there. The Pok\u00e9mon",
+                    "League is just beyond this",
+                    "tunnel."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good luck with the Elite",
+                    "Four. They don't hold back."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Don't underestimate the wild",
+                    "Pok\u00e9mon in these caves.",
+                    "They've survived here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Heard a deep roar earlier.",
+                    "Something big lives in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Victory Road breaks most",
+                    "trainers. Still standing?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A lot of people give up here.",
+                    "You're not one of them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(5)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Word travels fast in these",
+                    "caves. They say a prodigy's",
+                    "on the way up."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You really beat Giovanni?",
+                    "Then the Elite Four better",
+                    "watch out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It appears to be connected",
+                    "to a switch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Only those with real resolve",
+                    "make it through Victory Road."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Every trainer in here is",
+                    "League-bound. Stay sharp."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
