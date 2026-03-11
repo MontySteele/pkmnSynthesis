@@ -10,7 +10,13 @@
     "  text, not restructuring the quest flow.",
     "NOTE: Event 52 (Petrel quest) has complex quest logic — light touch on dialogue only.",
     "",
-    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+    "Line length limit: ~42 characters per line for RPG Maker XP text box.",
+    "",
+    "MERGED from cerulean_area.json:",
+    "Added: Maps 324 (cave guard), 387-389 (interiors), 461-462 (hotel).",
+    "Added: Misty positional choice (Map 4, insert_commands, switches 1132-1133, var 342).",
+    "Added: Nugget Bridge recruiter choice (Map 8, insert_commands, switch 1134).",
+    "Added: New city NPCs (Map 1 events 1, 17, 23, 47, 50) and gym event 9."
   ],
   "maps": {
     "1": {
@@ -426,6 +432,197 @@
               ]
             }
           }
+        },
+        "1": {
+          "name": "Sign (Bike Shop)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean Bike Shop — Now Open"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Blue (rival encounter)",
+          "_note": "Full dialogue handled in cerulean_blue.json. Light retheme of wrapper text only.",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 53
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\PN!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Yo, \\PN! Still plugging away",
+                    "back here?"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "I've been catching strong Pokémon",
+                    "all over. My fusions are looking",
+                    "solid."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Let me see what you've got, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 60,
+                  "type": "text",
+                  "lines": [
+                    "Anyway — I'm heading to Vermilion",
+                    "for my third badge. Did you notice",
+                    "that cave up north? What's in there",
+                    "that's so important they won't",
+                    "even talk about it?"
+                  ]
+                },
+                {
+                  "start_index": 63,
+                  "type": "text",
+                  "lines": [
+                    "...Whatever. Smell ya later!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "NPC (Cyclist - reformist)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You bought a bike too? Nice!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Want to race? It's more fun than",
+                    "arguing about fusion policy."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "I just bought this bike from the",
+                    "shop. Cost a fortune — League",
+                    "import taxes are brutal."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Misty's right about the League",
+                    "taxing everything."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "47": {
+          "name": "NPC (Officer - nervous citizen)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Keep moving. League business."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Reports of criminal activity on",
+                    "Route 5. We're investigating."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Nobody's allowed through right",
+                    "now. Sorry, kid."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Route 5 is closed. League orders."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "50": {
+          "name": "NPC (Officer Jenny - quest logic)",
+          "_note": "Complex multi-page quest — text retheme only, preserving all quest flow.",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1044,
+                "switch2_id": 5
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Keep moving. I'm watching for",
+                    "suspicious activity."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "There's been unusual movement near",
+                    "the cave entrance. Stay alert."
+                  ]
+                }
+              ]
+            }
+          }
         }
       }
     },
@@ -627,6 +824,287 @@
                     "Come back when you're ready to",
                     "actually challenge me."
                   ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "insert_commands",
+                  "_comment": "Misty's positional choice — sets Var 342 (SYNTH_MISTY_CHOICE) + Switches 1132/1133",
+                  "commands": [
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "...Wow. You're actually good."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "Before I give you this badge —"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "I want to know what you think."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "The fusion licensing system."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "The League controls who gets"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "to fuse and who doesn't. The"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "fees are absurd. The rules are"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "written by people who benefit"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "from keeping things locked down."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "So what do you think?"
+                      ]
+                    },
+                    {
+                      "code": 102,
+                      "indent": 1,
+                      "parameters": [
+                        [
+                          "You're right — reform needed",
+                          "The League knows best",
+                          "I haven't decided"
+                        ],
+                        0
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        0,
+                        "You're right — reform needed"
+                      ]
+                    },
+                    {
+                      "code": 122,
+                      "indent": 2,
+                      "parameters": [
+                        342,
+                        342,
+                        0,
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1132,
+                        1132,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Good. Someone else who sees it."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "I've been pushing the council"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "for two years. Brock means well"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "but he won't rock the boat."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Surge thinks I'm naive. Erika"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "won't even take my calls."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        1,
+                        "The League knows best"
+                      ]
+                    },
+                    {
+                      "code": 122,
+                      "indent": 2,
+                      "parameters": [
+                        342,
+                        342,
+                        0,
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1133,
+                        1133,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "That's what Brock said."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "And Brock has never had to"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "fight for anything."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "The system protects people who"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "are already comfortable. Think"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "about that."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        2,
+                        "I haven't decided"
+                      ]
+                    },
+                    {
+                      "code": 122,
+                      "indent": 2,
+                      "parameters": [
+                        342,
+                        342,
+                        0,
+                        0,
+                        3
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Then pay attention. You'll have"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "to decide eventually."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Nobody gets to stay neutral"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "forever. Not out here."
+                      ]
+                    },
+                    {
+                      "code": 404,
+                      "indent": 1,
+                      "parameters": []
+                    }
+                  ]
                 }
               ]
             },
@@ -670,6 +1148,33 @@
                   "type": "text",
                   "lines": [
                     "You can challenge Misty now!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Gym Trainer 3 (post-badge only)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 5
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You completely dominated! Misty",
+                    "needed a challenge like that."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Pure skill!"
                   ]
                 }
               ]
@@ -1288,6 +1793,189 @@
                     "and report to \\C[2]Captain Petrel",
                     "\\C[0]at HQ in Cerulean City."
                   ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "insert_commands",
+                  "_comment": "Rocket recruiter 3-option choice — sets Switch 1134 (SYNTH_NUGGET_JOINED)",
+                  "commands": [
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "I work for an organization that"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "thinks talent like yours deserves"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "more than a nugget."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "We think the fusion licensing"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "system is broken. We think people"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "like you should have a say."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "I'm not asking you to sign"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "anything. Just think about it."
+                      ]
+                    },
+                    {
+                      "code": 102,
+                      "indent": 1,
+                      "parameters": [
+                        [
+                          "Tell me more",
+                          "Not interested",
+                          "You're Team Rocket"
+                        ],
+                        0
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        0,
+                        "Tell me more"
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1134,
+                        1134,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Smart. We don't recruit fools."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "You'll hear from us. Keep your"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "eyes open and your options open."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        1,
+                        "Not interested"
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Your call. But keep your eyes"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "open. The League isn't what you"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "think it is."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        2,
+                        "You're Team Rocket"
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Labels. Think about who benefits"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "from that label. The League"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "doesn't want you to think — it"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "wants you to obey."
+                      ]
+                    },
+                    {
+                      "code": 404,
+                      "indent": 1,
+                      "parameters": []
+                    }
+                  ]
                 }
               ]
             }
@@ -1361,6 +2049,140 @@
                     "Report to \\C[2]Captain Petrel",
                     "\\C[0]in Cerulean City for your",
                     "first assignment."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "insert_commands",
+                  "_comment": "Rocket recruiter 3-option choice (Page 1 variant) — sets Switch 1134",
+                  "commands": [
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "The League charges a fortune for"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "fusion access. We offer it free."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "No license fees. No bureaucracy."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "Just potential."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "Think it over. What do you say?"
+                      ]
+                    },
+                    {
+                      "code": 102,
+                      "indent": 1,
+                      "parameters": [
+                        [
+                          "Tell me more",
+                          "Not interested",
+                          "You're Team Rocket"
+                        ],
+                        0
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        0,
+                        "Tell me more"
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1134,
+                        1134,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Smart. You'll hear from us."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "Keep your options open."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        1,
+                        "Not interested"
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Your call. The offer stands."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        2,
+                        "You're Team Rocket"
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Labels don't change the truth."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "Think about who benefits from"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "keeping you in line."
+                      ]
+                    },
+                    {
+                      "code": 404,
+                      "indent": 1,
+                      "parameters": []
+                    }
                   ]
                 }
               ]
@@ -2278,6 +3100,630 @@
                   "lines": [
                     "They invited me but... not my",
                     "scene. You should go instead!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "324": {
+      "name": "Cerulean Cave",
+      "events": {
+        "2": {
+          "name": "Cave guard / Mewtwo event",
+          "_note": "The original event has Mewtwo encounter text. We add a guard foreshadowing layer. The Mewtwo text remains for endgame when the cave opens.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Restricted area. League",
+                    "authorization only."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I said move along. I don't know",
+                    "what's in there and I don't want",
+                    "to know. That's above my pay",
+                    "grade."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "387": {
+      "name": "Cerulean City (Bike Shop interior)",
+      "events": {
+        "1": {
+          "name": "Sign (Bike Shop interior)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean Bike Shop — Now Open"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Cyclist (race NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ok, this is the finish line."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "First to complete three laps wins."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "...Ready?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "...Set"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "...GO!!!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've got friends at the Cycling",
+                    "Road who like to race too!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "388": {
+      "name": "Cerulean City (House interior 1)",
+      "events": {
+        "5": {
+          "name": "TV",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A debate about fusion regulation",
+                    "is playing on the TV..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Better get going!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "TV (second)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A debate about fusion regulation",
+                    "is playing on the TV..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Better get going!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "NPC (Bill fan - reformist)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Have you heard about Bill? They",
+                    "call him a Pokémaniac, but he",
+                    "left Silph Co. over ethics."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Misty's right about regulation.",
+                    "The people making the rules",
+                    "shouldn't be the only ones who",
+                    "benefit."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "NPC (Crimson City rumor)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There's a town north of Route 25",
+                    "called Crimson City. Nobody I know",
+                    "has been there."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Some say the League sealed the",
+                    "road. Like the cave up north."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "389": {
+      "name": "Cerulean City (House interior 2)",
+      "events": {
+        "5": {
+          "name": "TV",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The TV is just showing static..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Better get going!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "NPC (Retired trainer - nervous)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I may not look like much now, but",
+                    "I used to be a strong trainer."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Back then we didn't have fusion.",
+                    "Battles were simpler. I'm not sure",
+                    "simpler was worse."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Happiness Check NPC (preserve mechanic)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Oh, your \\V[2]..."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "By any chance, you... Are you",
+                    "a very strict person?"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I feel that your \\v[2] really",
+                    "doesn't like you..."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Hmmm... Your \\v[2] may not like",
+                    "you very much."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "The relationship is neutral.",
+                    "Your \\v[2] seems... indifferent.",
+                    "Fused Pokémon can be harder to",
+                    "bond with."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "461": {
+      "name": "Cerulean Hotel (lobby)",
+      "events": {
+        "5": {
+          "name": "Hotel clerk (preserve rest mechanic)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Cerulean Hotel."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\GIt's $50 for a room. Would you",
+                    "like to rest?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "\\GThank you! I'll prepare your",
+                    "room."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "\\PN slept for a while..."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Your Pokémon are full of energy!"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "The current time is \\V[74]."
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "Oh, I'm sorry — you don't have",
+                    "enough money."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Salon NPC (preserve mechanic)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the hotel salon! We",
+                    "can change your hairstyle to",
+                    "match your personality."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You can also get a special style",
+                    "if you have this city's badge.",
+                    "Most cities have exclusive cuts!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "NPC (Traveler - Vermilion teaser)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You think Cerulean is political?",
+                    "Wait until you see Vermilion.",
+                    "Lt. Surge runs that city like",
+                    "a military base."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "462": {
+      "name": "Cerulean Hotel (rooms)",
+      "events": {
+        "5": {
+          "name": "NPC (Love letter quest - preserve mechanic)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is embarrassing... I'm",
+                    "completely in love with this girl."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I even wrote her a love letter!",
+                    "But I'm too shy to deliver it."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Would you mind giving it to her?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Thank you! Her name is Maude —",
+                    "she's a Pokémon breeder!"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "She usually hangs out on one of",
+                    "the routes near Cerulean."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I'm counting on you!"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Here's the letter. Please don't",
+                    "read it — it's personal!"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "You're busy, I understand."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Guess I'll have to find the",
+                    "courage to ask her myself!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 931
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Thank you! Her name is Maude —",
+                    "she's a Pokémon breeder!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "She hangs out on one of the",
+                    "routes near Cerulean."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "I'm so nervous. I hope she",
+                    "says yes!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Did you give her the letter?",
+                    "What did she say?"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Oh, I'm so happy! I can't wait",
+                    "to hear back from her!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Thank you so much! Here, I want",
+                    "you to have these!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 931,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm so grateful! I'll invite you",
+                    "to our wedding if we end up",
+                    "getting married!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "NPC (Researcher - Lavender teaser)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading to Lavender Town.",
+                    "They say there's a memorial for",
+                    "Pokémon lost to fusion accidents."
                   ]
                 }
               ]

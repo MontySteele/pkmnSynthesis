@@ -14,27 +14,33 @@
 | Maps without dialogue | 57 | -- |
 | **Kanto story maps (in scope)** | **~390** | -- |
 | Maps DONE (injected) | 17 | 2.3% of dialogue maps |
+| Maps READY (JSON written, not yet injected) | 25 | 3.3% |
 | Maps IN_PROGRESS | 0 | 0% |
-| Maps PLANNED (city plan exists, no JSON) | ~50 | ~6.6% |
+| Maps PLANNED (city plan exists, no JSON) | ~25 | ~3.3% |
 | Maps NOT_STARTED | ~325 | ~43.2% |
 | Maps SPECIAL_LOGIC | ~12 | ~1.6% |
 | Non-Kanto / SKIP | ~300 | -- |
 | Events with dialogue | 8,030 | -- |
-| Events modified | 126 | 1.6% |
+| Events modified | 262 | 3.3% |
 | Dialogue blocks total | 46,417 | -- |
-| Dialogue blocks modified | 538 | 1.2% |
+| Dialogue blocks modified | 1,089 | 2.3% |
 
-### dialogue_changes files (7):
+### dialogue_changes files (12):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
 | `pallet_town.json` | 42, 43, 48, 77, 78 | Injected |
 | `viridian_city.json` | 79, 80, 81, 83, 84, 491 | Injected |
 | `pewter_city.json` | 91, 93 | Injected |
+| `pewter_museum.json` | 96 | Ready |
+| `pewter_routes.json` | 86, 92, 106 | Ready |
+| `mt_moon.json` | 102, 105 | Ready |
 | `cerulean_blue.json` | 1 | Injected |
+| `cerulean_city.json` | 1, 4, 5, 7, 8, 9, 10, 11, 324, 387-389, 461-462 | Ready |
 | `route22_blue.json` | 171 | Injected |
 | `champion_blue.json` | 328 | Injected |
 | `silph_co_blue.json` | 757 | Injected |
+| `vermilion_city.json` | 16, 19, 24, 25, 26, 27 | Ready |
 
 ### City plan docs (9):
 
@@ -57,6 +63,7 @@
 | Status | Meaning |
 |--------|---------|
 | **DONE** | Has a validated `dialogue_changes` JSON that has been injected into map data |
+| **READY** | Has a `dialogue_changes` JSON written and validated, awaiting injection |
 | **IN_PROGRESS** | Has a `dialogue_changes` JSON but not yet injected or validated |
 | **PLANNED** | Has a city plan doc but no JSON yet |
 | **NOT_STARTED** | No plan or JSON exists |
@@ -125,11 +132,11 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 086 | Route 2 | 27 | 45 | PLANNED |
+| 086 | Route 2 | 27 | 45 | READY |
 | 088 | Gate (south) | 5 | 21 | NOT_STARTED |
 | 089 | Gate (north) | 7 | 11 | NOT_STARTED |
 | 090 | Route 2 (connector) | 3 | 4 | NOT_STARTED |
-| 092 | Route 2 (north) | 5 | 92 | PLANNED |
+| 092 | Route 2 (north) | 5 | 92 | READY |
 | 222 | Route 2 (interior) | 4 | 44 | NOT_STARTED |
 | 511 | Gate (interior) | 1 | 14 | NOT_STARTED |
 | 039 | Trainer House | 1 | 11 | NOT_STARTED |
@@ -148,7 +155,7 @@
 | 386 | Pewter City Gym | 6 | 90 | PLANNED |
 | 392 | Pokemon Center | 11 | 65 | PLANNED |
 | 382 | PokeMart | 10 | 15 | PLANNED |
-| 096 | Pewter City Museum (1F) | 21 | 105 | PLANNED |
+| 096 | Pewter City Museum (1F) | 21 | 105 | READY |
 | 385 | Pewter City Museum (2F) | 17 | 39 | PLANNED |
 | 381 | Pewter City Museum (basement) | 10 | 112 | PLANNED |
 | 470 | Pewter City Museum (exhibit) | 6 | 11 | PLANNED |
@@ -174,10 +181,10 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 102 | Mt. Moon (1F) | 29 | 142 | SPECIAL_LOGIC |
+| 102 | Mt. Moon (1F) | 29 | 142 | READY |
 | 103 | Mt. Moon (B1F) | 3 | 3 | NOT_STARTED |
 | 104 | Mt. Moon (connector) | 2 | 3 | NOT_STARTED |
-| 105 | Mt. Moon (B2F) | 39 | 196 | SPECIAL_LOGIC |
+| 105 | Mt. Moon (B2F) | 39 | 196 | READY |
 | 116 | Mt. Moon (B3F) | 11 | 44 | NOT_STARTED |
 | 117 | Mt. Moon (B4F) | 2 | 2 | NOT_STARTED |
 | 494 | Mt. Moon Square | 7 | 23 | NOT_STARTED |
@@ -201,7 +208,7 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 106 | Route 4 | 9 | 41 | PLANNED |
+| 106 | Route 4 | 9 | 41 | READY |
 | 233 | Route 4 (interior) | 6 | 18 | NOT_STARTED |
 | 291 | Route 4 (south) | 6 | 19 | NOT_STARTED |
 | 236 | Route 4 (connector) | 0 | 0 | SKIP |
@@ -214,23 +221,23 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 001 | Cerulean City | 33 | 377 | DONE |
+| 001 | Cerulean City | 33 | 377 | READY |
 | 002 | PokeMart | 11 | 39 | PLANNED |
 | 003 | \PN's House (Cerulean) | 1 | 11 | PLANNED |
-| 004 | Cerulean City Gym | 6 | 76 | PLANNED |
-| 005 | Cerulean City (Bike Shop interior) | 4 | 21 | PLANNED |
+| 004 | Cerulean City Gym | 6 | 76 | READY |
+| 005 | Cerulean City (Bike Shop interior) | 4 | 21 | READY |
 | 006 | Team Rocket HQ | 16 | 269 | PLANNED |
-| 007 | Bike Shop | 8 | 52 | PLANNED |
-| 008 | Route 24 (Nugget Bridge) | 19 | 256 | PLANNED |
-| 009 | Route 25 | 27 | 224 | PLANNED |
-| 010 | Cerulean Cape | 11 | 27 | PLANNED |
-| 011 | Bill's Lighthouse (exterior) | 9 | 64 | PLANNED |
+| 007 | Bike Shop | 8 | 52 | READY |
+| 008 | Route 24 (Nugget Bridge) | 19 | 256 | READY |
+| 009 | Route 25 | 27 | 224 | READY |
+| 010 | Cerulean Cape | 11 | 27 | READY |
+| 011 | Bill's Lighthouse (exterior) | 9 | 64 | READY |
 | 384 | Bill's Lighthouse (interior) | 18 | 110 | PLANNED |
-| 387 | Cerulean City (house) | 5 | 61 | PLANNED |
-| 388 | Cerulean City (house) | 4 | 12 | PLANNED |
-| 389 | Cerulean City (house) | 4 | 27 | PLANNED |
-| 461 | Cerulean Hotel | 4 | 27 | PLANNED |
-| 462 | Cerulean Hotel (rooms) | 3 | 72 | PLANNED |
+| 387 | Cerulean City (house) | 5 | 61 | READY |
+| 388 | Cerulean City (house) | 4 | 12 | READY |
+| 389 | Cerulean City (house) | 4 | 27 | READY |
+| 461 | Cerulean Hotel | 4 | 27 | READY |
+| 462 | Cerulean Hotel (rooms) | 3 | 72 | READY |
 | 383 | Gate | 1 | 2 | NOT_STARTED |
 | 178 | Bill's Garden | 4 | 4 | NOT_STARTED |
 | 390 | connection | 0 | 0 | SKIP |
@@ -259,16 +266,16 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 016 | Route 6 | 45 | 145 | PLANNED |
+| 016 | Route 6 | 45 | 145 | READY |
 | 018 | Southern Gate | 5 | 65 | NOT_STARTED |
-| 019 | Vermilion City | 41 | 235 | PLANNED |
+| 019 | Vermilion City | 41 | 235 | READY |
 | 020 | Pokemon Center | 9 | 109 | PLANNED |
 | 021 | PokeMart | 24 | 52 | PLANNED |
 | 022 | Vermilion City (house) | 4 | 21 | PLANNED |
 | 023 | Vermilion City (house) | 7 | 28 | PLANNED |
-| 024 | Vermilion City Gym | 22 | 230 | PLANNED |
-| 025 | Pokemon Fan Club | 11 | 96 | PLANNED |
-| 026 | Harbour | 6 | 28 | PLANNED |
+| 024 | Vermilion City Gym | 22 | 230 | READY |
+| 025 | Pokemon Fan Club | 11 | 96 | READY |
+| 026 | Harbour | 6 | 28 | READY |
 | 037 | Vermilion City (house) | 5 | 57 | PLANNED |
 | 061 | Vermilion City Gym (rematch) | 22 | 260 | NOT_STARTED |
 | 155 | Route 11 | 10 | 335 | NOT_STARTED |
@@ -294,7 +301,7 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 017 | S.S. Anne (main deck) | 15 | 288 | SPECIAL_LOGIC |
-| 027 | S.S. Anne (entrance hall) | 11 | 91 | SPECIAL_LOGIC |
+| 027 | S.S. Anne (entrance hall) | 11 | 91 | READY |
 | 028 | S.S. Anne (cabins A) | 17 | 84 | SPECIAL_LOGIC |
 | 029 | S.S. Anne (cabins B) | 17 | 174 | SPECIAL_LOGIC |
 | 030 | S.S. Anne (upper deck) | 2 | 20 | SPECIAL_LOGIC |
@@ -678,7 +685,7 @@
 |--------|------|----------|----------|--------|
 | 322 | Cerulean Cave (1F) | 11 | 11 | SPECIAL_LOGIC |
 | 323 | Cerulean Cave (B1F) | 13 | 13 | SPECIAL_LOGIC |
-| 324 | Cerulean Cave (B2F / Mewtwo) | 1 | 5 | SPECIAL_LOGIC |
+| 324 | Cerulean Cave (B2F / Mewtwo) | 1 | 5 | READY |
 | 544 | Cerulean Cave WTF | 1 | 4 | NOT_STARTED |
 
 ### Diglett's Cave
@@ -810,20 +817,20 @@ Maps: 033, 067-071, 073, 094, 100, 118, 129, 131, 134, 139, 150, 157, 160,
 
 ## Coverage by Progression Phase
 
-| Phase | Description | Total Maps | DONE | IN_PROGRESS | PLANNED | NOT_STARTED | SPECIAL_LOGIC | SKIP |
-|-------|-------------|------------|------|-------------|---------|-------------|---------------|------|
+| Phase | Description | Total Maps | DONE | READY | PLANNED | NOT_STARTED | SPECIAL_LOGIC | SKIP |
+|-------|-------------|------------|------|-------|---------|-------------|---------------|------|
 | 0 | Pallet Town (Opening) | 9 | 5 | 0 | 0 | 4 | 0 | 0 |
 | 1a | Route 1 | 3 | 1 | 0 | 0 | 2 | 0 | 0 |
 | 1b | Viridian + Forest | 17 | 6 | 0 | 6 | 5 | 0 | 0 |
-| 1c | Route 2 | 8 | 0 | 0 | 2 | 6 | 0 | 0 |
-| 1d | Pewter City | 12 | 2 | 0 | 10 | 0 | 0 | 0 |
+| 1c | Route 2 | 8 | 0 | 2 | 0 | 6 | 0 | 0 |
+| 1d | Pewter City | 12 | 2 | 1 | 9 | 0 | 0 | 0 |
 | 1e | Route 3 | 2 | 0 | 0 | 1 | 1 | 0 | 0 |
-| 1f | Mt. Moon | 18 | 0 | 0 | 0 | 12 | 2 | 4 |
-| 1g | Route 4 | 4 | 0 | 0 | 1 | 2 | 0 | 1 |
-| 1h | Cerulean + Rts 24/25 | 21 | 1 | 0 | 16 | 2 | 0 | 2 |
+| 1f | Mt. Moon | 18 | 0 | 2 | 0 | 12 | 0 | 4 |
+| 1g | Route 4 | 4 | 0 | 1 | 0 | 2 | 0 | 1 |
+| 1h | Cerulean + Rts 24/25 | 21 | 0 | 12 | 5 | 2 | 0 | 2 |
 | 2a | Route 5 + Underground | 6 | 0 | 0 | 2 | 4 | 0 | 0 |
-| 2b | Vermilion + Route 6 | 25 | 0 | 0 | 17 | 4 | 0 | 4 |
-| 2c | SS Anne | 11 | 0 | 0 | 0 | 0 | 9 | 2 |
+| 2b | Vermilion + Route 6 | 25 | 0 | 3 | 14 | 4 | 0 | 4 |
+| 2c | SS Anne | 11 | 0 | 1 | 0 | 0 | 8 | 2 |
 | 2d | Rt 9/10, Rock Tunnel | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
 | 2e | Lavender + Pkmn Tower | 19 | 0 | 0 | 0 | 11 | 7 | 1 |
 | 2f | Route 8 + Underground | 4 | 0 | 0 | 0 | 3 | 0 | 1 |
@@ -833,11 +840,11 @@ Maps: 033, 067-071, 073, 094, 100, 118, 129, 131, 134, 139, 150, 157, 160,
 | 4b | Cinnabar + Mansion | 40 | 0 | 0 | 27 | 6 | 1 | 6 |
 | 4c | Viridian Return + Rts 22/23 | 4 | 1 | 0 | 2 | 0 | 1 | 0 |
 | 4d | Victory Road + Indigo | 12 | 1 | 0 | 9 | 0 | 1 | 1 |
-| 5 | Postgame | 14 | 0 | 0 | 0 | 11 | 3 | 0 |
+| 5 | Postgame | 14 | 0 | 1 | 0 | 10 | 3 | 0 |
 | -- | Crimson City | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
 | -- | Moon Islands | 6 | 0 | 0 | 0 | 6 | 0 | 0 |
 | -- | Non-Kanto/System/SKIP | ~300 | 0 | 0 | 0 | 0 | 0 | ~300 |
-| **TOTAL** | | **~809** | **17** | **0** | **~148** | **~179** | **~36** | **~330** |
+| **TOTAL** | | **~809** | **17** | **23** | **~130** | **~178** | **~33** | **~330** |
 
 ---
 
