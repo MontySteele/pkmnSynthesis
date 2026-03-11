@@ -122,6 +122,8 @@ The order here is based on narrative importance and implementation complexity, n
 
 **This is the largest single writing task in the project.** Probably 15,000–20,000 words across all paths and encounters.
 
+**Status:** Saffron City proper (overworld, gym, Fighting Dojo) has a dialogue JSON (`saffron_city.json` — 3 maps, 60 events). Silph Co. floors and the fork scene still need separate JSONs with heavy SPECIAL_LOGIC scripting.
+
 ### 2B. Lavender Town + Pokemon Tower
 - Town NPC dialogue
 - Mr. Fuji's dialogue (with knowledge boundaries)
@@ -131,6 +133,8 @@ The order here is based on narrative importance and implementation complexity, n
 
 Emotionally critical. ~5,000–8,000 words.
 
+**Status:** Lavender Town proper has a dialogue JSON (`lavender_town.json` — 5 maps, 46 events). Pokemon Tower floors excluded (SPECIAL_LOGIC — Tier 2, Mr. Fuji choice + Project M journals need separate handling).
+
 ### 2C. Cinnabar Island + Pokemon Mansion
 - Blaine's gym dialogue (both paths)
 - Pokemon Mansion journal entries (the Mewtwo creation story in fragments)
@@ -138,6 +142,8 @@ Emotionally critical. ~5,000–8,000 words.
 - Town NPC dialogue
 
 The journals are a unique writing challenge — they need to tell a compelling story in scattered, out-of-order fragments that reward exploration. ~5,000–8,000 words.
+
+**Status:** Dialogue JSON written (`cinnabar_island.json` — 6 maps, 21 events). Covers gym, mansion, lab, and town NPCs. Blaine framed as haunted Mewtwo project leader. Gym has insert_commands choice block (Switches 1156-1158, Var 347).
 
 ### 2D. Indigo Plateau + Endings
 - Elite Four pre-battle dialogue (Agatha's Mewtwo awareness)
@@ -177,6 +183,8 @@ The "tutorial" section. Tonally the simplest — warm, innocent, small cracks. ~
 
 ~3,000–5,000 words.
 
+**Status:** Dialogue JSON written (`celadon_city.json` — 9 maps, 39 events). Covers gym, Game Corner, Dept Store, Route 7. Erika gym has insert_commands choice block (Switches 1147-1149, Var 344). Rocket Hideout and Sewers not yet covered.
+
 ### 2I. Fuchsia City + Safari Zone
 - Koga's gym dialogue
 - Safari Zone conservation angle
@@ -184,6 +192,8 @@ The "tutorial" section. Tonally the simplest — warm, innocent, small cracks. ~
 - City NPC dialogue
 
 ~2,000–4,000 words.
+
+**Status:** Dialogue JSON written (`fuchsia_city.json` — 6 maps, 21 events). Covers city, gym, Safari Zone gate, Routes 12-13. Koga gym has insert_commands choice block (Switches 1153-1155, Var 346). Rival path-variant encounter still needs SPECIAL_LOGIC handling.
 
 ### 2J. Viridian City (return)
 - Giovanni's gym (both paths — already drafted in 1C)

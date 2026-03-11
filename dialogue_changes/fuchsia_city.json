@@ -31,7 +31,8 @@
           "name": "EV017 (Old Man — Zoo)",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -46,7 +47,7 @@
                   "start_index": 3,
                   "type": "text",
                   "lines": [
-                    "These Pok\u00e9mon can't compete",
+                    "These Pokémon can't compete",
                     "with fused ones in the wild.",
                     "So we keep them here, where",
                     "it's safe."
@@ -60,14 +61,15 @@
           "name": "EV029 (Dodrio Exhibit)",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 0,
                   "type": "text",
                   "lines": [
                     "Dodrio is one of the fastest",
-                    "running Pok\u00e9mon in the world."
+                    "running Pokémon in the world."
                   ]
                 },
                 {
@@ -88,7 +90,8 @@
           "name": "EV031 (Safari Zone Sign)",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 0,
@@ -119,15 +122,14 @@
                 "switch2_id": 584
               },
               "_synth_conditions": {
-                "require_on": [1152],
-                "require_off": [1160]
+                "require_on": [
+                  1152
+                ],
+                "require_off": [
+                  1160
+                ]
               },
               "dialogue_blocks": [
-                {
-                  "start_index": 11,
-                  "type": "script_message",
-                  "_comment": "Branch on SYNTH_GIOVANNI_PATH (1131). If ON: Giovanni Path. If OFF: Oak Path."
-                },
                 {
                   "_variant": "OAK_PATH",
                   "_condition": "Switch 1131 OFF",
@@ -297,7 +299,7 @@
                   "lines": [
                     "Gramp's friend from the",
                     "Johto region gave me three",
-                    "Pok\u00e9mon. Take one."
+                    "Pokémon. Take one."
                   ]
                 },
                 {
@@ -327,6 +329,12 @@
                     "I mean it."
                   ]
                 }
+              ],
+              "_branch_notes": [
+                {
+                  "at_index": 11,
+                  "note": "Branch on SYNTH_GIOVANNI_PATH (1131). If ON: Giovanni Path. If OFF: Oak Path."
+                }
               ]
             }
           }
@@ -345,15 +353,14 @@
                 "self_switch": "D"
               },
               "_synth_conditions": {
-                "require_on": [1152],
-                "require_off": [1160]
+                "require_on": [
+                  1152
+                ],
+                "require_off": [
+                  1160
+                ]
               },
               "dialogue_blocks": [
-                {
-                  "start_index": 3,
-                  "type": "script_message",
-                  "_comment": "Branch on SYNTH_GIOVANNI_PATH (1131). If ON: Giovanni Path. If OFF: Oak Path."
-                },
                 {
                   "_variant": "OAK_PATH",
                   "_condition": "Switch 1131 OFF",
@@ -437,7 +444,7 @@
                   "start_index": 15,
                   "type": "text",
                   "lines": [
-                    "I'll heal up your Pok\u00e9mon!"
+                    "I'll heal up your Pokémon!"
                   ]
                 },
                 {
@@ -477,7 +484,7 @@
                   "type": "text",
                   "lines": [
                     "Gramp's friend from Johto",
-                    "gave me three Pok\u00e9mon.",
+                    "gave me three Pokémon.",
                     "Take one."
                   ]
                 },
@@ -523,6 +530,12 @@
                     "I need to know where we stand."
                   ]
                 }
+              ],
+              "_branch_notes": [
+                {
+                  "at_index": 3,
+                  "note": "Branch on SYNTH_GIOVANNI_PATH (1131). If ON: Giovanni Path. If OFF: Oak Path."
+                }
               ]
             }
           }
@@ -536,13 +549,9 @@
           "name": "EV001 (Koga — Gym Leader)",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
-                {
-                  "start_index": 10,
-                  "type": "script_message",
-                  "_comment": "Branch on SYNTH_SILPH_COMPLETE (1152). If ON: Post-Saffron variant. If OFF: Default variant."
-                },
                 {
                   "_variant": "POST_SAFFRON",
                   "_condition": "Switch 1152 ON",
@@ -579,7 +588,7 @@
                   "lines": [
                     "Out here, there's no debate.",
                     "The routes are dangerous.",
-                    "The wild Pok\u00e9mon are getting",
+                    "The wild Pokémon are getting",
                     "stronger every season."
                   ]
                 },
@@ -625,7 +634,7 @@
                   "start_index": 16,
                   "type": "text",
                   "lines": [
-                    "We'll use four Pok\u00e9mon.",
+                    "We'll use four Pokémon.",
                     "I won't hold back."
                   ]
                 },
@@ -651,7 +660,7 @@
                   "type": "text",
                   "lines": [
                     "The Soul Badge. Your",
-                    "Pok\u00e9mon's Defense increases."
+                    "Pokémon's Defense increases."
                   ]
                 },
                 {
@@ -685,42 +694,284 @@
                   "type": "insert_commands",
                   "_comment": "Koga asks about survival philosophy. Sets Var 346 (SYNTH_KOGA_CHOICE) and Switches 1153-1155.",
                   "commands": [
-                    {"code": 101, "indent": 1, "parameters": ["A piece of advice. Everyone in"]},
-                    {"code": 401, "indent": 1, "parameters": ["Kanto wants to tell you what"]},
-                    {"code": 401, "indent": 1, "parameters": ["to believe."]},
-                    {"code": 101, "indent": 1, "parameters": ["But out here, belief doesn't"]},
-                    {"code": 401, "indent": 1, "parameters": ["keep you alive. Strength does."]},
-                    {"code": 401, "indent": 1, "parameters": ["Do you understand that?"]},
-                    {"code": 102, "indent": 1, "parameters": [["Yes. Strength is what matters.", "No. Principles matter more.", "It's not that simple."], 0]},
-                    {"code": 402, "indent": 1, "parameters": [0, "Yes. Strength is what matters."]},
-                    {"code": 122, "indent": 2, "parameters": [346, 346, 0, 0, 1]},
-                    {"code": 121, "indent": 2, "parameters": [1153, 1153, 0]},
-                    {"code": 101, "indent": 2, "parameters": ["Good. Then you'll survive."]},
-                    {"code": 401, "indent": 2, "parameters": ["Watch what people do, not"]},
-                    {"code": 401, "indent": 2, "parameters": ["what they say. That's the"]},
-                    {"code": 401, "indent": 2, "parameters": ["only credential I recognize."]},
-                    {"code": 402, "indent": 1, "parameters": [1, "No. Principles matter more."]},
-                    {"code": 122, "indent": 2, "parameters": [346, 346, 0, 0, 2]},
-                    {"code": 121, "indent": 2, "parameters": [1154, 1154, 0]},
-                    {"code": 101, "indent": 2, "parameters": ["Principles. I've buried"]},
-                    {"code": 401, "indent": 2, "parameters": ["trainers with principles."]},
-                    {"code": 101, "indent": 2, "parameters": ["Ren had principles. Wouldn't"]},
-                    {"code": 401, "indent": 2, "parameters": ["use Antidotes on his team."]},
-                    {"code": 401, "indent": 2, "parameters": ["Said it was unnatural. Found"]},
-                    {"code": 401, "indent": 2, "parameters": ["him on Route 15."]},
-                    {"code": 101, "indent": 2, "parameters": ["Keep your principles. But"]},
-                    {"code": 401, "indent": 2, "parameters": ["stay alive to hold them."]},
-                    {"code": 402, "indent": 1, "parameters": [2, "It's not that simple."]},
-                    {"code": 122, "indent": 2, "parameters": [346, 346, 0, 0, 3]},
-                    {"code": 121, "indent": 2, "parameters": [1155, 1155, 0]},
-                    {"code": 101, "indent": 2, "parameters": ["Simple. No, it never is."]},
-                    {"code": 101, "indent": 2, "parameters": ["But when a fused Beedrill is"]},
-                    {"code": 401, "indent": 2, "parameters": ["tearing through your team,"]},
-                    {"code": 401, "indent": 2, "parameters": ["complexity won't save you."]},
-                    {"code": 101, "indent": 2, "parameters": ["Decide fast. Act faster."]},
-                    {"code": 401, "indent": 2, "parameters": ["That's the only advice I"]},
-                    {"code": 401, "indent": 2, "parameters": ["have."]},
-                    {"code": 404, "indent": 1, "parameters": []}
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "A piece of advice. Everyone in"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "Kanto wants to tell you what"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "to believe."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 1,
+                      "parameters": [
+                        "But out here, belief doesn't"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "keep you alive. Strength does."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 1,
+                      "parameters": [
+                        "Do you understand that?"
+                      ]
+                    },
+                    {
+                      "code": 102,
+                      "indent": 1,
+                      "parameters": [
+                        [
+                          "Yes. Strength is what matters.",
+                          "No. Principles matter more.",
+                          "It's not that simple."
+                        ],
+                        0
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        0,
+                        "Yes. Strength is what matters."
+                      ]
+                    },
+                    {
+                      "code": 122,
+                      "indent": 2,
+                      "parameters": [
+                        346,
+                        346,
+                        0,
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1153,
+                        1153,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Good. Then you'll survive."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "Watch what people do, not"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "what they say. That's the"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "only credential I recognize."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        1,
+                        "No. Principles matter more."
+                      ]
+                    },
+                    {
+                      "code": 122,
+                      "indent": 2,
+                      "parameters": [
+                        346,
+                        346,
+                        0,
+                        0,
+                        2
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1154,
+                        1154,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Principles. I've buried"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "trainers with principles."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Ren had principles. Wouldn't"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "use Antidotes on his team."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "Said it was unnatural. Found"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "him on Route 15."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Keep your principles. But"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "stay alive to hold them."
+                      ]
+                    },
+                    {
+                      "code": 402,
+                      "indent": 1,
+                      "parameters": [
+                        2,
+                        "It's not that simple."
+                      ]
+                    },
+                    {
+                      "code": 122,
+                      "indent": 2,
+                      "parameters": [
+                        346,
+                        346,
+                        0,
+                        0,
+                        3
+                      ]
+                    },
+                    {
+                      "code": 121,
+                      "indent": 2,
+                      "parameters": [
+                        1155,
+                        1155,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Simple. No, it never is."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "But when a fused Beedrill is"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "tearing through your team,"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "complexity won't save you."
+                      ]
+                    },
+                    {
+                      "code": 101,
+                      "indent": 2,
+                      "parameters": [
+                        "Decide fast. Act faster."
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "That's the only advice I"
+                      ]
+                    },
+                    {
+                      "code": 401,
+                      "indent": 2,
+                      "parameters": [
+                        "have."
+                      ]
+                    },
+                    {
+                      "code": 404,
+                      "indent": 1,
+                      "parameters": [
+
+                      ]
+                    }
                   ]
                 },
                 {
@@ -730,12 +981,6 @@
                     "\\C[3]\\PN obtained 2 Premium",
                     "Wonder Trade ticket!"
                   ]
-                },
-                {
-                  "_comment": "Lance post-gym scene. Only fires if SYNTH_SILPH_COMPLETE (1152) is OFF.",
-                  "start_index": 60,
-                  "type": "script_message",
-                  "_condition": "Switch 1152 OFF — if ON, skip to end"
                 },
                 {
                   "start_index": 60,
@@ -767,7 +1012,7 @@
                   "type": "text",
                   "lines": [
                     "They've captured the three",
-                    "legendary bird Pok\u00e9mon.",
+                    "legendary bird Pokémon.",
                     "Articuno. Zapdos. Moltres."
                   ]
                 },
@@ -875,10 +1120,22 @@
                     "ready to challenge me."
                   ]
                 }
+              ],
+              "_branch_notes": [
+                {
+                  "at_index": 10,
+                  "note": "Branch on SYNTH_SILPH_COMPLETE (1152). If ON: Post-Saffron variant. If OFF: Default variant."
+                },
+                {
+                  "at_index": 60,
+                  "note": "Lance post-gym scene. Only fires if SYNTH_SILPH_COMPLETE (1152) is OFF."
+                }
               ]
             },
             "1": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -904,7 +1161,8 @@
           "name": "Trainer(3) — Gym Trainer",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 6,
@@ -926,7 +1184,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -939,7 +1199,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -964,7 +1226,8 @@
           "name": "Trainer(3) — Gym Trainer",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 6,
@@ -979,7 +1242,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -992,7 +1257,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -1018,7 +1285,9 @@
           "name": "Trainer(3) — Gym Trainer",
           "pages": {
             "0": {
-              "conditions": {"switch1_id": 110},
+              "conditions": {
+                "switch1_id": 110
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 6,
@@ -1033,7 +1302,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1047,7 +1318,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -1071,7 +1344,8 @@
           "name": "Trainer(3) — Gym Trainer",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 6,
@@ -1086,7 +1360,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1108,7 +1384,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -1133,7 +1411,8 @@
           "name": "Trainer(3) — Gym Trainer",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 6,
@@ -1155,7 +1434,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1169,7 +1450,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -1193,7 +1476,8 @@
           "name": "Trainer(3) — Gym Trainer",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 6,
@@ -1216,7 +1500,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1229,7 +1515,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 2,
@@ -1255,7 +1543,8 @@
           "name": "EV015 (Gym Guide)",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 10,
@@ -1272,7 +1561,7 @@
                   "type": "text",
                   "lines": [
                     "Find the gaps. His \\V[5]-type",
-                    "Pok\u00e9mon hit slow but they",
+                    "Pokémon hit slow but they",
                     "linger. Bring Antidotes.",
                     "Lots of them."
                   ]
@@ -1287,7 +1576,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 10,
@@ -1302,7 +1593,7 @@
                   "start_index": 13,
                   "type": "text",
                   "lines": [
-                    "His \\V[5]-type Pok\u00e9mon will",
+                    "His \\V[5]-type Pokémon will",
                     "wear you down if you let",
                     "them. Don't let them."
                   ]
@@ -1310,7 +1601,9 @@
               ]
             },
             "2": {
-              "conditions": {"switch1_id": 8},
+              "conditions": {
+                "switch1_id": 8
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1340,7 +1633,8 @@
           ],
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1360,107 +1654,12 @@
                     "ago. Now? Rare in the wild.",
                     "Almost gone."
                   ]
-                },
+                }
+              ],
+              "_branch_notes": [
                 {
-                  "start_index": 5,
-                  "type": "text",
-                  "lines": [
-                    "Fused Pok\u00e9mon outcompete",
-                    "them. Faster, stronger, more",
-                    "adaptable. Natural species",
-                    "can't keep up."
-                  ]
-                },
-                {
-                  "start_index": 7,
-                  "type": "text",
-                  "lines": [
-                    "I'm not a politician. I count",
-                    "populations. And the numbers",
-                    "are going down."
-                  ]
-                },
-                {
-                  "start_index": 9,
-                  "type": "script_message",
-                  "_comment": "Branch on Fuji switches. Check 1135 (BAN) first, then 1136 (FREE), else default."
-                },
-                {
-                  "_variant": "FUJI_BAN",
-                  "_condition": "Switch 1135 ON",
-                  "start_index": 9,
-                  "type": "text",
-                  "lines": [
-                    "You think fusion should be",
-                    "banned? I understand that.",
-                    "But even if you stopped all",
-                    "new fusions tomorrow..."
-                  ]
-                },
-                {
-                  "_variant": "FUJI_BAN",
-                  "start_index": 11,
-                  "type": "text",
-                  "lines": [
-                    "The fused Pok\u00e9mon already in",
-                    "the wild aren't going away.",
-                    "This problem is bigger than",
-                    "regulation."
-                  ]
-                },
-                {
-                  "_variant": "FUJI_FREE",
-                  "_condition": "Switch 1136 ON",
-                  "start_index": 9,
-                  "type": "text",
-                  "lines": [
-                    "You think everyone should",
-                    "have access to fusion? Maybe.",
-                    "But every trainer who fuses",
-                    "a Pok\u00e9mon and releases it —"
-                  ]
-                },
-                {
-                  "_variant": "FUJI_FREE",
-                  "start_index": 11,
-                  "type": "text",
-                  "lines": [
-                    "or loses it — adds another",
-                    "competitor to an ecosystem",
-                    "that's already struggling.",
-                    "Freedom has a cost."
-                  ]
-                },
-                {
-                  "_variant": "DEFAULT",
-                  "_condition": "No Fuji switch set",
-                  "start_index": 9,
-                  "type": "text",
-                  "lines": [
-                    "The Safari Zone exists",
-                    "because it's one of the few",
-                    "places where unfused Pok\u00e9mon",
-                    "can still survive."
-                  ]
-                },
-                {
-                  "_comment": "Closing line — shared across all variants.",
-                  "start_index": 13,
-                  "type": "text",
-                  "lines": [
-                    "Come into the Zone and look",
-                    "around. These Pok\u00e9mon aren't",
-                    "rare because they're special."
-                  ]
-                },
-                {
-                  "start_index": 15,
-                  "type": "text",
-                  "lines": [
-                    "They're rare because we made",
-                    "something that's better at",
-                    "surviving than they are."
-                  ]
+                  "at_index": 9,
+                  "note": "Branch on Fuji switches. Check 1135 (BAN) first, then 1136 (FREE), else default."
                 }
               ]
             }
@@ -1478,7 +1677,9 @@
           ],
           "pages": {
             "1": {
-              "conditions": {"self_switch": "D"},
+              "conditions": {
+                "self_switch": "D"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1502,7 +1703,8 @@
           "name": "Trainer(4) — Fisherman",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 5,
@@ -1517,14 +1719,16 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
                   "type": "text",
                   "lines": [
                     "Fused things. Half one",
-                    "Pok\u00e9mon, half another.",
+                    "Pokémon, half another.",
                     "Some of them bite back.",
                     "Hard."
                   ]
@@ -1542,7 +1746,7 @@
                   "start_index": 5,
                   "type": "text",
                   "lines": [
-                    "Your Pok\u00e9mon better put on",
+                    "Your Pokémon better put on",
                     "their raincoats!"
                   ]
                 },
@@ -1563,7 +1767,8 @@
           "name": "Trainer(4) — Fisherman (Magikarp evolve)",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 5,
@@ -1588,7 +1793,8 @@
           "name": "Trainer(4) — Biker",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 5,
@@ -1603,7 +1809,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1655,7 +1863,8 @@
           "name": "Trainer(1) — Black Belt",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 5,
@@ -1670,7 +1879,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1711,7 +1922,8 @@
           "name": "Trainer(5) — Bird Keeper",
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 5,
@@ -1726,7 +1938,9 @@
               ]
             },
             "1": {
-              "conditions": {"self_switch": "A"},
+              "conditions": {
+                "self_switch": "A"
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 1,
@@ -1773,7 +1987,8 @@
           ],
           "pages": {
             "0": {
-              "conditions": {},
+              "conditions": {
+              },
               "dialogue_blocks": [
                 {
                   "start_index": 5,
