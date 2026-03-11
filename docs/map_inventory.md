@@ -14,18 +14,18 @@
 | Maps without dialogue | 57 | -- |
 | **Kanto story maps (in scope)** | **~390** | -- |
 | Maps DONE (injected) | 17 | 2.3% of dialogue maps |
-| Maps READY (JSON written, not yet injected) | 25 | 3.3% |
+| Maps READY (JSON written, not yet injected) | 54 | 7.2% |
 | Maps IN_PROGRESS | 0 | 0% |
-| Maps PLANNED (city plan exists, no JSON) | ~25 | ~3.3% |
-| Maps NOT_STARTED | ~325 | ~43.2% |
-| Maps SPECIAL_LOGIC | ~12 | ~1.6% |
+| Maps PLANNED (city plan exists, no JSON) | ~100 | ~13.3% |
+| Maps NOT_STARTED | ~300 | ~39.9% |
+| Maps SPECIAL_LOGIC | ~33 | ~4.4% |
 | Non-Kanto / SKIP | ~300 | -- |
 | Events with dialogue | 8,030 | -- |
-| Events modified | 262 | 3.3% |
+| Events modified | 449 | 5.6% |
 | Dialogue blocks total | 46,417 | -- |
-| Dialogue blocks modified | 1,089 | 2.3% |
+| Dialogue blocks modified | 1,718 | 3.7% |
 
-### dialogue_changes files (12):
+### dialogue_changes files (17):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
@@ -41,6 +41,11 @@
 | `champion_blue.json` | 328 | Injected |
 | `silph_co_blue.json` | 757 | Injected |
 | `vermilion_city.json` | 16, 19, 24, 25, 26, 27 | Ready |
+| `celadon_city.json` | 95, 405, 413, 414, 432-436 | Ready |
+| `saffron_city.json` | 108, 152, 191 | Ready |
+| `fuchsia_city.json` | 159, 437, 445, 472, 473, 479 | Ready |
+| `cinnabar_island.json` | 98, 173, 187, 206, 209, 221 | Ready |
+| `lavender_town.json` | 50, 416, 418, 419, 420 | Ready |
 
 ### City plan docs (9):
 
@@ -337,13 +342,13 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 050 | Lavender Town | 23 | 91 | NOT_STARTED |
-| 416 | Pokemon Center | 7 | 110 | NOT_STARTED |
+| 050 | Lavender Town | 23 | 91 | READY |
+| 416 | Pokemon Center | 7 | 110 | READY |
 | 422 | PokeMart | 8 | 17 | NOT_STARTED |
 | 417 | Gate | 2 | 8 | NOT_STARTED |
-| 418 | Pokemon House | 17 | 52 | NOT_STARTED |
-| 419 | Lavender Town (house) | 4 | 23 | NOT_STARTED |
-| 420 | Lavender Town (house) | 5 | 25 | NOT_STARTED |
+| 418 | Pokemon House | 17 | 52 | READY |
+| 419 | Lavender Town (house) | 4 | 23 | READY |
+| 420 | Lavender Town (house) | 5 | 25 | READY |
 | 421 | Nicknaming Club | 4 | 73 | NOT_STARTED |
 | 109 | Hidden Tomb | 3 | 3 | NOT_STARTED |
 | 400 | Pokemon Tower (entrance) | 9 | 28 | SPECIAL_LOGIC |
@@ -374,20 +379,20 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 095 | Celadon City (overworld) | 55 | 266 | NOT_STARTED |
+| 095 | Celadon City (overworld) | 55 | 266 | READY |
 | 408 | Pokemon Center | 9 | 80 | NOT_STARTED |
-| 414 | Celadon City Gym | 9 | 104 | NOT_STARTED |
+| 414 | Celadon City Gym | 9 | 104 | READY |
 | 542 | Celadon City Gym (rematch) | 9 | 118 | NOT_STARTED |
-| 405 | Game Corner | 39 | 91 | NOT_STARTED |
+| 405 | Game Corner | 39 | 91 | READY |
 | 510 | Game Corner (basement) | 2 | 102 | NOT_STARTED |
 | 406 | Celadon Cafe | 9 | 170 | NOT_STARTED |
 | 768 | Celadon Cafe (alt entrance) | 2 | 56 | NOT_STARTED |
 | 407 | Celadon Cafe Backstore | 10 | 325 | NOT_STARTED |
-| 432 | Celadon Dpt. Store (1F) | 6 | 33 | NOT_STARTED |
-| 433 | Celadon Dpt. Store (2F) | 7 | 12 | NOT_STARTED |
-| 434 | Celadon Dpt. Store (3F) | 7 | 51 | NOT_STARTED |
-| 435 | Celadon Dpt. Store (4F) | 9 | 19 | NOT_STARTED |
-| 436 | Celadon Dpt. Store (5F) | 11 | 83 | NOT_STARTED |
+| 432 | Celadon Dpt. Store (1F) | 6 | 33 | READY |
+| 433 | Celadon Dpt. Store (2F) | 7 | 12 | READY |
+| 434 | Celadon Dpt. Store (3F) | 7 | 51 | READY |
+| 435 | Celadon Dpt. Store (4F) | 9 | 19 | READY |
+| 436 | Celadon Dpt. Store (5F) | 11 | 83 | READY |
 | 514 | Celadon Dpt. Store (roof) | 1 | 2 | NOT_STARTED |
 | 431 | Celadon Sewers (entrance) | 27 | 135 | NOT_STARTED |
 | 446 | Celadon Sewers (main) | 24 | 96 | NOT_STARTED |
@@ -428,7 +433,7 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 413 | Route 7 | 19 | 238 | NOT_STARTED |
+| 413 | Route 7 | 19 | 238 | READY |
 | 425 | Underground Gate (Route 7) | 1 | 2 | NOT_STARTED |
 | 415 | Western Gate | 3 | 55 | NOT_STARTED |
 | 066 | Eastern Gate | 3 | 73 | NOT_STARTED |
@@ -453,12 +458,12 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 108 | Saffron City (overworld) | 68 | 234 | PLANNED |
+| 108 | Saffron City (overworld) | 68 | 234 | READY |
 | 122 | Pokemon Center | 10 | 76 | PLANNED |
 | 133 | Rocket Mart | 12 | 16 | PLANNED |
 | 215 | PokeMart | 25 | 56 | PLANNED |
-| 152 | Saffron City Gym | 7 | 96 | PLANNED |
-| 191 | Fighting Dojo | 15 | 91 | PLANNED |
+| 152 | Saffron City Gym | 7 | 96 | READY |
+| 191 | Fighting Dojo | 15 | 91 | READY |
 | 192 | Train Station | 9 | 35 | PLANNED |
 | 179 | Police Station | 14 | 39 | PLANNED |
 | 151 | Saffron Boutique | 7 | 103 | PLANNED |
@@ -520,11 +525,11 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 472 | Fuchsia City (overworld) | 47 | 239 | PLANNED |
+| 472 | Fuchsia City (overworld) | 47 | 239 | READY |
 | 476 | Pokemon Center | 11 | 63 | PLANNED |
 | 060 | PokeMart | 26 | 56 | PLANNED |
-| 479 | Fuchsia City Gym | 8 | 161 | PLANNED |
-| 473 | Safari Zone Gate | 9 | 54 | PLANNED |
+| 479 | Fuchsia City Gym | 8 | 161 | READY |
+| 473 | Safari Zone Gate | 9 | 54 | READY |
 | 804 | Safari Zone Gate (inner) | 3 | 19 | NOT_STARTED |
 | 087 | Fuchsia City (house) | 6 | 15 | PLANNED |
 | 481 | Fuchsia City (house) | 3 | 20 | PLANNED |
@@ -537,7 +542,7 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 445 | Area 1 | 36 | 40 | PLANNED |
+| 445 | Area 1 | 36 | 40 | READY |
 | 074 | Area 1 (interior) | 4 | 8 | NOT_STARTED |
 | 484 | Area 2 | 14 | 28 | PLANNED |
 | 075 | Area 2 (interior) | 3 | 5 | NOT_STARTED |
@@ -557,11 +562,11 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 159 | Route 12 | 30 | 189 | PLANNED |
+| 159 | Route 12 | 30 | 189 | READY |
 | 471 | Fishing Hut | 3 | 21 | PLANNED |
 | 162 | Underwater (Route 12) | 13 | 26 | NOT_STARTED |
 | 149 | Flooded Cave | 1 | 1 | SKIP |
-| 437 | Route 13 | 46 | 350 | PLANNED |
+| 437 | Route 13 | 46 | 350 | READY |
 | 220 | Underwater (Route 13) | 9 | 15 | NOT_STARTED |
 | 440 | Route 14 | 15 | 123 | PLANNED |
 | 444 | Route 15 | 21 | 152 | PLANNED |
@@ -583,10 +588,10 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 098 | Cinnabar Island (overworld) | 27 | 129 | PLANNED |
+| 098 | Cinnabar Island (overworld) | 27 | 129 | READY |
 | 130 | Pokemon Center | 10 | 70 | PLANNED |
 | 188 | PokeMart | 24 | 54 | PLANNED |
-| 221 | Cinnabar Island Gym | 23 | 333 | SPECIAL_LOGIC |
+| 221 | Cinnabar Island Gym | 23 | 333 | READY |
 | 125 | Cinnabar Island (house) | 2 | 18 | PLANNED |
 | 189 | Cinnabar Island (house) | 6 | 27 | PLANNED |
 | 190 | Cinnabar Island (house) | 1 | 15 | PLANNED |
@@ -594,9 +599,9 @@
 | 219 | Cinnabar Island (house) | 2 | 5 | PLANNED |
 | 135 | Cinnabar Hotel | 5 | 31 | PLANNED |
 | 136 | Cinnabar Hotel (rooms) | 4 | 109 | PLANNED |
-| 206 | Cinnabar Lab (lobby) | 6 | 37 | PLANNED |
+| 206 | Cinnabar Lab (lobby) | 6 | 37 | READY |
 | 208 | Cinnabar Lab (research) | 5 | 197 | PLANNED |
-| 209 | Cinnabar Lab (genetics) | 7 | 81 | PLANNED |
+| 209 | Cinnabar Lab (genetics) | 7 | 81 | READY |
 | 703 | Cinnabar Lab (restricted) | 10 | 162 | PLANNED |
 | 721 | Cinnabar Lab (archive) | 5 | 110 | PLANNED |
 | 616 | Cinnabar Island Harbor | 14 | 70 | NOT_STARTED |
@@ -606,10 +611,10 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 173 | Pokemon Mansion (1F) | 25 | 72 | PLANNED |
+| 173 | Pokemon Mansion (1F) | 25 | 72 | READY |
 | 174 | Pokemon Mansion (2F) | 15 | 38 | PLANNED |
 | 181 | Pokemon Mansion (3F) | 13 | 46 | PLANNED |
-| 187 | Pokemon Mansion (basement) | 30 | 88 | PLANNED |
+| 187 | Pokemon Mansion (basement) | 30 | 88 | READY |
 
 ### Seafoam Islands
 
@@ -832,19 +837,19 @@ Maps: 033, 067-071, 073, 094, 100, 118, 129, 131, 134, 139, 150, 157, 160,
 | 2b | Vermilion + Route 6 | 25 | 0 | 3 | 14 | 4 | 0 | 4 |
 | 2c | SS Anne | 11 | 0 | 1 | 0 | 0 | 8 | 2 |
 | 2d | Rt 9/10, Rock Tunnel | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
-| 2e | Lavender + Pkmn Tower | 19 | 0 | 0 | 0 | 11 | 7 | 1 |
+| 2e | Lavender + Pkmn Tower | 19 | 0 | 5 | 0 | 6 | 7 | 1 |
 | 2f | Route 8 + Underground | 4 | 0 | 0 | 0 | 3 | 0 | 1 |
-| 2g | Celadon + Rts 7/16-18 | 62 | 0 | 0 | 0 | 60 | 0 | 2 |
-| 3 | Saffron + Silph Co | 51 | 1 | 0 | 33 | 2 | 12 | 3 |
-| 4a | Fuchsia + Safari + Rts 12-15 | 48 | 0 | 0 | 22 | 18 | 0 | 8 |
-| 4b | Cinnabar + Mansion | 40 | 0 | 0 | 27 | 6 | 1 | 6 |
+| 2g | Celadon + Rts 7/16-18 | 62 | 0 | 10 | 0 | 50 | 0 | 2 |
+| 3 | Saffron + Silph Co | 51 | 1 | 3 | 30 | 2 | 12 | 3 |
+| 4a | Fuchsia + Safari + Rts 12-15 | 48 | 0 | 6 | 16 | 18 | 0 | 8 |
+| 4b | Cinnabar + Mansion | 40 | 0 | 6 | 21 | 6 | 0 | 7 |
 | 4c | Viridian Return + Rts 22/23 | 4 | 1 | 0 | 2 | 0 | 1 | 0 |
 | 4d | Victory Road + Indigo | 12 | 1 | 0 | 9 | 0 | 1 | 1 |
 | 5 | Postgame | 14 | 0 | 1 | 0 | 10 | 3 | 0 |
 | -- | Crimson City | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
 | -- | Moon Islands | 6 | 0 | 0 | 0 | 6 | 0 | 0 |
 | -- | Non-Kanto/System/SKIP | ~300 | 0 | 0 | 0 | 0 | 0 | ~300 |
-| **TOTAL** | | **~809** | **17** | **23** | **~130** | **~178** | **~33** | **~330** |
+| **TOTAL** | | **~809** | **17** | **54** | **~100** | **~165** | **~33** | **~330** |
 
 ---
 

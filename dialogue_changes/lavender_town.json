@@ -1,0 +1,1937 @@
+{
+  "_implementation_notes": [
+    "LAVENDER TOWN — Phase 2/3 transition. Maps 50, 418, 416, 419, 420.",
+    "Tone: Mournful, quiet, exhausted. Lavender is where death is real.",
+    "Contrast with rest of Kanto — no progress, no possibility, just loss.",
+    "",
+    "Map 50 (Lavender Town overworld): Town NPCs, town sign, ghost girl,",
+    "darkness event NPCs (switch 701). Morty rematch (switches 918+15).",
+    "Mr. Fuji darkness event (switch 701) preserved mechanically.",
+    "Sabrina darkness event (EV046, switch 709+701) preserved mechanically.",
+    "",
+    "Map 418 (Pokemon House): Mr. Fuji's orphanage. Volunteers, Pokemon,",
+    "bookshelves, Marowak picture, Cresselia quest (switches 805, 810,",
+    "var 282, switches 1029-1030). ALL mechanical events preserved.",
+    "",
+    "Map 416 (Pokemon Center): Nurse Joy (mechanical — preserved),",
+    "egg seller, clown/joke-teller (mechanical — preserved),",
+    "Rocket gossip NPC.",
+    "",
+    "Map 419 (House 1): Stone Maniac (mechanical — preserved),",
+    "TV events, cupboard.",
+    "Map 420 (House 2): Move tutor Ominous Wind (mechanical — preserved),",
+    "TV events, clown reference NPC, cupboard.",
+    "",
+    "Pokemon Tower floors (400-403, 467-469) are SPECIAL_LOGIC — NOT",
+    "included here. They have complex ghost/Rocket event sequences.",
+    "",
+    "FUJI CHOICE: insert_commands after Mr. Fuji rescue (handled in",
+    "Pokemon Tower SPECIAL_LOGIC). Sets Variable 344 (SYNTH_FUJI_CHOICE)",
+    "and Switches 1135-1138 (BAN/FREE/OVERSIGHT/UNSURE).",
+    "Those switches are referenced in Saffron (Ariana) and Cinnabar",
+    "(Blaine mansion). The choice itself is NOT in this file.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "50": {
+      "name": "Lavender Town",
+      "events": {
+        "7": {
+          "name": "Town Sign",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Lavender Town: The Noble Town"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Lavender Town: The Noble Town"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Lavender Town: The Noble Town"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Lavender Town: The Noble Town"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 (Ghost Girl)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Do you believe in ghosts?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Most people here do. It's hard",
+                    "not to, living this close to",
+                    "the Tower."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "You will."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "That white hand on your",
+                    "shoulder... It's not real."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The darkness. It's because of",
+                    "the ghosts. They've always been",
+                    "here — now everyone else can",
+                    "feel them too."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030 (Mourner NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ghosts appeared in the Tower.",
+                    "Real ones. Not the Gastly kind."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I think they're the spirits of",
+                    "Pok\u00e9mon that Team Rocket killed.",
+                    "Killed for parts. For skulls.",
+                    "For their fusion research."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031 (Townsfolk — Historian)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This town has always been the",
+                    "grave site of Pok\u00e9mon. Long",
+                    "before fusion. Long before",
+                    "the League."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Memorial services are held in",
+                    "the Tower. Or they were, before",
+                    "the Rockets came."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032 (Suspicious NPC — Skull Trader)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Cubones wear skulls, right?",
+                    "People will pay a lot for one.",
+                    "...Not me, though. I'm just",
+                    "saying. People."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033 (Townsfolk — Philosopher)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Are Ghost-type Pok\u00e9mon the",
+                    "actual spirits of the dead?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Or just creatures that happen",
+                    "to look like what we fear?",
+                    "Fusion makes it harder to tell.",
+                    "The lines keep blurring."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "EV034 (Darkness NPC — Elder)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Have I gone blind? My old eyes",
+                    "cannot see anything."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037 (Darkness NPC)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What in the world is happening?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038 (Darkness NPC)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can't see a thing! What is",
+                    "going on!?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "EV039 (Darkness NPC)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Never in my life have I seen",
+                    "anything like this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "40": {
+          "name": "EV040 (Mr. Fuji — Darkness Event)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina went to Saffron's",
+                    "western edge to seek answers",
+                    "about this darkness."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "She's a mysterious person. But",
+                    "she cares about her city more",
+                    "than she lets on."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "46": {
+          "name": "EV046 (Sabrina — Darkness Event)",
+          "_comment": "Complex multi-part event. Conditions: switch 709 AND 701. Preserving all mechanical indices for cutscene flow.",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 709,
+                "switch2_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina, have you ever seen",
+                    "anything like this? The dark",
+                    "fell so quickly."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "This is... unlike anything",
+                    "I've sensed before."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Everyone! We must stay composed",
+                    "and seek a solution together!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! You're here!"
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "The situation is dire. All light",
+                    "has vanished from the sky. No",
+                    "one knows why."
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "The darkness has reached all",
+                    "the way to Saffron City. But",
+                    "it stops at the western edge.",
+                    "Mysteriously."
+                  ]
+                },
+                {
+                  "start_index": 67,
+                  "type": "text",
+                  "lines": [
+                    "My grandmother spoke of a city",
+                    "that became shrouded in dark",
+                    "like this when I was little..."
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "In the story, light never",
+                    "returned. I hope that's not",
+                    "what's happening here."
+                  ]
+                },
+                {
+                  "start_index": 73,
+                  "type": "text",
+                  "lines": [
+                    "My grandmother lives next door",
+                    "to the Saffron Gym. You might",
+                    "want to speak with her."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading back west of",
+                    "Saffron, where the darkness",
+                    "stops. It's our only lead."
+                  ]
+                },
+                {
+                  "start_index": 82,
+                  "type": "text",
+                  "lines": [
+                    "Please join me there as soon",
+                    "as you can."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "51": {
+          "name": "EV051 (Darkness NPC)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is unreal. I must be",
+                    "dreaming..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "52": {
+          "name": "EV052 (Darkness NPC)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 701},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "No one is going to believe",
+                    "this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Bell — Soul House Entrance)",
+          "_comment": "Mechanical event. Bell ring + secret entrance. Preserved exactly.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN rang the bell."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "An entrance appeared in the",
+                    "wall!"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Nothing happened!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 (Morty Rematch)",
+          "_comment": "Conditional event: switch 918 (Morty beaten) AND switch 15 (postgame?). Preserved mechanically with light flavor.",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 918,
+                "switch2_id": 15
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh, hello \\PN. It's me, Morty,",
+                    "from Ecruteak."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I come to Lavender Tower to",
+                    "train with Ghost Pok\u00e9mon. The",
+                    "ones here are... different.",
+                    "Heavier, somehow."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I've been thinking. How about",
+                    "a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "You bested me last time, but",
+                    "I've learned from this place."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Let's meet in Vermilion City",
+                    "whenever you're ready."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "418": {
+      "name": "Pok\u00e9mon House",
+      "events": {
+        "4": {
+          "name": "EV004 (Volunteer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Looking for Mr. Fuji? He's",
+                    "probably at the Tower. That's",
+                    "where he goes when the grief",
+                    "gets too heavy to carry alone."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "He'll be back. He always comes",
+                    "back. These Pok\u00e9mon need him."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Growlithe)",
+          "_comment": "Pokemon cry. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Guuu gaaaruuu!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (Nidoran)",
+          "_comment": "Pokemon cry. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Skweeee! Skweeee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Psyduck)",
+          "_comment": "Pokemon cry. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Rwaah Waah!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Meowth)",
+          "_comment": "Pokemon cry. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Meeeow!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Volunteer — Fuji Info)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is Mr. Fuji's house,",
+                    "really. He gave it over to",
+                    "the orphans. Sleeps in a cot",
+                    "in the corner."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "He takes in every abandoned",
+                    "Pok\u00e9mon. Orphaned. Rejected.",
+                    "The ones nobody wants anymore",
+                    "after a failed fusion."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 805},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A floating feather? I don't",
+                    "see anything."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 282,
+                "variable_value": 5
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The orphaned Pok\u00e9mon have been",
+                    "having nightmares every night.",
+                    "They wake up crying. We don't",
+                    "know what to do."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {"switch1_id": 1029},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The nightmares are getting",
+                    "worse. Some of them won't eat",
+                    "anymore."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {"switch1_id": 1030},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The nightmares stopped! All",
+                    "at once, like a fever breaking.",
+                    "They're sleeping through the",
+                    "night again."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Bookshelf)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "books about Pok\u00e9mon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Bookshelf)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "books about Pok\u00e9mon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 (Bookshelf)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "books about Pok\u00e9mon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (Bookshelf)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "books about Pok\u00e9mon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 (Marowak Picture)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A picture of a Marowak mother",
+                    "and a young Cubone. Someone",
+                    "has placed fresh flowers",
+                    "beneath it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 (Sad Plant)",
+          "_comment": "Environmental. Light flavor.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "This plant looks like it hasn't",
+                    "been watered in days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 (Locked Door — Left)",
+          "_comment": "Mechanical. Bedroom Key event. Preserved exactly.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\PN inserted the",
+                    "\\C[1]Bedroom Key\\C[0]."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The door unlocked!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 (Empty Cabinet)",
+          "_comment": "Environmental. Preserved with flavor.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing there.",
+                    "What did you expect?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 (Cresselia Quest — Bed)",
+          "_comment": "Cresselia quest. Mechanical. Switches 805, 810, var 282. Preserved exactly.",
+          "pages": {
+            "1": {
+              "conditions": {"switch1_id": 805},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A voice echoed from",
+                    "somewhere..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Find the Lunar Feathers",
+                    "for me..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]They will come at night",
+                    "to tell you where to look..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 282,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "A voice echoed from",
+                    "somewhere..."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]You have done my bidding",
+                    "well. Lie in the bed and bring",
+                    "me the feathers..."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {"switch1_id": 810},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN lay down on the bed as",
+                    "if bidden there..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 (Cresselia Quest — Initial)",
+          "_comment": "Cresselia quest trigger. Switch 805. Preserved exactly.",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 805},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A voice echoed from",
+                    "somewhere..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]You, who can see me..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]I am hiding here because",
+                    "I am invisible to those who",
+                    "are weak."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Find the Lunar Feathers",
+                    "for me..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]They will come at night",
+                    "to tell you where to look..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 (Locked Door — Right)",
+          "_comment": "Mechanical. Bedroom Key event. Preserved exactly.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\PN inserted the",
+                    "\\C[1]Bedroom Key\\C[0]."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The door unlocked!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "416": {
+      "name": "Pok\u00e9mon Center",
+      "events": {
+        "4": {
+          "name": "Nurse Joy",
+          "_comment": "Mechanical. Nurse healing event. Preserved exactly.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\rHello, and welcome to the",
+                    "Pok\u00e9mon Center."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe restore your tired",
+                    "Pok\u00e9mon to full health."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\rWould you like to rest",
+                    "your Pok\u00e9mon?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\rOK, I'll take your Pok\u00e9mon",
+                    "for a few seconds."
+                  ]
+                },
+                {
+                  "start_index": 114,
+                  "type": "text",
+                  "lines": [
+                    "\\rYour Pok\u00e9mon may be",
+                    "infected by Pok\u00e9Rus."
+                  ]
+                },
+                {
+                  "start_index": 116,
+                  "type": "text",
+                  "lines": [
+                    "\\rLittle is known about the",
+                    "Pok\u00e9Rus except that they are",
+                    "microscopic life-forms that",
+                    "attach to Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 119,
+                  "type": "text",
+                  "lines": [
+                    "\\rWhile infected, Pok\u00e9mon are",
+                    "said to grow exceptionally",
+                    "well."
+                  ]
+                },
+                {
+                  "start_index": 125,
+                  "type": "text",
+                  "lines": [
+                    "\\rThank you for waiting."
+                  ]
+                },
+                {
+                  "start_index": 127,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe've restored your Pok\u00e9mon",
+                    "to full health."
+                  ]
+                },
+                {
+                  "start_index": 129,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe hope to see you again!"
+                  ]
+                },
+                {
+                  "start_index": 135,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe hope to see you again!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (Egg Seller)",
+          "_comment": "Mechanical. Egg purchase event ($5000). Preserved with flavor.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I found this strange blue egg",
+                    "on a trip to Hoenn. Nobody in",
+                    "this town wanted it. Too close",
+                    "to the Tower, I guess."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\GI'll let it go for $5,000.",
+                    "Interested?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\GReceived a Pok\u00e9mon Egg!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "\\GPN paid $5,000"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "You don't have room in your",
+                    "party for the egg."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "You don't have enough money.",
+                    "Nice try, though."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Your loss. Thing gives me the",
+                    "creeps just sitting here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "An old lady near some hot",
+                    "springs gave me that egg. No",
+                    "idea what's inside. Take good",
+                    "care of it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Clown — Joke Teller)",
+          "_comment": "Mechanical. Complex joke rotation + tip system. All choice/tip mechanics preserved exactly. Only intro/outro lines and the 'no joke' response flavored.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'm a clown! I tell jokes for",
+                    "a living. Not much demand here,",
+                    "but someone has to try."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Want to hear a joke?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "What did one Exeggcute say",
+                    "when the other asked how he",
+                    "was doing?"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I feel eggcellent!"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "What do Scyther's swords give",
+                    "it in a competition?"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "The cutting edge!"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Why did Wailmer cross the",
+                    "road?"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "To get to the other tide!"
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "When do you take your Pok\u00e9mon",
+                    "to the doctor?"
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "When it's Koffing!"
+                  ]
+                },
+                {
+                  "start_index": 49,
+                  "type": "text",
+                  "lines": [
+                    "What does Joe have at the end",
+                    "of his feet?"
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Johtoes!"
+                  ]
+                },
+                {
+                  "start_index": 58,
+                  "type": "text",
+                  "lines": [
+                    "Which Pok\u00e9mon came from a",
+                    "different planet?"
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "Venus-saur!"
+                  ]
+                },
+                {
+                  "start_index": 67,
+                  "type": "text",
+                  "lines": [
+                    "What sort of ice cream do they",
+                    "eat in the Sinnoh region?"
+                  ]
+                },
+                {
+                  "start_index": 71,
+                  "type": "text",
+                  "lines": [
+                    "Coronettos!"
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "text",
+                  "lines": [
+                    "What do you call a Tentacool",
+                    "on a Charmander's back?"
+                  ]
+                },
+                {
+                  "start_index": 80,
+                  "type": "text",
+                  "lines": [
+                    "Fried Calamari!"
+                  ]
+                },
+                {
+                  "start_index": 85,
+                  "type": "text",
+                  "lines": [
+                    "What's Pikachu's favourite",
+                    "treat?"
+                  ]
+                },
+                {
+                  "start_index": 89,
+                  "type": "text",
+                  "lines": [
+                    "Shock-chip cookies!"
+                  ]
+                },
+                {
+                  "start_index": 94,
+                  "type": "text",
+                  "lines": [
+                    "What do you get when you fuse",
+                    "a Pikachu with a Haunter?"
+                  ]
+                },
+                {
+                  "start_index": 98,
+                  "type": "text",
+                  "lines": [
+                    "Pikaboo!"
+                  ]
+                },
+                {
+                  "start_index": 104,
+                  "type": "text",
+                  "lines": [
+                    "So, did you like it?"
+                  ]
+                },
+                {
+                  "start_index": 106,
+                  "type": "text",
+                  "lines": [
+                    "You can leave a tip if you",
+                    "want..."
+                  ]
+                },
+                {
+                  "start_index": 107,
+                  "type": "choices",
+                  "choices": [
+                    "Leave tip",
+                    "No tip"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 116,
+                  "type": "text",
+                  "lines": [
+                    "That's no problem!"
+                  ]
+                },
+                {
+                  "start_index": 127,
+                  "type": "text",
+                  "lines": [
+                    "Thank you!"
+                  ]
+                },
+                {
+                  "start_index": 131,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you want to",
+                    "hear another joke!"
+                  ]
+                },
+                {
+                  "start_index": 135,
+                  "type": "text",
+                  "lines": [
+                    "Oh my, you don't have enough",
+                    "money."
+                  ]
+                },
+                {
+                  "start_index": 137,
+                  "type": "text",
+                  "lines": [
+                    "Keep that money. You need it",
+                    "more than I do!"
+                  ]
+                },
+                {
+                  "start_index": 144,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you want to",
+                    "hear another joke!"
+                  ]
+                },
+                {
+                  "start_index": 150,
+                  "type": "text",
+                  "lines": [
+                    "People find the Tower a bit",
+                    "depressing, so I tell jokes",
+                    "to lighten the mood. Someone",
+                    "has to, right?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (Rocket Gossip NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket will do anything",
+                    "for gold. Even desecrate a",
+                    "graveyard. Even steal the skull",
+                    "off a grieving Cubone."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "419": {
+      "name": "Lavender Town — House 1 (Stone Maniac)",
+      "events": {
+        "4": {
+          "name": "EV004 (Stone Maniac)",
+          "_comment": "Mechanical. Day/night stone gift rotation. All item/timing logic preserved. Only wrapper dialogue flavored.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Call me the Stone Maniac. In a",
+                    "town full of graves, I collect",
+                    "rocks. Take this one."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Come back at night. I'll have",
+                    "a different stone for you."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Come back at night. I'll have",
+                    "a different stone for you."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Call me the Stone Maniac. In a",
+                    "town full of graves, I collect",
+                    "rocks. Take this one."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Come back during the day.",
+                    "I'll have a different stone."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Come back at night. I'll have",
+                    "a different stone for you."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "C"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Day and night. The cycle has",
+                    "a profound impact on all of",
+                    "us. Pok\u00e9mon and people alike."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "It regulates the very essence",
+                    "of life. Even here, where",
+                    "death is all anyone talks",
+                    "about."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (TV)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's a cooking show on TV."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It looks delicious!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (TV — duplicate)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's a cooking show on TV."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It looks delicious!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Cupboard)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nope, there's nothing there."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "420": {
+      "name": "Lavender Town — House 2 (Move Tutor)",
+      "events": {
+        "4": {
+          "name": "EV004 (Move Tutor — Ominous Wind)",
+          "_comment": "Mechanical. Move tutor purchase event. Price variable \\V[15]. All purchase/decline/insufficient funds logic preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Tower looming over us...",
+                    "some find it eerie. I found it",
+                    "inspiring. I created a move",
+                    "called Ominous Wind."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You live long enough in this",
+                    "town, the wind starts to feel",
+                    "like something watching you."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\GI'll teach it to your",
+                    "Pok\u00e9mon for $\\V[15]."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "There you go. Come back if you",
+                    "want me to teach it to another",
+                    "Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Too bad. Come back with",
+                    "$\\V[15] if you change your",
+                    "mind."
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "Not enough money. Come back",
+                    "with $\\V[15] if you want me",
+                    "to teach it."
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "Too bad. Come back with",
+                    "$\\V[15] if you change your",
+                    "mind."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (TV)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's a cooking show on TV."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It looks delicious!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (TV — duplicate)",
+          "_comment": "Environmental. Preserved.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's a cooking show on TV."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It looks delicious!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Clown Reference NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Have you talked to the clown",
+                    "at the Pok\u00e9mon Center? I tipped",
+                    "him out of pity. His jokes are",
+                    "terrible."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "But honestly? This town could",
+                    "use a little terrible humor.",
+                    "Better than the silence."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Cupboard)",
+          "_comment": "Environmental. Only has self_switch A page.",
+          "pages": {
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nope, there's nothing there."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
