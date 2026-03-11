@@ -22,9 +22,13 @@
     "    - No structural changes",
     "",
     "  Event 10 (Blue post-battle):",
-    "    - Rewrite Blue's dialogue with Synthesis tone",
-    "    - Blue's lines are path-neutral (both paths: he talks about",
-    "      moving forward). Path-specific reactions happen later.",
+    "    - replace_commands 4-20: replaces all dialogue with",
+    "      conditional branch on Switch 1131 (path fork)",
+    "    - Giovanni Path (1131 ON): Blue fought Giovanni, asks",
+    "      about the Master Ball, questions whether it was right",
+    "    - Oak Path (1131 OFF): Blue grabbed the Master Ball,",
+    "      you beat Giovanni, Blue reflects on bigger picture",
+    "    - Both paths: League/Saffron Gym/surf advice + farewell",
     "",
     "PRESERVED: All movement routes, partner removal, switch logic",
     "(222/228/628/629/630/191). Screen fade and SE replaced with",
@@ -236,7 +240,7 @@
                     {"code": 401, "indent": 1, "parameters": ["prototype room."]},
 
                     {"code": 355, "indent": 1, "parameters": ["$PokemonGlobal.nextBattleBGM=\"Rocket Boss Giovanni\""]},
-                    {"code": 111, "indent": 1, "parameters": [12, "pbTrainerBattle(PBTrainers::ROCKETEXEC_M,\"Archer\",_I(\"You shouldn't have come here.\"),true,0,false)"]},
+                    {"code": 111, "indent": 1, "parameters": [12, "pbTrainerBattle(PBTrainers::ROCKETEXEC_Archer,\"Archer\",_I(\"You shouldn't have come here.\"),true,1,false)"]},
 
                     {"code": 355, "indent": 2, "parameters": ["pbCallBub(2,@event_id)"]},
                     {"code": 101, "indent": 2, "parameters": ["Giovanni was right about"]},
@@ -284,55 +288,87 @@
               "conditions": { "switch1_id": 228 },
               "dialogue_blocks": [
                 {
-                  "start_index": 5,
-                  "type": "text",
-                  "lines": [
-                    "\\PN! That was something",
-                    "else. Giovanni's gone."
-                  ]
-                },
-                {
-                  "start_index": 7,
-                  "type": "text",
-                  "lines": [
-                    "I've been studying fusions",
-                    "more carefully. Starting to",
-                    "see what really makes them",
-                    "tick."
-                  ]
-                },
-                {
-                  "start_index": 10,
-                  "type": "text",
-                  "lines": [
-                    "I'm heading for the Pokemon",
-                    "League. The Elite Four",
-                    "won't know what hit them."
-                  ]
-                },
-                {
-                  "start_index": 14,
-                  "type": "text",
-                  "lines": [
-                    "You should hit the Saffron",
-                    "Gym next. Sabrina's tough."
-                  ]
-                },
-                {
-                  "start_index": 16,
-                  "type": "text",
-                  "lines": [
-                    "Once you've got her badge,",
-                    "you can surf the coast.",
-                    "Stronger Pokemon that way."
-                  ]
-                },
-                {
-                  "start_index": 19,
-                  "type": "text",
-                  "lines": [
-                    "That's what I'd do. But",
-                    "you do you. Smell ya!"
+                  "_comment": "Replace commands 4-20 (all dialogue) with path-dependent branch on Switch 1131",
+                  "start_index": 4,
+                  "end_index": 20,
+                  "type": "replace_commands",
+                  "commands": [
+                    {"code": 111, "indent": 0, "parameters": [0, 1131]},
+
+                    {"code": 108, "indent": 1, "parameters": ["=== GIOVANNI PATH (Switch 1131 ON) ==="]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["\\PN! Giovanni put up one"]},
+                    {"code": 401, "indent": 1, "parameters": ["hell of a fight. Almost"]},
+                    {"code": 401, "indent": 1, "parameters": ["had me."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["Did you get it? The"]},
+                    {"code": 401, "indent": 1, "parameters": ["Master Ball?"]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["...I don't know if that"]},
+                    {"code": 401, "indent": 1, "parameters": ["was the right call. But"]},
+                    {"code": 401, "indent": 1, "parameters": ["it's done now."]},
+
+                    {"code": 106, "indent": 1, "parameters": [10]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["I'm heading to the League."]},
+                    {"code": 401, "indent": 1, "parameters": ["Someone has to keep the"]},
+                    {"code": 401, "indent": 1, "parameters": ["Elite Four honest."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["Hit Saffron Gym next."]},
+                    {"code": 401, "indent": 1, "parameters": ["Sabrina's tough, but you"]},
+                    {"code": 401, "indent": 1, "parameters": ["can handle it."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["After that, surf south."]},
+                    {"code": 401, "indent": 1, "parameters": ["Stronger Pokemon out on"]},
+                    {"code": 401, "indent": 1, "parameters": ["the coast. Smell ya!"]},
+
+                    {"code": 0, "indent": 1, "parameters": []},
+
+                    {"code": 411, "indent": 0, "parameters": []},
+
+                    {"code": 108, "indent": 1, "parameters": ["=== OAK PATH (Switch 1131 OFF) ==="]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["\\PN! You beat Giovanni."]},
+                    {"code": 401, "indent": 1, "parameters": ["I saw him leave. He"]},
+                    {"code": 401, "indent": 1, "parameters": ["looked... shaken."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["I grabbed the Master Ball"]},
+                    {"code": 401, "indent": 1, "parameters": ["prototype. Only three"]},
+                    {"code": 401, "indent": 1, "parameters": ["were made. The chairman"]},
+                    {"code": 401, "indent": 1, "parameters": ["says it's safer with us."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["Fusions, Master Balls,"]},
+                    {"code": 401, "indent": 1, "parameters": ["Rockets... This is bigger"]},
+                    {"code": 401, "indent": 1, "parameters": ["than gym badges, \\PN."]},
+
+                    {"code": 106, "indent": 1, "parameters": [10]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["I'm heading to the League."]},
+                    {"code": 401, "indent": 1, "parameters": ["The Elite Four need to"]},
+                    {"code": 401, "indent": 1, "parameters": ["know what's happening."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["Hit Saffron Gym next."]},
+                    {"code": 401, "indent": 1, "parameters": ["Sabrina won't go easy on"]},
+                    {"code": 401, "indent": 1, "parameters": ["you. Then surf south."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["We'll figure this out,"]},
+                    {"code": 401, "indent": 1, "parameters": ["\\PN. Smell ya later!"]},
+
+                    {"code": 0, "indent": 1, "parameters": []},
+
+                    {"code": 412, "indent": 0, "parameters": []}
                   ]
                 }
               ]
