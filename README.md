@@ -30,10 +30,14 @@ sudo dnf install git @development-tools gcc g++ libstdc++-static cmake meson \
 
 This will:
 1. Clone the Pokemon Infinite Fusion game data
-2. Build mkxp-z (the open-source RGSS player for Linux)
+2. Download mkxp-z (the open-source RGSS player for Linux), or build from source as fallback
 3. Back up original game files
 4. Inject all Synthesis dialogue into the game data
 5. Launch the game
+
+If the automatic mkxp-z download doesn't work, you can also:
+- Download it manually from https://github.com/mkxp-z/mkxp-z/releases and place the binary at `mkxp-z-bin/mkxp-z`
+- Or install Wine (`sudo apt install wine`) as a fallback — the launcher detects it automatically
 
 ### Other Options
 

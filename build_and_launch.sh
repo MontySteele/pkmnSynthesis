@@ -1,11 +1,12 @@
 #!/bin/bash
-# build_and_launch.sh — Clone game data, build mkxp-z, inject dialogue, and launch.
+# build_and_launch.sh — Clone game data, get mkxp-z, inject dialogue, and launch.
 #
 # Usage:
 #   ./build_and_launch.sh              # Full setup + launch
 #   ./build_and_launch.sh --inject     # Re-inject dialogue only (skip clone/build)
 #   ./build_and_launch.sh --launch     # Launch only (skip clone/build/inject)
-#   ./build_and_launch.sh --build-only # Clone + build mkxp-z, don't launch
+#   ./build_and_launch.sh --build-only # Clone + get mkxp-z, don't launch
+#   ./build_and_launch.sh --dry-run    # Preview injection without modifying files
 #
 # Prerequisites (Ubuntu/Debian):
 #   sudo apt install git build-essential cmake meson autoconf automake libtool \
@@ -68,13 +69,75 @@ Install them with:
   fi
 }
 
-build_mkxp() {
-  # Check if we already have a usable binary
-  if find_mkxp_binary; then
-    ok "mkxp-z binary already available: $MKXP_BIN"
-    return
+download_mkxp() {
+  # Try to download a prebuilt mkxp-z release
+  local bin_dir="$PROJECT_DIR/mkxp-z-bin"
+  mkdir -p "$bin_dir"
+
+  info "Attempting to download prebuilt mkxp-z..."
+  local release_url="https://api.github.com/repos/mkxp-z/mkxp-z/releases/latest"
+  local download_url
+
+  if command -v curl &>/dev/null; then
+    download_url=$(curl -s "$release_url" 2>/dev/null \
+      | grep -oP '"browser_download_url":\s*"\K[^"]*linux[^"]*' \
+      | head -1)
+  elif command -v wget &>/dev/null; then
+    download_url=$(wget -qO- "$release_url" 2>/dev/null \
+      | grep -oP '"browser_download_url":\s*"\K[^"]*linux[^"]*' \
+      | head -1)
   fi
 
+  if [ -z "$download_url" ]; then
+    warn "Could not find prebuilt mkxp-z release for Linux."
+    return 1
+  fi
+
+  info "Downloading: $download_url"
+  local archive="$bin_dir/mkxp-z-release.tar.gz"
+  if command -v curl &>/dev/null; then
+    curl -L -o "$archive" "$download_url" 2>/dev/null
+  else
+    wget -O "$archive" "$download_url" 2>/dev/null
+  fi
+
+  if [ ! -f "$archive" ]; then
+    warn "Download failed."
+    return 1
+  fi
+
+  info "Extracting..."
+  tar xzf "$archive" -C "$bin_dir" 2>/dev/null || {
+    # Try .zip if tar fails
+    unzip -o "$archive" -d "$bin_dir" 2>/dev/null || {
+      warn "Could not extract downloaded archive."
+      rm -f "$archive"
+      return 1
+    }
+  }
+  rm -f "$archive"
+
+  # Find the extracted binary
+  local found
+  found=$(find "$bin_dir" -name "mkxp-z*" -type f -executable 2>/dev/null | head -1)
+  if [ -n "$found" ]; then
+    ok "Downloaded mkxp-z: $found"
+    return 0
+  fi
+
+  # Maybe it's not marked executable yet
+  found=$(find "$bin_dir" -name "mkxp-z*" -type f 2>/dev/null | head -1)
+  if [ -n "$found" ]; then
+    chmod +x "$found"
+    ok "Downloaded mkxp-z: $found"
+    return 0
+  fi
+
+  warn "Downloaded archive but no mkxp-z binary found inside."
+  return 1
+}
+
+build_mkxp_from_source() {
   check_build_deps
 
   if [ ! -d "$MKXP_DIR" ]; then
@@ -95,12 +158,49 @@ build_mkxp() {
   ninja install
 
   cd "$PROJECT_DIR"
+}
 
-  if ! find_mkxp_binary; then
-    error "mkxp-z build completed but binary not found. Check $MKXP_DIR for build output."
+build_mkxp() {
+  # Check if we already have a usable binary
+  if find_mkxp_binary; then
+    ok "mkxp-z binary already available: $MKXP_BIN"
+    return
   fi
 
-  ok "mkxp-z built successfully: $MKXP_BIN"
+  # Try downloading a prebuilt binary first
+  if download_mkxp && find_mkxp_binary; then
+    ok "Using downloaded mkxp-z: $MKXP_BIN"
+    return
+  fi
+
+  # Fall back to building from source
+  warn "Prebuilt download failed. Attempting to build from source..."
+  if build_mkxp_from_source && find_mkxp_binary; then
+    ok "mkxp-z built successfully: $MKXP_BIN"
+    return
+  fi
+
+  # Nothing worked — give clear instructions
+  echo ""
+  echo -e "${RED}═══════════════════════════════════════════════${NC}"
+  echo -e "${RED}  Could not obtain mkxp-z${NC}"
+  echo -e "${RED}═══════════════════════════════════════════════${NC}"
+  echo ""
+  echo "mkxp-z is the open-source RGSS player needed to run the game on Linux."
+  echo ""
+  echo "Options:"
+  echo "  1. Download manually from: https://github.com/mkxp-z/mkxp-z/releases"
+  echo "     Place the binary at: $PROJECT_DIR/mkxp-z-bin/mkxp-z"
+  echo "     Then run: ./build_and_launch.sh --launch"
+  echo ""
+  echo "  2. Use Wine instead:"
+  echo "     sudo apt install wine"
+  echo "     ./build_and_launch.sh --launch"
+  echo ""
+  echo "  3. Fix build dependencies and retry:"
+  echo "     ./build_and_launch.sh"
+  echo ""
+  exit 1
 }
 
 find_mkxp_binary() {
