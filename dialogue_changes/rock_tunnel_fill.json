@@ -1,0 +1,1430 @@
+{
+  "_implementation_notes": [
+    "ROCK TUNNEL AREA — Maps 154, 256, 349, 350, 351, 391, 495, 513.",
+    "Tone: Dark, claustrophobic, physically grueling. Trainers are",
+    "lost, stubborn, or half-mad from the dark. Hikers and spelunkers",
+    "who chose to be here; trainers who didn't. Zubat hell. Some mention",
+    "needing Flash. The Power Plant looms nearby — NPCs reference it.",
+    "",
+    "Map 154 (Route 10): Move tutors EV016/EV015/EV011 are MECHANICAL",
+    "— preserved exactly. Trainer flavor lines rewritten. EV008 is a",
+    "postgame NPC (switch 12+14) with unique flavor about the Power Plant.",
+    "",
+    "Map 256 (Gate): Wildlife signs EV001/EV002 rewritten for Synthesis",
+    "tone. EV004 NPC flavor rewritten. EV005 Venonat trade is MECHANICAL",
+    "— trade logic preserved, only intro/outro flavor touched. EV006",
+    "Pokemon cry is MECHANICAL — preserved.",
+    "",
+    "Maps 349/350 (Rock Tunnel floors): Trainer pre-battle taunts and",
+    "post-battle flavor rewritten. Egg gifts, drink trades, Flash trades,",
+    "Pokedex reward, and Jigglyth/Sing trades are MECHANICAL — trade/gift",
+    "logic and choice prompts preserved, only flavor framing touched.",
+    "",
+    "Map 351 (Route 9): EV002 jetpack waterfall quest is MECHANICAL",
+    "— preserved exactly.",
+    "",
+    "Map 391 (Pokemon Center): Nurse Joy is MECHANICAL — preserved.",
+    "NPC flavor lines (EV005, EV007, EV009) rewritten.",
+    "",
+    "Map 495 (Route 9): Trainer pre/post-battle flavor rewritten.",
+    "Trade mechanics (EV005, EV010) are MECHANICAL — trade logic",
+    "preserved, only flavor framing touched.",
+    "",
+    "Map 513 (Rock Tunnel): EV001 item gift is MECHANICAL — preserved.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP."
+  ],
+  "maps": {
+    "154": {
+      "name": "Route 10",
+      "events": {
+        "7": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I keep coming back to Gyms",
+                    "and losing. Every time.",
+                    "Maybe the problem is me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If I can't beat you, I can't",
+                    "beat a Gym Leader either."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "One more round? I need to",
+                    "know if I'm getting better."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Thank you. I mean it."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Fair enough. I'll train",
+                    "out here a while longer."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Trainer(2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Strategy is overrated.",
+                    "Hit hard. Hit first. Done."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fine. You hit harder.",
+                    "I respect that."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Let's have another battle!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Whatever. I'll be here",
+                    "punching rocks."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 12, "switch2_id": 14 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You know those stones that",
+                    "keep appearing near the",
+                    "Power Plant?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I thought they were eggs at",
+                    "first. Electric-type, maybe.",
+                    "But they're... something else."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Strange magnetic pull. Like",
+                    "the Plant is still running",
+                    "on something we can't see."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Anyway — you look strong.",
+                    "How about a match?"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "The Plant's been abandoned",
+                    "for years, but the air around",
+                    "it still crackles."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "One more round — meet me at",
+                    "the Fighting Arena in",
+                    "Vermilion!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Let's meet up at the",
+                    "Fighting Arena in",
+                    "Vermillion City!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "256": {
+      "name": "Gate",
+      "events": {
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "ROUTE 10 — WILDLIFE ADVISORY",
+                    "Issued by Cerulean Rangers"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Common species: Doduo,",
+                    "Voltorb, Magnemite.",
+                    "Caution near Power Plant",
+                    "perimeter — Electric-types"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "ROCK TUNNEL — WILDLIFE ADVISORY",
+                    "Issued by Cerulean Rangers"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Common species: Ekans,",
+                    "Machop, Zubat, Geodude.",
+                    "Flash recommended. Do NOT",
+                    "disturb nesting Onix."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Did you see that thing on",
+                    "Route 12? Enormous. Just",
+                    "lying across the road.",
+                    "Nobody knows what it is."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "1": {
+              "conditions": { "switch1_id": 302 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Mareep's wool generates a",
+                    "low static charge. Keeps",
+                    "the Zubat away, mostly."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "349": {
+      "name": "Rock Tunnel",
+      "events": {
+        "16": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This tunnel belongs to us.",
+                    "Outsiders pay a toll."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You've got steady hands for",
+                    "a kid. That egg's in good",
+                    "care."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "It's so dark in here...",
+                    "Don't sneak up on me!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Oh good — a trainer.",
+                    "Let's go, I need this."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Much better. The dark",
+                    "dries you out somehow."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Almost out! But you're not",
+                    "leaving without a fight."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I've been down here long",
+                    "enough to learn a few things",
+                    "about what survives."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You handled that well.",
+                    "Not many kids make it",
+                    "through here so clean."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Full team rematch? I'll",
+                    "heal you up first."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "No forfeiting though!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Now THAT was a real battle.",
+                    "Glad I stuck around."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Here — you earned this.",
+                    "Take it."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "I'll be right here when",
+                    "you change your mind."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This tunnel stretches on",
+                    "forever, kid. Hope you're",
+                    "ready."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Tougher than you look.",
+                    "Want another round?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here. Not like",
+                    "I have anywhere else to go."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Long way in. Long way still",
+                    "to go. Hope your team's",
+                    "holding up."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Snorlax on Route 12",
+                    "forced me through here.",
+                    "Could be worse, I guess."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Don't usually come this",
+                    "deep. But here we are."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My little ones held their",
+                    "own! The big ones scare me."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That was fun — want to",
+                    "go again?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here with my",
+                    "little ones if you change",
+                    "your mind."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "350": {
+      "name": "Rock Tunnel",
+      "events": {
+        "11": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "See these twigs on the",
+                    "ground? Trail markers.",
+                    "I've been mapping this place."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Finally, someone to fight!",
+                    "Let's go!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "A Pokedex? Those are League-",
+                    "issued. You must be serious."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Let me see your Pokedex."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll trade you some Dusk",
+                    "Balls if you've catalogued",
+                    "enough species."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Not enough entries yet.",
+                    "Keep catching."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Good work. These Dusk Balls",
+                    "will serve you well in",
+                    "places like this."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Dusk Balls work best in",
+                    "the dark. Perfect for",
+                    "a place like this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I paint Pokemon when I'm",
+                    "home. Down here, I just",
+                    "paint darkness."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Can't paint what you can't",
+                    "see. I need light."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Trade me something that",
+                    "knows Flash? I'll give you",
+                    "my Jigglyth."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I taught it Sketch — a move",
+                    "it can't normally learn.",
+                    "It copies any attack once."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Which Pokemon are you",
+                    "going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "I'll just paint in the",
+                    "dark then."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Take care of Jigglyth.",
+                    "Sketch is a strange move —",
+                    "use it wisely."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "I'll just paint in the",
+                    "dark then."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "C" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Jigglyth I traded you",
+                    "knows Sketch. Copies any",
+                    "move it sees — once."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "It's a move it can't learn",
+                    "normally. Treat it well."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm lost. Completely,",
+                    "hopelessly lost.",
+                    "Want to fight about it?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Still lost. Still have",
+                    "time to kill."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Want to have a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here. Obviously."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Give me your best shot.",
+                    "The acoustics down here",
+                    "are incredible."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I sing down here. 80's",
+                    "pop-rock. The echoes make",
+                    "it sound almost good."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Got a Pokemon that knows",
+                    "Sing? I'll trade you one",
+                    "of mine."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Any singer, level 20 or",
+                    "above. I'm not picky."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Suit yourself. I'll sing",
+                    "solo."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Which of my Pokemon do",
+                    "you want?"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "choices",
+                  "choices": ["Koffchop", "Voltix"]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Take good care of it."
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "Take good care of it."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "Changed your mind? No",
+                    "worries."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Suit yourself. I'll sing",
+                    "solo."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Pokemon you traded me",
+                    "has perfect pitch. We do",
+                    "duets now."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My techniques will leave",
+                    "you reeling. Watch."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rock-types thrive in",
+                    "mountains. Everything else",
+                    "is just passing through."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Another round?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here. The rocks",
+                    "don't mind the company."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "391": {
+      "name": "Pokemon Center",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "People find abandoned eggs",
+                    "in Rock Tunnel sometimes.",
+                    "Rare ones, too."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Somebody told me there's a",
+                    "nest deeper in. Past the",
+                    "second floor."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I used to work at the old",
+                    "Power Plant south of here.",
+                    "Before the shutdown."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Haven't been back since.",
+                    "I hear Electric-types moved",
+                    "in. Lots of them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I tried Rock Tunnel without",
+                    "Flash. Terrible idea.",
+                    "Turned around after ten",
+                    "minutes."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Someone on the route can",
+                    "teach it to your Pokemon.",
+                    "Find them before you go in."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "495": {
+      "name": "Route 9",
+      "events": {
+        "5": {
+          "name": "Trainer(6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Heading through Rock Tunnel",
+                    "to Lavender Town. Heard",
+                    "it's... quiet there."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "C" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Fairy-type you gave",
+                    "me is a terror. It won't",
+                    "listen to anyone."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Every level makes them",
+                    "tougher. That's the only",
+                    "rule that matters."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Check out the Power Plant",
+                    "nearby. Something's still",
+                    "running in there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(1)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Raised my team from eggs.",
+                    "Every morning, before dawn.",
+                    "Don't tell me about effort."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "Trainer(6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Bwahaha! Finally, someone",
+                    "who looks like a challenge!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Guts. I respect that, eh?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Think you can handle",
+                    "a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Here I come!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Fair enough. I'll keep",
+                    "training out here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Go, my bugs! Show them",
+                    "what chitin can do!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Nice-looking team you've",
+                    "got there. Let's see if",
+                    "they can fight."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Hah! A little toughie!",
+                    "I like your nerve."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer(2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You've got Pokemon? Good.",
+                    "I need the practice."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hahahaha! Come on then,",
+                    "let's do this!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "self_switch": "C" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You better be treating my",
+                    "Pokemon right!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

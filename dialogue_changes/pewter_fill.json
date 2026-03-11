@@ -1,0 +1,1259 @@
+{
+  "_implementation_notes": [
+    "PEWTER CITY FILL — Maps 380, 386, 392, 382, 385, 381, 470, 459, 460.",
+    "Covers: overworld, gym, Pokemon Center, PokeMart, museum 2F, museum basement, museum exhibit, hotel, hotel rooms.",
+    "",
+    "Tone: Steady, earnest, institutional. The system works here.",
+    "Phase 1 (Innocence) — people feel safe, mildly proud of their town.",
+    "",
+    "Map 380: Pewter City overworld. Most events are MECHANICAL (Oricorio quest, brick quest, signs, footprint items).",
+    "  Only narratively meaningful NPCs are rethemed: EV049, EV044, EV054, EV053.",
+    "  EV052 (old man/Oricorio quest): MECHANICAL — all quest logic preserved, only intro lines lightly rethemed.",
+    "  EV060 (flute NPC): MECHANICAL — preserved exactly.",
+    "  EV043 (brick NPC): MECHANICAL — preserved exactly.",
+    "  EV051 (Gym sign): sign text preserved.",
+    "  EV057/EV058/EV059/EV055/EV056 (footprint items): 'I wonder who this could belong to' — not modified.",
+    "  EV066 (Repel NPC): MECHANICAL — preserved.",
+    "  Blue signs (EV019/EV020): city name signs — not modified.",
+    "  Oricorio birds: Pokemon flavor — not modified.",
+    "",
+    "Map 386: Pewter Gym. Brock's dialogue rethemed for Synthesis.",
+    "  Trainer(4) EV002 pre-battle: rethemed. Post-battle: rethemed.",
+    "  Trainer(1) EV004: rethemed.",
+    "  EV010 (gym guide): MECHANICAL item give preserved. Dialogue rethemed.",
+    "  Brock (EV003): MAJOR RETHEME. Pre-battle, post-battle, post-badge all rethemed.",
+    "  Battle mechanics (Pokemon selection, badge, TM) PRESERVED EXACTLY.",
+    "",
+    "Map 392: Pokemon Center. Nurse dialogue is MECHANICAL — not modified.",
+    "  NPC dialogue lightly rethemed.",
+    "  EV009 (Tyrogue trade): MECHANICAL — trade preserved, personality rethemed.",
+    "",
+    "Map 382: PokeMart. Mostly shelf descriptions and shop NPCs — MECHANICAL. Light retheme on EV004.",
+    "",
+    "Map 385: Museum 2F. Fossil displays. Kanto fossil descriptions preserved.",
+    "  EV004 (receptionist) and EV005 (visitor) lightly rethemed.",
+    "  EV022 (museum pride NPC) rethemed for Synthesis.",
+    "",
+    "Map 381: Museum basement. Fossil revival lab — CRITICAL MECHANICAL.",
+    "  EV001 (fossil scientist): ALL revival mechanics preserved. Light retheme.",
+    "  EV016 (Metronome tutor): MECHANICAL — preserved.",
+    "  EV009 (amber quest scientist): MECHANICAL quest — preserved.",
+    "  Machine/screen descriptions: lightly rethemed.",
+    "",
+    "Map 470: Museum exhibit room. Science plaques and displays. Rethemed for Synthesis lore.",
+    "",
+    "Map 459: Pewter Hotel. Reception, salon, NPC tips — mostly MECHANICAL.",
+    "Map 460: Pewter Hotel rooms. Quest NPCs — MECHANICAL. Light retheme.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "380": {
+      "name": "Pewter City (overworld)",
+      "events": {
+        "49": {
+          "name": "EV049 (Gym recommendation NPC at x:57,y:29)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you're a Pok\u00e9mon",
+                    "trainer, right?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You should challenge Brock!",
+                    "He runs our Gym."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "He's tough but fair. Every",
+                    "trainer passing through",
+                    "should test themselves",
+                    "against him."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "44": {
+          "name": "EV044 (Hotel tip NPC at x:47,y:24)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Always stop by the hotel",
+                    "when you reach a new city."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Travelers are always looking",
+                    "for trainers to help with",
+                    "odd jobs. Good way to earn",
+                    "a little extra."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "54": {
+          "name": "EV054 (Museum fan NPC at x:29,y:31)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Have you visited the Museum",
+                    "yet?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Those fossils are incredible.",
+                    "The revival lab downstairs",
+                    "is even better."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You really should go! Entry",
+                    "is free and they have rare",
+                    "fossils from every region."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Entry is free and there's a",
+                    "huge collection of rare",
+                    "fossils from around the",
+                    "world!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "53": {
+          "name": "EV053 (Forfeit tip NPC at x:35,y:13)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If a trainer battle goes",
+                    "badly, you can forfeit.",
+                    "No shame in knowing when",
+                    "to retreat."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "386": {
+      "name": "Pewter City Gym",
+      "events": {
+        "2": {
+          "name": "Trainer(4) (Gym trainer at x:7,y:11)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hold it. You want Brock,",
+                    "you go through me first."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rock types don't flinch.",
+                    "Neither does this gym.",
+                    "Good luck with Brock."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 4,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat Brock! That was",
+                    "something else."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The road to Cerulean goes",
+                    "through Mt. Moon. Stay",
+                    "sharp in there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Post-badge reaction at x:7,y:12)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You beat Brock! I've never",
+                    "seen anyone take his Onix",
+                    "down that fast."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "That was incredible!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Brock (Gym Leader at x:9,y:6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I'm Brock. Pewter's Gym",
+                    "Leader."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I believe in steady ground",
+                    "and honest work. My Pok\u00e9mon",
+                    "are all \\V[5]-type. Sturdy.",
+                    "Dependable."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Still want to challenge me?",
+                    "Good."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "You earned this. Here \u2014",
+                    "the Boulder Badge."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "And take this too."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "Rock Tomb. It slows the",
+                    "opponent down. Useful when",
+                    "you need to control the",
+                    "pace of a fight."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "You've got real talent,",
+                    "\\PN. I could see it from",
+                    "the first move."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "The road ahead goes through",
+                    "Mt. Moon. Be careful in",
+                    "there. It's dark, and",
+                    "there've been reports of...",
+                    "well, just be careful."
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you're ready",
+                    "to challenge me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You've got real talent.",
+                    "I could see it from the",
+                    "first move."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Head to Cerulean and test",
+                    "yourself against Misty."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 4,
+                "switch2_id": 205
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You've grown since we last",
+                    "battled. I can tell."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Keep going. The League",
+                    "needs trainers like you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer(1) (Gym trainer at x:15,y:14)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Trying to sneak past?",
+                    "Not in this gym."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Brock taught me that",
+                    "strength isn't about power.",
+                    "It's about being there when",
+                    "people need you."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Your first badge! You",
+                    "should be proud."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Brock doesn't hand those",
+                    "out easily."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(1) (Post-badge at x:14,y:14)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "First badge earned! That's",
+                    "the hardest one, honestly."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "The rest... well, they",
+                    "don't get easier. But",
+                    "you'll be ready."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Gym guide at x:8,y:20) — MECHANICAL",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hey there! I'm the gym",
+                    "guide. I can tell you've",
+                    "got what it takes."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Brock uses \\V[5]-type",
+                    "Pok\u00e9mon. Water and Grass",
+                    "moves will give you an",
+                    "edge."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Take this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hey there! I'm the gym",
+                    "guide. I can tell you've",
+                    "got what it takes."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Brock uses \\V[5]-type",
+                    "Pok\u00e9mon. Water and Grass",
+                    "moves will give you an",
+                    "edge."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You did it! I knew you",
+                    "had it in you."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "392": {
+      "name": "Pok\u00e9mon Center",
+      "events": {
+        "6": {
+          "name": "EV006 (Size comparison NPC at x:16,y:11)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Pewter's bigger than",
+                    "Viridian or Pallet. More",
+                    "infrastructure."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The Pok\u00e9mon Center here",
+                    "stays busy. Good sign of",
+                    "a healthy trainer route."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 (Rattata trainer at x:5,y:11)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Come on, Rattata! With",
+                    "enough training, we can",
+                    "take Brock down!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Trade Center NPC at x:7,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Upstairs is the Pok\u00e9mon",
+                    "Trade Center."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You can get random Pok\u00e9mon",
+                    "from trainers around the",
+                    "world. It's fantastic!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Brock frustrated NPC at x:3,y:9)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've challenged Brock so",
+                    "many times now. His Rock",
+                    "types just don't go down."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I keep having to come back",
+                    "here to heal my Pok\u00e9mon!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Tyrogue trade NPC at x:16,y:7) — MECHANICAL",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "See this Tyrogue? It's a",
+                    "fighter at heart."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll trade it for a Mankey.",
+                    "What do you say?"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Tyrogue's special. It",
+                    "evolves differently based",
+                    "on which Pok\u00e9mon you fuse",
+                    "it with!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Perfect! This Mankey is",
+                    "exactly what I need for",
+                    "Brock's gym!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 245
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This Mankey and I are going",
+                    "to take down Brock. Just",
+                    "you watch!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "382": {
+      "name": "Pok\u00e9Mart",
+      "events": {
+        "4": {
+          "name": "EV004 (Antidote NPC at x:17,y:6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I need an Antidote. My",
+                    "Pok\u00e9mon got poisoned on",
+                    "Route 2. Those Weedle",
+                    "don't mess around."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "385": {
+      "name": "Pewter City Museum (2F)",
+      "events": {
+        "5": {
+          "name": "EV005 (Visitor NPC at x:14,y:6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "These fossils are hundreds",
+                    "of millions of years old.",
+                    "And we can bring them back."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Really puts things into",
+                    "perspective, doesn't it?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 (Museum pride NPC at x:9,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We're very proud of our",
+                    "fossil collection. Some",
+                    "of the rarest specimens",
+                    "in Kanto are here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Receptionist at x:13,y:11)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Pewter City's",
+                    "Museum of Science."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Entry is free! Enjoy our",
+                    "fossil collections. The",
+                    "research lab is downstairs."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "381": {
+      "name": "Pewter City Museum (basement)",
+      "events": {
+        "1": {
+          "name": "EV001 (Fossil revival scientist at x:11,y:6) — CRITICAL MECHANICAL",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This isn't just a museum.",
+                    "We do real research on",
+                    "Pok\u00e9mon fossils here."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "We have a machine that can",
+                    "revive prehistoric Pok\u00e9mon",
+                    "from fossils. Genetic",
+                    "reconstruction \u2014 same",
+                    "principles behind fusion."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Let me know when you want",
+                    "us to revive a fossil."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Machine at x:12,y:9)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A genetic reconstruction",
+                    "device. Better not touch",
+                    "it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Machine at x:12,y:10)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A genetic reconstruction",
+                    "device. Better not touch",
+                    "it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (Research notes at x:19,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Complicated words and",
+                    "numbers. DNA sequencing",
+                    "data, by the look of it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 (Equipment at x:17,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights flash in a steady,",
+                    "rhythmic pattern. The",
+                    "machine is calibrating."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 (Equipment at x:18,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights flash in a steady,",
+                    "rhythmic pattern. The",
+                    "machine is calibrating."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Amber quest scientist at x:19,y:5) — MECHANICAL",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey, do you like Pok\u00e9mon",
+                    "fossils?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Our team found fossilized",
+                    "resin in Viridian Forest",
+                    "that may contain ancient",
+                    "Pok\u00e9mon DNA!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "But the excavation site",
+                    "was taken over by Beedrill.",
+                    "Can't get anywhere near it!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You're a trainer. Could you",
+                    "help clear the Beedrill?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "470": {
+      "name": "Pewter City Museum (exhibit)",
+      "events": {
+        "6": {
+          "name": "EV006 (DNA plaque at x:16,y:9)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Rock-type Pok\u00e9mon DNA",
+                    "remains preserved even",
+                    "after millions of years",
+                    "of fossilization."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "This preservation made",
+                    "genetic cloning possible",
+                    "\u2014 and laid the groundwork",
+                    "for modern fusion science."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (DNA plaque at x:16,y:8)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Rock-type Pok\u00e9mon DNA",
+                    "remains preserved even",
+                    "after millions of years",
+                    "of fossilization."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "This preservation made",
+                    "genetic cloning possible",
+                    "\u2014 and laid the groundwork",
+                    "for modern fusion science."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Relicanth display at x:5,y:3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Relicanth was once thought",
+                    "to be extinct for 100",
+                    "million years."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "It was discovered in Hoenn",
+                    "during deep-sea exploration",
+                    "just a few years ago."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Completely unchanged after",
+                    "100 million years. Nature",
+                    "got it right the first",
+                    "time."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Dragonite ancestor at x:8,y:8)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A fossil of an unknown",
+                    "ancient Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Believed to be a distant",
+                    "ancestor of Dragonite.",
+                    "The resemblance is",
+                    "unmistakable."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "459": {
+      "name": "Pewter Hotel (lobby)",
+      "events": {
+        "9": {
+          "name": "EV009 (Quest tip NPC at x:3,y:9)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "People who've lost things",
+                    "often come to hotels for",
+                    "help from traveling",
+                    "trainers."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Check the top floors.",
+                    "They'll reward you for",
+                    "helping out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Hotel tip NPC at x:8,y:10)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Most major cities in Kanto",
+                    "have hotels like this."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Good for finding odd jobs",
+                    "or just resting and letting",
+                    "time pass."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "460": {
+      "name": "Pewter Hotel (rooms)",
+      "events": {
+        "9": {
+          "name": "EV009 (Bug collector NPC at x:23,y:10) — MECHANICAL",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bug-types are my favorite.",
+                    "I want to be the strongest",
+                    "Bug trainer there is!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Show me a fully-evolved",
+                    "Bug-type and I'll give",
+                    "you something cool!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

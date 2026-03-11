@@ -1,0 +1,1389 @@
+{
+  "_implementation_notes": [
+    "FUCHSIA / SAFARI ZONE FILL — Maps 60, 87, 481, 485-488.",
+    "Phase 2/post-fork: Remote, traditional, Koga's domain.",
+    "",
+    "Map 60 (PokeMart):",
+    "  Preserved: All shelf events (E4-E23 shelves — mechanical",
+    "  'filled with Pokemon goods' text left as-is since these are",
+    "  environmental shelf checks), Deliveryman E3 (gift system,",
+    "  switch 30, password mechanic — fully mechanical),",
+    "  Unova quest E28 (Pokemon show/hairstyle unlock — choices,",
+    "  self_switch gated, system messages with \\C[3]\\PN).",
+    "  Rewritten: E24 (shopper NPC), E25 (Pokemon cry — kept",
+    "  as cry), E27 (gem trivia NPC).",
+    "",
+    "Map 87 (Fuchsia house — massage):",
+    "  Rewritten: E5 (back pain NPC), E4 (Safari Zone comment),",
+    "  E7 (garbage pile).",
+    "  Preserved: E6 (Machoke cry), E8 (Abra cry),",
+    "  E10 (Pokemon cry).",
+    "",
+    "Map 481 (Fuchsia house — Hidden Ability):",
+    "  Preserved: E5 Hidden Ability tutorial/quest (9 blocks —",
+    "  choices, variable references \\V[1], mechanical info about",
+    "  HA spawns — quest-critical), E6 (sleeping Pokemon).",
+    "  Rewritten: E4 (garbage pile).",
+    "",
+    "Map 485 (Safari Area 3):",
+    "  Preserved: E38/E33 Scolipede cries (mechanical encounter",
+    "  events with battle triggers), E19 meteor (self_switch A),",
+    "  E37 CutTree blooming fruit (switch 701/704, choices —",
+    "  mechanical item pickup).",
+    "",
+    "Map 486 (Safari Area 4):",
+    "  Rewritten: E1, E2 (white rock flavor text).",
+    "",
+    "Map 487 (Safari Area 5 exterior):",
+    "  Preserved: All Pokemon cries (E10-E14 Digdig/Tchrtchr/",
+    "  Grrrrh — encounter events with battle triggers).",
+    "",
+    "Map 488 (Safari Area 5 interior):",
+    "  Preserved: All Pokemon cries (E5-E7 Shaaash, E8-E13",
+    "  Chughh, E10 Vraahhbrbrbr — encounter events).",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "60": {
+      "name": "PokeMart (Fuchsia)",
+      "events": {
+        "27": {
+          "name": "EV027 — Gem Trivia NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Did you know? The gems they",
+                    "sell here come from deep in",
+                    "the Safari Zone caves.",
+                    "Pressurized Pokemon remains."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 — Unova Pokemon Quest",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I love to see exotic Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll give you something if",
+                    "you can show me a Pokémon ",
+                    "that's native to the Unova",
+                    "region. What do you say?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Could you show me such a",
+                    "Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Hmm.. That won't do it.",
+                    "I need to see a Pokémon",
+                    "that's native to the Unova",
+                    "region!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "As a token of my",
+                    "appreciation, I'll teach",
+                    "you about some new",
+                    "hairstyles that I came",
+                    "across during my travels!"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Unova outfits collection!"
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Unova hairstyles collection!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "As a token of my",
+                    "appreciation, I'll teach",
+                    "you about some new",
+                    "hairstyles that I came",
+                    "across during my travels!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Unova outfits collection!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Unova hairstyles collection!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I wish to travel the world",
+                    "to see more exotic Pokémon",
+                    "like the one you showed me!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 — Shopper",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Safari Zone stock runs out",
+                    "fast. Better grab Ultra",
+                    "Balls while they last."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 — Pokemon Cry",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hissssss!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Deliveryman — Gift System",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 30
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\bHello. You must be \\PN."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\bI've received a gift for",
+                    "you.\\nHere you go!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\bI haven't received any",
+                    "other gifts for you."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\bWe look forward to your",
+                    "next visit."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Sorry I need the correct",
+                    "password"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021 — Shelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "Pokemon goods!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "87": {
+      "name": "Fuchsia City (House — Massage)",
+      "events": {
+        "5": {
+          "name": "EV005 — Back Pain NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Threw my back out hauling",
+                    "crates at the Safari Zone",
+                    "gate. Been like this a week."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Thank Arceus for this",
+                    "Machoke. Best massages in",
+                    "all of Fuchsia."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Machoke Cry",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Guuuh Guyaaauuuh!!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Garbage Pile",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Old Safari Zone pamphlets",
+                    "and empty Potion bottles.",
+                    "Nothing useful."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Abra — Cry",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hummmmmm... Hummmmmm..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — Safari Zone Comment",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Koga keeps the Safari Zone",
+                    "running as a preserve.",
+                    "Says the wild ones deserve",
+                    "a place that's theirs."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Folks around here grew up",
+                    "catching their partners",
+                    "in that tall grass."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Pokemon Cry",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Grrrarah Ghagrraaaah!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "481": {
+      "name": "Fuchsia City (House — Hidden Ability)",
+      "events": {
+        "5": {
+          "name": "EV005 — HA Tutorial NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Oh.. A Pokémon trainer.",
+                    "Please do try to keep your",
+                    "voice down to not disturb",
+                    "my sleeping Musharna."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Tell me, do you know about",
+                    "Hidden Abilities?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "I would assume no less from",
+                    "a young, accomplished",
+                    "Pokémon trainer such as",
+                    "yourself."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Very rarely, some Pokémon",
+                    "are born with a different ",
+                    "ability from the other",
+                    "members of their species."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "In some cases, this can",
+                    "make them extremely",
+                    "valuable to Pokémon",
+                    "trainers."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Thanks to my trusty",
+                    "Musharna's ability to peek",
+                    "into the Dream World, I am",
+                    "able to locate Pokémon with",
+                    "rare abilities."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Right now, I can detect",
+                    "that some of the Pokémon",
+                    "around \\C[1]<b>\\V[1]</b>\\C[0]",
+                    "might have their hidden",
+                    "ability..."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Hidden ability Pokémon",
+                    "rarely stay in the same",
+                    "spot for long, so you",
+                    "should head there quickly",
+                    "if you want a chance of",
+                    "catching one."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Sleeping Pokemon",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Pokémon is sleeping",
+                    "softly... Better not",
+                    "disturb it!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — Garbage Pile",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Dream incense wrappers and",
+                    "old research notes. Nothing",
+                    "useful in the pile."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "485": {
+      "name": "Safari Zone — Area 3",
+      "events": {
+        "38": {
+          "name": "scolipede1 — Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Creesh!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Creesh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "scolipede2 — Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Creesh!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Creesh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 — Meteor",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It looks like some kind of",
+                    "meteor."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "CutTree — Blooming Fruit",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701,
+                "switch2_id": 704
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "This plant appears to have",
+                    "bloomed."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It's bearing a strange",
+                    "fruit. Pick it?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "486": {
+      "name": "Safari Zone — Area 4",
+      "events": {
+        "1": {
+          "name": "EV001 — White Rock",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A pale stone, worn smooth",
+                    "by weather. It hums faintly",
+                    "in the afternoon heat."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 — White Rock",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Another white rock. The",
+                    "Warden placed these as",
+                    "trail markers years ago."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "487": {
+      "name": "Safari Zone — Area 5 (Exterior)",
+      "events": {
+        "11": {
+          "name": "EV011 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Digdig!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Tchrtchr!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Grrrrh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Digdig!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Tchrtchr!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Grrrrh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Digdig!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Tchrtchr!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Grrrrh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Digdig!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Tchrtchr!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Grrrrh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Digdig!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Tchrtchr!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Grrrrh!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "488": {
+      "name": "Safari Zone — Area 5 (Interior)",
+      "events": {
+        "5": {
+          "name": "EV005 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Shaaash!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Chughh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Shaaash!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Chughh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Shaaash!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Chughh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Chughh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Chughh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Pokemon Encounter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Vraahhbrbrbr!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

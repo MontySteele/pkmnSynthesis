@@ -1,0 +1,2535 @@
+{
+  "_implementation_notes": [
+    "POSTGAME / DREAM SEQUENCE — Maps 140, 144, 197, 198, 398, 399,",
+    "544, 720, 722, 723, 724.",
+    "",
+    "Map 140 (Diglett's Cave): Pokemon cries 'Dih Didididi!' and",
+    "'Dahh Duururu!' are MECHANICAL — preserved. TYPE_EXPERT_GROUND",
+    "post-battle line is flavor — rewritten.",
+    "",
+    "Map 144 (Power Plant exterior): 'Gaagaugh!' and 'Gyaoo!' cries",
+    "plus flee/vanish messages are MECHANICAL — preserved.",
+    "",
+    "Map 197 (Power Plant gate room): Key insertion messages and gate",
+    "open/won't-open are MECHANICAL — preserved. TYPE_EXPERT_ELECTRIC",
+    "post-battle line is flavor — rewritten.",
+    "",
+    "Map 198 (Power Plant interior): ~45 'old machinery' objects get",
+    "atmospheric Synthesis rewrites — varied descriptions of decaying",
+    "industrial equipment in an abandoned plant that still hums with",
+    "residual energy. Gate mechanics (EV096, EV090, EV092-94) are",
+    "MECHANICAL — preserved exactly.",
+    "",
+    "Maps 398/399 (Diglett's Cave entrances): NPC flavor rewritten.",
+    "",
+    "Map 544 (Cerulean Cave WTF): 'Mew!' cry and 'Mewtwo vanished'",
+    "are MECHANICAL plot events — preserved.",
+    "",
+    "Maps 720-724 (Dream Sequence): Tone is surreal, slightly wrong.",
+    "Everything looks familiar but isn't. Objects described as if",
+    "the player is remembering something that never happened.",
+    "Map 720 (Player's Room): Bed, TV, shelves, clothes — all surreal.",
+    "Map 722 (Player's House): TV, kitchen, windows — uncanny.",
+    "Map 723 (Pallet Town): Gym sign, house signs, Pokemon cries",
+    "(MECHANICAL — preserved), Blue encounter (EV037, switch 918).",
+    "Map 724 (Oak's Lab): Pokeballs, machines, books, Oak encounter",
+    "(EV005 — battle mechanics preserved, flavor rewritten),",
+    "re-randomize mechanics MECHANICAL — preserved.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP."
+  ],
+  "maps": {
+    "140": {
+      "name": "Diglett's Cave",
+      "events": {
+        "4": {
+          "name": "TYPE_EXPERT_GROUND",
+          "pages": {
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Beat by my own type.",
+                    "The ground doesn't forget",
+                    "that. Neither will I."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "197": {
+      "name": "Power Plant",
+      "events": {
+        "10": {
+          "name": "TYPE_EXPERT_ELECTRIC",
+          "pages": {
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Outcharged at my own game.",
+                    "This place has a way of",
+                    "humbling people."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "198": {
+      "name": "Power Plant",
+      "events": {
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A rusted turbine housing.",
+                    "The bearings seized decades",
+                    "ago."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Something inside still",
+                    "vibrates faintly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A control panel. Every",
+                    "gauge reads zero."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The needles twitch when",
+                    "you step closer."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A bank of transformers.",
+                    "Scorch marks on the casing."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The air smells like ozone."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A generator coil, half",
+                    "unwound. Copper wire",
+                    "everywhere."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Your hair stands on end",
+                    "near it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An exhaust manifold. The",
+                    "vents are clogged with",
+                    "Voltorb nests."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Better not disturb them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A fuse box. Every fuse",
+                    "is blown."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Except one. It glows",
+                    "faintly blue."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A conduit pipe. The metal",
+                    "is warm to the touch."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Something is still flowing",
+                    "through it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A pressure vessel. The",
+                    "welds have cracked."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A low hum comes from",
+                    "somewhere inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A circuit breaker panel.",
+                    "All switches thrown to OFF."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "One flickers back to ON",
+                    "as you watch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A voltage regulator.",
+                    "Corroded beyond repair."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sparks jump between the",
+                    "contacts anyway."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An industrial pump. The",
+                    "impeller is frozen solid."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Coolant has pooled beneath",
+                    "it, still faintly green."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A relay switch assembly.",
+                    "The contacts are fused",
+                    "together."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Something arced here. Hard."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cable tray. The wiring",
+                    "has been chewed through."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Magnemite teeth marks."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A reactor housing. Thick",
+                    "lead shielding, cracked."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Geiger counter in your",
+                    "bag clicks softly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cooling tower intake.",
+                    "Completely dry."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Electrode shells litter",
+                    "the basin."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A steam valve. Seized shut."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Condensation drips from",
+                    "the pipe above."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A motor housing. The rotor",
+                    "spins freely — too freely."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Nothing should be moving",
+                    "in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A distribution board.",
+                    "Someone removed all the",
+                    "breakers."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The bus bars still carry",
+                    "a charge."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "EV034",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A capacitor bank. Bulging",
+                    "and discolored."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "These could still hold a",
+                    "lethal charge."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "EV035",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A junction box. Wires",
+                    "spill out like entrails."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Some are still live."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "EV036",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A compressor unit. The",
+                    "housing has buckled inward."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Whatever hit it came from",
+                    "inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An electrical panel. The",
+                    "door hangs open."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Claw marks on the inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A hydraulic press. The",
+                    "cylinder is bent."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oil has pooled around the",
+                    "base in a dark mirror."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "EV039",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A bank of meters. Most",
+                    "are shattered."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The one intact meter reads",
+                    "a number that climbs."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "40": {
+          "name": "EV040",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A switchgear cabinet.",
+                    "The lock has been melted."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Magnemite built a nest",
+                    "inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "41": {
+          "name": "EV041",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A control desk. Coffee mug",
+                    "still on the surface."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The coffee evaporated long",
+                    "ago. The ring remains."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "42": {
+          "name": "EV042",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An inverter stack. Bolts",
+                    "sheared clean off."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The force required to do",
+                    "this is unsettling."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "43": {
+          "name": "EV043",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A power converter. The",
+                    "casing has warped from heat."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It's still warm. After",
+                    "all these years."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "44": {
+          "name": "EV044",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cathode assembly.",
+                    "Blackened with discharge."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The smell of burning",
+                    "lingers."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "45": {
+          "name": "EV045",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A turbine blade. Snapped",
+                    "off at the root."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The fracture surface is",
+                    "perfectly smooth."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "46": {
+          "name": "EV046",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A winding drum. Copper",
+                    "wire coiled tight."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The wire hums a single",
+                    "low note."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "47": {
+          "name": "EV047",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A ventilation shaft.",
+                    "Something moved inside."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Or maybe it was just",
+                    "the draft."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "48": {
+          "name": "EV048",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An instrument cluster.",
+                    "Dials fogged with moisture."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "One dial is clear. It",
+                    "reads 'DANGER.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "49": {
+          "name": "EV049",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A grounding rod. Pulled",
+                    "halfway from the floor."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Without this, the whole",
+                    "section is ungrounded."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "50": {
+          "name": "EV050",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A bushing insulator.",
+                    "Cracked down the center."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Porcelain dust on the",
+                    "floor beneath it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "51": {
+          "name": "EV051",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A flywheel housing. The",
+                    "flywheel is missing."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The mounting bolts were",
+                    "torn out, not unscrewed."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "52": {
+          "name": "EV052",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An ammeter. The needle",
+                    "is pinned to maximum."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It's been that way since",
+                    "the shutdown."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "53": {
+          "name": "EV053",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A transformer. The oil",
+                    "has leaked out completely."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The core still magnetizes",
+                    "anything you set near it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "54": {
+          "name": "EV054",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A filter assembly.",
+                    "Completely clogged."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Whatever it was filtering",
+                    "is long gone."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "55": {
+          "name": "EV055",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A heat exchanger. Tubes",
+                    "corroded to paper-thin."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "One touch would collapse",
+                    "the whole assembly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "56": {
+          "name": "EV056",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A dynamo. The armature is",
+                    "locked in place by rust."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Magneton hover near it,",
+                    "drawn to the residual field."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "57": {
+          "name": "EV057",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A throttle assembly.",
+                    "Stuck wide open."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Whatever was running at",
+                    "full power never stopped."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "58": {
+          "name": "EV058",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A bank of batteries. Most",
+                    "have ruptured."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Acid has eaten through",
+                    "the shelf beneath."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "59": {
+          "name": "EV059",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A pneumatic actuator.",
+                    "The piston is fully",
+                    "extended."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "No air pressure remains.",
+                    "It shouldn't be like this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "60": {
+          "name": "EV060",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A rheostat. The contact",
+                    "arm has welded itself to",
+                    "the coil."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Permanently set to maximum",
+                    "resistance."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "61": {
+          "name": "EV061",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A solenoid valve. Jammed",
+                    "open."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rust has formed a permanent",
+                    "seal around the plunger."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "62": {
+          "name": "EV062",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A load cell. The strain",
+                    "gauge is peeled back."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Whatever this was measuring",
+                    "exceeded its limits."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "63": {
+          "name": "EV063",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A servo motor. Twitches",
+                    "every few seconds."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Still receiving a signal",
+                    "from somewhere."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "64": {
+          "name": "EV064",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An insulation panel.",
+                    "Asbestos warning labels."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Don't breathe."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "65": {
+          "name": "EV065",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A coolant reservoir. The",
+                    "liquid has turned black."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It bubbles occasionally.",
+                    "Nothing is heating it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "66": {
+          "name": "EV066",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A terminal block.",
+                    "Scorched connections."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The wires lead deeper into",
+                    "the plant. Into the dark."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "67": {
+          "name": "EV067",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An emergency shutoff.",
+                    "The handle is missing."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Someone didn't want this",
+                    "to be stopped."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "398": {
+      "name": "Diglett's Cave",
+      "events": {
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ever wonder what Diglett",
+                    "looks like underground?",
+                    "The full body, I mean."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I've seen it. I'm not",
+                    "telling."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This tunnel cuts right",
+                    "under the mountains.",
+                    "Saves days of travel."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I used it to pick up a",
+                    "fossil from the museum",
+                    "in Pewter. Convenient."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "399": {
+      "name": "Diglett's Cave",
+      "events": {
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You came through the whole",
+                    "tunnel? With all those",
+                    "Diglett?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Bet you found some",
+                    "interesting Pokemon in",
+                    "there."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "720": {
+      "name": "\\PN's Room?",
+      "events": {
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A TV. It shows a room that",
+                    "looks like this one. But",
+                    "no one is in it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Is this a bed? It looks",
+                    "like yours. It feels like",
+                    "remembering."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The TV is showing Oak at",
+                    "a podium. His mouth moves",
+                    "but there's no sound."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The TV says Oak is giving",
+                    "a speech at the Pallet",
+                    "Town Gym. You should go."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your favorite clothes.",
+                    "You can't remember wearing",
+                    "any of them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Is this a bed? The sheets",
+                    "are too smooth. Like no",
+                    "one has ever slept here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Is this a bed? It's the",
+                    "right shape but the wrong",
+                    "temperature."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Clothes you've never seen",
+                    "before. They smell like",
+                    "home."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Books you've read before.",
+                    "Or will read. The order",
+                    "isn't clear."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The spines are blank. But",
+                    "you know what's in each",
+                    "one."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "722": {
+      "name": "\\PN's House?",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A reporter is telling a",
+                    "story about you. A story",
+                    "that hasn't happened yet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The reporter mentions a",
+                    "name you don't recognize.",
+                    "It sounds like yours."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A breeze from outside.",
+                    "But the window is closed."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The curtains move as if",
+                    "something just passed by",
+                    "outside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The sink runs cold, then",
+                    "hot, then nothing. The",
+                    "faucet isn't connected."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The fridge is full of eggs.",
+                    "Pokemon eggs. All warm.",
+                    "None of them will hatch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Something is cooking. The",
+                    "smell is exactly right.",
+                    "No one is in the kitchen."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "723": {
+      "name": "Pallet Town?",
+      "events": {
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Pallet Town Gym",
+                    "Leader: Professor Oak"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Home"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "\\V[84]'s House"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 918 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! I thought you'd",
+                    "show up here eventually."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "I'm the Viridian Gym Leader",
+                    "now. Figured someone should",
+                    "actually run the place."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Oak was right about one",
+                    "thing — there's more to",
+                    "being a trainer than",
+                    "winning."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "What about you? I hear",
+                    "you're the Champion now.",
+                    "Heavy title."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Come by the Gym sometime.",
+                    "Not to fight — just to",
+                    "talk. Like we used to."
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later, champ."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "724": {
+      "name": "Oak's Lab?",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. I've been waiting",
+                    "for you. I always have",
+                    "been."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Three Pokemon are on the",
+                    "table. Choose one. This is",
+                    "how it always begins."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "variable_id": 234, "variable_value": 3 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You couldn't choose. I",
+                    "understand. Neither could I,",
+                    "once."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Then I have no choice but",
+                    "to challenge you myself."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Pick your strongest.",
+                    "This is the last lesson."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Dreams are just wishes.",
+                    "And a wish is just a",
+                    "thought that knows it",
+                    "can't come true."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Farewell, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 81,
+                  "type": "text",
+                  "lines": [
+                    "Not ready yet. That's",
+                    "alright. Neither was I."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Ball2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokeball. It hums",
+                    "with recognition."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 605 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Not this one."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Not this one either."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Especially not this one."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Ball3",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokeball. It feels like",
+                    "it's been waiting for you."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 605 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Not this one."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Not this one either."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Especially not this one."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A lab table. The surface",
+                    "is perfectly clean. Too",
+                    "clean."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A table covered in notes.",
+                    "The handwriting changes",
+                    "mid-sentence."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Ball1",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokeball. The one you",
+                    "didn't choose, once."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 605 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Not this one."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Not this one either."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Especially not this one."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A machine that hums when",
+                    "you look at it and stops",
+                    "when you look away."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The display shows data",
+                    "that scrolls too fast",
+                    "to read."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A device with no visible",
+                    "purpose. It feels",
+                    "important."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A screen showing research",
+                    "Oak hasn't written yet."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The formulas dissolve",
+                    "when you try to read them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Books about Pokemon that",
+                    "haven't been discovered."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A shelf of journals. The",
+                    "dates go forward and",
+                    "backward at once."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Reference texts. Every",
+                    "page is the same page."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Books on fusion theory.",
+                    "The conclusions are all",
+                    "redacted."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "EV034",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A biography of someone",
+                    "you've never met. The",
+                    "photo looks like Oak."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "EV035",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lab notebooks. The ink",
+                    "is fresh but the paper",
+                    "is ancient."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "EV036",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Textbooks. The subjects",
+                    "shift when you look away."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A field guide to Kanto.",
+                    "The maps show places that",
+                    "don't exist. Yet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Scientific papers. Your",
+                    "name is in the citations."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "40": {
+          "name": "EV040",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A machine. Its purpose",
+                    "is clear only in dreams."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "41": {
+          "name": "EV041",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An apparatus that measures",
+                    "something you can't name."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

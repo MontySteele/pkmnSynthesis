@@ -1,0 +1,1198 @@
+{
+  "_implementation_notes": [
+    "SEA ROUTES FILL — Maps 57 (Route 19), 58 (Route 20), 59 (Route 21).",
+    "Phase 4: Ocean routes between Fuchsia and Cinnabar.",
+    "Open water, swimmers, surfers, fishermen.",
+    "",
+    "Map 57 (Route 19):",
+    "  Rewritten: Trainer pre-battle lines (E5, E6, E7, E8),",
+    "  trainer post-battle flavor and rematch text.",
+    "  Preserved: All battle trigger mechanics (start_index 5",
+    "  for pre-battle), all rematch choice blocks (choices,",
+    "  cancel_type), all self_switch gating, E6 page 1 item",
+    "  gift (Tentacool antidote), E10 surf race quest (all 4",
+    "  pages — switch 9/299/298, choices, Surfboard reward,",
+    "  race setup dialogue), E13 meteor sighting (switch 837,",
+    "  plot-related quest hook).",
+    "",
+    "Map 58 (Route 20):",
+    "  Rewritten: Trainer pre-battle lines (E5, E6, E8, E3,",
+    "  E9, E4), post-battle flavor.",
+    "  Preserved: All battle mechanics, rematch choices,",
+    "  self_switch gating, E6 page 1 item gift (diving find),",
+    "  E13 plot event (switch 295 — story NPC with \\PN,",
+    "  \\V[144], Train Pass, Team Rocket pursuit — fully",
+    "  mechanical quest progression, all 7 blocks preserved).",
+    "",
+    "Map 59 (Route 21):",
+    "  Rewritten: Trainer pre-battle lines (E5, E6, E1, E7,",
+    "  E8, E9), post-battle flavor.",
+    "  Preserved: All battle mechanics, rematch choices,",
+    "  self_switch gating, E5 page 1 fishing item gift,",
+    "  E6 page 1 item gift, E8 page 1 item gift (Cinnabar",
+    "  hint), E9 rematch choice blocks.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "57": {
+      "name": "Route 19",
+      "events": {
+        "5": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "First time in open water?",
+                    "You look a little green!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Feel like going again?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "No worries! I'll be here",
+                    "if you need to train up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The current's brutal today.",
+                    "Hope your heart can take it!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Here, use this if you get",
+                    "stung by a Tentacool!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Watch for Tentacool. They",
+                    "drift in with the tide."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Nothing like a good stretch",
+                    "before hitting the waves!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "All warmed up now. Ready",
+                    "for round two?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "No worries! I'll be here",
+                    "if you need to train up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Meteor Sighting NPC",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 837
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I saw a bright light falling",
+                    "from the sky followed by a",
+                    "huge splash."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Something big must've fallen",
+                    "into the water right around",
+                    "here!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I come out here to clear",
+                    "my head. The sea helps."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Staring at the horizon.",
+                    "Trying not to think."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Want to go again? Battling",
+                    "helps too."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "No worries! I'll be here",
+                    "if you need to train up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Surf Race Quest",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 9
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey! You look like you're",
+                    "pretty confident in your",
+                    "Surfing skills!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Well then, how about a race",
+                    "to prove it? I'll give you ",
+                    "something good if you can",
+                    "beat me!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "That's the spirit! Come",
+                    "with me while I set up",
+                    "the race!"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Over here!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Not so confident after all!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 299
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So, you're ready to race",
+                    "again?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "That's the spirit! Come",
+                    "with me while I set up",
+                    "the race!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Over here!"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Am I too fast for you?"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 298
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Thanks for surfing with me.",
+                    "You were real impressive",
+                    "out there!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I want you to have this as",
+                    "a prize for beating me in",
+                    "that race."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "This Surfboard will allow",
+                    "you to Surf without having",
+                    "to use a Pokémon. Pretty",
+                    "convenient, huh?"
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "switch1_id": 298,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A Surfboard will allow you",
+                    "to Surf without having to",
+                    "use a Pokémon. Pretty",
+                    "convenient, isn't it?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "58": {
+      "name": "Route 20",
+      "events": {
+        "5": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The riptide out here doesn't",
+                    "mess around. Stay sharp!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Cramping up... Should've",
+                    "stretched more. Glub..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Cramping up... Should've",
+                    "stretched more. Glub..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Tried free-diving for rare",
+                    "Pokemon. No luck so far!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Found this on the seafloor.",
+                    "Take it, it's yours!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If you want sea Pokemon,",
+                    "you'll need a fishing rod."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Story NPC",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 295
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! I came as fast as I could!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Woah! You already saved \\V[144]! I knew I could count on ",
+                    "you!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "That Team Rocket lady that was harrassing me at the lab ",
+                    "came out running out of here just before you did."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "She was talking about going to see her boss, all the way in ",
+                    "Goldenrod City. "
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I think you should go too! This might be our best chance to ",
+                    "stop them!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Here, can take the train to Johto if you show this ",
+                    "pass at the train station in Saffron City."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "I'll catch you back in Cinnabar Island!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Custom swimsuit. Imported",
+                    "fabric. Worth every penny!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Turns out Pokemon don't",
+                    "care what you're wearing.",
+                    "Just how you battle."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Want a rematch? I've been",
+                    "training between laps."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "No worries! I'll be here",
+                    "if you need to train up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Open water all day, every",
+                    "day. Nothing beats it!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can outswim most Water-",
+                    "types. Not Golduck, though."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Up for another round?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I'll see you later then!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Salt air, endless blue, and",
+                    "a good tailwind. Perfect."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sometimes I just float and",
+                    "watch the clouds pass."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Feel like a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I'll see you later then!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "See those islands out there?",
+                    "Nobody knows who lives on",
+                    "half of them."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Couple of islands on the",
+                    "horizon. Uncharted, maybe."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Ready for another go?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I'll see you later then!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "59": {
+      "name": "Route 21",
+      "events": {
+        "5": {
+          "name": "Trainer(4) — Fisherman",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Sit with me a spell. The",
+                    "fish'll bite eventually."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat me at battling,",
+                    "but fishing? That's mine."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Here, take these. They'll",
+                    "help you at fishing!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh wait! I got a bite! Yeah!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(4) — Fisherman",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Keep it down! You'll scare",
+                    "every Magikarp from here to",
+                    "Cinnabar!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sorry about earlier. Bad",
+                    "luck makes me snappy."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Found this earlier. No use",
+                    "to me. Take it."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh wait! I got a bite! Yeah!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Training for a triathlon.",
+                    "Swim leg first, then battle!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Want to go again?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "No worries! I'll be here",
+                    "if you need to train up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Every Pokemon on my team",
+                    "came from these waters."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Something huge just passed",
+                    "under me. I felt the wake."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3) — Swimmer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Sun's high, wind's right.",
+                    "Perfect day to be out here!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Headed to Cinnabar? Take",
+                    "this. Might come in handy!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Wear sunscreen out here.",
+                    "The glare off the water",
+                    "will cook you twice as fast."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(4) — Fisherman",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Checking if the fish are",
+                    "biting? Only one way to",
+                    "find out!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Nothing's biting today.",
+                    "Battle me again instead!"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here if you need",
+                    "to train up!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

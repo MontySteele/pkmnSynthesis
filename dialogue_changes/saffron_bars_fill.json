@@ -1,0 +1,2599 @@
+{
+  "_implementation_notes": [
+    "SAFFRON BARS FILL — Maps 113, 195, 825, 829.",
+    "Phase 3 (Crisis): Silph Co under Rocket control.",
+    "Bars are where people talk freely about occupation.",
+    "",
+    "Map 113 (Saffron Bar VIP):",
+    "  Rewritten: Trash cans (E5, E4), stall peeks (E6, E7, E8),",
+    "  mirrors (E9, E10, E11, E12), dancer NPC (E15).",
+    "  Preserved: E13 item gift (Energy Powder, variable_id 99",
+    "  gated — mechanical gift, self_switch progression),",
+    "  E14 item gift (water/dehydration — mechanical gift),",
+    "  E16 drinking game / hotel quest (all 11 blocks preserved",
+    "  exactly — switch 937/932 gated, complex branching).",
+    "",
+    "Map 195 (Saffron Bar upstairs):",
+    "  Rewritten: Trash cans (E7, E8), stall peeks (E4, E6),",
+    "  mirrors (E9, E10, E11, E12).",
+    "  Preserved: E13 bathroom hiding quest (9 blocks — time",
+    "  wait mechanic, choices, self_switch progression).",
+    "",
+    "Maps 825, 829 (Saffron Bar event variants):",
+    "  FULLY PRESERVED — entire band quest / concert event.",
+    "  All blocks kept verbatim: concert posters (\\V[1]/\\V[2]),",
+    "  band member dialogue (keyboardist, singer, drummer,",
+    "  manager, flute, harp, aguitar, eguitar), crowd reactions,",
+    "  Meloetta encounter (829 E31), announcer (829 E22/E32),",
+    "  Pokemon cries, switch-gated progression (1001-1025).",
+    "  These are complex multi-stage quest events that must",
+    "  not be altered.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "113": {
+      "name": "Saffron Bar (VIP)",
+      "events": {
+        "5": {
+          "name": "EV005 — Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Crumpled napkins and broken",
+                    "glass. Somebody had a rough",
+                    "night."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Empty bottles and a torn",
+                    "Rocket recruitment flyer.",
+                    "Someone made the right call."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Stall Peek",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You glance inside. Nothing",
+                    "you needed to see."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Stall Peek",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Best not to look too closely",
+                    "in a place like this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Stall Peek",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Someone left in a hurry.",
+                    "The lock is broken."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A smudged mirror. Your",
+                    "reflection stares back,",
+                    "looking a little tired."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The city's wearing on you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The mirror is cracked down",
+                    "the middle."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Two of you. Neither looks",
+                    "entirely real."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Someone wrote SILPH in the",
+                    "condensation. It's half",
+                    "faded now."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Nobody talks about Silph",
+                    "out loud anymore."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your reflection catches the",
+                    "dim bar light behind you."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You look like you belong",
+                    "here. Not sure if that's",
+                    "a good thing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Energy Powder Gift",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 99,
+                "variable_value": 16
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Shhh... Don't say anything,",
+                    "just take this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Energy Powder should",
+                    "help you loosen up on the",
+                    "dance floor!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Water Gift",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You look a bit dehydrated,",
+                    "have this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Easy to get dehydrated in",
+                    "a place like this. Drink",
+                    "plenty of water!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 — Dizzy Dancer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Room's spinning. Maybe I",
+                    "should sit the next one",
+                    "out... after this song."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016 — Drinking Game Quest",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 937,
+                "switch2_id": 932,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "That's it! You're a natural!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Not quite! You still need to",
+                    "get some practice!"
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Wow, you're good! Almost as",
+                    "good as me!"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Here, have a drink on me.",
+                    "You deserve it!"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "\\b\\pn downed the glass in",
+                    "one gulp!"
+                  ]
+                },
+                {
+                  "start_index": 54,
+                  "type": "text",
+                  "lines": [
+                    "Hmm... Not exactly! You",
+                    "still need to get some",
+                    "practice!"
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "text",
+                  "lines": [
+                    "Woo! You're really good!"
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "Ok, we'll go where you",
+                    "wanted me to go."
+                  ]
+                },
+                {
+                  "start_index": 80,
+                  "type": "text",
+                  "lines": [
+                    "Where was that again?",
+                    "The hotel? "
+                  ]
+                },
+                {
+                  "start_index": 82,
+                  "type": "text",
+                  "lines": [
+                    "Okay! I'll meet you there!"
+                  ]
+                },
+                {
+                  "start_index": 94,
+                  "type": "text",
+                  "lines": [
+                    "Not quite! You still need to",
+                    "get some practice!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "195": {
+      "name": "Saffron Bar (Upstairs)",
+      "events": {
+        "5": {
+          "name": "EV005 — Stall Peek",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You already looked. Still",
+                    "nothing worth seeing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Stall Peek",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Damp and dark. The walls",
+                    "have seen better days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Half-eaten food and what",
+                    "might be a fake Rocket ID.",
+                    "Popular forgery these days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Overflowing. Nobody's been",
+                    "cleaning up here lately."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The mirror is fogged with",
+                    "steam from a leaking pipe."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You can barely make out",
+                    "your own face."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lipstick on the glass.",
+                    "Someone scrawled a heart."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Romance blooms even in",
+                    "occupied cities, it seems."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Water stains streak the",
+                    "mirror's surface."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Your reflection looks like",
+                    "it hasn't slept in days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Mirror",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A grimy mirror above the",
+                    "sink. Dim fluorescent light",
+                    "hums overhead."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "At least the water still",
+                    "runs."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — Stall Peek",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The stall door swings open.",
+                    "Just graffiti and dust."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Bathroom Hiding Quest",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Shhhh... They'll hear you!",
+                    "Oh, what am I doing?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I was causing trouble the",
+                    "other day and the bouncer ",
+                    "won't let me in at night."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "So I'm hiding in the",
+                    "bathroom to sneak in!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I was causing trouble and",
+                    "the bouncer won't let me",
+                    "in at night, so I'm hiding",
+                    "in the bathroom to sneak in!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Feel free to wait with me",
+                    "if you want."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Wait for an hour?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Heheh! We snuck in!"
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "Still got a bit more to wait!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "825": {
+      "name": "Saffron Bar (Band Event)",
+      "events": {
+        "5": {
+          "name": "keyboardist",
+          "pages": {
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Man, I don't even WANT to be in a band. I'm doing it for my ",
+                    "sister. "
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Help her keep her singing career dream alive, would you?"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1011 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There are rumors about strange music being heard through ",
+                    "the region. I wonder if it could be Lycantillery's bandmates!"
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": { "switch1_id": 1008, "switch2_id": 1007 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe that I'm playing with \\C[1]\\V[2]\\C[0], this is ",
+                    "a dream come true!"
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It's going to be such an honor to play with these legendary ",
+                    "musicians on Saturday!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Band NPC",
+          "pages": {
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Can you track down a drummer for us? One apparently ",
+                    "resides near Crimson City."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1011 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[1]\\V[2]\\C[0]'s singer is very elusive. After the group ",
+                    "broke up, no one ever saw it again."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": { "switch1_id": 1007, "switch2_id": 1008 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I wonder if \\C[1]\\V[2]\\C[0]'s singer will show up too now ",
+                    "that the rest of the band is back together."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I wish we found the \\C[1]\\V[2]\\C[0]' singer, too, but I ",
+                    "guess I'll sing in its stead!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 — Drummer Discovery",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1010 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Wow!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Lycantillery is so good!"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe it. It's the drummer from \\C[1]\\V[2]\\C[0]!"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Groooaooo. Arooo."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "What? You've been trying to find your old band mates?"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Bowow. Aworrgh."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "Incredible! We could have the first \\C[1]\\V[2]\\C[0] ",
+                    "performance of the decade if we find them!"
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Awoorargh!"
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "Awoorargh!"
+                  ]
+                },
+                {
+                  "start_index": 79,
+                  "type": "text",
+                  "lines": [
+                    "Wraorr!"
+                  ]
+                },
+                {
+                  "start_index": 85,
+                  "type": "text",
+                  "lines": [
+                    "This old merchandise with \\C[1]\\V[2]\\C[0]'s old logo on ",
+                    "it... It makes me feel so nostalgic for some reason."
+                  ]
+                },
+                {
+                  "start_index": 88,
+                  "type": "text",
+                  "lines": [
+                    "With that, you'll be able to recruit the other Poké ",
+                    "Musicians for sure!"
+                  ]
+                },
+                {
+                  "start_index": 91,
+                  "type": "text",
+                  "lines": [
+                    "That reminds me, I heard rumors about strange music being ",
+                    "heard through the region."
+                  ]
+                },
+                {
+                  "start_index": 94,
+                  "type": "text",
+                  "lines": [
+                    "I'll do some research on the \\C[1]\\V[2]\\C[0] members and ",
+                    "see if there's any sightings."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Disappointed Patron",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is so disappointing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "manager",
+          "pages": {
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "What are you, some kind of \\V[1] super fan? Did you sneak ",
+                    "in here for autographs?"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1011 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[1]\\V[2]\\C[0] had two guitarists. One loved attention ",
+                    "and would regularly perform solo in \\C[3]big cities\\C[0] to ",
+                    "entertain its fans."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Apparently, he's been spotted busking in an underground ",
+                    "tunnel recently."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "The other is more private. It was once spotted flying to a ",
+                    "\\C[3]secret beach\\C[1] in the middle of a work week\\C[0], ",
+                    "but no one knows what it does there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "EV001 — Bad Musician",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Woops, wrong note!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Goldenrod Fan",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I came all the way from Goldenrod City for that?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 — Electric Guitar",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1006 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wee! Woo!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Critic",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "No, this won't do... I'll have to talk to them after the show..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 — Post-Concert Scene",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1003 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Wrong note after wrong note! I've seen Snorlax with better ",
+                    "rhythm than your band!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "This was an utterly embarrassing performance! No one will ",
+                    "ever want to see you in concert again after this!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Please give us another chance! We'll practice more!"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Maybe we could get another member to help?"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Yeah! A drummer could help us keep a rhythm."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I think I know where to find one. I heard drumming when I ",
+                    "was passing through \\C[1]Crimson City\\C[0] the other ",
+                    "day..."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "I'm not letting you go on a wild goose chase. If you want to ",
+                    "keep your contract, you need to practice!"
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Hey! You!"
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "You're a \\V[1] fan right? Would you mind helping us recruit ",
+                    "a drummer?"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "Alright, enough. You guys need to practice. I'm not letting ",
+                    "you have another concert until you sound good."
+                  ]
+                },
+                {
+                  "start_index": 88,
+                  "type": "text",
+                  "lines": [
+                    "Gotcha."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "manager",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1005 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[1]\\V[2]\\C[0] had two guitarists. The remaining one ",
+                    "loved attention and would regularly perform solo in big ",
+                    "cities to entertain its fans."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Apparently, he's been spotted busking in an underground ",
+                    "tunnel recently."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1006 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[1]\\V[2]\\C[0] had two guitarists. The remaining one was ",
+                    "once spotted flying to a secret beach in the middle of a ",
+                    "work week, but no one knows what it does there."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1006, "switch2_id": 1005 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "These Pokémon? Pure talent. Much better than the guy I ",
+                    "hired before!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I did some more research on the strange music that was",
+                    "heard around the region that the band was talking about."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Allegedly, at the start of every week, angelic chords can be ",
+                    "heard coming from atop the summit of \\C[1]Mt. Moon\\C[0] ",
+                    "in the morning. "
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "There's also a \\C[1]Johto\\C[0] lumberjack who reports ",
+                    "hearing a Pokéflute-like music every Tuesday night after ",
+                    "the end of his shift."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "These rumors seem to match with the two remaining ",
+                    "members of the group. Maybe you should go investigate!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1014 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I did some more research on the strange music heard ",
+                    "around the region that the band was talking about."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Allegedly, at the start of every week, angelic chords can be ",
+                    "heard coming from atop the summit of \\C[1]Mt. Moon\\C[0] ",
+                    "in the morning. "
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "There's also a \\C[1]Johto\\C[0] lumberjack who reports ",
+                    "hearing a Pokéflute-like music every Tuesday night after ",
+                    "the end of his shift."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": { "switch1_id": 1014, "switch2_id": 1007 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I did some more research on the strange music heard ",
+                    "around the region that the band was talking about."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "There's a \\C[1]Johto\\C[0] lumberjack who reports ",
+                    "hearing a Pokéflute-like music every Tuesday night after ",
+                    "the end of his shift."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "It seems like a lead that could be worth investigating."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": { "switch1_id": 1014, "switch2_id": 1008 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I did some more research on the strange music heard ",
+                    "around the region that the band was talking about."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Allegedly, at the start of every week, angelic chords can be ",
+                    "heard coming from atop the summit of \\C[1]Mt. Moon\\C[0] ",
+                    "in the morning. "
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "It seems like a lead that could be worth investigating."
+                  ]
+                }
+              ]
+            },
+            "6": {
+              "conditions": { "switch1_id": 1007, "switch2_id": 1008 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You did it, you assembled the whole band! "
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "We're planning a concert on Saturday night. You don't want ",
+                    "to miss it!"
+                  ]
+                }
+              ]
+            },
+            "7": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You assembled the whole band! Come watch the show next ",
+                    "Saturday, eh?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Band Defender",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The band isn't <i>that</i> bad!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 — Bad Singer",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I-I wanna be.. t-the very... best! Like no..."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "How does the rest of that song go again?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1008 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Tee flee ee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Bartender",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bartending is hard work. But at least now Team Rocket is ",
+                    "off our backs!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 — Acoustic Guitar",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1005 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Araa ri!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 — Soundproof Joke",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I wish I was a Mr. Mime, so I could be SOUNDPROOF."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 — Harp",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1007 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Aa iiia eee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "drummer",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1004 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wraorr!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Stunfisk Comparison",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Stunfisk sings better than this!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "829": {
+      "name": "Saffron Bar (Concert Night)",
+      "events": {
+        "27": {
+          "name": "EV027 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This should be a concert to remember!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe it! Miss Melody herself!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "singer",
+          "pages": {
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "M...Miss Melody?"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 750 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "M...Miss Melody?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "keyboardist",
+          "pages": {
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I... I don't believe it!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This should be a concert to remember!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They sound so good!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "MMMM is complete!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 — Announcer",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 749 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Welcome, ladies and gentlemen!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "It is now time to introduce the main event of the night!"
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "Years after they disbanded, this world-famous Pokéband ",
+                    "is finally reunited again to play their mythical melodies for ",
+                    "you tonight!"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Without further ado, let's give a warm welcome to  ",
+                    "\\C[1]\\V[2]\\C[0]!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "This ticket was worth the price!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I just knew that Miss Melody would come!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can see why this band is legendary!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — Door Block",
+          "pages": {
+            "2": {
+              "conditions": { "switch1_id": 1023 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Don't leave before the concert is over!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "EV039 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This will be a mythical concert!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I never saw this coming!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "EV001 — Shy Megafan",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm a MMMM megafan but I rarely leave the house."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I thought I wouldn't have to talk to anyone if I sat in this ",
+                    "corner..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm so glad I left the house for this!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "eguitar",
+          "pages": {
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wee! Woo!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I'm so glad that I bought tickets for this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Woah! What a way to end the concert!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "manager",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe we're actually watching \\C[1]\\V[2]\\C[0] ",
+                    "perform!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I never would've imagined that Miss Melody herself would ",
+                    "show up!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "40": {
+          "name": "EV040 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "MMMM in concert, what an event!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Woah! What a way to end the concert!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "flute",
+          "pages": {
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Tee flee ee!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Tee flee ee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is incredible!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Plot twist!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Bartender",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1001 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bartending is hard work. But at least now Team Rocket is ",
+                    "off our backs!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "aguitar",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Araa ri!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Araa ri!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Araa ri!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "drummer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wraorr!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1023 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wraorr!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wraorr!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wraorr!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can see why they say this band is legendary!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "meloetta",
+          "pages": {
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Mel melo!!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Meloetta appears grateful that you've reunited her old ",
+                    "bandmates"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Meloetta wants to join your party!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "harp",
+          "pages": {
+            "2": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Aa iiia eee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "MMMM in concert, what an event!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 — Concert Poster",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: SATURDAY 10AM-8PM"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1009 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[1] CONCERT: CANCELED"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1015 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[2] CONCERT: SATURDAY 8PM-12PM"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Crowd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm witnessing history!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 1025 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I just knew that Miss Melody would come!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032 — Melody Reveal",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1024 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "I don't believe it, it's the band's original singer! Miss ",
+                    "Melody herself!\\wtnp[40]"
+                  ]
+                },
+                {
+                  "start_index": 68,
+                  "type": "text",
+                  "lines": [
+                    "Woah!\\wtnp[20]"
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "Incredible!\\wtnp[20]"
+                  ]
+                },
+                {
+                  "start_index": 73,
+                  "type": "text",
+                  "lines": [
+                    "She came to play with her old bandmates!\\wtnp[30]"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

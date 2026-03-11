@@ -1,0 +1,400 @@
+{
+  "_implementation_notes": [
+    "ROUTE 8 + UNDERGROUND — Transitional zone between Lavender and Celadon.",
+    "Maps 409 (Route 8), 410 (Underground Gate east), 411 (Underground).",
+    "Tone: Liminal, sketchy. Between grief (Lavender) and corruption (Celadon).",
+    "",
+    "Map 409 (Route 8): 18 events. Many MECHANICAL events preserved:",
+    "- EV011/EV022: Blackjack gamblers — ALL mechanical (card game logic).",
+    "  Only pre-battle line (p0) rewritten. Post-game text preserved entirely.",
+    "- EV017: Egg giver — MECHANICAL (egg delivery). Only p0 pre-battle line.",
+    "- EV013/EV014: Twin battles — MECHANICAL. Only p0 flavor lines rewritten.",
+    "- EV016/EV012: Fusion-count NPCs — pre-battle only.",
+    "- EV018: Lass with rare fusions — pre-battle only.",
+    "- EV023/EV019/EV020/EV021/EV010/EV015: Route trainers with rematch.",
+    "  Pre-battle (p0) rewritten. Rematch mechanics preserved.",
+    "- EV027/EV028: Hidden items — NOT rewritten (just 'nothing there').",
+    "- EV029/EV030: Growlithe quest — MECHANICAL, preserved entirely.",
+    "",
+    "Map 410 (Underground Gate east): 1 event. Trash can flavor text.",
+    "Map 411 (Underground): 5 events. Rocket smuggling operation.",
+    "  EV001/EV012: Rocket heist cutscene — MECHANICAL (complex switches).",
+    "  EV011/EV013: Rocket grunts — rewritable flavor.",
+    "  EV014: Retry prompt — MECHANICAL, preserved.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "409": {
+      "name": "Route 8",
+      "events": {
+        "16": {
+          "name": "Fusion Count Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "People call it Infinite\nFusion, but that's\nmarketing. The real number\nis finite. Everything is."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Combination Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The number of possible team\ncombinations with fusion\nis staggering. Most people\npick what looks strong and\nstop thinking about it."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "But there are trainers who\nspend years testing every\npermutation. Looking for\nsomething nobody's\nfound yet."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "That's the real question:\nnot how many exist,\nbut which one is yours."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Show me what you decided on."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It's not about the\npossibilities. It's about\nthe one you commit to."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Gambler (Blackjack)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I used to gamble at the\nGame Corner in Celadon.\nNow I play cards out here.\nCleaner air, same odds."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Gambler 2 (Blackjack)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Roll the dice! ...Okay,\ntechnically it's cards.\nBut the spirit's the same."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Egg Giver",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My partner and I breed\nPokemon out here. The route\nbetween cities is good\nfor walking eggs."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Twin Battle (Anne)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Two against one. That's\nhow it works out here."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Lavender taught us that\nstrength is better shared."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Wait, you need at least\ntwo Pokemon to fight\nthe both of us!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Twin Battle (Eli)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Two against one. That's\nhow it works out here."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Lavender taught us that\nstrength is better shared."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Wait, you need at least\ntwo Pokemon to fight\nthe both of us!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Lass (Rare Fusions)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My dad works in Celadon.\nHe got me some rare\nPokemon and I fused them\nwith my favorites."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Super Nerd",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You look like you know\nyour chemistry. Or at\nleast your type matchups."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Biker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Out of my way. I've got\na delivery to make\nin Celadon and I'm late."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Biker 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My bike keeps breaking\ndown on this stretch.\nThe road between Lavender\nand Celadon is rough\nin more ways than one."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Biker 3",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Don't mess with bikers.\nWe run deliveries between\nCeladon and the eastern\ntowns. Some packages\nyou don't ask about."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Lass (Pink Pokemon)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I collect pink Pokemon.\nPeople think it's silly,\nbut at least I know\nwhat makes me happy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Youngster (Nidoran)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I caught my first Nidoran\nright on this route.\nBefore the fusion licenses,\nyou could just... catch\nthem. Simple times."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "410": {
+      "name": "Underground Gate (East)",
+      "events": {
+        "1": {
+          "name": "Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Old newspapers and coffee\ncups. Someone practically\nlives down here."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "411": {
+      "name": "Underground",
+      "events": {
+        "11": {
+          "name": "Rocket Grunt 1",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1085
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Beat it, kid. You didn't\nsee anything down here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Rocket Grunt 2",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1085
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This tunnel connects\nCeladon to the eastern\nroutes. Officially it's\nclosed. Unofficially...\nwell. You're here."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

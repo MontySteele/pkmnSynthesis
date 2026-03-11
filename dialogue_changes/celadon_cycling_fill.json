@@ -1,0 +1,819 @@
+{
+  "_implementation_notes": [
+    "CELADON CYCLING FILL — Maps 146, 517, 518, 193, 204.",
+    "Routes 16-18: Cycling Road and surrounding areas.",
+    "Tone: Open road. Competitive cyclists, bikers, some awareness of world events.",
+    "These NPCs are outside Celadon's bubble — rougher, more direct.",
+    "",
+    "MECHANICAL EVENTS PRESERVED (not modified):",
+    "- Map 146: ALL trainer battle triggers preserved (rematch choices preserved)",
+    "- Map 146 EV005-EV008: Sludge cleanup events (Bleeeergh + cycling road clear)",
+    "- Map 146 EV003/EV031: Bike race timer/checkpoint events",
+    "- Map 146 EV026: Quest bike challenge intro",
+    "- Map 146 EV012 (page 1+): Item gift after battle",
+    "- Map 146 EV013 (page 1+): Bulldozer/construction + item gift",
+    "- Map 146 EV014: Money theft event ($4500 gift)",
+    "- Map 517: ALL pumpkin events (EV026-EV032 — Pumpkaboo encounters)",
+    "- Map 517: Hidden item events (EV007-EV012)",
+    "- Map 517 EV020: Moo Moo Milk shop",
+    "- Map 517 EV021: Miltank cry",
+    "- Map 518 EV004: Cycling Road bike gate",
+    "- Map 193 EV001/EV002: Wildlife info boards",
+    "- Map 193 EV009: Sucker Punch move tutor (ALL mechanics)",
+    "- Map 204: Farmhouse — berry gift (EV012) + mulch purchase (EV013)",
+    "- Map 204: Container/picture checks (EV008-EV010)",
+    "",
+    "Only trainer pre/post-battle flavor and standalone NPC lines rewritten.",
+    "All rematch choice menus, item gifts, and battle triggers preserved.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "146": {
+      "name": "Route 17 (Cycling Road)",
+      "events": {
+        "16": {
+          "name": "Trainer(4) (Biker — Top of Road)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Nice bike. How's it handle",
+                    "on the slope? The road's been",
+                    "rough since Rocket stopped",
+                    "maintaining it."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The slope makes it hard to",
+                    "steer! Especially when you're",
+                    "dodging wild Pok\u00e9mon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "Trainer(4) (Biker — Speed Demon)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "C'mon c'mon c'mon! No time",
+                    "to talk! Only time to ride!",
+                    "And fight! Mostly fight!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What what what? You want",
+                    "something? I'm busy doing",
+                    "absolutely nothing at speed!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(4) (Biker — Bike Critic)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "What kind of puny bike is",
+                    "that? I've seen better wheels",
+                    "on a Magnemite."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Looking for adventure?",
+                    "Fuchsia's got Safari Zone.",
+                    "Celadon's got corruption.",
+                    "Take your pick."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Trainer(2) (Biker — Rebel)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Be a rebel! Question the",
+                    "League! Question Erika!",
+                    "Question everything!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Be ready to fight for what",
+                    "you believe in. Even if what",
+                    "you believe in changes."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(4) (Biker — Highway Star)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "We're bikers! Highway stars!",
+                    "Free from Celadon's politics",
+                    "and Fuchsia's weirdness."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good stuff lies around on the",
+                    "road. People drop things when",
+                    "they're riding scared."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(4) (Biker — Builder)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "No money in fighting kids.",
+                    "I'm building rest areas now.",
+                    "Someone has to maintain this",
+                    "road. The city sure doesn't."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We're hauling dirt by boat to",
+                    "build a proper rest stop."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Celadon won't fund it. Too",
+                    "busy funding the Game Corner.",
+                    "Here, take this and help out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(3) (Biker — Thief)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Stop! Hand over your money!",
+                    "This is Cycling Road rules.",
+                    "Might makes right out here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Don't hurt me! Take my money,",
+                    "take it all! I learned this",
+                    "from the Game Corner \u2014",
+                    "the house always wins."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(4) (Biker — Fuchsia Bound)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Heading to Fuchsia? Smart.",
+                    "Koga runs a tight city.",
+                    "No Game Corners, no open",
+                    "secrets. Just poison and fog."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Love racing downhill. It's",
+                    "the one place nobody asks",
+                    "where you're from or who",
+                    "you work for."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(4) (Biker — Exercise)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I need exercise! Sitting in",
+                    "Celadon all day watching the",
+                    "Game Corner makes you soft."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm sure I lost weight there!",
+                    "Fighting on the road beats",
+                    "fighting in the sewers."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(4) (Biker — Rule Breaker)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "They say you need a bike on",
+                    "Cycling Road. I never liked",
+                    "rules. Rules are how Celadon",
+                    "pretends everything's fine."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rules exist so the people in",
+                    "charge can break them first."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Sludge Cleanup 1)",
+          "_note": "MECHANICAL — Sludge Pokemon cleanup event. Preserved."
+        },
+        "6": {
+          "name": "EV006 (Sludge Cleanup 2)",
+          "_note": "MECHANICAL — Sludge Pokemon cleanup event. Preserved."
+        },
+        "7": {
+          "name": "EV007 (Sludge Cleanup 3)",
+          "_note": "MECHANICAL — Sludge Pokemon cleanup event. Preserved."
+        },
+        "8": {
+          "name": "EV008 (Sludge Cleanup 4)",
+          "_note": "MECHANICAL — Sludge Pokemon cleanup event. Preserved."
+        },
+        "3": {
+          "name": "EV003 (Bike Race Timer A)",
+          "_note": "MECHANICAL — Race checkpoint/timer. Preserved."
+        },
+        "31": {
+          "name": "EV031 (Bike Race Timer B)",
+          "_note": "MECHANICAL — Race checkpoint/timer. Preserved."
+        },
+        "26": {
+          "name": "quest bike (Bike Challenge)",
+          "_note": "MECHANICAL — Bike race quest intro. Preserved."
+        }
+      }
+    },
+    "517": {
+      "name": "Route 18",
+      "events": {
+        "16": {
+          "name": "Trainer(4) (Farmer — Pumpkins)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Hands off my pumpkins!",
+                    "I grow them honest. No fusion,",
+                    "no Rocket fertilizer. Just",
+                    "soil and patience."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Swear I've seen some of these",
+                    "pumpkins move at night. Maybe",
+                    "it's the moonlight. Maybe",
+                    "it's Pumpkaboo."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Trainer(5) (Ex-Biker)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "They kicked me off Cycling",
+                    "Road! Said I was 'disrupting",
+                    "the atmosphere.' Whatever",
+                    "that means."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'd recruit you for our biker",
+                    "gang but you don't look the",
+                    "part. Too clean. Too hopeful."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "Trainer(4) (Speed Racer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Gotta go fast! Faster than",
+                    "the news from Celadon. If",
+                    "you ride fast enough, the",
+                    "problems can't catch you."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Here. Take this. Speed is",
+                    "a trainer's best friend.",
+                    "Second best is ignorance."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(4) (Berry Forager)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Rare berries grow around",
+                    "here! Wild ones, untouched",
+                    "by Silph's modifications.",
+                    "Like nature intended."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Found these not far from",
+                    "here. Organic. Pre-fusion.",
+                    "The way berries used to be."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "Trainer(4) (Bird Lover)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Fly or Teleport? I say Fly.",
+                    "Bird Pok\u00e9mon don't care about",
+                    "city politics. They just go",
+                    "where the wind takes them."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bird Pok\u00e9mon are my true love.",
+                    "Free. Unregistered. No fusion",
+                    "license required for the sky."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(4) (Wilderness Seeker)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm here for the cathartic",
+                    "wilderness experience. After",
+                    "Celadon, I needed air that",
+                    "doesn't smell like money."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "More! I need more! Nature",
+                    "heals what the city breaks."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(4) (Harvest Farmer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "It's harvest season, but I",
+                    "always make time for battles.",
+                    "Honest work and honest fights.",
+                    "Not like in the city."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Harvest season waits for no",
+                    "one. But another fight won't",
+                    "hurt. The crops can wait."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 (Moo Moo Milk Shop)",
+          "_note": "MECHANICAL — Moo Moo Milk vending. Preserved."
+        },
+        "21": {
+          "name": "EV021 (Miltank Cry)",
+          "_note": "MECHANICAL — Pokemon cry. Preserved."
+        },
+        "27": {
+          "name": "EV027 (Pumpkin 1)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "28": {
+          "name": "EV028 (Pumpkin 2)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "29": {
+          "name": "EV029 (Pumpkin 3)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "30": {
+          "name": "EV030 (Pumpkin 4)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "31": {
+          "name": "EV031 (Pumpkin 5)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "32": {
+          "name": "EV032 (Pumpkin 6)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "33": {
+          "name": "EV033 (Pumpkin 7)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "26": {
+          "name": "EV026 (Pumpkin 8)",
+          "_note": "MECHANICAL — Pumpkaboo encounter. Preserved."
+        },
+        "7": {
+          "name": "EV007 (Hidden Item 1)",
+          "_note": "MECHANICAL — Hidden item. Preserved."
+        },
+        "8": {
+          "name": "EV008 (Hidden Item 2)",
+          "_note": "MECHANICAL — Hidden item. Preserved."
+        },
+        "9": {
+          "name": "EV009 (Hidden Item 3)",
+          "_note": "MECHANICAL — Hidden item. Preserved."
+        },
+        "10": {
+          "name": "EV010 (Hidden Item 4)",
+          "_note": "MECHANICAL — Hidden item. Preserved."
+        },
+        "11": {
+          "name": "EV011 (Hidden Item 5)",
+          "_note": "MECHANICAL — Hidden item. Preserved."
+        },
+        "12": {
+          "name": "EV012 (Hidden Item 6)",
+          "_note": "MECHANICAL — Hidden item. Preserved."
+        }
+      }
+    },
+    "518": {
+      "name": "Gate (Route 18 — Bike Check)",
+      "events": {
+        "4": {
+          "name": "EV004 (Bike Requirement)",
+          "_note": "MECHANICAL — Bike gate check. Preserved."
+        }
+      }
+    },
+    "193": {
+      "name": "Gate (Route 18 — South)",
+      "events": {
+        "1": {
+          "name": "EV001 (Wildlife Board)",
+          "_note": "MECHANICAL — Route info board. Preserved."
+        },
+        "2": {
+          "name": "EV002 (Wildlife Board 2)",
+          "_note": "MECHANICAL — Route info board. Preserved."
+        },
+        "9": {
+          "name": "EV009 (Sucker Punch Tutor)",
+          "_note": "MECHANICAL — Move tutor. All teach/payment dialogue preserved."
+        },
+        "4": {
+          "name": "EV004 (Cycling Road Return NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Riding down Cycling Road was",
+                    "a blast, but now I have to",
+                    "go uphill back to Celadon.",
+                    "Story of everyone's life there."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "204": {
+      "name": "Farmhouse",
+      "events": {
+        "12": {
+          "name": "EV012 (Berry Farmer — Gift)",
+          "_note": "MECHANICAL — Berry gift event. ALL mechanics preserved."
+        },
+        "13": {
+          "name": "EV013 (Mulch Buyer)",
+          "_note": "MECHANICAL — Mulch purchase event. ALL payment mechanics preserved."
+        },
+        "8": {
+          "name": "EV008 (Trash Container)",
+          "_note": "MECHANICAL — Container check. Preserved."
+        },
+        "9": {
+          "name": "EV009 (Picture — Man with Pokemon)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A faded picture of a man and",
+                    "his Pok\u00e9mon. Working the land.",
+                    "Before fusion. Before Rocket.",
+                    "Before everything changed."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Picture — Family)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An old picture of a woman and",
+                    "several children. They look",
+                    "happy. The farm looks smaller",
+                    "than it is now."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

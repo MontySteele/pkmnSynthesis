@@ -1,0 +1,2391 @@
+{
+  "_implementation_notes": [
+    "POKEMON TOWER FILL — All 7 tower maps (400-469).",
+    "Tone: Death, grief, the cost of fusion. Somber, haunted.",
+    "",
+    "PRESERVED (mechanical/script content):",
+    "- All script_message blocks (pbWildBattle, ghost encounters)",
+    "- Ghost Marowak battle scripting",
+    "- Mr. Fuji rescue sequence scripting",
+    "- Item pickups, Pokemon cries, Silph Scope checks",
+    "- Choice blocks (choices type) kept exactly",
+    "- Purified zone heal messages (EV011/EV012/EV015 on F5)",
+    "- Dark Pulse tutor mechanical lines (prices, \\V refs)",
+    "- Strange Prism pedestal mechanical lines (all maps)",
+    "- Type Expert Ghost mechanical lines (challenge/reward)",
+    "- Blue/Rocket cutscene on F2 (maps 401 events 12/2/10)",
+    "- Mr. Fuji post-rescue on F7 (map 469 event 6)",
+    "- All start_index values match source exactly",
+    "- Block counts per page never exceed source counts",
+    "",
+    "REWRITTEN (flavor/atmosphere text):",
+    "- Map 400 (F1): Mourners — Growlithe owner, blessing NPC,",
+    "  Tower description sign, Clefairy mourner, cursed stone child.",
+    "  Synthesis angle: grief over fusion experiments gone wrong.",
+    "- Map 401 (F2): Mr. Fuji post-rescue dialogue, Blue cutscene",
+    "  dialogue, ghostgirl '...' lines. Synthesis: Fuji's deeper",
+    "  connection to fusion research. Blue lines rewritten for tone.",
+    "  Rocket lines given Synthesis menace. Master Ball plot preserved.",
+    "- Map 402 (F3): Channeler pre/post-battle lines. Ghostgirl ...",
+    "  Darkness flavor text for item event.",
+    "- Map 403 (F4): Channeler pre/post-battle lines. Ghostgirl ...",
+    "- Map 467 (F5): Channeler pre/post-battle, purified zone text,",
+    "  safe-room Channeler and Dark Pulse tutor.",
+    "- Map 468 (F6): Channeler pre/post-battle, ghost Marowak area.",
+    "- Map 469 (F7): Mr. Fuji rescue, Strange Prism pedestals,",
+    "  Type Expert Ghost, prism riddle tombstones.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "400": {
+      "name": "Pokemon Tower F1",
+      "events": {
+        "6": {
+          "name": "Mourner (Growlithe)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They said the fusion would\nmake her stronger. My poor\nGrowlithe... she burned\nfrom the inside out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Blessing NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You came to pay respects?\nThis tower holds more grief\nthan it was ever built for."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Tower sign",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Pokemon Tower was built to\nhonor the departed. Since\nfusion began, the graves\nhave filled faster."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Clefairy mourner",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I came to pray for my\nClefairy. She never woke up\nafter the procedure."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Sniff... They promised\nit was safe. They promised."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Cursed stone child",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I found this weird rock by\ngrandma's grave. It hums\nwhen I hold it."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "If I press it to my ear,\nI hear whispers. Grandma\nsays it's cursed. She\nwon't let me keep it!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Do you want it?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Grandma says the stone\nfeels wrong. Like it\nremembers something."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Grandma says the stone\nfeels wrong. Like it\nremembers something."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If I press my ear to\ngrandma's stone, I can\nalmost hear her voice."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "401": {
+      "name": "Pokemon Tower F2",
+      "events": {
+        "11": {
+          "name": "Fuji post-rescue (EV011)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I fear what Team Rocket\nwants with the Master Ball.\nNothing good can come of\ngiving them that power."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Please, follow them to\nCeladon City. Take back\nthat prototype before they\ncan replicate it."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "An organization that fuses\nPokemon against their will\ncannot be trusted with a\ntool that captures any."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Blue cutscene (variant A)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Hey, \\PN. What brings you\nto a place like this?"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Your Pokemon don't look\ndead to me!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I can at least make them\nfaint! Let's go, pal!"
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "How's your Pokedex? I just\ncaught a Haunter. This\nplace is crawling with\nthem."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Thinking about fusing it.\nMaybe I can force an\nevolution out of it."
+                  ]
+                },
+                {
+                  "start_index": 46,
+                  "type": "text",
+                  "lines": [
+                    "Well, I better get going!\nI've got a lot to..."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "<fs=38><b>Tell us, old man! Or\nwe're going to have to\nhurt you!</b></fs>"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "What was that all about?"
+                  ]
+                },
+                {
+                  "start_index": 67,
+                  "type": "text",
+                  "lines": [
+                    "I guess I'll stick around\na bit longer after all."
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "Come on, let's check\nit out!"
+                  ]
+                },
+                {
+                  "start_index": 108,
+                  "type": "text",
+                  "lines": [
+                    "Tell us how to build the\nMaster Ball!"
+                  ]
+                },
+                {
+                  "start_index": 110,
+                  "type": "text",
+                  "lines": [
+                    "You were at Silph Co.\nwhen it was developed.\nWe know you have the\nplans!"
+                  ]
+                },
+                {
+                  "start_index": 120,
+                  "type": "text",
+                  "lines": [
+                    "Let's go! We have ways to\nmake you talk, old man..."
+                  ]
+                },
+                {
+                  "start_index": 144,
+                  "type": "text",
+                  "lines": [
+                    "Hey! You!"
+                  ]
+                },
+                {
+                  "start_index": 146,
+                  "type": "text",
+                  "lines": [
+                    "What are you looking at?"
+                  ]
+                },
+                {
+                  "start_index": 148,
+                  "type": "text",
+                  "lines": [
+                    "You both better leave now\nor we'll hurt you too!"
+                  ]
+                },
+                {
+                  "start_index": 154,
+                  "type": "text",
+                  "lines": [
+                    "Just wait here, Mr. Fuji."
+                  ]
+                },
+                {
+                  "start_index": 156,
+                  "type": "text",
+                  "lines": [
+                    "We'll deal with these\ntrouble makers and be\nright back!"
+                  ]
+                },
+                {
+                  "start_index": 170,
+                  "type": "text",
+                  "lines": [
+                    "Well this sure is\nembarrassing..."
+                  ]
+                },
+                {
+                  "start_index": 182,
+                  "type": "text",
+                  "lines": [
+                    "Good news!"
+                  ]
+                },
+                {
+                  "start_index": 195,
+                  "type": "text",
+                  "lines": [
+                    "We found the last Master\nBall prototype!"
+                  ]
+                },
+                {
+                  "start_index": 197,
+                  "type": "text",
+                  "lines": [
+                    "This changes everything!"
+                  ]
+                },
+                {
+                  "start_index": 199,
+                  "type": "text",
+                  "lines": [
+                    "With a working prototype,\nwe can copy it and mass-\nproduce them!"
+                  ]
+                },
+                {
+                  "start_index": 204,
+                  "type": "text",
+                  "lines": [
+                    "Looks like we won't be\nneeding you anymore,\nold man!"
+                  ]
+                },
+                {
+                  "start_index": 206,
+                  "type": "text",
+                  "lines": [
+                    "Let's head to Celadon\nCity right away!"
+                  ]
+                },
+                {
+                  "start_index": 224,
+                  "type": "text",
+                  "lines": [
+                    "I cannot thank you enough,\ntruly."
+                  ]
+                },
+                {
+                  "start_index": 226,
+                  "type": "text",
+                  "lines": [
+                    "My name is Mr. Fuji. I was\na researcher at Silph Co.\nonce... back when we were\ndeveloping the Master Ball."
+                  ]
+                },
+                {
+                  "start_index": 229,
+                  "type": "text",
+                  "lines": [
+                    "Now I care for orphaned\nPokemon at the Pokemon\nHouse here in Lavender.\nMany are fusion survivors."
+                  ]
+                },
+                {
+                  "start_index": 232,
+                  "type": "text",
+                  "lines": [
+                    "I dread what Team Rocket\nwants with the Master Ball.\nThey've already done so\nmuch harm with fusion."
+                  ]
+                },
+                {
+                  "start_index": 235,
+                  "type": "text",
+                  "lines": [
+                    "Please, follow them to\nCeladon City and stop them\nbefore they cause more\nsuffering!"
+                  ]
+                },
+                {
+                  "start_index": 238,
+                  "type": "text",
+                  "lines": [
+                    "A criminal organization\nwith that kind of power...\nI cannot bear to think\nof it."
+                  ]
+                },
+                {
+                  "start_index": 241,
+                  "type": "text",
+                  "lines": [
+                    "Sounds good to me."
+                  ]
+                },
+                {
+                  "start_index": 243,
+                  "type": "text",
+                  "lines": [
+                    "I was heading to Celadon\nfor my fourth Gym badge\nanyway. I'll see what\nI can do!"
+                  ]
+                },
+                {
+                  "start_index": 248,
+                  "type": "text",
+                  "lines": [
+                    "You should head there\ntoo, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 250,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Blue cutscene (variant B)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Hey, \\PN. What brings you\nto a place like this?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "And what are you wearing?\nHumph... What is wrong\nwith you..."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Your Pokemon don't look\ndead to me!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I can at least make them\nfaint! Let's go, pal!"
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "How's your Pokedex? I just\ncaught a Haunter. This\nplace is crawling with\nthem."
+                  ]
+                },
+                {
+                  "start_index": 49,
+                  "type": "text",
+                  "lines": [
+                    "Thinking about fusing it.\nMaybe I can force an\nevolution out of it."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Well, I better get going!\nI've got a lot to..."
+                  ]
+                },
+                {
+                  "start_index": 55,
+                  "type": "text",
+                  "lines": [
+                    "<fs=38>Tell us, old man! Or\nwe're going to have to\nstop playing nice!</fs>"
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "What was that all about?"
+                  ]
+                },
+                {
+                  "start_index": 72,
+                  "type": "text",
+                  "lines": [
+                    "Come on, let's check\nit out!"
+                  ]
+                },
+                {
+                  "start_index": 111,
+                  "type": "text",
+                  "lines": [
+                    "Tell us how to build the\nMaster Ball!"
+                  ]
+                },
+                {
+                  "start_index": 113,
+                  "type": "text",
+                  "lines": [
+                    "You were at Silph Co.\nwhen it was developed.\nWe know you have the\nplans!"
+                  ]
+                },
+                {
+                  "start_index": 117,
+                  "type": "text",
+                  "lines": [
+                    "Let's go! We have ways to\nmake you talk, old man..."
+                  ]
+                },
+                {
+                  "start_index": 152,
+                  "type": "text",
+                  "lines": [
+                    "Woah, this old man is in\nserious trouble."
+                  ]
+                },
+                {
+                  "start_index": 154,
+                  "type": "text",
+                  "lines": [
+                    "I'd follow them up there\nand teach those Rockets\na lesson..."
+                  ]
+                },
+                {
+                  "start_index": 157,
+                  "type": "text",
+                  "lines": [
+                    "...If it weren't for all\nthose ghosts."
+                  ]
+                },
+                {
+                  "start_index": 159,
+                  "type": "text",
+                  "lines": [
+                    "They're probably Pokemon,\nbut I can't get past them\nwithout a \\C[3]Silph Scope\\C[0]..."
+                  ]
+                },
+                {
+                  "start_index": 162,
+                  "type": "text",
+                  "lines": [
+                    "I saw a lot of Rockets\nloitering around Celadon\nwhen I got my fourth\nGym badge."
+                  ]
+                },
+                {
+                  "start_index": 166,
+                  "type": "text",
+                  "lines": [
+                    "I'll head back there to\ninvestigate. You should\ncome too, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 169,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Ghostgirl (F2)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Fuji post-rescue (EV009)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I fear what Team Rocket\nwants with the Master Ball.\nNothing good can come of\ngiving them that power."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Please, follow them to\nCeladon City. Take back\nthat prototype before they\ncan replicate it."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "An organization that fuses\nPokemon against their will\ncannot be trusted with a\ntool that captures any."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Fuji (standing, F2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I fear what Team Rocket\nwants with the Master Ball.\nNothing good can come of\ngiving them that power."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Please, follow them to\nCeladon City and stop them\nbefore they cause more\nsuffering."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Blue cutscene (variant C)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Hey, \\PN. What brings you\nto a place like this?"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Your Pokemon don't look\ndead to me!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I can at least make them\nfaint! Let's go, pal!"
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "How's your Pokedex? I just\ncaught a Haunter. This\nplace is crawling with\nthem."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Thinking about fusing it.\nMaybe I can force an\nevolution out of it."
+                  ]
+                },
+                {
+                  "start_index": 46,
+                  "type": "text",
+                  "lines": [
+                    "Well, I better get going!\nI've got a lot to..."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "<fs=38><b>Tell us, old man! Or\nwe're going to have to\nhurt you!</b></fs>"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "What was that all about?"
+                  ]
+                },
+                {
+                  "start_index": 67,
+                  "type": "text",
+                  "lines": [
+                    "I guess I'll stick around\na bit longer after all."
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "Come on, let's check\nit out!"
+                  ]
+                },
+                {
+                  "start_index": 108,
+                  "type": "text",
+                  "lines": [
+                    "Tell us how to build the\nMaster Ball!"
+                  ]
+                },
+                {
+                  "start_index": 110,
+                  "type": "text",
+                  "lines": [
+                    "You were at Silph Co.\nwhen it was developed.\nWe know you have the\nplans!"
+                  ]
+                },
+                {
+                  "start_index": 121,
+                  "type": "text",
+                  "lines": [
+                    "Hey! You!"
+                  ]
+                },
+                {
+                  "start_index": 123,
+                  "type": "text",
+                  "lines": [
+                    "What are you looking at?"
+                  ]
+                },
+                {
+                  "start_index": 125,
+                  "type": "text",
+                  "lines": [
+                    "You both better leave now\nor we'll hurt you too!"
+                  ]
+                },
+                {
+                  "start_index": 131,
+                  "type": "text",
+                  "lines": [
+                    "Just wait here, Mr. Fuji."
+                  ]
+                },
+                {
+                  "start_index": 133,
+                  "type": "text",
+                  "lines": [
+                    "We'll deal with these\ntrouble makers and be\nright back!"
+                  ]
+                },
+                {
+                  "start_index": 159,
+                  "type": "text",
+                  "lines": [
+                    "Well this sure is\nembarrassing..."
+                  ]
+                },
+                {
+                  "start_index": 171,
+                  "type": "text",
+                  "lines": [
+                    "Good news!"
+                  ]
+                },
+                {
+                  "start_index": 184,
+                  "type": "text",
+                  "lines": [
+                    "We found the last Master\nBall prototype!"
+                  ]
+                },
+                {
+                  "start_index": 186,
+                  "type": "text",
+                  "lines": [
+                    "This changes everything!"
+                  ]
+                },
+                {
+                  "start_index": 188,
+                  "type": "text",
+                  "lines": [
+                    "With a working prototype,\nwe can copy it and mass-\nproduce them!"
+                  ]
+                },
+                {
+                  "start_index": 193,
+                  "type": "text",
+                  "lines": [
+                    "Looks like we won't be\nneeding you anymore,\nold man!"
+                  ]
+                },
+                {
+                  "start_index": 195,
+                  "type": "text",
+                  "lines": [
+                    "Let's head to Celadon\nCity right away!"
+                  ]
+                },
+                {
+                  "start_index": 213,
+                  "type": "text",
+                  "lines": [
+                    "I cannot thank you enough,\ntruly."
+                  ]
+                },
+                {
+                  "start_index": 215,
+                  "type": "text",
+                  "lines": [
+                    "My name is Mr. Fuji. I was\na researcher at Silph Co.\nonce... back when we were\ndeveloping the Master Ball."
+                  ]
+                },
+                {
+                  "start_index": 218,
+                  "type": "text",
+                  "lines": [
+                    "Now I care for orphaned\nPokemon at the Pokemon\nHouse here in Lavender.\nMany are fusion survivors."
+                  ]
+                },
+                {
+                  "start_index": 221,
+                  "type": "text",
+                  "lines": [
+                    "I dread what Team Rocket\nwants with the Master Ball.\nThey've already done so\nmuch harm with fusion."
+                  ]
+                },
+                {
+                  "start_index": 224,
+                  "type": "text",
+                  "lines": [
+                    "Please, follow them to\nCeladon City. Take back\nthat prototype before they\ncan replicate it."
+                  ]
+                },
+                {
+                  "start_index": 227,
+                  "type": "text",
+                  "lines": [
+                    "A criminal organization\nwith that kind of power...\nI cannot bear to think\nof it."
+                  ]
+                },
+                {
+                  "start_index": 230,
+                  "type": "text",
+                  "lines": [
+                    "Sounds good to me."
+                  ]
+                },
+                {
+                  "start_index": 232,
+                  "type": "text",
+                  "lines": [
+                    "I was heading to Celadon\nfor my fourth Gym badge\nanyway. I'll see what\nI can do!"
+                  ]
+                },
+                {
+                  "start_index": 237,
+                  "type": "text",
+                  "lines": [
+                    "You should head there\ntoo, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 239,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "402": {
+      "name": "Pokemon Tower F3",
+      "events": {
+        "11": {
+          "name": "Ghostgirl (F3 north)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Channeler (F3 east)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Be gone! Wretched thing!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The others... they're\npossessed too. Be careful\nup there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Ghostgirl (F3 mid)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Channeler (F3 south)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Keheheh... the fused ones\nscream so sweetly..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Thank you... A spirit\nhad me. I couldn't stop\nsaying those awful things."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Ghostgirl (F3 south)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Channeler (F3 center)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Urrgh... two souls...\none body... wrong..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The spirits here are\nrestless. Something about\nfusion disturbs them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Darkness event",
+          "pages": {
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It isn't dark enough."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "403": {
+      "name": "Pokemon Tower F4",
+      "events": {
+        "11": {
+          "name": "Ghostgirl (F4 south)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Channeler (F4 west)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Be cursed... as they\nwere cursed... Kwaaah!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "May the departed rest.\nEspecially the fused ones.\nTheir spirits are... torn."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Ghostgirl (F4 east)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Channeler (F4 northeast)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "GHOST! No! It wasn't\nsupposed to die! Kwaaah!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Was I dreaming? I saw a\nPokemon split apart...\nlike a fusion reversed."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Channeler (F4 southeast)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Urrgh... two... becoming\none... no... wrong..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What happened? I remember\nnothing. Just... screaming\nthat wasn't mine."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "467": {
+      "name": "Pokemon Tower F5",
+      "events": {
+        "16": {
+          "name": "Ghostgirl (F5 north)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Purified zone (EV011)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Entered purified zone.\nThe air feels still."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN's Pokemon are fully\nhealed!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Channeler (F5 east)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Give... me... the blood\nof the fused..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I feel drained... like\nsomething fed on my grief."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Ghostgirl (F5 south)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Purified zone (EV012)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Entered purified zone.\nThe air feels still."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN's Pokemon are fully\nhealed!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Channeler (F5 south)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Come play with us...\nForever and ever..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Please, get me out of\nhere! I want to go home!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Channeler (F5 northwest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Give... me... your soul...\nto make us whole..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Something had me. Like\nbeing fused with a ghost\nthat wasn't there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Channeler (F5 north)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You... shall... join the\ndead... as one..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "How long was I gone? It\nfelt like years inside\nthat darkness."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Purified zone (EV015)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Entered purified zone.\nThe air feels still."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN's Pokemon are fully\nhealed!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Safe-room Channeler",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Come, child. I sealed this\nspace with white magic.\nYou can rest here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "variable_id": 160,
+                "variable_value": 12
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Come, child. I sealed this\nspace with white magic.\nYou can rest here."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I can teach your Pokemon\na move for protection.\nFor a small fee, of\ncourse."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\GI will teach Dark Pulse\nto one of your Pokemon\nfor $\\V[15].\nDo you accept?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Done. The darkness may\nprotect you where light\ncannot. Come back anytime."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Return\nwith $\\V[15] if you change\nyour mind."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "You can't fool me. Come\nback with $\\V[15] if you\nwant the move."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "May the dead rest in\npeace."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "468": {
+      "name": "Pokemon Tower F6",
+      "events": {
+        "5": {
+          "name": "Ghost Marowak area",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Be gone... You do not\nbelong among the dead..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Ghostgirl (F6)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 701
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Channeler (F6 north)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "My Pokemon... dead...\nBut we still fight...\nas one..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My hair... it's fine.\nThat spirit made me see\nterrible things."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Channeler (F6 south)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Ke... ke... ke...\nDo you hear them crying?\nThe fused ones?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Please... I just want to\ngo home. This tower is\nfull of so much pain."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "469": {
+      "name": "Pokemon Tower F7",
+      "events": {
+        "16": {
+          "name": "Riddle tombstone (EV016)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "\\C[1]Where first moonlight\nbathed the land, a prism\nrests where stones meet\nsand."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[6]Within a tunnel deep\nand wide, find the prism\nwhere shadows hide."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\C[5]Where psychic echoes\nresonate, a prism waits\nbeyond mind's gate."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[4]Amidst a torrent's\nrushing flow, the final\nprism's light does glow."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Prism pedestal (EV011)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 706
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A small pedestal. It seems\nto hold a missing strange\nprism..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Place the Strange Prism\non the pedestal?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A strange prism glowing\nfaintly."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Other pedestals remain\nfor \\V[1] missing prisms..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 270,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prism glows\nintensely now."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 708
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prisms have\nstopped glowing entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Riddle tombstone (EV017)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "\\C[1]Where first moonlight\nbathed the land, a prism\nrests where stones meet\nsand."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[6]Within a tunnel deep\nand wide, find the prism\nwhere shadows hide."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\C[5]Where psychic echoes\nresonate, a prism waits\nbeyond mind's gate."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[4]Amidst a torrent's\nrushing flow, the final\nprism's light does glow."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Mr. Fuji (F7)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 153
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh, hello \\pn."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You came to save me?\nYou have my deepest\ngratitude."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Those Rocket grunts came\nfor the Master Ball\nblueprint. I worked on it\nyears ago, at Silph Co."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "I was no match for them.\nThey took what they came\nfor..."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I left Silph when I saw\nwhat fusion was becoming.\nBut the Master Ball... that\nfear followed me here."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Using innocent Pokemon for\nprofit and power... It\nfills my heart with a\nsadness I cannot name."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, your journey will\nfail without love for your\nPokemon. Take this. It\nmay help."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "The Poke Flute's melody\nwill wake any sleeping\nPokemon."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "It works on all sleeping\nPokemon."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 153,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Has my flute helped you?\nMusic soothes what science\ncannot."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Prism pedestal (EV012)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 706
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A small pedestal. It seems\nto hold a missing strange\nprism..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Place the Strange Prism\non the pedestal?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A strange prism glowing\nfaintly."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Other pedestals remain\nfor \\V[1] missing prisms..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 270,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prism glows\nintensely now."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 708
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prisms have\nstopped glowing entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Prism pedestal (EV013)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 706
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A small pedestal. It seems\nto hold a missing strange\nprism..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Place the Strange Prism\non the pedestal?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A strange prism glowing\nfaintly."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Other pedestals remain\nfor \\V[1] missing prisms..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 270,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prism glows\nintensely now."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 708
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prisms have\nstopped glowing entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Type Expert Ghost",
+          "pages": {
+            "0": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Can you feel it? This\nplace is brimming with\n\\V[2]-type energy!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'm an expert on \\V[2]-\ntype Pokemon. I've grown\nwith them all my life."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Think you can handle a\ntype expert? Beat my team\nusing only \\V[2]-types\nand I'll give you my\n\\C[5]special outfit\\C[0]."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Select your team! Only\n\\V[2]-type Pokemon are\nallowed!"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "You beat me at my own\nspecialty!"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "A true testament to your\nmastery of type matchups!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Well then, a promise is\na promise. Take this\nspecial outfit!"
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "Wearing it, you may find\n\\V[2]-type items after\nbattles!"
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "Remember, only \\V[2]-type\nPokemon are allowed!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat me at my own\ngame. I'll never live\nit down!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Prism pedestal (EV014)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 706
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A small pedestal. It seems\nto hold a missing strange\nprism..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Place the Strange Prism\non the pedestal?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A strange prism glowing\nfaintly."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Other pedestals remain\nfor \\V[1] missing prisms..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 270,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prism glows\nintensely now."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 708
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prisms have\nstopped glowing entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Initial prism (EV009)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A strange prism glowing\nfaintly."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Other pedestals remain\nfor 4 missing prisms..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "This could be worth\ninvestigating."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 706
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A strange prism glowing\nfaintly."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Other pedestals remain\nfor \\V[1] missing prisms..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 270,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prism glows\nintensely now."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 708
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The strange prisms have\nstopped glowing entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Prism glow event (EV015)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch2_id": 706,
+                "variable_id": 270,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "The prisms glow more\nstrongly!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "The entire tower went\ndark!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,537 @@
+{
+  "_implementation_notes": [
+    "FUCHSIA CITY FILL — Phase 2 (Post-Saffron reflection).",
+    "Covers: Pokemon Center (476), Safari Zone Gate inner (804),",
+    "Fuchsia houses (481, 482), Fuchsia Hotel (477, 478),",
+    "Safari Zone areas (484-488, 717, 107), Routes 14-15 (440, 444),",
+    "Fishing Hut (471), Gate (213), Creepy House (712-714),",
+    "Underwater (162).",
+    "",
+    "Tone: Direct heat. Quiet after the storm. Strength is currency.",
+    "NPCs know people who've died. Koga's practical ethos pervades.",
+    "Safari Zone: ecological preserve. Unfused species struggle.",
+    "",
+    "PRESERVED (mechanical/quest): Nurse healing (476 E4),",
+    "Iron Head tutor (476 E17), Musharna/HA tracker (481 E5),",
+    "Janine trade (482 E5 — mechanical flow preserved, light flavor),",
+    "Hotel rest/salon (477 E5/15/16), Bike Race (478 E10/11),",
+    "Grimer quest (478 E6), Chansey quest (478 E7/8),",
+    "Carvanha quest (478 E12), Safari Zone entry (804 E3/7),",
+    "Signal Beam tutor (484 E16), Safari signs (484 E8-11),",
+    "meteor (485 E19), CutTree (485 E37), Scolipede (485 E33/38),",
+    "white rocks (486), Diglett (487), wild Pokemon (488),",
+    "Chansey owner (717 E3), Secret House HM (107 E1),",
+    "all trainer battles (440, 444), Pokemon nests (444 E8/25),",
+    "Fishing Guru brother (471 E3), Oak assistant (213 E5),",
+    "wildlife boards (213 E1/2), Underwater (162),",
+    "Creepy House books/beds/dolls/mirrors (712-714 — ALL preserved).",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "476": {
+      "name": "Pokemon Center (Fuchsia)",
+      "events": {
+        "9": {
+          "name": "EV009 — Paras NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Paras is one of the few",
+                    "species still thriving in",
+                    "the Safari Zone. Tough",
+                    "little things."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Their effect spores keep",
+                    "giving me allergies, but",
+                    "at least they're surviving.",
+                    "More than I can say for",
+                    "Chansey out there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Pokemon Lover",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Pokemon are everywhere in",
+                    "Fuchsia — the Zoo, the",
+                    "Safari Zone. It's one of",
+                    "the last places where you",
+                    "can see unfused species",
+                    "living naturally."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Koga fights to keep it",
+                    "that way. Not for politics.",
+                    "Just because he thinks",
+                    "strength means surviving",
+                    "on your own terms."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Gary — Rival Resting",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 165 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Getting some rest before",
+                    "I head out again."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Heard there's trouble in",
+                    "Saffron. Rocket took over",
+                    "the whole city. The League",
+                    "can't — or won't — act."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "477": {
+      "name": "Fuchsia Hotel (Lobby)",
+      "events": {
+        "11": {
+          "name": "EV011 — Time Tip NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Moonlight and Morning Sun",
+                    "let you wait for night or",
+                    "dawn when you're outdoors."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Useful when there's no",
+                    "hotel nearby. Out on these",
+                    "routes, you learn to be",
+                    "self-sufficient."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Koga Rumor NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I heard Koga turned down",
+                    "the Elite Four. Said",
+                    "Fuchsia needed him more."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Between you and me, I",
+                    "think he just doesn't want",
+                    "to answer to anyone. The",
+                    "man does things his way."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "478": {
+      "name": "Fuchsia Hotel (Quests)",
+      "events": {
+        "9": {
+          "name": "EV009 — Empty Room",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The room is empty. A pair",
+                    "of muddy boots by the door.",
+                    "Someone who walks the",
+                    "routes, not the city."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "482": {
+      "name": "Fuchsia City (Janine House)",
+      "events": {
+        "5": {
+          "name": "EV005 — Janine",
+          "pages": {
+            "0": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Hello! I'm Janine, the",
+                    "daughter of Fuchsia City's",
+                    "Gym Leader."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "We've met before, yes?",
+                    "My father says a trainer",
+                    "who can't adapt isn't a",
+                    "trainer at all. That goes",
+                    "for me too."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 413, "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Someday I want to be a",
+                    "Gym Leader like my father.",
+                    "That's why I train so hard."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "He says the world doesn't",
+                    "care about your reasons.",
+                    "Only your results."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "484": {
+      "name": "Safari Zone — Area 2",
+      "events": {
+        "16": {
+          "name": "EV016 — Safari Visitor/Tutor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Safari Zone is one of",
+                    "the last places where you",
+                    "can find unfused species.",
+                    "Outside these fences,",
+                    "they can't compete."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "717": {
+      "name": "Safari Zone — Area 5 (Rest House)",
+      "events": {
+        "5": {
+          "name": "Artifact Finder",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Found a rare artifact in",
+                    "the sand outside! The",
+                    "Safari Zone is full of",
+                    "surprises. Natural ones.",
+                    "No fusion required."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Desert Temple NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There's a rare Pokemon",
+                    "deep in the desert temple.",
+                    "A real maze in there."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "But the Pokemon that live",
+                    "there are pure. Unfused.",
+                    "Worth the challenge."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "440": {
+      "name": "Route 14",
+      "events": {
+        "1": {
+          "name": "Trainer(3) — Bird Keeper",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My Pidgeot won't fuse.",
+                    "I've had offers. Good ones.",
+                    "But she's been with me",
+                    "since I was ten."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(5) — Legendary Question",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Have you heard about the",
+                    "legendary Pokemon? They",
+                    "say some are so powerful",
+                    "no ball can catch them.",
+                    "Almost no ball."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "444": {
+      "name": "Route 15",
+      "events": {
+        "10": {
+          "name": "Trainer(5) — Lonely Raiser",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I raise Pokemon because I",
+                    "live alone out here. They",
+                    "keep me company. I don't",
+                    "need fusion for that."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 — Creepy House Warning",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I followed a wild Pokemon",
+                    "near that old house and I",
+                    "swear I saw something move",
+                    "inside the windows."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I wouldn't go in there.",
+                    "Some places remember bad",
+                    "things."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "213": {
+      "name": "Route 15/18 Gate",
+      "events": {
+        "4": {
+          "name": "EV004 — Ghost House NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There's an old house in",
+                    "the swamp. My sister says",
+                    "she saw a ghost there."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Probably just a wild",
+                    "Pokemon. But out here,",
+                    "you learn not to dismiss",
+                    "anything."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "471": {
+      "name": "Fishing Hut",
+      "events": {
+        "1": {
+          "name": "EV001 — Fish Smell 1",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Smells like fish. And",
+                    "something else. The water",
+                    "Pokemon are changing —",
+                    "fused things washing up",
+                    "that nobody can name."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 — Fish Smell 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Smells like fish. The old",
+                    "man's been here for years.",
+                    "Says the catch has changed.",
+                    "Less Magikarp. More things",
+                    "he doesn't recognize."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

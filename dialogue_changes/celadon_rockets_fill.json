@@ -1,0 +1,1405 @@
+{
+  "_implementation_notes": [
+    "CELADON ROCKETS FILL — Maps 431, 446, 447, 448, 449, 455, 456, 457.",
+    "Also covers Maps 072 (Celadon Sewers) — NOT in wave4 data, skip.",
+    "Tone: TENSE. Grunts range from ideologues to hired muscle to scared kids.",
+    "Rocket grunts should sound like people with an argument, not cartoon villains.",
+    "",
+    "MECHANICAL EVENTS PRESERVED (not modified):",
+    "- Map 431: Erika partner join/leave events (EV030/EV031/EV037/EV038/EV054)",
+    "- Map 431: Warm air vent descriptions (EV032/EV033/EV034)",
+    "- Map 446: Erika partner events (EV016/EV033)",
+    "- Map 446: Warm air vents (EV013/EV017/EV018)",
+    "- Map 447: Water level control (EV001) + Erika events (EV004/EV005)",
+    "- Map 448: Water level control (EV001)",
+    "- Map 449: Erika path-split events (EV004-EV012, EV038)",
+    "- Map 449: Barrel odor events (EV013/EV014)",
+    "- Map 449: Lift Key event (EV015)",
+    "- Map 449 EV020: Police/undercover event — complex scripted scene, preserved",
+    "- Map 455-456: Barrel odor events preserved",
+    "- Map 457 EV009: Triple fusion notes — preserved (lore document)",
+    "- Map 457 EV011: Employee Handbook — preserved (lore document)",
+    "- Map 457 EV004: Giovanni post-battle + Silph Scope — preserved mechanically",
+    "- Map 457 EV001/EV007: Giovanni pre-battle — REWRITTEN for Synthesis tone",
+    "",
+    "Trainer pre-battle lines rewritten. Post-battle lines rewritten.",
+    "All battle trigger mechanics, warp tiles, and dungeon puzzle preserved.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "431": {
+      "name": "Celadon Sewers",
+      "events": {
+        "44": {
+          "name": "Trainer(4) (Grunt — Sentry)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Intruders! This area is under",
+                    "Rocket jurisdiction. The city",
+                    "signed off on it. Legally."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You're trespassing on private",
+                    "property. The permits are real.",
+                    "Ask the city council."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "This is a serious offense.",
+                    "But who's going to arrest us?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "Trainer(3) (Grunt — Territorial)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You really shouldn't be down",
+                    "here. For your own sake.",
+                    "The sewers aren't safe for",
+                    "civilians anymore."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I forbid you from going",
+                    "further. What we're building",
+                    "here is bigger than you know."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "40": {
+          "name": "Trainer(3) (Grunt — Rights Arguer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Well well. What have we here?",
+                    "Two more heroes come to clean",
+                    "up Celadon's dirty secret?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The sewers are public. We have",
+                    "every right to be here.",
+                    "More right than you, honestly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "46": {
+          "name": "Trainer(4) (Grunt — Uniform Spotter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "What are you doing?! You're",
+                    "not worthy of that uniform!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you aren't Rocket.",
+                    "Clever disguise, though.",
+                    "Almost had me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Look all you want. You won't",
+                    "find the hideout entrance.",
+                    "It's better hidden than",
+                    "Erika's conscience."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "41": {
+          "name": "Trainer(3) (Grunt — Squatter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "We claimed these sewers. Fair",
+                    "and square. The city didn't",
+                    "want them. We did."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Go back to the surface where",
+                    "it's pretty. Leave the ugly",
+                    "work to us."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "Trainer(3) (Grunt — Loyal)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Take off that uniform, traitor!",
+                    "You haven't earned the right",
+                    "to wear it."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Our leader is strong. Stronger",
+                    "than anyone the League has.",
+                    "That's why we follow him."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What is Rocket doing here?",
+                    "Building something. Something",
+                    "the League won't."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That's all you need to know."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "53": {
+          "name": "Trainer(5) (Grunt — Water Puzzle)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "So you figured out the water",
+                    "levels. Smart kid. Won't help",
+                    "you much further down."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Don't bother looking for a",
+                    "secret hideout. Even if you",
+                    "found it, you wouldn't last",
+                    "five minutes inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "42": {
+          "name": "Trainer(4) (Grunt — Wet Complainer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Stop messing with the",
+                    "water level! I didn't sign up",
+                    "for sewer duty to get wet."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We keep it dry down here for",
+                    "easier access to our secret...",
+                    "Wait. Forget I said anything."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "43": {
+          "name": "Trainer(4) (Grunt — Doorman)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This passage is Rocket only.",
+                    "Members get dental. You don't."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket members only.",
+                    "Badge or no badge."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fine, go ahead. You won't",
+                    "make it far. The real security",
+                    "starts inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "Erika (Partner Join)",
+          "_note": "MECHANICAL — Partner join event. Preserved."
+        },
+        "54": {
+          "name": "EV054 (Erika Rejoin)",
+          "_note": "MECHANICAL — Partner rejoin. Preserved."
+        },
+        "30": {
+          "name": "EV030 (Erika Leave/Wait)",
+          "_note": "MECHANICAL — Partner leave/wait. Preserved."
+        },
+        "31": {
+          "name": "EV031 (Erika Leave/Wait 2)",
+          "_note": "MECHANICAL — Partner leave/wait. Preserved."
+        },
+        "37": {
+          "name": "EV037 (Erika Leave/Wait 3)",
+          "_note": "MECHANICAL — Partner leave/wait. Preserved."
+        },
+        "32": {
+          "name": "EV032 (Warm Air Vent)",
+          "_note": "MECHANICAL — Environmental text. Preserved."
+        },
+        "33": {
+          "name": "EV033 (Warm Air Vent)",
+          "_note": "MECHANICAL — Environmental text. Preserved."
+        },
+        "34": {
+          "name": "EV034 (Warm Air Vent)",
+          "_note": "MECHANICAL — Environmental text. Preserved."
+        }
+      }
+    },
+    "446": {
+      "name": "Celadon Sewers (Lower)",
+      "events": {
+        "27": {
+          "name": "Trainer(5) (Grunt — Sentry 2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Intruders. Again. Doesn't",
+                    "anyone respect private",
+                    "infrastructure anymore?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Trespassing is a serious",
+                    "offense. Not that anyone in",
+                    "Celadon enforces the law."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That's sort of our whole",
+                    "business model."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "Trainer(3) (Grunt — Defiant)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Well well. More surface-",
+                    "dwellers slumming it in the",
+                    "sewers. How civic-minded."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "These sewers are public space.",
+                    "We're exercising our rights.",
+                    "With Pok\u00e9mon. Aggressively."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Trainer(3) (Grunt — Spotter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you aren't Rocket.",
+                    "What are civilians doing",
+                    "this deep?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "This is restricted. By us.",
+                    "Which is basically the same",
+                    "as officially."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Look around. You won't find",
+                    "the hideout. We've hidden it",
+                    "better than Erika hides her",
+                    "tax records."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "Trainer(3) (Grunt — Warning)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You shouldn't be down here.",
+                    "Not because of us. Because",
+                    "of what lives in the water."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I forbid you from going",
+                    "further. For your own good.",
+                    "Honestly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "Trainer(3) (Grunt — Bravado)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Two against one? Fine. I",
+                    "didn't join Rocket because",
+                    "I was afraid of bad odds."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What's Rocket doing here?",
+                    "Making fusion accessible.",
+                    "The League charges a fortune",
+                    "for licenses. We don't."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Call us criminals if you want.",
+                    "We call ourselves practical."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "Trainer(5) (Grunt — Water Smarts)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Figured out the water levels?",
+                    "Clever. Most intruders drown",
+                    "before they get this far."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There's no secret hideout",
+                    "here. Definitely not behind",
+                    "any suspiciously clean walls."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "Trainer(4) (Grunt — Can't Swim)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Please stop flooding the",
+                    "sewers! I can't swim! They",
+                    "didn't mention this in the",
+                    "recruitment brochure!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "42": {
+          "name": "Trainer(4) (Grunt — Commander)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I command you to drain these",
+                    "sewers this instant! I didn't",
+                    "get promoted to stand in",
+                    "filthy water!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "Trainer(4) (Grunt — Gate Guard)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This passage is restricted.",
+                    "Rocket personnel only."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Members only. We have a dress",
+                    "code, a dental plan, and zero",
+                    "tolerance for trespassers."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Go ahead. You won't last",
+                    "five minutes in there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016 (Erika Leave/Wait)",
+          "_note": "MECHANICAL — Partner event. Preserved."
+        },
+        "33": {
+          "name": "EV033 (Erika Rejoin)",
+          "_note": "MECHANICAL — Partner event. Preserved."
+        },
+        "13": {
+          "name": "EV013 (Warm Air Vent)",
+          "_note": "MECHANICAL — Environmental text. Preserved."
+        },
+        "17": {
+          "name": "EV017 (Warm Air Vent)",
+          "_note": "MECHANICAL — Environmental text. Preserved."
+        },
+        "18": {
+          "name": "EV018 (Warm Air Vent)",
+          "_note": "MECHANICAL — Environmental text. Preserved."
+        }
+      }
+    },
+    "447": {
+      "name": "Control Room",
+      "events": {
+        "1": {
+          "name": "EV001 (Water Level Control)",
+          "_note": "MECHANICAL — Water drain/flood control. Preserved entirely."
+        },
+        "4": {
+          "name": "EV004 (Erika Leave/Wait)",
+          "_note": "MECHANICAL — Partner event. Preserved."
+        },
+        "5": {
+          "name": "EV005 (Erika Rejoin)",
+          "_note": "MECHANICAL — Partner event. Preserved."
+        }
+      }
+    },
+    "448": {
+      "name": "Control Room (2)",
+      "events": {
+        "1": {
+          "name": "EV001 (Water Level Control)",
+          "_note": "MECHANICAL — Water drain/flood control. Preserved entirely."
+        }
+      }
+    },
+    "449": {
+      "name": "Team Rocket Hideout (Entry Level)",
+      "events": {
+        "4": {
+          "name": "EV004 (Erika — Path Split Intro)",
+          "_note": "MECHANICAL — Path split mechanic. Preserved."
+        },
+        "5": {
+          "name": "EV005 (Path Choice Result)",
+          "_note": "MECHANICAL — Path split result. Preserved."
+        },
+        "6": {
+          "name": "EV006 (Path Choice Result)",
+          "_note": "MECHANICAL — Path split result. Preserved."
+        },
+        "7": {
+          "name": "EV007 (Path Choice Result)",
+          "_note": "MECHANICAL — Path split result. Preserved."
+        },
+        "8": {
+          "name": "EV008 (Path Choice Result)",
+          "_note": "MECHANICAL — Path split result. Preserved."
+        },
+        "9": {
+          "name": "EV009 (Path Choice)",
+          "_note": "MECHANICAL — Path split choice. Preserved."
+        },
+        "10": {
+          "name": "EV010 (Path Choice)",
+          "_note": "MECHANICAL — Path split choice. Preserved."
+        },
+        "11": {
+          "name": "EV011 (Path Choice)",
+          "_note": "MECHANICAL — Path split choice. Preserved."
+        },
+        "12": {
+          "name": "EV012 (Path Choice)",
+          "_note": "MECHANICAL — Path split choice. Preserved."
+        },
+        "38": {
+          "name": "Erika (Partner)",
+          "_note": "MECHANICAL — Partner event. Preserved."
+        },
+        "13": {
+          "name": "EV013 (Barrel Odor)",
+          "_note": "MECHANICAL — Environmental. Preserved."
+        },
+        "14": {
+          "name": "EV014 (Barrel Odor)",
+          "_note": "MECHANICAL — Environmental. Preserved."
+        },
+        "15": {
+          "name": "EV015 (Lift Key)",
+          "_note": "MECHANICAL — Key item use. Preserved."
+        },
+        "20": {
+          "name": "EV020 (Police/Undercover Scene)",
+          "_note": "MECHANICAL — Complex scripted scene with multiple conditions. Preserved entirely."
+        }
+      }
+    },
+    "455": {
+      "name": "Team Rocket Hideout (B2F)",
+      "events": {
+        "77": {
+          "name": "Trainer(2) (Grunt — Rat Catcher)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Lost, little rat? This isn't",
+                    "a place for kids with hero",
+                    "complexes."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Boss! I'm sorry! The kid was",
+                    "stronger than expected! They",
+                    "always are, lately..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "72": {
+          "name": "Trainer(1) (Grunt — Confused)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Who are you? How did you",
+                    "get past the sewers? Past",
+                    "the locks? Past everyone?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You think beating us changes",
+                    "anything? Rocket's bigger",
+                    "than this hideout. Bigger",
+                    "than this city."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "74": {
+          "name": "Trainer(3) (Grunt — Last Stand)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "That's it. This is as far",
+                    "as you go. The boss is",
+                    "behind me and I won't fail."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Our boss is stronger than",
+                    "any gym leader. He'll destroy",
+                    "you. I almost feel sorry."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "75": {
+          "name": "Trainer(1) (Grunt — Uniform Check)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I don't recognize you. That",
+                    "uniform doesn't fit right.",
+                    "Where did you steal it?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You broke into our operation?",
+                    "A kid? The League must be",
+                    "desperate, sending children."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You won't get away with this.",
+                    "Rocket has people everywhere.",
+                    "Even in places you trust."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "456": {
+      "name": "Team Rocket Hideout (B3F)",
+      "events": {
+        "77": {
+          "name": "Trainer(1) (Grunt — B3F Rat Catcher)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You're still here? How many",
+                    "of us do you have to beat",
+                    "before you take a hint?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Boss, I'm sorry... The kid",
+                    "just won't stop. I've never",
+                    "seen anyone this stubborn."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "72": {
+          "name": "Trainer(1) (Grunt — Identity)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Who even are you? This is",
+                    "the most secure facility in",
+                    "Kanto and you just... walked",
+                    "in?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You think this is about good",
+                    "and evil? We're the ones",
+                    "making fusion available to",
+                    "everyone. The League hoards it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "74": {
+          "name": "Trainer(3) (Grunt — Loyalist)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "End of the line. Nobody gets",
+                    "past me to the boss."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The boss will destroy you.",
+                    "He's not like us grunts."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "He has a vision. You're just",
+                    "a kid with a badge collection."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "75": {
+          "name": "Trainer(3) (Grunt — Suspicious)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "That uniform's too small for",
+                    "you. Dead giveaway."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Broke in? A child? This is",
+                    "what passes for law enforce-",
+                    "ment in Celadon. Pathetic."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You won't get away with this.",
+                    "Even if you beat the boss,",
+                    "Rocket doesn't end here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "95": {
+          "name": "EV095 (Barrel Odor)",
+          "_note": "MECHANICAL — Environmental. Preserved."
+        },
+        "96": {
+          "name": "EV096 (Barrel Odor)",
+          "_note": "MECHANICAL — Environmental. Preserved."
+        },
+        "94": {
+          "name": "EV094 (Barrel Odor)",
+          "_note": "MECHANICAL — Environmental. Preserved."
+        }
+      }
+    },
+    "457": {
+      "name": "Team Rocket Hideout (Boss Floor)",
+      "events": {
+        "1": {
+          "name": "EV001 (Giovanni — Pre-Battle A)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! I'm sorry! I couldn't",
+                    "do anything. He was too",
+                    "strong for me alone..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "So. You made it here too.",
+                    "I confess, I'm impressed."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Did you use that stolen",
+                    "uniform to get past my",
+                    "guards? Resourceful. It",
+                    "doesn't matter now."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "It's noble of you to worry",
+                    "about the old man in Pok\u00e9mon",
+                    "Tower. But he stood in our",
+                    "way. Consequences follow."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket acquires Pok\u00e9mon",
+                    "from around the world. They",
+                    "are tools \u2014 essential ones."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "The League licenses fusion",
+                    "to the wealthy. We make it",
+                    "available. Call it what you",
+                    "will."
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "I am Giovanni. Leader of",
+                    "Team Rocket."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "For your insolence, you will",
+                    "learn what it means to stand",
+                    "against us."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Giovanni — Pre-Battle B)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! I'm sorry! I couldn't",
+                    "do anything. He was too",
+                    "strong for me alone..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "So. You made it here too.",
+                    "I confess, I'm impressed."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Did you use that stolen",
+                    "uniform to get past my",
+                    "guards? Resourceful. It",
+                    "doesn't matter now."
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "It's noble of you to worry",
+                    "about the old man in Pok\u00e9mon",
+                    "Tower. But he stood in our",
+                    "way. Consequences follow."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket acquires Pok\u00e9mon",
+                    "from around the world. They",
+                    "are tools \u2014 essential ones."
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "The League licenses fusion",
+                    "to the wealthy. We make it",
+                    "available. Call it what you",
+                    "will."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "I am Giovanni. Leader of",
+                    "Team Rocket."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "For your insolence, you will",
+                    "learn what it means to stand",
+                    "against us."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Giovanni — Post-Battle + Silph Scope)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I see you raise your Pok\u00e9mon",
+                    "with genuine care. Unusual,",
+                    "for someone so young."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "A child like you could never",
+                    "understand what I hope to",
+                    "achieve. Not yet."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I shall step aside. For now.",
+                    "I suspect we will meet again",
+                    "under different circumstances."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "Whew! Thank goodness you",
+                    "were here, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "I couldn't have done it alone.",
+                    "Thank you. Truly."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "This Silph Scope Giovanni",
+                    "left behind... It lets you",
+                    "see Ghost-type Pok\u00e9mon.",
+                    "The League classified it."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "With this, you can go save",
+                    "Mr. Fuji atop Pok\u00e9mon Tower.",
+                    "He's been trapped there by",
+                    "whatever Rocket disturbed."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "I should head back to my gym.",
+                    "I have much to think about."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Come challenge me when you're",
+                    "ready. You've earned it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Triple Fusion Notes)",
+          "_note": "MECHANICAL — Lore document about triple fusion. Preserved entirely."
+        },
+        "11": {
+          "name": "EV011 (Employee Handbook)",
+          "_note": "MECHANICAL — Lore document. Preserved entirely."
+        }
+      }
+    }
+  }
+}
