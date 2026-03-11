@@ -1,0 +1,1174 @@
+{
+  "_implementation_notes": [
+    "SS ANNE FILL PART 2 \u2014 Maps 31, 34, 35, 36 (lower/working areas of the ship).",
+    "  Map 31: Kitchen/crew area. Sailors, cooks, working-class crew.",
+    "  Map 34: Lower deck. Trainers, families, more crew.",
+    "  Map 35: Captain's Room. Seasick captain (original gag preserved), gives CUT.",
+    "  Map 36: Cargo hold. Suspicious items, sailors who've seen things.",
+    "",
+    "STORY CONTEXT: The S.S. Anne is hosting a League diplomatic event.",
+    "  The upper decks are political theater; down here, the crew sees through it.",
+    "  Grittier tone \u2014 cynical workers, hints of League cargo, overheard secrets.",
+    "",
+    "PRESERVED MECHANICAL ELEMENTS:",
+    "  Map 31: Trainer rematch choices (E16p1, E11p1, E15p1). Trash can events.",
+    "  Map 34: Trainer rematch choices (E14p1). Trade NPC (E15) \u2014 ALL choices/trade blocks preserved.",
+    "    Trash can events. Pokemon cry events (E18, E25).",
+    "  Map 35: Captain CUT gift sequence \u2014 back-rub text, item receive, HM text all preserved.",
+    "    Trash can (E3).",
+    "  Map 36: Trainer rematch choices (E8p1, E9p1, E10p1).",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "31": {
+      "name": "S.S. Anne (Kitchen/Crew Area)",
+      "events": {
+        "16": {
+          "name": "Trainer(3) \u2014 Sea Pokemon Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey, kid! Shouldn't you be",
+                    "upstairs with the fancy folk?",
+                    "My crew's all Water-types."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Want another round, kid?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That's the spirit! Let's go!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Figures. You're soft like",
+                    "the rest of 'em up top."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(3) \u2014 Cynical Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You think this is a party",
+                    "cruise? Down here it's work."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Feel like getting beat again?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ha! You asked for it!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Smart choice. Save your",
+                    "strength for the real fights."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 \u2014 Trash Can",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 \u2014 Crew NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We're docked in Vermilion",
+                    "until the League delegates",
+                    "finish their business."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "After that, who knows where",
+                    "they'll send us next."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 \u2014 Kitchen Appliance",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bzzzzzzzzzzzzz!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(3) \u2014 Feisty Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Ha! A kid with guts! I like",
+                    "that more than the suits",
+                    "upstairs playing politics."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League folks don't fish.",
+                    "If you want sea Pok\u00e9mon,",
+                    "you'll need a proper rod."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 \u2014 Kitchen Appliance",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Psheee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 \u2014 Cook NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I spent my whole paycheck",
+                    "on ingredients for tonight's",
+                    "banquet. League standards."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "They won't even taste it.",
+                    "Too busy talking policy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(3) \u2014 Plank Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Down here, we settle things",
+                    "the old way. No League rules!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Tentacool drift in through",
+                    "the bilge pipes sometimes.",
+                    "Keeps the crew on edge."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ready for another round?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Now we're talking!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Bah. Come back when you've",
+                    "got some salt in your veins."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "34": {
+      "name": "S.S. Anne (Lower Deck)",
+      "events": {
+        "27": {
+          "name": "EV027 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing but trash."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 \u2014 Machoke Worker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Machoke hauls crates all",
+                    "day. You'd be surprised",
+                    "what the League ships around."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing but trash."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 \u2014 Growlithe Owner",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I brought my Growlithe to",
+                    "guard my cabin. Can't be",
+                    "too careful on this ship."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Some of these \"delegates\"",
+                    "give me a bad feeling."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 \u2014 Seasick Parent",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I need to watch the kid,",
+                    "but this rocking... Urrgh.",
+                    "Why did we even come here?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing but trash."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 \u2014 Growlithe Cry",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Raaarwr!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 \u2014 Kid NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I wanted to explore upstairs",
+                    "but they said it's only for",
+                    "\"important people.\" Hmph!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 \u2014 Observant NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've seen Pok\u00e9mon ferrying",
+                    "people to shore at night.",
+                    "Avoiding the gangway. Odd."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030 \u2014 Trash Can",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(3) \u2014 Old Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I've sailed this route for",
+                    "years. Never seen this many",
+                    "League officials aboard."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fancy another match, kid?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Good. I could use the workout."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Fair enough. You've got places",
+                    "to be, I reckon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 \u2014 Machoke Cry",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Gya guuuu!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 \u2014 Hiker NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I heard some Pok\u00e9mon can",
+                    "light up dark places. Handy",
+                    "for the ship's lower holds."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 \u2014 Trash Snooper",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "... Probably shouldn't have",
+                    "looked in there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(3) \u2014 Trade NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You a collector or a fighter?",
+                    "I deal in rare Pok\u00e9mon."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I only deal in rare stock.",
+                    "The rarer, the better."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You got anything worth",
+                    "my time?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'll swap one of mine for",
+                    "something rare. Show me."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Which one are you offering?"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Nah. That's common stock.",
+                    "I need something rare."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Which of mine do you want?"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "choices",
+                  "choices": [
+                    "Growlpoke",
+                    "Volta"
+                  ],
+                  "cancel_type": 5
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Deal. Let's make it happen."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Don't tell anyone where you",
+                    "got that. It's rare too."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "Deal. Let's make it happen."
+                  ]
+                },
+                {
+                  "start_index": 49,
+                  "type": "text",
+                  "lines": [
+                    "Volta's not easy to find.",
+                    "Treat it well, yeah?"
+                  ]
+                },
+                {
+                  "start_index": 55,
+                  "type": "text",
+                  "lines": [
+                    "Changed your mind? Happens."
+                  ]
+                },
+                {
+                  "start_index": 63,
+                  "type": "text",
+                  "lines": [
+                    "Fine. I'll keep mine then."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That rare one you gave me?",
+                    "Worth every bit of the trade."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021 \u2014 Crew NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They call her a luxury liner.",
+                    "Really she's a floating",
+                    "conference room for the League."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Every port, same routine.",
+                    "Invited trainers, closed-door",
+                    "meetings, then we sail on."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "35": {
+      "name": "Captain's Room",
+      "events": {
+        "1": {
+          "name": "EV001 \u2014 Captain",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ooargh... Thirty years at sea",
+                    "and I still get... Urrp!",
+                    "Seasick at the worst times..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\rRub-rub... Rub-rub."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\r\\PN rubbed the Captain's back."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Whew! Much better, kid.",
+                    "You've got kind hands."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I'd show you my CUT technique",
+                    "if I could stand straight...",
+                    "Here, take this instead."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "It's yours. Teach it to a",
+                    "Pok\u00e9mon and you can cut",
+                    "down small trees anywhere."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Between you and me, the",
+                    "League keeps me docked here",
+                    "longer than I'd like."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Lot of important people on",
+                    "this ship. They don't tell",
+                    "the captain everything."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 88
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "With CUT, you can clear",
+                    "paths that were blocked",
+                    "before. Useful out there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "...Probably shouldn't have",
+                    "looked in there!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "36": {
+      "name": "S.S. Anne (Cargo Hold)",
+      "events": {
+        "8": {
+          "name": "Trainer(1) \u2014 Fisherman",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I found something weird in",
+                    "the cargo nets. Wanna see?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Want to go again?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Alright, round two!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Suit yourself. I'll be here",
+                    "sorting through this cargo."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(3) \u2014 Cargo Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Civilians aren't supposed to",
+                    "be in the hold. But hey,",
+                    "I won't tell if you won't."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Another round, tough kid?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You got nerve. I like that!"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Fair winds to you then, kid."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(3) \u2014 Proud Sailor",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I've loaded crates marked",
+                    "\"League Property\" that",
+                    "weigh more than a Snorlax."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ready for a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This time I won't hold back!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "We'll cross paths again.",
+                    "The sea's smaller than",
+                    "you think."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

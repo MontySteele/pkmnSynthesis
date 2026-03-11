@@ -14,19 +14,19 @@
 | Maps without dialogue | 57 | -- |
 | **Kanto story maps (in scope)** | **418** | -- |
 | Maps DONE (injected) | 17 | 4.1% of in-scope |
-| Maps READY (JSON written, not yet injected) | 247 | 59.1% |
-| Maps PLANNED (city plan exists, no JSON) | 33 | 7.9% |
-| Maps NOT_STARTED | 11 | 2.6% |
-| Maps NO_DIALOGUE | 31 | 7.4% |
-| Maps SPECIAL_LOGIC | 31 | 7.4% |
-| SKIP (deprecated/backup maps) | 41 | 9.8% |
+| Maps READY (JSON written, not yet injected) | 319 | 76.3% |
+| Maps PLANNED (city plan exists, no JSON) | 0 | 0% |
+| Maps NOT_STARTED | 0 | 0% |
+| Maps NO_DIALOGUE | 33 | 7.9% |
+| Maps SPECIAL_LOGIC | 0 | 0% |
+| SKIP (deprecated/backup maps) | 49 | 11.7% |
 | Non-Kanto (Johto, Sevii, system, debug) | 391 | -- |
 | Events with dialogue | 8,030 | -- |
-| Events modified | 1,310 | 16.3% |
+| Events modified | ~2,000 | ~24.9% |
 | Dialogue blocks total | 46,417 | -- |
-| Dialogue blocks modified | 3,382 | 7.3% |
+| Dialogue blocks modified | 5,628 | 12.1% |
 
-### dialogue_changes files (41):
+### dialogue_changes files (59):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
@@ -71,6 +71,23 @@
 | `celadon_cycling_fill.json` | 146, 193, 204, 517, 518 | Ready |
 | `crimson_city_fill.json` | 167, 168, 169, 170, 176, 177 | Ready |
 | `postgame_fill.json` | 140, 197, 198, 398, 399, 720, 722, 723, 724 | Ready |
+| `ss_anne_fill_part1.json` | 17, 28, 29, 30 | Ready |
+| `ss_anne_fill_part2.json` | 31, 34, 35, 36 | Ready |
+| `silph_floors_fill_part1.json` | 121, 212, 660, 661, 662 | Ready |
+| `silph_floors_fill_part2.json` | 663, 758, 665 | Ready |
+| `silph_floors_fill_part3.json` | 666, 667, 668 | Ready |
+| `silph_fork.json` | 807 | Ready |
+| `lance_fill.json` | 318 | Ready |
+| `pokemon_tower_fill.json` | 400, 401, 402, 403, 467, 468, 469 | Ready |
+| `elite_four_fill.json` | 303, 314, 315, 316, 317, 341 | Ready |
+| `saffron_bars_fill.json` | 113, 195, 825, 829 | Ready |
+| `vermilion_extras_fill.json` | 12, 13, 20, 21, 22, 23, 37 | Ready |
+| `sea_routes_fill.json` | 57, 58, 59 | Ready |
+| `fuchsia_safari_fill.json` | 60, 87, 481, 485, 486, 487, 488 | Ready |
+| `victory_road_fill.json` | 143, 148, 304, 306, 307 | Ready |
+| `cerulean_extras_fill.json` | 2, 3, 6 | Ready |
+| `misc_remaining_fill.json` | 100, 142, 827 | Ready |
+| `misc_stragglers_fill.json` | 351, 513, 162, 229, 544, 144, 119, 523, 805 | Ready |
 
 ### City plan docs (9):
 
@@ -252,11 +269,11 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 001 | Cerulean City | 33 | 377 | READY |
-| 002 | PokeMart | 11 | 39 | PLANNED |
-| 003 | \PN's House (Cerulean) | 1 | 11 | PLANNED |
+| 002 | PokeMart | 11 | 39 | READY |
+| 003 | \PN's House (Cerulean) | 1 | 11 | READY |
 | 004 | Cerulean City Gym | 6 | 76 | READY |
 | 005 | Cerulean City (Bike Shop interior) | 4 | 21 | READY |
-| 006 | Team Rocket HQ | 16 | 269 | PLANNED |
+| 006 | Team Rocket HQ | 16 | 269 | READY |
 | 007 | Bike Shop | 8 | 52 | READY |
 | 008 | Route 24 (Nugget Bridge) | 19 | 256 | READY |
 | 009 | Route 25 | 27 | 224 | READY |
@@ -281,8 +298,8 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 012 | Route 5 | 12 | 121 | PLANNED |
-| 013 | Day Care Center | 3 | 129 | PLANNED |
+| 012 | Route 5 | 12 | 121 | READY |
+| 013 | Day Care Center | 3 | 129 | READY |
 | 214 | Day Care Center (interior) | 9 | 131 | READY |
 | 014 | Underground | 5 | 5 | NO_DIALOGUE |
 | 015 | Northern Gate | 6 | 80 | NO_DIALOGUE |
@@ -299,14 +316,14 @@
 | 016 | Route 6 | 45 | 145 | READY |
 | 018 | Southern Gate | 5 | 65 | NO_DIALOGUE |
 | 019 | Vermilion City | 41 | 235 | READY |
-| 020 | Pokemon Center | 9 | 109 | PLANNED |
-| 021 | PokeMart | 24 | 52 | PLANNED |
-| 022 | Vermilion City (house) | 4 | 21 | PLANNED |
-| 023 | Vermilion City (house) | 7 | 28 | PLANNED |
+| 020 | Pokemon Center | 9 | 109 | READY |
+| 021 | PokeMart | 24 | 52 | READY |
+| 022 | Vermilion City (house) | 4 | 21 | READY |
+| 023 | Vermilion City (house) | 7 | 28 | READY |
 | 024 | Vermilion City Gym | 22 | 230 | READY |
 | 025 | Pokemon Fan Club | 11 | 96 | READY |
 | 026 | Harbour | 6 | 28 | READY |
-| 037 | Vermilion City (house) | 5 | 57 | PLANNED |
+| 037 | Vermilion City (house) | 5 | 57 | READY |
 | 061 | Vermilion City Gym (rematch) | 22 | 260 | NO_DIALOGUE |
 | 155 | Route 11 | 10 | 335 | READY |
 | 161 | Lighthouse | 6 | 22 | READY |
@@ -330,15 +347,15 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 017 | S.S. Anne (main deck) | 15 | 288 | SPECIAL_LOGIC |
+| 017 | S.S. Anne (main deck) | 15 | 288 | READY |
 | 027 | S.S. Anne (entrance hall) | 11 | 91 | READY |
-| 028 | S.S. Anne (cabins A) | 17 | 84 | SPECIAL_LOGIC |
-| 029 | S.S. Anne (cabins B) | 17 | 174 | SPECIAL_LOGIC |
-| 030 | S.S. Anne (upper deck) | 2 | 20 | SPECIAL_LOGIC |
-| 031 | S.S. Anne (kitchen/crew) | 15 | 57 | SPECIAL_LOGIC |
-| 034 | SS.Anne (lower deck) | 18 | 79 | SPECIAL_LOGIC |
-| 035 | Captain's Room | 3 | 21 | SPECIAL_LOGIC |
-| 036 | SS. Anne (cargo) | 6 | 41 | SPECIAL_LOGIC |
+| 028 | S.S. Anne (cabins A) | 17 | 84 | READY |
+| 029 | S.S. Anne (cabins B) | 17 | 174 | READY |
+| 030 | S.S. Anne (upper deck) | 2 | 20 | READY |
+| 031 | S.S. Anne (kitchen/crew) | 15 | 57 | READY |
+| 034 | SS.Anne (lower deck) | 18 | 79 | READY |
+| 035 | Captain's Room | 3 | 21 | READY |
+| 036 | SS. Anne (cargo) | 6 | 41 | READY |
 | 032 | S.S. Anne (connector) | 0 | 0 | SKIP |
 | 201 | S.S. Anne (backup) | 1 | 1 | SKIP |
 
@@ -348,14 +365,14 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 351 | Route 9 (west) | 3 | 22 | NOT_STARTED |
+| 351 | Route 9 (west) | 3 | 22 | READY |
 | 495 | Route 9 (east, trainers) | 18 | 165 | READY |
 | 154 | Route 10 | 22 | 104 | READY |
 | 391 | Pokemon Center (Route 10) | 5 | 38 | READY |
 | 349 | Rock Tunnel (1F) | 33 | 137 | READY |
 | 350 | Rock Tunnel (B1F) | 33 | 167 | READY |
 | 512 | Rock Tunnel (connector) | 2 | 2 | NO_DIALOGUE |
-| 513 | Rock Tunnel (side area) | 4 | 8 | NOT_STARTED |
+| 513 | Rock Tunnel (side area) | 4 | 8 | READY |
 | 800 | Rock Tunnel (deep) | 1 | 1 | NO_DIALOGUE |
 | 256 | Gate | 6 | 26 | READY |
 
@@ -376,13 +393,13 @@
 | 420 | Lavender Town (house) | 5 | 25 | READY |
 | 421 | Nicknaming Club | 4 | 73 | READY |
 | 109 | Hidden Tomb | 3 | 3 | READY |
-| 400 | Pokemon Tower (entrance) | 9 | 28 | SPECIAL_LOGIC |
-| 401 | Pokemon Tower F2 | 8 | 204 | SPECIAL_LOGIC |
-| 402 | Pokemon Tower F3 | 7 | 25 | SPECIAL_LOGIC |
-| 403 | Pokemon Tower F4 | 7 | 24 | SPECIAL_LOGIC |
-| 467 | Pokemon Tower F5 | 12 | 53 | SPECIAL_LOGIC |
-| 468 | Pokemon Tower F6 | 5 | 19 | SPECIAL_LOGIC |
-| 469 | Pokemon Tower F7 (Mr. Fuji) | 10 | 104 | SPECIAL_LOGIC |
+| 400 | Pokemon Tower (entrance) | 9 | 28 | READY |
+| 401 | Pokemon Tower F2 | 8 | 204 | READY |
+| 402 | Pokemon Tower F3 | 7 | 25 | READY |
+| 403 | Pokemon Tower F4 | 7 | 24 | READY |
+| 467 | Pokemon Tower F5 | 12 | 53 | READY |
+| 468 | Pokemon Tower F6 | 5 | 19 | READY |
+| 469 | Pokemon Tower F7 (Mr. Fuji) | 10 | 104 | READY |
 | 100 | Spooky chamber | 5 | 38 | READY |
 | 142 | Pokemon Tower B1 | 3 | 4 | READY |
 | 556 | Pokemon Tower F3 (alt) | 8 | 8 | SKIP |
@@ -497,12 +514,12 @@
 | 701 | Saffron Hotel (floor 2) | 8 | 31 | READY |
 | 702 | Saffron Hotel (floor 3) | 3 | 5 | READY |
 | 112 | Saffron Bar (entrance) | 12 | 84 | READY |
-| 113 | Saffron Bar (VIP) | 14 | 47 | PLANNED |
+| 113 | Saffron Bar (VIP) | 14 | 47 | READY |
 | 114 | Saffron Nightclub | 27 | 188 | READY |
 | 115 | Saffron Bar (back room) | 15 | 76 | READY |
-| 195 | Saffron Bar (upstairs) | 10 | 32 | PLANNED |
-| 825 | Saffron Bar (event) | 24 | 197 | PLANNED |
-| 829 | Saffron Bar (event) | 35 | 349 | PLANNED |
+| 195 | Saffron Bar (upstairs) | 10 | 32 | READY |
+| 825 | Saffron Bar (event) | 24 | 197 | READY |
+| 829 | Saffron Bar (event) | 35 | 349 | READY |
 | 120 | Saffron City (house) | 6 | 17 | READY |
 | 141 | Saffron City (house) | 5 | 28 | READY |
 | 153 | Saffron City (house) | 8 | 25 | READY |
@@ -524,18 +541,18 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 757 | 11F (President's Office) | 13 | 118 | DONE |
-| 121 | Silph Co. (lobby) | 10 | 43 | SPECIAL_LOGIC |
-| 212 | Silph Co. (connector) | 2 | 5 | SPECIAL_LOGIC |
-| 660 | 2F | 13 | 63 | SPECIAL_LOGIC |
-| 661 | 3F | 15 | 40 | SPECIAL_LOGIC |
-| 662 | 4F | 20 | 58 | SPECIAL_LOGIC |
-| 663 | 5F | 23 | 75 | SPECIAL_LOGIC |
-| 758 | 6F | 29 | 114 | SPECIAL_LOGIC |
-| 665 | 7F | 30 | 100 | SPECIAL_LOGIC |
-| 666 | 8F | 24 | 79 | SPECIAL_LOGIC |
-| 667 | 9F | 28 | 72 | SPECIAL_LOGIC |
-| 668 | 10F | 22 | 34 | SPECIAL_LOGIC |
-| 807 | 11F (alt/event) | 8 | 63 | SPECIAL_LOGIC |
+| 121 | Silph Co. (lobby) | 10 | 43 | READY |
+| 212 | Silph Co. (connector) | 2 | 5 | READY |
+| 660 | 2F | 13 | 63 | READY |
+| 661 | 3F | 15 | 40 | READY |
+| 662 | 4F | 20 | 58 | READY |
+| 663 | 5F | 23 | 75 | READY |
+| 758 | 6F | 29 | 114 | READY |
+| 665 | 7F | 30 | 100 | READY |
+| 666 | 8F | 24 | 79 | READY |
+| 667 | 9F | 28 | 72 | READY |
+| 668 | 10F | 22 | 34 | READY |
+| 807 | 11F (alt/event) | 8 | 63 | READY |
 | 658 | new (Silph 1F) | 0 | 0 | SKIP |
 | 131 | 9F --old-- | 26 | 134 | SKIP |
 | 305 | 11F.old | 27 | 140 | SKIP |
@@ -552,12 +569,12 @@
 |--------|------|----------|----------|--------|
 | 472 | Fuchsia City (overworld) | 47 | 239 | READY |
 | 476 | Pokemon Center | 11 | 63 | READY |
-| 060 | PokeMart | 26 | 56 | PLANNED |
+| 060 | PokeMart | 26 | 56 | READY |
 | 479 | Fuchsia City Gym | 8 | 161 | READY |
 | 473 | Safari Zone Gate | 9 | 54 | READY |
 | 804 | Safari Zone Gate (inner) | 3 | 19 | READY |
-| 087 | Fuchsia City (house) | 6 | 15 | PLANNED |
-| 481 | Fuchsia City (house) | 3 | 20 | PLANNED |
+| 087 | Fuchsia City (house) | 6 | 15 | READY |
+| 481 | Fuchsia City (house) | 3 | 20 | READY |
 | 482 | Fuchsia City (house) | 5 | 42 | READY |
 | 477 | Fuchsia Hotel | 6 | 35 | READY |
 | 478 | Fuchsia Hotel (rooms) | 8 | 153 | READY |
@@ -571,12 +588,12 @@
 | 074 | Area 1 (interior) | 4 | 8 | NO_DIALOGUE |
 | 484 | Area 2 | 14 | 28 | READY |
 | 075 | Area 2 (interior) | 3 | 5 | NO_DIALOGUE |
-| 485 | Area 3 | 39 | 53 | PLANNED |
+| 485 | Area 3 | 39 | 53 | READY |
 | 082 | Area 3 (interior) | 6 | 26 | NO_DIALOGUE |
-| 486 | Area 4 | 25 | 27 | PLANNED |
+| 486 | Area 4 | 25 | 27 | READY |
 | 107 | Area 4 (interior) | 1 | 20 | READY |
-| 487 | Area 5 | 14 | 64 | NOT_STARTED |
-| 488 | Area 5 (interior) | 15 | 33 | NOT_STARTED |
+| 487 | Area 5 | 14 | 64 | READY |
+| 488 | Area 5 (interior) | 15 | 33 | READY |
 | 717 | Area 5 (side) | 4 | 13 | READY |
 | 443 | Safari Zone (hub) | 0 | 0 | SKIP |
 | 493 | Area 1 _ old | 0 | 0 | SKIP |
@@ -589,7 +606,7 @@
 |--------|------|----------|----------|--------|
 | 159 | Route 12 | 30 | 189 | READY |
 | 471 | Fishing Hut | 3 | 21 | READY |
-| 162 | Underwater (Route 12) | 13 | 26 | NOT_STARTED |
+| 162 | Underwater (Route 12) | 13 | 26 | READY |
 | 149 | Flooded Cave | 1 | 1 | SKIP |
 | 437 | Route 13 | 46 | 350 | READY |
 | 220 | Underwater (Route 13) | 9 | 15 | NO_DIALOGUE |
@@ -656,11 +673,11 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 057 | Route 19 | 9 | 93 | PLANNED |
-| 058 | Route 20 | 12 | 100 | PLANNED |
-| 059 | Route 21 | 11 | 77 | PLANNED |
+| 057 | Route 19 | 9 | 93 | READY |
+| 058 | Route 20 | 12 | 100 | READY |
+| 059 | Route 21 | 11 | 77 | READY |
 | 056 | Surf Race | 5 | 67 | NO_DIALOGUE |
-| 229 | Underwater (Route 21) | 4 | 9 | NOT_STARTED |
+| 229 | Underwater (Route 21) | 4 | 9 | READY |
 | 227 | Underwater (Route 19) | 4 | 4 | SKIP |
 | 228 | Underwater (Route 20) | 4 | 4 | SKIP |
 | 442 | Sunken Ship | 2 | 2 | SKIP |
@@ -676,9 +693,9 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 171 | Route 22 | 19 | 354 | DONE |
-| 085 | Viridian City Gym | 11 | 128 | SPECIAL_LOGIC |
-| 143 | Route 23 | 25 | 149 | PLANNED |
-| 148 | Pokemon League Entrance | 4 | 37 | PLANNED |
+| 085 | Viridian City Gym | 11 | 128 | READY |
+| 143 | Route 23 | 25 | 149 | READY |
+| 148 | Pokemon League Entrance | 4 | 37 | READY |
 
 *Note: Viridian City overworld maps (079, 083, 084, 710, 711, 746) are listed under section 3 above; they have return-visit content planned in `10_endgame.md`.*
 
@@ -690,17 +707,17 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 304 | Victory Road (1F) | 14 | 20 | PLANNED |
-| 306 | Victory Road (2F) | 23 | 65 | PLANNED |
-| 307 | Victory Road (3F) | 14 | 58 | PLANNED |
-| 303 | Indigo Plateau | 5 | 5 | PLANNED |
-| 314 | Pokemon League (lobby) | 11 | 134 | PLANNED |
-| 315 | Elite 1 (Lorelei) | 3 | 85 | PLANNED |
-| 316 | Elite 2 (Bruno) | 3 | 63 | PLANNED |
-| 317 | Elite 3 (Agatha) | 4 | 88 | PLANNED |
-| 318 | Elite 4 (Lance) | 3 | 103 | SPECIAL_LOGIC |
+| 304 | Victory Road (1F) | 14 | 20 | READY |
+| 306 | Victory Road (2F) | 23 | 65 | READY |
+| 307 | Victory Road (3F) | 14 | 58 | READY |
+| 303 | Indigo Plateau | 5 | 5 | READY |
+| 314 | Pokemon League (lobby) | 11 | 134 | READY |
+| 315 | Elite 1 (Lorelei) | 3 | 85 | READY |
+| 316 | Elite 2 (Bruno) | 3 | 63 | READY |
+| 317 | Elite 3 (Agatha) | 4 | 88 | READY |
+| 318 | Elite 4 (Lance) | 3 | 103 | READY |
 | 328 | Champion | 3 | 150 | DONE |
-| 341 | Hall of Fame | 1 | 13 | PLANNED |
+| 341 | Hall of Fame | 1 | 13 | READY |
 | 202 | backup | 15 | 136 | SKIP |
 
 ---
@@ -713,10 +730,10 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 322 | Cerulean Cave (1F) | 11 | 11 | SPECIAL_LOGIC |
-| 323 | Cerulean Cave (B1F) | 13 | 13 | SPECIAL_LOGIC |
+| 322 | Cerulean Cave (1F) | 11 | 11 | NO_DIALOGUE |
+| 323 | Cerulean Cave (B1F) | 13 | 13 | NO_DIALOGUE |
 | 324 | Cerulean Cave (B2F / Mewtwo) | 1 | 5 | READY |
-| 544 | Cerulean Cave WTF | 1 | 4 | NOT_STARTED |
+| 544 | Cerulean Cave WTF | 1 | 4 | READY |
 
 ### Diglett's Cave
 
@@ -732,7 +749,7 @@
 |--------|------|----------|----------|--------|
 | 197 | Power Plant (exterior) | 10 | 17 | READY |
 | 198 | Power Plant (interior) | 74 | 159 | READY |
-| 144 | Power Plant (generator) | 10 | 16 | NOT_STARTED |
+| 144 | Power Plant (generator) | 10 | 16 | READY |
 | 785 | Power Plant.old | 20 | 100 | SKIP |
 
 ### Dream Sequence
@@ -753,14 +770,14 @@
 |--------|------|----------|----------|--------|
 | 167 | Crimson City (overworld) | 26 | 90 | READY |
 | 065 | Pokemon Center | 6 | 48 | NO_DIALOGUE |
-| 119 | PokeMart | 22 | 23 | NOT_STARTED |
+| 119 | PokeMart | 22 | 23 | READY |
 | 168 | Crimson City (house) | 2 | 18 | READY |
 | 169 | Crimson City (house) | 5 | 11 | READY |
 | 170 | Crimson City (house) | 5 | 24 | READY |
 | 176 | Crimson Hotel | 5 | 49 | READY |
 | 177 | Crimson Hotel (rooms) | 6 | 101 | READY |
-| 523 | Waterfall Cave | 3 | 5 | NOT_STARTED |
-| 805 | Waterfall Cave (alt) | 3 | 5 | NOT_STARTED |
+| 523 | Waterfall Cave | 3 | 5 | READY |
+| 805 | Waterfall Cave (alt) | 3 | 5 | READY |
 
 ---
 
@@ -857,24 +874,24 @@ Maps: 033, 067-071, 073, 094, 100, 118, 129, 131, 134, 139, 150, 157, 160,
 | 6 | Route 3 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 7 | Mt. Moon | 18 | 0 | 10 | 0 | 0 | 4 | 0 | 4 |
 | 8 | Route 4 | 4 | 0 | 3 | 0 | 0 | 0 | 0 | 1 |
-| 9 | Cerulean City + Routes 24, 25 | 21 | 0 | 15 | 3 | 0 | 1 | 0 | 2 |
-| 10 | Route 5 + Underground | 6 | 0 | 2 | 2 | 0 | 2 | 0 | 0 |
-| 11 | Vermilion City + Route 6 | 25 | 0 | 14 | 5 | 0 | 2 | 0 | 4 |
-| 12 | SS Anne | 11 | 0 | 1 | 0 | 0 | 0 | 8 | 2 |
-| 13 | Route 9, 10, Rock Tunnel | 10 | 0 | 6 | 0 | 2 | 2 | 0 | 0 |
-| 14 | Lavender Town + Pokemon Tower | 19 | 0 | 11 | 0 | 0 | 0 | 7 | 1 |
+| 9 | Cerulean City + Routes 24, 25 | 21 | 0 | 18 | 0 | 0 | 1 | 0 | 2 |
+| 10 | Route 5 + Underground | 6 | 0 | 4 | 0 | 0 | 2 | 0 | 0 |
+| 11 | Vermilion City + Route 6 | 25 | 0 | 19 | 0 | 0 | 2 | 0 | 4 |
+| 12 | SS Anne | 11 | 0 | 9 | 0 | 0 | 0 | 0 | 2 |
+| 13 | Route 9, 10, Rock Tunnel | 10 | 0 | 8 | 0 | 0 | 2 | 0 | 0 |
+| 14 | Lavender Town + Pokemon Tower | 19 | 0 | 18 | 0 | 0 | 0 | 0 | 1 |
 | 15 | Route 8 + Underground | 4 | 0 | 3 | 0 | 0 | 0 | 0 | 1 |
 | 16 | Celadon City + Routes 7, 16, 17, 18 | 63 | 0 | 55 | 0 | 0 | 5 | 0 | 3 |
-| 17 | Saffron City + Silph Co. | 51 | 1 | 31 | 4 | 0 | 0 | 12 | 3 |
-| 18 | Fuchsia City + Safari Zone + Routes 12-15 | 42 | 0 | 21 | 5 | 3 | 4 | 0 | 9 |
-| 19 | Cinnabar Island + Pokemon Mansion | 38 | 0 | 23 | 3 | 1 | 3 | 0 | 8 |
-| 20 | Viridian City (Return) | 4 | 1 | 0 | 2 | 0 | 0 | 1 | 0 |
-| 21 | Victory Road + Indigo Plateau | 12 | 1 | 0 | 9 | 0 | 0 | 1 | 1 |
-| 22 | Postgame | 16 | 0 | 10 | 0 | 2 | 0 | 2 | 2 |
-| 23 | Crimson City | 10 | 0 | 6 | 0 | 3 | 1 | 0 | 0 |
+| 17 | Saffron City + Silph Co. | 51 | 1 | 47 | 0 | 0 | 0 | 0 | 3 |
+| 18 | Fuchsia City + Safari Zone + Routes 12-15 | 42 | 0 | 29 | 0 | 0 | 4 | 0 | 9 |
+| 19 | Cinnabar Island + Pokemon Mansion | 38 | 0 | 27 | 0 | 0 | 3 | 0 | 8 |
+| 20 | Viridian City (Return) | 4 | 1 | 3 | 0 | 0 | 0 | 0 | 0 |
+| 21 | Victory Road + Indigo Plateau | 12 | 1 | 10 | 0 | 0 | 0 | 0 | 1 |
+| 22 | Postgame | 16 | 0 | 12 | 0 | 0 | 2 | 0 | 2 |
+| 23 | Crimson City | 10 | 0 | 9 | 0 | 0 | 1 | 0 | 0 |
 | 24 | Moon Islands | 6 | 0 | 6 | 0 | 0 | 0 | 0 | 0 |
 | -- | Non-Kanto/System | 391 | 0 | 0 | 0 | 0 | 0 | 0 | 391 |
-| **TOTAL** | | **802** | **17** | **247** | **33** | **11** | **31** | **31** | **432** |
+| **TOTAL** | | **802** | **17** | **319** | **0** | **0** | **33** | **0** | **432** |
 
 ---
 

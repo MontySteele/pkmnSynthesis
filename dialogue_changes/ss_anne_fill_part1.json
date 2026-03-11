@@ -1,0 +1,2666 @@
+{
+  "_implementation_notes": [
+    "SS ANNE PART 1 — Maps 17, 28, 29, 30.",
+    "  Map 17: S.S. Anne main deck (dining hall / lounge).",
+    "  Map 28: S.S. Anne cabin deck A (passenger cabins).",
+    "  Map 29: S.S. Anne cabin deck B (kitchen / restaurant).",
+    "  Map 30: S.S. Anne upper deck.",
+    "",
+    "STORY: The S.S. Anne is reworked as a League diplomatic",
+    "  event. Gym Leaders, officials, and well-connected trainers",
+    "  gather to discuss the growing Rocket crisis. The player",
+    "  walks through a political party atmosphere.",
+    "",
+    "Key characters: Lt. Surge (military hardliner), Erika",
+    "  (political socialite), Misty (reform-minded).",
+    "Trainers are wealthy, connected, opinionated attendees.",
+    "",
+    "MECHANICAL events preserved: All trade mechanics (EV004, EV005",
+    "  choices/trade logic), fossil battle/choice (EV011), bed rest",
+    "  (map 28 beds), waiter quest (map 29 full quest chain),",
+    "  restaurant ordering system, Torkoal rescue (map 30).",
+    "  Hypervoice tutor (EV006) preserved mechanically.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP."
+  ],
+  "maps": {
+    "17": {
+      "name": "S.S. Anne (Main Deck)",
+      "events": {
+        "5": {
+          "name": "EV005 (Shellder trader)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My prized companion is Shellder.",
+                    "Resilient, composed, dignified."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "A creature of refinement, much",
+                    "like the company aboard tonight."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You wouldn't happen to have a",
+                    "Shellder, would you?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'd trade my Growlithe for one.",
+                    "A fair exchange between guests?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Changed your mind? I understand.",
+                    "Deliberation is a virtue."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Splendid! Let us proceed."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Pity. I had hoped to find one",
+                    "among such distinguished guests."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Thank you for the Shellder.",
+                    "I'll raise it well. One needs",
+                    "reliable partners in times",
+                    "like these."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Ah, yes, I shall have the same",
+                    "as my husband."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Ah, yes, I shall have the same",
+                    "as my husband."
+                  ]
+                },
+                {
+                  "start_index": 101,
+                  "type": "text",
+                  "lines": [
+                    "This smells wonderful!"
+                  ]
+                },
+                {
+                  "start_index": 114,
+                  "type": "text",
+                  "lines": [
+                    "Oh dear, this is not what",
+                    "I ordered..."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Oh, this is delightful.",
+                    "Proper cuisine at last."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038 (Cleanup NPC)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 588
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ugh... The previous guest left",
+                    "such a mess... These diplomats",
+                    "are worse than Muk sometimes."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016 (Diner 1)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Oh, I'll have the",
+                    "\\C[1]\\V[1]\\C[0] please. "
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Oh, I'll have the",
+                    "\\C[1]\\V[1]\\C[0] please. "
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "This will be wonderful!"
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "I asked for something else..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Exquisite. Simply exquisite."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Fossil trainer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hmm...? Well, well. I remember",
+                    "you."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Mt. Moon. You were the trainer",
+                    "who dismantled my team without",
+                    "breaking a sweat."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I never forgot that defeat.",
+                    "I trained relentlessly for a",
+                    "chance at redemption."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "These diplomatic events bore me.",
+                    "Politicians talking in circles",
+                    "while Rockets run free."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "So let's settle this properly.",
+                    "A battle, right here."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "And to sweeten the deal, I'll",
+                    "wager one of my rare fossils.",
+                    "Your pick if you win."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "What do you say?"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "choices",
+                  "choices": [
+                    "You're on!",
+                    "Not right now..."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Good. No holding back."
+                  ]
+                },
+                {
+                  "start_index": 46,
+                  "type": "text",
+                  "lines": [
+                    "Tch. Not interested in fossils?",
+                    "Your loss. They're priceless."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Beaten again... You've earned",
+                    "my respect, if nothing else."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "A deal is a deal. Pick your",
+                    "fossil. Both are genuine."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Root Fossil",
+                    "Claw Fossil"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Next time, I won't lose.",
+                    "Count on it."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading out to dig for",
+                    "more specimens. These events",
+                    "aren't really my scene anyway."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (Hypervoice tutor / musician)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Being a musician gets you into",
+                    "places like this. I play for",
+                    "the powerful, I hear things."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\GOh, hey I can teach the move",
+                    "Hypervoice to one of your",
+                    "Pokémon. Interested?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Ta-da! Come back if you want",
+                    "me to teach it to another."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with",
+                    "$\\V[15] if you want to learn."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "You don't have enough money.",
+                    "Come back with $\\V[15] if you",
+                    "want to learn."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with",
+                    "$\\V[15] if you want to learn."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 (Indecisive diner)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I think I would like to have",
+                    "the \\C[1]\\V[1]\\C[0]."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Hmm... \\nNo, on second thought,",
+                    "I think I'll have the",
+                    "\\C[1]\\V[1]\\C[0] instead."
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Yes, I'll have the",
+                    "\\C[1]\\V[1]\\C[0]."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Yes, I'll have the",
+                    "\\C[1]\\V[1]\\C[0]."
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "Thank you so much!"
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "Huh, this is the wrong order..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Ahh, this hits the spot!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Rhythm trainer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bong bong bong! You know what",
+                    "politics and music share?",
+                    "Timing. It's all about timing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 (Diner 2)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Hmm... I think I'll have the",
+                    "\\C[1]\\V[1]\\C[0]. "
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I'll have the",
+                    "\\C[1]\\V[1]\\C[0], please. "
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "This smells wonderful!"
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "Hey! This is not what I wanted!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hmmmm! Exquisite."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 (Honeymoon husband)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We won this cruise at a League",
+                    "charity auction. Can you",
+                    "believe the guest list?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "The \\C[1]\\V[1]\\C[0] sounds",
+                    "delightful. I'll have that."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "The \\C[1]\\V[1]\\C[0] sounds",
+                    "delightful. I'll have that."
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "Thank you!"
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "Hmm... This doesn't seem",
+                    "right..."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Magnificent! Worth every penny",
+                    "of that auction bid."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Piano NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I tried teaching my Pokémon",
+                    "piano for the gala tonight."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Turns out Machop has great",
+                    "rhythm but terrible fingers."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 (Diner 3)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "My order? I always go with the",
+                    "\\C[1]\\V[1]\\C[0], of course."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "My order? I always go with the",
+                    "\\C[1]\\V[1]\\C[0], of course."
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "Oh, I love this dish so much!"
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "Hey, that's the wrong dish!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Every voyage, same dish.",
+                    "Perfection needs no variety."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Honeymoon wife)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Is that a Gym Leader over",
+                    "there? I've never been this",
+                    "close to one before!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "This trip is absolutely worth",
+                    "every penny, darling!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I shall have the",
+                    "\\C[1]\\V[1]\\C[0], please."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I shall have the",
+                    "\\C[1]\\V[1]\\C[0]. "
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "My mouth is watering!"
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "I'm pretty sure I ordered",
+                    "something different..."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The flavor is just perfect!",
+                    "What a night to remember."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Maitre d')",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the S.S. Anne",
+                    "dining hall. Tonight we host",
+                    "the League's finest.",
+                    "Do enjoy yourself."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Drowzee trader)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My prized partner is Drowzee.",
+                    "Perceptive and composed."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "It reads the mood of a room",
+                    "better than any politician.",
+                    "Useful at events like this."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You wouldn't happen to have a",
+                    "Drowzee, would you?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'd trade my Seel for one.",
+                    "A fair exchange?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Changed your mind? No rush.",
+                    "The evening is still young."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Excellent. Let us proceed."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "A pity. Perhaps another guest",
+                    "will oblige me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Thank you for the Drowzee.",
+                    "I'll put its talents to good",
+                    "use. One can never be too",
+                    "perceptive these days."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Oh, yes we're ready to order. "
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Oh, yes we're ready to order. "
+                  ]
+                },
+                {
+                  "start_index": 103,
+                  "type": "text",
+                  "lines": [
+                    "Thank you. This looks splendid."
+                  ]
+                },
+                {
+                  "start_index": 116,
+                  "type": "text",
+                  "lines": [
+                    "This is not what I ordered!",
+                    "Take it back to the kitchen!"
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "switch1_id": 1091,
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Excellent quality, as always.",
+                    "The chef outdoes himself."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037 (Fossil table)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The previous guest left two",
+                    "rocks on the table. Want one?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Okay! Which one did you want?"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "choices",
+                  "choices": [
+                    "Root Fossil",
+                    "Claw Fossil"
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Who leaves fossils at a table",
+                    "during a diplomatic event?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Who leaves fossils at a table",
+                    "during a diplomatic event?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "28": {
+      "name": "S.S. Anne (Cabin Deck A)",
+      "events": {
+        "16": {
+          "name": "EV016 (Clefable NPC companion)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Puup pupuu!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 (Bed rest 1)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Do you want to take a nap",
+                    "in your bed?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You and your Pokémon are",
+                    "in full shape!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(3) (Grumpy guest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "How dare you barge in here!",
+                    "These are private quarters!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I said I wish to be alone!",
+                    "I came here to escape the",
+                    "political circus upstairs."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Unless you want a battle,",
+                    "get out of my cabin!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Fine! Let's settle this!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Then get out!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 (Trash 1)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(7) (World collector)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I collected these Pokémon from",
+                    "every region. Diplomatic",
+                    "connections have their perks."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You hurt my worldly Pokémon!",
+                    "Do you know what those import",
+                    "permits cost me?!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 (Trash 2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing but trash."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(4) (Friendly guest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I love Pokémon! The whole",
+                    "reason I came was to meet",
+                    "other trainers, not schmooze."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You know, battling is honest.",
+                    "No backroom deals, no agenda.",
+                    "Want to trade Pokémon sometime?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Pokémon you gave me will",
+                    "always remind me of this voyage",
+                    "and the one honest person here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019 (Trash 3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing but trash."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 (Bed rest 2)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Do you want to take a nap",
+                    "in your bed?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You and your Pokémon are",
+                    "in full shape!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(2) (Foreign trainer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I don't think I've seen you",
+                    "at any of the regional summits."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I came from Sinnoh as a",
+                    "diplomatic liaison. Our region",
+                    "has its own Rocket problem,",
+                    "believe me."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Care for a rematch? My team",
+                    "could use the exercise."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Just let me heal my Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Okay, let's do this!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "No worries. Enjoy the party."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Bed rest 3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Do you want to take a nap",
+                    "in your bed?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You and your Pokémon are",
+                    "in full shape!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 (Trash 4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing but trash."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 (Clefable trainer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I always travel with Clefable.",
+                    "It keeps the mood light when",
+                    "the politics get heavy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021 (Bed rest 4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Do you want to take a nap",
+                    "in your bed?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You and your Pokémon are",
+                    "in full shape!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(3) (Catdog NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "They say fusion research could",
+                    "change everything. Imagine,",
+                    "two Pokémon becoming one..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You know, some people fear",
+                    "what fusion could mean.",
+                    "I think it's the future."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Want another round? I need",
+                    "the practice."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Alright, let's go again!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Suit yourself."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "29": {
+      "name": "S.S. Anne (Cabin Deck B / Kitchen)",
+      "events": {
+        "5": {
+          "name": "EV005 (Onion peeler)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Snivel...Sniff... They have me",
+                    "peeling onions for a hundred",
+                    "diplomats... Sniff..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 (Dish pickup 1)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 315,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Your hands are full!"
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "You are currently holding:<br>\\C[1]- \\V[3]"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Swap the \\C[1]\\V[2]\\C[0]",
+                    "you're holding for the"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Take the \\C[1]\\V[1]\\C[0]?"
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 77,
+                  "type": "text",
+                  "lines": [
+                    "You are currently holding:<br>\\C[1]- \\V[3]"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (Busy cook)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm so busy I'm getting dizzy!",
+                    "A hundred guests and only four",
+                    "of us in this kitchen!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 929
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh, you're looking for steamed",
+                    "Krabby legs?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Of course! We have plenty of",
+                    "leftovers from tonight's gala!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Here, enjoy! Still warm!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\C[5]Quick! Bring them to the",
+                    "hotel before they cool down!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 930
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "How were the Krabby legs?",
+                    "We aim to please, even at",
+                    "diplomatic functions!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 (Dish pickup 2)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 315,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Your hands are full!"
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "You are currently holding:<br>\\C[1]- \\V[3]"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Swap the \\C[1]\\V[2]\\C[0]",
+                    "you're holding for the"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Take the \\C[1]\\V[1]\\C[0]?"
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 77,
+                  "type": "text",
+                  "lines": [
+                    "You are currently holding:<br>\\C[1]- \\V[3]"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "variable_id": 326,
+                "variable_value": 8
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The waiter came back with the",
+                    "cake. It wasn't a lie after",
+                    "all."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "le waiter",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Quoi?! How can zere be no",
+                    "more <i>gâteau</i>?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ze restaurant is full wiz",
+                    "diplomats who are already",
+                    "angry about ze politics!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "But it was just on ze table",
+                    "over there..."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "It iz ze Swirlix again!",
+                    "Surely it is him who ate",
+                    "all ze <i>gâteau</i>!"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "I will get you zis time!"
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "Oh la la! It iz much too",
+                    "<i>rapide</i> to catch!"
+                  ]
+                },
+                {
+                  "start_index": 75,
+                  "type": "text",
+                  "lines": [
+                    "We have no choice, I will",
+                    "'ave to run outside to get",
+                    "a new <i>gâteau</i>!"
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "Oh, but who will serve ze",
+                    "diplomats?"
+                  ]
+                },
+                {
+                  "start_index": 85,
+                  "type": "text",
+                  "lines": [
+                    "You, mon petit!"
+                  ]
+                },
+                {
+                  "start_index": 89,
+                  "type": "text",
+                  "lines": [
+                    "You, ma petite!"
+                  ]
+                },
+                {
+                  "start_index": 101,
+                  "type": "text",
+                  "lines": [
+                    "Will you take ze orders for",
+                    "me? Ze chef will prepare zem.",
+                    "Ze diplomats must not wait!"
+                  ]
+                },
+                {
+                  "start_index": 103,
+                  "type": "choices",
+                  "choices": [
+                    "Oui",
+                    "Non"
+                  ]
+                },
+                {
+                  "start_index": 109,
+                  "type": "text",
+                  "lines": [
+                    "Oh la la, what will we do?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Mon petit, will you take ze",
+                    "orders for me? Ze chef will",
+                    "prepare zem."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Ma petite, will you take ze",
+                    "orders for me? Ze chef will",
+                    "prepare zem."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "choices",
+                  "choices": [
+                    "Oui",
+                    "Non"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Oh la la, what will we do?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I can't zank you enough.",
+                    "I will be right back.",
+                    "Tout de suite!"
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "switch1_id": 1091,
+                "variable_id": 326,
+                "variable_value": 8
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I am back wiz ze new cake.",
+                    "Zank you so much for helping!"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "You did not mix up any orders!",
+                    "You are a natural, truly!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "For zis, you deserve a petit",
+                    "bonus!"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "You mixed up ze orders \\V[1]",
+                    "times, but zat's okay!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "\\GHere iz a little money",
+                    "for helping."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\PN obtained $\\V[2]"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "I was able to catch ze pesky",
+                    "Swirlix before it got away!"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "It was not very <i>difficile</i>.",
+                    "I zink it wanted to be caught!"
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "S'il vous plaît, take him far",
+                    "away from ze kitchen! He ate",
+                    "all ze <i>gâteau</i>!"
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Les diplomats will love ze new",
+                    "<i>gâteau</i>, I zink."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 (Dish table instructions)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 315,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The dishes we've prepared are",
+                    "on the table over here."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "The waiter still isn't back,",
+                    "so please bring them to the",
+                    "guests upstairs."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "We'll make sure you don't",
+                    "run out!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 (Overworked cook)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Preparing food for an entire",
+                    "ship full of diplomats..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Let me tell you, it's a lot",
+                    "of hard work!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "variable_id": 326,
+                "variable_value": 8
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Preparing food for an entire",
+                    "ship full of diplomats..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Let me tell you, it's a lot",
+                    "of hard work!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "cook (Head cook)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You, mon petit! We're busy",
+                    "here! Out of the way!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1091
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Go to the restaurant and take",
+                    "orders from the guests. Hurry!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1091,
+                "variable_id": 315,
+                "variable_value": 8
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The waiter still hasn't come",
+                    "back. Can you take the orders",
+                    "to the guests?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Trash kitchen)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing but trash in there!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "swirlix1",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1091,
+                "variable_id": 326,
+                "variable_value": 8
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Sweeee!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Le Chef)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Er-hem! Indeed I am le CHEF!",
+                    "Le main course is..."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    " Prime Beef Steak! But, have I",
+                    "enough fillets de boeuf? Non!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Eels au Barbecue! Les guests",
+                    "will mutiny, I fear."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Salade de Salmon! Les guests",
+                    "may gripe it's fish again."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 929
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Er-hem! Indeed I am le CHEF!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Oh, looking for leftover",
+                    "Krabby legs?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ask the lady by the stoves.",
+                    "I'm sure she can help."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 930
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Er-hem! Indeed I am le CHEF!",
+                    "Le main course is..."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    " Prime Beef Steak! But, have I",
+                    "enough fillets de boeuf? Non!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Eels au Barbecue! Les guests",
+                    "will mutiny, I fear."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Salade de Salmon! Les guests",
+                    "may gripe it's fish again."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021 (Dish pickup 3)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 315,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Your hands are full!"
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "You are currently holding:<br>\\C[1]- \\V[3]"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Swap the \\C[1]\\V[2]\\C[0]",
+                    "you're holding for the"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Take the \\C[1]\\V[1]\\C[0]?"
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 77,
+                  "type": "text",
+                  "lines": [
+                    "You are currently holding:<br>\\C[1]- \\V[3]"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "30": {
+      "name": "S.S. Anne (Upper Deck)",
+      "events": {
+        "12": {
+          "name": "EV012 (Torkoal rescue)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We fished this Torkoal out of",
+                    "the harbor. Poor thing was",
+                    "half-drowned."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "It needs an experienced trainer",
+                    "to nurse it back to health."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Oh, you have the city's badge!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "How would you like to give",
+                    "this Torkoal a new home?"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Lucky someone was there to",
+                    "fish it out. The harbor's been",
+                    "getting worse since Rocket",
+                    "moved into the area."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "This Torkoal needs someone",
+                    "experienced. Come back if you",
+                    "earn the city badge."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Torkoal doesn't live in the",
+                    "ocean. Someone must have put",
+                    "it there. That's the kind of",
+                    "cruelty Rocket deals in."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "torkoal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Pufff!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
