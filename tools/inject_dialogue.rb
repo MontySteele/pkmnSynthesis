@@ -26,6 +26,9 @@
 #                     Supports any RPG Maker XP event command code:
 #                       101/401 (Show Text), 102/402/404 (Choices),
 #                       121 (Control Switches), 122 (Control Variables), etc.
+#   replace_commands — Remove commands from start_index to end_index (inclusive),
+#                      then insert new commands at that position.
+#                      Provide "end_index", "commands" array.
 
 require "json"
 require_relative "rpgmaker_stubs"
@@ -170,10 +173,61 @@ def apply_insert_commands(command_list, block)
     new_cmd = RPG::EventCommand.new
     new_cmd.code = cmd_data["code"] || 0
     new_cmd.indent = cmd_data["indent"] || 0
-    new_cmd.parameters = cmd_data["parameters"] || []
+    new_cmd.parameters = resolve_parameters(cmd_data["parameters"] || [])
     command_list.insert(insert_idx, new_cmd)
   end
 
+  true
+end
+
+def resolve_parameter(param)
+  # Handle special string placeholders for RPG Maker objects
+  if param.is_a?(Hash)
+    if param["type"] == "audio_file"
+      audio = RPG::AudioFile.new
+      audio.name = param["name"] || ""
+      audio.volume = param["volume"] || 100
+      audio.pitch = param["pitch"] || 100
+      return audio
+    end
+  end
+  param
+end
+
+def resolve_parameters(params)
+  return params unless params.is_a?(Array)
+  params.map { |p| resolve_parameter(p) }
+end
+
+def apply_replace_commands(command_list, block)
+  start_idx = block["start_index"]
+  end_idx = block["end_index"]
+  commands = block["commands"]
+
+  unless commands.is_a?(Array)
+    $stderr.puts "    Warning: replace_commands block has no commands. Skipping."
+    return false
+  end
+
+  unless start_idx >= 0 && end_idx >= start_idx && end_idx < command_list.length
+    $stderr.puts "    Warning: replace range #{start_idx}..#{end_idx} out of bounds (0..#{command_list.length - 1}). Skipping."
+    return false
+  end
+
+  # Remove the old commands
+  remove_count = end_idx - start_idx + 1
+  command_list.slice!(start_idx, remove_count)
+
+  # Insert new commands at the same position (in reverse to maintain order)
+  commands.reverse_each do |cmd_data|
+    new_cmd = RPG::EventCommand.new
+    new_cmd.code = cmd_data["code"] || 0
+    new_cmd.indent = cmd_data["indent"] || 0
+    new_cmd.parameters = resolve_parameters(cmd_data["parameters"] || [])
+    command_list.insert(start_idx, new_cmd)
+  end
+
+  $stderr.puts "    Replaced commands #{start_idx}..#{end_idx} (#{remove_count} removed, #{commands.length} inserted)"
   true
 end
 
@@ -242,7 +296,7 @@ def main
         # Tiebreaker: at the same index, process modifications (text/choices)
         # before insertions, so insertions see the already-modified command.
         sorted_blocks = (page_changes["dialogue_blocks"] || []).sort_by do |b|
-          [-(b["start_index"] || 0), b["type"] == "insert_commands" ? 1 : 0]
+          [-(b["start_index"] || 0), ["insert_commands", "replace_commands"].include?(b["type"]) ? 1 : 0]
         end
         sorted_blocks.each do |block|
           success = case block["type"]
@@ -275,6 +329,13 @@ def main
                         true
                       else
                         apply_insert_commands(page.list, block)
+                      end
+                    when "replace_commands"
+                      if dry_run
+                        $stderr.puts "  [DRY RUN] Would replace commands #{block["start_index"]}..#{block["end_index"]} with #{block["commands"]&.length || 0} new commands at event #{event_id}, page #{page_idx}"
+                        true
+                      else
+                        apply_replace_commands(page.list, block)
                       end
                     else
                       $stderr.puts "  Warning: Unknown block type '#{block["type"]}'"
@@ -316,7 +377,7 @@ def main
         end
 
         sorted_ce_blocks = (ce_changes["dialogue_blocks"] || []).sort_by do |b|
-          [-(b["start_index"] || 0), b["type"] == "insert_commands" ? 1 : 0]
+          [-(b["start_index"] || 0), ["insert_commands", "replace_commands"].include?(b["type"]) ? 1 : 0]
         end
         sorted_ce_blocks.each do |block|
           success = case block["type"]
@@ -328,6 +389,8 @@ def main
                       dry_run ? true : apply_script_message_block(ce.list, block)
                     when "insert_commands"
                       dry_run ? true : apply_insert_commands(ce.list, block)
+                    when "replace_commands"
+                      dry_run ? true : apply_replace_commands(ce.list, block)
                     else
                       false
                     end

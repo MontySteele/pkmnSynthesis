@@ -1,0 +1,345 @@
+{
+  "_implementation_notes": [
+    "SILPH CO. 11F (MAP 807) — THE FORK",
+    "",
+    "This file implements the pivotal Synthesis choice on Silph Co 11F.",
+    "The player decides whether to fight Giovanni (Oak Path) or chase",
+    "the Master Ball while Blue handles Giovanni (Giovanni Path).",
+    "",
+    "MECHANICAL CHANGES:",
+    "  Event 4 (Giovanni battle):",
+    "    - Rewrite pre-battle dialogue with Synthesis tone",
+    "    - replace_commands 28-58: replaces entire battle sequence with",
+    "      a branching version based on player choice",
+    "    - Oak Path: ROCKETBOSS Giovanni battle (same trainer call)",
+    "    - Giovanni Path: ROCKETEXEC_M Archer battle (existing trainer)",
+    "    - Sets Switch 1130 (SYNTH_FORK_CHOSEN) = ON after battle",
+    "    - Oak Path: Switch 1131 stays OFF (default)",
+    "    - Giovanni Path: Switch 1131 = ON",
+    "",
+    "  Event 8 (giovanni-controller cutscene):",
+    "    - Rewrite Giovanni/chairman dialogue with Synthesis framing",
+    "    - No structural changes",
+    "",
+    "  Event 10 (Blue post-battle):",
+    "    - Rewrite Blue's dialogue with Synthesis tone",
+    "    - Blue's lines are path-neutral (both paths: he talks about",
+    "      moving forward). Path-specific reactions happen later.",
+    "",
+    "PRESERVED: All movement routes, partner removal, switch logic",
+    "(222/228/628/629/630/191). Screen fade and SE replaced with",
+    "equivalent script calls (pbSEPlay, pbFadeOutIn).",
+    "",
+    "RPG Maker switch values: [id, id, 0]=ON, [id, id, 1]=OFF",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "807": {
+      "name": "11F",
+      "events": {
+        "8": {
+          "name": "giovanni-controller",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 222 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The machine produced three",
+                    "Master Balls before it",
+                    "seized. Three. You promised",
+                    "hundreds."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "The numbers you quoted were",
+                    "considerably higher. Were",
+                    "you lying to me about its",
+                    "capabilities?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "The ball was never designed",
+                    "for mass production. I told",
+                    "you this, Giovanni. It needs",
+                    "more time."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Time is a luxury you no",
+                    "longer have. This was not",
+                    "the arrangement."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Do I need to remind you",
+                    "what happens to those who",
+                    "fail to deliver?"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Please — you have to give",
+                    "it more time. That's all I",
+                    "ask..."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Very well. But know this:",
+                    "three Master Balls will",
+                    "suffice for now. The League",
+                    "won't know what hit them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Boss — those kids from",
+                    "downstairs just walked in."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. You made it further",
+                    "than I expected."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "The chairman and I were",
+                    "discussing the future of",
+                    "Silph Co. And of Kanto."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "The League hoards fusion",
+                    "technology. Licenses it to",
+                    "the wealthy. You've seen",
+                    "this yourself, haven't you?"
+                  ]
+                },
+                {
+                  "_comment": "Replace commands 28-58 (battle BGM through BGM restore) with the fork branching structure",
+                  "start_index": 28,
+                  "end_index": 58,
+                  "type": "replace_commands",
+                  "commands": [
+                    {"code": 355, "indent": 0, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 0, "parameters": ["Your call, \\PN. I can"]},
+                    {"code": 401, "indent": 0, "parameters": ["hold off Giovanni while"]},
+                    {"code": 401, "indent": 0, "parameters": ["you secure the Master"]},
+                    {"code": 401, "indent": 0, "parameters": ["Ball. Or you take him."]},
+
+                    {"code": 102, "indent": 0, "parameters": [["I'll fight Giovanni.", "I'll go for the Master Ball."], 0]},
+
+                    {"code": 402, "indent": 0, "parameters": [0, "I'll fight Giovanni."]},
+
+                    {"code": 108, "indent": 1, "parameters": ["=== OAK PATH ==="]},
+                    {"code": 121, "indent": 1, "parameters": [1131, 1131, 1]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["Then I'll grab the Master"]},
+                    {"code": 401, "indent": 1, "parameters": ["Ball. Don't lose, \\PN."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,1) #GIOVANNI"]},
+                    {"code": 101, "indent": 1, "parameters": ["Admirable. Let me show you"]},
+                    {"code": 401, "indent": 1, "parameters": ["what conviction looks like."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["$PokemonGlobal.nextBattleBGM=\"Rocket Boss Giovanni\""]},
+                    {"code": 111, "indent": 1, "parameters": [12, "pbTrainerBattle(PBTrainers::ROCKETBOSS,\"Giovanni\",_I(\"...You fight like someone who believes.\"),true,4,false)"]},
+
+                    {"code": 355, "indent": 2, "parameters": ["pbCallBub(2,1) #GIOVANNI"]},
+                    {"code": 101, "indent": 2, "parameters": ["You chose to face me"]},
+                    {"code": 401, "indent": 2, "parameters": ["directly. That tells me"]},
+                    {"code": 401, "indent": 2, "parameters": ["everything I need to know."]},
+
+                    {"code": 355, "indent": 2, "parameters": ["pbCallBub(2,1) #GIOVANNI"]},
+                    {"code": 101, "indent": 2, "parameters": ["Three Master Balls. That"]},
+                    {"code": 401, "indent": 2, "parameters": ["was always enough. The"]},
+                    {"code": 401, "indent": 2, "parameters": ["League won't see us coming."]},
+
+                    {"code": 355, "indent": 2, "parameters": ["pbCallBub(2,1) #GIOVANNI"]},
+                    {"code": 101, "indent": 2, "parameters": ["We'll meet again, \\PN."]},
+                    {"code": 401, "indent": 2, "parameters": ["Next time, you'll see"]},
+                    {"code": 401, "indent": 2, "parameters": ["why I did all of this."]},
+
+                    {"code": 121, "indent": 2, "parameters": [1130, 1130, 0]},
+                    {"code": 355, "indent": 2, "parameters": ["pbSEPlay(\"BW_flee\",65,60)"]},
+                    {"code": 121, "indent": 2, "parameters": [228, 228, 0]},
+                    {"code": 0, "indent": 2, "parameters": []},
+
+                    {"code": 411, "indent": 1, "parameters": []},
+
+                    {"code": 108, "indent": 2, "parameters": ["Battle lost - cleanup"]},
+                    {"code": 355, "indent": 2, "parameters": ["eventID=29"]},
+                    {"code": 655, "indent": 2, "parameters": ["pbRemoveDependency($game_map.events[eventID])"]},
+                    {"code": 355, "indent": 2, "parameters": ["pbDeregisterPartner"]},
+                    {"code": 121, "indent": 2, "parameters": [629, 629, 0]},
+                    {"code": 121, "indent": 2, "parameters": [628, 628, 1]},
+                    {"code": 121, "indent": 2, "parameters": [222, 222, 1]},
+                    {"code": 115, "indent": 2, "parameters": []},
+                    {"code": 0, "indent": 2, "parameters": []},
+
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 0, "indent": 1, "parameters": []},
+
+                    {"code": 402, "indent": 0, "parameters": [1, "I'll go for the Master Ball."]},
+
+                    {"code": 108, "indent": 1, "parameters": ["=== GIOVANNI PATH ==="]},
+                    {"code": 121, "indent": 1, "parameters": [1131, 1131, 0]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,21) #BLUE"]},
+                    {"code": 101, "indent": 1, "parameters": ["...You sure about this?"]},
+                    {"code": 401, "indent": 1, "parameters": ["Fine. I'll handle Giovanni."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["pbCallBub(2,1) #GIOVANNI"]},
+                    {"code": 101, "indent": 1, "parameters": ["Interesting. Archer —"]},
+                    {"code": 401, "indent": 1, "parameters": ["escort our guest to the"]},
+                    {"code": 401, "indent": 1, "parameters": ["prototype room."]},
+
+                    {"code": 355, "indent": 1, "parameters": ["$PokemonGlobal.nextBattleBGM=\"Rocket Boss Giovanni\""]},
+                    {"code": 111, "indent": 1, "parameters": [12, "pbTrainerBattle(PBTrainers::ROCKETEXEC_M,\"Archer\",_I(\"You shouldn't have come here.\"),true,0,false)"]},
+
+                    {"code": 355, "indent": 2, "parameters": ["pbCallBub(2,@event_id)"]},
+                    {"code": 101, "indent": 2, "parameters": ["Giovanni was right about"]},
+                    {"code": 401, "indent": 2, "parameters": ["you. Relentless."]},
+
+                    {"code": 355, "indent": 2, "parameters": ["pbCallBub(2,@event_id)"]},
+                    {"code": 101, "indent": 2, "parameters": ["The Master Ball prototype"]},
+                    {"code": 401, "indent": 2, "parameters": ["is yours. I hope you know"]},
+                    {"code": 401, "indent": 2, "parameters": ["what you're doing with it."]},
+
+                    {"code": 121, "indent": 2, "parameters": [1130, 1130, 0]},
+                    {"code": 355, "indent": 2, "parameters": ["pbSEPlay(\"BW_flee\",65,60)"]},
+                    {"code": 121, "indent": 2, "parameters": [228, 228, 0]},
+                    {"code": 0, "indent": 2, "parameters": []},
+
+                    {"code": 411, "indent": 1, "parameters": []},
+
+                    {"code": 108, "indent": 2, "parameters": ["Battle lost - cleanup"]},
+                    {"code": 355, "indent": 2, "parameters": ["eventID=29"]},
+                    {"code": 655, "indent": 2, "parameters": ["pbRemoveDependency($game_map.events[eventID])"]},
+                    {"code": 355, "indent": 2, "parameters": ["pbDeregisterPartner"]},
+                    {"code": 121, "indent": 2, "parameters": [629, 629, 0]},
+                    {"code": 121, "indent": 2, "parameters": [628, 628, 1]},
+                    {"code": 121, "indent": 2, "parameters": [222, 222, 1]},
+                    {"code": 115, "indent": 2, "parameters": []},
+                    {"code": 0, "indent": 2, "parameters": []},
+
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 0, "indent": 1, "parameters": []},
+
+                    {"code": 404, "indent": 0, "parameters": []},
+
+                    {"code": 121, "indent": 0, "parameters": [228, 228, 0]},
+                    {"code": 241, "indent": 0, "parameters": [{"type": "audio_file", "name": "RBY Silph Co. (Remix)", "volume": 100, "pitch": 100}]}
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 228 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! That was something",
+                    "else. Giovanni's gone."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I've been studying fusions",
+                    "more carefully. Starting to",
+                    "see what really makes them",
+                    "tick."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading for the Pokemon",
+                    "League. The Elite Four",
+                    "won't know what hit them."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "You should hit the Saffron",
+                    "Gym next. Sabrina's tough."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Once you've got her badge,",
+                    "you can surf the coast.",
+                    "Stronger Pokemon that way."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "That's what I'd do. But",
+                    "you do you. Smell ya!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
