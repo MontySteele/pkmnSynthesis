@@ -1,0 +1,288 @@
+{
+  "_implementation_notes": [
+    "CELADON APARTMENTS — Maps 62 (1F), 63 (2F), 64 (3F).",
+    "Three-floor apartment building accessible from Celadon City (Map 95).",
+    "Tone: Celadon dark satire — comfortable residents, willful ignorance.",
+    "",
+    "MECHANICAL EVENTS PRESERVED (not modified):",
+    "- Map 62 EV001/EV003/EV006/EV007: Transfer events (stairs, doors)",
+    "- Map 63 EV001 page 0: Trash can wild battle (pbWildBattle, species,",
+    "  conditional branch, background setting) — ALL preserved. Only the",
+    "  pre-battle 'jumped out' text at index 2 is rewritten.",
+    "- Map 63 EV002/EV003: Transfer events (stairs)",
+    "- Map 63 EV008: Superpower move tutor — mechanical lines preserved",
+    "  (price via \\V[15], pbMoveTutorChoose, money check, success/fail",
+    "  responses at indices 14-36). Only flavor intro at indices 1 and 5",
+    "  are rewritten.",
+    "- Map 64 EV002: Transfer event (stairs)",
+    "- Map 64 EV003: Pokemon cry (Hmm?/Ahh? conditional — preserved)",
+    "- Map 64 EV006: Common Event 78 call (preserved)",
+    "",
+    "BOOKSHELF/CLOSET LINES:",
+    "- Map 62 EV002, Map 64 EV005: 'nothing worth mentioning' lines.",
+    "  Rewritten with Synthesis flavor.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "62": {
+      "name": "Celadon Apartments 1F",
+      "events": {
+        "2": {
+          "name": "EV002 (Closet/shelf inspection)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Cleaning supplies and old\nmagazines. Nothing useful."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Longtime Resident)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've lived in Celadon my\nwhole life. Watched it grow."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The money started flowing\nwhen the Game Corner opened.\nBest not to think about why."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Sheltered Wife)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My husband says Celadon is\nthe safest city in Kanto.\nI've never needed to check."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "63": {
+      "name": "Celadon Apartments 2F",
+      "events": {
+        "1": {
+          "name": "+ (Trash Can encounter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Something lunges from the\ntrash — a fused Pok\u00e9mon!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The trash can is empty now.\nSomething was living in there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Rocket-Aware Resident)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket run half the\nbusinesses on this block."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Scary? Sure. But rent's\nbeen the same for ten years.\nYou learn to look the other\nway."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (TV — political debate)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A debate on TV: should fusion\nlicenses require League\napproval?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Both sides are shouting.\nNeither is listening."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (TV duplicate tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A debate on TV: should fusion\nlicenses require League\napproval?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Both sides are shouting.\nNeither is listening."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Superpower Move Tutor)",
+          "_note": "MECHANICAL — Only flavor intro rewritten. All tutor mechanics, price display (\\V[15]), pbMoveTutorChoose, money checks, and success/fail responses preserved exactly.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I used to train with my\nPok\u00e9mon in the sewers. Now\nI train people instead."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\GRaw power isn't elegant,\nbut it gets the job done."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "64": {
+      "name": "Celadon Apartments 3F",
+      "events": {
+        "1": {
+          "name": "EV001 (DNA Splicer NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I threw some DNA Splicers in\nthe trash downstairs. Bought\nthem off a guy at the Corner."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Didn't realize they'd attract\nwild Pok\u00e9mon. Something fused\ndown there... I can hear it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Dept Store Shopper)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Dept. Store has everything.\nClothes, TMs, vitamins... no\nquestions about where it\ncomes from."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Closet/shelf inspection)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Old boxes and discount\nSplicer ads. Nothing useful."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

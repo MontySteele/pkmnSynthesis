@@ -1,0 +1,151 @@
+{
+  "_implementation_notes": [
+    "POKEMON TOWER F3 — HAUNTED VARIANT (Map 556).",
+    "This is the pre-Silph-Scope version of F3. The player cannot",
+    "identify the ghosts yet, so they are hostile spirits that warp",
+    "the player back down to F2. All events use sprite 093 (ghost).",
+    "",
+    "Map 556 has NO structural overlap with Map 402 (normal F3).",
+    "Map 402 has Channeler trainers and Ghostgirls; Map 556 has",
+    "pure ghost encounters that kick the player out.",
+    "",
+    "Event 4 (Gengar): sprite 094, two pages. Page 0 sets SelfSwitch A.",
+    "Page 1 shows text then warps to F2.",
+    "Events 6-10, 12: ghost NPCs, each with one text line + warp.",
+    "Event 11: Elixir item ball — no dialogue, preserved.",
+    "",
+    "Each ghost gets a unique Synthesis-flavored line rather than",
+    "all saying the same thing. Theme: fusion has disturbed the dead.",
+    "The spirits reference torn souls, wrong bodies, merged suffering.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "556": {
+      "name": "Pokemon Tower F3 (Haunted)",
+      "events": {
+        "4": {
+          "name": "Gengar ghost (staircase block)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Two souls... one grave...\nLEAVE."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Ghost (southeast)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "They fused us... even\nin death... GET OUT..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Ghost (center-south)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Wrong body... wrong body...\nthis isn't mine..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Ghost (west)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Can you hear them? Two\nvoices... screaming as one..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Ghost (northwest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The splicers... tore us\napart... put us back wrong..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Ghost (center-west)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Not alive... not dead...\nsomething in between..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Ghost (center)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "We were whole once...\nbefore they merged us..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
