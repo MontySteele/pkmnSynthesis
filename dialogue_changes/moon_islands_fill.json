@@ -1,0 +1,990 @@
+{
+  "_implementation_notes": [
+    "MOON ISLANDS — Maps 819, 821, 822, 823, 824, 835.",
+    "Tone: Mysterious, lunar, dreamlike. The boundary between sleep",
+    "and waking is thin here. Darkrai speaks in cold certainty,",
+    "Cresselia in warm urgency. The islands exist between worlds.",
+    "",
+    "The Darkrai/Cresselia quest is a COMPLEX MECHANICAL SYSTEM with",
+    "many interlocking switches (1027, 1029, 1030) and conditions.",
+    "ALL choice prompts, feather placement mechanics, item transfers,",
+    "and switch-triggered state changes are MECHANICAL — preserved.",
+    "Only the flavor/personality of Darkrai and Cresselia dialogue",
+    "is rewritten, keeping all \\C[2] (Darkrai) and \\C[9] (Cresselia)",
+    "color codes intact.",
+    "",
+    "Maps 819/821/835 are variants of the same island layouts with",
+    "similar events. Map 819 is Halfmoon Island (Darkrai collection",
+    "point). Maps 821/835 are Newmoon Island variants. Map 823 is",
+    "Fullmoon Island.",
+    "",
+    "Map 822 (Moonlit Forest): EV067 atmospheric sign — rewritten.",
+    "",
+    "Map 824 (Moonlit Forest): Contains the Mareep/Flaaffy counting",
+    "puzzle (EV036, EV032) — MECHANICAL puzzle logic preserved,",
+    "sleepy NPC flavor rewritten. 'Bahhh!' cries are MECHANICAL",
+    "counting triggers — preserved. 'Little fish' warning signs are",
+    "MECHANICAL gameplay hints — preserved. EV041 atmospheric sign",
+    "rewritten. EV042 Darkrai omen sign rewritten.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP."
+  ],
+  "maps": {
+    "819": {
+      "name": "Halfmoon Island",
+      "events": {
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1027 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Yes. You have served",
+                    "your purpose well."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Give me the feathers",
+                    "you have collected."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Hand over the \\C[1]Lunar",
+                    "Feathers\\C[0]?"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "\\PN handed over all of",
+                    "the Lunar Feathers."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]You are no longer",
+                    "needed. Leave."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Was this all for",
+                    "nothing? Give them to me."
+                  ]
+                },
+                {
+                  "start_index": 71,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Humans have settled",
+                    "on my land."
+                  ]
+                },
+                {
+                  "start_index": 72,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Without these feathers",
+                    "guarding their dreams,",
+                    "I will consume them all."
+                  ]
+                },
+                {
+                  "start_index": 75,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Every living thing that",
+                    "sets foot here will know",
+                    "only nightmares."
+                  ]
+                },
+                {
+                  "start_index": 107,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Come to New Moon",
+                    "Island. We have unfinished",
+                    "business."
+                  ]
+                },
+                {
+                  "start_index": 145,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]It is not too late.",
+                    "The full moon still shines."
+                  ]
+                },
+                {
+                  "start_index": 147,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]We must stop the",
+                    "nightmares from spreading.",
+                    "There is still time."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "821": {
+      "name": "Newmoon Island",
+      "events": {
+        "1": {
+          "name": "darkrai",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]I knew you would come.",
+                    "Your heart is easy to read."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Humans have spread",
+                    "across my territory. But",
+                    "with these feathers gone,",
+                    "their dreams are mine."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]But I cannot unleash my",
+                    "full power while the",
+                    "guardian of dreams endures."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Place this feather in",
+                    "the bed on \\C[1]Fullmoon",
+                    "Island\\C[2]. Corrupt the",
+                    "guardian's sanctuary."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Place the corrupted",
+                    "feather on the bed on",
+                    "\\C[1]Fullmoon Island\\C[2].",
+                    "Do not keep me waiting."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1030 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Traitor. What have you",
+                    "done to my domain?"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Daarrrrrr!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Place the \\C[9]Lunar",
+                    "Feather\\C[0] in the bed?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN placed the feather",
+                    "under the pillow..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You feel yourself falling",
+                    "asleep..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1027 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Yes. You have done",
+                    "well."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Without these feathers,",
+                    "nothing protects them",
+                    "from me."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]The world will finally",
+                    "know an endless, dreamless",
+                    "dark."
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Come to New Moon",
+                    "Island. Join me."
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]It is not too late.",
+                    "The full moon still shines."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]We must stop the",
+                    "nightmares from spreading.",
+                    "Come."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "darkrai",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1030 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]You chose the moonlight",
+                    "over the dark. That took",
+                    "courage."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]I always knew your",
+                    "heart was pure."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]Please — let me join",
+                    "you on your journey."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "822": {
+      "name": "Moonlit Forest",
+      "events": {
+        "67": {
+          "name": "EV067",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Full or eclipsed, the",
+                    "moon's glow shall guide",
+                    "you where you need to go."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "823": {
+      "name": "Fullmoon Island",
+      "events": {
+        "22": {
+          "name": "darkrai",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1029 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Well done."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Fullmoon Island has",
+                    "fallen to darkness. The",
+                    "guardian can do nothing."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Come. Bring me into",
+                    "your world and let the",
+                    "nightmares spread."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Place the \\C[2]Corrupted",
+                    "Feather\\C[0] in the bed?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN placed the feather",
+                    "under the pillow..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You feel yourself falling",
+                    "asleep..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]It is not too late to",
+                    "stop the nightmares."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]You chose the moonlight.",
+                    "That was wise."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]Lunar feathers protect",
+                    "the dreams of all living",
+                    "things."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]To save the realm of",
+                    "dreams, place this feather",
+                    "in the bed on \\C[1]Newmoon",
+                    "Island\\C[9]."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]Place the Lunar Feather",
+                    "on the bed on \\C[1]Newmoon",
+                    "Island\\C[9]. Hurry."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1029 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]Child... what have you",
+                    "done. The realm of dreams",
+                    "is falling."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Cresssa!!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "824": {
+      "name": "Moonlit Forest",
+      "events": {
+        "41": {
+          "name": "EV041",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Full or eclipsed, the",
+                    "moon's glow shall guide",
+                    "you where you need to go."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "42": {
+          "name": "EV042",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[7]The realm of dreams...",
+                    "It can finally be",
+                    "corrupted."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "EV036",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Yawn... So many Mareep...",
+                    "Can't keep my eyes open."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "How many are there? I keep",
+                    "drifting off when I try",
+                    "to count."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\V[278] Mareep... Yes,",
+                    "that's right."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Yawn... Thank you. The",
+                    "path to Newmoon Island is",
+                    "open now."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "That doesn't seem right.",
+                    "Could you check again?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Yawn... So many Mareep...",
+                    "I keep losing count."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "How many are out there?",
+                    "The moonlight makes them",
+                    "hard to tell apart."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\V[278] Mareep... Yes,",
+                    "that sounds right."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Yawn... Thank you."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Now the Flaaffy... Could",
+                    "you count those too?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "That doesn't seem right.",
+                    "Maybe check again?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Yawn... Now the Flaaffy...",
+                    "Can't keep track."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "How many Flaaffy did you",
+                    "count? The wool makes them",
+                    "glow in the moonlight."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\V[284] Flaaffy... Yes.",
+                    "That's the number."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Yawn... Thank you."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Yes. I can see it now.",
+                    "The realm of dreams can",
+                    "still be saved."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "That doesn't seem right.",
+                    "I lost count completely.",
+                    "Try again?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "835": {
+      "name": "Newmoon Island",
+      "events": {
+        "1": {
+          "name": "darkrai",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Of course you came.",
+                    "Your heart was always",
+                    "easy to corrupt."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Humans have spread",
+                    "across my territory. But",
+                    "with these feathers gone,",
+                    "their dreams belong to me."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]The Fullmoon guardian",
+                    "is the only obstacle that",
+                    "remains."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Place this feather on",
+                    "the bed on \\C[1]Fullmoon",
+                    "Island\\C[2]. Corrupt the",
+                    "guardian's sanctuary."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Place the corrupted",
+                    "feather on the bed on",
+                    "\\C[1]Fullmoon Island\\C[2].",
+                    "Do not fail me."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": { "switch1_id": 1030 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Traitor. What have you",
+                    "done to my domain?"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Daarrrrrr!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Place the \\C[9]Lunar",
+                    "Feather\\C[0] in the bed?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN placed the feather",
+                    "under the pillow..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You feel yourself falling",
+                    "asleep..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1027 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Yes. You have done",
+                    "well."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Without these feathers,",
+                    "nothing protects them",
+                    "from me."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]The world will finally",
+                    "know an endless, dreamless",
+                    "dark."
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Come to New Moon",
+                    "Island. Join me."
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]It is not too late.",
+                    "The full moon still shines."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]We must stop the",
+                    "nightmares from spreading.",
+                    "Come."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "darkrai",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 1030 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]You chose the moonlight",
+                    "over the dark. That took",
+                    "courage."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]I always knew your",
+                    "heart was pure."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[9]Please — let me join",
+                    "you on your journey."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
