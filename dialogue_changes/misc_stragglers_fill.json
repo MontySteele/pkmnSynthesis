@@ -1,0 +1,504 @@
+{
+  "_implementation_notes": [
+    "MISC STRAGGLERS FILL — Maps 351 (Route 9), 513 (Rock Tunnel side), 162/229 (Underwater),",
+    "  544 (Cerulean Cave WTF), 144 (Power Plant), 119 (Crimson PokeMart), 523/805 (Waterfall Cave).",
+    "",
+    "Map 351 (Route 9):",
+    "  - EV002: Jetpack NPC — teaches waterfall climbing via quest. MECHANICAL quest logic, move",
+    "    checks, and item gift preserved. Flavor intro lines rewritten.",
+    "",
+    "Map 513 (Rock Tunnel side):",
+    "  - EV001: 'It's dangerous to go alone' item giver. MECHANICAL item gift preserved.",
+    "    Page 0 intro rewritten. Page 1 ('...') preserved.",
+    "",
+    "Map 162 (Underwater Route 12):",
+    "  - EV023/015: Underwater fishing quest encounters. Pokemon cry ('Krrsss!') is MECHANICAL.",
+    "    Quest progress messages are MECHANICAL. All preserved exactly.",
+    "",
+    "Map 229 (Underwater Route 21):",
+    "  - EV002: Underwater Pokemon cry ('Gaaah Gaughhh!'). MECHANICAL — preserved exactly.",
+    "",
+    "Map 544 (Cerulean Cave WTF):",
+    "  - EV002: Mew/Mewtwo encounter. 'Mew!' cry and 'Mewtwo vanished' are MECHANICAL.",
+    "    Preserved exactly.",
+    "",
+    "Map 144 (Power Plant):",
+    "  - EV027: Wild Pokemon encounter ('Gaagaugh!' + fled message). MECHANICAL — preserved exactly.",
+    "  - EV020: Zapdos encounter ('Gyaoo!' + flew away). MECHANICAL — preserved exactly.",
+    "",
+    "Map 119 (Crimson PokeMart):",
+    "  - All shelf events (EV004-023): MECHANICAL shelf text — preserved exactly.",
+    "  - EV024: Level Ball tip NPC. Rewritten with Synthesis flavor.",
+    "",
+    "Maps 523/805 (Waterfall Cave):",
+    "  - EV003: Pokemon cries ('Shashahh!' / 'Shrrrrr... Ziiiing!'). MECHANICAL — preserved exactly.",
+    "",
+    "Tone: These are scattered locations. Route 9 NPC is an eccentric outdoorsman. Rock Tunnel",
+    "  helper is mysterious. Underwater/cave encounters are raw and wild. Crimson PokeMart is",
+    "  a frontier outpost — practical, no-nonsense.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "351": {
+      "name": "Route 9",
+      "events": {
+        "2": {
+          "name": "EV002 — Jetpack NPC (quest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Using Pokémon to scale",
+                    "waterfalls? That's one approach."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Want to know how I do it",
+                    "without one?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Show me a Pokémon that knows",
+                    "\\C[1]Aqua Jet, Waterfall\\C[0]",
+                    "and \\C[1]Fly\\C[0], and I'll",
+                    "share the secret."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Not quite. It needs all three",
+                    "moves."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "That's the one! A real water",
+                    "sports enthusiast. I'm surprised",
+                    "you didn't know already."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "The secret is a water-propelled",
+                    "\\C[1]Jetpack\\C[0]. Like this",
+                    "one right here."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Trust me — it's a blast to use."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That \\C[1]Jetpack\\C[0] lets you",
+                    "climb waterfalls without needing",
+                    "a Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Also, it's just really fun."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "513": {
+      "name": "Rock Tunnel (side area)",
+      "events": {
+        "1": {
+          "name": "EV001 — item giver",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "These tunnels aren't kind to",
+                    "the unprepared. Here — take",
+                    "this."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "162": {
+      "name": "Underwater (Route 12)",
+      "events": {
+        "23": {
+          "name": "EV023 — fishing quest encounter (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 726
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Krrsss!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "The fishing area is clear! Go back to the Fishing Guru's ",
+                    "brother."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Pokémon to take care of!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 — fishing quest encounter (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 726
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Krrsss!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "The fishing area is clear! Go back to the Fishing Guru's ",
+                    "brother."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "There are still more Pokémon to take care of!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "229": {
+      "name": "Underwater (Route 21)",
+      "events": {
+        "2": {
+          "name": "EV002 — Pokemon cry (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Gaaah Gaughhh!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "544": {
+      "name": "Cerulean Cave WTF",
+      "events": {
+        "2": {
+          "name": "EV002 — Mew/Mewtwo encounter (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Mew!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Mewtwo vanished into thin air..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "144": {
+      "name": "Power Plant",
+      "events": {
+        "27": {
+          "name": "EV027 — wild Pokemon encounter (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Gaagaugh!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "The wild Pokémon fled..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 — Zapdos encounter (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Gyaoo!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Zapdos flew away..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "119": {
+      "name": "PokeMart (Crimson City)",
+      "events": {
+        "16": {
+          "name": "EV016 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "5": {
+          "name": "EV005 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "22": {
+          "name": "EV022 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "11": {
+          "name": "EV011 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "17": {
+          "name": "EV017 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "6": {
+          "name": "EV006 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "23": {
+          "name": "EV023 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "12": {
+          "name": "EV012 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "18": {
+          "name": "EV018 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "7": {
+          "name": "EV007 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "24": {
+          "name": "EV024 — Level Ball tip NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Level Balls work best on",
+                    "Pokémon weaker than yours.",
+                    "Handy for clearing low-level",
+                    "areas quickly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "19": {
+          "name": "EV019 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "8": {
+          "name": "EV008 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "14": {
+          "name": "EV014 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "20": {
+          "name": "EV020 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "9": {
+          "name": "EV009 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "15": {
+          "name": "EV015 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "4": {
+          "name": "EV004 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "21": {
+          "name": "EV021 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        },
+        "10": {
+          "name": "EV010 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokemon goods!"] }] } }
+        }
+      }
+    },
+    "523": {
+      "name": "Waterfall Cave",
+      "events": {
+        "3": {
+          "name": "EV003 — Pokemon cry (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    ".... Shashahh!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "805": {
+      "name": "Waterfall Cave (alt)",
+      "events": {
+        "3": {
+          "name": "EV003 — Pokemon cry (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Shrrrrr... Ziiiing!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

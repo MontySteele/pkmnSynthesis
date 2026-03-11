@@ -1,0 +1,2618 @@
+{
+  "_implementation_notes": [
+    "VERMILION EXTRAS FILL — Maps 12 (Route 5), 13 (Day Care Center), 20 (Pokemon Center),",
+    "  21 (PokeMart), 22/23/37 (Vermilion houses).",
+    "",
+    "Map 12 (Route 5):",
+    "  - EV006 (Trainer old lady): Battle trigger text + post-battle item gift. MECHANICAL battle/gift",
+    "    preserved. Flavor rewritten.",
+    "  - EV012: Rattata/Poliwag trade NPC. MECHANICAL trade system + choices preserved. Flavor rewritten.",
+    "  - EV013/014: Lost Growlithe quest events. MECHANICAL — preserved exactly (quest progress, cries).",
+    "  - EV008: Underground passage NPC. Rewritten with Synthesis flavor.",
+    "  - EV009 (Breeder): Battle + egg gifts + love letter quest. MECHANICAL eggs/choices/items all",
+    "    preserved exactly. Battle intro rewritten. Post-battle page 1 egg offers preserved.",
+    "    Page 3 (love letter) preserved.",
+    "  - EV015 (Day Care Man outside): MECHANICAL daycare system — egg/compatibility dialogue all",
+    "    preserved exactly.",
+    "",
+    "Map 13 (Day Care Center):",
+    "  - EV002 (Day Care Woman): FULLY MECHANICAL daycare system — all deposit/withdraw/cost dialogue",
+    "    preserved exactly. No changes.",
+    "  - EV004 (Egg counter NPC): Egg hatching reward quest. MECHANICAL reward triggers and item",
+    "    messages preserved. Flavor intro lines lightly rewritten.",
+    "",
+    "Map 20 (Pokemon Center):",
+    "  - EV005: Slowpoke/Meowth trade + Psyduck/Kadabra trade (page 1). MECHANICAL trades preserved.",
+    "    Intro flavor rewritten.",
+    "  - EV011: Wonder Room move tutor. MECHANICAL tutor system preserved. Intro flavor rewritten.",
+    "  - EV006: Fishing NPC flavor. Rewritten.",
+    "  - EV007: Pokemon cries (Bahh/Quack/Meow). MECHANICAL — preserved exactly.",
+    "  - EV004 (Nurse): FULLY MECHANICAL healing system — preserved exactly.",
+    "  - EV010: Fossil scientist NPC. MECHANICAL fossil quest preserved. Intro flavor rewritten.",
+    "",
+    "Map 21 (PokeMart):",
+    "  - All shelf events (EV005-023): MECHANICAL — preserved exactly.",
+    "  - EV028: Plant decoration. MECHANICAL — preserved exactly.",
+    "  - EV027: Exotic Pokemon NPC (Hoenn quest). MECHANICAL quest preserved. Flavor rewritten.",
+    "  - EV003 (Deliveryman): MECHANICAL — preserved exactly.",
+    "  - EV004: Traveler NPC. Rewritten.",
+    "",
+    "Maps 22/23/37 (Vermilion Houses):",
+    "  - Map 22 EV005: Balm Mushroom buyer. MECHANICAL trade/gold preserved. Flavor rewritten.",
+    "  - Map 22 EV006/007: TV events (war movie). Rewritten with Vermilion port-town-military tone.",
+    "  - Map 22 EV004: Trash can. Rewritten.",
+    "  - Map 23 EV005: Rollout move tutor. MECHANICAL tutor preserved. Intro flavor rewritten.",
+    "  - Map 23 EV006/007: TV events (cartoon). Rewritten.",
+    "  - Map 23 EV002: Cat cry. MECHANICAL — preserved.",
+    "  - Map 23 EV008: Feather quest event. MECHANICAL — preserved.",
+    "  - Map 23 EV003: Trash can. Rewritten.",
+    "  - Map 23 EV004: Rematch tip NPC. Rewritten with Vermilion flavor.",
+    "  - Map 37 EV005: Trash HM flavor. Rewritten.",
+    "  - Map 37 EV006 (Move Deleter): MECHANICAL system — preserved exactly.",
+    "  - Map 37 EV007/008: TV weather forecast. Rewritten.",
+    "  - Map 37 EV002 (Move Deleter alt): MECHANICAL system — preserved exactly.",
+    "",
+    "Tone: Vermilion is a working port under Lt. Surge's quasi-military influence. Residents are",
+    "  practical, slightly weary. The harbor shapes daily life. Military presence is felt but",
+    "  normalized.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "12": {
+      "name": "Route 5",
+      "events": {
+        "6": {
+          "name": "Trainer(4) — old lady battle",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Don't let the gray hair fool",
+                    "you. I've been battling since",
+                    "before you were born."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Here — take this. A trainer",
+                    "should never fight hungry."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Battling wears you down faster",
+                    "than you think. Stop and eat",
+                    "once in a while."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Rattata/Poliwag trade",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 5
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've got a Poliwag I pulled",
+                    "from the river. Trade you for",
+                    "a Rattata?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Shame. Let me know if you",
+                    "change your mind."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get started!"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "Come back if you change your mind!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "How's that Poliwag treating",
+                    "you?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 — Lost Growlithe (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 948
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Woof! Woof!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Growlithe went back to the hotel."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You found every Growlithe! Go back to Saffron City's hotel ",
+                    "for your reward!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "There are still more \\V[143] lost Growlithe to find!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — Underground NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "See that building? That's the",
+                    "Kanto underground entrance."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Runs under Saffron City all",
+                    "the way to Vermilion. Beats",
+                    "walking, if you don't mind",
+                    "the dark."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Lost Growlithe 2 (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 948
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Woof! Woof!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Growlithe went back to the hotel."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You found every Growlithe! Go back to Saffron City's hotel ",
+                    "for your reward!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "There are still more \\V[143] lost Growlithe to find!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(4) — Breeder",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Breeding's my trade. Every egg",
+                    "is a new possibility — you",
+                    "never know what you'll get."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Pokémon just laid a new egg, would you like to have it?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Received a Pokémon Egg!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You have no room in your party to store the egg."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Received a Pokémon Egg!"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "You have no room in your party to store the egg."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Received a Pokémon Egg!"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "You have no room in your party to store the egg."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Received a Pokémon Egg!"
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "You have no room in your party to store the egg."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "It's fine, I can keep it!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Has that egg I gave you",
+                    "hatched yet? They take time,",
+                    "but it's worth the wait."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch2_id": 939,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh what's that? A love letter for me?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Aww, that's adorable!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'll make sure to get back to him! Thank you!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Day Care Man (outside — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\bAh, it's you!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\bWe were raising your Pokémon, and my goodness, ",
+                    "were we surprised!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\bYour Pokémon was holding an Egg!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\bWe don't know how it got there, but your Pokémon ",
+                    "had it."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "\\bYou do want it, don't you?"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "\\bYou have no room for it right now...  Come back ",
+                    "when you've made room."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "\\PN received the Egg from the Day-Care Man."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "\\bYou take good care of it."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "\\bI really will keep it.  You do want this Egg, yes?"
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "\\bWell all right then, I'll take it.  Thank you."
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "\\bThat is, I don't think we'll ever find another..."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "\\bNo, no, I'm sure we'll find another one.  I'm definitely ",
+                    "sure of it!"
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "\\bI'm the Day-Care man."
+                  ]
+                },
+                {
+                  "start_index": 58,
+                  "type": "text",
+                  "lines": [
+                    "\\bI help take care of the precious Pokémon of ",
+                    "trainers."
+                  ]
+                },
+                {
+                  "start_index": 61,
+                  "type": "text",
+                  "lines": [
+                    "\\bAny Pokémon you'd like to have raised you can ",
+                    "leave in my wife's care."
+                  ]
+                },
+                {
+                  "start_index": 68,
+                  "type": "text",
+                  "lines": [
+                    "\\bAh, it's you!\\nGood to see you!"
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "\\bYour \\v[3] is doing just fine."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "\\bAh, it's you!\\nGood to see you!"
+                  ]
+                },
+                {
+                  "start_index": 80,
+                  "type": "text",
+                  "lines": [
+                    "\\bYour \\v[3] and \\v[4] are doing just fine."
+                  ]
+                },
+                {
+                  "start_index": 83,
+                  "type": "text",
+                  "lines": [
+                    "\\bThe two play with other Pokémon rather than with ",
+                    "each other..."
+                  ]
+                },
+                {
+                  "start_index": 89,
+                  "type": "text",
+                  "lines": [
+                    "\\bThe two don't seem to like each other much."
+                  ]
+                },
+                {
+                  "start_index": 94,
+                  "type": "text",
+                  "lines": [
+                    "\\bThe two seem to get along."
+                  ]
+                },
+                {
+                  "start_index": 99,
+                  "type": "text",
+                  "lines": [
+                    "\\bThe two seem to get along very well."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "13": {
+      "name": "Day Care Center",
+      "events": {
+        "2": {
+          "name": "EV002 — Day Care Woman (FULLY MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I'm the Day-Care woman. We can raise Pokémon for ",
+                    "you."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Would you like us to raise your Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Oh?  But you only have one Pokémon with you."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "You can't go off without a Pokémon.  Come back ",
+                    "another time."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Which Pokémon should we raise for you?"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Oh, fine, then.\\nCome again."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "If you leave me that Pokémon, what are you gonna ",
+                    "battle with?"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Come back another time."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Fine, we'll raise your \\v[3] for a while."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "Come back for it later."
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "We can raise two of your Pokémon.  Would you like ",
+                    "us to raise another?"
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 48,
+                  "type": "text",
+                  "lines": [
+                    "Oh?  But you only have one Pokémon with you."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "You can't go off without a Pokémon.  Come back ",
+                    "another time."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Which Pokémon should we raise for you?"
+                  ]
+                },
+                {
+                  "start_index": 60,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                },
+                {
+                  "start_index": 66,
+                  "type": "text",
+                  "lines": [
+                    "If you leave me that Pokémon, what are you gonna ",
+                    "battle with?"
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "Come back another time."
+                  ]
+                },
+                {
+                  "start_index": 75,
+                  "type": "text",
+                  "lines": [
+                    "Fine, we'll raise your \\v[3] for a while."
+                  ]
+                },
+                {
+                  "start_index": 77,
+                  "type": "text",
+                  "lines": [
+                    "Come back for it later."
+                  ]
+                },
+                {
+                  "start_index": 85,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                },
+                {
+                  "start_index": 93,
+                  "type": "text",
+                  "lines": [
+                    "Oh, fine, then.\\nCome again."
+                  ]
+                },
+                {
+                  "start_index": 99,
+                  "type": "text",
+                  "lines": [
+                    "Ah, it's you!  Good to see you.  Now, about your ",
+                    "Pokémon..."
+                  ]
+                },
+                {
+                  "start_index": 103,
+                  "type": "text",
+                  "lines": [
+                    "By level, your \\v[3] has grown by about \\v[4]."
+                  ]
+                },
+                {
+                  "start_index": 108,
+                  "type": "text",
+                  "lines": [
+                    "By level, your \\v[3] has grown by about \\v[4]."
+                  ]
+                },
+                {
+                  "start_index": 118,
+                  "type": "text",
+                  "lines": [
+                    "Do you want your Pokémon back?"
+                  ]
+                },
+                {
+                  "start_index": 119,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 124,
+                  "type": "text",
+                  "lines": [
+                    "Your Pokémon team is full.  Make room, then come ",
+                    "see me."
+                  ]
+                },
+                {
+                  "start_index": 133,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                },
+                {
+                  "start_index": 139,
+                  "type": "text",
+                  "lines": [
+                    "\\GIf you want your \\v[3] back, it will cost $\\v[4]."
+                  ]
+                },
+                {
+                  "start_index": 140,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 145,
+                  "type": "text",
+                  "lines": [
+                    "\\GYou don't have enough money..."
+                  ]
+                },
+                {
+                  "start_index": 152,
+                  "type": "text",
+                  "lines": [
+                    "\\GExcellent\\nHere's your Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 153,
+                  "type": "text",
+                  "lines": [
+                    "\\PN took \\v[3] back from the Day-Care lady."
+                  ]
+                },
+                {
+                  "start_index": 156,
+                  "type": "text",
+                  "lines": [
+                    "Do you want to take back the other one, too?"
+                  ]
+                },
+                {
+                  "start_index": 157,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 163,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                },
+                {
+                  "start_index": 169,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                },
+                {
+                  "start_index": 175,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                },
+                {
+                  "start_index": 181,
+                  "type": "text",
+                  "lines": [
+                    "Very good.  Come again."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Egg counter NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hatching eggs takes patience,",
+                    "but the payoff is something",
+                    "special."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hatch a few more and come back.",
+                    "I'll have a little something",
+                    "for your trouble."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I've been watching your",
+                    "progress. You've hatched quite",
+                    "a few eggs now."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "\\V[298] to be exact. That's",
+                    "solid work."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Here, take this! You've definitely earned it!"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "I've been tracking your",
+                    "hatching record. Impressive",
+                    "numbers lately."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "\\V[298] hatched so far. You've",
+                    "really taken to this."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "You've got real talent as a",
+                    "breeder. No question about it."
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Here, take this! You've definitely earned it!"
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "Your hatching numbers keep",
+                    "climbing. I'm impressed."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "\\V[298] now. That's a serious",
+                    "achievement."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "You're a proper Pokémon",
+                    "Breeder at this point.",
+                    "No doubt about it."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "You gotta dress the part now, wear this!"
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "Eggs will hatch faster when you wear the Breeder Outfit!"
+                  ]
+                },
+                {
+                  "start_index": 68,
+                  "type": "text",
+                  "lines": [
+                    "Your record speaks for itself",
+                    "at this point."
+                  ]
+                },
+                {
+                  "start_index": 71,
+                  "type": "text",
+                  "lines": [
+                    "\\V[298] eggs hatched. That's",
+                    "remarkable."
+                  ]
+                },
+                {
+                  "start_index": 73,
+                  "type": "text",
+                  "lines": [
+                    "Here's one last reward for you!"
+                  ]
+                },
+                {
+                  "start_index": 82,
+                  "type": "text",
+                  "lines": [
+                    "Eggs will hatch faster when you wear the Breeder Outfit!"
+                  ]
+                },
+                {
+                  "start_index": 86,
+                  "type": "text",
+                  "lines": [
+                    "Keep hatching and come see me",
+                    "again. I might have more for",
+                    "you."
+                  ]
+                },
+                {
+                  "start_index": 91,
+                  "type": "text",
+                  "lines": [
+                    "Good luck out there. Every egg",
+                    "is a fresh start."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "20": {
+      "name": "Pokemon Center (Vermilion)",
+      "events": {
+        "5": {
+          "name": "EV005 — Slowpoke/Meowth trade",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Pulled this Slowpoke right out",
+                    "of the harbor with my Good Rod."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Trade you for a Meowth. Deal?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "No worries. I'll find another",
+                    "taker."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Meowth's Pay Day is going to",
+                    "fund my retirement. Pleasure",
+                    "doing business!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Thanks a lot!"
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "No sweat. I'll find someone",
+                    "else."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 47
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Check out my Psyduck — hooked",
+                    "it with the Good Rod too."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I'll trade it for a Kadabra.",
+                    "What do you say?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "No worries. I'll find another",
+                    "taker."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "A Kadabra — perfect partner",
+                    "for the road ahead."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Thanks a lot!"
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "No sweat. I'll find someone",
+                    "else."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 246
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Meowth's Pay Day is going to",
+                    "make me a rich man. Best trade",
+                    "I ever made."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Wonder Room tutor (MECHANICAL system preserved)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Wonder Trade Center is",
+                    "upstairs. It's WONDERFUL!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\GI can teach you another WONDERFUL move called ",
+                    "Wonder Room. It swaps the Defense and Special Defense ",
+                    "of all Pokémon"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\GAnd I'll teach it to your Pokémon for just \\V[15]. What ",
+                    "do you say?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Wonderful! Come back if you want me to teach it to ",
+                    "another of your Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with $\\V[15] if you want me to ",
+                    "teach it to one of your Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "You don't have enough money. Come back with $\\V[15] if ",
+                    "you want me to teach it to one of your Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with $\\V[15] if you want me to ",
+                    "teach it to one of your Pokémon!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — fishing NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Some folks fish Pokémon for",
+                    "food around the docks. Me, I'd",
+                    "rather keep them as partners."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Pokemon cries (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Bahh?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 47
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Quack quaaa?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 246
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Meoww!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Nurse (FULLY MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\rHello, and welcome to the Pokémon Center."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe restore your tired Pokémon to full health."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\rWould you like to rest your Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\rOK, I'll take your Pokémon for a few seconds."
+                  ]
+                },
+                {
+                  "start_index": 114,
+                  "type": "text",
+                  "lines": [
+                    "\\rYour Pokémon may be infected by PokeRus."
+                  ]
+                },
+                {
+                  "start_index": 116,
+                  "type": "text",
+                  "lines": [
+                    "\\rLittle is known about the PokeRus except that they ",
+                    "are microscopic life-forms that attach to Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 119,
+                  "type": "text",
+                  "lines": [
+                    "\\rWhile infected, Pokémon are said to grow ",
+                    "exceptionally well."
+                  ]
+                },
+                {
+                  "start_index": 125,
+                  "type": "text",
+                  "lines": [
+                    "\\rThank you for waiting."
+                  ]
+                },
+                {
+                  "start_index": 127,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe've restored your Pokémon to full health."
+                  ]
+                },
+                {
+                  "start_index": 129,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe hope to see you again!"
+                  ]
+                },
+                {
+                  "start_index": 135,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe hope to see you again!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Fossil scientist",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Carrying any fossils? I work",
+                    "at Pewter's museum."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "We've got an experimental",
+                    "machine there that can revive",
+                    "fossils into living Pokémon.",
+                    "Bring them by sometime."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm a researcher from Pewter",
+                    "City's fossil museum."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "We just got our revival machine",
+                    "back online."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Oh, is that a helix fossil you have with you?"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Oh, is that a dome fossil you have with you?"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Remarkable! I could take it to",
+                    "our lab in Pewter and bring it",
+                    "back to life."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Would that be fine with you?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Fantastic!"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "\\B\\PN handed the fossil to the scientist."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "I'd better hurry back. Come",
+                    "pick up your living fossil at",
+                    "Pewter City's museum!"
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "Oh... That's a real shame."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "21": {
+      "name": "PokeMart (Vermilion)",
+      "events": {
+        "16": {
+          "name": "EV016 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "5": {
+          "name": "EV005 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "27": {
+          "name": "EV027 — Exotic Pokemon NPC (Hoenn quest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I travel for the Pokémon. Hoenn",
+                    "has species you won't find",
+                    "anywhere in Kanto."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Show me a Pokémon from Hoenn",
+                    "and I'll make it worth your",
+                    "while. Interested?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Could you show me such a Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Not quite. I need one that's",
+                    "actually native to Hoenn."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "As a token of my appreciation, I'll teach you about some ",
+                    "new hairstyles that I came across during my travels!"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Hoenn outfits collection!"
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Hoenn hairstyles collection!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "As a token of my appreciation, I'll teach you about some ",
+                    "new hairstyles that I came across during my travels!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Hoenn outfits collection!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN unlocked the Hoenn hairstyles collection!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "The world's vast. Someday I'll",
+                    "cross the ocean again and find",
+                    "Pokémon no one's catalogued."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "11": {
+          "name": "EV011 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "17": {
+          "name": "EV017 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "6": {
+          "name": "EV006 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "28": {
+          "name": "EV028 (plant)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["What a lovely plant!"] }] } }
+        },
+        "23": {
+          "name": "EV023 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "12": {
+          "name": "EV012 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "7": {
+          "name": "EV007 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "18": {
+          "name": "EV018 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "13": {
+          "name": "EV013 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "19": {
+          "name": "EV019 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "8": {
+          "name": "EV008 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "14": {
+          "name": "EV014 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "3": {
+          "name": "Deliveryman (MECHANICAL)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 30
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\bHello. You must be \\PN."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\bI've received a gift for you.\\nHere you go!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\bI haven't received any other gifts for you."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "\\bWe look forward to your next visit."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Sorry I need the correct password"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "9": {
+          "name": "EV009 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "15": {
+          "name": "EV015 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "4": {
+          "name": "EV004 — traveler NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The harbor route means I need",
+                    "extra supplies. You never know",
+                    "what you'll run into at sea."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        },
+        "10": {
+          "name": "EV010 (shelf)",
+          "pages": { "0": { "conditions": {}, "dialogue_blocks": [{ "start_index": 0, "type": "text", "lines": ["The shelves are filled with Pokémon goods!"] }] } }
+        }
+      }
+    },
+    "22": {
+      "name": "Vermilion City (House 1)",
+      "events": {
+        "5": {
+          "name": "EV005 — Balm Mushroom buyer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "That Balm Mushroom — I'll pay",
+                    "top dollar for it. Name your",
+                    "price. Actually, I'll name it."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\PN handed the Balm Mushroom."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Received $15 000!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "This specimen... magnificent.",
+                    "Worth every coin."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Another fine addition to my",
+                    "collection. Thank you."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "I collect rare fungi. They're",
+                    "priceless to the right buyer —",
+                    "which is me."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "I collect rare mushrooms. If",
+                    "you ever find a Balm Mushroom,",
+                    "bring it here. I pay well."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Balm Mushrooms are scarce these",
+                    "days. That's why I don't blink",
+                    "at the price."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — TV (left tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A war documentary is playing.",
+                    "Lt. Surge's regiment, maybe."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Better keep moving."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — TV (right tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A war documentary is playing.",
+                    "Lt. Surge's regiment, maybe."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Better keep moving."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — trash can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Empty. Just old wrappers."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "23": {
+      "name": "Vermilion City (House 2)",
+      "events": {
+        "5": {
+          "name": "EV005 — Rollout tutor (MECHANICAL system preserved)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey there. I know a move that",
+                    "hits harder each turn it lands."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\GDo you want me to teach the move Rollout to one ",
+                    "of your Pokémon for $\\V[15]"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Ta-da! Come back if you want me to teach it to another of ",
+                    "your Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with $\\V[15] if you want me to ",
+                    "teach it to one of your Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "You don't have enough money. Come back with $\\V[15] if ",
+                    "you want me to teach it to one of your Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with $\\V[15] if you want me to ",
+                    "teach it to one of your Pokémon!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 — TV (left tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cartoon is on. Something",
+                    "about a Pikachu and a kid."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Not the time for this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — TV (right tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cartoon is on. Something",
+                    "about a Pikachu and a kid."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Not the time for this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 — cat cry (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Purr purr!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — feather quest (MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 1026
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "A voice echoed from somewhere..."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\C[2]Find the next feather..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 — trash can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nothing useful in here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — rematch tip NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I kept rematching the same",
+                    "trainer on the docks. Their",
+                    "Pokémon actually evolved from",
+                    "all the practice."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "variable_id": 282,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I keep dreaming I'm stuck in",
+                    "an endless rematch loop...",
+                    "Same trainer, over and over."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "37": {
+      "name": "Vermilion City (House 3 — Move Deleter)",
+      "events": {
+        "5": {
+          "name": "EV005 — trash HM",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Someone tossed an HM disc in",
+                    "here. The label's scratched off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Move Deleter (FULLY MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Uh...\\nOh, yes, I'm the Move Deleter."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Pokémon can forget any move when they learn a new one, ",
+                    "even HMs. "
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "But if you want your Pokémon to forget a move for another ",
+                    "reason, I can do that for you."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Would you like me to make your Pokémon forget a move?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Which Pokémon should forget a move?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Come again if there are moves that need to be ",
+                    "forgotten."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "What? No Egg should know any moves."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "\\v[3] seems to know only one move..."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Which move should be forgotten?"
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "Hm! \\v[3]'s \\v[4]? That move should be forgotten?"
+                  ]
+                },
+                {
+                  "start_index": 45,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "It worked to perfection!"
+                  ]
+                },
+                {
+                  "start_index": 54,
+                  "type": "text",
+                  "lines": [
+                    "\\v[3] has forgotten \\v[4] completely."
+                  ]
+                },
+                {
+                  "start_index": 58,
+                  "type": "text",
+                  "lines": [
+                    "Come again if there are moves that need to be ",
+                    "forgotten."
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "Come again if there are moves that need to be ",
+                    "forgotten."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — TV weather (left tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The weather report is on.",
+                    "Clear skies over the harbor."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good day for the docks."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Move Deleter alt (FULLY MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "\\bUh...\\nOh, yes, I'm the Move Deleter."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\bI can make Pokémon forget their moves."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\bWould you like me to do that?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\bWhich Pokémon should forget a move?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "\\bCome again if there are moves that need to be ",
+                    "forgotten."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "\\bWhat? No Egg should know any moves."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "\\bWhat? I can't make a Shadow Pokémon forget a ",
+                    "move."
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "\\b\\v[3] seems to know only one move..."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "\\bWhich move should be forgotten?"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "\\bHm! \\v[3]'s \\v[4]? That move should be forgotten?"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "\\bIt worked to perfection!"
+                  ]
+                },
+                {
+                  "start_index": 45,
+                  "type": "text",
+                  "lines": [
+                    "\\b\\v[3] has forgotten \\v[4] completely."
+                  ]
+                },
+                {
+                  "start_index": 48,
+                  "type": "text",
+                  "lines": [
+                    "\\bCome again if there are moves that need to be ",
+                    "forgotten."
+                  ]
+                },
+                {
+                  "start_index": 58,
+                  "type": "text",
+                  "lines": [
+                    "\\bCome again if there are moves that need to be ",
+                    "forgotten."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 — TV weather (right tile)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The weather report is on.",
+                    "Clear skies over the harbor."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good day for the docks."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

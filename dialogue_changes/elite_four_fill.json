@@ -1,0 +1,1608 @@
+{
+  "_implementation_notes": [
+    "ELITE FOUR & INDIGO PLATEAU FILL -- Maps 303, 314, 315, 316, 317, 341.",
+    "Phase 4 (Endgame): Player has cleared Victory Road, now faces the League.",
+    "",
+    "Map 303: Indigo Plateau overworld.",
+    "  E3 (sign): PRESERVED -- city name sign.",
+    "",
+    "Map 314: Pokemon League lobby.",
+    "  E5, E7, E9 (League challenge doors): MECHANICAL -- choice prompts preserved exactly.",
+    "  E17 (Dem / Hard Mode NPC): MECHANICAL -- ALL Hard Mode mechanics, choices, badge give, mode toggle preserved exactly.",
+    "    Dem's personality lines and memes preserved as-is (they are character-specific mechanical flavor).",
+    "  E12 (Move Relearner): MECHANICAL -- all tutor logic, pricing, choices preserved exactly.",
+    "  E10 (Nurse): MECHANICAL -- all healing, PokeRus, choices preserved exactly.",
+    "  E13 (preparation NPC): Flavor rethemed.",
+    "  E14 (struggling trainer): Flavor rethemed.",
+    "  E15 (explanation NPC): Flavor rethemed.",
+    "",
+    "Map 315: Lorelei (Elite 1).",
+    "  E1 pages 0-4: Pre-battle speech rethemed (Lorelei personality: calculated, cold, from Sevii Islands).",
+    "    Post-battle win/loss lines rethemed. Battle mechanics preserved.",
+    "    Pages 0-3 have identical dialogue (different team variants). Page 4 has different start_indices.",
+    "  E1 page 5: Post-defeat flavor only.",
+    "  E3, E4 (locked doors): MECHANICAL -- preserved exactly.",
+    "",
+    "Map 316: Bruno (Elite 2).",
+    "  E1 pages 0-4: Pre-battle speech rethemed (Bruno personality: disciplined, strength-focused, honorable).",
+    "    Post-battle line rethemed. Battle mechanics preserved.",
+    "    Pages 0-3 have SI 13/16/20, page 4 has SI 15/18/40.",
+    "  E1 page 5: Post-defeat flavor only.",
+    "  E2, E3 (locked doors): MECHANICAL -- preserved exactly.",
+    "",
+    "Map 317: Agatha (Elite 3).",
+    "  E1, E2 (locked doors): MECHANICAL -- preserved exactly.",
+    "  E3 pages 0-4: Pre-battle speech rethemed (Agatha personality: old rival of Oak, bitter, knows old Kanto).",
+    "    Post-battle line rethemed. Battle mechanics preserved.",
+    "    Pages 0-3 have SI 13/16/20/23, page 4 has SI 15/18/22/43.",
+    "  E3 page 5: Post-defeat flavor only.",
+    "  E4 (Lance room variant?): Pre-battle rethemed, same Agatha personality.",
+    "    Page 0 has SI 12/15/19/22, page 1 has SI 1.",
+    "",
+    "Map 341: Hall of Fame.",
+    "  E2 (Oak): Hall of Fame ceremony. Rethemed for Synthesis -- reverent, earned.",
+    "    All 5 blocks are flavor text. Ceremony mechanics (HoF recording) are in non-dialogue commands.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "303": {
+      "name": "Indigo Plateau",
+      "events": {
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Indigo Plateau"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "314": {
+      "name": "Pok\u00e9mon League",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Enter the Pok\u00e9mon League",
+                    "challenge?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "D'ya know what's it mean",
+                    "locking eyes with me?",
+                    "Think yerself ready to",
+                    "unlock my Hard Mode?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Well, ye look tough, but ye",
+                    "gotta prove yerself first."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Rematch every Gym Leader and",
+                    "beat the champion again.",
+                    "Maybe then I'll let you in",
+                    "into my secret club!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hey, yer \\PN, right?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "So, ye got the invitation",
+                    "I sent you?"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "D'ya know what's it mean",
+                    "locking eyes with me?",
+                    "Think yerself ready to",
+                    "unlock my Hard Mode?"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "choices",
+                  "choices": ["Yeah!", "Maybe later"],
+                  "cancel_type": 0
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Lessee if ya got what it",
+                    "takes. You'll only get",
+                    "a taste!"
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Yer not half bad!",
+                    "Y'might actually do alright!",
+                    "I have enabled Hard Mode",
+                    "for you. Ya can talk to me",
+                    "anytime if ya want to",
+                    "disable it."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "Or just wear this and",
+                    "everyone'll know that ya",
+                    "mean business!"
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "\\PN put on Dem's Badge."
+                  ]
+                },
+                {
+                  "start_index": 48,
+                  "type": "text",
+                  "lines": [
+                    "While wearing Dem's Badge,",
+                    "Gym Leaders, and the Elite 4",
+                    "will now use their ultimate",
+                    "teams against you."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Nope, not enough bruh.",
+                    "If ya can't handle this,",
+                    "the rest will be unhealthy",
+                    "for ya."
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "I'm lookin' out for ya, see?",
+                    "Come back when yer stronger."
+                  ]
+                },
+                {
+                  "start_index": 66,
+                  "type": "text",
+                  "lines": [
+                    "Wise choice. If you barge in",
+                    "unknown territory unprepared,",
+                    "you'll only get hurt."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Do ya wanna protec yerself?",
+                    "Or deal some damage?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": ["Protec...", "...Attac?", "Damage!", "On second thought..."],
+                  "cancel_type": 4
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "He protec,\nhe attac,\nbut most importantly,\nhe take Hard Mode bac."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Yer catchin' on.",
+                    "I like ya."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "He protec,\nhe attack,\nbut most importantly,\nHard Mode is bac!  Yeah baby!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "THATS A LOTTA DAMAGE!"
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "THATS A LOTTA DAMAGE!"
+                  ]
+                },
+                {
+                  "start_index": 64,
+                  "type": "text",
+                  "lines": [
+                    "THATS A LOT-"
+                  ]
+                },
+                {
+                  "start_index": 66,
+                  "type": "text",
+                  "lines": [
+                    "...huh? Ya beat Hard Mode Gold?\n'KAY THAN 'TIS TIEM FOR LEGEND SPAM!"
+                  ]
+                },
+                {
+                  "start_index": 85,
+                  "type": "text",
+                  "lines": [
+                    "Yer good, kid. Yer really",
+                    "good."
+                  ]
+                },
+                {
+                  "start_index": 88,
+                  "type": "text",
+                  "lines": [
+                    "Go see that ol' professor",
+                    "Oak and show him yer Gold",
+                    "Emblem."
+                  ]
+                },
+                {
+                  "start_index": 101,
+                  "type": "text",
+                  "lines": [
+                    "Huh? Alrighty then.\nYa can talk to me anytime if ya want to swap modes, or just spar."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Move Relearner",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hello there, I'm the Move",
+                    "Reminder."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I know every single move",
+                    "that Pokemon learn growing",
+                    "up."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "\\GFor $2000 I can teach a",
+                    "move to one of your Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\GWhat do you think?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Which Pok\u00e9mon needs tutoring?"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "If your Pok\u00e9mon need to learn",
+                    "a move, come back with a",
+                    "Heart Scale."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Huh? There isn't a single",
+                    "move that I can teach an Egg."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Sorry..."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "It doesn't appear as if I",
+                    "have any move I can teach",
+                    "to your \\v[3]."
+                  ]
+                },
+                {
+                  "start_index": 45,
+                  "type": "text",
+                  "lines": [
+                    "Which move should I teach",
+                    "to your \\v[3]?"
+                  ]
+                },
+                {
+                  "start_index": 49,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\PN paid $2000 in exchange."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "\\GIf your Pok\u00e9mon need to",
+                    "learn a move, come back",
+                    "with another $2000!."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "If your Pok\u00e9mon need to learn",
+                    "a move, come back with $2000."
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "Oh, but you don't have",
+                    "enough money!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Enter the Pok\u00e9mon League",
+                    "challenge?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Done shopping? Team fully",
+                    "healed?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Once you walk through those",
+                    "doors, there's no turning",
+                    "back. Prepare carefully."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I couldn't even get past",
+                    "the first member of the",
+                    "Elite Four..."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The Pok\u00e9mon League... The",
+                    "strongest trainers in Kanto",
+                    "all gathered in one place."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Enter the Pok\u00e9mon League",
+                    "challenge?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Beyond those doors, you'll",
+                    "face the Elite Four one",
+                    "by one. No rest between."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Beat one, the next door",
+                    "opens. That's how it works.",
+                    "Good luck."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Nurse",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "\\^Hello, and welcome to the",
+                    "Pok\u00e9mon Center.\\wt[2.5]"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\^We restore your tired",
+                    "Pok\u00e9mon to full health.\\wt[2.5]"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Would you like to rest your",
+                    "Pok\u00e9mon?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "OK, I'll take your Pok\u00e9mon",
+                    "for a few seconds."
+                  ]
+                },
+                {
+                  "start_index": 112,
+                  "type": "text",
+                  "lines": [
+                    "\\rYour Pok\u00e9mon may be",
+                    "infected by PokeRus."
+                  ]
+                },
+                {
+                  "start_index": 114,
+                  "type": "text",
+                  "lines": [
+                    "\\rLittle is known about the",
+                    "PokeRus except that they are",
+                    "microscopic life-forms that",
+                    "attach to Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 117,
+                  "type": "text",
+                  "lines": [
+                    "\\rWhile infected, Pok\u00e9mon are",
+                    "said to grow exceptionally",
+                    "well."
+                  ]
+                },
+                {
+                  "start_index": 123,
+                  "type": "text",
+                  "lines": [
+                    "Thank you for waiting."
+                  ]
+                },
+                {
+                  "start_index": 125,
+                  "type": "text",
+                  "lines": [
+                    "We've restored your Pok\u00e9mon",
+                    "to full health."
+                  ]
+                },
+                {
+                  "start_index": 127,
+                  "type": "text",
+                  "lines": [
+                    "We hope to see you again!"
+                  ]
+                },
+                {
+                  "start_index": 133,
+                  "type": "text",
+                  "lines": [
+                    "\\rWe hope to see you again!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "315": {
+      "name": "Elite 1 - Lorelei",
+      "events": {
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Welcome. I am Lorelei of",
+                    "the Elite Four."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I grew up on the Sevii",
+                    "Islands, where the sea",
+                    "freezes in winter. My \\V[5]",
+                    "Pok\u00e9mon learned patience",
+                    "from that cold."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Shall I show you what that",
+                    "patience looks like in battle?"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "...Impressive. You thawed",
+                    "through my defenses. The",
+                    "next room awaits you."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "That was merely a glimpse of",
+                    "what the League demands."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Welcome. I am Lorelei of",
+                    "the Elite Four."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I grew up on the Sevii",
+                    "Islands, where the sea",
+                    "freezes in winter. My \\V[5]",
+                    "Pok\u00e9mon learned patience",
+                    "from that cold."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Shall I show you what that",
+                    "patience looks like in battle?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "...Impressive. You thawed",
+                    "through my defenses. The",
+                    "next room awaits you."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "That was merely a glimpse of",
+                    "what the League demands."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Welcome. I am Lorelei of",
+                    "the Elite Four."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I grew up on the Sevii",
+                    "Islands, where the sea",
+                    "freezes in winter. My \\V[5]",
+                    "Pok\u00e9mon learned patience",
+                    "from that cold."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Shall I show you what that",
+                    "patience looks like in battle?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "...Impressive. You thawed",
+                    "through my defenses. The",
+                    "next room awaits you."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "That was merely a glimpse of",
+                    "what the League demands."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Welcome. I am Lorelei of",
+                    "the Elite Four."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I grew up on the Sevii",
+                    "Islands, where the sea",
+                    "freezes in winter. My \\V[5]",
+                    "Pok\u00e9mon learned patience",
+                    "from that cold."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Shall I show you what that",
+                    "patience looks like in battle?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "...Impressive. You thawed",
+                    "through my defenses. The",
+                    "next room awaits you."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "That was merely a glimpse of",
+                    "what the League demands."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Welcome. I am Lorelei of",
+                    "the Elite Four."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I grew up on the Sevii",
+                    "Islands, where the sea",
+                    "freezes in winter. My \\V[5]",
+                    "Pok\u00e9mon learned patience",
+                    "from that cold."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Shall I show you what that",
+                    "patience looks like in battle?"
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "...Impressive. You thawed",
+                    "through my defenses. The",
+                    "next room awaits you."
+                  ]
+                },
+                {
+                  "start_index": 45,
+                  "type": "text",
+                  "lines": [
+                    "That was merely a glimpse of",
+                    "what the League demands."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...Impressive. You thawed",
+                    "through my defenses. The",
+                    "next room awaits you."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That was merely a glimpse of",
+                    "what the League demands."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked. You have to",
+                    "defeat the Elite Trainer",
+                    "first."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked. You have to",
+                    "defeat the Elite Trainer",
+                    "first."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "316": {
+      "name": "Elite 2 - Bruno",
+      "events": {
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I am Bruno of the Elite Four.",
+                    "Discipline. That is the bond",
+                    "between trainer and Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I have trained alongside my",
+                    "\\V[5]-type Pok\u00e9mon every day",
+                    "for years. We will test your",
+                    "resolve, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "You have earned this victory.",
+                    "Move forward. Your next trial",
+                    "awaits."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I am Bruno of the Elite Four.",
+                    "Discipline. That is the bond",
+                    "between trainer and Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I have trained alongside my",
+                    "\\V[5] -type Pok\u00e9mon every day",
+                    "for years. We will test your",
+                    "resolve, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "You have earned this victory.",
+                    "Move forward. Your next trial",
+                    "awaits."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I am Bruno of the Elite Four.",
+                    "Discipline. That is the bond",
+                    "between trainer and Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I have trained alongside my",
+                    "\\V[5] -type Pok\u00e9mon every day",
+                    "for years. We will test your",
+                    "resolve, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "You have earned this victory.",
+                    "Move forward. Your next trial",
+                    "awaits."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I am Bruno of the Elite Four.",
+                    "Discipline. That is the bond",
+                    "between trainer and Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I have trained alongside my",
+                    "\\V[5] -type Pok\u00e9mon every day",
+                    "for years. We will test your",
+                    "resolve, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "You have earned this victory.",
+                    "Move forward. Your next trial",
+                    "awaits."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I am Bruno of the Elite Four.",
+                    "Discipline. That is the bond",
+                    "between trainer and Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I have trained alongside my",
+                    "\\V[5] -type Pok\u00e9mon every day",
+                    "for years. We will test your",
+                    "resolve, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "You have earned this victory.",
+                    "Move forward. Your next trial",
+                    "awaits."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You have earned this victory.",
+                    "Move forward. Your next trial",
+                    "awaits."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked. You have to",
+                    "defeat the Elite Trainer",
+                    "first."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked. You have to",
+                    "defeat the Elite Trainer",
+                    "first."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "317": {
+      "name": "Elite 3 - Agatha",
+      "events": {
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked. You have to",
+                    "defeat the Elite Trainer",
+                    "first."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's locked. You have to",
+                    "defeat the Elite Trainer",
+                    "first."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "So. You're the child Oak",
+                    "won't stop talking about."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I am Agatha. I knew Oak when",
+                    "he was young and fierce --",
+                    "back when trainers fought",
+                    "with everything they had.",
+                    "Now he hides behind that",
+                    "Pok\u00e9dex of his."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, let me show you how",
+                    "a \\V[5]-type master fights."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "So. You're the child Oak",
+                    "won't stop talking about."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I am Agatha. I knew Oak when",
+                    "he was young and fierce --",
+                    "back when trainers fought",
+                    "with everything they had.",
+                    "Now he hides behind that",
+                    "Pok\u00e9dex of his."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, let me show you how",
+                    "a \\V[5]-type master fights."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "So. You're the child Oak",
+                    "won't stop talking about."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I am Agatha. I knew Oak when",
+                    "he was young and fierce --",
+                    "back when trainers fought",
+                    "with everything they had.",
+                    "Now he hides behind that",
+                    "Pok\u00e9dex of his."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, let me show you how",
+                    "a \\V[5]-type master fights."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "So. You're the child Oak",
+                    "won't stop talking about."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I am Agatha. I knew Oak when",
+                    "he was young and fierce --",
+                    "back when trainers fought",
+                    "with everything they had.",
+                    "Now he hides behind that",
+                    "Pok\u00e9dex of his."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, let me show you how",
+                    "a \\V[5]-type master fights."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "So. You're the child Oak",
+                    "won't stop talking about."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I am Agatha. I knew Oak when",
+                    "he was young and fierce --",
+                    "back when trainers fought",
+                    "with everything they had.",
+                    "Now he hides behind that",
+                    "Pok\u00e9dex of his."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, let me show you how",
+                    "a Ghost-type master fights."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "So. You're the child Oak",
+                    "won't stop talking about."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I am Agatha. I knew Oak when",
+                    "he was young and fierce --",
+                    "back when trainers fought",
+                    "with everything they had.",
+                    "Now he hides behind that",
+                    "Pok\u00e9dex of his."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, let me show you how",
+                    "a real trainer fights."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Heh. Now I see what that old",
+                    "fool sees in you. Go on,",
+                    "child. The last door is",
+                    "yours."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "341": {
+      "name": "Hall of Fame",
+      "events": {
+        "2": {
+          "name": "oak",
+          "pages": {
+            "0": {
+              "dialogue_blocks": [
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "...\\PN. Congratulations."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "This is the Hall of Fame."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "Every trainer who conquers",
+                    "the Pok\u00e9mon League is",
+                    "honored here -- along with",
+                    "the Pok\u00e9mon who stood",
+                    "beside them."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "You've come a long way,",
+                    "\\PN. From Pallet Town to",
+                    "this room. Through every",
+                    "trial this region had."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations, \\PN. You",
+                    "and your Pok\u00e9mon are Hall",
+                    "of Famers."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
