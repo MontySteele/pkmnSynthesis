@@ -1,0 +1,2687 @@
+{
+  "_implementation_notes": [
+    "VERMILION FILL — Remaining Vermilion-area maps with game data available:",
+    "  226 (Vermilion City alt layout), 394 (Fishing Guru house), 395 (Trade house),",
+    "  463 (Vermilion Hotel lobby), 464 (Vermilion Hotel rooms),",
+    "  155 (Route 11), 161 (Lighthouse), 546 (Fighting Arena).",
+    "",
+    "Map 226: Alt Vermilion City layout. Many events are signs, locked doors, Easter eggs.",
+    "  PRESERVED: Fan Club sign (E8), truck events (E10/E32/E33), locked doors (E14/E52),",
+    "  city sign (E17), Move Experts sign (E29), Ice Preserve sign (E31), Pokemon cry (E24),",
+    "  Trainer House NPC (E43 — MECHANICAL), random Pokemon giver (E51), hotel sign (E45).",
+    "  REWRITTEN: E18 (SS Anne NPC), E22 (pollution NPC), E23 (sea NPC), E48 (gym hint),",
+    "  E50 (HM tip).",
+    "",
+    "Map 394: Fishing Guru house. E3 (Old Rod gift) is MECHANICAL — preserve entirely.",
+    "  E2 (empty room) preserved.",
+    "Map 395: Trade house. E3 (Spearow-Farfetch'd trade) MECHANICAL — preserved.",
+    "  E5-6 (TV), E7-8 (window), E9 (type tip) — light touch.",
+    "",
+    "Map 463: Hotel lobby. E5 (rest mechanic) MECHANICAL — preserved.",
+    "  E10 (Balm Mushroom buyer) MECHANICAL. E11-12 (salon) MECHANICAL.",
+    "Map 464: Hotel rooms. E5 (Krabby legs quest) MECHANICAL.",
+    "  E6 (TP challenge) MECHANICAL. E7 (Voltorb lighthouse quest) MECHANICAL.",
+    "  E8 (Fire/Water type collector) MECHANICAL. E9 (empty room). E14 (boot quest) MECHANICAL.",
+    "",
+    "Map 155: Route 11. Trainers + gamblers. Blackjack minigame is FULLY MECHANICAL.",
+    "  Only modifying pre-battle lines (Page 0 idx=5) for flavor.",
+    "  E10 (hidden money), E11 (cable NPC + trade) — mostly MECHANICAL.",
+    "Map 161: Lighthouse. Voltorb beacon puzzle — FULLY MECHANICAL. Light flavor only.",
+    "",
+    "Map 546: Fighting Arena. Gym Leader rematches — post-game content.",
+    "  Battle triggers and choices PRESERVED. Only modifying personality text.",
+    "  E36 (arena guide) and E59 (badge challenge NPC) — light touch.",
+    "  Spectator NPCs (E8-22): rewritten with Synthesis flavor.",
+    "",
+    "NOTE: Maps 018 (Southern Gate), 020 (Pokemon Center), 021 (PokeMart),",
+    "  022-023 (houses), 037 (Move Deleter), 061 (Gym rematch) are listed as",
+    "  PLANNED/NOT_STARTED but have no dialogue data in wave3_dialogue.json.",
+    "  They require separate game data extraction.",
+    "",
+    "Tone: Militaristic, tense, port-city energy. Surge's presence looms.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "226": {
+      "name": "Vermilion City (alt layout)",
+      "events": {
+        "18": {
+          "name": "EV018 (SS Anne NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Did you see the S.S. Anne",
+                    "moored in the harbor? They say",
+                    "League dignitaries ride it."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I wish I could afford a ticket.",
+                    "Surge's people checked every",
+                    "passenger boarding last year."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 (Pollution NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We try to keep the harbor clean,",
+                    "but with all the military",
+                    "contracts... the runoff's worse."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "We've heard Grimer multiplies",
+                    "in toxic sludge. And there's",
+                    "plenty of sludge these days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 (Sea NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The sea stretches past every",
+                    "checkpoint and every patrol boat."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "It really is beautiful, don't",
+                    "you think? Nobody can fence in",
+                    "the ocean."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "48": {
+          "name": "EV048 (Gym hint NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Have you been to the city's",
+                    "gym yet? Surge runs it like",
+                    "a military operation."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That trash can puzzle is SO",
+                    "tedious! I'll never be able",
+                    "to beat it!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "50": {
+          "name": "EV050 (HM tip NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Did you know that Pokémon can",
+                    "forget HMs too, just like",
+                    "regular moves?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "But be careful where you do it",
+                    "or you could get stuck!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "394": {
+      "name": "Vermilion City (Fishing Guru house)",
+      "events": {
+        "3": {
+          "name": "Fishing Guru (Old Rod gift — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm the Fishing Guru! I simply",
+                    "looove fishing!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Do you like to fish?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Grand! I like your style!",
+                    "Take this and fish, young one!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "This Old Rod won't reel in",
+                    "anything too strong, but the",
+                    "harbor's full of aquatic",
+                    "Pokémon — you might land",
+                    "something rare!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Oh... That's so disappointing..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hello there, \\PN! How are the",
+                    "fish biting?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Fishing is a way of life! Surge",
+                    "can patrol the docks all he",
+                    "wants — can't stop a man from",
+                    "casting a line."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "395": {
+      "name": "Vermilion City (Trade house)",
+      "events": {
+        "5": {
+          "name": "EV005 (TV at x:3,y:3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A League security briefing is",
+                    "playing on TV..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Better get going!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (TV at x:4,y:3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A League security briefing is",
+                    "playing on TV..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Better get going!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Type matchup tip NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A higher-level Pokémon will be",
+                    "more powerful, sure..."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "But all Pokémon have weak points",
+                    "against specific types. There's",
+                    "no universally strong Pokémon.",
+                    "Surge learned that the hard way."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "463": {
+      "name": "Vermilion Hotel (lobby)",
+      "events": {
+        "11": {
+          "name": "EV011 (Salon intro NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the hotel's salon!",
+                    "Change your hairstyle to truly",
+                    "reflect your unique style!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You can also get a special",
+                    "hairstyle if you have the",
+                    "city's badge. Most cities",
+                    "have exclusive cuts too!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "464": {
+      "name": "Vermilion Hotel (rooms)",
+      "events": {
+        "8": {
+          "name": "EV008 (Fire/Water type collector)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I love unusually typed Pokémon.",
+                    "Fusions can create combinations",
+                    "nature never intended."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I would love to see a Pokémon",
+                    "that has the Fire and Water",
+                    "types!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Could you show me such a",
+                    "Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "No, that won't do it. I need",
+                    "to see a Pokémon that is a",
+                    "Fire/Water type."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Yes! Yes, that's it!"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "Incredible! Fire and Water in",
+                    "one body... Here, have this",
+                    "as a thank-you gift!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That Pokémon you showed me was",
+                    "unlike anything I've ever seen.",
+                    "Fusion really is remarkable."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I'll never forget about it!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Empty room)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "It's noticeably empty."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "155": {
+      "name": "Route 11",
+      "events": {
+        "2": {
+          "name": "Trainer(4) — Route 11 trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Let's go, but don't cheat!",
+                    "Surge says a fair fight is",
+                    "all that matters."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(4) — Route 11 trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I just became a trainer! But",
+                    "after seeing Surge's team, I",
+                    "know I have a lot to learn."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(4) — Gambler (pre-battle only)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Competition! I can't get",
+                    "enough! Vermilion's got the",
+                    "right energy for it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Hidden money — PRESERVE)",
+          "_comment": "Mechanical event — no changes"
+        },
+        "11": {
+          "name": "Trainer(3) — Cable worker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Careful! I'm laying down",
+                    "cables. Surge wants the whole",
+                    "route wired for surveillance."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(3) — Cable worker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Watch out for live wires!",
+                    "Security infrastructure doesn't",
+                    "build itself."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Trainer(4) — Gambler (pre-battle only)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I have never won before...",
+                    "but hey, the odds have to",
+                    "turn eventually, right?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "161": {
+      "name": "Lighthouse",
+      "events": {
+        "2": {
+          "name": "EV002 (Voltorb beacon — var 146=1)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 146,
+                "variable_value": 1
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Bzzzzzzzz!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Voltorb is powering the beacon.",
+                    "It hums with electric energy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Voltorb beacon — var 146=4)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 146,
+                "variable_value": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Bzzzzzzzz!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Voltorb is powering the beacon.",
+                    "Surge's orders, apparently."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (Voltorb beacon — var 146=2)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 146,
+                "variable_value": 2
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Bzzzzzzzz!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Voltorb is powering the beacon.",
+                    "It looks a little tired."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Voltorb beacon — var 146=0)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 146,
+                "variable_value": 0
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Bzzzzzzzz!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Voltorb is powering the beacon.",
+                    "The harbor needs guiding light."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Voltorb beacon — var 146=3)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "variable_id": 146,
+                "variable_value": 3
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Bzzzzzzzz!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Voltorb is powering the beacon.",
+                    "It sparks and crackles."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "beacon1 (Voltorb selection — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Select a Voltorb to help power",
+                    "up the beacon."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Voltorb started powering up",
+                    "the beacon."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Voltorbs are powering up the",
+                    "beacon with ease now."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Bring a Voltorb here to help",
+                    "power up the beacon."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Voltorbs are powering up the",
+                    "beacon with ease now."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "546": {
+      "name": "Fighting Arena",
+      "events": {
+        "8": {
+          "name": "Spectator NPC 1",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Is that a Gym Leader? This",
+                    "should be good! You can really",
+                    "see what fusion training does",
+                    "at this level."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Spectator NPC 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can't wait for the next",
+                    "fight! Nothing beats watching",
+                    "leaders go all out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Spectator NPC 3",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Woah! Cool match! Did you see",
+                    "that fusion combo?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Spectator NPC 4",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This was intense! I'm sweating",
+                    "just watching!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Spectator NPC 5",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Look at them go! Each Leader",
+                    "has a totally different fusion",
+                    "philosophy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Spectator NPC 6",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If you like watching good",
+                    "Pokémon battles, this is the",
+                    "place to be! Pure strategy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Spectator NPC 7",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Now that's entertainment!",
+                    "These Leaders don't hold back."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Spectator NPC 8",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm taking notes on every",
+                    "fight. One day I'll be the",
+                    "one battling here!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Spectator NPC 9",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Gym Leaders fight with such",
+                    "precision. You can tell they've",
+                    "trained their whole lives."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Spectator NPC 10",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've never seen so many Gym",
+                    "Leaders in one place! The",
+                    "League sanctioned this arena",
+                    "after the Silph incident."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Spectator NPC 11",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If you like watching good",
+                    "Pokémon battles, this is",
+                    "where it happens."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Spectator NPC 12",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Look at them go! Fusion or",
+                    "not, raw skill is raw skill."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Spectator NPC 13",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Woah! Those are some hardcore",
+                    "fights! The arena shakes when",
+                    "they go at it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Spectator NPC 14",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I've never seen so many Gym",
+                    "Leaders in one place! The",
+                    "fusion debate aside, they all",
+                    "respect strength."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Spectator NPC 15",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This reminds me of a tourney",
+                    "in my home region. But here",
+                    "the stakes feel... political."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Brock (pre-rematch encounter at Mt. Moon)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hello, \\PN. Mt. Moon looks",
+                    "very majestic at this time",
+                    "of the day, don't you agree?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I like to come here to admire",
+                    "the rock formations whenever",
+                    "I have some free time."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I still remember our battle.",
+                    "You were only a beginner then."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "But you've become incredibly",
+                    "strong since then."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Meet me at the Battle Arena",
+                    "in Vermilion City if you want",
+                    "to battle me again. I'd like",
+                    "to see how far you've come."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "Brock (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Here you are. The Champion",
+                    "of Kanto, standing in my",
+                    "arena. Let's not waste time."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Wow! You really are getting",
+                    "stronger by the battle!"
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you are ready",
+                    "to challenge me!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Here you are. The Champion",
+                    "of Kanto, standing in my",
+                    "arena. Let's not waste time."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Wow! You really are getting",
+                    "stronger by the battle!"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you are ready",
+                    "to challenge me!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Humph, I'm tired! Let's have",
+                    "our rematch later. A rock",
+                    "doesn't rush."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "Surge (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "The promise we made! Time to",
+                    "settle this, soldier!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "This is war! I'll shock you",
+                    "into surrender!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "You beat me again... You're",
+                    "strong. But I will repay my",
+                    "debt someday."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "You promised me a battle,",
+                    "remember that!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "The promise we made! Time to",
+                    "settle this, soldier!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "This is war! I'll shock you",
+                    "into surrender!"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "You beat me again... You're",
+                    "strong. But I will repay my",
+                    "debt someday."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "You promised me a battle,",
+                    "remember that!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oof... I'm all out of juice!",
+                    "Recharging. Give me a few days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "Erika (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "How are you? Good to see you",
+                    "again! This place doesn't",
+                    "really suit me, but... let's",
+                    "battle."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "You have grown even stronger..."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "I'll just have a small nap",
+                    "while waiting."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "How are you? Good to see you",
+                    "again! This place doesn't",
+                    "really suit me, but... let's",
+                    "battle."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "You have grown even stronger..."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "I'll just have a small nap",
+                    "while waiting."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The battle made me a bit",
+                    "sleepy. I think I'll doze off",
+                    "for a while now!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "Giovanni (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Fwahahaha! Today I will not",
+                    "only defeat you, but also",
+                    "demonstrate my dignity!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Fwahahaha! You're even",
+                    "stronger than I remember."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "I will wait for you in the",
+                    "shadows."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Fwahahaha! Today I will not",
+                    "only defeat you, but also",
+                    "demonstrate my dignity!"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Fwahahaha! You're even",
+                    "stronger than I remember."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "I will wait for you in the",
+                    "shadows."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...If I am not strong enough",
+                    "to defeat you now, there is",
+                    "but one thing to do. I must",
+                    "become stronger."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "Sabrina (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I knew you'd come. I had a",
+                    "feeling. What? We promised",
+                    "each other, so it's no",
+                    "surprise."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Well, you may be right. So,",
+                    "shall we have our battle now?"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "I know... You will fight me",
+                    "again some time."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "I knew you'd say that."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I knew you'd come. I had a",
+                    "feeling. What? We promised",
+                    "each other, so it's no",
+                    "surprise."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Well, you may be right. So,",
+                    "shall we have our battle now?"
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "I know... You will fight me",
+                    "again some time."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "I knew you'd say that."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You need to rest. Our next",
+                    "battle can wait."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "Blaine (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You keep your word. That's a",
+                    "good thing, kiddo!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Ready to battle?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "I have burned out, but my",
+                    "spirit has not been defeated!"
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Take your time."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "You keep your word. That's a",
+                    "good thing, kiddo!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Ready to battle?"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "I have burned out, but my",
+                    "spirit has not been defeated!"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Take your time."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My spirit hasn't been defeated,",
+                    "but it will take some time to",
+                    "recover."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "Koga (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "As promised, we will face off",
+                    "once more."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I expect you to give it all",
+                    "you've got. You can expect",
+                    "the same from me."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Shall we begin?"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Haarg! I lose?! There is",
+                    "nothing I wish to say to you!"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Farewell, then."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "As promised, we will face off",
+                    "once more."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I expect you to give it all",
+                    "you've got. You can expect",
+                    "the same from me."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Shall we begin?"
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "Haarg! I lose?! There is",
+                    "nothing I wish to say to you!"
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Farewell, then."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You have made me see the",
+                    "errors of my ways. For that,",
+                    "I am forever grateful."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "Misty (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I never break my promises!",
+                    "Are you ready?"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "You really are strong! But",
+                    "I won't lose next time!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Whenever you're ready!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I never break my promises!",
+                    "Are you ready?"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "You really are strong! But",
+                    "I won't lose next time!"
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "Whenever you're ready!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That was fun! Let's do this",
+                    "again later! I've got reform",
+                    "bills to write in the meantime."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "Kurt (type expert encounter — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hello, young one. My name is",
+                    "Kurt. I have studied \\V[5]",
+                    "Pokémon for my entire life."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I will teach you not to",
+                    "underestimate \\V[5]-type",
+                    "Pokémon! Champion or not,",
+                    "get ready!"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "You can also have this TM.",
+                    "It's an old favourite of mine!"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Now excuse me, but I must",
+                    "leave. Come pay me a visit",
+                    "at my house if you fancy",
+                    "a rematch!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "Blue (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Good to see you! Shall we",
+                    "begin?"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I expected no less from the",
+                    "League Champion!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Very well. I'm in no hurry."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Good to see you! Shall we",
+                    "begin?"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "I expected no less from the",
+                    "League Champion!"
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "Very well. I'm in no hurry."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Let's not hurry things too",
+                    "much. We can fight later."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "Janine (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Hi! I've been waiting for you!",
+                    "It's a pleasure to battle you",
+                    "again!"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Should we begin?"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Mmm... It's still a long way",
+                    "to become the best Trainer..."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "Whenever you're ready."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Hi! I've been waiting for you!",
+                    "It's a pleasure to battle you",
+                    "again!"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Should we begin?"
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "Mmm... It's still a long way",
+                    "to become the best Trainer..."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Whenever you're ready."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Pokémon need to rest a bit.",
+                    "We'll be ready in a few days!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "Sabrina alt (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "...You are here. Now let's",
+                    "battle!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Way to go. Now give it your",
+                    "all!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Huh? Where's your eagerness",
+                    "to fight?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "...You are here. Now let's",
+                    "battle!"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Way to go. ... Now give it",
+                    "your all!"
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "Huh? Where's your eagerness",
+                    "to fight?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We should have another battle",
+                    "sometime!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "Arena Guide NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! This place was built for",
+                    "Gym Leaders to gather and have",
+                    "fierce battles against one",
+                    "another!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You're the League Champion, so",
+                    "of course you're allowed to",
+                    "participate as well!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Go out and try to convince",
+                    "some Gym Leaders to join us",
+                    "here!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! I've watched you defeat",
+                    "all these Gym Leaders. You",
+                    "truly are the greatest trainer",
+                    "in Kanto!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Head back to the Elite Four",
+                    "if you want to truly challenge",
+                    "yourself!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "54": {
+          "name": "Heal station (MECHANICAL — preserve)",
+          "_comment": "Healing station. Do not modify."
+        },
+        "55": {
+          "name": "Misty alt (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I was just talking about you.",
+                    "The reform work never stops,",
+                    "but neither does training.",
+                    "Let's battle!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I've lost again... You may",
+                    "have something more than just",
+                    "strength."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "I understand... you must be",
+                    "busy with things."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I was just talking about you.",
+                    "The reform work never stops,",
+                    "but neither does training.",
+                    "Let's battle!"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "I've lost again... You may",
+                    "have something more than just",
+                    "strength."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "I understand... you must be",
+                    "busy with things."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm desperate to know the",
+                    "secret of your strength.",
+                    "Please fight me again soon!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "56": {
+          "name": "Erika alt (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Finally. No need for words.",
+                    "A Pokémon battle is the way",
+                    "for us to communicate.",
+                    "Shall we?"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Yes, yes... Quite impressive.",
+                    "You can overcome anything."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "That's OK, too. People ought",
+                    "to have their own ideas.",
+                    "That's the way it is."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Finally. No need for words.",
+                    "A Pokémon battle is the way",
+                    "for us to communicate.",
+                    "Shall we?"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Yes, yes... Quite impressive.",
+                    "You can overcome anything."
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "That's OK, too. People ought",
+                    "to have their own ideas.",
+                    "That's the way it is."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If it's someone like you, I'm",
+                    "sure you'll keep winning and",
+                    "find something important along",
+                    "the way."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "57": {
+          "name": "Surge alt (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "There you are! Taste my",
+                    "24-hour training, soldier!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Wahaha! A battle with you is",
+                    "never boring!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Argh... That's too bad!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Ay!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "There you are! Taste my",
+                    "24-hour training, soldier!"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Wahaha! A battle with you is",
+                    "never boring!"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Argh... That's too bad!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hmmm! I enjoyed battling you.",
+                    "Let's do it again later!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "58": {
+          "name": "Janine alt (arena rematch — MECHANICAL)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Um... ...hello. Shall we",
+                    "start?"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "True to your reputation..."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Oh... I understand..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Um... ...hello. Shall we",
+                    "start?"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "True to your reputation..."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "Oh... I understand..."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Um... Keep on doing your best",
+                    "with your Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Maybe we can have another",
+                    "battle later... Um... If you",
+                    "want to..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "59": {
+          "name": "Badge challenge NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Heh! What do ye know, ye",
+                    "defeated all of them Gym",
+                    "Leaders while wearing my",
+                    "badge!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ye really are something else.",
+                    "Take this."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Imma head out now. Come see",
+                    "me at the league if ye ever",
+                    "find all three of these!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! Ye think yer tough?",
+                    "Beat all these Gym Leaders",
+                    "wearing my badge if ye wanna",
+                    "prove it!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Ya beat \\V[165] Gym Leaders",
+                    "while wearing my badge.",
+                    "That's pretty good!"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "But ya gotta beat all 16 of",
+                    "them if ya wanna prove how",
+                    "tough you are!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Gym Leader rematch (E6 — MECHANICAL)",
+          "_comment": "Battle trigger event with choice. Preserving all mechanical dialogue. Only modifying personality flavor on text blocks.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Nice to see you, \\PN. You",
+                    "came to fight me, didn't you?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "All right! Time to fulfill",
+                    "our promise!"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I've lost again... You aren't",
+                    "adventuring around for nothing!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you are ready",
+                    "to challenge me!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Nice to see you, \\PN. You",
+                    "came to fight me, didn't you?"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "All right! Time to fulfill",
+                    "our promise!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "I've lost again... You aren't",
+                    "adventuring around for nothing!"
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you are ready",
+                    "to challenge me!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Let's wait a bit before we",
+                    "have our next rematch, okay?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

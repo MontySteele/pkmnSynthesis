@@ -1,6 +1,6 @@
 # Map Inventory — Pokemon: Synthesis
 
-> **Generated:** 2026-03-11
+> **Generated:** 2026-03-11 (updated)
 > **Source:** `ruby tools/smoke_test.rb game_data/Data` + cross-reference with `dialogue_changes/*.json` and `docs/city_plans/`
 
 ---
@@ -14,38 +14,48 @@
 | Maps without dialogue | 57 | -- |
 | **Kanto story maps (in scope)** | **~390** | -- |
 | Maps DONE (injected) | 17 | 2.3% of dialogue maps |
-| Maps READY (JSON written, not yet injected) | 54 | 7.2% |
+| Maps READY (JSON written, not yet injected) | 107 | 14.2% |
 | Maps IN_PROGRESS | 0 | 0% |
-| Maps PLANNED (city plan exists, no JSON) | ~100 | ~13.3% |
-| Maps NOT_STARTED | ~300 | ~39.9% |
-| Maps SPECIAL_LOGIC | ~33 | ~4.4% |
+| Maps PLANNED (city plan exists, no JSON) | 82 | ~10.9% |
+| Maps NOT_STARTED | 133 | ~17.7% |
+| Maps SPECIAL_LOGIC | 31 | ~4.1% |
 | Non-Kanto / SKIP | ~300 | -- |
 | Events with dialogue | 8,030 | -- |
 | Events modified | 449 | 5.6% |
 | Dialogue blocks total | 46,417 | -- |
 | Dialogue blocks modified | 1,718 | 3.7% |
 
-### dialogue_changes files (17):
+### dialogue_changes files (27):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
 | `pallet_town.json` | 42, 43, 48, 77, 78 | Injected |
+| `pallet_town_extra.json` | 76, 97, 185, 205 | Ready |
 | `viridian_city.json` | 79, 80, 81, 83, 84, 491 | Injected |
+| `viridian_extra.json` | 38, 85, 371, 458, 669, 710, 711, 746 | Ready |
 | `pewter_city.json` | 91, 93 | Injected |
+| `pewter_fill.json` | 380, 381, 382, 385, 386, 392, 459, 460, 470 | Ready |
 | `pewter_museum.json` | 96 | Ready |
 | `pewter_routes.json` | 86, 92, 106 | Ready |
 | `mt_moon.json` | 102, 105 | Ready |
+| `mt_moon_fill.json` | 116, 494, 515, 699, 828, 830, 831 | Ready |
+| `route2_fill.json` | 222, 511 | Ready |
 | `cerulean_blue.json` | 1 | Injected |
 | `cerulean_city.json` | 1, 4, 5, 7, 8, 9, 10, 11, 324, 387-389, 461-462 | Ready |
+| `cerulean_fill.json` | 383, 384 | Ready |
+| `route5_fill.json` | 214, 396, 397 | Ready |
 | `route22_blue.json` | 171 | Injected |
 | `champion_blue.json` | 328 | Injected |
 | `silph_co_blue.json` | 757 | Injected |
 | `vermilion_city.json` | 16, 19, 24, 25, 26, 27 | Ready |
+| `vermilion_fill.json` | 155, 161, 226, 394, 395, 463, 464, 546 | Ready |
+| `route8_fill.json` | 409, 410, 411 | Ready |
 | `celadon_city.json` | 95, 405, 413, 414, 432-436 | Ready |
 | `saffron_city.json` | 108, 152, 191 | Ready |
 | `fuchsia_city.json` | 159, 437, 445, 472, 473, 479 | Ready |
 | `cinnabar_island.json` | 98, 173, 187, 206, 209, 221 | Ready |
 | `lavender_town.json` | 50, 416, 418, 419, 420 | Ready |
+| `lavender_fill.json` | 109, 417, 421, 422 | Ready |
 
 ### City plan docs (9):
 
@@ -88,10 +98,10 @@
 | 048 | \PN's Room | 10 | 18 | DONE |
 | 077 | Oak's Lab | 48 | 466 | DONE |
 | 078 | Route 1 | 6 | 28 | DONE |
-| 076 | Pallet Town (south) | 7 | 36 | NOT_STARTED |
-| 097 | Route 1 (interior) | 2 | 10 | NOT_STARTED |
-| 185 | Secret Garden | 5 | 9 | NOT_STARTED |
-| 205 | Pallet Town (house) | 5 | 11 | NOT_STARTED |
+| 076 | Pallet Town (south) | 7 | 36 | READY |
+| 097 | Route 1 (interior) | 2 | 10 | READY |
+| 185 | Secret Garden | 5 | 9 | READY |
+| 205 | Pallet Town (house) | 5 | 11 | READY |
 
 ---
 
@@ -100,8 +110,8 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 078 | Route 1 | 6 | 28 | DONE |
-| 097 | Route 1 (gate/interior) | 2 | 10 | NOT_STARTED |
-| 185 | Secret Garden | 5 | 9 | NOT_STARTED |
+| 097 | Route 1 (gate/interior) | 2 | 10 | READY |
+| 185 | Secret Garden | 5 | 9 | READY |
 
 ---
 
@@ -117,16 +127,16 @@
 | 083 | Viridian City (house) | 9 | 20 | DONE |
 | 084 | Viridian City (house) | 6 | 18 | DONE |
 | 491 | Viridian Forest | 54 | 243 | DONE |
-| 085 | Viridian City Gym | 11 | 128 | PLANNED |
-| 371 | Pokemon Center (alt) | 7 | 51 | PLANNED |
-| 458 | Pokemon Academy | 12 | 88 | PLANNED |
-| 710 | Viridian City (interior) | 22 | 86 | PLANNED |
-| 711 | Viridian City (interior) | 23 | 88 | PLANNED |
-| 746 | Viridian City (interior) | 5 | 10 | PLANNED |
-| 038 | Trainer House | 4 | 429 | NOT_STARTED |
+| 085 | Viridian City Gym | 11 | 128 | READY |
+| 371 | Pokemon Center (alt) | 7 | 51 | READY |
+| 458 | Pokemon Academy | 12 | 88 | READY |
+| 710 | Viridian City (interior) | 22 | 86 | READY |
+| 711 | Viridian City (interior) | 23 | 88 | READY |
+| 746 | Viridian City (interior) | 5 | 10 | READY |
+| 038 | Trainer House | 4 | 429 | READY |
 | 375 | Trainer House (interior) | 5 | 192 | NOT_STARTED |
 | 040 | Viridian River | 8 | 103 | NOT_STARTED |
-| 669 | Viridian River (interior) | 2 | 5 | NOT_STARTED |
+| 669 | Viridian River (interior) | 2 | 5 | READY |
 | 655 | Hidden Forest | 8 | 8 | NOT_STARTED |
 
 ---
@@ -142,8 +152,8 @@
 | 089 | Gate (north) | 7 | 11 | NOT_STARTED |
 | 090 | Route 2 (connector) | 3 | 4 | NOT_STARTED |
 | 092 | Route 2 (north) | 5 | 92 | READY |
-| 222 | Route 2 (interior) | 4 | 44 | NOT_STARTED |
-| 511 | Gate (interior) | 1 | 14 | NOT_STARTED |
+| 222 | Route 2 (interior) | 4 | 44 | READY |
+| 511 | Gate (interior) | 1 | 14 | READY |
 | 039 | Trainer House | 1 | 11 | NOT_STARTED |
 
 ---
@@ -156,16 +166,16 @@
 |--------|------|----------|----------|--------|
 | 091 | Pewter City (interior) | 9 | 20 | DONE |
 | 093 | Pewter City (interior) | 8 | 17 | DONE |
-| 380 | Pewter City (overworld) | 37 | 211 | PLANNED |
-| 386 | Pewter City Gym | 6 | 90 | PLANNED |
-| 392 | Pokemon Center | 11 | 65 | PLANNED |
-| 382 | PokeMart | 10 | 15 | PLANNED |
+| 380 | Pewter City (overworld) | 37 | 211 | READY |
+| 386 | Pewter City Gym | 6 | 90 | READY |
+| 392 | Pokemon Center | 11 | 65 | READY |
+| 382 | PokeMart | 10 | 15 | READY |
 | 096 | Pewter City Museum (1F) | 21 | 105 | READY |
-| 385 | Pewter City Museum (2F) | 17 | 39 | PLANNED |
-| 381 | Pewter City Museum (basement) | 10 | 112 | PLANNED |
-| 470 | Pewter City Museum (exhibit) | 6 | 11 | PLANNED |
-| 459 | Pewter Hotel | 5 | 33 | PLANNED |
-| 460 | Pewter Hotel (rooms) | 6 | 123 | PLANNED |
+| 385 | Pewter City Museum (2F) | 17 | 39 | READY |
+| 381 | Pewter City Museum (basement) | 10 | 112 | READY |
+| 470 | Pewter City Museum (exhibit) | 6 | 11 | READY |
+| 459 | Pewter Hotel | 5 | 33 | READY |
+| 460 | Pewter Hotel (rooms) | 6 | 123 | READY |
 
 ---
 
@@ -190,16 +200,16 @@
 | 103 | Mt. Moon (B1F) | 3 | 3 | NOT_STARTED |
 | 104 | Mt. Moon (connector) | 2 | 3 | NOT_STARTED |
 | 105 | Mt. Moon (B2F) | 39 | 196 | READY |
-| 116 | Mt. Moon (B3F) | 11 | 44 | NOT_STARTED |
+| 116 | Mt. Moon (B3F) | 11 | 44 | READY |
 | 117 | Mt. Moon (B4F) | 2 | 2 | NOT_STARTED |
-| 494 | Mt. Moon Square | 7 | 23 | NOT_STARTED |
+| 494 | Mt. Moon Square | 7 | 23 | READY |
 | 496 | Mt. Moon (connector) | 8 | 11 | NOT_STARTED |
-| 515 | Mt. Moon Square (interior) | 6 | 15 | NOT_STARTED |
-| 699 | Mt. Moon (deep) | 5 | 19 | NOT_STARTED |
+| 515 | Mt. Moon Square (interior) | 6 | 15 | READY |
+| 699 | Mt. Moon (deep) | 5 | 19 | READY |
 | 827 | Mt. Moon Summit | 44 | 69 | NOT_STARTED |
-| 828 | Mt. Moon Observatory | 10 | 48 | NOT_STARTED |
-| 830 | Nightsky | 118 | 126 | NOT_STARTED |
-| 831 | Nightsky (event) | 1 | 3 | NOT_STARTED |
+| 828 | Mt. Moon Observatory | 10 | 48 | READY |
+| 830 | Nightsky | 118 | 126 | READY |
+| 831 | Nightsky (event) | 1 | 3 | READY |
 | 767 | Mt. Moon (connector) | 4 | 4 | SKIP |
 | 750 | Mt. Moon B2F.old | 32 | 130 | SKIP |
 | 801 | Mt. Moon (old) | 0 | 0 | SKIP |
@@ -237,13 +247,13 @@
 | 009 | Route 25 | 27 | 224 | READY |
 | 010 | Cerulean Cape | 11 | 27 | READY |
 | 011 | Bill's Lighthouse (exterior) | 9 | 64 | READY |
-| 384 | Bill's Lighthouse (interior) | 18 | 110 | PLANNED |
+| 384 | Bill's Lighthouse (interior) | 18 | 110 | READY |
 | 387 | Cerulean City (house) | 5 | 61 | READY |
 | 388 | Cerulean City (house) | 4 | 12 | READY |
 | 389 | Cerulean City (house) | 4 | 27 | READY |
 | 461 | Cerulean Hotel | 4 | 27 | READY |
 | 462 | Cerulean Hotel (rooms) | 3 | 72 | READY |
-| 383 | Gate | 1 | 2 | NOT_STARTED |
+| 383 | Gate | 1 | 2 | READY |
 | 178 | Bill's Garden | 4 | 4 | NOT_STARTED |
 | 390 | connection | 0 | 0 | SKIP |
 | 739 | backup | 27 | 111 | SKIP |
@@ -258,10 +268,10 @@
 |--------|------|----------|----------|--------|
 | 012 | Route 5 | 12 | 121 | PLANNED |
 | 013 | Day Care Center | 3 | 129 | PLANNED |
-| 214 | Day Care Center (interior) | 9 | 131 | NOT_STARTED |
+| 214 | Day Care Center (interior) | 9 | 131 | READY |
 | 014 | Underground | 5 | 5 | NOT_STARTED |
 | 015 | Northern Gate | 6 | 80 | NOT_STARTED |
-| 397 | Underground Gate | 2 | 5 | NOT_STARTED |
+| 397 | Underground Gate | 2 | 5 | READY |
 
 ---
 
@@ -283,15 +293,15 @@
 | 026 | Harbour | 6 | 28 | READY |
 | 037 | Vermilion City (house) | 5 | 57 | PLANNED |
 | 061 | Vermilion City Gym (rematch) | 22 | 260 | NOT_STARTED |
-| 155 | Route 11 | 10 | 335 | NOT_STARTED |
-| 161 | Lighthouse | 6 | 22 | NOT_STARTED |
-| 226 | Vermilion City (docks) | 30 | 64 | PLANNED |
-| 394 | Vermilion City (house) | 2 | 17 | PLANNED |
-| 395 | Vermilion City (house) | 8 | 30 | PLANNED |
-| 396 | Underground Gate | 2 | 3 | NOT_STARTED |
-| 463 | Vermilion Hotel | 4 | 39 | PLANNED |
-| 464 | Vermilion Hotel (rooms) | 6 | 188 | PLANNED |
-| 546 | Fighting Arena | 37 | 561 | NOT_STARTED |
+| 155 | Route 11 | 10 | 335 | READY |
+| 161 | Lighthouse | 6 | 22 | READY |
+| 226 | Vermilion City (docks) | 30 | 64 | READY |
+| 394 | Vermilion City (house) | 2 | 17 | READY |
+| 395 | Vermilion City (house) | 8 | 30 | READY |
+| 396 | Underground Gate | 2 | 3 | READY |
+| 463 | Vermilion Hotel | 4 | 39 | READY |
+| 464 | Vermilion Hotel (rooms) | 6 | 188 | READY |
+| 546 | Fighting Arena | 37 | 561 | READY |
 | 158 | Gate | 0 | 0 | SKIP |
 | 231 | Underwater | 0 | 0 | SKIP |
 | 733 | Vermilion City_backup | 35 | 126 | SKIP |
@@ -344,13 +354,13 @@
 |--------|------|----------|----------|--------|
 | 050 | Lavender Town | 23 | 91 | READY |
 | 416 | Pokemon Center | 7 | 110 | READY |
-| 422 | PokeMart | 8 | 17 | NOT_STARTED |
-| 417 | Gate | 2 | 8 | NOT_STARTED |
+| 422 | PokeMart | 8 | 17 | READY |
+| 417 | Gate | 2 | 8 | READY |
 | 418 | Pokemon House | 17 | 52 | READY |
 | 419 | Lavender Town (house) | 4 | 23 | READY |
 | 420 | Lavender Town (house) | 5 | 25 | READY |
-| 421 | Nicknaming Club | 4 | 73 | NOT_STARTED |
-| 109 | Hidden Tomb | 3 | 3 | NOT_STARTED |
+| 421 | Nicknaming Club | 4 | 73 | READY |
+| 109 | Hidden Tomb | 3 | 3 | READY |
 | 400 | Pokemon Tower (entrance) | 9 | 28 | SPECIAL_LOGIC |
 | 401 | Pokemon Tower F2 | 8 | 204 | SPECIAL_LOGIC |
 | 402 | Pokemon Tower F3 | 7 | 25 | SPECIAL_LOGIC |
@@ -368,9 +378,9 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 409 | Route 8 | 21 | 362 | NOT_STARTED |
-| 410 | Underground Gate (east) | 1 | 1 | NOT_STARTED |
-| 411 | Underground | 9 | 64 | NOT_STARTED |
+| 409 | Route 8 | 21 | 362 | READY |
+| 410 | Underground Gate (east) | 1 | 1 | READY |
+| 411 | Underground | 9 | 64 | READY |
 | 412 | Gate (East) | 0 | 0 | SKIP |
 
 ---
@@ -824,32 +834,32 @@ Maps: 033, 067-071, 073, 094, 100, 118, 129, 131, 134, 139, 150, 157, 160,
 
 | Phase | Description | Total Maps | DONE | READY | PLANNED | NOT_STARTED | SPECIAL_LOGIC | SKIP |
 |-------|-------------|------------|------|-------|---------|-------------|---------------|------|
-| 0 | Pallet Town (Opening) | 9 | 5 | 0 | 0 | 4 | 0 | 0 |
-| 1a | Route 1 | 3 | 1 | 0 | 0 | 2 | 0 | 0 |
-| 1b | Viridian + Forest | 17 | 6 | 0 | 6 | 5 | 0 | 0 |
-| 1c | Route 2 | 8 | 0 | 2 | 0 | 6 | 0 | 0 |
-| 1d | Pewter City | 12 | 2 | 1 | 9 | 0 | 0 | 0 |
+| 0 | Pallet Town (Opening) | 9 | 5 | 4 | 0 | 0 | 0 | 0 |
+| 1a | Route 1 | 3 | 1 | 2 | 0 | 0 | 0 | 0 |
+| 1b | Viridian + Forest | 17 | 6 | 8 | 0 | 3 | 0 | 0 |
+| 1c | Route 2 | 8 | 0 | 4 | 0 | 4 | 0 | 0 |
+| 1d | Pewter City | 12 | 2 | 10 | 0 | 0 | 0 | 0 |
 | 1e | Route 3 | 2 | 0 | 0 | 1 | 1 | 0 | 0 |
-| 1f | Mt. Moon | 18 | 0 | 2 | 0 | 12 | 0 | 4 |
+| 1f | Mt. Moon | 18 | 0 | 9 | 0 | 5 | 0 | 4 |
 | 1g | Route 4 | 4 | 0 | 1 | 0 | 2 | 0 | 1 |
-| 1h | Cerulean + Rts 24/25 | 21 | 0 | 12 | 5 | 2 | 0 | 2 |
-| 2a | Route 5 + Underground | 6 | 0 | 0 | 2 | 4 | 0 | 0 |
-| 2b | Vermilion + Route 6 | 25 | 0 | 3 | 14 | 4 | 0 | 4 |
+| 1h | Cerulean + Rts 24/25 | 21 | 0 | 15 | 3 | 1 | 0 | 2 |
+| 2a | Route 5 + Underground | 6 | 0 | 2 | 2 | 2 | 0 | 0 |
+| 2b | Vermilion + Route 6 | 25 | 0 | 14 | 5 | 2 | 0 | 4 |
 | 2c | SS Anne | 11 | 0 | 1 | 0 | 0 | 8 | 2 |
 | 2d | Rt 9/10, Rock Tunnel | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
-| 2e | Lavender + Pkmn Tower | 19 | 0 | 5 | 0 | 6 | 7 | 1 |
-| 2f | Route 8 + Underground | 4 | 0 | 0 | 0 | 3 | 0 | 1 |
-| 2g | Celadon + Rts 7/16-18 | 62 | 0 | 10 | 0 | 50 | 0 | 2 |
+| 2e | Lavender + Pkmn Tower | 19 | 0 | 9 | 0 | 2 | 7 | 1 |
+| 2f | Route 8 + Underground | 4 | 0 | 3 | 0 | 0 | 0 | 1 |
+| 2g | Celadon + Rts 7/16-18 | 63 | 0 | 9 | 0 | 51 | 0 | 3 |
 | 3 | Saffron + Silph Co | 51 | 1 | 3 | 30 | 2 | 12 | 3 |
-| 4a | Fuchsia + Safari + Rts 12-15 | 48 | 0 | 6 | 16 | 18 | 0 | 8 |
-| 4b | Cinnabar + Mansion | 40 | 0 | 6 | 21 | 6 | 0 | 7 |
+| 4a | Fuchsia + Safari + Rts 12-15 | 42 | 0 | 6 | 13 | 14 | 0 | 9 |
+| 4b | Cinnabar + Mansion | 38 | 0 | 6 | 17 | 7 | 0 | 8 |
 | 4c | Viridian Return + Rts 22/23 | 4 | 1 | 0 | 2 | 0 | 1 | 0 |
 | 4d | Victory Road + Indigo | 12 | 1 | 0 | 9 | 0 | 1 | 1 |
-| 5 | Postgame | 14 | 0 | 1 | 0 | 10 | 3 | 0 |
+| 5 | Postgame | 16 | 0 | 1 | 0 | 11 | 2 | 2 |
 | -- | Crimson City | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
 | -- | Moon Islands | 6 | 0 | 0 | 0 | 6 | 0 | 0 |
 | -- | Non-Kanto/System/SKIP | ~300 | 0 | 0 | 0 | 0 | 0 | ~300 |
-| **TOTAL** | | **~809** | **17** | **54** | **~100** | **~165** | **~33** | **~330** |
+| **TOTAL** | | **~809** | **17** | **107** | **82** | **133** | **31** | **~330** |
 
 ---
 
