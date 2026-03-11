@@ -6,6 +6,19 @@
 
 ---
 
+## Creative Direction (Revised)
+
+**Tone: Dark Satire.** The entire town feels "in on the joke" — everyone knows Erika lets the Rockets operate because of the economy, and people have different reactions to that uncomfortable truth. Some are cynical, some are complicit, some are in denial. The surface is luxurious and beautiful; the undercurrent is a collective willingness to look the other way.
+
+Key principles:
+- NPCs should sound like they're performing normalcy while acknowledging the absurdity
+- Erika is not villainous — she's pragmatic to a fault, and people respect/resent her for it
+- The Game Corner isn't hidden — everyone knows what it is. The joke is that nobody says it out loud
+- Rocket presence is an open secret, not a shocking reveal
+- Different NPCs react differently: some profit, some cope with humor, some are quietly furious
+
+---
+
 ## 1. Overview
 
 ### Narrative Role

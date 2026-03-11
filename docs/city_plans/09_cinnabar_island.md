@@ -6,6 +6,19 @@
 
 ---
 
+## Creative Direction (Revised)
+
+**Blaine's Characterization.** Blaine was an early supporter of Rocket who, unlike Oak, didn't flinch at making Mewtwo — he LED the project. He walked from Rocket only after Mewtwo left them destructively. Now he lives in fear of when Mewtwo will return.
+
+Key principles:
+- Blaine's challenge to the player is: "I wasn't strong enough. How could you be?"
+- He's running FROM fear, where Giovanni chased his fear and was found lacking
+- A Giovanni-path player should see Blaine's story as justification for their own approach
+- His burns, his isolation, his sealed mansion — all symptoms of a man who broke before the thing he created
+- The tone should be haunted but not self-pitying — Blaine has conviction, just broken conviction
+
+---
+
 ## 1. Overview
 
 Cinnabar Island is where the player finally gets the full historical picture. They already know about Mewtwo from the Silph Co. revelations — but they don't know the *details*. Blaine has them.

@@ -3,6 +3,20 @@
 
 ---
 
+## Creative Direction (Revised)
+
+**Rival Demands the Fight.** If the player chooses to trust the rival (Oak path), the rival should DEMAND a fight anyway. The logic: "If I can't beat you, then I can't beat Mewtwo." This isn't ego — it's pragmatic self-assessment.
+
+Key principles:
+- The rival fight isn't optional — even mutual trust requires proof of strength
+- The rival's demand reframes the Champion battle as a calibration, not a competition
+- Dialogue should feel emotionally high-stakes: "Don't hold back. If you hold back, we both lose."
+- The Giovanni path rival fight should feel more desperate — trying to stop you, not test you
+- Second pass needed for tone, characterization, and emotional impact throughout endgame
+- Current endgame dialogue feels "a little lackluster" — needs sharper emotional beats
+
+---
+
 ## Area A: Viridian City (Return) — "The Empty Throne"
 
 ### 1. Overview
