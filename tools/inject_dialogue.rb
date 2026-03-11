@@ -14,9 +14,18 @@
 # Only maps/events/pages/blocks present in the JSON will be modified.
 # All other data is preserved exactly as-is.
 #
-# For text blocks: provide "lines" array with the new text.
-# For choice blocks: provide "choices" array with new choice labels.
-# The "start_index" field is used to locate the correct command in the event.
+# Block types:
+#   text            — Modify existing Show Text (101) at start_index.
+#                     Provide "lines" array with new text.
+#   choices         — Modify existing Show Choices (102) at start_index.
+#                     Provide "choices" array with new labels.
+#   script_message  — Modify existing Script (355) at start_index.
+#                     Provide "lines" array with new text.
+#   insert_commands — Insert new event commands BEFORE start_index.
+#                     Provide "commands" array of {code, indent, parameters}.
+#                     Supports any RPG Maker XP event command code:
+#                       101/401 (Show Text), 102/402/404 (Choices),
+#                       121 (Control Switches), 122 (Control Variables), etc.
 
 require "json"
 require_relative "rpgmaker_stubs"
@@ -141,6 +150,33 @@ def apply_script_message_block(command_list, block)
   true
 end
 
+def apply_insert_commands(command_list, block)
+  insert_idx = block["start_index"]
+  commands = block["commands"]
+
+  unless commands.is_a?(Array) && commands.any?
+    $stderr.puts "    Warning: insert_commands block has no commands. Skipping."
+    return false
+  end
+
+  unless insert_idx >= 0 && insert_idx <= command_list.length
+    $stderr.puts "    Warning: insert index #{insert_idx} out of range (0..#{command_list.length}). Skipping."
+    return false
+  end
+
+  # Insert commands in reverse order so they end up in the correct sequence.
+  # Inserting at the same index repeatedly pushes earlier insertions forward.
+  commands.reverse_each do |cmd_data|
+    new_cmd = RPG::EventCommand.new
+    new_cmd.code = cmd_data["code"] || 0
+    new_cmd.indent = cmd_data["indent"] || 0
+    new_cmd.parameters = cmd_data["parameters"] || []
+    command_list.insert(insert_idx, new_cmd)
+  end
+
+  true
+end
+
 def main
   data_dir = ARGV[0]
   changes_file = ARGV[1]
@@ -202,8 +238,12 @@ def main
         end
 
         # Process blocks in reverse order of start_index to avoid
-        # index shifts when inserting/removing continuation lines
-        sorted_blocks = (page_changes["dialogue_blocks"] || []).sort_by { |b| -(b["start_index"] || 0) }
+        # index shifts when inserting/removing continuation lines.
+        # Tiebreaker: at the same index, process modifications (text/choices)
+        # before insertions, so insertions see the already-modified command.
+        sorted_blocks = (page_changes["dialogue_blocks"] || []).sort_by do |b|
+          [-(b["start_index"] || 0), b["type"] == "insert_commands" ? 1 : 0]
+        end
         sorted_blocks.each do |block|
           success = case block["type"]
                     when "text"
@@ -228,6 +268,13 @@ def main
                         true
                       else
                         apply_script_message_block(page.list, block)
+                      end
+                    when "insert_commands"
+                      if dry_run
+                        $stderr.puts "  [DRY RUN] Would insert #{block["commands"]&.length || 0} commands before index #{block["start_index"]} at event #{event_id}, page #{page_idx}"
+                        true
+                      else
+                        apply_insert_commands(page.list, block)
                       end
                     else
                       $stderr.puts "  Warning: Unknown block type '#{block["type"]}'"
@@ -268,7 +315,9 @@ def main
           next
         end
 
-        sorted_ce_blocks = (ce_changes["dialogue_blocks"] || []).sort_by { |b| -(b["start_index"] || 0) }
+        sorted_ce_blocks = (ce_changes["dialogue_blocks"] || []).sort_by do |b|
+          [-(b["start_index"] || 0), b["type"] == "insert_commands" ? 1 : 0]
+        end
         sorted_ce_blocks.each do |block|
           success = case block["type"]
                     when "text"
@@ -277,6 +326,8 @@ def main
                       dry_run ? true : apply_choice_block(ce.list, block)
                     when "script_message"
                       dry_run ? true : apply_script_message_block(ce.list, block)
+                    when "insert_commands"
+                      dry_run ? true : apply_insert_commands(ce.list, block)
                     else
                       false
                     end

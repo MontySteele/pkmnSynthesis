@@ -1,0 +1,2326 @@
+{
+  "_implementation_notes": [
+    "PALLET TOWN COMPLETE — All dialogue the player encounters before Viridian City.",
+    "Covers: Map 48 (Player's Room), Map 43 (Player's House), Map 42 (Pallet Town),",
+    "Map 77 (Oak's Lab), Map 78 (Route 1).",
+    "",
+    "The 'why be a trainer' choice is implemented via insert_commands on Map 77",
+    "Event 7 Page 3 (inserted before the sendoff at index 74). Sets Variable 340",
+    "and Switches 1140-1143. No manual RPG Maker work needed.",
+    "",
+    "Blue's battle challenge at Map 77 Events 8/21/43 fires AFTER the fusion demo.",
+    "The Synthesis version frames it as Blue testing his fusion against your starter."
+  ],
+  "maps": {
+    "48": {
+      "name": "Player's Room",
+      "events": {
+        "2": {
+          "name": "EV002 (Console)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your old game console. You and \\V[12]",
+                    "used to play this for hours... but",
+                    "today's the real thing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Bed)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your bed. You won't be sleeping in",
+                    "it for a while."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Bed)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your bed. You won't be sleeping in",
+                    "it for a while."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Bookshelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Pokémon field guides and trainer",
+                    "manuals. You've read most of them",
+                    "twice."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 (Bookshelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Pokémon field guides and trainer",
+                    "manuals. You've read most of them",
+                    "twice."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 (TV)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "...reports of unusual Pokémon",
+                    "sightings near Viridian Forest.",
+                    "Rangers advise caution on Route 1—"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You should head downstairs."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (TV)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A commercial for DNA Splicers is",
+                    "playing. 'Fuse your way to victory!'"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "...That jingle is going to be stuck",
+                    "in your head all day."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "43": {
+      "name": "Player's House",
+      "events": {
+        "3": {
+          "name": "EV003 (Mom)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! You're finally up."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You slept right through your alarm.",
+                    "Go get dressed — something came in",
+                    "the mail for you."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "A letter came this morning. It's",
+                    "from the Pokémon League."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "Here — open it. I've been waiting",
+                    "for you to wake up."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Dear \\PN,\\|\\nYour application to the",
+                    "Trainer Licensing Program has been",
+                    "approved."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "You are hereby authorized to carry",
+                    "and train Pokémon. You may earn Gym",
+                    "Badges to qualify for the Pokémon",
+                    "League Challenge."
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Your Trainer Card is enclosed.",
+                    "Present it at any Gym to register."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Good luck.\\|\\n\\n",
+                    "— The Pokémon League Licensing Board —"
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "Well? What does it say?"
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "They approved you? You're going to",
+                    "be a real trainer?"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "\\PN... I knew they would."
+                  ]
+                },
+                {
+                  "start_index": 54,
+                  "type": "text",
+                  "lines": [
+                    "I'm so proud of you, sweetheart."
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "Professor Oak mentioned that \\V[12]",
+                    "got his letter too. You two have been",
+                    "dreaming about this since you could",
+                    "walk."
+                  ]
+                },
+                {
+                  "start_index": 67,
+                  "type": "text",
+                  "lines": [
+                    "What was his name again? I always",
+                    "forget..."
+                  ]
+                },
+                {
+                  "start_index": 72,
+                  "type": "text",
+                  "lines": [
+                    "That's right! You and \\V[12] —",
+                    "I can already picture the two of you",
+                    "out there. Take care of each other,",
+                    "okay?"
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "text",
+                  "lines": [
+                    "Now go. The Professor is waiting.",
+                    "And \\PN — come home sometimes, okay?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 76},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Professor Oak is waiting at the lab,",
+                    "honey. Don't keep him waiting!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 63},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You look tired, \\PN. Your Pokémon",
+                    "too. Rest here — I'll take care of",
+                    "everything."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Take care of yourself out there,",
+                    "sweetheart."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Sibling)",
+          "pages": {
+            "0": {
+              "conditions": {"variable_id": 52, "variable_value": 0},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe my sis is going to",
+                    "be a real trainer! I'm going to miss",
+                    "you."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Sis, you're really going out there",
+                    "in those clothes?"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {"variable_id": 52, "variable_value": 1},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe my bro is going to",
+                    "be a real trainer! I'm going to miss",
+                    "you."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Bro, you're really going out there",
+                    "looking like that?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (TV)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A news report about wild Pokémon",
+                    "sightings near Viridian Forest..."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You should probably head out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (TV)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An ad for the Pokémon League is",
+                    "playing. 'Earn your badges today!'"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Mom's waiting for you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Window)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Morning light through the window.",
+                    "Pallet Town is quiet outside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Window)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Morning light through the window.",
+                    "Pallet Town is quiet outside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Sink)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You should probably wash up before",
+                    "heading out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Fridge)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The fridge is almost empty. Mom must",
+                    "have used everything for breakfast."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Kitchen)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Mom's cooking something. The whole",
+                    "house smells like it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (Running Shoes)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Your running shoes. Mom got them for",
+                    "you last birthday.",
+                    "Press 'Z' to run or set autorun in",
+                    "the options menu."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "42": {
+      "name": "Pallet Town",
+      "events": {
+        "3": {
+          "name": "Blue",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! Hey! Over here!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! Did you get your letter?",
+                    "The one from Professor Oak?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Today's the day. We're actually",
+                    "going to be trainers."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I've been up since five. Couldn't",
+                    "sleep. I kept thinking about what",
+                    "it's going to be like out there."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Real, licensed trainers. You and me.",
+                    "It's finally happening."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Remember when we used to sneak into",
+                    "the tall grass and pretend it was a",
+                    "Route? Your mom's Meowth was the",
+                    "final boss."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "...She was not happy about that."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Come on — Gramps said to meet him",
+                    "at the lab. Let's not keep him",
+                    "waiting."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "Let's go. I'm done waiting around."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "Oak intro",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey — wait! Don't go out there!"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "The tall grass is full of wild",
+                    "Pokémon. Without one of your own,",
+                    "you wouldn't last to Viridian."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "But that's why you're here today,",
+                    "isn't it? Come — the lab's this way.",
+                    "\\V[12] is already waiting for us."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "77": {
+      "name": "Oak's Lab",
+      "events": {
+        "6": {
+          "name": "Blue",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! About time! I've been here",
+                    "since dawn. Gramps is taking",
+                    "forever."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Three starters... I already know",
+                    "which one I want. Hurry up and",
+                    "pick so I can grab mine."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Oak (main)",
+          "pages": {
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Gramps! Finally! We've been here",
+                    "for hours!"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. \\V[12]. Thank you both for",
+                    "coming. I know I kept you waiting."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "The League has approved both your",
+                    "trainer applications. You're old",
+                    "enough now."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "There are three Pokémon on that",
+                    "table. I raised each one in this",
+                    "lab since they hatched."
+                  ]
+                },
+                {
+                  "start_index": 46,
+                  "type": "text",
+                  "lines": [
+                    "Hey! What about me, Gramps?"
+                  ]
+                },
+                {
+                  "start_index": 48,
+                  "type": "text",
+                  "lines": [
+                    "Of course, \\V[12]. You'll each",
+                    "choose one. \\PN — you go first."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Go on. The Pokéballs are right",
+                    "there."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Take your time with this one.",
+                    "Your first partner... it matters",
+                    "more than you'd think."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\V[5]... Yes. I think that one's",
+                    "been ready for a while now."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Then I'll take this one! Good —",
+                    "I wanted the stronger pick anyway."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Oh — Gramps, you said you had one",
+                    "of those DNA Splicers? The ones",
+                    "from the news?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Sweet! I'll take the other two and",
+                    "fuse them right now. Watch this,",
+                    "\\PN!"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "Fusion. It's... what my research",
+                    "made possible. Two Pokémon, merged",
+                    "into something entirely new.",
+                    "Something that didn't exist before."
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "It works on any Pokémon. The League",
+                    "decided early on that fusion needed",
+                    "oversight. Regulation. That's what",
+                    "the licensing program is for."
+                  ]
+                },
+                {
+                  "start_index": 71,
+                  "type": "text",
+                  "lines": [
+                    "I'm sorry I don't have more Splicers",
+                    "for you, \\PN. The Marts carry them",
+                    "now. ...Take care of your Pokémon",
+                    "out there. What we can do to them",
+                    "now is... more than I expected."
+                  ]
+                },
+                {
+                  "start_index": 74,
+                  "type": "insert_commands",
+                  "_comment": "Oak asks 'why be a trainer?' — choice sets Var 340 + Switches 1140-1143",
+                  "commands": [
+                    {"code": 101, "indent": 0, "parameters": ["\\PN... one last thing before you go."]},
+                    {"code": 401, "indent": 0, "parameters": ["Why do you want to be a trainer?"]},
+                    {"code": 102, "indent": 0, "parameters": [["To protect people", "To see the world", "To get stronger", "I don't know yet"], 0]},
+                    {"code": 402, "indent": 0, "parameters": [0, "To protect people"]},
+                    {"code": 122, "indent": 1, "parameters": [340, 340, 0, 0, 1]},
+                    {"code": 121, "indent": 1, "parameters": [1140, 1140, 0]},
+                    {"code": 101, "indent": 1, "parameters": ["To protect people..."]},
+                    {"code": 401, "indent": 1, "parameters": ["...Yes. That's what the League was"]},
+                    {"code": 401, "indent": 1, "parameters": ["built for. That's what it's"]},
+                    {"code": 401, "indent": 1, "parameters": ["supposed to be."]},
+                    {"code": 402, "indent": 0, "parameters": [1, "To see the world"]},
+                    {"code": 122, "indent": 1, "parameters": [340, 340, 0, 0, 2]},
+                    {"code": 121, "indent": 1, "parameters": [1141, 1141, 0]},
+                    {"code": 101, "indent": 1, "parameters": ["To see the world."]},
+                    {"code": 401, "indent": 1, "parameters": ["...There's more of it than you"]},
+                    {"code": 401, "indent": 1, "parameters": ["know, \\PN. More than any of us"]},
+                    {"code": 401, "indent": 1, "parameters": ["expected."]},
+                    {"code": 402, "indent": 0, "parameters": [2, "To get stronger"]},
+                    {"code": 122, "indent": 1, "parameters": [340, 340, 0, 0, 3]},
+                    {"code": 121, "indent": 1, "parameters": [1142, 1142, 0]},
+                    {"code": 101, "indent": 1, "parameters": ["To get stronger."]},
+                    {"code": 401, "indent": 1, "parameters": ["...Strength is easy to find out"]},
+                    {"code": 401, "indent": 1, "parameters": ["there. Knowing when to use it —"]},
+                    {"code": 401, "indent": 1, "parameters": ["that's harder."]},
+                    {"code": 402, "indent": 0, "parameters": [3, "I don't know yet"]},
+                    {"code": 122, "indent": 1, "parameters": [340, 340, 0, 0, 4]},
+                    {"code": 121, "indent": 1, "parameters": [1143, 1143, 0]},
+                    {"code": 101, "indent": 1, "parameters": ["You don't know yet."]},
+                    {"code": 401, "indent": 1, "parameters": ["...That's the most honest answer"]},
+                    {"code": 401, "indent": 1, "parameters": ["anyone has given me. Hold onto that."]},
+                    {"code": 404, "indent": 0, "parameters": []}
+                  ]
+                },
+                {
+                  "start_index": 74,
+                  "type": "text",
+                  "lines": [
+                    "Now go. Both of you.",
+                    "...Be good to each other out there."
+                  ]
+                }
+              ]
+            },
+            "5": {
+              "conditions": {"switch1_id": 61},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "\\PN — one more thing before you",
+                    "head out."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I ordered something from the",
+                    "PokéMart in Viridian City. A custom",
+                    "Pokéball."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Would you mind picking it up for me?",
+                    "It's just up Route 1."
+                  ]
+                }
+              ]
+            },
+            "6": {
+              "conditions": {"switch1_id": 61, "self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN — did you pick up that parcel",
+                    "yet?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I ordered a custom Pokéball from the",
+                    "Viridian PokéMart."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "It's just up Route 1. I'd go myself,",
+                    "but the lab needs me here."
+                  ]
+                }
+              ]
+            },
+            "7": {
+              "conditions": {"switch1_id": 220},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! You're back. How is \\V[5]",
+                    "doing? Getting along well, I hope."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Is that — you brought the parcel?",
+                    "Wonderful."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Ah, perfect. The custom Pokéball I",
+                    "ordered. Thank you, \\PN."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I see they gave you some DNA Splicers",
+                    "at the Mart. Good — you'll need those."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "You'll need a second Pokémon before",
+                    "you can fuse, of course."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Here — take these Poké Balls. Catch a",
+                    "partner for \\V[5] and try it yourself."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "You can always unfuse them if it",
+                    "doesn't feel right. It's reversible."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "Did you pick up any DNA Splicers at",
+                    "the Mart?"
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "No? That's alright. Any PokéMart",
+                    "should carry them."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Here — some Poké Balls to get you",
+                    "started."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Oh — one more thing."
+                  ]
+                },
+                {
+                  "start_index": 45,
+                  "type": "text",
+                  "lines": [
+                    "I nearly forgot. Your Pokédex.",
+                    "I should have given this to you",
+                    "before you left."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "\\V[12] already has his. Couldn't",
+                    "wait to start filling it up."
+                  ]
+                },
+                {
+                  "start_index": 54,
+                  "type": "text",
+                  "lines": [
+                    "It records data on every Pokémon you",
+                    "see or catch. Think of it as a field",
+                    "journal."
+                  ]
+                },
+                {
+                  "start_index": 57,
+                  "type": "text",
+                  "lines": [
+                    "With fusion, there are... well, more",
+                    "species than anyone can count. Over",
+                    "250,000 at last estimate. I don't",
+                    "expect you to complete it."
+                  ]
+                },
+                {
+                  "start_index": 61,
+                  "type": "text",
+                  "lines": [
+                    "But every entry helps us understand",
+                    "what fusion has done to the world."
+                  ]
+                },
+                {
+                  "start_index": 66,
+                  "type": "text",
+                  "lines": [
+                    "Now go, \\PN. The road ahead is",
+                    "longer than you think."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Blue Battle (variant 1)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 52},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey, \\PN — hold on. We're not",
+                    "leaving without a battle."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "My fused Pokémon against your",
+                    "starter. Right here, right now.",
+                    "I bet I'll crush you."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 61,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 68,
+                  "type": "text",
+                  "lines": [
+                    "Wait... you don't have a Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "How is that even possible?"
+                  ]
+                },
+                {
+                  "start_index": 72,
+                  "type": "text",
+                  "lines": [
+                    "Whatever. Smell ya later!"
+                  ]
+                },
+                {
+                  "start_index": 80,
+                  "type": "text",
+                  "lines": [
+                    "I'll be in Pewter before you.",
+                    "Count on it."
+                  ]
+                },
+                {
+                  "start_index": 82,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later, \\PN!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Blue Battle (variant 2)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 52, "self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey, \\PN — hold on. We're not",
+                    "leaving without a battle."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "My fused Pokémon against your",
+                    "starter. Right here, right now.",
+                    "I bet I'll crush you."
+                  ]
+                },
+                {
+                  "start_index": 46,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 55,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 72,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 74,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 84,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 91,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 93,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 100,
+                  "type": "text",
+                  "lines": [
+                    "Wait... you don't have a Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 102,
+                  "type": "text",
+                  "lines": [
+                    "How is that even possible?"
+                  ]
+                },
+                {
+                  "start_index": 104,
+                  "type": "text",
+                  "lines": [
+                    "Whatever. Smell ya later!"
+                  ]
+                },
+                {
+                  "start_index": 112,
+                  "type": "text",
+                  "lines": [
+                    "I'll be in Pewter before you.",
+                    "Count on it."
+                  ]
+                },
+                {
+                  "start_index": 114,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later, \\PN!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "43": {
+          "name": "Blue Battle (variant 3)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 52, "self_switch": "D"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Hey, \\PN — hold on. We're not",
+                    "leaving without a battle."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "My fused Pokémon against your",
+                    "starter. Right here, right now.",
+                    "I bet I'll crush you."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "...What? No way. You got lucky.",
+                    "That's not happening again."
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "Ha! Obviously. Was there ever",
+                    "any doubt?"
+                  ]
+                },
+                {
+                  "start_index": 71,
+                  "type": "text",
+                  "lines": [
+                    "Better start training, \\PN.",
+                    "I'm not slowing down for you."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "Wait... you don't have a Pokémon?"
+                  ]
+                },
+                {
+                  "start_index": 80,
+                  "type": "text",
+                  "lines": [
+                    "How is that even possible?"
+                  ]
+                },
+                {
+                  "start_index": 82,
+                  "type": "text",
+                  "lines": [
+                    "Whatever. Smell ya later!"
+                  ]
+                },
+                {
+                  "start_index": 91,
+                  "type": "text",
+                  "lines": [
+                    "I'll be in Pewter before you.",
+                    "Count on it."
+                  ]
+                },
+                {
+                  "start_index": 93,
+                  "type": "text",
+                  "lines": [
+                    "Smell ya later, \\PN!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Exit Block",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 3},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You should pick a Pokémon before",
+                    "you go!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Exit Block",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 3},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You should pick a Pokémon before",
+                    "you go!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Exit Block",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 3},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You should pick a Pokémon before",
+                    "you go!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Exit Block",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 3},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You should pick a Pokémon before",
+                    "you go!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Lab Assistant",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 1},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Looking for the Professor? He",
+                    "stepped out for a bit."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "He said something about checking",
+                    "Route 1. Shouldn't be long."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You can wait here if you'd like."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {"switch1_id": 988, "self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm one of the Professor's research",
+                    "assistants."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Most of our work here is on fusion —",
+                    "understanding how it changes Pokémon",
+                    "at the genetic level."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Lab Scientist",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 59},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I helped design the Pokédex software.",
+                    "It's my proudest work."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "It can identify any species — even",
+                    "fusions it's never catalogued before.",
+                    "Remarkable, really."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "Research Paper",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A half-finished paper is on screen.",
+                    "'On the Stability of Fused Pokémon",
+                    "DNA Sequences — Prof. S. Oak...'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Document",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A stack of papers stamped",
+                    "'\\C[2]LEAGUE CONFIDENTIAL\\C[0].'",
+                    "The top page is face-down."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "49": {
+          "name": "Bookshelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Research journals. Most of them have",
+                    "Oak's name on the spine."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "48": {
+          "name": "Bookshelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Older volumes. 'Cinnabar Research",
+                    "Proceedings' — the spines are faded."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Globe",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A globe of Kanto. Someone's marked",
+                    "locations with red pins — Cinnabar,",
+                    "Cerulean, Saffron."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "50": {
+          "name": "Photograph",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An old photograph. Oak, much younger,",
+                    "with two colleagues on a rocky",
+                    "shoreline."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Sink",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A lab sink. Clean."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Machine",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lab equipment. It's humming quietly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "Machine",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lab equipment. It's humming quietly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "Machine",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lab equipment. Blinking lights."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "Machine",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lab equipment. Looks expensive."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "TV",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A news anchor is talking about a",
+                    "spike in wild Pokémon activity near",
+                    "Viridian..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You should focus on picking your",
+                    "starter."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "TV",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A soap opera is playing. Someone's",
+                    "crying about their fused Pokémon..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You don't have time for this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "55": {
+          "name": "Pokéball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokéball. Something's resting",
+                    "inside it, waiting."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "56": {
+          "name": "Pokéball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokéball. Something's resting",
+                    "inside it, waiting."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "54": {
+          "name": "Pokéball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokéball. Something's resting",
+                    "inside it, waiting."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "51": {
+          "name": "Pokéball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokéball. Something's resting",
+                    "inside it, waiting."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "52": {
+          "name": "Pokéball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokéball. Something's resting",
+                    "inside it, waiting."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "53": {
+          "name": "Pokéball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pokéball. Something's resting",
+                    "inside it, waiting."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Trainer handbooks and League",
+                    "regulation manuals."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Field guides to wild Pokémon.",
+                    "Well-worn."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Genetics textbooks. Most are",
+                    "heavily annotated."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Pokémon ecology studies. Some are",
+                    "Oak's own publications."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Research on Pokémon evolution.",
+                    "Notes in the margins."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "More science books. Dense reading."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "History of the Pokémon League.",
+                    "Dry reading."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Journals on fusion theory. The",
+                    "newer ones are thicker."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Technical manuals for lab equipment."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "Science Books",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Science books. Nothing you'd",
+                    "understand yet."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "78": {
+      "name": "Route 1",
+      "events": {
+        "2": {
+          "name": "Young Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Are you a trainer too?",
+                    "I just got my license!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "This is my first day out here.",
+                    "Pretty wild, huh?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "My dad says battling helps Pokémon",
+                    "grow stronger. Want to try?"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "That's what trainers do when",
+                    "they meet!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Viridian City is just up the hill.",
+                    "You'll be fine!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Watch the tall grass if your",
+                    "Pokémon are tired."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Mart Worker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey there! I'm from the Viridian",
+                    "PokéMart. Come visit when you",
+                    "get to town!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Here — a free sample to get you",
+                    "started."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We carry Poké Balls, DNA Splicers,",
+                    "medicine — everything a trainer",
+                    "needs."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
