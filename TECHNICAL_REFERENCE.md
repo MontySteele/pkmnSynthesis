@@ -185,10 +185,52 @@ ruby tools/inject_dialogue.rb game_data/Data changes.json --dry-run  # preview o
 
 The changes JSON uses the same structure as the extraction output. Only entries present in the JSON are modified; everything else is preserved.
 
-Supports:
-- **Text blocks**: Handles adding/removing continuation lines (401) automatically
-- **Choice blocks**: Updates choice labels and cancel type
-- **Script messages**: Handles adding/removing continuation lines (655)
+Supports four block types:
+- **Text blocks** (`"type": "text"`): Modify existing Show Text (101) at `start_index`. Provide `"lines"` array. Handles adding/removing continuation lines (401) automatically.
+- **Choice blocks** (`"type": "choices"`): Modify existing Show Choices (102) at `start_index`. Provide `"choices"` array with new labels and optional `"cancel_type"`.
+- **Script messages** (`"type": "script_message"`): Modify existing Script (355) at `start_index`. Provide `"lines"` array. Handles adding/removing continuation lines (655).
+- **Insert commands** (`"type": "insert_commands"`): Insert new RPG Maker event commands BEFORE `start_index`. Provide `"commands"` array of `{code, indent, parameters}` objects. Supports any RPG Maker XP event command code.
+
+#### Insert Commands — Details
+
+The `insert_commands` block type allows injecting arbitrary event commands without the RPG Maker editor. This is how we implement new choice branches, switch/variable controls, and conditional logic purely through tooling.
+
+Common RPG Maker XP event command codes:
+| Code | Name | Parameters |
+|------|------|------------|
+| 101 | Show Text | `["First line of text"]` |
+| 401 | Text continuation | `["Continuation line"]` |
+| 102 | Show Choices | `[["Choice1", "Choice2", ...], cancel_type]` |
+| 402 | When [Choice] | `[choice_index, "Choice label"]` |
+| 404 | End choices | `[]` |
+| 121 | Control Switches | `[start_id, end_id, 0=ON / 1=OFF]` |
+| 122 | Control Variables | `[start_id, end_id, operation, operand_type, operand]` (operation: 0=set, operand_type: 0=constant) |
+| 355 | Script | `["script line"]` |
+| 655 | Script continuation | `["continuation"]` |
+
+Indent levels control nesting: top-level commands use `indent: 0`, content inside a choice branch uses `indent: 1`, etc.
+
+Blocks are processed in **reverse order of `start_index`** to avoid index shifts from insertions. At the same index, modifications (text/choices) process before insertions.
+
+Example — inserting a 4-option choice that sets a variable and switches:
+```json
+{
+  "start_index": 74,
+  "type": "insert_commands",
+  "commands": [
+    {"code": 101, "indent": 0, "parameters": ["What drives you to become a trainer?"]},
+    {"code": 102, "indent": 0, "parameters": [["To protect people", "To see the world", "To get stronger", "I don't know yet"], 0]},
+    {"code": 402, "indent": 0, "parameters": [0, "To protect people"]},
+    {"code": 122, "indent": 1, "parameters": [340, 340, 0, 0, 1]},
+    {"code": 121, "indent": 1, "parameters": [1140, 1140, 0]},
+    {"code": 101, "indent": 1, "parameters": ["Oak nods slowly."]},
+    {"code": 402, "indent": 0, "parameters": [1, "To see the world"]},
+    {"code": 122, "indent": 1, "parameters": [340, 340, 0, 0, 2]},
+    {"code": 121, "indent": 1, "parameters": [1141, 1141, 0]},
+    {"code": 404, "indent": 0, "parameters": []}
+  ]
+}
+```
 
 ### Round-Trip Verification
 - Byte-identical round-trip confirmed on all 809 map files
