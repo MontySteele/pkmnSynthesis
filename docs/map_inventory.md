@@ -26,7 +26,7 @@
 | Dialogue blocks total | 46,417 | -- |
 | Dialogue blocks modified | 1,718 | 3.7% |
 
-### dialogue_changes files (38):
+### dialogue_changes files (39):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
@@ -68,6 +68,7 @@
 | `celadon_misc_fill.json` | 408, 415, 425, 438, 439, 465, 466, 474, 475, 510, 542 | Ready |
 | `rock_tunnel_fill.json` | 154, 256, 349, 350, 391, 495 | Ready |
 | `fuchsia_extras_fill.json` | 107, 712, 713, 714, 804 | Ready |
+| `celadon_cycling_fill.json` | 146, 193, 204, 517, 518 | Ready |
 
 ### City plan docs (9):
 
@@ -463,11 +464,11 @@
 | 439 | House (Route 16) | 5 | 20 | READY |
 | 474 | Gate (Route 16) | 1 | 2 | READY |
 | 475 | Gate (Cycling Road) | 5 | 23 | READY |
-| 146 | Route 17 (Cycling Road) | 28 | 201 | NOT_STARTED |
-| 517 | Route 18 | 25 | 161 | NOT_STARTED |
-| 518 | Gate (Route 18) | 1 | 2 | NOT_STARTED |
-| 193 | Gate (Route 18 south) | 4 | 21 | NOT_STARTED |
-| 204 | Farmhouse | 5 | 60 | NOT_STARTED |
+| 146 | Route 17 (Cycling Road) | 28 | 201 | READY |
+| 517 | Route 18 | 25 | 161 | READY |
+| 518 | Gate (Route 18) | 1 | 2 | READY |
+| 193 | Gate (Route 18 south) | 4 | 21 | READY |
+| 204 | Farmhouse | 5 | 60 | READY |
 | 516 | Route 16 (connector) | 0 | 0 | SKIP |
 
 ---
