@@ -1,0 +1,1794 @@
+{
+  "_implementation_notes": [
+    "FUCHSIA CITY — Phase 2 (Post-Saffron reflection). Maps 472, 479, 473, 445, 159, 437.",
+    "Tone: Direct heat. NPCs know people who've died. Strength is the only currency.",
+    "Koga doesn't care which side you're on — he cares if you're strong enough.",
+    "",
+    "Map 479 EV001 (Koga): Full pre-battle rewrite with SYNTH_SILPH_COMPLETE variant.",
+    "Post-battle includes choice block via insert_commands at index 50.",
+    "THE CHOICE: Koga asks about survival vs. ideology. Sets Variable 346",
+    "(SYNTH_KOGA_CHOICE) and Switches 1153-1155.",
+    "Lance post-gym scene conditionally suppressed if SYNTH_SILPH_COMPLETE is ON.",
+    "",
+    "Map 472 Events 76/77 (Blue): Rival encounter gated by SYNTH_SILPH_COMPLETE (1152).",
+    "Two dialogue variants: Oak Path vs Giovanni Path. Battle + Johto starter preserved.",
+    "Sets SYNTH_FUCHSIA_RIVAL_SEEN (Switch 1160) on completion.",
+    "",
+    "Map 473 Event 6: Safari Zone gate NPC rewrite (ecological angle).",
+    "",
+    "PRESERVED: Safari Zone entry mechanics (Map 473 EV004/EV005), Snorlax encounters",
+    "(Map 159), Jasmine/Snorlax event, Johto starter gift choice, darkness/plant quest",
+    "(Map 472 EV097/EV079/EV041), Daisy grooming, Heat Wave tutor, all trades,",
+    "all Pokedex exhibit signs, flute traveler (EV042), venomoth cry.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "472": {
+      "name": "Fuchsia City",
+      "events": {
+        "17": {
+          "name": "EV017 (Old Man — Zoo)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Safari Zone used to be a",
+                    "hunting ground, you know. Now",
+                    "it's more like a hospital."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "These Pok\u00e9mon can't compete",
+                    "with fused ones in the wild.",
+                    "So we keep them here, where",
+                    "it's safe."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029 (Dodrio Exhibit)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Dodrio is one of the fastest",
+                    "running Pok\u00e9mon in the world."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "One of the few pure species",
+                    "actually thriving out there.",
+                    "Too fast for anything fused",
+                    "to catch."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031 (Safari Zone Sign)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the Safari Zone —",
+                    "Kanto's last refuge for",
+                    "unfused species."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "76": {
+          "name": "Gary (Rival Encounter — Event 76)",
+          "_implementation_notes": [
+            "This event fires when switch1_id 8 and switch2_id 584 are ON.",
+            "For Synthesis: additionally gate on SYNTH_SILPH_COMPLETE (1152) ON",
+            "and SYNTH_FUCHSIA_RIVAL_SEEN (1160) OFF.",
+            "Dialogue is path-variant. Battle and Johto starter gift preserved.",
+            "Canonical dialogue from docs/blue_dialogue_track.md Encounter 9."
+          ],
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 8,
+                "switch2_id": 584
+              },
+              "_synth_conditions": {
+                "require_on": [1152],
+                "require_off": [1160]
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "script_message",
+                  "_comment": "Branch on SYNTH_GIOVANNI_PATH (1131). If ON: Giovanni Path. If OFF: Oak Path."
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "_condition": "Switch 1131 OFF",
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. I've been thinking.",
+                    "About Saffron. About what",
+                    "Oak told us."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Fifteen years. He had fifteen",
+                    "years and his plan was hope.",
+                    "Every Rocket grunt in that",
+                    "building was terrified of"
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Mewtwo, and you know what?",
+                    "They weren't wrong to be."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "The only people who weren't",
+                    "scared were the people",
+                    "pretending it didn't exist."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "I have the Ball. I know that",
+                    "bothers you. But I didn't take",
+                    "it to be powerful — I took it",
+                    "because everyone who had it"
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "before me either hid it or",
+                    "tried to steal it."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "I want to be the person who",
+                    "actually decides. Openly.",
+                    "Honestly. Not behind",
+                    "closed doors."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "_pre_battle_closer": true,
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading for the Plateau,",
+                    "\\PN. I'm going to earn the",
+                    "right to make this call."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "_condition": "Switch 1131 ON",
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. We need to talk."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "After I beat Giovanni... he",
+                    "didn't leave quietly. He sat",
+                    "there. In the wreckage.",
+                    "Still arguing. Still certain."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "He couldn't stop, \\PN. Even",
+                    "at the end, he was convinced",
+                    "he was the only person who",
+                    "saw the world clearly."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "And then you walked toward me",
+                    "holding that Ball. And you had",
+                    "the exact same look on",
+                    "your face."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "I need you to tell me that's",
+                    "not the same thing. I need you",
+                    "to tell me you're not him."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "..."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "_pre_battle_closer": true,
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "I'm going to the Plateau.",
+                    "I need to be strong enough.",
+                    "Just in case."
+                  ]
+                },
+                {
+                  "_comment": "Battle proceeds here (mechanical, preserved as-is). Post-battle dialogue below.",
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "...Yeah. Same as always.",
+                    "You never make it easy."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Gramp's friend from the",
+                    "Johto region gave me three",
+                    "Pok\u00e9mon. Take one."
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "I don't need them where I'm",
+                    "going. Which one do you want?"
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "choices",
+                  "choices": [
+                    "Chikorita",
+                    "Cyndaquil",
+                    "Totodile"
+                  ],
+                  "cancel_type": 0
+                },
+                {
+                  "_comment": "Set SYNTH_FUCHSIA_RIVAL_SEEN (1160) ON here.",
+                  "start_index": 88,
+                  "type": "text",
+                  "lines": [
+                    "Take care of yourself, \\PN.",
+                    "I mean it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "77": {
+          "name": "Gary (Rival Encounter — Event 77, alternate position)",
+          "_implementation_notes": [
+            "Mirrors Event 76 with different position. Same Synthesis gates.",
+            "Same path-variant dialogue. Battle + Johto gift preserved."
+          ],
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 8,
+                "switch2_id": 584,
+                "self_switch": "D"
+              },
+              "_synth_conditions": {
+                "require_on": [1152],
+                "require_off": [1160]
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "script_message",
+                  "_comment": "Branch on SYNTH_GIOVANNI_PATH (1131). If ON: Giovanni Path. If OFF: Oak Path."
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "_condition": "Switch 1131 OFF",
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. I've been thinking.",
+                    "About Saffron. About what",
+                    "Oak told us."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Fifteen years. He had fifteen",
+                    "years and his plan was hope."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "I have the Ball. I know that",
+                    "bothers you. But I didn't take",
+                    "it to be powerful."
+                  ]
+                },
+                {
+                  "_variant": "OAK_PATH",
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading for the Plateau,",
+                    "\\PN. I'm going to earn the",
+                    "right to make this call."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "_condition": "Switch 1131 ON",
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\PN. We need to talk."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "After I beat Giovanni... he",
+                    "sat there. In the wreckage.",
+                    "Still arguing. Still certain."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "And then you walked toward me",
+                    "holding that Ball. Same look",
+                    "on your face."
+                  ]
+                },
+                {
+                  "_variant": "GIOVANNI_PATH",
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I'm going to the Plateau.",
+                    "I need to be strong enough.",
+                    "Just in case."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I'll heal up your Pok\u00e9mon!"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "There. Now we do this right."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "One more fight. For old",
+                    "times' sake."
+                  ]
+                },
+                {
+                  "start_index": 57,
+                  "type": "text",
+                  "lines": [
+                    "...Yeah. Same as always.",
+                    "You never make it easy."
+                  ]
+                },
+                {
+                  "start_index": 60,
+                  "type": "text",
+                  "lines": [
+                    "Gramp's friend from Johto",
+                    "gave me three Pok\u00e9mon.",
+                    "Take one."
+                  ]
+                },
+                {
+                  "start_index": 63,
+                  "type": "text",
+                  "lines": [
+                    "I don't need them where I'm",
+                    "going. Which one do you want?"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "choices",
+                  "choices": [
+                    "Chikorita",
+                    "Cyndaquil",
+                    "Totodile"
+                  ],
+                  "cancel_type": 0
+                },
+                {
+                  "start_index": 77,
+                  "type": "text",
+                  "lines": [
+                    "Take care of yourself, \\PN.",
+                    "I mean it."
+                  ]
+                },
+                {
+                  "start_index": 88,
+                  "type": "text",
+                  "lines": [
+                    "I'll wait here. Come fight",
+                    "me when you're ready."
+                  ]
+                },
+                {
+                  "start_index": 91,
+                  "type": "text",
+                  "lines": [
+                    "Don't keep me waiting, \\PN.",
+                    "I need to know where we stand."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "479": {
+      "name": "Fuchsia City Gym",
+      "events": {
+        "1": {
+          "name": "EV001 (Koga — Gym Leader)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "script_message",
+                  "_comment": "Branch on SYNTH_SILPH_COMPLETE (1152). If ON: Post-Saffron variant. If OFF: Default variant."
+                },
+                {
+                  "_variant": "POST_SAFFRON",
+                  "_condition": "Switch 1152 ON",
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "...You."
+                  ]
+                },
+                {
+                  "_variant": "POST_SAFFRON",
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I heard what happened in",
+                    "Saffron. The whole region",
+                    "heard."
+                  ]
+                },
+                {
+                  "_variant": "POST_SAFFRON",
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "You were there. Good. That",
+                    "means you already know that",
+                    "ideology doesn't stop a fist."
+                  ]
+                },
+                {
+                  "_variant": "POST_SAFFRON",
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Out here, there's no debate.",
+                    "The routes are dangerous.",
+                    "The wild Pok\u00e9mon are getting",
+                    "stronger every season."
+                  ]
+                },
+                {
+                  "_variant": "POST_SAFFRON",
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "The only thing that matters",
+                    "is whether you can protect",
+                    "the people who depend on you.",
+                    "Everything else is talk."
+                  ]
+                },
+                {
+                  "_variant": "DEFAULT",
+                  "_condition": "Switch 1152 OFF",
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "...So. You made it to Fuchsia."
+                  ]
+                },
+                {
+                  "_variant": "DEFAULT",
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "That tells me you're either",
+                    "very strong or very stubborn."
+                  ]
+                },
+                {
+                  "_variant": "DEFAULT",
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Let's find out which."
+                  ]
+                },
+                {
+                  "_comment": "Shared pre-battle closer for both variants.",
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "We'll use four Pok\u00e9mon.",
+                    "I won't hold back."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "If you can't handle \\V[5],",
+                    "you can't handle anything",
+                    "these routes throw at you."
+                  ]
+                },
+                {
+                  "_comment": "Post-battle. Badge award sequence preserved.",
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "...You've earned this."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "The Soul Badge. Your",
+                    "Pok\u00e9mon's Defense increases."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "It also lets you use Strength",
+                    "outside of battle. Take this",
+                    "too."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "TM06. Toxic. A secret",
+                    "technique over 400 years old.",
+                    "\\V[5] that worsens every turn."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "Patience wins battles.",
+                    "Toxic is patience weaponized."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "insert_commands",
+                  "_comment": "Koga asks about survival philosophy. Sets Var 346 (SYNTH_KOGA_CHOICE) and Switches 1153-1155.",
+                  "commands": [
+                    {"code": 101, "indent": 1, "parameters": ["A piece of advice. Everyone in"]},
+                    {"code": 401, "indent": 1, "parameters": ["Kanto wants to tell you what"]},
+                    {"code": 401, "indent": 1, "parameters": ["to believe."]},
+                    {"code": 101, "indent": 1, "parameters": ["But out here, belief doesn't"]},
+                    {"code": 401, "indent": 1, "parameters": ["keep you alive. Strength does."]},
+                    {"code": 401, "indent": 1, "parameters": ["Do you understand that?"]},
+                    {"code": 102, "indent": 1, "parameters": [["Yes. Strength is what matters.", "No. Principles matter more.", "It's not that simple."], 0]},
+                    {"code": 402, "indent": 1, "parameters": [0, "Yes. Strength is what matters."]},
+                    {"code": 122, "indent": 2, "parameters": [346, 346, 0, 0, 1]},
+                    {"code": 121, "indent": 2, "parameters": [1153, 1153, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Good. Then you'll survive."]},
+                    {"code": 401, "indent": 2, "parameters": ["Watch what people do, not"]},
+                    {"code": 401, "indent": 2, "parameters": ["what they say. That's the"]},
+                    {"code": 401, "indent": 2, "parameters": ["only credential I recognize."]},
+                    {"code": 402, "indent": 1, "parameters": [1, "No. Principles matter more."]},
+                    {"code": 122, "indent": 2, "parameters": [346, 346, 0, 0, 2]},
+                    {"code": 121, "indent": 2, "parameters": [1154, 1154, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Principles. I've buried"]},
+                    {"code": 401, "indent": 2, "parameters": ["trainers with principles."]},
+                    {"code": 101, "indent": 2, "parameters": ["Ren had principles. Wouldn't"]},
+                    {"code": 401, "indent": 2, "parameters": ["use Antidotes on his team."]},
+                    {"code": 401, "indent": 2, "parameters": ["Said it was unnatural. Found"]},
+                    {"code": 401, "indent": 2, "parameters": ["him on Route 15."]},
+                    {"code": 101, "indent": 2, "parameters": ["Keep your principles. But"]},
+                    {"code": 401, "indent": 2, "parameters": ["stay alive to hold them."]},
+                    {"code": 402, "indent": 1, "parameters": [2, "It's not that simple."]},
+                    {"code": 122, "indent": 2, "parameters": [346, 346, 0, 0, 3]},
+                    {"code": 121, "indent": 2, "parameters": [1155, 1155, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Simple. No, it never is."]},
+                    {"code": 101, "indent": 2, "parameters": ["But when a fused Beedrill is"]},
+                    {"code": 401, "indent": 2, "parameters": ["tearing through your team,"]},
+                    {"code": 401, "indent": 2, "parameters": ["complexity won't save you."]},
+                    {"code": 101, "indent": 2, "parameters": ["Decide fast. Act faster."]},
+                    {"code": 401, "indent": 2, "parameters": ["That's the only advice I"]},
+                    {"code": 401, "indent": 2, "parameters": ["have."]},
+                    {"code": 404, "indent": 1, "parameters": []}
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN obtained 2 Premium",
+                    "Wonder Trade ticket!"
+                  ]
+                },
+                {
+                  "_comment": "Lance post-gym scene. Only fires if SYNTH_SILPH_COMPLETE (1152) is OFF.",
+                  "start_index": 60,
+                  "type": "script_message",
+                  "_condition": "Switch 1152 OFF — if ON, skip to end"
+                },
+                {
+                  "start_index": 60,
+                  "type": "text",
+                  "lines": [
+                    "Koga!"
+                  ]
+                },
+                {
+                  "start_index": 83,
+                  "type": "text",
+                  "lines": [
+                    "Koga. The situation in",
+                    "Saffron is deteriorating.",
+                    "The League is losing control."
+                  ]
+                },
+                {
+                  "start_index": 85,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket have used the",
+                    "stolen Master Ball prototype",
+                    "to build more Master Balls."
+                  ]
+                },
+                {
+                  "start_index": 88,
+                  "type": "text",
+                  "lines": [
+                    "They've captured the three",
+                    "legendary bird Pok\u00e9mon.",
+                    "Articuno. Zapdos. Moltres."
+                  ]
+                },
+                {
+                  "start_index": 90,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. is occupied. The",
+                    "birds are being held as",
+                    "leverage."
+                  ]
+                },
+                {
+                  "start_index": 95,
+                  "type": "text",
+                  "lines": [
+                    "The legendary birds...",
+                    "If this is true, the balance",
+                    "of power has shifted."
+                  ]
+                },
+                {
+                  "start_index": 97,
+                  "type": "text",
+                  "lines": [
+                    "It's all true. The League",
+                    "sent me to organize a",
+                    "response."
+                  ]
+                },
+                {
+                  "start_index": 105,
+                  "type": "text",
+                  "lines": [
+                    "Forgive me — I haven't",
+                    "introduced myself."
+                  ]
+                },
+                {
+                  "start_index": 107,
+                  "type": "text",
+                  "lines": [
+                    "My name is Lance. Dragon",
+                    "Master and Kanto League",
+                    "Champion."
+                  ]
+                },
+                {
+                  "start_index": 111,
+                  "type": "text",
+                  "lines": [
+                    "You just defeated Koga.",
+                    "That's no small thing."
+                  ]
+                },
+                {
+                  "start_index": 113,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, you're strong. I've",
+                    "seen the reports."
+                  ]
+                },
+                {
+                  "start_index": 115,
+                  "type": "text",
+                  "lines": [
+                    "I need you in Saffron City.",
+                    "The League can't handle this",
+                    "alone."
+                  ]
+                },
+                {
+                  "start_index": 118,
+                  "type": "text",
+                  "lines": [
+                    "I'll be waiting for you",
+                    "there. Don't make me wait",
+                    "long."
+                  ]
+                },
+                {
+                  "start_index": 120,
+                  "type": "text",
+                  "lines": [
+                    "Saffron City. As fast as",
+                    "you can."
+                  ]
+                },
+                {
+                  "start_index": 135,
+                  "type": "text",
+                  "lines": [
+                    "If the League can't handle",
+                    "Saffron, I'll send Rangers.",
+                    "But you — you might be more",
+                    "useful than Rangers."
+                  ]
+                },
+                {
+                  "start_index": 145,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you are",
+                    "ready to challenge me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Toxic worsens every turn.",
+                    "Patience is a weapon. Use it."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Head to Saffron City for",
+                    "your next challenge."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Trainer(3) — Gym Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Koga taught us one thing:",
+                    "the strongest technique is",
+                    "the one your opponent doesn't",
+                    "expect."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "That's not poetry. It's math."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Brains and brawn. Koga says",
+                    "you need both or you're dead."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I've never seen anyone push",
+                    "Koga that hard."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You earned that badge."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(3) — Gym Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "People in Saffron argue about",
+                    "who should control fusion.",
+                    "People out here argue about",
+                    "Antidotes lasting to the"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\V[5] lingers. So does a",
+                    "lesson learned the hard way."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Koga doesn't praise lightly.",
+                    "If he gave you that badge,",
+                    "you deserve it."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Stay sharp out there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(3) — Gym Trainer",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 110},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I joined this gym because",
+                    "Koga doesn't care where you",
+                    "come from. He only cares if",
+                    "you can fight."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I train under Koga because",
+                    "he's honest. If you're weak,",
+                    "he says so. Then he fixes it."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "That was something else."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Respect."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3) — Gym Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Hesitation kills. I've seen",
+                    "it. My cousin hesitated on",
+                    "Route 18. Fused Arbok.",
+                    "She didn't make it home."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You didn't hesitate. Good.",
+                    "That's why you're still",
+                    "standing."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Remember that when it",
+                    "counts."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You beat Koga. That means",
+                    "the routes won't kill you."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Probably."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(3) — Gym Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Last month a fused Weezing",
+                    "drifted into town. Toxic gas",
+                    "for three blocks. Koga",
+                    "handled it alone."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "That's why we train."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I still have a lot to learn.",
+                    "But at least I'm learning",
+                    "from the right person."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Incredible fight."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Koga needed that."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Trainer(3) — Gym Trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Koga comes from a line of",
+                    "warriors. His family's been",
+                    "protecting this region since",
+                    "before the League existed."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "What's your excuse for",
+                    "being here?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "All right. You might be",
+                    "ready for Koga. Maybe."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Koga respects you now.",
+                    "That means something around",
+                    "here."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Don't waste it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 (Gym Guide)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making!",
+                    "Fuchsia Gym is riddled",
+                    "with invisible walls. Koga",
+                    "doesn't make it easy."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Find the gaps. His \\V[5]-type",
+                    "Pok\u00e9mon hit slow but they",
+                    "linger. Bring Antidotes.",
+                    "Lots of them."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Take this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making!",
+                    "Invisible walls everywhere.",
+                    "Find the gaps to reach Koga."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "His \\V[5]-type Pok\u00e9mon will",
+                    "wear you down if you let",
+                    "them. Don't let them."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You actually beat Koga.",
+                    "I've seen trainers twice",
+                    "your age walk out of here",
+                    "in tears."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "473": {
+      "name": "Safari Zone Gate",
+      "events": {
+        "6": {
+          "name": "EV006 (Scyther Trainer / Conservation Ranger)",
+          "_implementation_notes": [
+            "Rewritten as the Conservation Ranger NPC. Provides ecological perspective on fusion.",
+            "Reads SYNTH_FUJI_BAN (1135) and SYNTH_FUJI_FREE (1136) for variant lines.",
+            "Does not set any new switches."
+          ],
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm a warden here. Been",
+                    "counting populations for",
+                    "twelve years."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Kangaskhan, Chansey, Tauros,",
+                    "Scyther — all common a decade",
+                    "ago. Now? Rare in the wild.",
+                    "Almost gone."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Fused Pok\u00e9mon outcompete",
+                    "them. Faster, stronger, more",
+                    "adaptable. Natural species",
+                    "can't keep up."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'm not a politician. I count",
+                    "populations. And the numbers",
+                    "are going down."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "script_message",
+                  "_comment": "Branch on Fuji switches. Check 1135 (BAN) first, then 1136 (FREE), else default."
+                },
+                {
+                  "_variant": "FUJI_BAN",
+                  "_condition": "Switch 1135 ON",
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "You think fusion should be",
+                    "banned? I understand that.",
+                    "But even if you stopped all",
+                    "new fusions tomorrow..."
+                  ]
+                },
+                {
+                  "_variant": "FUJI_BAN",
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "The fused Pok\u00e9mon already in",
+                    "the wild aren't going away.",
+                    "This problem is bigger than",
+                    "regulation."
+                  ]
+                },
+                {
+                  "_variant": "FUJI_FREE",
+                  "_condition": "Switch 1136 ON",
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "You think everyone should",
+                    "have access to fusion? Maybe.",
+                    "But every trainer who fuses",
+                    "a Pok\u00e9mon and releases it —"
+                  ]
+                },
+                {
+                  "_variant": "FUJI_FREE",
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "or loses it — adds another",
+                    "competitor to an ecosystem",
+                    "that's already struggling.",
+                    "Freedom has a cost."
+                  ]
+                },
+                {
+                  "_variant": "DEFAULT",
+                  "_condition": "No Fuji switch set",
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "The Safari Zone exists",
+                    "because it's one of the few",
+                    "places where unfused Pok\u00e9mon",
+                    "can still survive."
+                  ]
+                },
+                {
+                  "_comment": "Closing line — shared across all variants.",
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Come into the Zone and look",
+                    "around. These Pok\u00e9mon aren't",
+                    "rare because they're special."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "They're rare because we made",
+                    "something that's better at",
+                    "surviving than they are."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "445": {
+      "name": "Safari Zone — Area 1",
+      "events": {
+        "18": {
+          "name": "TYPE_EXPERT_BUG",
+          "_implementation_notes": [
+            "Light Synthesis touch on post-battle line only."
+          ],
+          "pages": {
+            "1": {
+              "conditions": {"self_switch": "D"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Pure Bug types. No fusions.",
+                    "You beat me with raw skill.",
+                    "That's rare these days."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "159": {
+      "name": "Route 12",
+      "events": {
+        "29": {
+          "name": "Trainer(4) — Fisherman",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The fish are changing. Used",
+                    "to be all Magikarp and",
+                    "Goldeen. Now I'm pulling up",
+                    "things I can't name."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fused things. Half one",
+                    "Pok\u00e9mon, half another.",
+                    "Some of them bite back.",
+                    "Hard."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Your Pok\u00e9mon better put on",
+                    "their raincoats!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Fair enough. I'll be here.",
+                    "Fish don't care about the",
+                    "state of the world."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Trainer(4) — Fisherman (Magikarp evolve)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Tried to evolve my Magikarp.",
+                    "Something went wrong. It's",
+                    "not a Gyarados. Don't know",
+                    "what it is."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "437": {
+      "name": "Route 13",
+      "events": {
+        "11": {
+          "name": "Trainer(4) — Biker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Used to be more of us out",
+                    "here. People don't travel",
+                    "much anymore. Say the routes",
+                    "aren't safe."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Lost two friends on Route 17",
+                    "last year. Fused Raticate",
+                    "pack. Those things hunt in",
+                    "formation now."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Wanna go again? I could use",
+                    "the practice."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "All right. Let's do this."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Suit yourself. Stay sharp",
+                    "out there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(1) — Black Belt",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Koga keeps these routes clear",
+                    "himself when the Rangers",
+                    "can't be bothered. Say what",
+                    "you want about the man —"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "He shows up. That's more",
+                    "than the League does."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Good. I need the training."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Your loss."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Trainer(5) — Bird Keeper",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My Pidgeot won't fuse. I've",
+                    "had offers. Good ones, too.",
+                    "But she's been with me since",
+                    "I was ten."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What kind of person would I",
+                    "be? She trusts me. That's",
+                    "worth more than stats."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Let me show you what a pure",
+                    "Pidgeot can do!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "No worries. We'll be here.",
+                    "Not going anywhere."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(5) — Bird Keeper (Fly quest)",
+          "_implementation_notes": [
+            "Light Synthesis touch on pre-battle line only. Post-battle and Fly quest mechanics preserved."
+          ],
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I keep my birds unfused.",
+                    "People say I'm sentimental.",
+                    "I say I'm loyal."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

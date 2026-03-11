@@ -1,0 +1,1446 @@
+{
+  "_implementation_notes": [
+    "CINNABAR ISLAND — Phase 4 (Reckoning). Maps 98, 221, 173, 187, 206, 209.",
+    "Tone: Isolated, intellectual, the past reaching into the present. Tinged with horror.",
+    "",
+    "Map 187 EV013 (Blaine basement): MAJOR path-variant rewrite with Fuji callbacks.",
+    "Checks Switch 1130 (SYNTH_FORK_CHOSEN), 1131 (SYNTH_GIOVANNI_PATH),",
+    "1153 (SYNTH_MEWTWO_KNOWN), and 1135-1138 (Fuji stance).",
+    "Sets Switch 1155 (SYNTH_MANSION_JOURNALS) ON after encounter.",
+    "",
+    "Map 221 EV002 (Blaine gym): Full pre/post-battle rewrite with path variants.",
+    "Post-battle includes insert_commands choice block (Switches 1156-1158, Var 347).",
+    "Quiz doors (EV017/34, EV018/35, EV028/36, EV030/37, EV038/39, EV040, EV041/42,",
+    "EV031) are ALL PRESERVED exactly as base game. Only Blaine personal dialogue,",
+    "gym guide, and select trainer dialogue are modified.",
+    "",
+    "Map 173 EV023/EV027: Journal #1 and #2 replace base game journal text.",
+    "Map 173 EV005/EV006: Mansion scientist NPCs rewritten.",
+    "",
+    "Map 187 EV013: Blaine basement encounter — massive expansion.",
+    "Map 187 EV023/27: Glass containers get Synthesis flavor text.",
+    "Map 187 EV028/29: Old equipment rewritten. EV019/20: Scientists rewritten.",
+    "",
+    "PRESERVED: All quiz mechanics, fossil revival, trades, lab equipment,",
+    "mansion door/switch puzzles, Secret Key, Mansion Key, Navel Rock,",
+    "Seagallop/Mt. Ember events, glass container encounters.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "98": {
+      "name": "Cinnabar Island",
+      "events": {
+        "2": {
+          "name": "EV002 (NPC — Blaine mention)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Blaine's been the gym leader",
+                    "here longer than most people",
+                    "remember. He used to run a",
+                    "research lab too — the mansion."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Nobody talks about the fire.",
+                    "Not because they've forgotten.",
+                    "Because Blaine asked them",
+                    "not to."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031 (NPC — Mansion comment)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The mansion's been locked up",
+                    "for years. Blaine holds the",
+                    "only key. Scientists used to",
+                    "work in there — real ones."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Whatever they were doing, it",
+                    "ended badly. You can still",
+                    "smell the smoke on hot days."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038 (Mansion sign)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Pok\u00e9mon Mansion — NO ENTRY",
+                    "\\n[Faded text below:]",
+                    "Cinnabar Research Institute",
+                    "Est. 15 yrs ago. Closed by",
+                    "order of the Pok\u00e9mon League."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "221": {
+      "name": "Cinnabar Island Gym",
+      "events": {
+        "2": {
+          "name": "EV002 (Blaine — Gym Leader)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "_comment": "Pre-badge, path-variant battle. Base game start_index 11 is pre-battle text.",
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Hah! You came. Good."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I won't give you a speech",
+                    "about \\V[5] types. You've been",
+                    "in my basement. You know what",
+                    "I've done and what it cost."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I test trainers because I need",
+                    "to know they're ready. Not for",
+                    "the League. For what's after.",
+                    "Four Pok\u00e9mon. No holding back."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "I've burnt out. You've earned",
+                    "the Volcano Badge."
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "The Volcano Badge heightens",
+                    "the abilities of your Pok\u00e9mon.",
+                    "And take this."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "TM38 — Fire Blast. The most",
+                    "destructive thing I ever made.",
+                    "Second most, anyway."
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN obtained 3 Premium",
+                    "Wonder Trade tickets!"
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "insert_commands",
+                  "_comment": "Post-battle path-variant dialogue and choice. Checks 1130/1131 for path, then asks the player about Mewtwo. Sets Var 347 + Switches 1156-1158.",
+                  "commands": [
+                    {"code": 111, "indent": 1, "parameters": [0, 1131, 0]},
+
+                    {"code": 101, "indent": 2, "parameters": ["Before you go — listen."]},
+                    {"code": 101, "indent": 2, "parameters": ["Your friend has the Master"]},
+                    {"code": 401, "indent": 2, "parameters": ["Ball, heading for the Plateau."]},
+                    {"code": 401, "indent": 2, "parameters": ["If they become Champion with"]},
+                    {"code": 401, "indent": 2, "parameters": ["that in their pocket..."]},
+                    {"code": 101, "indent": 2, "parameters": ["They'll control everything."]},
+                    {"code": 401, "indent": 2, "parameters": ["Including who opens Cerulean"]},
+                    {"code": 401, "indent": 2, "parameters": ["Cave. Do you trust them that"]},
+                    {"code": 401, "indent": 2, "parameters": ["much?"]},
+                    {"code": 101, "indent": 2, "parameters": ["Oak gave the world fire and"]},
+                    {"code": 401, "indent": 2, "parameters": ["spent his life apologizing for"]},
+                    {"code": 401, "indent": 2, "parameters": ["the burns. I still have the"]},
+                    {"code": 401, "indent": 2, "parameters": ["burns. I'm still not sorry."]},
+                    {"code": 101, "indent": 2, "parameters": ["But I learned something Oak"]},
+                    {"code": 401, "indent": 2, "parameters": ["never did: being sorry and"]},
+                    {"code": 401, "indent": 2, "parameters": ["being careful aren't the same."]},
+
+                    {"code": 411, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 2, "parameters": ["Before you go — listen."]},
+                    {"code": 101, "indent": 2, "parameters": ["You're carrying the key to a"]},
+                    {"code": 401, "indent": 2, "parameters": ["god's cage. The League will"]},
+                    {"code": 401, "indent": 2, "parameters": ["come for you. Your friend will"]},
+                    {"code": 401, "indent": 2, "parameters": ["come for you."]},
+                    {"code": 101, "indent": 2, "parameters": ["Mewtwo itself may come for"]},
+                    {"code": 401, "indent": 2, "parameters": ["you. What's your plan — just"]},
+                    {"code": 401, "indent": 2, "parameters": ["be stronger than all of them?"]},
+                    {"code": 101, "indent": 2, "parameters": ["That was Giovanni's plan. And"]},
+                    {"code": 401, "indent": 2, "parameters": ["Oak's. Be the strongest."]},
+                    {"code": 401, "indent": 2, "parameters": ["Control the outcome. It doesn't"]},
+                    {"code": 401, "indent": 2, "parameters": ["work. It has never worked."]},
+                    {"code": 101, "indent": 2, "parameters": ["Remember this room. Remember"]},
+                    {"code": 401, "indent": 2, "parameters": ["the journals. We made a person"]},
+                    {"code": 401, "indent": 2, "parameters": ["and argued about the leash."]},
+                    {"code": 401, "indent": 2, "parameters": ["Nobody asked if the leash was"]},
+                    {"code": 401, "indent": 2, "parameters": ["the problem."]},
+
+                    {"code": 412, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["One last thing. Mewtwo is"]},
+                    {"code": 401, "indent": 1, "parameters": ["still out there. What do you"]},
+                    {"code": 401, "indent": 1, "parameters": ["think should happen to it?"]},
+                    {"code": 102, "indent": 1, "parameters": [["It should be captured.", "It should be left alone.", "I don't know yet."], 0]},
+                    {"code": 402, "indent": 1, "parameters": [0, "It should be captured."]},
+                    {"code": 122, "indent": 2, "parameters": [347, 347, 0, 0, 1]},
+                    {"code": 121, "indent": 2, "parameters": [1156, 1156, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Captured. That's what Giovanni"]},
+                    {"code": 401, "indent": 2, "parameters": ["said. What Oak's Ball was built"]},
+                    {"code": 401, "indent": 2, "parameters": ["for. I hope you're better at"]},
+                    {"code": 401, "indent": 2, "parameters": ["it than they were."]},
+                    {"code": 402, "indent": 1, "parameters": [1, "It should be left alone."]},
+                    {"code": 122, "indent": 2, "parameters": [347, 347, 0, 0, 2]},
+                    {"code": 121, "indent": 2, "parameters": [1157, 1157, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Left alone. That's what Oak"]},
+                    {"code": 401, "indent": 2, "parameters": ["arranged. Fifteen years of"]},
+                    {"code": 401, "indent": 2, "parameters": ["silence. It's held so far."]},
+                    {"code": 101, "indent": 2, "parameters": ["But silence isn't peace. It's"]},
+                    {"code": 401, "indent": 2, "parameters": ["just quiet."]},
+                    {"code": 402, "indent": 1, "parameters": [2, "I don't know yet."]},
+                    {"code": 122, "indent": 2, "parameters": [347, 347, 0, 0, 3]},
+                    {"code": 121, "indent": 2, "parameters": [1158, 1158, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You don't know. Good. Hold"]},
+                    {"code": 401, "indent": 2, "parameters": ["onto that. Everyone who was"]},
+                    {"code": 401, "indent": 2, "parameters": ["certain made the same mistake."]},
+                    {"code": 404, "indent": 1, "parameters": []}
+                  ]
+                },
+                {
+                  "start_index": 48,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you're ready",
+                    "to challenge me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 10},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fire Blast is the ultimate",
+                    "\\V[5] technique. Destructive",
+                    "beyond measure. Use it well.",
+                    "...I've said that before."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 (Gym Guide)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making! Blaine's",
+                    "the real deal — \\V[5] specialist,",
+                    "but that's the least of it."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "See those scars on his hands?",
+                    "He won't say how he got them.",
+                    "If you've been in the mansion",
+                    "you can probably guess."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Douse his spirits with Water",
+                    "types! And bring Burn Heals!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making! Blaine's",
+                    "the real deal — \\V[5] specialist,",
+                    "but that's the least of it."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Douse his spirits with Water",
+                    "types! And bring Burn Heals!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 10},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! You beat that old fire",
+                    "brand! I saw his face after —",
+                    "almost looked relieved."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "tr5 (Trainer — Blaine's story)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You better know how to count",
+                    "for this next question!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "B"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I know why Blaine became a",
+                    "trainer!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Blaine was lost in the mountains",
+                    "when a fiery bird appeared. Its",
+                    "light guided him home. That's",
+                    "the story he tells, anyway."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Some of us think something else",
+                    "happened that made him who he",
+                    "is. Something in that mansion."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "tr6 (Trainer — Final question)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Blaine let me come up with this",
+                    "final question myself! He says",
+                    "a good question teaches more",
+                    "than a good answer."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "B"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "\\V[5] is weak against H2O!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Water beats fire! But fire",
+                    "melts ice Pok\u00e9mon! ...He says",
+                    "a lot of things like that."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "173": {
+      "name": "Pok\u00e9mon Mansion 1F",
+      "events": {
+        "23": {
+          "name": "EV023 (Journal #1 — The Discovery)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "CINNABAR RESEARCH LOG",
+                    "YEAR ONE"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Dr. Blaine, presiding.",
+                    "Co-investigator: Prof. S. Oak."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A research team in the Guyana",
+                    "interior has confirmed the",
+                    "specimen designated \"Mew.\"",
+                    "DNA samples are unlike anything"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "in our records — the genetic",
+                    "structure is fluid, almost",
+                    "modular. Oak believes it may",
+                    "be the ancestral template for"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "all Pok\u00e9mon species. If he's",
+                    "right, this changes everything",
+                    "we thought about fusion."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Funding secured from multiple",
+                    "sources, including a private",
+                    "donor — a businessman from",
+                    "Viridian City."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Oak doesn't like him.",
+                    "I told Oak to focus on the",
+                    "science."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 (Journal #2 — The Sample)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "CINNABAR RESEARCH LOG",
+                    "YEAR ONE, MONTH 7"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Dr. Blaine, presiding."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The Mew DNA sample has been",
+                    "successfully extracted and",
+                    "sequenced. Preliminary fusion",
+                    "trials with common species"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "have exceeded all projections.",
+                    "Fusion stability up 340% over",
+                    "baseline."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Oak presented findings to the",
+                    "League committee. Immediate",
+                    "classification: Top Secret.",
+                    "Additional funding approved."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Team morale is extraordinary.",
+                    "Twelve researchers, the best",
+                    "in Kanto. Every one of them",
+                    "knows we're making history."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Oak says we should be careful.",
+                    "He's right. But being careful",
+                    "and being timid aren't the",
+                    "same thing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Trainer(4) (Scientist — former colleague)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I worked with Blaine, once.",
+                    "Back when this place was still",
+                    "a proper lab. Before the fire.",
+                    "Before everything went wrong."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The switches open and close",
+                    "alternating sets of doors.",
+                    "Blaine designed the system",
+                    "himself. Paranoid, even then."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "How about a rematch?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Great. For science!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "My experiment will have to",
+                    "wait then."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(4) (Scientist — uneasy researcher)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm cataloguing what remains.",
+                    "Scorch marks, broken glass,",
+                    "equipment that melted from the",
+                    "inside out. It's unsettling."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The basement is the worst.",
+                    "Something happened down there",
+                    "that nobody wants to explain.",
+                    "The walls are... warped."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "187": {
+      "name": "Pok\u00e9mon Mansion Basement",
+      "events": {
+        "13": {
+          "name": "EV013 (Blaine — Basement Encounter)",
+          "_comment": "MAJOR REWRITE. Path-variant with Fuji callbacks. Checks Sw 1130/1131/1153/1135-1138. Sets Sw 1155 ON. Preserves base trigger: Blaine moves to gym after dialogue.",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "_comment": "Page 0: Oak Path (Sw 1130 ON, 1131 OFF). In implementation, this page's condition should be switch1_id:1130. The 1131 OFF check is implicit (page 1 takes priority when 1131 is also ON).",
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You made it down here. Most",
+                    "people turn back on the second",
+                    "floor."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You've been reading the",
+                    "journals, haven't you? I can",
+                    "tell. You have that look."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "The one where the pieces are",
+                    "almost fitting together but",
+                    "the picture doesn't make",
+                    "sense yet."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "This is where we made it.",
+                    "Right here, in this room.",
+                    "Oak, myself, and a team of",
+                    "twelve. Fifteen years ago."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "The greatest scientific",
+                    "achievement in human history.",
+                    "And also the worst mistake",
+                    "anyone has ever made."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Those held the early attempts.",
+                    "Most didn't survive. The one",
+                    "that did... well. You can see",
+                    "what it did to the room."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "insert_commands",
+                  "_comment": "MEWTWO_KNOWN check (Sw 1153), then Oak Path dialogue with Fuji callbacks.",
+                  "commands": [
+                    {"code": 111, "indent": 1, "parameters": [0, 1153, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You already know its name,"]},
+                    {"code": 401, "indent": 2, "parameters": ["don't you? Mewtwo. Good."]},
+                    {"code": 401, "indent": 2, "parameters": ["That saves us both some time."]},
+                    {"code": 411, "indent": 1, "parameters": []},
+                    {"code": 101, "indent": 2, "parameters": ["Its name is Mewtwo. We made"]},
+                    {"code": 401, "indent": 2, "parameters": ["it from Mew's DNA. A new"]},
+                    {"code": 401, "indent": 2, "parameters": ["species. The first and last"]},
+                    {"code": 401, "indent": 2, "parameters": ["of its kind."]},
+                    {"code": 121, "indent": 2, "parameters": [1153, 1153, 0]},
+                    {"code": 412, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["So you're the one who fought"]},
+                    {"code": 401, "indent": 1, "parameters": ["Giovanni at Silph Co. And"]},
+                    {"code": 401, "indent": 1, "parameters": ["your rival — they took the"]},
+                    {"code": 401, "indent": 1, "parameters": ["Master Ball."]},
+                    {"code": 101, "indent": 1, "parameters": ["Oak built a leash for a god"]},
+                    {"code": 401, "indent": 1, "parameters": ["and called it a safety measure."]},
+                    {"code": 401, "indent": 1, "parameters": ["Your friend took that leash"]},
+                    {"code": 401, "indent": 1, "parameters": ["and called it responsibility."]},
+                    {"code": 101, "indent": 1, "parameters": ["Different words. Same"]},
+                    {"code": 401, "indent": 1, "parameters": ["arrogance."]},
+                    {"code": 101, "indent": 1, "parameters": ["I don't blame them. I blame"]},
+                    {"code": 401, "indent": 1, "parameters": ["the impulse — the one that"]},
+                    {"code": 401, "indent": 1, "parameters": ["says the answer to something"]},
+                    {"code": 401, "indent": 1, "parameters": ["you don't understand is a cage."]},
+                    {"code": 101, "indent": 1, "parameters": ["I had that impulse once. I"]},
+                    {"code": 401, "indent": 1, "parameters": ["helped build the cage. And"]},
+                    {"code": 401, "indent": 1, "parameters": ["then the thing inside it woke"]},
+                    {"code": 401, "indent": 1, "parameters": ["up and burned my hands off."]},
+                    {"code": 101, "indent": 1, "parameters": ["I rebuilt them. Mostly. Oak"]},
+                    {"code": 401, "indent": 1, "parameters": ["rebuilt his reputation. The"]},
+                    {"code": 401, "indent": 1, "parameters": ["League rebuilt their story."]},
+                    {"code": 101, "indent": 1, "parameters": ["Everyone rebuilt everything"]},
+                    {"code": 401, "indent": 1, "parameters": ["except the thing that actually"]},
+                    {"code": 401, "indent": 1, "parameters": ["mattered — the relationship"]},
+                    {"code": 401, "indent": 1, "parameters": ["with the creature we'd made."]},
+
+                    {"code": 111, "indent": 1, "parameters": [0, 1135, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji fusion should"]},
+                    {"code": 401, "indent": 2, "parameters": ["be banned. I respect the"]},
+                    {"code": 401, "indent": 2, "parameters": ["honesty. But you're standing"]},
+                    {"code": 401, "indent": 2, "parameters": ["in the room where the most"]},
+                    {"code": 101, "indent": 2, "parameters": ["important fusion ever attempted"]},
+                    {"code": 401, "indent": 2, "parameters": ["took place. The question was"]},
+                    {"code": 401, "indent": 2, "parameters": ["never whether to do it. It was"]},
+                    {"code": 401, "indent": 2, "parameters": ["whether to do it well."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 111, "indent": 1, "parameters": [0, 1136, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji fusion should"]},
+                    {"code": 401, "indent": 2, "parameters": ["be free. I used to believe"]},
+                    {"code": 401, "indent": 2, "parameters": ["that too. Then I watched what"]},
+                    {"code": 401, "indent": 2, "parameters": ["\"free\" looks like when someone"]},
+                    {"code": 101, "indent": 2, "parameters": ["with money and ambition gets"]},
+                    {"code": 401, "indent": 2, "parameters": ["hold of it. Giovanni didn't"]},
+                    {"code": 401, "indent": 2, "parameters": ["pervert my research."]},
+                    {"code": 401, "indent": 2, "parameters": ["He applied it."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 111, "indent": 1, "parameters": [0, 1137, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji fusion needs"]},
+                    {"code": 401, "indent": 2, "parameters": ["oversight. Sensible. But who"]},
+                    {"code": 401, "indent": 2, "parameters": ["watches the watchers? The"]},
+                    {"code": 401, "indent": 2, "parameters": ["League oversees fusion."]},
+                    {"code": 101, "indent": 2, "parameters": ["The League also buried Mewtwo."]},
+                    {"code": 401, "indent": 2, "parameters": ["Oversight is just power with"]},
+                    {"code": 401, "indent": 2, "parameters": ["better manners."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 111, "indent": 1, "parameters": [0, 1138, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji you didn't know"]},
+                    {"code": 401, "indent": 2, "parameters": ["what to do about fusion. That"]},
+                    {"code": 401, "indent": 2, "parameters": ["might be the most honest"]},
+                    {"code": 401, "indent": 2, "parameters": ["answer in fifteen years."]},
+                    {"code": 101, "indent": 2, "parameters": ["Hold onto that uncertainty."]},
+                    {"code": 401, "indent": 2, "parameters": ["Everyone who was certain —"]},
+                    {"code": 401, "indent": 2, "parameters": ["Oak, Giovanni, the League,"]},
+                    {"code": 401, "indent": 2, "parameters": ["me — all made the same mistake."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["If you want to challenge my"]},
+                    {"code": 401, "indent": 1, "parameters": ["gym, I'll be there. I still"]},
+                    {"code": 401, "indent": 1, "parameters": ["believe in testing trainers."]},
+                    {"code": 101, "indent": 1, "parameters": ["Not because badges matter —"]},
+                    {"code": 401, "indent": 1, "parameters": ["they don't. But watching"]},
+                    {"code": 401, "indent": 1, "parameters": ["someone fight tells you who"]},
+                    {"code": 401, "indent": 1, "parameters": ["they are."]},
+                    {"code": 101, "indent": 1, "parameters": ["And I want to know who you"]},
+                    {"code": 401, "indent": 1, "parameters": ["are. Before the end."]},
+
+                    {"code": 121, "indent": 1, "parameters": [1155, 1155, 0]}
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 1131},
+              "_comment": "Page 1: Giovanni Path (Sw 1130 ON, 1131 ON). Takes priority over page 0 when 1131 is ON.",
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You made it down here. Most",
+                    "people turn back on the second",
+                    "floor."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You've been reading the",
+                    "journals, haven't you? I can",
+                    "tell. You have that look."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This is where we made it.",
+                    "Right here, in this room.",
+                    "Oak, myself, and a team of",
+                    "twelve. Fifteen years ago."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Those held the early attempts.",
+                    "Most didn't survive. The one",
+                    "that did... well. You can see",
+                    "what it did to the room."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "insert_commands",
+                  "_comment": "MEWTWO_KNOWN check, then Giovanni Path dialogue with Fuji callbacks. Sets Sw 1155.",
+                  "commands": [
+                    {"code": 111, "indent": 1, "parameters": [0, 1153, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You already know its name,"]},
+                    {"code": 401, "indent": 2, "parameters": ["don't you? Mewtwo. Good."]},
+                    {"code": 401, "indent": 2, "parameters": ["That saves us both some time."]},
+                    {"code": 411, "indent": 1, "parameters": []},
+                    {"code": 101, "indent": 2, "parameters": ["Its name is Mewtwo. We made"]},
+                    {"code": 401, "indent": 2, "parameters": ["it from Mew's DNA. A new"]},
+                    {"code": 401, "indent": 2, "parameters": ["species. The first and last"]},
+                    {"code": 401, "indent": 2, "parameters": ["of its kind."]},
+                    {"code": 121, "indent": 2, "parameters": [1153, 1153, 0]},
+                    {"code": 412, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["You have it, don't you?"]},
+                    {"code": 401, "indent": 1, "parameters": ["The Ball."]},
+                    {"code": 101, "indent": 1, "parameters": ["I can tell. You carry yourself"]},
+                    {"code": 401, "indent": 1, "parameters": ["differently from the trainers"]},
+                    {"code": 401, "indent": 1, "parameters": ["who come through here."]},
+                    {"code": 401, "indent": 1, "parameters": ["There's a weight."]},
+                    {"code": 101, "indent": 1, "parameters": ["I spent my life arguing that"]},
+                    {"code": 401, "indent": 1, "parameters": ["we shouldn't be afraid of"]},
+                    {"code": 401, "indent": 1, "parameters": ["what fusion can create."]},
+                    {"code": 101, "indent": 1, "parameters": ["But there's a difference"]},
+                    {"code": 401, "indent": 1, "parameters": ["between not being afraid and"]},
+                    {"code": 401, "indent": 1, "parameters": ["thinking you can control it."]},
+                    {"code": 101, "indent": 1, "parameters": ["Oak made that mistake."]},
+                    {"code": 401, "indent": 1, "parameters": ["Giovanni made that mistake."]},
+                    {"code": 401, "indent": 1, "parameters": ["Are you going to be the third?"]},
+                    {"code": 101, "indent": 1, "parameters": ["Giovanni and I worked together,"]},
+                    {"code": 401, "indent": 1, "parameters": ["once. Before he was a crime"]},
+                    {"code": 401, "indent": 1, "parameters": ["lord — back when he was just a"]},
+                    {"code": 401, "indent": 1, "parameters": ["man with money and convictions."]},
+                    {"code": 101, "indent": 1, "parameters": ["I took his money. I won't"]},
+                    {"code": 401, "indent": 1, "parameters": ["pretend I didn't know what he"]},
+                    {"code": 401, "indent": 1, "parameters": ["wanted. I just told myself it"]},
+                    {"code": 401, "indent": 1, "parameters": ["didn't matter."]},
+                    {"code": 101, "indent": 1, "parameters": ["Sound familiar? \"I have the"]},
+                    {"code": 401, "indent": 1, "parameters": ["Ball, and I'll use it better"]},
+                    {"code": 401, "indent": 1, "parameters": ["than he would.\" That's what"]},
+                    {"code": 401, "indent": 1, "parameters": ["Giovanni said about Oak."]},
+                    {"code": 101, "indent": 1, "parameters": ["The chain doesn't break."]},
+                    {"code": 401, "indent": 1, "parameters": ["It just adds links."]},
+
+                    {"code": 111, "indent": 1, "parameters": [0, 1135, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji fusion should"]},
+                    {"code": 401, "indent": 2, "parameters": ["be banned — and then you took"]},
+                    {"code": 401, "indent": 2, "parameters": ["the one tool capable of"]},
+                    {"code": 401, "indent": 2, "parameters": ["controlling the most powerful"]},
+                    {"code": 101, "indent": 2, "parameters": ["fusion ever created. I'm not"]},
+                    {"code": 401, "indent": 2, "parameters": ["judging. Just noting the"]},
+                    {"code": 401, "indent": 2, "parameters": ["distance between words and"]},
+                    {"code": 401, "indent": 2, "parameters": ["actions."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 111, "indent": 1, "parameters": [0, 1136, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji fusion should"]},
+                    {"code": 401, "indent": 2, "parameters": ["be free. And now you have the"]},
+                    {"code": 401, "indent": 2, "parameters": ["instrument of ultimate control."]},
+                    {"code": 101, "indent": 2, "parameters": ["The irony isn't lost on me."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 111, "indent": 1, "parameters": [0, 1137, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji fusion needs"]},
+                    {"code": 401, "indent": 2, "parameters": ["oversight. And now you're"]},
+                    {"code": 401, "indent": 2, "parameters": ["carrying the Master Ball with"]},
+                    {"code": 401, "indent": 2, "parameters": ["no oversight at all."]},
+                    {"code": 101, "indent": 2, "parameters": ["Who checks your work?"]},
+                    {"code": 412, "indent": 1, "parameters": []},
+                    {"code": 111, "indent": 1, "parameters": [0, 1138, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["You told Fuji you didn't know."]},
+                    {"code": 401, "indent": 2, "parameters": ["Maybe that's still true. But"]},
+                    {"code": 401, "indent": 2, "parameters": ["you're holding the Ball"]},
+                    {"code": 401, "indent": 2, "parameters": ["anyway."]},
+                    {"code": 101, "indent": 2, "parameters": ["Not knowing while holding it"]},
+                    {"code": 401, "indent": 2, "parameters": ["is just as dangerous as"]},
+                    {"code": 401, "indent": 2, "parameters": ["knowing and being wrong."]},
+                    {"code": 412, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["If you want to challenge my"]},
+                    {"code": 401, "indent": 1, "parameters": ["gym, I'll be there. I still"]},
+                    {"code": 401, "indent": 1, "parameters": ["believe in testing trainers."]},
+                    {"code": 101, "indent": 1, "parameters": ["Not because badges matter."]},
+                    {"code": 401, "indent": 1, "parameters": ["But watching someone fight"]},
+                    {"code": 401, "indent": 1, "parameters": ["tells you who they are."]},
+                    {"code": 101, "indent": 1, "parameters": ["And I want to know who you"]},
+                    {"code": 401, "indent": 1, "parameters": ["are. Before the end."]},
+
+                    {"code": 121, "indent": 1, "parameters": [1155, 1155, 0]}
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "_comment": "Page 2: Safety fallback (Sw 1130 OFF — fork not chosen). Abbreviated. Lowest priority page.",
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I'm Blaine. I'm this city's",
+                    "Gym Leader."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "This is the very room where",
+                    "scientists created a Pok\u00e9mon",
+                    "called Mewtwo. Many years ago.",
+                    "The things that happened here..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "It doesn't matter. Not to you.",
+                    "Not yet."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "You want to challenge my gym?",
+                    "I'll be there."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I still believe in testing",
+                    "trainers. Even now."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "insert_commands",
+                  "_comment": "Set Mewtwo known and mansion journals switches.",
+                  "commands": [
+                    {"code": 121, "indent": 1, "parameters": [1153, 1153, 0]},
+                    {"code": 121, "indent": 1, "parameters": [1155, 1155, 0]}
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 (Glass container — claw marks)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A large container of thick",
+                    "glass. Deep claw marks score",
+                    "the interior surface. Whatever",
+                    "was inside wanted out badly."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Something jumped out!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "The glass is cracked in a",
+                    "pattern radiating outward.",
+                    "Something struck it from",
+                    "the inside. Repeatedly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 (Glass container — residue)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A large container of thick",
+                    "glass. A faint residue coats",
+                    "the inside — organic, dried.",
+                    "A specimen label reads: \"S-14.\""
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Something jumped out!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "It looks as if something has",
+                    "been beating on it over and",
+                    "over from the inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 (Old equipment — Oak's name)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Old laboratory equipment. A",
+                    "faded label reads: \"Property",
+                    "of Prof. S. Oak — Cinnabar",
+                    "Research Institute.\""
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029 (Old equipment — power indicator)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Old monitoring equipment.",
+                    "It hasn't been used in years.",
+                    "But a small power indicator",
+                    "light is still faintly lit."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Trainer(3) (Scientist — fusion trials)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "They did more than \"questionable",
+                    "experiments\" down here. They",
+                    "ran fusion trials on captured",
+                    "Pok\u00e9mon. Dozens of them."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I came here to document what",
+                    "they left behind. Blaine won't",
+                    "talk about it. Someone has to."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"self_switch": "B"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\bYou found $300!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\b\\PN put the money in",
+                    "the wallet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Trainer(4) (Scientist — unauthorized)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Who are you? Nobody should",
+                    "be down here. I'm not even",
+                    "supposed to be here — I'm",
+                    "studying what Blaine left."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The data in these machines...",
+                    "if anyone understood what was",
+                    "recorded here, it would change",
+                    "everything about fusion theory."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "How about another experiment",
+                    "on our Pok\u00e9mon?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Great. For science!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "My experiment will have to",
+                    "wait I suppose."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "206": {
+      "name": "Cinnabar Lab Lobby",
+      "events": {
+        "2": {
+          "name": "EV002 (Lab receptionist)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the Pok\u00e9mon Lab!",
+                    "This lab was built on the",
+                    "foundation of the original",
+                    "research institute."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Blaine secured the League",
+                    "funding himself — one of the",
+                    "conditions of the restructuring",
+                    "after the incident."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Radio — researcher notes)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Sometimes I find old notes in",
+                    "the walls — literally, stuffed",
+                    "between panels. Research logs",
+                    "from the original team."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "I turn them in to Blaine.",
+                    "He burns them."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I asked him once why he won't",
+                    "let us archive them. He said,",
+                    "\"Because the last time someone",
+                    "archived my work, a city"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "almost died.\""
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "209": {
+      "name": "Cinnabar Lab Genetics",
+      "events": {
+        "6": {
+          "name": "EV006 (Email terminal)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There's an e-mail message! ..."
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The 3 legendary bird Pok\u00e9mon",
+                    "are Articuno, Zapdos, and",
+                    "Moltres. Their whereabouts",
+                    "are unknown."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "We plan to explore the cavern",
+                    "close to Cerulean. Previous",
+                    "survey teams reported unusual",
+                    "psychic readings in the area."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "From: POK\u00c9MON RESEARCH TEAM"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
