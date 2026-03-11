@@ -1,0 +1,1074 @@
+{
+  "_implementation_notes": [
+    "VERMILION CITY — Phase 2 (Complication). Maps 16, 19, 24, 25, 26, 27.",
+    "Tone: Tense, militaristic. Surge represents the authoritarian pole of",
+    "the fusion debate: fusion is a weapon, League is the authority.",
+    "",
+    "Map 24 EV002 (Surge): Full pre-battle rewrite + post-battle choice.",
+    "THE CHOICE is implemented via insert_commands after badge/TM at index 50.",
+    "Sets Variable 343 (SYNTH_SURGE_CHOICE) and Switches 1144-1146.",
+    "",
+    "Map 27 Events 6/26-28: Rival encounter on S.S. Anne rewritten for",
+    "Synthesis. Rival contrasts Surge's certainty with Misty's questioning.",
+    "",
+    "PRESERVED: Trash can puzzle (Map 24 EV017-033), fishing contest,",
+    "Bike Voucher, HM01 Cut, all trades, move tutors, Old Rod.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "16": {
+      "name": "Route 6",
+      "events": {
+        "10": {
+          "name": "Trainer(7) — Bug Catcher",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I heard Vermilion has checkpoints",
+                    "now. I hope they let my bugs",
+                    "through — they get nervous",
+                    "around Magnetons."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Trainer(4) — Hiker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Don't despair, Vermilion City",
+                    "is right ahead! You can see",
+                    "the League patrols from here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat me good, I could",
+                    "hardly do anything!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(4) — Hiker",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "One last fight before you hit",
+                    "Vermilion? There's security at",
+                    "the gate — better be ready."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You know how to handle your",
+                    "Pok\u00e9mon!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "19": {
+      "name": "Vermilion City",
+      "events": {
+        "22": {
+          "name": "EV022 (Construction NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Lt. Surge has us expanding the",
+                    "port security infrastructure.",
+                    "New walls, new gates, new cameras."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Good for business, I guess.",
+                    "Noisy, though."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 (Shore NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I found this weird stone shining",
+                    "on the sea shore earlier this",
+                    "morning. You can have it — the",
+                    "harbor's no place to linger now."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The sea, such a vast habitat",
+                    "for so many Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Even Surge's patrol boats can't",
+                    "control all of it. Beautiful,",
+                    "don't you think?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "24": {
+      "name": "Vermilion City Gym",
+      "events": {
+        "2": {
+          "name": "EV002 (Lt. Surge)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "...Another challenger. Let me",
+                    "look at you."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "You cleared Surge's gym. That",
+                    "means you got past my locks,",
+                    "my trainers, and my security.",
+                    "Not bad."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Fusion is a weapon, kid. And",
+                    "weapons belong in trained hands.",
+                    "The League's hands. My hands.",
+                    "That's not opinion. That's order."
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "...You earned it. That's all",
+                    "that matters to me. Take the",
+                    "Thunder Badge."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "The Thunder Badge cranks up",
+                    "your Pok\u00e9mon's speed.",
+                    "American-made reliability."
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "TM73 — Thunder Wave. Teach it",
+                    "to an Electric Pok\u00e9mon. Shuts",
+                    "your enemy down cold."
+                  ]
+                },
+                {
+                  "start_index": 46,
+                  "type": "text",
+                  "lines": [
+                    "You're strong, kid. That means",
+                    "you've got a say in how this",
+                    "works."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "insert_commands",
+                  "_comment": "Surge asks the player: do you agree the League should run fusion? Sets Var 343 + Switches 1144-1146.",
+                  "commands": [
+                    {"code": 101, "indent": 1, "parameters": ["One more thing. The League runs"]},
+                    {"code": 401, "indent": 1, "parameters": ["fusion. The League keeps order."]},
+                    {"code": 401, "indent": 1, "parameters": ["You agree with that?"]},
+                    {"code": 102, "indent": 1, "parameters": [["Yes, sir.", "No. I don't.", "It's more complicated than that."], 0]},
+                    {"code": 402, "indent": 1, "parameters": [0, "Yes, sir."]},
+                    {"code": 122, "indent": 2, "parameters": [343, 343, 0, 0, 1]},
+                    {"code": 121, "indent": 2, "parameters": [1144, 1144, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Good. Smart kid. Keep your head"]},
+                    {"code": 401, "indent": 2, "parameters": ["on straight and you'll go far."]},
+                    {"code": 402, "indent": 1, "parameters": [1, "No. I don't."]},
+                    {"code": 122, "indent": 2, "parameters": [343, 343, 0, 0, 2]},
+                    {"code": 121, "indent": 2, "parameters": [1145, 1145, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Then you're naive. But you"]},
+                    {"code": 401, "indent": 2, "parameters": ["earned that badge. I don't take"]},
+                    {"code": 401, "indent": 2, "parameters": ["it back."]},
+                    {"code": 101, "indent": 2, "parameters": ["Just don't come crying to me"]},
+                    {"code": 401, "indent": 2, "parameters": ["when the world bites you."]},
+                    {"code": 402, "indent": 1, "parameters": [2, "It's more complicated than that."]},
+                    {"code": 122, "indent": 2, "parameters": [343, 343, 0, 0, 3]},
+                    {"code": 121, "indent": 2, "parameters": [1146, 1146, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Complicated. Yeah. That's what"]},
+                    {"code": 401, "indent": 2, "parameters": ["people say when they don't want"]},
+                    {"code": 401, "indent": 2, "parameters": ["to pick a side."]},
+                    {"code": 101, "indent": 2, "parameters": ["World doesn't wait for you to"]},
+                    {"code": 401, "indent": 2, "parameters": ["make up your mind, kid."]},
+                    {"code": 404, "indent": 1, "parameters": []}
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you're ready",
+                    "to challenge me, soldier."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 6},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Word of advice, kid. Electric",
+                    "power is devastating — but it's",
+                    "useless against Ground types.",
+                    "Know your enemy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer(5) — Gym Trainer (Recruit)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I enlisted under Surge last",
+                    "year. \\V[5] Pok\u00e9mon are standard",
+                    "issue here. You ready for that?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "All right, I'll talk! The Lt.",
+                    "hid door switches inside",
+                    "something in the gym!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 6},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Your battle with the Lt. was",
+                    "something else. Respect."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(5) — Gym Trainer (Seasoned)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This gym is a military post,",
+                    "not a playground. Turn around",
+                    "or get shocked."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Lt. set up double locks."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Here's a tip — when you open",
+                    "the 1st lock, the 2nd is right",
+                    "next to it."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 6},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You got through the Lt.'s",
+                    "defenses. Impressive."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(5) — Gym Trainer (Veteran)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "When I was in the Army, Surge",
+                    "was my CO. Strict as they come.",
+                    "His fused Pok\u00e9mon saved our",
+                    "unit more than once."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Stairs won't come down? The",
+                    "Lt. always was cautious. Check",
+                    "the trash cans."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 6},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Keep going, kid. You've got",
+                    "the kind of strength the Lt.",
+                    "respects."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Gym Guide)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making! Lt. Surge",
+                    "is the Lightning American —",
+                    "expert on \\V[5] Pok\u00e9mon! This",
+                    "gym runs like a military base."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Surge is cautious — you'll",
+                    "have to break a code to get",
+                    "to him! Check the trash cans."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making! Lt. Surge",
+                    "is the Lightning American —",
+                    "expert on \\V[5] Pok\u00e9mon! This",
+                    "gym runs like a military base."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Surge is cautious — you'll",
+                    "have to break a code to get",
+                    "to him!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 6},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Whew! That match was \\V[5]!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "25": {
+      "name": "Pok\u00e9mon Fan Club",
+      "events": {
+        "2": {
+          "name": "EV002 (Seel Lover)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I just love my Seel! They wanted",
+                    "to fuse it at the lab, but I",
+                    "said no. It squeals when I hug",
+                    "it — why would I change that?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Fan Club Member)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Fan Club is open to all,",
+                    "fused or unfused. We don't",
+                    "judge here. Pok\u00e9mon are",
+                    "Pok\u00e9mon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Chairman — Rapidash Rant + Bike Voucher)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I chair the Pok\u00e9mon Fan Club!",
+                    "I have collected over 100",
+                    "Pok\u00e9mon!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Unlike most trainers, I like my",
+                    "Pok\u00e9mon pure-bred. No fusions",
+                    "for this old man! My Rapidash",
+                    "is perfect as she is."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "So... Did you come visit to",
+                    "hear about my Pok\u00e9mon?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Good! Then listen up! My",
+                    "favorite Rapidash..."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "It...cute...lovely...smart...",
+                    "plus...amazing...you think so?"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "...oh yes...it...stunning...",
+                    "kindly...love it!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Hug it...when...sleeping...",
+                    "warm and cuddly...",
+                    "spectacular...ravishing..."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "She's not a weapon. She's my",
+                    "friend. ...Oops! Look at the",
+                    "time! I kept you too long!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Thanks for hearing me out!",
+                    "I want you to have this!"
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "Exchange that for a bicycle",
+                    "in Cerulean City!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "Don't worry about me, my",
+                    "Fearow will fly me anywhere!",
+                    "I don't need a bicycle!"
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "I hope you like cycling!"
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "Oh. Come back when you want",
+                    "to hear my story!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 77},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Hello, \\PN! Come to hear about",
+                    "my Pok\u00e9mon again? They're all",
+                    "natural — no fusions. And",
+                    "they're perfect that way."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "26": {
+      "name": "Harbour",
+      "events": {
+        "3": {
+          "name": "EV003 (Ticket Guard — Left)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Papers. S.S. Anne ticket",
+                    "holders only. League security",
+                    "protocol — move along."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Ticket Guard — Right)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "No ticket, no boarding. Surge's",
+                    "orders. Every passenger gets",
+                    "checked."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Harbor NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The S.S. Anne only comes once",
+                    "a year. They say it carries",
+                    "League dignitaries and wealthy",
+                    "trainers. Quite the event."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "27": {
+      "name": "S.S. Anne — Main Deck",
+      "events": {
+        "6": {
+          "name": "EV006 (Rival Encounter — Variant A)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 219},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Bonjour, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Nice outfit. You blend right",
+                    "in with the League crowd."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "How's the Pok\u00e9dex coming? I've",
+                    "got 40 kinds already! Get out",
+                    "in the grass and catch up."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "There's a Cut Master on board.",
+                    "Seasick old man — but Cut is",
+                    "useful. Go find him."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "text",
+                  "lines": [
+                    "The Cut Master's still on",
+                    "board. Seasick, but useful.",
+                    "Go find him."
+                  ]
+                },
+                {
+                  "start_index": 49,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Surge isn't like Misty. She",
+                    "was questioning things. He's",
+                    "not questioning anything —",
+                    "he's just enforcing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 (Crew NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The passengers are restless.",
+                    "Even the harbor felt like a",
+                    "checkpoint. Stay sharp."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 (Rival Encounter — Variant B)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 219},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Bonjour, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Nice outfit. You blend right",
+                    "in with the League crowd."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "How's the Pok\u00e9dex coming? I've",
+                    "got 40 kinds already! Get out",
+                    "in the grass and catch up."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "There's a Cut Master on board.",
+                    "Seasick old man — but Cut is",
+                    "useful. Go find him."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Surge isn't like Misty. She",
+                    "was questioning things. He's",
+                    "not questioning anything —",
+                    "he's just enforcing."
+                  ]
+                },
+                {
+                  "start_index": 54,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                },
+                {
+                  "start_index": 76,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 (Rival Encounter — Variant C)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 219},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Bonjour, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Nice outfit. You blend right",
+                    "in with the League crowd."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "How's the Pok\u00e9dex coming? I've",
+                    "got 40 kinds already! Get out",
+                    "in the grass and catch up."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "There's a Cut Master on board.",
+                    "Seasick old man — but Cut is",
+                    "useful. Go find him."
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "Surge isn't like Misty. She",
+                    "was questioning things. He's",
+                    "not questioning anything —",
+                    "he's just enforcing."
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 (Rival Encounter — Variant D)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 219},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Bonjour, \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Nice outfit. You blend right",
+                    "in with the League crowd."
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "How's the Pok\u00e9dex coming? I've",
+                    "got 40 kinds already! Get out",
+                    "in the grass and catch up."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "There's a Cut Master on board.",
+                    "Seasick old man — but Cut is",
+                    "useful. Go find him."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Surge isn't like Misty. She",
+                    "was questioning things. He's",
+                    "not questioning anything —",
+                    "he's just enforcing."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Cut Master. Seasick old man.",
+                    "Still on board. Go."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
