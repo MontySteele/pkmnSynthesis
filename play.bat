@@ -1,6 +1,6 @@
 @echo off
 REM play.bat — Windows launcher for Pokemon: Synthesis
-REM Prerequisites: Git for Windows, Ruby (https://rubyinstaller.org/)
+REM Automatically installs Git and Ruby if missing (via winget on Windows 10/11)
 
 setlocal enabledelayedexpansion
 
@@ -14,18 +14,35 @@ echo   Pokemon: Synthesis — Windows Launcher
 echo ===============================================
 echo.
 
-REM ── Check prerequisites ──
-where git >nul 2>&1 || (
-    echo [ERROR] Git is not installed. Download from https://git-scm.com/download/win
-    pause
-    exit /b 1
-)
+REM ── Check prerequisites, auto-install if missing ──
+set "MISSING=0"
+where git >nul 2>&1 || set "MISSING=1"
+where ruby >nul 2>&1 || set "MISSING=1"
 
-where ruby >nul 2>&1 || (
-    echo [ERROR] Ruby is not installed. Download from https://rubyinstaller.org/
-    echo         Choose "Ruby+Devkit" and run the default install.
-    pause
-    exit /b 1
+if "!MISSING!"=="1" (
+    echo [INFO] Missing dependencies detected. Running setup...
+    echo.
+    call "%PROJECT_DIR%setup_windows.bat"
+    if errorlevel 1 (
+        echo [ERROR] Setup failed. See messages above.
+        pause
+        exit /b 1
+    )
+    REM Re-check after setup — if they were just installed, we need a new shell
+    where git >nul 2>&1 || (
+        echo.
+        echo [INFO] Please close this window and double-click play.bat again.
+        echo        Git/Ruby were just installed and need a fresh terminal to work.
+        pause
+        exit /b 0
+    )
+    where ruby >nul 2>&1 || (
+        echo.
+        echo [INFO] Please close this window and double-click play.bat again.
+        echo        Git/Ruby were just installed and need a fresh terminal to work.
+        pause
+        exit /b 0
+    )
 )
 
 REM ── Clone game data if needed ──
