@@ -4,27 +4,30 @@ A narrative overhaul mod for Pokemon Infinite Fusion, replacing dialogue across 
 
 ## Quick Start
 
-### Prerequisites
+### Windows
 
-**Ubuntu/Debian:**
+**Prerequisites:** [Git for Windows](https://git-scm.com/download/win) and [Ruby](https://rubyinstaller.org/) (choose "Ruby+Devkit").
+
+Double-click `play.bat`, or from Git Bash:
 ```bash
-sudo apt install git build-essential cmake meson autoconf automake libtool \
-  pkg-config ruby bison zlib1g-dev libbz2-dev xorg-dev libgl1-mesa-dev \
-  libasound2-dev libpulse-dev xxd
+./build_and_launch.sh
 ```
 
-**Fedora:**
+This will clone the game data, inject all Synthesis dialogue, and launch `Game.exe`.
+
+### Linux
+
+**Prerequisites (Ubuntu/Debian):**
 ```bash
-sudo dnf install git @development-tools gcc g++ libstdc++-static cmake meson \
-  autoconf automake libtool pkg-config ruby bison zlib-devel bzip2-devel \
-  xorg-x11-server-devel libXext-devel mesa-libGL-devel alsa-lib-devel \
-  pulseaudio-libs-devel perl-FindBin vim-common
+sudo apt install git ruby
 ```
 
-### Build and Play
+**Prerequisites (Fedora):**
+```bash
+sudo dnf install git ruby
+```
 
 ```bash
-# Full setup: clone game data, build mkxp-z, inject dialogue, and launch
 ./build_and_launch.sh
 ```
 
@@ -35,9 +38,7 @@ This will:
 4. Inject all Synthesis dialogue into the game data
 5. Launch the game
 
-If the automatic mkxp-z download doesn't work, you can also:
-- Download it manually from https://github.com/mkxp-z/mkxp-z/releases and place the binary at `mkxp-z-bin/mkxp-z`
-- Or install Wine (`sudo apt install wine`) as a fallback — the launcher detects it automatically
+If mkxp-z doesn't work, install Wine as a fallback (`sudo apt install wine`) — the launcher detects it automatically.
 
 ### Other Options
 
@@ -48,21 +49,12 @@ If the automatic mkxp-z download doesn't work, you can also:
 # Launch without rebuilding or re-injecting
 ./build_and_launch.sh --launch
 
-# Clone + build mkxp-z without launching
+# Clone + get mkxp-z without launching (Linux only)
 ./build_and_launch.sh --build-only
 
 # Preview what injection would do without modifying files
 ./build_and_launch.sh --dry-run
 ```
-
-### Using Wine (alternative)
-
-If you can't build mkxp-z, the game can also run via Wine:
-```bash
-sudo apt install wine
-./build_and_launch.sh --launch
-```
-The launcher will automatically fall back to Wine if no mkxp-z binary is found.
 
 ## Project Structure
 
@@ -70,12 +62,15 @@ The launcher will automatically fall back to Wine if no mkxp-z binary is found.
 dialogue_changes/    # JSON files defining dialogue modifications (59 files)
 tools/               # Ruby scripts for injection, validation, and trainer editing
 docs/                # Story bible, city plans, technical docs (SPOILERS)
-build_and_launch.sh  # Main entry point
+build_and_launch.sh  # Main entry point (cross-platform)
+play.bat             # Windows launcher (double-click to play)
 ```
 
 ## For Playtesters
 
-Just run `./build_and_launch.sh` and play. Stay out of `docs/` and `dialogue_changes/` to avoid spoilers.
+**Windows:** Double-click `play.bat` and play. **Linux:** Run `./build_and_launch.sh`.
+
+Stay out of `docs/` and `dialogue_changes/` to avoid spoilers.
 
 If something looks wrong in-game, note the map name and NPC, and file an issue.
 
