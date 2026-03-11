@@ -12,21 +12,21 @@
 | Total map files | 809 | -- |
 | Maps with dialogue | 752 | -- |
 | Maps without dialogue | 57 | -- |
-| **Kanto story maps (in scope)** | **~390** | -- |
-| Maps DONE (injected) | 18 | 2.4% of dialogue maps |
-| Maps READY (JSON written, not yet injected) | 219 | 29.1% |
-| Maps IN_PROGRESS | 0 | 0% |
-| Maps PLANNED (city plan exists, no JSON) | 34 | ~4.5% |
-| Maps NOT_STARTED | 41 | ~5.5% |
-| Maps NO_DIALOGUE | 31 | ~4.1% |
-| Maps SPECIAL_LOGIC | 32 | ~4.3% |
-| Non-Kanto / SKIP | 43 | -- |
+| **Kanto story maps (in scope)** | **418** | -- |
+| Maps DONE (injected) | 17 | 4.1% of in-scope |
+| Maps READY (JSON written, not yet injected) | 247 | 59.1% |
+| Maps PLANNED (city plan exists, no JSON) | 33 | 7.9% |
+| Maps NOT_STARTED | 11 | 2.6% |
+| Maps NO_DIALOGUE | 31 | 7.4% |
+| Maps SPECIAL_LOGIC | 31 | 7.4% |
+| SKIP (deprecated/backup maps) | 41 | 9.8% |
+| Non-Kanto (Johto, Sevii, system, debug) | 391 | -- |
 | Events with dialogue | 8,030 | -- |
-| Events modified | 449 | 5.6% |
+| Events modified | 1,310 | 16.3% |
 | Dialogue blocks total | 46,417 | -- |
-| Dialogue blocks modified | 1,718 | 3.7% |
+| Dialogue blocks modified | 3,382 | 7.3% |
 
-### dialogue_changes files (39):
+### dialogue_changes files (41):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
@@ -69,6 +69,8 @@
 | `rock_tunnel_fill.json` | 154, 256, 349, 350, 391, 495 | Ready |
 | `fuchsia_extras_fill.json` | 107, 712, 713, 714, 804 | Ready |
 | `celadon_cycling_fill.json` | 146, 193, 204, 517, 518 | Ready |
+| `crimson_city_fill.json` | 167, 168, 169, 170, 176, 177 | Ready |
+| `postgame_fill.json` | 140, 197, 198, 398, 399, 720, 722, 723, 724 | Ready |
 
 ### City plan docs (9):
 
@@ -219,7 +221,7 @@
 | 496 | Mt. Moon (connector) | 8 | 11 | NO_DIALOGUE |
 | 515 | Mt. Moon Square (interior) | 6 | 15 | READY |
 | 699 | Mt. Moon (deep) | 5 | 19 | READY |
-| 827 | Mt. Moon Summit | 44 | 69 | NOT_STARTED |
+| 827 | Mt. Moon Summit | 44 | 69 | READY |
 | 828 | Mt. Moon Observatory | 10 | 48 | READY |
 | 830 | Nightsky | 118 | 126 | READY |
 | 831 | Nightsky (event) | 1 | 3 | READY |
@@ -381,8 +383,8 @@
 | 467 | Pokemon Tower F5 | 12 | 53 | SPECIAL_LOGIC |
 | 468 | Pokemon Tower F6 | 5 | 19 | SPECIAL_LOGIC |
 | 469 | Pokemon Tower F7 (Mr. Fuji) | 10 | 104 | SPECIAL_LOGIC |
-| 100 | Spooky chamber | 5 | 38 | NOT_STARTED |
-| 142 | Pokemon Tower B1 | 3 | 4 | NOT_STARTED |
+| 100 | Spooky chamber | 5 | 38 | READY |
+| 142 | Pokemon Tower B1 | 3 | 4 | READY |
 | 556 | Pokemon Tower F3 (alt) | 8 | 8 | SKIP |
 
 ---
@@ -720,16 +722,16 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 140 | Diglett's Cave (entrance) | 7 | 15 | NOT_STARTED |
-| 398 | Diglett's Cave (middle) | 4 | 12 | NOT_STARTED |
-| 399 | Diglett's Cave (exit) | 2 | 6 | NOT_STARTED |
+| 140 | Diglett's Cave (entrance) | 7 | 15 | READY |
+| 398 | Diglett's Cave (middle) | 4 | 12 | READY |
+| 399 | Diglett's Cave (exit) | 2 | 6 | READY |
 
 ### Power Plant
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 197 | Power Plant (exterior) | 10 | 17 | NOT_STARTED |
-| 198 | Power Plant (interior) | 74 | 159 | NOT_STARTED |
+| 197 | Power Plant (exterior) | 10 | 17 | READY |
+| 198 | Power Plant (interior) | 74 | 159 | READY |
 | 144 | Power Plant (generator) | 10 | 16 | NOT_STARTED |
 | 785 | Power Plant.old | 20 | 100 | SKIP |
 
@@ -737,10 +739,10 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 720 | \PN's Room? | 11 | 11 | NOT_STARTED |
-| 722 | \PN's House? | 7 | 7 | NOT_STARTED |
-| 723 | Pallet Town? | 12 | 28 | NOT_STARTED |
-| 724 | Oak's Lab? | 23 | 87 | NOT_STARTED |
+| 720 | \PN's Room? | 11 | 11 | READY |
+| 722 | \PN's House? | 7 | 7 | READY |
+| 723 | Pallet Town? | 12 | 28 | READY |
+| 724 | Oak's Lab? | 23 | 87 | READY |
 | 719 | dream sequence (hub) | 0 | 0 | SKIP |
 
 ---
@@ -749,14 +751,14 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 167 | Crimson City (overworld) | 26 | 90 | NOT_STARTED |
+| 167 | Crimson City (overworld) | 26 | 90 | READY |
 | 065 | Pokemon Center | 6 | 48 | NO_DIALOGUE |
 | 119 | PokeMart | 22 | 23 | NOT_STARTED |
-| 168 | Crimson City (house) | 2 | 18 | NOT_STARTED |
-| 169 | Crimson City (house) | 5 | 11 | NOT_STARTED |
-| 170 | Crimson City (house) | 5 | 24 | NOT_STARTED |
-| 176 | Crimson Hotel | 5 | 49 | NOT_STARTED |
-| 177 | Crimson Hotel (rooms) | 6 | 101 | NOT_STARTED |
+| 168 | Crimson City (house) | 2 | 18 | READY |
+| 169 | Crimson City (house) | 5 | 11 | READY |
+| 170 | Crimson City (house) | 5 | 24 | READY |
+| 176 | Crimson Hotel | 5 | 49 | READY |
+| 177 | Crimson Hotel (rooms) | 6 | 101 | READY |
 | 523 | Waterfall Cave | 3 | 5 | NOT_STARTED |
 | 805 | Waterfall Cave (alt) | 3 | 5 | NOT_STARTED |
 
@@ -766,12 +768,12 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 819 | Halfmoon Island | 1 | 14 | NOT_STARTED |
-| 821 | Newmoon Island | 4 | 27 | NOT_STARTED |
-| 822 | Moonlit Forest | 29 | 107 | NOT_STARTED |
-| 823 | Fullmoon Island | 3 | 21 | NOT_STARTED |
-| 824 | Moonlit Forest (deep) | 58 | 174 | NOT_STARTED |
-| 835 | Newmoon Island (inner) | 4 | 27 | NOT_STARTED |
+| 819 | Halfmoon Island | 1 | 14 | READY |
+| 821 | Newmoon Island | 4 | 27 | READY |
+| 822 | Moonlit Forest | 29 | 107 | READY |
+| 823 | Fullmoon Island | 3 | 21 | READY |
+| 824 | Moonlit Forest (deep) | 58 | 174 | READY |
+| 835 | Newmoon Island (inner) | 4 | 27 | READY |
 
 ---
 
@@ -845,34 +847,34 @@ Maps: 033, 067-071, 073, 094, 100, 118, 129, 131, 134, 139, 150, 157, 160,
 
 ## Coverage by Progression Phase
 
-| Phase | Description | Total Maps | DONE | READY | PLANNED | NOT_STARTED | SPECIAL_LOGIC | SKIP |
-|-------|-------------|------------|------|-------|---------|-------------|---------------|------|
-| 0 | Pallet Town (Opening) | 9 | 5 | 4 | 0 | 0 | 0 | 0 |
-| 1a | Route 1 | 3 | 1 | 2 | 0 | 0 | 0 | 0 |
-| 1b | Viridian + Forest | 17 | 6 | 8 | 0 | 3 | 0 | 0 |
-| 1c | Route 2 | 8 | 0 | 4 | 0 | 4 | 0 | 0 |
-| 1d | Pewter City | 12 | 2 | 10 | 0 | 0 | 0 | 0 |
-| 1e | Route 3 | 2 | 0 | 0 | 1 | 1 | 0 | 0 |
-| 1f | Mt. Moon | 18 | 0 | 9 | 0 | 5 | 0 | 4 |
-| 1g | Route 4 | 4 | 0 | 1 | 0 | 2 | 0 | 1 |
-| 1h | Cerulean + Rts 24/25 | 21 | 0 | 15 | 3 | 1 | 0 | 2 |
-| 2a | Route 5 + Underground | 6 | 0 | 2 | 2 | 2 | 0 | 0 |
-| 2b | Vermilion + Route 6 | 25 | 0 | 14 | 5 | 2 | 0 | 4 |
-| 2c | SS Anne | 11 | 0 | 1 | 0 | 0 | 8 | 2 |
-| 2d | Rt 9/10, Rock Tunnel | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
-| 2e | Lavender + Pkmn Tower | 19 | 0 | 9 | 0 | 2 | 7 | 1 |
-| 2f | Route 8 + Underground | 4 | 0 | 3 | 0 | 0 | 0 | 1 |
-| 2g | Celadon + Rts 7/16-18 | 63 | 0 | 9 | 0 | 51 | 0 | 3 |
-| 3 | Saffron + Silph Co | 51 | 1 | 3 | 30 | 2 | 12 | 3 |
-| 4a | Fuchsia + Safari + Rts 12-15 | 42 | 0 | 6 | 13 | 14 | 0 | 9 |
-| 4b | Cinnabar + Mansion | 38 | 0 | 6 | 17 | 7 | 0 | 8 |
-| 4c | Viridian Return + Rts 22/23 | 4 | 1 | 0 | 2 | 0 | 1 | 0 |
-| 4d | Victory Road + Indigo | 12 | 1 | 0 | 9 | 0 | 1 | 1 |
-| 5 | Postgame | 16 | 0 | 1 | 0 | 11 | 2 | 2 |
-| -- | Crimson City | 10 | 0 | 0 | 0 | 10 | 0 | 0 |
-| -- | Moon Islands | 6 | 0 | 0 | 0 | 6 | 0 | 0 |
-| -- | Non-Kanto/System/SKIP | ~300 | 0 | 0 | 0 | 0 | 0 | ~300 |
-| **TOTAL** | | **~809** | **17** | **107** | **82** | **133** | **31** | **~330** |
+| Phase | Description | Total | DONE | READY | PLANNED | NOT_STARTED | NO_DIALOGUE | SPECIAL_LOGIC | SKIP |
+|-------|-------------|-------|------|-------|---------|-------------|-------------|---------------|------|
+| 1 | Pallet Town | 9 | 5 | 4 | 0 | 0 | 0 | 0 | 0 |
+| 2 | Route 1 | 3 | 1 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 3 | Viridian City + Viridian Forest | 17 | 6 | 8 | 0 | 0 | 3 | 0 | 0 |
+| 4 | Route 2 | 8 | 0 | 4 | 0 | 0 | 4 | 0 | 0 |
+| 5 | Pewter City | 12 | 2 | 10 | 0 | 0 | 0 | 0 | 0 |
+| 6 | Route 3 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 7 | Mt. Moon | 18 | 0 | 10 | 0 | 0 | 4 | 0 | 4 |
+| 8 | Route 4 | 4 | 0 | 3 | 0 | 0 | 0 | 0 | 1 |
+| 9 | Cerulean City + Routes 24, 25 | 21 | 0 | 15 | 3 | 0 | 1 | 0 | 2 |
+| 10 | Route 5 + Underground | 6 | 0 | 2 | 2 | 0 | 2 | 0 | 0 |
+| 11 | Vermilion City + Route 6 | 25 | 0 | 14 | 5 | 0 | 2 | 0 | 4 |
+| 12 | SS Anne | 11 | 0 | 1 | 0 | 0 | 0 | 8 | 2 |
+| 13 | Route 9, 10, Rock Tunnel | 10 | 0 | 6 | 0 | 2 | 2 | 0 | 0 |
+| 14 | Lavender Town + Pokemon Tower | 19 | 0 | 11 | 0 | 0 | 0 | 7 | 1 |
+| 15 | Route 8 + Underground | 4 | 0 | 3 | 0 | 0 | 0 | 0 | 1 |
+| 16 | Celadon City + Routes 7, 16, 17, 18 | 63 | 0 | 55 | 0 | 0 | 5 | 0 | 3 |
+| 17 | Saffron City + Silph Co. | 51 | 1 | 31 | 4 | 0 | 0 | 12 | 3 |
+| 18 | Fuchsia City + Safari Zone + Routes 12-15 | 42 | 0 | 21 | 5 | 3 | 4 | 0 | 9 |
+| 19 | Cinnabar Island + Pokemon Mansion | 38 | 0 | 23 | 3 | 1 | 3 | 0 | 8 |
+| 20 | Viridian City (Return) | 4 | 1 | 0 | 2 | 0 | 0 | 1 | 0 |
+| 21 | Victory Road + Indigo Plateau | 12 | 1 | 0 | 9 | 0 | 0 | 1 | 1 |
+| 22 | Postgame | 16 | 0 | 10 | 0 | 2 | 0 | 2 | 2 |
+| 23 | Crimson City | 10 | 0 | 6 | 0 | 3 | 1 | 0 | 0 |
+| 24 | Moon Islands | 6 | 0 | 6 | 0 | 0 | 0 | 0 | 0 |
+| -- | Non-Kanto/System | 391 | 0 | 0 | 0 | 0 | 0 | 0 | 391 |
+| **TOTAL** | | **802** | **17** | **247** | **33** | **11** | **31** | **31** | **432** |
 
 ---
 
