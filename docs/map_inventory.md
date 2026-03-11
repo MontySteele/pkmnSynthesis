@@ -134,7 +134,7 @@
 | 711 | Viridian City (interior) | 23 | 88 | READY |
 | 746 | Viridian City (interior) | 5 | 10 | READY |
 | 038 | Trainer House | 4 | 429 | READY |
-| 375 | Trainer House (interior) | 5 | 192 | NOT_STARTED |
+| 375 | Trainer House (interior) | 5 | 192 | NO_DIALOGUE |
 | 040 | Viridian River | 8 | 103 | NO_DIALOGUE |
 | 669 | Viridian River (interior) | 2 | 5 | READY |
 | 655 | Hidden Forest | 8 | 8 | NO_DIALOGUE |
@@ -186,7 +186,7 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 490 | Route 3 | 29 | 319 | PLANNED |
-| 379 | Pokemon Center | 9 | 88 | NOT_STARTED |
+| 379 | Pokemon Center | 9 | 88 | READY |
 
 ---
 
