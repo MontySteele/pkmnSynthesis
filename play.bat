@@ -1,6 +1,6 @@
 @echo off
-REM play.bat — Windows launcher for Pokemon: Synthesis
-REM Automatically installs Git and Ruby if missing (via winget on Windows 10/11)
+REM play.bat - Windows launcher for Pokemon: Synthesis
+REM Automatically installs Git and Ruby if missing
 
 setlocal enabledelayedexpansion
 
@@ -10,11 +10,11 @@ set "DATA_DIR=%GAME_DIR%\Data"
 set "CHANGES_DIR=%PROJECT_DIR%dialogue_changes"
 
 echo ===============================================
-echo   Pokemon: Synthesis — Windows Launcher
+echo   Pokemon: Synthesis - Windows Launcher
 echo ===============================================
 echo.
 
-REM ── Check prerequisites, auto-install if missing ──
+REM -- Check prerequisites, auto-install if missing --
 set "MISSING=0"
 where git >nul 2>&1 || set "MISSING=1"
 where ruby >nul 2>&1 || set "MISSING=1"
@@ -28,7 +28,7 @@ if "!MISSING!"=="1" (
         pause
         exit /b 1
     )
-    REM Re-check after setup — if they were just installed, we need a new shell
+    REM Re-check after setup - need a new shell for PATH changes
     where git >nul 2>&1 || (
         echo.
         echo [INFO] Please close this window and double-click play.bat again.
@@ -45,7 +45,7 @@ if "!MISSING!"=="1" (
     )
 )
 
-REM ── Clone game data if needed ──
+REM -- Clone game data if needed --
 if exist "%DATA_DIR%" (
     echo [OK] Game data already present.
 ) else (
@@ -60,11 +60,10 @@ if exist "%DATA_DIR%" (
     echo [OK] Game data cloned.
 )
 
-REM ── Back up originals on first run ──
+REM -- Back up originals on first run --
 if not exist "%GAME_DIR%\.originals" (
     echo [INFO] Backing up original game files...
     mkdir "%GAME_DIR%\.originals"
-    REM Back up all map files and trainers.dat
     for %%f in ("%DATA_DIR%\Map*.rxdata") do (
         if not exist "%GAME_DIR%\.originals\%%~nxf" copy "%%f" "%GAME_DIR%\.originals\%%~nxf" >nul
     )
@@ -74,18 +73,18 @@ if not exist "%GAME_DIR%\.originals" (
     echo [OK] Originals backed up.
 )
 
-REM ── Restore originals before injection ──
+REM -- Restore originals before injection --
 echo [INFO] Restoring original files before injection...
 for %%f in ("%GAME_DIR%\.originals\*.rxdata") do copy "%%f" "%DATA_DIR%\%%~nxf" >nul
 if exist "%GAME_DIR%\.originals\trainers.dat" copy "%GAME_DIR%\.originals\trainers.dat" "%DATA_DIR%\trainers.dat" >nul
 
-REM ── Add Synthesis trainer entries ──
+REM -- Add Synthesis trainer entries --
 if exist "%PROJECT_DIR%tools\add_trainer.rb" (
     echo [INFO] Adding Synthesis trainer entries...
     ruby "%PROJECT_DIR%tools\add_trainer.rb" "%GAME_DIR%"
 )
 
-REM ── Inject dialogue ──
+REM -- Inject dialogue --
 echo [INFO] Injecting Synthesis dialogue...
 for %%f in ("%CHANGES_DIR%\*.json") do (
     echo [INFO] Injecting: %%~nxf
@@ -98,7 +97,7 @@ for %%f in ("%CHANGES_DIR%\*.json") do (
 )
 echo [OK] Dialogue injection complete.
 
-REM ── Launch ──
+REM -- Launch --
 if exist "%GAME_DIR%\Game.exe" (
     echo.
     echo [INFO] Launching Pokemon: Synthesis...
