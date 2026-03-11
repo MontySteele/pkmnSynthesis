@@ -13,7 +13,7 @@ Viridian City is a threshold. The player has just left Pallet Town — a tiny pl
 
 Three things anchor the initial visit narratively:
 
-1. **The closed gym.** The player sees Giovanni's name on the sign (or, in some map variants, just "?") and learns the Leader has been absent for a long time. This is pure foreshadowing — a question mark planted early that pays off much later. NPCs should treat this as a mundane annoyance, not a conspiracy. The gym is just... closed. Nobody knows why and nobody is especially alarmed.
+1. **The closed gym.** The player sees Giovanni's name on the sign and learns the Leader has been absent for a long time. This is pure foreshadowing — his name is right there in plain sight, a detail the player may not even register on first visit but will remember later. NPCs should treat this as a mundane annoyance, not a conspiracy. The gym is just... closed. Nobody knows why and nobody is especially alarmed.
 
 2. **The PokeMart and Oak's Parcel.** This is a mechanical quest inherited from Pallet Town. The player picks up Oak's parcel and receives DNA Splicers as a bonus. The Mart clerk should feel like a normal shopkeeper, not a tutorial robot. Keep the parcel handoff quick and natural.
 
@@ -50,7 +50,7 @@ Maps 79, 710, and 711 appear to be variants of the same outdoor city map (possib
 | EV032 | Trainer House Sign | (Maps 710/711 only) | Keep as-is. |
 | EV033 | Pokemon Center Sign | Standard sign | Keep as-is. |
 | EV034 | PokeMart Sign | Standard sign | Keep as-is. |
-| EV035 | Gym Sign | "Viridian City Gym / Gym Leader: Giovanni" (Map 79) or "Gym Leader: ?" (Maps 710/711) | **Important.** Map 79 names Giovanni; 710/711 use "?". Decide which to use. See Dialogue Direction. |
+| EV035 | Gym Sign | "Viridian City Gym / Gym Leader: Giovanni" | **Important.** Giovanni's name IS shown openly on the sign across all map variants. Surely the people in the city know who their leader is. |
 | EV036 | Wooden Plank NPC | Side quest: battle for wooden planks | Mechanical side quest. Rewrite dialogue but preserve structure. |
 
 ### Map 80: Pokemon Center — 9 text events
@@ -207,7 +207,7 @@ All events here are for the RETURN VISIT (trainers, Giovanni fight, gym guide). 
 - **Do not use Pages 1-2 for initial visit.** Those reference Cinnabar and Johto — they are return-visit content triggered by progression switches.
 
 **EV035 — Gym Sign:**
-- Maps 710/711 use "Gym Leader: ?" which is better for Synthesis. The player should not learn Giovanni's name from a sign — they should learn it when it matters (Silph Co. or the return visit). **Use the "?" variant.**
+- Giovanni's name IS shown openly on the sign across all map variants. Surely the people in the city know who their leader is. The name being visible in plain sight from the start is more effective than hiding it — on replay, the player realizes the answer was right there all along.
 
 **Map 84, EV004 — Gym Neighbor:**
 - See City NPCs section above. This is the strongest foreshadowing NPC. The key line is that the League knows and does nothing — this mirrors the Mewtwo cover-up at a micro scale, though the player cannot possibly know that yet.
@@ -340,7 +340,7 @@ Post-game Viridian Forest NPC. References Azalea Town (Johto) and offers rematch
 
 ### 6e. Gym Sign — Name Decision
 
-The gym sign currently reads "Gym Leader: Giovanni" on Map 79 and "Gym Leader: ?" on Maps 710/711. **Recommendation: use "?" for the initial visit across all map variants.** Giovanni's identity should be a reveal, not signage. If Map 79 is used for the initial visit, the sign text needs to be changed to match 710/711. On the return visit, the sign can update to show Giovanni's name (or can remain "?" with NPCs providing the name verbally).
+The gym sign should read "Gym Leader: Giovanni" across all map variants (79, 710, 711). **Giovanni's name IS shown openly on the sign.** Surely the people in the city know who their leader is. The sign is not a reveal mechanism — it is a mundane civic detail that the player may not even register on first visit. On replay, the fact that his name was right there all along is more effective than a mysterious "?" that telegraphs a twist. Maps 710/711 should be updated from "?" to "Giovanni" to match Map 79.
 
 ### 6f. Mew Encounter (Map 40)
 

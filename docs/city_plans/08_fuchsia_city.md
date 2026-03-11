@@ -6,6 +6,20 @@
 
 ---
 
+## Creative Direction (Revised)
+
+**Tone: Direct Heat.** Fuchsia doesn't do subtlety. By this point the player has (probably) chosen their course; all Fuchsia cares about is whether they have what it takes to survive under the cost of their chosen ideals.
+
+Key principles:
+- NPCs know people who have died to wild Pokémon attacks — this is personal, not abstract
+- The "strength good, hesitation bad" framework is explicit: people respect resolve, any resolve
+- Koga embodies this — he doesn't care which side you're on, he cares if you're strong enough
+- The Safari Zone isn't just conservation — it's a reminder that nature doesn't negotiate
+- NPC dialogue should have urgency and lived experience, not philosophical musing
+- Name the dead. Reference specific losses. Make the stakes visceral, not theoretical.
+
+---
+
 ## 1. Overview
 
 Fuchsia City is the narrative exhalation after the Silph Co. crisis. Where Saffron was dense with plot, ideology, and consequence, Fuchsia is sparse and practical. Koga doesn't care about the fusion debate. The Safari Zone raises a new dimension of the debate — ecology, not politics — through a Conservation Ranger rather than through speeches. And the rival encounter, if it fires, is a quiet, devastating check-in that recalibrates the player's relationship with Blue based on the Fork.

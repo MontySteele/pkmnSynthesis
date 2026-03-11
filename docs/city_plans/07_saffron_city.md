@@ -4,6 +4,19 @@
 
 ---
 
+## Creative Direction (Revised)
+
+**Sabrina as Prophet/Test.** Sabrina foresaw the player's journey as the deciding factor between Oak's and Giovanni's ideals. She knew the player would come at this pivotal moment. She is the player's "test" — to see if they have what it takes to live up to their fate.
+
+Key principles:
+- Sabrina's prescience isn't just about sensing Mewtwo — she foresaw the player specifically
+- Her gym challenge IS the test: "I saw you coming. I need to know if you're ready."
+- She justifies opening up because she already knows the player's importance
+- This gives her dialogue a weight and authority that goes beyond typical gym leader exposition
+- Post-battle, she should confirm the path the player has chosen and warn of what's ahead
+
+---
+
 ## 1. Overview
 
 Saffron City is the most important area in the game. Everything before it is buildup; everything after it is consequence. This is where the Rocket arc climaxes, Giovanni's identity is revealed, the Master Ball enters play, and the player makes THE FORK: the single choice that defines the rest of the game.
