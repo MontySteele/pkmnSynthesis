@@ -204,7 +204,7 @@ generate_config() {
     "frameSkip": true,
     "syncToRefreshrate": false,
     "solidFonts": false,
-    "subImageFix": false,
+    "subImageFix": true,
     "enableHires": false,
     "textInputIndications": "PasswordEntry",
     "gameControllerDBPath": "",
@@ -227,7 +227,9 @@ generate_config() {
     "pathCache": true,
     "useScriptNames": false,
     "encryptedGraphics": false,
-    "encryptedAudio": false
+    "encryptedAudio": false,
+    "midiSoundFont": "",
+    "vsync": true
 }
 MKXP_CONFIG
 
