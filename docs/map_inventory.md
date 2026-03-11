@@ -135,9 +135,9 @@
 | 746 | Viridian City (interior) | 5 | 10 | READY |
 | 038 | Trainer House | 4 | 429 | READY |
 | 375 | Trainer House (interior) | 5 | 192 | NOT_STARTED |
-| 040 | Viridian River | 8 | 103 | NOT_STARTED |
+| 040 | Viridian River | 8 | 103 | NO_DIALOGUE |
 | 669 | Viridian River (interior) | 2 | 5 | READY |
-| 655 | Hidden Forest | 8 | 8 | NOT_STARTED |
+| 655 | Hidden Forest | 8 | 8 | NO_DIALOGUE |
 
 ---
 
@@ -148,13 +148,13 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 086 | Route 2 | 27 | 45 | READY |
-| 088 | Gate (south) | 5 | 21 | NOT_STARTED |
-| 089 | Gate (north) | 7 | 11 | NOT_STARTED |
-| 090 | Route 2 (connector) | 3 | 4 | NOT_STARTED |
+| 088 | Gate (south) | 5 | 21 | NO_DIALOGUE |
+| 089 | Gate (north) | 7 | 11 | NO_DIALOGUE |
+| 090 | Route 2 (connector) | 3 | 4 | NO_DIALOGUE |
 | 092 | Route 2 (north) | 5 | 92 | READY |
 | 222 | Route 2 (interior) | 4 | 44 | READY |
 | 511 | Gate (interior) | 1 | 14 | READY |
-| 039 | Trainer House | 1 | 11 | NOT_STARTED |
+| 039 | Trainer House | 1 | 11 | NO_DIALOGUE |
 
 ---
 
@@ -197,13 +197,13 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 102 | Mt. Moon (1F) | 29 | 142 | READY |
-| 103 | Mt. Moon (B1F) | 3 | 3 | NOT_STARTED |
-| 104 | Mt. Moon (connector) | 2 | 3 | NOT_STARTED |
+| 103 | Mt. Moon (B1F) | 3 | 3 | NO_DIALOGUE |
+| 104 | Mt. Moon (connector) | 2 | 3 | NO_DIALOGUE |
 | 105 | Mt. Moon (B2F) | 39 | 196 | READY |
 | 116 | Mt. Moon (B3F) | 11 | 44 | READY |
-| 117 | Mt. Moon (B4F) | 2 | 2 | NOT_STARTED |
+| 117 | Mt. Moon (B4F) | 2 | 2 | NO_DIALOGUE |
 | 494 | Mt. Moon Square | 7 | 23 | READY |
-| 496 | Mt. Moon (connector) | 8 | 11 | NOT_STARTED |
+| 496 | Mt. Moon (connector) | 8 | 11 | NO_DIALOGUE |
 | 515 | Mt. Moon Square (interior) | 6 | 15 | READY |
 | 699 | Mt. Moon (deep) | 5 | 19 | READY |
 | 827 | Mt. Moon Summit | 44 | 69 | NOT_STARTED |
@@ -254,7 +254,7 @@
 | 461 | Cerulean Hotel | 4 | 27 | READY |
 | 462 | Cerulean Hotel (rooms) | 3 | 72 | READY |
 | 383 | Gate | 1 | 2 | READY |
-| 178 | Bill's Garden | 4 | 4 | NOT_STARTED |
+| 178 | Bill's Garden | 4 | 4 | NO_DIALOGUE |
 | 390 | connection | 0 | 0 | SKIP |
 | 739 | backup | 27 | 111 | SKIP |
 
@@ -269,8 +269,8 @@
 | 012 | Route 5 | 12 | 121 | PLANNED |
 | 013 | Day Care Center | 3 | 129 | PLANNED |
 | 214 | Day Care Center (interior) | 9 | 131 | READY |
-| 014 | Underground | 5 | 5 | NOT_STARTED |
-| 015 | Northern Gate | 6 | 80 | NOT_STARTED |
+| 014 | Underground | 5 | 5 | NO_DIALOGUE |
+| 015 | Northern Gate | 6 | 80 | NO_DIALOGUE |
 | 397 | Underground Gate | 2 | 5 | READY |
 
 ---
@@ -282,7 +282,7 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 016 | Route 6 | 45 | 145 | READY |
-| 018 | Southern Gate | 5 | 65 | NOT_STARTED |
+| 018 | Southern Gate | 5 | 65 | NO_DIALOGUE |
 | 019 | Vermilion City | 41 | 235 | READY |
 | 020 | Pokemon Center | 9 | 109 | PLANNED |
 | 021 | PokeMart | 24 | 52 | PLANNED |
@@ -292,7 +292,7 @@
 | 025 | Pokemon Fan Club | 11 | 96 | READY |
 | 026 | Harbour | 6 | 28 | READY |
 | 037 | Vermilion City (house) | 5 | 57 | PLANNED |
-| 061 | Vermilion City Gym (rematch) | 22 | 260 | NOT_STARTED |
+| 061 | Vermilion City Gym (rematch) | 22 | 260 | NO_DIALOGUE |
 | 155 | Route 11 | 10 | 335 | READY |
 | 161 | Lighthouse | 6 | 22 | READY |
 | 226 | Vermilion City (docks) | 30 | 64 | READY |
@@ -339,9 +339,9 @@
 | 391 | Pokemon Center (Route 10) | 5 | 38 | NOT_STARTED |
 | 349 | Rock Tunnel (1F) | 33 | 137 | NOT_STARTED |
 | 350 | Rock Tunnel (B1F) | 33 | 167 | NOT_STARTED |
-| 512 | Rock Tunnel (connector) | 2 | 2 | NOT_STARTED |
+| 512 | Rock Tunnel (connector) | 2 | 2 | NO_DIALOGUE |
 | 513 | Rock Tunnel (side area) | 4 | 8 | NOT_STARTED |
-| 800 | Rock Tunnel (deep) | 1 | 1 | NOT_STARTED |
+| 800 | Rock Tunnel (deep) | 1 | 1 | NO_DIALOGUE |
 | 256 | Gate | 6 | 26 | NOT_STARTED |
 
 ---
@@ -412,9 +412,9 @@
 | 455 | Team Rocket Hideout (B1) | 9 | 39 | NOT_STARTED |
 | 456 | Team Rocket Hideout (B2) | 10 | 42 | NOT_STARTED |
 | 457 | Team Rocket Hideout (B3) | 8 | 72 | NOT_STARTED |
-| 062 | Celadon City (house) | 3 | 7 | NOT_STARTED |
-| 063 | Celadon City (house 2F) | 5 | 28 | NOT_STARTED |
-| 064 | Celadon City (house 3F) | 4 | 11 | NOT_STARTED |
+| 062 | Celadon City (house) | 3 | 7 | NO_DIALOGUE |
+| 063 | Celadon City (house 2F) | 5 | 28 | NO_DIALOGUE |
+| 064 | Celadon City (house 3F) | 4 | 11 | NO_DIALOGUE |
 | 393 | Celadon City (house) | 3 | 19 | NOT_STARTED |
 | 450 | Celadon City (house) | 4 | 12 | NOT_STARTED |
 | 451 | Celadon City (house) | 2 | 8 | NOT_STARTED |
@@ -436,7 +436,7 @@
 | 466 | Celadon Hotel (rooms) | 6 | 323 | NOT_STARTED |
 | 771 | Celadon City (connector) | 2 | 8 | NOT_STARTED |
 | 508 | Celadon Condominiums (4F) | 0 | 0 | SKIP |
-| 072 | Celadon Sewers (connector) | 2 | 3 | NOT_STARTED |
+| 072 | Celadon Sewers (connector) | 2 | 3 | NO_DIALOGUE |
 | 372 | Celadon Sewers (old) | 1 | 1 | SKIP |
 
 **Routes around Celadon:**
@@ -446,7 +446,7 @@
 | 413 | Route 7 | 19 | 238 | READY |
 | 425 | Underground Gate (Route 7) | 1 | 2 | NOT_STARTED |
 | 415 | Western Gate | 3 | 55 | NOT_STARTED |
-| 066 | Eastern Gate | 3 | 73 | NOT_STARTED |
+| 066 | Eastern Gate | 3 | 73 | NO_DIALOGUE |
 | 438 | Route 16 | 8 | 38 | NOT_STARTED |
 | 439 | House (Route 16) | 5 | 20 | NOT_STARTED |
 | 474 | Gate (Route 16) | 1 | 2 | NOT_STARTED |
@@ -553,11 +553,11 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 445 | Area 1 | 36 | 40 | READY |
-| 074 | Area 1 (interior) | 4 | 8 | NOT_STARTED |
+| 074 | Area 1 (interior) | 4 | 8 | NO_DIALOGUE |
 | 484 | Area 2 | 14 | 28 | PLANNED |
-| 075 | Area 2 (interior) | 3 | 5 | NOT_STARTED |
+| 075 | Area 2 (interior) | 3 | 5 | NO_DIALOGUE |
 | 485 | Area 3 | 39 | 53 | PLANNED |
-| 082 | Area 3 (interior) | 6 | 26 | NOT_STARTED |
+| 082 | Area 3 (interior) | 6 | 26 | NO_DIALOGUE |
 | 486 | Area 4 | 25 | 27 | PLANNED |
 | 107 | Area 4 (interior) | 1 | 20 | NOT_STARTED |
 | 487 | Area 5 | 14 | 64 | NOT_STARTED |
@@ -577,7 +577,7 @@
 | 162 | Underwater (Route 12) | 13 | 26 | NOT_STARTED |
 | 149 | Flooded Cave | 1 | 1 | SKIP |
 | 437 | Route 13 | 46 | 350 | READY |
-| 220 | Underwater (Route 13) | 9 | 15 | NOT_STARTED |
+| 220 | Underwater (Route 13) | 9 | 15 | NO_DIALOGUE |
 | 440 | Route 14 | 15 | 123 | PLANNED |
 | 444 | Route 15 | 21 | 152 | PLANNED |
 | 712 | Creepy House | 24 | 25 | NOT_STARTED |
@@ -631,8 +631,8 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 808 | Seafoam Islands B1 | 24 | 76 | NOT_STARTED |
-| 054 | Seafoam Islands B3 | 3 | 10 | NOT_STARTED |
-| 055 | Seafoam Islands B4 | 7 | 19 | NOT_STARTED |
+| 054 | Seafoam Islands B3 | 3 | 10 | NO_DIALOGUE |
+| 055 | Seafoam Islands B4 | 7 | 19 | NO_DIALOGUE |
 | 052 | Seafoam Islands.old | 10 | 39 | SKIP |
 | 053 | Seafoam Islands B2 | 3 | 3 | SKIP |
 | 489 | Seafoam Islands.old (alt) | 13 | 79 | SKIP |
@@ -644,7 +644,7 @@
 | 057 | Route 19 | 9 | 93 | PLANNED |
 | 058 | Route 20 | 12 | 100 | PLANNED |
 | 059 | Route 21 | 11 | 77 | PLANNED |
-| 056 | Surf Race | 5 | 67 | NOT_STARTED |
+| 056 | Surf Race | 5 | 67 | NO_DIALOGUE |
 | 229 | Underwater (Route 21) | 4 | 9 | NOT_STARTED |
 | 227 | Underwater (Route 19) | 4 | 4 | SKIP |
 | 228 | Underwater (Route 20) | 4 | 4 | SKIP |
@@ -737,7 +737,7 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 167 | Crimson City (overworld) | 26 | 90 | NOT_STARTED |
-| 065 | Pokemon Center | 6 | 48 | NOT_STARTED |
+| 065 | Pokemon Center | 6 | 48 | NO_DIALOGUE |
 | 119 | PokeMart | 22 | 23 | NOT_STARTED |
 | 168 | Crimson City (house) | 2 | 18 | NOT_STARTED |
 | 169 | Crimson City (house) | 5 | 11 | NOT_STARTED |
