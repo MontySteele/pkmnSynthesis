@@ -1,0 +1,2290 @@
+{
+  "_implementation_notes": [
+    "CERULEAN CITY — Maps 1 (city), 4 (gym), 5 (trade house), 7 (bike shop),",
+    "  8 (Route 24 / Nugget Bridge), 9 (Route 25), 10 (Cape), 11 (Bill's Lighthouse).",
+    "Tone: Lively, questioning, politically aware. Cerulean is where cracks in the system",
+    "  first become visible. Misty is the reformer. Fusion debate is in the open here.",
+    "",
+    "NOTE: Blue's dialogue (E9 on Map 1) is handled in cerulean_blue.json.",
+    "NOTE: Event 50 (Officer) has complex multi-page quest logic — only modifying dialogue",
+    "  text, not restructuring the quest flow.",
+    "NOTE: Event 52 (Petrel quest) has complex quest logic — light touch on dialogue only.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "1": {
+      "name": "Cerulean City",
+      "events": {
+        "27": {
+          "name": "NPC (Trainer comment)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Being a trainer isn't what I expected.",
+                    "The fusion licensing exam alone took",
+                    "me three tries."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "New recruits keep joining Rocket.",
+                    "Can't really blame them — a fusion",
+                    "license costs more than most people",
+                    "make in a year."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "NPC (Patrol guy)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Just keeping an eye on things.",
+                    "Lots of strangers in town lately."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League sent extra patrols after",
+                    "what happened on Route 24. Can't be",
+                    "too careful."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "NPC (Wild fusion witness)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I saw two Pokémon fuse in the wild —",
+                    "no splicers, no trainer, nothing.",
+                    "Just... merged. The League says that",
+                    "can't happen. But I saw it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Sign (Hotel)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean Hotel — Trainers Welcome"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "NPC (Park lady with Sunny Day)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I love this park. My Pokémon and I",
+                    "come here every morning."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The weather's put me in a good mood.",
+                    "Here — take this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Use Sunny Day in the field during",
+                    "daytime to brighten things up. Some",
+                    "fusions respond differently to",
+                    "weather changes."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "NPC (Electbro trainer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "ELECTBRO, ROLLOUT!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I fused my Slowbro with an Electric-",
+                    "type to cover its weaknesses. That's",
+                    "what fusion's FOR."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Misty says fusion's the future.",
+                    "Think you can beat my Electbro?"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Electbro won't listen! Its Slowbro",
+                    "half keeps ignoring my commands..."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Maybe Misty's right that we need",
+                    "better fusion training, not just",
+                    "better splicers."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Here — you earned this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "ELECTBRO, ROLLOUT!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Electbro won't listen! Its Slowbro",
+                    "half keeps overriding my commands."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Fusion's harder than it looks. The",
+                    "two halves don't always agree."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The PokéMart had giveaways today!",
+                    "Even got some discount splicers.",
+                    "Misty would approve."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "NPC (Rocket member in town)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League charges a fortune for",
+                    "fusion licenses. Team Rocket gives",
+                    "them to anyone who asks. Think about",
+                    "who's really helping people."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League can send all the patrols",
+                    "they want. People know the truth",
+                    "about fusion licensing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "46": {
+          "name": "NPC (Traveler with flute)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "A Pokémon trainer... We've met",
+                    "before. I remember you."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Pokémon trainer..."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I brought this flute from my travels.",
+                    "Show me this city's badge and it's",
+                    "yours."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "That's the badge. Here, as promised."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "This flute's melody changes how wild",
+                    "Pokémon behave. Fused ones react to",
+                    "it differently than natural ones."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "I shall go now. We may meet again."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "51": {
+          "name": "NPC (Meowth cat)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Meoow!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Sign (City sign)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean City",
+                    "The Floral Lagoon City"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean City",
+                    "The Floral Lagoon City"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean City",
+                    "The Floral Lagoon City"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "45": {
+          "name": "Sign (Gym sign)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Cerulean City Gym"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Gym Leader: Misty",
+                    "The Reformer of Cerulean"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "name": "Cerulean City Gym",
+      "events": {
+        "11": {
+          "name": "Gym Guide",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making! Misty uses",
+                    "Water-types, but she's not just",
+                    "about battling."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "She'll ask you questions. Don't",
+                    "just nod along — she respects",
+                    "trainers who think for themselves."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Here, take this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Misty uses Water-types, but",
+                    "she's got strong opinions too."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "She respects trainers who think",
+                    "for themselves. Good luck!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat Misty! I knew you had it",
+                    "in you. She seemed impressed —",
+                    "and she's hard to impress."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Gym greeter sign",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Cerulean Gym."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "No running around the pool."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Gym Trainer 1",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Splash! Misty taught me to lead",
+                    "with Water-types. They adapt!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'm first up. Let's go!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Washed out... Misty says losing",
+                    "teaches you more than winning."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Misty",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "A new challenger. Good."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "I've been Gym Leader for two years",
+                    "and I'm already tired of how the",
+                    "League does things."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Fusion licensing costs a fortune.",
+                    "Only rich families can afford it.",
+                    "That's not regulation — that's a",
+                    "gatekeep."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "...Wow. You're good."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "The Cascade Badge is yours. Pokémon",
+                    "up to L30 will obey you now."
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "And take this TM. Water Pulse —",
+                    "works especially well on fusions",
+                    "with a Water component."
+                  ]
+                },
+                {
+                  "start_index": 53,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you're ready to",
+                    "actually challenge me."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Keep pushing forward, \\PN. The",
+                    "League needs trainers who ask",
+                    "questions, not just follow orders."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Gym Trainer 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You'd better beat me before you",
+                    "face Misty!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You can challenge Misty now!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "5": {
+      "name": "Cerulean City (Trade House)",
+      "events": {
+        "5": {
+          "name": "TV",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The news is covering a debate about",
+                    "fusion licensing reform..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "TV (second)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A weather report on TV...",
+                    "Clear skies over Cerulean."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Trade NPC",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Want to trade? My Yanma for your",
+                    "Paras. Fused or natural — I'll",
+                    "take either."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Oh, come on!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Great, let's trade!"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Thanks! Take care of it."
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "No... That's not a Paras..."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Paras you gave me is great!",
+                    "I wonder how it would fuse..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Trade NPC wife",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My husband loves trading. Says it",
+                    "reminds him of his trainer days —",
+                    "before the license fees got so high."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "7": {
+      "name": "Bike Shop",
+      "events": {
+        "2": {
+          "name": "Bike shop owner",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey kid, want to buy a bike?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I like your face, so I'll give you",
+                    "a deal — just $100,000!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Sounds like a lot? Blame import",
+                    "tariffs. The League taxes everything."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "So what do you say?"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "That'll be $100,000 please."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "All in order. Here's your bike!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "Have fun out there!"
+                  ]
+                },
+                {
+                  "start_index": 26,
+                  "type": "text",
+                  "lines": [
+                    "Don't have the cash? Bikes are",
+                    "expensive — import costs, you know."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Used to be you could get one for",
+                    "half that. But the League's trade",
+                    "regulations keep going up."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Come back when you've saved up!"
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "You're missing out! Best deal in",
+                    "Cerulean, guaranteed."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you have a Bike Voucher?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "A voucher's good as cash. Here's",
+                    "your bike!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ride safe!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Enjoy the open road, kid!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Back already? Did you break it?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "No refunds! That's store policy."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Take it to the Cycling Road if",
+                    "you want to really test it out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trash can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Full of discarded bike parts",
+                    "and empty splicer cartridges."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "8": {
+      "name": "Route 24 (Nugget Bridge)",
+      "events": {
+        "18": {
+          "name": "Sign (Nugget Bridge)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Nugget Bridge"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "Nugget Trainer 1",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Nugget Bridge! Beat all",
+                    "five of us for a prize!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Think you're up for it?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good fight! Keep going — four",
+                    "more to go."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They told us to fight trainers",
+                    "here... I didn't ask who 'they'",
+                    "were. Maybe I should have."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Nugget Trainer 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm second! Let's see what you've",
+                    "got!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Nice moves. Keep going!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We fought in the challenge like",
+                    "they asked... What more does",
+                    "Rocket want from us?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Nugget Trainer 3",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Number three! I won't hold back."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fair fight. You earned it."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Please... don't take my Pokémon.",
+                    "I only fused it because they said",
+                    "it would be stronger..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Nugget Trainer 4",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Fourth challenger! Prepare for",
+                    "the real deal!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You're strong. Good luck with",
+                    "the last one."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Please just leave us alone..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Nugget Trainer 5",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm the last one! Give it",
+                    "everything you've got!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat all five... Not bad."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Another Rocket grunt...! How many",
+                    "of you are there?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Rocket Recruiter (Page 0 variant)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations! You beat all five",
+                    "trainers. Here's your prize!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations! You beat all five!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Say — you're talented. Ever think",
+                    "about what you could do without a",
+                    "League license holding you back?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Really? The League charges you a",
+                    "fortune just to fuse Pokémon."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "We offer the same tech — free.",
+                    "No strings. Just talent."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Last chance. What do you say?"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Smart choice. Sign here and..."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Welcome aboard. Put on this uniform",
+                    "and report to \\C[2]Captain Petrel",
+                    "\\C[0]at HQ in Cerulean City."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Rocket Recruiter (Page 1+ variant)",
+          "pages": {
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations! You beat all five",
+                    "trainers. Here's your prize!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations! You beat all five!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Talented trainer like you — ever",
+                    "thought about what you could do",
+                    "without League restrictions?"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "The League charges a fortune for",
+                    "fusion access. We offer it free."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "No license fees. No bureaucracy.",
+                    "Just potential."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Think it over. What do you say?"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Good choice. Sign here..."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "You're in. Here's your uniform.",
+                    "Report to \\C[2]Captain Petrel",
+                    "\\C[0]in Cerulean City for your",
+                    "first assignment."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "With your skills, you'd rise fast",
+                    "in our ranks."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Sure you don't want to reconsider?",
+                    "The offer stands."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Your loss..."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Good. Sign here..."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Team Rocket. Get your",
+                    "uniform on and report to \\C[2]Petrel",
+                    "\\C[0]in Cerulean City."
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You'd climb the ranks fast with",
+                    "your talent!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Report to \\C[2]Captain Petrel\\C[0]",
+                    "in Cerulean City for your mission."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hey! You're on duty now. Put on",
+                    "that uniform and get moving!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Top Percentage Rattata",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My Rattata isn't fused — it's just",
+                    "naturally in the top percentage.",
+                    "Not everything needs splicers."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Rattata wants a rematch!",
+                    "What do you say?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Oak's Aide (Abra quest)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! Doing field work for Prof Oak."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'm studying wild \\C[1]Abra\\C[0]",
+                    "on this route. Their teleportation",
+                    "makes observation nearly impossible."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Wild fusions teleport differently",
+                    "than natural ones — Prof Oak thinks",
+                    "it's connected to their hybrid DNA."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Could you catch one for me?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Fisherman (harassed by Rockets)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "We're not leaving! This spot has",
+                    "the best water-type spawns in Kanto."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Just leave us alone!"
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket? All bark, no bite.",
+                    "They just want the rare Pokémon",
+                    "for their fusion experiments."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "You're scaring the fish Pokémon!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "Fine! We're not leaving. Deal",
+                    "with it."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Let's find another spot... These",
+                    "Rockets want everything for their",
+                    "fusion research."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Ahh, fishing. Best therapy there",
+                    "is — no fusion required."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Ahh, fishing. Nothing beats it.",
+                    "No splicers, no licenses, just",
+                    "a rod and the water."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Rocket Grunt (bridge guard)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The new recruit, right? The",
+                    "fishermen are past this grass."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Captain wants them gone — they're",
+                    "too close to our supply drop.",
+                    "Rough them up a bit."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I'll stand guard. Go handle it."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Who are you? Get lost!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Nice work! Even I was impressed.",
+                    "The Captain will be pleased."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Mission complete. Go report back.",
+                    "Captain Petrel wants a full debrief."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Fisherman 2 (harassed)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "We're not leaving! This is the",
+                    "best spot for rare catches."
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "Great spot for fishing. The water",
+                    "Pokémon here are something special."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is a great spot. Caught some",
+                    "rare ones — no fusion needed."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "9": {
+      "name": "Route 25",
+      "events": {
+        "5": {
+          "name": "Trainer (Water-type)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This route's perfect for training",
+                    "Water-types. The puddles keep them",
+                    "energized!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Pokémon love these puddles!",
+                    "Ready for another round?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer (going to Bill's)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm heading to see the collector",
+                    "at the cape — Bill, the fusion",
+                    "researcher!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bill left Silph Co. over some",
+                    "kind of ethics disagreement. Now",
+                    "he does independent research."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you've got some cool Pokémon.",
+                    "Want to trade?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Trainer (near Bill's)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You're going to see Bill? He's",
+                    "the real deal — left Silph Co.",
+                    "to do fusion research his way."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bill's lighthouse is just ahead.",
+                    "Time for another battle first?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Trainer (from Mt. Moon)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Just came down from Mt. Moon.",
+                    "Saw some Rocket types up there",
+                    "handing out splicers to anyone",
+                    "who'd take them."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The Rockets in Mt. Moon... they",
+                    "weren't stealing. They were giving",
+                    "splicers away. Isn't that weird?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer (practice)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Local trainers practice here. The",
+                    "mix of terrain is great for testing",
+                    "different fusion types."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Every Pokémon has weaknesses.",
+                    "Fusion can patch some, but it",
+                    "creates new ones too."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Want to go again?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Boyfriend trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'm a cool guy. My girlfriend",
+                    "says my fusions are the best."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Want my rare Bulbtata? I'll trade",
+                    "for any Pokémon level 20 or up."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Girlfriend trainer",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "My boyfriend thinks he's so cool",
+                    "with his fusions. I prefer my",
+                    "Pokémon natural."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You're better than him! Don't",
+                    "tell him I said that."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer (lilypad area)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Something's different about the",
+                    "wild Pokémon here — more aggressive",
+                    "since the splicer trade picked up."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "10": {
+      "name": "Cerulean Cape",
+      "events": {
+        "1": {
+          "name": "Displaced fisherman",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "We moved like Rocket told us to.",
+                    "Please, just leave us be."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Be careful around Team Rocket,",
+                    "kid. They're not all talk."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Misty (Cape encounter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh! \\PN!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I swim here every morning. Keeps",
+                    "me sharp — body and mind."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "A rematch? Sure — meet me at the",
+                    "Fighting Arena in Vermilion City."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "I've been thinking about what we",
+                    "talked about in the gym. The system",
+                    "needs people like us to change it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Displaced fisherman 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Don't start... We've had enough",
+                    "trouble for one day."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Rocket kicked us out of our old",
+                    "spot. Said they needed the area",
+                    "for a 'supply operation.'"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "name": "Bill's Lighthouse",
+      "events": {
+        "8": {
+          "name": "Machine 1",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A complex fusion analysis device.",
+                    "Readings scroll across the screen."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Machine 2",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "More fusion research equipment.",
+                    "Best not to touch it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Bill (experiment scene)",
+          "pages": {
+            "2": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You didn't see that, right?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I was testing a theory — what",
+                    "happens when you apply fusion",
+                    "tech to a human subject."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I left Silph Co. because they",
+                    "wouldn't fund this kind of",
+                    "research. Too 'dangerous,' they",
+                    "said."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "These claws are too big for the",
+                    "controls. I need your help to",
+                    "reverse the process."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "That skeptical look... I get it.",
+                    "But I'm serious!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I really need help here!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Please? I promise this is the last",
+                    "time I fuse myself with anything."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Come on! You can't leave me like",
+                    "this! I have claws!"
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "Get in the teleporter, then use",
+                    "my PC to run the Cell Separation",
+                    "System!"
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The S.S. Anne is docked in Vermilion",
+                    "right now. A big trainer gathering."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Bunch of trainers showing off their",
+                    "fusions. Gym leaders attending too."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "They invited me, but fancy parties",
+                    "aren't my thing. Take my ticket",
+                    "and go in my place!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Bill (after teleporter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Thanks! You're a lifesaver."
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "So — did you come to see my",
+                    "Pokémon collection? Or just the",
+                    "guy who fused himself with a",
+                    "Rhydon?"
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Ha. Well, let me thank you",
+                    "properly. Here —"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "Take this. Consider it hazard pay."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "The S.S. Anne is in Vermilion.",
+                    "Big trainer event."
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Gym leaders, League officials,",
+                    "the works. I hear they're showing",
+                    "off new fusion tech."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "They invited me but... not my",
+                    "scene. You should go instead!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
