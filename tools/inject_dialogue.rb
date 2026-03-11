@@ -201,7 +201,10 @@ def main
           next
         end
 
-        (page_changes["dialogue_blocks"] || []).each do |block|
+        # Process blocks in reverse order of start_index to avoid
+        # index shifts when inserting/removing continuation lines
+        sorted_blocks = (page_changes["dialogue_blocks"] || []).sort_by { |b| -(b["start_index"] || 0) }
+        sorted_blocks.each do |block|
           success = case block["type"]
                     when "text"
                       if dry_run
@@ -265,7 +268,8 @@ def main
           next
         end
 
-        (ce_changes["dialogue_blocks"] || []).each do |block|
+        sorted_ce_blocks = (ce_changes["dialogue_blocks"] || []).sort_by { |b| -(b["start_index"] || 0) }
+        sorted_ce_blocks.each do |block|
           success = case block["type"]
                     when "text"
                       dry_run ? true : apply_text_block(ce.list, block)
