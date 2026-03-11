@@ -1,0 +1,1928 @@
+{
+  "_implementation_notes": [
+    "SAFFRON CITY — Phase 3 (Crisis). Maps 108, 152, 191.",
+    "Tone: Occupied territory. Corporate anxiety, whispered fear.",
+    "Saffron is under Rocket lockdown. Silph Co. is seized.",
+    "",
+    "Map 108: Saffron City overworld. Rocket grunts rewritten as",
+    "three categories: True Believers (Mewtwo propaganda),",
+    "Enforcers (enjoying power), Reluctant Soldiers (humanized).",
+    "Post-Silph NPCs (switch 191) lightly adjusted for tone.",
+    "Blue/rival event 73 (switch 282) rewritten for Synthesis.",
+    "",
+    "Map 152: Saffron City Gym. Sabrina (event 92) fully rewritten.",
+    "Pre-battle: prophet/test framing. Post-battle: Mewtwo hint.",
+    "Post-Silph page (switch 1152) added via insert_commands at",
+    "index 10 on page 1. Uses Switches 1150-1152, Variable 345.",
+    "Gym trainers rewritten to reflect Sabrina's anti-fusion stance.",
+    "",
+    "Map 191: Fighting Dojo. Karate Master and fighters rewritten",
+    "as traditionalists — anti-fusion but apolitical. Pocket of",
+    "normalcy in an occupied city. Hitmon gifts PRESERVED.",
+    "",
+    "EXCLUDED: Silph Co. floors (SPECIAL_LOGIC, handled separately).",
+    "PRESERVED: Egg nest (77), invisible Pokemon (41), Mankey Paw",
+    "vendor (72), bar bouncer (47/58), bully trainer (60), signs.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP."
+  ],
+  "maps": {
+    "108": {
+      "name": "Saffron City",
+      "events": {
+        "2": {
+          "name": "Rock Et — Silph Gate Guard (Left)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "We're securing the building.",
+                    "Corporate restructuring.",
+                    "Giovanni's orders. Nobody",
+                    "gets in without clearance."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. is restricted.",
+                    "Rocket personnel only.",
+                    "Move along."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Rock Et — Silph Gate Guard (Right)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The merger is proceeding as",
+                    "planned. Silph's resources",
+                    "will serve a greater purpose",
+                    "than profit margins."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Restricted area. Rocket",
+                    "personnel only."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 — Silph Entrance (Card Key)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "\\PN showed the Team Rocket",
+                    "Member card."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "New recruit? Fine. Go ahead.",
+                    "Stay out of the way upstairs."
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "Building's locked down.",
+                    "Giovanni's inside. Whatever",
+                    "he's after, it's above our",
+                    "pay grade."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "No clearance, no entry.",
+                    "That's the rule."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 239},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Right, the new recruit.",
+                    "Go on in. Not like it",
+                    "matters now."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Rock Et — True Believer (East)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The Pok\u00e9 Mart's still open.",
+                    "We're not savages. Stock up",
+                    "if you need to."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You're not one of us.",
+                    "Keep your head down and",
+                    "you'll be fine."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Rock Et — True Believer (North)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Giovanni left the League",
+                    "because they refused to act.",
+                    "There's something north of",
+                    "Cerulean they won't talk about."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Rock Et — Enforcer (Train Station)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "No one in, no one out.",
+                    "Giovanni's orders. Trains",
+                    "are shut down until further",
+                    "notice."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Rock Et — Enforcer (East Patrol)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I love this job. Everyone",
+                    "does what I say. Nobody",
+                    "talks back. This is what",
+                    "power feels like."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Rock Et — True Believer (Central)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. built something",
+                    "for the League. Something",
+                    "they never told the public",
+                    "about. We're taking it back."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Rock Et — Reluctant Soldier (South)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I didn't sign up for this.",
+                    "Occupation duty. Scaring",
+                    "families. Just... stay out",
+                    "of trouble, all right?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Rock Et — True Believer (South Gate)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The League sealed something",
+                    "in a cave and hoped for the",
+                    "best. Giovanni has a plan.",
+                    "That's more than they ever had."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Rock Et — Reluctant Soldier (SE Gate)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Why are we here? Because",
+                    "the boss says so. That used",
+                    "to be enough for me."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Look, I'm just following",
+                    "orders. Don't make this",
+                    "harder than it has to be."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Rock Et — True Believer (SW Gate)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Giovanni didn't leave the",
+                    "League over money. He left",
+                    "because they're sitting on",
+                    "a ticking time bomb."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You don't know what's out",
+                    "there. We do. Keep walking."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Rock Et — Enforcer (NE Patrol)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Nobody challenges Team Rocket",
+                    "and walks away. Not the League,",
+                    "not the police, not you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "52": {
+          "name": "Rock Et — True Believer (Gym Area)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Do you know what's sleeping",
+                    "twenty miles north of here?",
+                    "The League does. They put a",
+                    "lock on the door and prayed."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "59": {
+          "name": "Trainer(3) — Silph Entrance Guard",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "ID?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. is a restricted",
+                    "zone. Non-Rocket personnel",
+                    "will be removed by force."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "60": {
+          "name": "bully1 — Rocket Bullies (Gym Block)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 8},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The gym? Sabrina locked",
+                    "herself inside weeks ago.",
+                    "Smart woman."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "City's on lockdown. You",
+                    "shouldn't be out here.",
+                    "Civilians stay indoors."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "We told people to stay",
+                    "inside. This kid doesn't",
+                    "listen."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Is this kid giving",
+                    "you trouble?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "You picked the wrong city",
+                    "to be brave in."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 8, "self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This kid... this kid is",
+                    "actually dangerous."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Forget it. Let's get out",
+                    "of here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "64": {
+          "name": "EV064 — Pokemon SFX (Post-Silph)",
+          "_preserve": true
+        },
+        "65": {
+          "name": "EV065 — Civilian (Post-Silph, SW)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I saw the Rocket boss leaving",
+                    "Silph. He didn't look beaten.",
+                    "He looked like a man with a",
+                    "backup plan."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "66": {
+          "name": "EV066 — Reporter (Post-Silph)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I flew here on my Pidgeot",
+                    "the moment I heard about",
+                    "Silph. The League is already",
+                    "spinning the story."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "They're calling it a",
+                    "'corporate dispute.' Right.",
+                    "Armed grunts in the streets",
+                    "is a corporate dispute."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "67": {
+          "name": "EV067 — Relieved Civilian (Post-Silph, E)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They're gone. Thank Arceus,",
+                    "they're finally gone. I can",
+                    "go outside again."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "68": {
+          "name": "EV068 — Civilian (Post-Silph, South)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "People will come back to",
+                    "Saffron now. But it won't",
+                    "feel the same. Not after",
+                    "what we saw."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "69": {
+          "name": "EV069 — Grateful Civilian (Post-Silph)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You cleared Silph by",
+                    "yourself? The League sent",
+                    "nobody. One kid did what",
+                    "they wouldn't."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "70": {
+          "name": "EV070 — Civilian (Post-Silph, SE)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My neighbor joined Rocket",
+                    "last year. He came home",
+                    "yesterday. Wouldn't look",
+                    "me in the eye."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "73": {
+          "name": "Blue — Rival (Post-Silph)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 282},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "You look different. Silph",
+                    "changed something in you.",
+                    "I can see it."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "I came as soon as I heard",
+                    "about the takeover. But you",
+                    "handled it. Like you handle",
+                    "everything now."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Gramps told me some things.",
+                    "About what was really at",
+                    "stake in there."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "Here. I caught this around",
+                    "the Sevii Islands. You need",
+                    "it more than I do right now."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "Water type. Strong swimmer.",
+                    "Good partner for what's",
+                    "ahead."
+                  ]
+                },
+                {
+                  "start_index": 25,
+                  "type": "text",
+                  "lines": [
+                    "Also — take this Seagallop",
+                    "Pass. Gramps gave me a",
+                    "spare. Gets you to the",
+                    "Sevii Islands from Cinnabar."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "I already got my seventh",
+                    "badge out there. You should",
+                    "head over after Sabrina."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "The ferry runs from Cinnabar",
+                    "Island. Beautiful ride, if",
+                    "you can relax long enough",
+                    "to notice."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina's tough. But after",
+                    "Silph? You can handle tough."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "One more thing. Whatever",
+                    "Gramps told you in there...",
+                    "he hasn't told me everything",
+                    "either. I know that much."
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "Stay sharp, \\PN."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "74": {
+          "name": "EV074 — Dojo Observer (Post-Silph)",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 191},
+              "dialogue_blocks": [
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "The Fighting Dojo used to",
+                    "be the official gym here.",
+                    "Then Sabrina showed up and",
+                    "dismantled them overnight."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "\\V[4] types can't compete",
+                    "with \\V[5] types. That's",
+                    "just how it is."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 — Invisible Pokemon NPC",
+          "_preserve": true
+        },
+        "8": {
+          "name": "EV008 — Bruno Cameo (Dojo)",
+          "_preserve": true
+        },
+        "39": {
+          "name": "sign — City Sign (East)",
+          "_preserve": true
+        },
+        "40": {
+          "name": "sign — City Sign (East 2)",
+          "_preserve": true
+        },
+        "41": {
+          "name": "EV041 — Invisible Pokemon",
+          "_preserve": true
+        },
+        "47": {
+          "name": "Rock Et — Bar Bouncer (Age Check)",
+          "_preserve": true
+        },
+        "57": {
+          "name": "EV057 — Bar Closed Sign",
+          "_preserve": true
+        },
+        "58": {
+          "name": "EV058 — Nightclub Bouncer",
+          "_preserve": true
+        },
+        "71": {
+          "name": "EV071 — Slowpoketail Dealer",
+          "_preserve": true
+        },
+        "72": {
+          "name": "EV072 — Mankey Paw Vendor",
+          "_preserve": true
+        },
+        "77": {
+          "name": "nest — Pokemon Egg",
+          "_preserve": true
+        },
+        "87": {
+          "name": "pokemom — Angry Parent",
+          "_preserve": true
+        },
+        "91": {
+          "name": "EV091 — Bar Sneak Kid",
+          "pages": {
+            "0": {
+              "conditions": {"switch1_id": 15},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The bouncer caught me hiding",
+                    "in the bathroom. Kicked me",
+                    "right out."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I just wanted to hear what",
+                    "the Rockets talk about when",
+                    "they're drinking. They say",
+                    "things. Scary things."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "152": {
+      "name": "Saffron City Gym",
+      "events": {
+        "87": {
+          "name": "Trainer(3) — Gym Trainer (Psychic, Entry)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina sees things the rest",
+                    "of us can't. She banned most",
+                    "fusion in Saffron years ago.",
+                    "Said it was an act of violence."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "There used to be two gyms",
+                    "in Saffron. The Fighting",
+                    "Dojo next door."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina ended that argument",
+                    "in an afternoon. Fists can't",
+                    "touch what the mind can do."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "88": {
+          "name": "Trainer(5) — Gym Trainer (Psychic, NW)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina says fusion is an act",
+                    "of violence against the self.",
+                    "Two minds forced into one body.",
+                    "She can feel their confusion."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina wiped out the Karate",
+                    "Master without breaking a",
+                    "sweat. Power alone means",
+                    "nothing against will."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "89": {
+          "name": "Trainer(5) — Gym Trainer (Psychic, NE)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Our power is unseen. That's",
+                    "what makes it frightening.",
+                    "Sabrina doesn't need to raise",
+                    "her voice to end a fight."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Psychic Pok\u00e9mon fear only",
+                    "ghosts, bugs, and darkness.",
+                    "But Sabrina? She fears",
+                    "something else entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "90": {
+          "name": "Trainer(3) — Gym Trainer (Psychic, E)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina is younger than I am.",
+                    "But I've never met anyone",
+                    "with a stronger will. She",
+                    "feels things we can't imagine."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "In a battle between equals,",
+                    "the one with the stronger",
+                    "will wins."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "If you wish to beat Sabrina,",
+                    "you'll need more than strong",
+                    "Pok\u00e9mon. You'll need purpose."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "91": {
+          "name": "Trainer(3) — Gym Trainer (Psychic, N)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "They say Pok\u00e9mon take on the",
+                    "nature of their trainers.",
+                    "Sabrina's Pok\u00e9mon are quiet.",
+                    "Watchful. Like her."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Your Pok\u00e9mon feel determined.",
+                    "That's good. You'll need it."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Sabrina isolated herself from",
+                    "the city years ago. The men",
+                    "outside, the politics — she",
+                    "wanted silence. Not this."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "92": {
+          "name": "Sabrina",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "I've been waiting for you.",
+                    "Not you specifically — what",
+                    "you represent."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "I saw you coming. Weeks ago.",
+                    "A shape in the noise. Someone",
+                    "walking toward a choice they",
+                    "don't yet understand."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "The men outside have their",
+                    "reasons. Everyone has reasons.",
+                    "I am not interested in reasons."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "I am interested in silence.",
+                    "And there is precious little",
+                    "of it left in this city."
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "I need to know if you're",
+                    "ready for what's ahead. That",
+                    "is my test. Four Pok\u00e9mon.",
+                    "Choose carefully."
+                  ]
+                },
+                {
+                  "start_index": 33,
+                  "type": "text",
+                  "lines": [
+                    "...Yes. You are what I saw.",
+                    "The Marsh Badge is yours.",
+                    "You earned more than a badge",
+                    "today, but that will do."
+                  ]
+                },
+                {
+                  "start_index": 38,
+                  "type": "text",
+                  "lines": [
+                    "The Marsh Badge allows you",
+                    "to use Surf outside of battle",
+                    "to cross bodies of water."
+                  ]
+                },
+                {
+                  "start_index": 41,
+                  "type": "text",
+                  "lines": [
+                    "Take this as well."
+                  ]
+                },
+                {
+                  "start_index": 44,
+                  "type": "text",
+                  "lines": [
+                    "TM03 contains Psyshock. It",
+                    "uses Special Attack to inflict",
+                    "physical damage. A mind",
+                    "striking like a fist."
+                  ]
+                },
+                {
+                  "start_index": 47,
+                  "type": "text",
+                  "lines": [
+                    "You are going to Silph Co.",
+                    "I can feel your intention",
+                    "like heat from a fire."
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "\\C[3]\\PN obtained 3 Premium",
+                    "Wonder Trade tickets!"
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Be careful. There is something",
+                    "in this city that is larger",
+                    "than what you think you're",
+                    "fighting for."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 9},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "insert_commands",
+                  "_comment": "Post-Silph: Sabrina senses Mewtwo. Checks Switch 1152 (SYNTH_SILPH_COMPLETE). If ON, she speaks about what she's always known. Includes a choice: what does the player think drives Sabrina's isolation? Sets Variable 345 (SYNTH_SABRINA_INSIGHT) and Switches 1150-1152.",
+                  "commands": [
+                    {"code": 111, "indent": 0, "parameters": [0, 1152, 0]},
+
+                    {"code": 101, "indent": 1, "parameters": ["You came back. I knew you"]},
+                    {"code": 401, "indent": 1, "parameters": ["would. The noise has changed."]},
+
+                    {"code": 101, "indent": 1, "parameters": ["I should tell you what I've"]},
+                    {"code": 401, "indent": 1, "parameters": ["never told anyone."]},
+
+                    {"code": 101, "indent": 1, "parameters": ["I can feel it. North of"]},
+                    {"code": 401, "indent": 1, "parameters": ["Cerulean. It has always been"]},
+                    {"code": 401, "indent": 1, "parameters": ["there. A mind like a wound"]},
+                    {"code": 401, "indent": 1, "parameters": ["that won't close."]},
+
+                    {"code": 101, "indent": 1, "parameters": ["It knows something has"]},
+                    {"code": 401, "indent": 1, "parameters": ["changed. Whatever happened in"]},
+                    {"code": 401, "indent": 1, "parameters": ["Silph — it felt the shift."]},
+
+                    {"code": 101, "indent": 1, "parameters": ["That is why I stayed silent."]},
+                    {"code": 401, "indent": 1, "parameters": ["That is why I sealed myself"]},
+                    {"code": 401, "indent": 1, "parameters": ["in here. Not cowardice."]},
+
+                    {"code": 101, "indent": 1, "parameters": ["What do you think drives"]},
+                    {"code": 401, "indent": 1, "parameters": ["someone to that kind of"]},
+                    {"code": 401, "indent": 1, "parameters": ["silence?"]},
+
+                    {"code": 102, "indent": 1, "parameters": [["Fear.", "Responsibility.", "You were protecting it."], 0]},
+
+                    {"code": 402, "indent": 1, "parameters": [0, "Fear."]},
+                    {"code": 122, "indent": 2, "parameters": [345, 345, 0, 0, 1]},
+                    {"code": 121, "indent": 2, "parameters": [1150, 1150, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Fear. Yes. I am afraid of"]},
+                    {"code": 401, "indent": 2, "parameters": ["what I feel in that cave."]},
+                    {"code": 401, "indent": 2, "parameters": ["Anyone who could sense it"]},
+                    {"code": 401, "indent": 2, "parameters": ["would be."]},
+
+                    {"code": 402, "indent": 1, "parameters": [1, "Responsibility."]},
+                    {"code": 122, "indent": 2, "parameters": [345, 345, 0, 0, 2]},
+                    {"code": 121, "indent": 2, "parameters": [1151, 1151, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["Responsibility. You think I"]},
+                    {"code": 401, "indent": 2, "parameters": ["owed someone a warning. Maybe"]},
+                    {"code": 401, "indent": 2, "parameters": ["you're right. Maybe I failed"]},
+                    {"code": 401, "indent": 2, "parameters": ["this city by saying nothing."]},
+
+                    {"code": 402, "indent": 1, "parameters": [2, "You were protecting it."]},
+                    {"code": 122, "indent": 2, "parameters": [345, 345, 0, 0, 3]},
+                    {"code": 121, "indent": 2, "parameters": [1152, 1152, 0]},
+                    {"code": 101, "indent": 2, "parameters": ["...Protecting it. That is"]},
+                    {"code": 401, "indent": 2, "parameters": ["closer to the truth than you"]},
+                    {"code": 401, "indent": 2, "parameters": ["know. It is suffering. It did"]},
+                    {"code": 401, "indent": 2, "parameters": ["not ask to be created."]},
+
+                    {"code": 404, "indent": 1, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["Whatever you are going to"]},
+                    {"code": 401, "indent": 1, "parameters": ["do, do it before it decides"]},
+                    {"code": 401, "indent": 1, "parameters": ["to act. Time is not yours"]},
+                    {"code": 401, "indent": 1, "parameters": ["to waste."]},
+
+                    {"code": 0, "indent": 1, "parameters": []},
+
+                    {"code": 411, "indent": 0, "parameters": []},
+
+                    {"code": 101, "indent": 1, "parameters": ["Everyone has \\V[5] power."]},
+                    {"code": 401, "indent": 1, "parameters": ["Most people never learn to"]},
+                    {"code": 401, "indent": 1, "parameters": ["listen to it. Perhaps that"]},
+                    {"code": 401, "indent": 1, "parameters": ["is a mercy."]},
+
+                    {"code": 0, "indent": 1, "parameters": []},
+                    {"code": 412, "indent": 0, "parameters": []}
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "93": {
+          "name": "EV093 — Gym Guide",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making!",
+                    "Sabrina's Pok\u00e9mon use \\V[5]",
+                    "power instead of brute force.",
+                    "Strategy is everything here."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "A word of warning — Sabrina",
+                    "isn't like other leaders. She",
+                    "already knows why you're here.",
+                    "Creepy, but impressive."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "Take this!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Yo! Champ in making!",
+                    "Sabrina's Pok\u00e9mon use \\V[5]",
+                    "power instead of brute force.",
+                    "Don't rely on raw strength."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "She banned most fusion in",
+                    "Saffron. Says it hurts the",
+                    "Pok\u00e9mon in ways we can't see.",
+                    "Heavy stuff."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 9},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Whew! That match was \\V[5]!",
+                    "Sabrina looked like she",
+                    "expected to lose. Like she",
+                    "wanted you to win. Weird."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "191": {
+      "name": "Fighting Dojo",
+      "events": {
+        "4": {
+          "name": "Trainer(9) — Black Belt (Entry, Left)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "You're stepping into the",
+                    "\\V[5] Dojo, kid. Take your",
+                    "shoes off or take a punch.",
+                    "Your choice."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fighters from across Kanto",
+                    "train here. No fusion, no",
+                    "gimmicks. Just discipline and",
+                    "sweat."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "Trainer(9) — Black Belt (Entry, Right)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I heard you're good. Prove",
+                    "it. Words don't mean much",
+                    "in this dojo."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Our Master is a legend. Won",
+                    "the All-Kanto Tournament",
+                    "three times. Bare-knuckle",
+                    "era. Before fusion ruined it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(9) — Black Belt (Mid, Left)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I break boulders for training.",
+                    "Nothing tough frightens me.",
+                    "Not Rockets, not Psychics,",
+                    "not fusion freaks."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The only thing that gives us",
+                    "trouble is psychic power.",
+                    "Sabrina proved that. But a",
+                    "fist doesn't need a license."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(9) — Black Belt (Mid, Right)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Shoes off! This is sacred",
+                    "ground. We don't fuse our",
+                    "Pok\u00e9mon and we don't fuse",
+                    "our traditions."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Wait 'til you see the Master!",
+                    "I'm a pebble compared to that",
+                    "mountain of a man."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(3) — Black Belt (Inner Guard)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "That's it. You walked in here",
+                    "like you own the place. Time",
+                    "to learn some respect."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You've got hands. But the",
+                    "Master? The Master is on a",
+                    "different level entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Karate Master",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I am the Karate Master.",
+                    "Leader of this dojo. We",
+                    "train the old way here.",
+                    "No fusion. No shortcuts."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Rockets, League, politics —",
+                    "none of it matters in here.",
+                    "A fist doesn't need a license.",
+                    "You want to test yours?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "...You hit harder than I",
+                    "expected. I won't pretend",
+                    "that didn't sting."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Take one of my fighting",
+                    "Pok\u00e9mon. They've never been",
+                    "fused. They're pure. Raise",
+                    "it right."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237, "self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Stay and train with us if",
+                    "you want. Those Rocket types",
+                    "won't come in here. They",
+                    "know better."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 — Hitmonlee Pokeball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Master's Pok\u00e9 Ball.",
+                    "Better not touch it."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You want the hard-kicking",
+                    "Hitmonlee? Pure fighter.",
+                    "Never been fused."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 237, "switch2_id": 238},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Master said one. Don't",
+                    "get greedy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 — Hitmonchan Pokeball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Master's Pok\u00e9 Ball.",
+                    "Better not touch it."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You want the piston-punching",
+                    "Hitmonchan? Built like a",
+                    "tank. Never been fused."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 237, "switch2_id": 238},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Master said one. Don't",
+                    "get greedy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 — Hitmontop Pokeball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Master's Pok\u00e9 Ball.",
+                    "Better not touch it."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You want the handstand-",
+                    "spinning Hitmontop?",
+                    "Unorthodox. Never been fused."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 237, "switch2_id": 238},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Master said one. Don't",
+                    "get greedy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "TYPE_EXPERT_FIGHTING (West)",
+          "pages": {
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You beat me at my own game.",
+                    "My pride's going to need a",
+                    "week to recover from that."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 — Karate Grunt (Left Display)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Haiyahh!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You want the hard-kicking",
+                    "Hitmonlee?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 238},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Haiyahh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 — Karate Grunt (Right Display)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hooh!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You want the piston-punching",
+                    "Hitmonchan?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 238},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Hooh!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "TYPE_EXPERT_FIGHTING (East)",
+          "pages": {
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good fight. Clean hits. The",
+                    "Psychic gym leader sealed",
+                    "herself away years ago.",
+                    "Can't say I blame her."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "TYPE_EXPERT_FIGHTING (NE)",
+          "pages": {
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fusion-type Pok\u00e9mon make",
+                    "traditional fighting look",
+                    "pointless. Some kid walks in",
+                    "with a fused monster and —"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018 — Karate Grunt (Center Display)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Taa!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"switch1_id": 237},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You want the handstand-",
+                    "spinning Hitmontop?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": ["Yes", "No"],
+                  "cancel_type": 2
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 238},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Taa!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
