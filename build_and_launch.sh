@@ -27,6 +27,12 @@ MKXP_DIR="$PROJECT_DIR/mkxp-z"
 MKXP_BIN=""
 DATA_DIR="$GAME_DIR/Data"
 
+# Detect Windows (Git Bash, MSYS2, Cygwin)
+IS_WINDOWS=false
+if [[ "${OS:-}" == "Windows_NT" ]] || [[ "$(uname -s)" == MINGW* ]] || [[ "$(uname -s)" == MSYS* ]] || [[ "$(uname -s)" == CYGWIN* ]]; then
+  IS_WINDOWS=true
+fi
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -161,6 +167,12 @@ build_mkxp_from_source() {
 }
 
 build_mkxp() {
+  # On Windows, the game runs natively via Game.exe — no mkxp-z needed
+  if $IS_WINDOWS; then
+    ok "Windows detected — Game.exe will be used directly (no mkxp-z needed)"
+    return
+  fi
+
   # Check if we already have a usable binary
   if find_mkxp_binary; then
     ok "mkxp-z binary already available: $MKXP_BIN"
@@ -349,8 +361,20 @@ MKXP_CONFIG
 # ─── Step 5: Launch ──────────────────────────────────────────────────────────
 
 launch_game() {
+  # ── Windows: launch Game.exe directly ──
+  if $IS_WINDOWS; then
+    if [ -f "$GAME_DIR/Game.exe" ]; then
+      info "Launching Pokemon: Synthesis via Game.exe..."
+      cd "$GAME_DIR"
+      start "" "Game.exe" 2>/dev/null || cmd //c start "" "Game.exe" 2>/dev/null || ./Game.exe
+      return
+    else
+      error "Game.exe not found in $GAME_DIR. Re-run without flags to clone game data first."
+    fi
+  fi
+
+  # ── Linux: use mkxp-z or Wine ──
   if ! find_mkxp_binary; then
-    # Fallback: try Wine with the Windows Game.exe
     if command -v wine &>/dev/null && [ -f "$GAME_DIR/Game.exe" ]; then
       warn "mkxp-z binary not found. Falling back to Wine..."
       info "Launching with: wine Game.exe"
@@ -370,9 +394,25 @@ Options:
 
   generate_config
 
+  local log_file="$PROJECT_DIR/launch.log"
+
   info "Launching Pokemon: Synthesis..."
+  info "Log file: $log_file"
   cd "$GAME_DIR"
-  "$MKXP_BIN"
+  "$MKXP_BIN" 2>&1 | tee "$log_file"
+  local exit_code=${PIPESTATUS[0]}
+
+  if [ $exit_code -ne 0 ]; then
+    echo ""
+    warn "mkxp-z exited with code $exit_code. Check $log_file for details."
+    echo ""
+    echo "Common fixes:"
+    echo "  1. Missing fonts — copy Windows Fonts/ to $GAME_DIR/Fonts/"
+    echo "  2. Missing RGSS RTP — ensure the game's Audio/Graphics folders are complete"
+    echo "  3. Try Wine instead: sudo apt install wine && ./build_and_launch.sh --launch"
+    echo ""
+    echo "Full log saved to: $log_file"
+  fi
 }
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
