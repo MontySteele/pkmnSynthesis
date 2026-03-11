@@ -1,0 +1,101 @@
+{
+  "_implementation_notes": [
+    "ROUTE 4 FILL — Maps 233 (Route 4 interior) and 291 (Route 4 south).",
+    "These are parallel versions of Route 4 with near-identical events.",
+    "Map 106 (the main Route 4 overworld) is already covered in pewter_routes.json.",
+    "",
+    "Map 233:",
+    "  EV007/EV008 (item spots): 'Nothing there' — not modified.",
+    "  EV003 (blocked cave sign): Not modified (factual sign).",
+    "  EV015 (Trainer): Pre-battle rethemed. Post-battle rethemed.",
+    "",
+    "Map 291:",
+    "  EV007/EV008 (item spots): 'Nothing there' — not modified.",
+    "  EV003 (blocked cave sign): Not modified (factual sign).",
+    "  EV015 (Trainer): Pre-battle rethemed. Post-battle rethemed.",
+    "",
+    "Tone: Quiet, post-Mt. Moon. The player has emerged from the cave.",
+    "  Route 4 is a breather before Cerulean. Trainers are sparse.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "233": {
+      "name": "Route 4 (interior)",
+      "events": {
+        "15": {
+          "name": "EV015 (Trainer at x:39,y:5)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ha! I must be strong —",
+                    "I'm the only trainer on",
+                    "this whole route!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So much for guarding",
+                    "the route by myself..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "291": {
+      "name": "Route 4 (south)",
+      "events": {
+        "15": {
+          "name": "EV015 (Trainer at x:59,y:5)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ha! I must be strong —",
+                    "I'm the only trainer on",
+                    "this whole route!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So much for guarding",
+                    "the route by myself..."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

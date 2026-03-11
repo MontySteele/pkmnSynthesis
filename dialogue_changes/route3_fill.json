@@ -1,0 +1,1597 @@
+{
+  "_implementation_notes": [
+    "ROUTE 3 FILL — Maps 490 (Route 3) and 379 (Pokemon Center).",
+    "",
+    "Map 490 (Route 3):",
+    "  EV016 (brock-rematch): Post-game Brock encounter. Rethemed for Synthesis — references Mt. Moon investigation.",
+    "  EV027 (oak assistant): HA outbreak tutorial — MECHANICAL. Light personality retheme only.",
+    "  EV035 (HA detector): MECHANICAL — not modified.",
+    "  EV017 (Route 3 sign): Sign — not modified.",
+    "  EV018/EV019 (item spots): 'Nothing there' — not modified.",
+    "  EV025 (Trainer Tips sign): Meta-game tip — not modified.",
+    "  EV026 (Blocking girl): Rethemed for Synthesis — directs player to Brock.",
+    "  EV029 (Nurse/Geodude scene): MAJOR SCENE. Nurse+Brock cutscene at Mt. Moon entrance. Rethemed for Synthesis.",
+    "  EV030 (unnamed NPC): Geodude encouragement line — rethemed.",
+    "  EV031 (Geodude): Geodude pain cry — not modified (Pokemon vocalization).",
+    "  EV033 (brock2): Brock's Mt. Moon investigation scene — MAJOR SCENE. Rethemed for Synthesis.",
+    "    Choice structure and Rock Smash TM give preserved EXACTLY.",
+    "",
+    "  Trainers:",
+    "  EV006 (Shorts kid): Pre-battle rethemed. Post-battle rematch MECHANICAL — preserved.",
+    "  EV008 (Lass): Pre-battle rethemed. Post-battle rematch MECHANICAL — preserved.",
+    "  EV011 (Bug Catcher): Pre-battle rethemed. Post-battle rematch MECHANICAL — preserved.",
+    "  EV003 (Lass 2): Pre-battle rethemed. Post-battle rematch MECHANICAL — preserved.",
+    "  EV009 (Youngster): Pre-battle rethemed. Post-battle trade system MECHANICAL — preserved.",
+    "    Page 2 trade (Spearpod/Zushrew): ALL choices, start_indices, trade mechanics preserved exactly.",
+    "    Page 3 post-trade: preserved exactly.",
+    "  EV004 (Bug Catcher 2): Pre-battle rethemed. Post-battle trade system MECHANICAL — preserved.",
+    "    Page 1 trade (Caterkans/Weekans/Ratpie): ALL choices, start_indices, trade mechanics preserved exactly.",
+    "    Page 2 post-trade: preserved exactly.",
+    "  EV010 (Youngster 2): Pre-battle rethemed. Post-battle trade (Cateras) MECHANICAL — preserved.",
+    "    Page 2 post-trade: preserved exactly.",
+    "  EV007 (Bug Catcher 3): Pre-battle rethemed. Post-battle Pokedex bounty MECHANICAL — preserved.",
+    "    Page 1: ALL payment logic, \\G, \\V[5] preserved exactly. Post-bounty rethemed.",
+    "    Page 2 post-trade: preserved exactly.",
+    "",
+    "Map 379 (Pokemon Center):",
+    "  EV004 (Nurse): MECHANICAL — not modified.",
+    "  EV007 (Magikarp salesman): MECHANICAL — not modified.",
+    "  EV010 (Magikarp flopping): not modified.",
+    "  EV011 (Blocking girl): Rethemed for Synthesis.",
+    "  EV003 (injured trainer 1): Rethemed for Synthesis. Item give on page 1 preserved.",
+    "  EV008 (injured trainer 2): Rethemed for Synthesis.",
+    "  EV009 (injured trainer 3): Rethemed for Synthesis.",
+    "  EV013 (injured trainer 4): Rethemed for Synthesis.",
+    "",
+    "Tone: Transitional, escalating. Route 3 starts light (trainers, catching) and darkens",
+    "  toward Mt. Moon (nurse scene, Brock scene, injured trainers). Phase 1 tension builds.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "490": {
+      "name": "Route 3",
+      "events": {
+        "16": {
+          "name": "EV016 (brock-rematch at x:63,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 12,
+                "switch2_id": 14
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hello, \\PN. The view of",
+                    "Mt. Moon from here is",
+                    "something, isn't it?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "I come out here to study",
+                    "the rock formations when",
+                    "I have some free time."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I still remember our first",
+                    "battle. You were just",
+                    "starting out, but I could",
+                    "see the determination in",
+                    "your eyes."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You've grown incredibly",
+                    "strong since then."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Meet me at the Battle",
+                    "Arena in Vermillion City",
+                    "if you want a rematch.",
+                    "I'll be waiting!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 (oak assistant — HA outbreak at x:6,y:11)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "\\PN!"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "It's me, Prof. Oak's",
+                    "research assistant!"
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "I was collecting field data",
+                    "nearby and came across",
+                    "something remarkable. You",
+                    "have to see this!"
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "It seems like there's an",
+                    "outbreak of wild Pok\u00e9mon",
+                    "with <b>Hidden Abilities</b>",
+                    "on this route!"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "I spotted one of them in",
+                    "this very patch of grass!"
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "You'll be able to tell at",
+                    "the start of battle if a",
+                    "Pok\u00e9mon has its hidden",
+                    "ability."
+                  ]
+                },
+                {
+                  "start_index": 75,
+                  "type": "text",
+                  "lines": [
+                    "This is a very rare event.",
+                    "Prof. Oak thinks Hidden",
+                    "Abilities may be linked to",
+                    "natural fusion potential.",
+                    "We're still studying it!"
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "But I don't expect it to",
+                    "last very long, so try to",
+                    "catch one of these rare",
+                    "Pok\u00e9mon while you still",
+                    "have the chance!"
+                  ]
+                },
+                {
+                  "start_index": 83,
+                  "type": "text",
+                  "lines": [
+                    "I'm headed to Cerulean",
+                    "City for more fieldwork,",
+                    "so I'd better get moving."
+                  ]
+                },
+                {
+                  "start_index": 86,
+                  "type": "text",
+                  "lines": [
+                    "It's just on the other",
+                    "side of Mt. Moon. Maybe",
+                    "I'll see you there. Good",
+                    "luck with your League",
+                    "challenge!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 (Blocking girl at x:70,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you're a Pok\u00e9mon",
+                    "trainer, right?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Then you absolutely have",
+                    "to challenge Brock!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "He's Pewter City's Gym",
+                    "Leader. Every trainer on",
+                    "the League circuit faces",
+                    "him first!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029 (Nurse/Geodude scene at x:70,y:8)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A group of thugs has been",
+                    "attacking trainers inside",
+                    "Mt. Moon. The Pok\u00e9mon",
+                    "Center is overwhelmed!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "This poor Geodude took",
+                    "the worst of it. They",
+                    "didn't hold back at all."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "I'm treating him as best",
+                    "I can, but there are more",
+                    "injured Pok\u00e9mon waiting",
+                    "inside..."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Nurse! I came as fast",
+                    "as I could!"
+                  ]
+                },
+                {
+                  "start_index": 50,
+                  "type": "text",
+                  "lines": [
+                    "Thank you for coming,",
+                    "Brock. This Geodude's",
+                    "injuries are serious."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "You might be able to",
+                    "treat it better than I",
+                    "can. You're the Rock",
+                    "Pok\u00e9mon expert!"
+                  ]
+                },
+                {
+                  "start_index": 59,
+                  "type": "text",
+                  "lines": [
+                    "Of course. I'll see what",
+                    "I can do."
+                  ]
+                },
+                {
+                  "start_index": 61,
+                  "type": "text",
+                  "lines": [
+                    "A group of thugs attacking",
+                    "trainers... This isn't",
+                    "ordinary trouble."
+                  ]
+                },
+                {
+                  "start_index": 67,
+                  "type": "text",
+                  "lines": [
+                    "\\PN, I'm glad you're",
+                    "here too. You came at",
+                    "just the right time."
+                  ]
+                },
+                {
+                  "start_index": 70,
+                  "type": "text",
+                  "lines": [
+                    "I'll be treating this",
+                    "Geodude for now, but",
+                    "someone needs to find out",
+                    "who's behind these attacks",
+                    "and what they're after."
+                  ]
+                },
+                {
+                  "start_index": 74,
+                  "type": "text",
+                  "lines": [
+                    "Knowing your skill in",
+                    "battle, I can't think of",
+                    "anyone better suited for",
+                    "this than you."
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "I'd better get back to",
+                    "the Pok\u00e9mon Center too.",
+                    "A lot of Pok\u00e9mon are",
+                    "waiting for me!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030 (Geodude encouragement at x:71,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hang in there, Geodude.",
+                    "You'll pull through!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033 (brock2 — Mt. Moon investigation at x:72,y:8)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 677
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We need to find out who's",
+                    "behind these attacks and",
+                    "what they're after."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Head into the cave and",
+                    "report back if you find",
+                    "anything."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 679
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "So, \\PN — did you find",
+                    "out anything about who",
+                    "was threatening trainers",
+                    "in there?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": [
+                    "Some thugs dressed in black...",
+                    "I didn't see anything"
+                  ],
+                  "cancel_type": 0
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Thugs dressed in black?",
+                    "That sounds like it could",
+                    "be Team Rocket."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "They're a group of",
+                    "Pok\u00e9mon gangsters.",
+                    "Usually they stick to",
+                    "petty crimes. Seeing them",
+                    "this bold is... worrying."
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "That's unfortunate.",
+                    "Whoever did this, they",
+                    "were more than just",
+                    "common thugs."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "It seemed coordinated.",
+                    "They must have some kind",
+                    "of ulterior motive."
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "The path was blocked by",
+                    "a boulder? I might be",
+                    "able to help with that."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "This move lets your",
+                    "Pok\u00e9mon smash boulders",
+                    "that block the way."
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "All rocks are precious to",
+                    "me, so I hate using this.",
+                    "But it's invaluable to",
+                    "the museum excavators."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "This should help you get",
+                    "deeper into the cave."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 679,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This move lets your",
+                    "Pok\u00e9mon smash boulders",
+                    "that block the way."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "All rocks are precious to",
+                    "me, so I hate using this.",
+                    "But it's invaluable to",
+                    "the museum excavators."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "It should help you get",
+                    "deeper into the cave."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 (Shorts kid trainer at x:12,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I like shorts! They're",
+                    "comfy and easy to wear!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The comfy feeling will",
+                    "never return!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Hey, do you want to have",
+                    "another battle?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here if you",
+                    "change your mind!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Lass trainer at x:15,y:8)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Quit staring if you",
+                    "don't want to fight!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Okay, you got me."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That was fun though! Want",
+                    "to go again?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here if you",
+                    "change your mind!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 (Bug Catcher trainer at x:26,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Stay out of the tall",
+                    "grass if you don't want",
+                    "a battle!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hey, do you want to have",
+                    "another battle?"
+                  ]
+                },
+                {
+                  "start_index": 2,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here if you",
+                    "change your mind!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Lass 2 trainer at x:41,y:13)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "That look you gave me...",
+                    "so intriguing!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "That was fun! Want to",
+                    "battle again?"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "You got me again!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here if you",
+                    "change your mind!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Youngster trainer/trader at x:31,y:6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "You looked at me,",
+                    "didn't you?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Good fight! I had fun."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'm game for a rematch.",
+                    "How about you?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "I'll be here if you",
+                    "change your mind!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Wow, you're good! "
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll trade you one of my",
+                    "Pokemon. What do you",
+                    "think?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I'll take any of yours",
+                    "as long as it's at least",
+                    "level 10."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "So. Which one did you",
+                    "want?"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "choices",
+                  "choices": [
+                    "Spearpod",
+                    "Zushrew"
+                  ],
+                  "cancel_type": 0
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Sure, which Pokemon are",
+                    "you going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "You don't want to trade?",
+                    "Aww..."
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get",
+                    "started!"
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "I hope you take care of",
+                    "Spearpod!"
+                  ]
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Sure, which Pokemon are",
+                    "you going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 52,
+                  "type": "text",
+                  "lines": [
+                    "You don't want to trade?",
+                    "Aww..."
+                  ]
+                },
+                {
+                  "start_index": 56,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get",
+                    "started!"
+                  ]
+                },
+                {
+                  "start_index": 65,
+                  "type": "text",
+                  "lines": [
+                    "I hope you take care of",
+                    "Zushrew!"
+                  ]
+                },
+                {
+                  "start_index": 74,
+                  "type": "text",
+                  "lines": [
+                    "Aww shucks! Let me know",
+                    "if you change your mind!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "I'll take good care of",
+                    "your Pokemon, I promise!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Bug Catcher 2 trainer/trader at x:21,y:8)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Hey, you got any cool",
+                    "Pok\u00e9mon to show me?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Wow, you're good! "
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll trade you one of my",
+                    "Pokemon. What do you",
+                    "think?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I'll take any of yours",
+                    "as long as it's at least",
+                    "the same level as mine!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "So. Which one did you",
+                    "want?"
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "choices",
+                  "choices": [
+                    "Caterkans (lvl 10)",
+                    "Weekans (lvl 10)",
+                    "Ratpie (lvl 10)"
+                  ],
+                  "cancel_type": 0
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "Sure, which Pokemon are",
+                    "you going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "You don't want to trade?",
+                    "Aww..."
+                  ]
+                },
+                {
+                  "start_index": 28,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get",
+                    "started!"
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "I hope you take care of",
+                    "Caterkans!"
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "Sure, which Pokemon are",
+                    "you going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 51,
+                  "type": "text",
+                  "lines": [
+                    "You don't want to trade?",
+                    "Aww..."
+                  ]
+                },
+                {
+                  "start_index": 55,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get",
+                    "started!"
+                  ]
+                },
+                {
+                  "start_index": 62,
+                  "type": "text",
+                  "lines": [
+                    "I hope you take care of",
+                    "Weekans!"
+                  ]
+                },
+                {
+                  "start_index": 69,
+                  "type": "text",
+                  "lines": [
+                    "Sure, which Pokemon are",
+                    "you going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 78,
+                  "type": "text",
+                  "lines": [
+                    "You don't want to trade?",
+                    "Aww..."
+                  ]
+                },
+                {
+                  "start_index": 82,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get",
+                    "started!"
+                  ]
+                },
+                {
+                  "start_index": 89,
+                  "type": "text",
+                  "lines": [
+                    "I hope you take care of",
+                    "Ratpie!"
+                  ]
+                },
+                {
+                  "start_index": 98,
+                  "type": "text",
+                  "lines": [
+                    "Aww shucks! Let me know",
+                    "if you change your mind!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "C"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The Pok\u00e9mon you gave me",
+                    "will be the strongest",
+                    "there is. Count on it!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Youngster 2 trainer/trader at x:27,y:12)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Fused Pok\u00e9mon evolve too.",
+                    "Let me show you!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Wow, you're good! "
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Want to trade for my",
+                    "Cateras?"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I'll take any of your",
+                    "Pok\u00e9mon as long as it's",
+                    "at least level 11!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Great! Which Pok\u00e9mon are",
+                    "you going to give me?"
+                  ]
+                },
+                {
+                  "start_index": 19,
+                  "type": "text",
+                  "lines": [
+                    "You don't want to trade?",
+                    "Aww..."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Perfect, let's get",
+                    "started!"
+                  ]
+                },
+                {
+                  "start_index": 30,
+                  "type": "text",
+                  "lines": [
+                    "I hope you take care of",
+                    "my Cateras!"
+                  ]
+                },
+                {
+                  "start_index": 37,
+                  "type": "text",
+                  "lines": [
+                    "Aww shucks! Let me know",
+                    "if you change your mind!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Thanks for the trade!",
+                    "I'll take good care of",
+                    "your Pok\u00e9mon!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Bug Catcher 3 trainer/bounty at x:36,y:14)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Catching Pok\u00e9mon...",
+                    "I just can't get enough!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Let me see your Pok\u00e9dex."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "I'll give you $20 for",
+                    "each species of Pok\u00e9mon",
+                    "you've caught."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "\\GHmm... Let's see..."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "\\GOh boy, this is going",
+                    "to cost me!"
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "\\GOh, this isn't too bad!"
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "\\G\\PN received $\\V[5]!"
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Use that to stock up on",
+                    "Pok\u00e9 Balls and catch",
+                    "even more!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "B"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "When you finish your",
+                    "Pok\u00e9dex, can I have it?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "379": {
+      "name": "Pokemon Center (Route 3)",
+      "events": {
+        "11": {
+          "name": "EV011 (Blocking girl at x:15,y:9)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You actually beat Brock?",
+                    "Wow!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You must be a really",
+                    "talented trainer!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (Injured trainer at x:7,y:6)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I couldn't do anything",
+                    "against those thugs...",
+                    "Their Pok\u00e9mon were too",
+                    "strong."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 677
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "At least my Pok\u00e9mon are",
+                    "better now. That's all",
+                    "that really matters."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Injured trainer 2 at x:11,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Pok\u00e9mon need help now!",
+                    "Where's the nurse?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 677
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We were training in Mt.",
+                    "Moon, but after what",
+                    "happened... I'm not sure",
+                    "I want to go back."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Injured trainer 3 — item giver at x:13,y:6)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "My Pok\u00e9mon needs help!",
+                    "Where is the nurse?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 677
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You're heading into the",
+                    "cave? Here, take this."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 677,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Be careful in Mt. Moon.",
+                    "Those people might still",
+                    "be lurking around."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 (Injured trainer 4 at x:8,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 4
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Those thugs beat all of",
+                    "us and there's no one",
+                    "here to heal our Pok\u00e9mon!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 677
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Someone needs to teach",
+                    "those thugs a lesson!"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
