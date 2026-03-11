@@ -1,0 +1,885 @@
+{
+  "_implementation_notes": [
+    "CELADON MISC FILL — Maps 408, 542, 510, 465, 466, 425, 415, 474, 475, 438, 439.",
+    "Covers: Pokemon Center, Gym Rematch, Game Corner Prize Exchange,",
+    "Hotel, Underground Gate, Western Gate, Cycling Gates, Route 16, HM Fly House.",
+    "",
+    "MECHANICAL EVENTS PRESERVED (not modified):",
+    "- Map 408 EV005: Ponyta/Raichu trade (ALL trade mechanics)",
+    "- Map 408 EV011: Pokemon cries",
+    "- Map 408 EV014: Punch move tutor (ALL teach/payment mechanics)",
+    "- Map 408 EV004 (Nurse): Pokemon Center heal (ALL healing mechanics)",
+    "- Map 510 EV006: Game Corner prize exchange (ALL coin mechanics)",
+    "- Map 510 EV004: TM prize exchange (ALL coin mechanics)",
+    "- Map 465 EV005: Hotel room rental ($200, ALL mechanics)",
+    "- Map 465 EV011: Hair salon (ALL hairstyle mechanics)",
+    "- Map 466 EV006: Pokemon restaurant quest (ALL quest mechanics)",
+    "- Map 466 EV007: Lavender bell legend (quest hint — preserved)",
+    "- Map 466 EV009: Egg omelette quest (ALL quest mechanics)",
+    "- Map 466 EV010: Eevee evolution study (ALL quest mechanics)",
+    "- Map 466 EV011: Spiritomb stone quest (ALL quest mechanics)",
+    "- Map 415: Saffron Gate toll ($50,000) + Lance event (ALL mechanics)",
+    "- Map 474 EV004: Cycling Road bike requirement (mechanical gate)",
+    "- Map 438: ALL Snorlax/PokeFlute events (mechanical encounters)",
+    "- Map 439 EV001: HM02 Fly gift (ALL mechanics)",
+    "- Map 439 EV002/EV003: Pokemon cry + container (mechanical)",
+    "",
+    "Only standalone flavor NPCs rewritten for Synthesis tone.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "408": {
+      "name": "Pokemon Center",
+      "events": {
+        "6": {
+          "name": "EV006 (Bike Wisher)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Man, I wish I had a bike.",
+                    "The Cycling Road's the only",
+                    "route to Fuchsia that doesn't",
+                    "pass through Rocket territory."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Well, all roads pass through",
+                    "someone's territory around",
+                    "here. But at least on a bike",
+                    "you can outrun them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Stone Shopper)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I heard the Dept. Store sells",
+                    "evolutionary stones. Licensed",
+                    "ones, even."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The Game Corner sells them",
+                    "too, cheaper. But you don't",
+                    "know where those came from.",
+                    "Or from whom."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 (Ponyta Trader)",
+          "_note": "MECHANICAL — Pokemon trade. Preserved entirely."
+        },
+        "11": {
+          "name": "EV011 (Pokemon Cry)",
+          "_note": "MECHANICAL — Pokemon cry. Preserved."
+        },
+        "14": {
+          "name": "EV014 (Punch Move Tutor)",
+          "_note": "MECHANICAL — Move tutor. All teach/payment dialogue preserved."
+        },
+        "4": {
+          "name": "Nurse (Pokemon Center)",
+          "_note": "MECHANICAL — Healing event. All nurse dialogue preserved."
+        }
+      }
+    },
+    "542": {
+      "name": "Celadon City Gym (Rematch)",
+      "events": {
+        "5": {
+          "name": "Trainer(4) (Gym Trainer — Sprouts Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Pok\u00e9mon are like sprouts.",
+                    "They grow their whole lives.",
+                    "Forcing fusion is like forcing",
+                    "a flower to bloom early."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Bleaah! Erika will show you",
+                    "what harmony really means."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "That was remarkable. Erika",
+                    "barely flinched."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "She never does. Even when",
+                    "she loses. Especially then."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "Trainer(3) (Gym Trainer — Hobbyist Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Pleased to meet you again.",
+                    "I train here because Erika",
+                    "values patience over power.",
+                    "Refreshing. And convenient."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Our leader Erika may be",
+                    "quiet, but she's the most",
+                    "skilled trainer in this gym.",
+                    "Don't let the calm fool you."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Excellent fight! You earned",
+                    "that badge twice over."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "Trainer(4) (Gym Trainer — Gatekeeper Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Back again? Erika's been",
+                    "expecting you. She expected",
+                    "you'd return. She expects",
+                    "most things."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "We only use Grass-type",
+                    "Pok\u00e9mon at our gym."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "We also use them for flower",
+                    "arrangements. The ones that",
+                    "aren't fused, anyway."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "What a fight that was! Erika",
+                    "gave it everything this time."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "Trainer(3) (Gym Trainer — No Bugs Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "No bugs or fire types in the",
+                    "greenhouse, please. We keep",
+                    "things... delicate here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Erika may be quiet, but her",
+                    "Pok\u00e9mon speak volumes."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Good job on that Rainbow",
+                    "Badge! You've earned Erika's",
+                    "respect. That's not easy."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "Trainer(4) (Gym Trainer — Easy to Raise Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "Look at my Grass Pok\u00e9mon!",
+                    "They practically raise",
+                    "themselves. Like Celadon's",
+                    "economy. Self-sustaining."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I have a date coming up.",
+                    "Erika says good manners cost",
+                    "nothing. Neither does looking",
+                    "the other way, apparently."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You fought with grace and",
+                    "elegance. Erika would approve.",
+                    "She always approves."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "Trainer(1) (Gym Trainer — Mother Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Be strong, my Pok\u00e9mon. Be",
+                    "strong for mother. And for",
+                    "Celadon. Whatever that means",
+                    "these days."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I didn't bring my best team!",
+                    "Wait until next time!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations on the badge!",
+                    "Erika speaks highly of you.",
+                    "Which is how she speaks of",
+                    "everything. But still."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Unbelievable!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "Trainer(1) (Gym Trainer — Flowers Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Eek! Don't step on the",
+                    "flowers! They're the only",
+                    "honest thing in this city."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Grass-types are tough against",
+                    "Water. They also have an edge",
+                    "on Rock and Ground types."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "But their real strength is",
+                    "patience. Like Erika's."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {"switch1_id": 7},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Well earned, that badge.",
+                    "Erika respects strength",
+                    "paired with restraint."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": ". (Erika — Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Hello. Lovely weather, isn't",
+                    "it? Everything in Celadon",
+                    "is pleasant. ...Oh dear.",
+                    "I must have dozed off."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Welcome back, \\PN. I had",
+                    "a feeling you'd return."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "So you've come to challenge",
+                    "me again? How persistent."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I'm grateful for your help",
+                    "with Team Rocket, but that",
+                    "won't make me go easy on you.",
+                    "I have a reputation to keep."
+                  ]
+                },
+                {
+                  "start_index": 21,
+                  "type": "text",
+                  "lines": [
+                    "I shall use three Pok\u00e9mon.",
+                    "Choose yours."
+                  ]
+                },
+                {
+                  "start_index": 34,
+                  "type": "text",
+                  "lines": [
+                    "Oh! I concede. You remain",
+                    "remarkably strong. Perhaps",
+                    "stronger than before."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Good luck on your journey,",
+                    "\\PN. Celadon will be here",
+                    "when you return. It always",
+                    "is. Nothing changes here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "Trainer(2) (Peeping Tom Rematch)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Aren't you the peeping Tom?",
+                    "In Celadon, everyone watches",
+                    "everyone. It's practically",
+                    "civic duty."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh, you weren't peeping?",
+                    "We get a lot of gawkers.",
+                    "Celadon's gym is... popular",
+                    "for the wrong reasons."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "510": {
+      "name": "Game Corner (Prize Exchange)",
+      "events": {
+        "6": {
+          "name": "EV006 (Pokemon Prize Exchange)",
+          "_note": "MECHANICAL — Game Corner prize exchange. ALL coin mechanics and Pokemon delivery preserved."
+        },
+        "4": {
+          "name": "EV004 (TM Prize Exchange)",
+          "_note": "MECHANICAL — TM prize exchange. ALL coin mechanics preserved."
+        }
+      }
+    },
+    "465": {
+      "name": "Celadon Hotel (Lobby)",
+      "events": {
+        "5": {
+          "name": "EV005 (Receptionist)",
+          "_note": "MECHANICAL — Hotel room rental at $200. ALL mechanics preserved."
+        },
+        "11": {
+          "name": "EV011 (Hair Salon)",
+          "_note": "MECHANICAL — Hairstyle/dye mechanics. ALL preserved."
+        },
+        "10": {
+          "name": "EV010 (Salon Greeter)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to the hotel salon!",
+                    "Change your look to match",
+                    "Celadon's style: polished",
+                    "on the outside, at minimum."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Each city's badge unlocks a",
+                    "special style. Collect them",
+                    "all for the full makeover.",
+                    "Image is everything here."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "466": {
+      "name": "Celadon Hotel (Rooms)",
+      "events": {
+        "11": {
+          "name": "EV011 (Spiritomb Stone Quest)",
+          "_note": "MECHANICAL — Quest NPC. All quest mechanics preserved."
+        },
+        "6": {
+          "name": "EV006 (Pokemon Restaurant Quest)",
+          "_note": "MECHANICAL — Multi-Pokemon quest with extensive branching. ALL preserved."
+        },
+        "7": {
+          "name": "EV007 (Lavender Bell Legend)",
+          "_note": "MECHANICAL — Quest hint. Preserved entirely."
+        },
+        "8": {
+          "name": "EV008 (Empty Container)",
+          "_note": "MECHANICAL — Container check. Preserved."
+        },
+        "9": {
+          "name": "EV009 (Egg Omelette Quest)",
+          "_note": "MECHANICAL — Quest + Softboiled tutor. ALL preserved."
+        },
+        "10": {
+          "name": "EV010 (Eevee Evolution Study)",
+          "_note": "MECHANICAL — Quest with Super Splicer reward. ALL preserved."
+        }
+      }
+    },
+    "425": {
+      "name": "Underground Gate",
+      "events": {
+        "1": {
+          "name": "EV001 (Trash Container)",
+          "_note": "MECHANICAL — Container check. Preserved."
+        }
+      }
+    },
+    "415": {
+      "name": "Western Gate (Saffron Toll)",
+      "events": {
+        "5": {
+          "name": "EV005 (Toll Guard)",
+          "_note": "MECHANICAL — $50,000 toll gate. ALL payment and gate mechanics preserved."
+        },
+        "1": {
+          "name": "EV001 (Toll Guard Duplicate)",
+          "_note": "MECHANICAL — Duplicate toll guard. Preserved."
+        },
+        "4": {
+          "name": "Lance (Saffron Liberation)",
+          "_note": "MECHANICAL — Lance scripted event for Saffron liberation. Preserved entirely."
+        }
+      }
+    },
+    "474": {
+      "name": "Gate (Cycling Road — North)",
+      "events": {
+        "4": {
+          "name": "EV004 (Bike Check)",
+          "_note": "MECHANICAL — Bike requirement gate. Preserved."
+        }
+      }
+    },
+    "475": {
+      "name": "Gate (Cycling Road — South Overlook)",
+      "events": {
+        "5": {
+          "name": "EV005 (Scenic Viewer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can almost see Cinnabar",
+                    "from up here. They say Blaine",
+                    "runs the island like his own",
+                    "country. At least he's honest",
+                    "about it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Route Info NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The bikers on Cycling Road",
+                    "are tough. Ex-Rockets, some",
+                    "of them. Or current ones.",
+                    "Hard to tell the difference."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The route to Fuchsia is",
+                    "shorter via Cycling Road",
+                    "but the trainers hit harder",
+                    "than Route 13's."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 (Bianca Cameo)",
+          "_note": "MECHANICAL — Bianca cameo with Castelia Cone gift. Preserved entirely."
+        },
+        "1": {
+          "name": "EV001 (Wildlife Board)",
+          "_note": "MECHANICAL — Route info board. Preserved."
+        },
+        "2": {
+          "name": "EV002 (Wildlife Board 2)",
+          "_note": "MECHANICAL — Route info board duplicate. Preserved."
+        }
+      }
+    },
+    "438": {
+      "name": "Route 16",
+      "events": {
+        "6": {
+          "name": "EV006 (Snorlax 1)",
+          "_note": "MECHANICAL — Snorlax/PokeFlute encounter. Preserved."
+        },
+        "1": {
+          "name": "snorlax (Snorlax 2)",
+          "_note": "MECHANICAL — Snorlax encounter. Preserved."
+        },
+        "7": {
+          "name": "EV007 (Snorlax 3)",
+          "_note": "MECHANICAL — Snorlax encounter. Preserved."
+        },
+        "8": {
+          "name": "EV008 (Snorlax 4)",
+          "_note": "MECHANICAL — Snorlax encounter. Preserved."
+        },
+        "3": {
+          "name": "EV003 (Snorlax 5)",
+          "_note": "MECHANICAL — Snorlax encounter. Preserved."
+        },
+        "9": {
+          "name": "EV009 (Snorlax 6)",
+          "_note": "MECHANICAL — Snorlax encounter. Preserved."
+        }
+      }
+    },
+    "439": {
+      "name": "House (HM02 Fly)",
+      "events": {
+        "5": {
+          "name": "EV005 (Bookshelf)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The shelves are filled with",
+                    "field guides and maps. Someone",
+                    "likes to travel light."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "name": "EV001 (HM Fly Giver)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh, you found my hideaway!",
+                    "Please don't tell anyone.",
+                    "I'll make it up to you."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Here. HM02 contains Fly.",
+                    "Sometimes the best way to",
+                    "deal with a city like Celadon",
+                    "is to leave it from above."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {"self_switch": "A"},
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "I don't like city life. Too",
+                    "many secrets, too many deals.",
+                    "My Pidgeot flies me here",
+                    "when I need peace and quiet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 (Pidgeot Cry)",
+          "_note": "MECHANICAL — Pokemon cry. Preserved."
+        },
+        "3": {
+          "name": "EV003 (Container)",
+          "_note": "MECHANICAL — Container check. Preserved."
+        }
+      }
+    }
+  }
+}

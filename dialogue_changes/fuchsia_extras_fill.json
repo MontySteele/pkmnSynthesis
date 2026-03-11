@@ -1,0 +1,1768 @@
+{
+  "_implementation_notes": [
+    "FUCHSIA EXTRAS — Maps 107, 162, 487, 488, 712, 713, 714, 804.",
+    "Mixed tone: Safari Zone areas are ecological/conservation-minded.",
+    "Creepy House (712-714) is genuinely unsettling — objects that",
+    "shouldn't be there, books nobody has read, beds nobody has slept in.",
+    "The house is wrong. The player should feel unwelcome.",
+    "",
+    "Map 107 (Safari Zone Secret House): EV001 gives HM03 Surf.",
+    "HM grant mechanics preserved. Flavor intro rewritten to feel",
+    "like a ranger outpost, not a game show prize booth.",
+    "",
+    "Map 162 (Underwater): 'Krrsss!' cries and quest completion",
+    "messages are MECHANICAL — fishing quest logic. Preserved exactly.",
+    "",
+    "Maps 487/488 (Safari Zone Area 5): ALL events are Pokemon cries",
+    "('Digdig!', 'Tchrtchr!', 'Shaaash!', etc.) — MECHANICAL.",
+    "Preserved exactly.",
+    "",
+    "Maps 712/713/714 (Creepy House): Books, beds, pictures, dolls,",
+    "mirror, room label sign. ALL are flavor text. Dolls have switch",
+    "conditions (615, 620, 622-625, var 233) tied to the haunting",
+    "mechanic — conditions preserved, text rewritten for dread.",
+    "EV019 in 714 is a room label sign (classroom/bathroom/entrance/",
+    "library) — MECHANICAL label system, preserved.",
+    "EV008 in 714 (mirror) rewritten for horror. EV032 in 713 (ghost",
+    "jumpscare 'Boo!') preserved as mechanical event.",
+    "EV017 in 714 (Pikachu cry) is MECHANICAL — preserved.",
+    "",
+    "Map 804 (Safari Zone Gate): Darkness event guards. Flavor",
+    "rewritten. Plant-blocked entrance (EV003 page 1) preserved.",
+    "",
+    "Line length limit: ~42 characters per line for RPG Maker XP."
+  ],
+  "maps": {
+    "107": {
+      "name": "Area 4",
+      "events": {
+        "1": {
+          "name": "EV001",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Oh — you actually made it.",
+                    "Most people turn back at",
+                    "Area 3."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "The Safari Zone conservation",
+                    "team put this here as a",
+                    "reward. Rarely claimed."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Congratulations! You have",
+                    "won!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "HM03 is SURF! Pokemon will",
+                    "be able to ferry you across",
+                    "water."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "You need the badge from",
+                    "Saffron City in order to",
+                    "use it in the overworld."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "The water routes are some",
+                    "of the last wild places in",
+                    "Kanto. Travel carefully."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "HM03 is SURF! Pokemon will",
+                    "be able to ferry you across",
+                    "water."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "You need the badge from",
+                    "Saffron City in order to",
+                    "use it in the overworld."
+                  ]
+                },
+                {
+                  "start_index": 14,
+                  "type": "text",
+                  "lines": [
+                    "The water routes are some",
+                    "of the last wild places in",
+                    "Kanto. Travel carefully."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "712": {
+      "name": "Creepy House",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The pages are blank. All",
+                    "of them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The text is smeared. You",
+                    "can almost read a name."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The spine cracks when you",
+                    "open it. Empty inside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A children's book. The",
+                    "illustrations have been",
+                    "scratched out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The same sentence repeated",
+                    "on every page. You can't",
+                    "quite make it out."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The book is warm to the",
+                    "touch. That's not right."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A journal. The last entry",
+                    "is dated tomorrow."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The pages stick together",
+                    "as if they were never meant",
+                    "to be opened."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A textbook. The subject",
+                    "doesn't exist."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The cover says your name.",
+                    "It always has."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Dust falls from the shelf",
+                    "when you touch it. Nothing",
+                    "else moves."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The ink has bled through",
+                    "every page. Unreadable."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A book of names. None of",
+                    "them are familiar."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The pages turn by",
+                    "themselves when you look",
+                    "away."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A painting of a family.",
+                    "Their faces have been",
+                    "removed. Carefully."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A portrait. The eyes",
+                    "follow you. They always",
+                    "have."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A photograph of this room.",
+                    "Someone is standing where",
+                    "you are now."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The bed is made. Recently.",
+                    "The sheets are still warm."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An impression in the",
+                    "mattress. Someone was just",
+                    "lying here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The pillow is damp. Not",
+                    "from water."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A small bed. Child-sized.",
+                    "The blanket is tucked in",
+                    "from the outside."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The bed frame is intact",
+                    "but the mattress is gone.",
+                    "Just bare springs."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You feel like you've slept",
+                    "here before. You haven't."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "713": {
+      "name": "Creepy House",
+      "events": {
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An arithmetic book. The",
+                    "answers are all wrong but",
+                    "marked correct."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A recipe book. Every recipe",
+                    "calls for the same single",
+                    "ingredient."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The book falls open to a",
+                    "page about you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You've read this before.",
+                    "You're certain of it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A dictionary. The words",
+                    "are arranged by something",
+                    "other than alphabet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Someone has underlined",
+                    "every third word."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The binding is new but the",
+                    "pages are ancient."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A ledger. Every row is the",
+                    "same transaction, repeated."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The book resists being",
+                    "opened. You let go."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A history book. The last",
+                    "chapter hasn't happened yet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The pages smell like",
+                    "something burning."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A prayer book. The prayers",
+                    "are addressed to no one."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The words rearrange when",
+                    "you blink."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A field guide to Pokemon",
+                    "that don't exist."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A photograph tucked between",
+                    "pages. You're in it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A landscape painting.",
+                    "The sky is the wrong color."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A picture of children",
+                    "playing. None of them are",
+                    "casting shadows."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The sheets are folded with",
+                    "military precision. Cold."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Scratches on the bedpost.",
+                    "Tally marks. Hundreds."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The bed is perfectly made",
+                    "but the room smells like",
+                    "someone just left."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A handprint on the pillow.",
+                    "Too small for an adult."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The mattress sinks when",
+                    "you touch it. As if",
+                    "something is underneath."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You sit down. The springs",
+                    "creak in a pattern that",
+                    "sounds like breathing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "doll",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 622 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll. It wasn't here",
+                    "a moment ago. Its eyes",
+                    "are open."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "switch1_id": 620 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll, sitting upright.",
+                    "Watching the door."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "714": {
+      "name": "Creepy House",
+      "events": {
+        "8": {
+          "name": "EV008",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Your reflection stares",
+                    "back. It blinks before",
+                    "you do."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Something moved behind you",
+                    "in the reflection!"
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Your reflection stares",
+                    "back. It doesn't blink",
+                    "at all now."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A sink. The water runs",
+                    "when you're not looking."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "doll",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 625, "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll. It wasn't here",
+                    "before. It's facing you."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The doll hasn't moved.",
+                    "You think."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "doll",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 624, "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll. It wasn't here.",
+                    "Its hands are clasped."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The doll's hands are open",
+                    "now. You didn't see them",
+                    "move."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "doll",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 623, "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll. It's smiling.",
+                    "It wasn't here before."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The doll is still smiling.",
+                    "Wider now."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "doll",
+          "pages": {
+            "0": {
+              "conditions": { "switch1_id": 615, "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll. It's sitting in",
+                    "the corner. Waiting."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "B" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The doll is closer to",
+                    "the door now."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "44": {
+          "name": "doll",
+          "pages": {
+            "0": {
+              "conditions": { "variable_id": 233, "variable_value": 4 },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A doll. The last one.",
+                    "It's been expecting you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "EV020",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The dust is undisturbed",
+                    "except where you're",
+                    "standing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A book of lullabies. The",
+                    "melodies are written in a",
+                    "key that doesn't exist."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A lesson plan. The subject",
+                    "is 'How to be forgotten.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The title is in a language",
+                    "you've never seen."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Someone pressed a flower",
+                    "between the pages. It's",
+                    "still alive."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An attendance book. Your",
+                    "name is already checked."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The pages are damp. The",
+                    "words are drowning."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A storybook. The hero",
+                    "never makes it home."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Every page has a different",
+                    "handwriting. All saying",
+                    "the same thing."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The book is heavier than",
+                    "it should be."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A yearbook. Every photo",
+                    "is the same child."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The margins are full of",
+                    "drawings. Eyes, mostly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You can hear something",
+                    "whispering from inside",
+                    "the pages."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A guest book. The last",
+                    "signature is still wet."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "EV034",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The book opens to the",
+                    "same page every time."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "EV035",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A coloring book. Colored",
+                    "entirely in black."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "EV036",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The paper crumbles when",
+                    "you touch it. But the",
+                    "words remain."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "37": {
+          "name": "EV037",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A book about this house.",
+                    "It says no one lives here."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "38": {
+          "name": "EV038",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "You open the book and a",
+                    "cold draft blows through",
+                    "the room."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "EV039",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The letters are backwards.",
+                    "Mirrored. As if written",
+                    "from the other side."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "40": {
+          "name": "EV040",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A map of a town that",
+                    "doesn't appear on any",
+                    "official chart."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "41": {
+          "name": "EV041",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The spine reads: 'Vol. 2",
+                    "of 1.' That's not right."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "42": {
+          "name": "EV042",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A notebook. The last entry",
+                    "says: 'They're here again.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "43": {
+          "name": "EV043",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The book has no author.",
+                    "The book has no title.",
+                    "The book has no end."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "804": {
+      "name": "Safari Zone Gate",
+      "events": {
+        "7": {
+          "name": "EV007",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Safari's closed. Too dark",
+                    "for the Pokemon — and you."
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Ah, who am I kidding.",
+                    "You won't last ten minutes",
+                    "in there at night."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Go ahead. Not my job to",
+                    "stop you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Safari's closed. Nothing's",
+                    "safe out there at night."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Look — you seem like the",
+                    "type who'll go anyway.",
+                    "The nocturnal Pokemon are",
+                    "more aggressive."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Don't say I didn't warn",
+                    "you."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": { "self_switch": "A" },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Strange plants grew over",
+                    "the entrance overnight.",
+                    "Never seen anything like",
+                    "it."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "They're blocking the way.",
+                    "Can't get through."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

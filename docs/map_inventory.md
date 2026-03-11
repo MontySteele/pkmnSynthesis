@@ -13,19 +13,20 @@
 | Maps with dialogue | 752 | -- |
 | Maps without dialogue | 57 | -- |
 | **Kanto story maps (in scope)** | **~390** | -- |
-| Maps DONE (injected) | 17 | 2.3% of dialogue maps |
-| Maps READY (JSON written, not yet injected) | 107 | 14.2% |
+| Maps DONE (injected) | 18 | 2.4% of dialogue maps |
+| Maps READY (JSON written, not yet injected) | 219 | 29.1% |
 | Maps IN_PROGRESS | 0 | 0% |
-| Maps PLANNED (city plan exists, no JSON) | 82 | ~10.9% |
-| Maps NOT_STARTED | 133 | ~17.7% |
-| Maps SPECIAL_LOGIC | 31 | ~4.1% |
-| Non-Kanto / SKIP | ~300 | -- |
+| Maps PLANNED (city plan exists, no JSON) | 34 | ~4.5% |
+| Maps NOT_STARTED | 41 | ~5.5% |
+| Maps NO_DIALOGUE | 31 | ~4.1% |
+| Maps SPECIAL_LOGIC | 32 | ~4.3% |
+| Non-Kanto / SKIP | 43 | -- |
 | Events with dialogue | 8,030 | -- |
 | Events modified | 449 | 5.6% |
 | Dialogue blocks total | 46,417 | -- |
 | Dialogue blocks modified | 1,718 | 3.7% |
 
-### dialogue_changes files (27):
+### dialogue_changes files (38):
 
 | File | Maps Covered | Status |
 |------|-------------|--------|
@@ -56,6 +57,17 @@
 | `cinnabar_island.json` | 98, 173, 187, 206, 209, 221 | Ready |
 | `lavender_town.json` | 50, 416, 418, 419, 420 | Ready |
 | `lavender_fill.json` | 109, 417, 421, 422 | Ready |
+| `route3_fill.json` | 379, 490 | Ready |
+| `route4_fill.json` | 233, 291 | Ready |
+| `saffron_fill.json` | 110, 111, 112, 114, 115, 120, 122, 133, 141, 151, 153, 156, 179, 180, 182, 183, 184, 192, 194, 196, 199, 200, 215, 232, 701, 702, 772, 803 | Ready |
+| `fuchsia_fill.json` | 213, 440, 444, 471, 476, 477, 478, 482, 484, 717 | Ready |
+| `cinnabar_fill.json` | 125, 130, 135, 136, 174, 181, 188, 189, 190, 207, 208, 219, 616, 703, 721, 761, 808 | Ready |
+| `celadon_cafe_fill.json` | 406, 407, 514, 768 | Ready |
+| `celadon_houses_fill.json` | 393, 450, 451, 452, 453, 454, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 509, 771 | Ready |
+| `celadon_rockets_fill.json` | 431, 446, 447, 448, 449, 455, 456, 457 | Ready |
+| `celadon_misc_fill.json` | 408, 415, 425, 438, 439, 465, 466, 474, 475, 510, 542 | Ready |
+| `rock_tunnel_fill.json` | 154, 256, 349, 350, 391, 495 | Ready |
+| `fuchsia_extras_fill.json` | 107, 712, 713, 714, 804 | Ready |
 
 ### City plan docs (9):
 
@@ -185,7 +197,7 @@
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 490 | Route 3 | 29 | 319 | PLANNED |
+| 490 | Route 3 | 29 | 319 | READY |
 | 379 | Pokemon Center | 9 | 88 | READY |
 
 ---
@@ -224,8 +236,8 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 106 | Route 4 | 9 | 41 | READY |
-| 233 | Route 4 (interior) | 6 | 18 | NOT_STARTED |
-| 291 | Route 4 (south) | 6 | 19 | NOT_STARTED |
+| 233 | Route 4 (interior) | 6 | 18 | READY |
+| 291 | Route 4 (south) | 6 | 19 | READY |
 | 236 | Route 4 (connector) | 0 | 0 | SKIP |
 
 ---
@@ -334,15 +346,15 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 351 | Route 9 (west) | 3 | 22 | NOT_STARTED |
-| 495 | Route 9 (east, trainers) | 18 | 165 | NOT_STARTED |
-| 154 | Route 10 | 22 | 104 | NOT_STARTED |
-| 391 | Pokemon Center (Route 10) | 5 | 38 | NOT_STARTED |
-| 349 | Rock Tunnel (1F) | 33 | 137 | NOT_STARTED |
-| 350 | Rock Tunnel (B1F) | 33 | 167 | NOT_STARTED |
+| 495 | Route 9 (east, trainers) | 18 | 165 | READY |
+| 154 | Route 10 | 22 | 104 | READY |
+| 391 | Pokemon Center (Route 10) | 5 | 38 | READY |
+| 349 | Rock Tunnel (1F) | 33 | 137 | READY |
+| 350 | Rock Tunnel (B1F) | 33 | 167 | READY |
 | 512 | Rock Tunnel (connector) | 2 | 2 | NO_DIALOGUE |
 | 513 | Rock Tunnel (side area) | 4 | 8 | NOT_STARTED |
 | 800 | Rock Tunnel (deep) | 1 | 1 | NO_DIALOGUE |
-| 256 | Gate | 6 | 26 | NOT_STARTED |
+| 256 | Gate | 6 | 26 | READY |
 
 ---
 
@@ -390,51 +402,51 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 095 | Celadon City (overworld) | 55 | 266 | READY |
-| 408 | Pokemon Center | 9 | 80 | NOT_STARTED |
+| 408 | Pokemon Center | 9 | 80 | READY |
 | 414 | Celadon City Gym | 9 | 104 | READY |
-| 542 | Celadon City Gym (rematch) | 9 | 118 | NOT_STARTED |
+| 542 | Celadon City Gym (rematch) | 9 | 118 | READY |
 | 405 | Game Corner | 39 | 91 | READY |
-| 510 | Game Corner (basement) | 2 | 102 | NOT_STARTED |
-| 406 | Celadon Cafe | 9 | 170 | NOT_STARTED |
-| 768 | Celadon Cafe (alt entrance) | 2 | 56 | NOT_STARTED |
-| 407 | Celadon Cafe Backstore | 10 | 325 | NOT_STARTED |
+| 510 | Game Corner (basement) | 2 | 102 | READY |
+| 406 | Celadon Cafe | 9 | 170 | READY |
+| 768 | Celadon Cafe (alt entrance) | 2 | 56 | READY |
+| 407 | Celadon Cafe Backstore | 10 | 325 | READY |
 | 432 | Celadon Dpt. Store (1F) | 6 | 33 | READY |
 | 433 | Celadon Dpt. Store (2F) | 7 | 12 | READY |
 | 434 | Celadon Dpt. Store (3F) | 7 | 51 | READY |
 | 435 | Celadon Dpt. Store (4F) | 9 | 19 | READY |
 | 436 | Celadon Dpt. Store (5F) | 11 | 83 | READY |
-| 514 | Celadon Dpt. Store (roof) | 1 | 2 | NOT_STARTED |
-| 431 | Celadon Sewers (entrance) | 27 | 135 | NOT_STARTED |
-| 446 | Celadon Sewers (main) | 24 | 96 | NOT_STARTED |
-| 447 | Control Room | 3 | 23 | NOT_STARTED |
-| 448 | Control Room (inner) | 1 | 8 | NOT_STARTED |
-| 449 | Team Rocket Hideout (1F) | 17 | 100 | NOT_STARTED |
-| 455 | Team Rocket Hideout (B1) | 9 | 39 | NOT_STARTED |
-| 456 | Team Rocket Hideout (B2) | 10 | 42 | NOT_STARTED |
-| 457 | Team Rocket Hideout (B3) | 8 | 72 | NOT_STARTED |
+| 514 | Celadon Dpt. Store (roof) | 1 | 2 | READY |
+| 431 | Celadon Sewers (entrance) | 27 | 135 | READY |
+| 446 | Celadon Sewers (main) | 24 | 96 | READY |
+| 447 | Control Room | 3 | 23 | READY |
+| 448 | Control Room (inner) | 1 | 8 | READY |
+| 449 | Team Rocket Hideout (1F) | 17 | 100 | READY |
+| 455 | Team Rocket Hideout (B1) | 9 | 39 | READY |
+| 456 | Team Rocket Hideout (B2) | 10 | 42 | READY |
+| 457 | Team Rocket Hideout (B3) | 8 | 72 | READY |
 | 062 | Celadon City (house) | 3 | 7 | NO_DIALOGUE |
 | 063 | Celadon City (house 2F) | 5 | 28 | NO_DIALOGUE |
 | 064 | Celadon City (house 3F) | 4 | 11 | NO_DIALOGUE |
-| 393 | Celadon City (house) | 3 | 19 | NOT_STARTED |
-| 450 | Celadon City (house) | 4 | 12 | NOT_STARTED |
-| 451 | Celadon City (house) | 2 | 8 | NOT_STARTED |
-| 452 | Celadon City (house 2F) | 5 | 14 | NOT_STARTED |
-| 453 | Celadon City (house) | 3 | 8 | NOT_STARTED |
-| 454 | Celadon City (house 2F) | 10 | 30 | NOT_STARTED |
-| 498 | Celadon City (house) | 5 | 53 | NOT_STARTED |
-| 499 | Celadon City (house 2F) | 4 | 9 | NOT_STARTED |
-| 500 | Celadon City (house) | 3 | 9 | NOT_STARTED |
-| 501 | Celadon City (house 2F) | 4 | 49 | NOT_STARTED |
-| 502 | Celadon City (house) | 3 | 10 | NOT_STARTED |
-| 503 | Celadon City (house 2F) | 7 | 16 | NOT_STARTED |
-| 504 | Celadon City (house 3F) | 4 | 13 | NOT_STARTED |
-| 505 | Celadon Condominiums (1F) | 7 | 11 | NOT_STARTED |
-| 506 | Celadon Condominiums (2F) | 8 | 83 | NOT_STARTED |
-| 507 | Celadon Condominiums (3F) | 1 | 13 | NOT_STARTED |
-| 509 | Celadon Condominiums (roof) | 2 | 65 | NOT_STARTED |
-| 465 | Celadon Hotel | 3 | 24 | NOT_STARTED |
-| 466 | Celadon Hotel (rooms) | 6 | 323 | NOT_STARTED |
-| 771 | Celadon City (connector) | 2 | 8 | NOT_STARTED |
+| 393 | Celadon City (house) | 3 | 19 | READY |
+| 450 | Celadon City (house) | 4 | 12 | READY |
+| 451 | Celadon City (house) | 2 | 8 | READY |
+| 452 | Celadon City (house 2F) | 5 | 14 | READY |
+| 453 | Celadon City (house) | 3 | 8 | READY |
+| 454 | Celadon City (house 2F) | 10 | 30 | READY |
+| 498 | Celadon City (house) | 5 | 53 | READY |
+| 499 | Celadon City (house 2F) | 4 | 9 | READY |
+| 500 | Celadon City (house) | 3 | 9 | READY |
+| 501 | Celadon City (house 2F) | 4 | 49 | READY |
+| 502 | Celadon City (house) | 3 | 10 | READY |
+| 503 | Celadon City (house 2F) | 7 | 16 | READY |
+| 504 | Celadon City (house 3F) | 4 | 13 | READY |
+| 505 | Celadon Condominiums (1F) | 7 | 11 | READY |
+| 506 | Celadon Condominiums (2F) | 8 | 83 | READY |
+| 507 | Celadon Condominiums (3F) | 1 | 13 | READY |
+| 509 | Celadon Condominiums (roof) | 2 | 65 | READY |
+| 465 | Celadon Hotel | 3 | 24 | READY |
+| 466 | Celadon Hotel (rooms) | 6 | 323 | READY |
+| 771 | Celadon City (connector) | 2 | 8 | READY |
 | 508 | Celadon Condominiums (4F) | 0 | 0 | SKIP |
 | 072 | Celadon Sewers (connector) | 2 | 3 | NO_DIALOGUE |
 | 372 | Celadon Sewers (old) | 1 | 1 | SKIP |
@@ -444,13 +456,13 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 413 | Route 7 | 19 | 238 | READY |
-| 425 | Underground Gate (Route 7) | 1 | 2 | NOT_STARTED |
-| 415 | Western Gate | 3 | 55 | NOT_STARTED |
+| 425 | Underground Gate (Route 7) | 1 | 2 | READY |
+| 415 | Western Gate | 3 | 55 | READY |
 | 066 | Eastern Gate | 3 | 73 | NO_DIALOGUE |
-| 438 | Route 16 | 8 | 38 | NOT_STARTED |
-| 439 | House (Route 16) | 5 | 20 | NOT_STARTED |
-| 474 | Gate (Route 16) | 1 | 2 | NOT_STARTED |
-| 475 | Gate (Cycling Road) | 5 | 23 | NOT_STARTED |
+| 438 | Route 16 | 8 | 38 | READY |
+| 439 | House (Route 16) | 5 | 20 | READY |
+| 474 | Gate (Route 16) | 1 | 2 | READY |
+| 475 | Gate (Cycling Road) | 5 | 23 | READY |
 | 146 | Route 17 (Cycling Road) | 28 | 201 | NOT_STARTED |
 | 517 | Route 18 | 25 | 161 | NOT_STARTED |
 | 518 | Gate (Route 18) | 1 | 2 | NOT_STARTED |
@@ -469,40 +481,40 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 108 | Saffron City (overworld) | 68 | 234 | READY |
-| 122 | Pokemon Center | 10 | 76 | PLANNED |
-| 133 | Rocket Mart | 12 | 16 | PLANNED |
-| 215 | PokeMart | 25 | 56 | PLANNED |
+| 122 | Pokemon Center | 10 | 76 | READY |
+| 133 | Rocket Mart | 12 | 16 | READY |
+| 215 | PokeMart | 25 | 56 | READY |
 | 152 | Saffron City Gym | 7 | 96 | READY |
 | 191 | Fighting Dojo | 15 | 91 | READY |
-| 192 | Train Station | 9 | 35 | PLANNED |
-| 179 | Police Station | 14 | 39 | PLANNED |
-| 151 | Saffron Boutique | 7 | 103 | PLANNED |
-| 110 | Saffron Hotel (lobby) | 6 | 30 | PLANNED |
-| 111 | Saffron Hotel (rooms) | 13 | 114 | PLANNED |
-| 701 | Saffron Hotel (floor 2) | 8 | 31 | PLANNED |
-| 702 | Saffron Hotel (floor 3) | 3 | 5 | PLANNED |
-| 112 | Saffron Bar (entrance) | 12 | 84 | PLANNED |
+| 192 | Train Station | 9 | 35 | READY |
+| 179 | Police Station | 14 | 39 | READY |
+| 151 | Saffron Boutique | 7 | 103 | READY |
+| 110 | Saffron Hotel (lobby) | 6 | 30 | READY |
+| 111 | Saffron Hotel (rooms) | 13 | 114 | READY |
+| 701 | Saffron Hotel (floor 2) | 8 | 31 | READY |
+| 702 | Saffron Hotel (floor 3) | 3 | 5 | READY |
+| 112 | Saffron Bar (entrance) | 12 | 84 | READY |
 | 113 | Saffron Bar (VIP) | 14 | 47 | PLANNED |
-| 114 | Saffron Nightclub | 27 | 188 | PLANNED |
-| 115 | Saffron Bar (back room) | 15 | 76 | PLANNED |
+| 114 | Saffron Nightclub | 27 | 188 | READY |
+| 115 | Saffron Bar (back room) | 15 | 76 | READY |
 | 195 | Saffron Bar (upstairs) | 10 | 32 | PLANNED |
 | 825 | Saffron Bar (event) | 24 | 197 | PLANNED |
 | 829 | Saffron Bar (event) | 35 | 349 | PLANNED |
-| 120 | Saffron City (house) | 6 | 17 | PLANNED |
-| 141 | Saffron City (house) | 5 | 28 | PLANNED |
-| 153 | Saffron City (house) | 8 | 25 | PLANNED |
-| 156 | Saffron City (house 2F) | 5 | 61 | PLANNED |
-| 180 | Saffron City (house) | 3 | 122 | PLANNED |
-| 182 | Saffron City (house) | 8 | 26 | PLANNED |
-| 183 | Saffron City (house) | 7 | 11 | PLANNED |
-| 184 | Saffron City (house 2F) | 7 | 23 | PLANNED |
-| 194 | Saffron City (house) | 7 | 54 | PLANNED |
-| 196 | Saffron City (house) | 5 | 54 | PLANNED |
-| 199 | Saffron City (house) | 7 | 11 | PLANNED |
-| 200 | Saffron City (house 2F) | 14 | 20 | PLANNED |
-| 232 | Saffron City (house) | 6 | 16 | PLANNED |
-| 772 | Saffron City (connector) | 2 | 8 | NOT_STARTED |
-| 803 | Saffron City (house) | 2 | 50 | NOT_STARTED |
+| 120 | Saffron City (house) | 6 | 17 | READY |
+| 141 | Saffron City (house) | 5 | 28 | READY |
+| 153 | Saffron City (house) | 8 | 25 | READY |
+| 156 | Saffron City (house 2F) | 5 | 61 | READY |
+| 180 | Saffron City (house) | 3 | 122 | READY |
+| 182 | Saffron City (house) | 8 | 26 | READY |
+| 183 | Saffron City (house) | 7 | 11 | READY |
+| 184 | Saffron City (house 2F) | 7 | 23 | READY |
+| 194 | Saffron City (house) | 7 | 54 | READY |
+| 196 | Saffron City (house) | 5 | 54 | READY |
+| 199 | Saffron City (house) | 7 | 11 | READY |
+| 200 | Saffron City (house 2F) | 14 | 20 | READY |
+| 232 | Saffron City (house) | 6 | 16 | READY |
+| 772 | Saffron City (connector) | 2 | 8 | READY |
+| 803 | Saffron City (house) | 2 | 50 | READY |
 
 ### Silph Co.
 
@@ -536,16 +548,16 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 472 | Fuchsia City (overworld) | 47 | 239 | READY |
-| 476 | Pokemon Center | 11 | 63 | PLANNED |
+| 476 | Pokemon Center | 11 | 63 | READY |
 | 060 | PokeMart | 26 | 56 | PLANNED |
 | 479 | Fuchsia City Gym | 8 | 161 | READY |
 | 473 | Safari Zone Gate | 9 | 54 | READY |
-| 804 | Safari Zone Gate (inner) | 3 | 19 | NOT_STARTED |
+| 804 | Safari Zone Gate (inner) | 3 | 19 | READY |
 | 087 | Fuchsia City (house) | 6 | 15 | PLANNED |
 | 481 | Fuchsia City (house) | 3 | 20 | PLANNED |
-| 482 | Fuchsia City (house) | 5 | 42 | PLANNED |
-| 477 | Fuchsia Hotel | 6 | 35 | PLANNED |
-| 478 | Fuchsia Hotel (rooms) | 8 | 153 | PLANNED |
+| 482 | Fuchsia City (house) | 5 | 42 | READY |
+| 477 | Fuchsia Hotel | 6 | 35 | READY |
+| 478 | Fuchsia Hotel (rooms) | 8 | 153 | READY |
 | 044 | Fuchsia City -old | 13 | 28 | SKIP |
 
 ### Safari Zone
@@ -554,15 +566,15 @@
 |--------|------|----------|----------|--------|
 | 445 | Area 1 | 36 | 40 | READY |
 | 074 | Area 1 (interior) | 4 | 8 | NO_DIALOGUE |
-| 484 | Area 2 | 14 | 28 | PLANNED |
+| 484 | Area 2 | 14 | 28 | READY |
 | 075 | Area 2 (interior) | 3 | 5 | NO_DIALOGUE |
 | 485 | Area 3 | 39 | 53 | PLANNED |
 | 082 | Area 3 (interior) | 6 | 26 | NO_DIALOGUE |
 | 486 | Area 4 | 25 | 27 | PLANNED |
-| 107 | Area 4 (interior) | 1 | 20 | NOT_STARTED |
+| 107 | Area 4 (interior) | 1 | 20 | READY |
 | 487 | Area 5 | 14 | 64 | NOT_STARTED |
 | 488 | Area 5 (interior) | 15 | 33 | NOT_STARTED |
-| 717 | Area 5 (side) | 4 | 13 | NOT_STARTED |
+| 717 | Area 5 (side) | 4 | 13 | READY |
 | 443 | Safari Zone (hub) | 0 | 0 | SKIP |
 | 493 | Area 1 _ old | 0 | 0 | SKIP |
 | 715 | Area 5 (connector) | 0 | 0 | SKIP |
@@ -573,17 +585,17 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 159 | Route 12 | 30 | 189 | READY |
-| 471 | Fishing Hut | 3 | 21 | PLANNED |
+| 471 | Fishing Hut | 3 | 21 | READY |
 | 162 | Underwater (Route 12) | 13 | 26 | NOT_STARTED |
 | 149 | Flooded Cave | 1 | 1 | SKIP |
 | 437 | Route 13 | 46 | 350 | READY |
 | 220 | Underwater (Route 13) | 9 | 15 | NO_DIALOGUE |
-| 440 | Route 14 | 15 | 123 | PLANNED |
-| 444 | Route 15 | 21 | 152 | PLANNED |
-| 712 | Creepy House | 24 | 25 | NOT_STARTED |
-| 713 | Creepy House (2F) | 27 | 32 | NOT_STARTED |
-| 714 | Creepy House (basement) | 38 | 51 | NOT_STARTED |
-| 213 | Gate | 4 | 30 | NOT_STARTED |
+| 440 | Route 14 | 15 | 123 | READY |
+| 444 | Route 15 | 21 | 152 | READY |
+| 712 | Creepy House | 24 | 25 | READY |
+| 713 | Creepy House (2F) | 27 | 32 | READY |
+| 714 | Creepy House (basement) | 38 | 51 | READY |
+| 213 | Gate | 4 | 30 | READY |
 | 441 | Gate | 0 | 0 | SKIP |
 | 483 | Gate | 0 | 0 | SKIP |
 | 809 | Creepy House_backup | 38 | 47 | SKIP |
@@ -599,38 +611,38 @@
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 098 | Cinnabar Island (overworld) | 27 | 129 | READY |
-| 130 | Pokemon Center | 10 | 70 | PLANNED |
-| 188 | PokeMart | 24 | 54 | PLANNED |
+| 130 | Pokemon Center | 10 | 70 | READY |
+| 188 | PokeMart | 24 | 54 | READY |
 | 221 | Cinnabar Island Gym | 23 | 333 | READY |
-| 125 | Cinnabar Island (house) | 2 | 18 | PLANNED |
-| 189 | Cinnabar Island (house) | 6 | 27 | PLANNED |
-| 190 | Cinnabar Island (house) | 1 | 15 | PLANNED |
-| 207 | Cinnabar Island (house) | 1 | 31 | PLANNED |
-| 219 | Cinnabar Island (house) | 2 | 5 | PLANNED |
-| 135 | Cinnabar Hotel | 5 | 31 | PLANNED |
-| 136 | Cinnabar Hotel (rooms) | 4 | 109 | PLANNED |
+| 125 | Cinnabar Island (house) | 2 | 18 | READY |
+| 189 | Cinnabar Island (house) | 6 | 27 | READY |
+| 190 | Cinnabar Island (house) | 1 | 15 | READY |
+| 207 | Cinnabar Island (house) | 1 | 31 | READY |
+| 219 | Cinnabar Island (house) | 2 | 5 | READY |
+| 135 | Cinnabar Hotel | 5 | 31 | READY |
+| 136 | Cinnabar Hotel (rooms) | 4 | 109 | READY |
 | 206 | Cinnabar Lab (lobby) | 6 | 37 | READY |
-| 208 | Cinnabar Lab (research) | 5 | 197 | PLANNED |
+| 208 | Cinnabar Lab (research) | 5 | 197 | READY |
 | 209 | Cinnabar Lab (genetics) | 7 | 81 | READY |
-| 703 | Cinnabar Lab (restricted) | 10 | 162 | PLANNED |
-| 721 | Cinnabar Lab (archive) | 5 | 110 | PLANNED |
-| 616 | Cinnabar Island Harbor | 14 | 70 | NOT_STARTED |
-| 761 | Cinnabar Island Harbor (dock) | 16 | 72 | NOT_STARTED |
+| 703 | Cinnabar Lab (restricted) | 10 | 162 | READY |
+| 721 | Cinnabar Lab (archive) | 5 | 110 | READY |
+| 616 | Cinnabar Island Harbor | 14 | 70 | READY |
+| 761 | Cinnabar Island Harbor (dock) | 16 | 72 | READY |
 
 ### Pokemon Mansion
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
 | 173 | Pokemon Mansion (1F) | 25 | 72 | READY |
-| 174 | Pokemon Mansion (2F) | 15 | 38 | PLANNED |
-| 181 | Pokemon Mansion (3F) | 13 | 46 | PLANNED |
+| 174 | Pokemon Mansion (2F) | 15 | 38 | READY |
+| 181 | Pokemon Mansion (3F) | 13 | 46 | READY |
 | 187 | Pokemon Mansion (basement) | 30 | 88 | READY |
 
 ### Seafoam Islands
 
 | Map ID | Name | # Events | # Blocks | Status |
 |--------|------|----------|----------|--------|
-| 808 | Seafoam Islands B1 | 24 | 76 | NOT_STARTED |
+| 808 | Seafoam Islands B1 | 24 | 76 | READY |
 | 054 | Seafoam Islands B3 | 3 | 10 | NO_DIALOGUE |
 | 055 | Seafoam Islands B4 | 7 | 19 | NO_DIALOGUE |
 | 052 | Seafoam Islands.old | 10 | 39 | SKIP |
