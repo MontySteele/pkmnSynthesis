@@ -2,8 +2,8 @@
 REM find_data_source.bat - Figure out where Game.exe actually reads map data from
 setlocal enabledelayedexpansion
 
-set "PROJECT_DIR=%~dp0"
-set "GAME_DIR=%PROJECT_DIR%game_data"
+set "PROJECT_DIR=%~dp0.."
+set "GAME_DIR=%PROJECT_DIR%\game_data"
 set "DATA_DIR=%GAME_DIR%\Data"
 
 echo ===============================================
@@ -36,7 +36,7 @@ echo.
 
 echo [4] Searching Scripts.rxdata for custom load_data...
 echo.
-ruby -r "%PROJECT_DIR%tools\rpgmaker_stubs" -e ^
+ruby -r "%PROJECT_DIR%\tools\rpgmaker_stubs" -e ^
 "scripts = Marshal.load(File.binread(ARGV[0])); " ^
 "scripts.each_with_index do |entry, i|; " ^
 "  next unless entry.is_a?(Array) and entry.length >= 3; " ^

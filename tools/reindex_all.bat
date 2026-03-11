@@ -4,9 +4,9 @@ REM Run this once after cloning game data to fix all JSON files.
 
 setlocal enabledelayedexpansion
 
-set "PROJECT_DIR=%~dp0"
-set "DATA_DIR=%PROJECT_DIR%game_data\Data"
-set "CHANGES_DIR=%PROJECT_DIR%dialogue_changes"
+set "PROJECT_DIR=%~dp0.."
+set "DATA_DIR=%PROJECT_DIR%\game_data\Data"
+set "CHANGES_DIR=%PROJECT_DIR%\dialogue_changes"
 
 echo ===============================================
 echo   Pokemon: Synthesis - Reindex Dialogue
@@ -25,7 +25,7 @@ echo.
 
 set "TOTAL_FILES=0"
 for %%f in ("%CHANGES_DIR%\*.json") do (
-    ruby "%PROJECT_DIR%tools\reindex_dialogue.rb" "%DATA_DIR%" "%%f"
+    ruby "%PROJECT_DIR%\tools\reindex_dialogue.rb" "%DATA_DIR%" "%%f"
     set /a TOTAL_FILES+=1
 )
 
@@ -42,7 +42,7 @@ echo.
 
 for %%f in ("%CHANGES_DIR%\*.json") do (
     echo [INFO] Reindexing: %%~nxf
-    ruby "%PROJECT_DIR%tools\reindex_dialogue.rb" "%DATA_DIR%" "%%f" --write
+    ruby "%PROJECT_DIR%\tools\reindex_dialogue.rb" "%DATA_DIR%" "%%f" --write
 )
 
 echo.

@@ -3,8 +3,8 @@ REM diagnose.bat - Check if injection is working on Windows
 
 setlocal enabledelayedexpansion
 
-set "PROJECT_DIR=%~dp0"
-set "GAME_DIR=%PROJECT_DIR%game_data"
+set "PROJECT_DIR=%~dp0.."
+set "GAME_DIR=%PROJECT_DIR%\game_data"
 set "DATA_DIR=%GAME_DIR%\Data"
 
 echo ===============================================
@@ -46,24 +46,24 @@ echo.
 
 echo [4] Checking dialogue files...
 set "JSON_COUNT=0"
-for %%f in ("%PROJECT_DIR%dialogue_changes\*.json") do set /a JSON_COUNT+=1
+for %%f in ("%PROJECT_DIR%\dialogue_changes\*.json") do set /a JSON_COUNT+=1
 echo     Found !JSON_COUNT! JSON files
 echo.
 
 echo [5] Injecting pallet_town.json...
 echo.
-ruby "%PROJECT_DIR%tools\inject_dialogue.rb" "%DATA_DIR%" "%PROJECT_DIR%dialogue_changes\pallet_town.json" 2>&1
+ruby "%PROJECT_DIR%\tools\inject_dialogue.rb" "%DATA_DIR%" "%PROJECT_DIR%\dialogue_changes\pallet_town.json" 2>&1
 echo.
 
 echo [6] Verifying file was actually modified on disk...
 echo.
-ruby -r "%PROJECT_DIR%tools\rpgmaker_stubs" -e "map = Marshal.load(File.binread(ARGV[0])); puts '--- Map048 Event Dump ---'; map.events.each do |id, ev|; next unless ev; ev.pages.each_with_index do |pg, pi|; pg.list.each_with_index do |cmd, ci|; if cmd.code == 101 || cmd.code == 401 || (cmd.code == 355 and cmd.parameters[0].to_s.include?('Message')); puts \"  Event #{id} Page #{pi} Cmd[#{ci}] code=#{cmd.code}: #{cmd.parameters[0].to_s[0..80]}\"; end; end; end; end" "%DATA_DIR%\Map048.rxdata" 2>&1
+ruby -r "%PROJECT_DIR%\tools\rpgmaker_stubs" -e "map = Marshal.load(File.binread(ARGV[0])); puts '--- Map048 Event Dump ---'; map.events.each do |id, ev|; next unless ev; ev.pages.each_with_index do |pg, pi|; pg.list.each_with_index do |cmd, ci|; if cmd.code == 101 || cmd.code == 401 || (cmd.code == 355 and cmd.parameters[0].to_s.include?('Message')); puts \"  Event #{id} Page #{pi} Cmd[#{ci}] code=#{cmd.code}: #{cmd.parameters[0].to_s[0..80]}\"; end; end; end; end" "%DATA_DIR%\Map048.rxdata" 2>&1
 echo.
 
 echo [7] What does the ORIGINAL backup look like?
 echo.
 if exist "%GAME_DIR%\.originals\Map048.rxdata" (
-    ruby -r "%PROJECT_DIR%tools\rpgmaker_stubs" -e "map = Marshal.load(File.binread(ARGV[0])); puts '--- ORIGINAL Map048 Event Dump ---'; map.events.each do |id, ev|; next unless ev; ev.pages.each_with_index do |pg, pi|; pg.list.each_with_index do |cmd, ci|; if cmd.code == 101 || cmd.code == 401 || (cmd.code == 355 and cmd.parameters[0].to_s.include?('Message')); puts \"  Event #{id} Page #{pi} Cmd[#{ci}] code=#{cmd.code}: #{cmd.parameters[0].to_s[0..80]}\"; end; end; end; end" "%GAME_DIR%\.originals\Map048.rxdata" 2>&1
+    ruby -r "%PROJECT_DIR%\tools\rpgmaker_stubs" -e "map = Marshal.load(File.binread(ARGV[0])); puts '--- ORIGINAL Map048 Event Dump ---'; map.events.each do |id, ev|; next unless ev; ev.pages.each_with_index do |pg, pi|; pg.list.each_with_index do |cmd, ci|; if cmd.code == 101 || cmd.code == 401 || (cmd.code == 355 and cmd.parameters[0].to_s.include?('Message')); puts \"  Event #{id} Page #{pi} Cmd[#{ci}] code=#{cmd.code}: #{cmd.parameters[0].to_s[0..80]}\"; end; end; end; end" "%GAME_DIR%\.originals\Map048.rxdata" 2>&1
 ) else (
     echo     No backup found at %GAME_DIR%\.originals\Map048.rxdata
 )
