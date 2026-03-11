@@ -1,0 +1,582 @@
+{
+  "_implementation_notes": [
+    "CERULEAN FILL — Remaining Cerulean-area maps: 383 (Gate), 178 (Bill's Garden),",
+    "  384 (Bill's Lighthouse interior).",
+    "",
+    "Map 383: Gate to Rock Tunnel. Single NPC with directional info. Light Synthesis flavor.",
+    "Map 178: Bill's Garden. 4 events — NOT IN GAME DATA, likely decorative/Pokemon cries.",
+    "  Skipped: no dialogue blocks found in wave3_dialogue.json.",
+    "Map 384: Bill's Lighthouse interior. 15 events. Bill (E11) is the big one with 5 pages",
+    "  (Porygon quest). E18 is Bill's assistant (PC box purchase — MECHANICAL, preserve).",
+    "  E4 is the teleporter (MECHANICAL). E1-3 are exit-warning NPCs. E7-8, E12-17 are",
+    "  machine/scenery text. E10 is Bill's laptop.",
+    "",
+    "CRITICAL: Bill's Porygon quest (E11) and teleporter (E4) are MECHANICAL events.",
+    "  Only modifying flavor text, not quest logic or choices.",
+    "CRITICAL: Bill's assistant PC box purchase (E18) is fully MECHANICAL. Preserved.",
+    "",
+    "NOTE: Maps 002 (PokeMart), 003 (Player's House), 006 (Team Rocket HQ) are PLANNED",
+    "  but not in wave3_dialogue.json. They require separate game data extraction.",
+    "",
+    "Tone: Eccentric, scientific, slightly eerie. Bill's lighthouse is a place where",
+    "  someone brilliant and isolated does strange work. The machines hum. The view",
+    "  is beautiful but lonely.",
+    "Line length limit: ~42 characters per line for RPG Maker XP text box."
+  ],
+  "maps": {
+    "383": {
+      "name": "Gate (to Rock Tunnel)",
+      "events": {
+        "3": {
+          "name": "EV003 (Gate NPC)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This way leads to Rock Tunnel.",
+                    "It's pitch dark in there — bring",
+                    "Flash or you'll be walking blind."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "384": {
+      "name": "Bill's Lighthouse (interior)",
+      "events": {
+        "1": {
+          "name": "EV001 (Exit warp warning at x:11,y:12)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wh..What, you're leaving!?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Bill's still counting on you!",
+                    "Come back when you're ready."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002 (Exit warp warning at x:12,y:12)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wh..What, you're leaving!?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Bill's still counting on you!",
+                    "Come back when you're ready."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "name": "EV003 (Exit warp warning at x:13,y:12)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Wh..What, you're leaving!?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Bill's still counting on you!",
+                    "Come back when you're ready."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 (Window view at x:10,y:3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The sea stretches out below.",
+                    "You can see why Bill chose",
+                    "to work out here — away from",
+                    "everyone."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 (Window view at x:11,y:3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "The lighthouse beam sweeps the",
+                    "water. Something about it feels",
+                    "restless."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 (Bill's laptop at x:5,y:7)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Bill's laptop is open. The screen",
+                    "is filled with dense code."
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "It seems he has been programming",
+                    "some kind of artificial",
+                    "intelligence."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Bill (Porygon quest — MECHANICAL, flavor only)",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 989,
+                "switch2_id": 6,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\C[7]Hmm.. So this neural network",
+                    "will allow it to learn moves",
+                    "naturally as it gets stronger,",
+                    "just like a real Pokémon..."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Oh! I was so absorbed in my work",
+                    "that I didn't hear you come in!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "You caught me working on my top",
+                    "secret project!"
+                  ]
+                },
+                {
+                  "start_index": 15,
+                  "type": "text",
+                  "lines": [
+                    "See, I left Silph Co. because",
+                    "they wanted to mass-produce",
+                    "fusion tech without understanding",
+                    "it. I thought I could do better."
+                  ]
+                },
+                {
+                  "start_index": 18,
+                  "type": "text",
+                  "lines": [
+                    "I'm developing a completely",
+                    "artificial Pokémon — Porygon.",
+                    "Made entirely from code."
+                  ]
+                },
+                {
+                  "start_index": 20,
+                  "type": "text",
+                  "lines": [
+                    "Now that I've told you about",
+                    "this, I could actually use your",
+                    "help with something."
+                  ]
+                },
+                {
+                  "start_index": 23,
+                  "type": "text",
+                  "lines": [
+                    "Want to help me?"
+                  ]
+                },
+                {
+                  "start_index": 27,
+                  "type": "text",
+                  "lines": [
+                    "Great! Let me explain."
+                  ]
+                },
+                {
+                  "start_index": 29,
+                  "type": "text",
+                  "lines": [
+                    "Porygon is a Pokémon that can",
+                    "move freely in both cyberspace",
+                    "and the natural world."
+                  ]
+                },
+                {
+                  "start_index": 32,
+                  "type": "text",
+                  "lines": [
+                    "This particular Porygon has been",
+                    "hiding in the cyberspace and I",
+                    "need help to get it back."
+                  ]
+                },
+                {
+                  "start_index": 36,
+                  "type": "text",
+                  "lines": [
+                    "Hop into the teleporter over",
+                    "there and retrieve the Porygon",
+                    "from the cyberspace for me!"
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "You'll see some strange Pokémon",
+                    "in there, but they're not real",
+                    "so you won't be able to catch",
+                    "them."
+                  ]
+                },
+                {
+                  "start_index": 42,
+                  "type": "text",
+                  "lines": [
+                    "This is very important to me.",
+                    "I'm counting on you!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 114,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hop into the teleporter and",
+                    "retrieve the Porygon from the",
+                    "cyberspace for me!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You might see some strange",
+                    "Pokémon in there but don't",
+                    "worry, they're not real!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "This also means you won't be",
+                    "able to catch them."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "This is very important to me.",
+                    "I'm counting on you!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 115,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Back already?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "So you didn't find the Porygon,",
+                    "did you?"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Come back anytime when you're",
+                    "ready. I can't do this without",
+                    "you!"
+                  ]
+                }
+              ]
+            },
+            "3": {
+              "conditions": {
+                "switch1_id": 115,
+                "switch2_id": 112,
+                "self_switch": "D"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Yes! You found it! I knew I",
+                    "could count on you!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "As thanks, I want you to have",
+                    "this Porygon!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I need to see how its AI reacts",
+                    "to the bond between a Pokémon",
+                    "and its trainer. You seem like",
+                    "the perfect fit!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Take good care of it. Porygon",
+                    "is... well, it's the closest",
+                    "thing I have to a child."
+                  ]
+                }
+              ]
+            },
+            "4": {
+              "conditions": {
+                "switch1_id": 115,
+                "switch2_id": 116
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Developing an artificial Pokémon",
+                    "is a never-ending task!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "That Porygon I gave you is",
+                    "impressive, but I'm already",
+                    "working on a new version. The",
+                    "fusion matrix data is... wild."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 (Machine at x:6,y:5)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A humming machine covered in",
+                    "blinking lights. Best not to",
+                    "touch it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 (Machine at x:13,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Some kind of signal processor.",
+                    "Wires snake into the floor."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 (Machine at x:14,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A rack of hard drives. The",
+                    "labels read: FUSION MATRIX,",
+                    "PORYGON v3.1, BACKUP."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015 (Machine at x:7,y:5)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A monitor displays scrolling",
+                    "data. You can't make sense of",
+                    "any of it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "EV016 (Machine at x:9,y:5)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A sophisticated-looking machine.",
+                    "It radiates warmth. Better not",
+                    "touch it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 (Machine at x:9,y:4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "An oscilloscope traces jagged",
+                    "patterns. Bill's notes are",
+                    "pinned to the wall beside it."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
