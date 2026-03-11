@@ -164,14 +164,24 @@ inject_dialogue() {
         fi
       done
     done
+    # Also back up trainers.dat for trainer modifications
+    if [ -f "$DATA_DIR/trainers.dat" ] && [ ! -f "$backup_dir/trainers.dat" ]; then
+      cp "$DATA_DIR/trainers.dat" "$backup_dir/trainers.dat"
+    fi
     ok "Originals backed up to $backup_dir"
   fi
 
   # Restore from backups before injecting (ensures clean injection)
   info "Restoring original files before injection..."
-  for bak in "$backup_dir"/*.rxdata; do
+  for bak in "$backup_dir"/*.rxdata "$backup_dir"/trainers.dat; do
     [ -f "$bak" ] && cp "$bak" "$DATA_DIR/$(basename "$bak")"
   done
+
+  # Add Synthesis trainer entries (e.g., Archer v1 for Silph fork)
+  if [ -f "$PROJECT_DIR/tools/add_trainer.rb" ]; then
+    info "Adding Synthesis trainer entries..."
+    ruby "$PROJECT_DIR/tools/add_trainer.rb" "$GAME_DIR"
+  fi
 
   # Inject each changes file
   for changes_file in "${changes_files[@]}"; do

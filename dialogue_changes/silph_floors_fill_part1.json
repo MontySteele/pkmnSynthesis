@@ -1,0 +1,1319 @@
+{
+  "_implementation_notes": [
+    "SILPH CO. LOWER FLOORS (Maps 121, 212, 660, 661, 662)",
+    "",
+    "Fill dialogue for the Silph Co. crisis \u2014 Team Rocket's",
+    "occupation of floors 1F through 4F. Establishes the",
+    "chaos of the takeover and the varied motivations of",
+    "Rocket grunts (true believers, scared recruits, opportunists).",
+    "",
+    "Map 121: Lobby (post-liberation shop + NPC dialogue)",
+    "Map 212: Connector (elevator floor selection)",
+    "Map 660: 2F Finances (grunts + hostage employee)",
+    "Map 661: 3F HR (grunts + turncoat scientist + hostage)",
+    "Map 662: 4F Marketing (grunts + hiding employee)",
+    "",
+    "Switch 228 = Silph Co. liberated (Team Rocket defeated)",
+    "Switch 1038 = specific Silph progress flag",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "121": {
+      "name": "Silph Co.",
+      "events": {
+        "16": {
+          "name": "",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Silph Co.\nHome of the Master Ball."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "What you did for us \u2014 I don't",
+                    "have the words. The whole building",
+                    "was held hostage."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "The president asked me to give",
+                    "you this. Bill helped us develop",
+                    "it before... everything happened."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Can I interest you in any of\nour products?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Welcome to Silph Co.\nHome of the Master Ball."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Can I interest you in any of\nour products?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 228,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We never stop innovating at\nSilph Co."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "Our latest product can reverse",
+                    "the DNA splicing process on\nfused Pok\u00e9mon."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Here \u2014 take a sample on us."
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "You can buy more at the front\ndesk anytime."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We never stop innovating at\nSilph Co."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "After what you did for us, we're",
+                    "offering a discount at the front\ndesk."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Check the front desk for our\nlatest products."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n1F: Lobby"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "",
+          "pages": {
+            "1": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket is gone, but some of",
+                    "us still flinch at every sound.",
+                    "It'll take time to feel safe\nagain."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "212": {
+      "name": "Silph Co.",
+      "events": {
+        "5": {
+          "name": "EV005",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Which floor?"
+                  ]
+                },
+                {
+                  "start_index": 1,
+                  "type": "choices",
+                  "choices": [
+                    "1F",
+                    "2F",
+                    "3F",
+                    "4F"
+                  ],
+                  "cancel_type": 2
+                }
+              ]
+            }
+          }
+        },
+        "2": {
+          "name": "EV002",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Which floor?"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "660": {
+      "name": "2F",
+      "events": {
+        "16": {
+          "name": "",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "No! Stay back! Please!"
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "You're... not with them? Oh,",
+                    "thank God. Here \u2014 take this.\nI don't want them finding it."
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "They came in before dawn. Sealed",
+                    "the doors. The boss \u2014 Giovanni \u2014",
+                    "he went straight to the top\nfloor."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228,
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Is it really over? I keep",
+                    "expecting them to come back..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n2F: Finances"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Finally! Silph kept me stuck in",
+                    "accounting for years. Now I'm\non the winning side!"
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Wait \u2014 you're not one of ours!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Help! I'm just an accountant!\nI didn't mean any of that!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Look... Silph never promoted me.",
+                    "Rocket said they'd give me a\nreal position. Can you blame me?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Hey \u2014 did you memorize the warp",
+                    "panel layout? The boss wants\neveryone to know the routes."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Hold on... You're not a grunt.\nYou're a kid!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "No civilians on this floor!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "The warp panels are a nightmare.",
+                    "Even we get lost in here..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Overturned trash. Someone was\nsearching for something."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Surprised? The lab coat's just",
+                    "a disguise. I was Rocket before\nthey even hired me here."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1038
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I spent two years undercover at",
+                    "Silph. Was it worth it? Ask me\nagain when Giovanni wins."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You fight like someone who",
+                    "actually believes in something.\nThat's... unusual."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "EV019",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Quarterly budget reports. Some",
+                    "entries are circled in red \u2014\nlarge payments to \"R. Corp.\""
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "I wanted the 6th floor post.",
+                    "That's where the prototype is.\nInstead I'm stuck guarding\nspreadsheets."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Hey \u2014 you're not on the roster\nfor this floor!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "A kid? Who let a kid in here?!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Giovanni says the Master Ball",
+                    "is the only way to contain what",
+                    "the League created. Mewtwo."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "EV015",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cup of coffee, still warm.\nSomeone left in a hurry."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "661": {
+      "name": "3F",
+      "events": {
+        "27": {
+          "name": "EV027",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Personnel files. Several have",
+                    "been flagged as \"Rocket\nsympathizers.\""
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "EV018",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Scattered papers. Someone tore",
+                    "apart these filing cabinets."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I work for Silph... I have a",
+                    "family. Please, just let me\ngo home."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You came to help us? I thought",
+                    "nobody knew we were trapped\nin here."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Wait \u2014 you're not Rocket?",
+                    "Oh, thank you! Thank you!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "\\PN! I'll never forget what",
+                    "you did for us today."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Employee evaluations. The top",
+                    "performers all have Rocket\nrecruitment notes attached."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Trainer(6)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Silph profits off Pok\u00e9mon while",
+                    "the League looks the other way.",
+                    "At least Giovanni has a plan."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "You're not Rocket \u2014 but you're",
+                    "not Silph security either.\nWhat are you?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rocket promised me a real lab.",
+                    "A chance to study Pok\u00e9mon\nwithout corporate quotas."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n3F: Human/Pok\u00e9mon Resources"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Word's gotten around \u2014 some kid",
+                    "is tearing through our ranks.\nThat you?"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "You're making a mistake, kid.\nGiovanni's cause is just."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Fine. A hint \u2014 Card Keys open",
+                    "the locked doors. Happy now?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A memo: \"All HR records for",
+                    "Project M researchers \u2014\nclassified by League order.\""
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "662": {
+      "name": "4F",
+      "events": {
+        "16": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Lost your Card Key? Sloppy.",
+                    "Check the offices \u2014 someone\nalways leaves one behind."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "Wait \u2014 you're not Rocket!\nHow did you get up here?!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "My Pok\u00e9mon won't lose to some",
+                    "trespassing child!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I joined Rocket because I was",
+                    "hungry. Not everyone here is\na villain."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Marketing copy: \"Silph Co. \u2014",
+                    "Building a better tomorrow.\"",
+                    "Someone scrawled \"For who?\"\nacross it."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n4F: Marketing"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Cold coffee. The mug reads\n\"World's Best Pok\u00e9mon Dad.\""
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A draft press release: \"Silph",
+                    "and the Pok\u00e9mon League \u2014\nPartners in Progress.\" Dated\nthree days ago."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "I know your face from the",
+                    "lower floors. You're the kid",
+                    "who's been wrecking our guys."
+                  ]
+                },
+                {
+                  "start_index": 9,
+                  "type": "text",
+                  "lines": [
+                    "This ends here. You're not\ngetting any higher!"
+                  ]
+                },
+                {
+                  "start_index": 13,
+                  "type": "text",
+                  "lines": [
+                    "Intruder on the 4th floor!\nSomeone call it in!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Warp panels link to matching",
+                    "colors. That's all I know.\nNow leave me alone."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Focus group notes: \"Consumers",
+                    "trust Silph. Leverage this.\"\nThe cynicism is staggering."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(4)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. belongs to Team Rocket",
+                    "now! The age of the League is\nover!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Giovanni's negotiating with the",
+                    "president on the top floor.",
+                    "The Master Ball \u2014 that's what\nthis is all about."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 1038
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Giovanni's negotiating with the",
+                    "president on the top floor.",
+                    "The Master Ball \u2014 that's what\nthis is all about."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Internal memo: \"The League has",
+                    "requested we suppress all\nMewtwo-related findings.\""
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(3)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "No! They found me!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Quiet! I've been hiding here",
+                    "since they took over. They\nlocked down every exit."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "You're fighting them? Alone?",
+                    "You're either brave or crazy."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They're gone? I can finally\nstop hiding?"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "EV021",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Overturned wastebasket. Rocket",
+                    "was searching for something\nspecific."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open\nthis door."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

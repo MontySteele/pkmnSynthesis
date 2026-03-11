@@ -1,0 +1,2179 @@
+{
+  "_implementation_notes": [
+    "SILPH CO. FLOORS 5F-7F (Maps 663, 758, 665) \u2014 The Crisis.",
+    "Middle floors of the Rocket occupation. Escalating tension.",
+    "",
+    "5F (R&D): Scientists conflicted about fusion/Master Ball",
+    "research being exploited. Some sympathize with Rocket's",
+    "critique of the League even while afraid.",
+    "6F (Production): The fabricator floor. Rocket forcing",
+    "mass-production of Master Balls. Workers sabotaging.",
+    "7F (Ops Management): Higher security, senior Rockets,",
+    "tenser hostages. Lapras guy guards teleport to boss.",
+    "",
+    "PRESERVED (mechanical): All Card Key door text,",
+    "move tutor (663 E30 Gunk Shot \u2014 full menu flow),",
+    "choices blocks, \\V[1] variable references,",
+    "Lapras gift sequence (665 E35 \u2014 all scripted blocks),",
+    "item pickup gated events (663 E28 page 1),",
+    "Master Ball gift (758 E21 pages 1-2),",
+    "all environmental/furniture with no NPC speech.",
+    "",
+    "Line length limit: ~42 characters per line."
+  ],
+  "maps": {
+    "663": {
+      "name": "5F \u2014 Research and Development",
+      "events": {
+        "16": {
+          "name": "EV016 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "Trainer(3) \u2014 Rocket Grunt (Surprised)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "A kid? On the R&D floor?",
+                    "Security really dropped",
+                    "the ball on this one."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Five floors to go and",
+                    "every one of them is",
+                    "crawling with us. Think",
+                    "about that."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033 \u2014 Coffee Cup",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A cup of coffee, still",
+                    "warm. Someone left in",
+                    "a hurry."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 \u2014 Item Spot (empty)",
+          "pages": {
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "There's nothing there."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "EV017 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "6": {
+          "name": "EV006 \u2014 Floor Sign",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n5F: Research and Development"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Trainer(4) \u2014 Collaborating Scientist",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Stay back! I'm cooperating",
+                    "with Rocket willingly!",
+                    "The League never cared",
+                    "about our work anyway!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "This floor is where we",
+                    "designed advanced capture",
+                    "technology. All under",
+                    "League contract, of course."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We built the ultimate",
+                    "Pok\u00e9 Ball for the League.",
+                    "They planned to use it on",
+                    "the... No. Forget I said",
+                    "anything."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "EV034 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Dense research data.",
+                    "Something about DNA",
+                    "splicing and fusion",
+                    "compatibility matrices..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 \u2014 Computer Screen",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A blueprint for an advanced",
+                    "Pok\u00e9 Ball is on the screen.",
+                    "The header reads: PROJECT",
+                    "MASTER \u2014 LEAGUE CLASSIFIED."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Trainer(1) \u2014 Rocket Grunt (Veteran)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Hey! We've got reports",
+                    "of an intruder. You",
+                    "match the description."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "It IS you! You've got",
+                    "some nerve, kid."
+                  ]
+                },
+                {
+                  "start_index": 12,
+                  "type": "text",
+                  "lines": [
+                    "Team Rocket isn't what",
+                    "you think. We're fixing",
+                    "a broken system!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Giovanni didn't force the",
+                    "scientists. He showed them",
+                    "what the League was really",
+                    "using their research for.",
+                    "Some of them volunteered."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030 \u2014 Gunk Shot Move Tutor",
+          "pages": {
+            "0": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Hello, are you a Pok\u00e9mon trainer?"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "\\GDo you want me to teach the move Gunk Shot to one ",
+                    "of your Pok\u00e9mon for $\\V[15]"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "choices",
+                  "choices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "cancel_type": 2
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Ta-da! Come back if you want me to teach it to another of ",
+                    "your Pok\u00e9mon!"
+                  ]
+                },
+                {
+                  "start_index": 17,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with $\\V[15] if you want me to ",
+                    "teach it to one of your Pok\u00e9mon!"
+                  ]
+                },
+                {
+                  "start_index": 24,
+                  "type": "text",
+                  "lines": [
+                    "You don't have enough money. Come back with $\\V[15] if ",
+                    "you want me to teach it to one of your Pok\u00e9mon!"
+                  ]
+                },
+                {
+                  "start_index": 31,
+                  "type": "text",
+                  "lines": [
+                    "That's too bad. Come back with $\\V[15] if you want me to ",
+                    "teach it to one of your Pok\u00e9mon!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 \u2014 Bookshelf",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A book on Pok\u00e9 Ball design",
+                    "by Kurt of Azalea Town.",
+                    "Heavily annotated by Silph",
+                    "researchers."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "EV014 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "Trainer(1) \u2014 Rocket Grunt (Cocky)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Nice try sneaking around.",
+                    "I've been watching the",
+                    "cameras."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Rocket's going to reshape",
+                    "this region. It's not a",
+                    "crime \u2014 it's a revolution."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They call it a takeover.",
+                    "The scientists call it",
+                    "a 'change of management.'",
+                    "Funny how quick people",
+                    "adapt."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 \u2014 Prototype Ball",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A Pok\u00e9 Ball prototype in a",
+                    "sealed case. The label",
+                    "reads: ITERATION 47 \u2014",
+                    "UNSTABLE. DO NOT DEPLOY."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Hostage Scientist (5F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rocket's tearing through",
+                    "our research files. That's",
+                    "you causing the commotion,",
+                    "isn't it?"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They're gone... I can't",
+                    "believe a kid did what",
+                    "the League wouldn't.",
+                    "Thank you."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "758": {
+      "name": "6F \u2014 Production",
+      "events": {
+        "16": {
+          "name": "Trainer(3) \u2014 Disgruntled Ex-Employee Rocket",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Silph fired me last year.",
+                    "Shipped me off to some",
+                    "frozen outpost first!",
+                    "Now I'm back with Rocket."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "They sent me to the Tiksi",
+                    "branch. Middle of nowhere.",
+                    "That was their way of",
+                    "saying 'you're done.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "Frightened Worker (6F corner)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "We're just engineers!",
+                    "We don't know anything",
+                    "about Rocket's plans!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Wait \u2014 you're not one",
+                    "of them? You actually",
+                    "came to help?"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Rocket wants to mass-",
+                    "produce the Master Ball.",
+                    "They'll capture anything",
+                    "they want. Legendaries.",
+                    "Everything."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rocket's gone, but the",
+                    "damage is done. They got",
+                    "what they came for."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "33": {
+          "name": "EV033 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Production yield reports.",
+                    "Most entries are redacted",
+                    "with Rocket's stamp."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Trainer(3) \u2014 Rocket Grunt (Idealist)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You think Rocket is evil?",
+                    "Open your eyes! The League",
+                    "commissioned this weapon!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 1038
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "There's an intruder loose.",
+                    "Tighten up! The Boss",
+                    "doesn't tolerate failure."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You fight for justice?",
+                    "Justice is a story the",
+                    "powerful tell so you",
+                    "won't question them."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "Defiant Worker (6F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You can't just steal years",
+                    "of proprietary research!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Oh \u2014 you're not with them.",
+                    "Sorry, I'm on edge."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "They targeted Silph for",
+                    "the fabricator. It can",
+                    "produce any Pok\u00e9 Ball",
+                    "from a digital blueprint."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "When you're older, come",
+                    "work for Silph. We could",
+                    "use someone with spine."
+                  ]
+                },
+                {
+                  "start_index": 3,
+                  "type": "text",
+                  "lines": [
+                    "The benefits are great.",
+                    "...When the building isn't",
+                    "under armed occupation."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "Forced Operator (at machine)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Stop! The fabricator is",
+                    "overheating! We have to",
+                    "shut it down!"
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Rocket is forcing us to",
+                    "run the fabricator past",
+                    "safe limits. They want",
+                    "Master Balls. As many",
+                    "as we can produce."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You got what you wanted.",
+                    "The building's clear.",
+                    "What more is there?"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "Rocket forced us to run",
+                    "the fabricator nonstop.",
+                    "It'll take weeks to",
+                    "repair the damage."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "34": {
+          "name": "EV034 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Fabrication logs. Error",
+                    "rates spiking. Someone",
+                    "annotated: 'HOLD THE LINE.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "7": {
+          "name": "EV007 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "Rocket & Scientist argument (scene)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is taking forever!",
+                    "Giovanni wants results,",
+                    "not excuses!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "The calibration sequence",
+                    "can't be rushed... The",
+                    "molecular bonding needs",
+                    "time to stabilize..."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "I don't care about your",
+                    "science talk! Make it",
+                    "work faster or you'll",
+                    "answer to the Boss",
+                    "personally!"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "EV035 \u2014 Emergency Notice",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "NOTICE: In case of",
+                    "emergency, regroup in",
+                    "this room. (Someone wrote",
+                    "'TOO LATE' in marker.)"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "Scared Man (6F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Please... I just want",
+                    "to go home. My family",
+                    "doesn't know if I'm",
+                    "alive."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "We got through it",
+                    "together. That's what",
+                    "matters."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "Saboteur Worker (at machine)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The fabricator's jammed.",
+                    "Total mechanical failure.",
+                    "Not my fault, I swear."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "The fabricator's jammed",
+                    "solid. What a shame,",
+                    "right?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Between you and me? I",
+                    "jammed that fabricator",
+                    "on purpose. Wasn't going",
+                    "to let them mass-produce",
+                    "those things."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Brave Woman (6F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "You don't scare me!",
+                    "I've survived three",
+                    "corporate restructurings!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "Oh! You're here to help?",
+                    "About time someone showed",
+                    "up."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "That man cowering next",
+                    "to me... He's been like",
+                    "that since Rocket came."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Someone had to keep him",
+                    "together through all this.",
+                    "He's hopeless without me."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "36": {
+          "name": "EV036 \u2014 Fabricator Notice",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "NOTICE: The Pok\u00e9 Ball",
+                    "fabricator must only be",
+                    "used with League-approved",
+                    "blueprints. Violations",
+                    "void all contracts."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "20": {
+          "name": "scientist \u2014 Rocket overseer scene",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This is taking forever!",
+                    "Giovanni wants results,",
+                    "not excuses!"
+                  ]
+                },
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "The calibration sequence",
+                    "can't be rushed... The",
+                    "molecular bonding needs",
+                    "time to stabilize..."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "I don't care about your",
+                    "science talk! Make it",
+                    "work faster or you'll",
+                    "answer to the Boss",
+                    "personally!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rocket used this machine",
+                    "to produce Master Balls.",
+                    "They only managed three",
+                    "before we... slowed",
+                    "things down."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031 \u2014 Blueprint Screen",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A blueprint for a purple",
+                    "Pok\u00e9 Ball with an M on it.",
+                    "The capture rate reads:",
+                    "100%. Unconditional."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "4": {
+          "name": "EV004 \u2014 Floor Sign",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n",
+                    "6F: Production"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trainer(4) \u2014 Rocket Grunt (Low-rank)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Hey! Unauthorized access!",
+                    "I'm reporting this to",
+                    "the Executive!"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Takeover? The president",
+                    "signed the papers himself.",
+                    "That's what they told us",
+                    "at orientation, anyway..."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "Anxious Worker (6F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Why are you doing this!?",
+                    "We have families!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You're not Rocket?",
+                    "I can barely tell",
+                    "anymore..."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "They came through the",
+                    "lobby like they owned",
+                    "the place. Security",
+                    "didn't even try to",
+                    "stop them."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Back to work, I guess.",
+                    "Like nothing happened.",
+                    "That's how it always",
+                    "goes."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "21": {
+          "name": "Master Ball machine operator",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "This fabricator can build",
+                    "any Pok\u00e9 Ball from a",
+                    "digital blueprint. Rocket",
+                    "loaded the Master Ball",
+                    "specs the moment they",
+                    "took the floor."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Uh? This popped out of",
+                    "the fabricator just as",
+                    "Rocket fled. You should",
+                    "take it. Safer with you."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228,
+                "switch2_id": 728
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "A fourth Master Ball came",
+                    "out of the fabricator",
+                    "after Rocket left. We",
+                    "have no use for it here.",
+                    "Take it. Please."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "32": {
+          "name": "EV032 \u2014 Blueprint Screen",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "A blueprint for a purple",
+                    "Pok\u00e9 Ball with an M on it.",
+                    "The file was accessed 47",
+                    "minutes ago."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "665": {
+      "name": "7F \u2014 Operations Management",
+      "events": {
+        "38": {
+          "name": "EV038 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Operational schedules.",
+                    "Everything after today's",
+                    "date is marked SUSPENDED."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "5": {
+          "name": "EV005 \u2014 Floor Sign",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Silph Co. Head Office\\n7F: Operations management"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "16": {
+          "name": "Hostage Manager (7F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Please... Don't hurt us.",
+                    "We'll do whatever you",
+                    "say."
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "A child? Here? This floor",
+                    "is crawling with Rocket",
+                    "officers!"
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "Rocket controls everything",
+                    "above this floor. The",
+                    "president is trapped in",
+                    "his office with Giovanni",
+                    "himself."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Be careful up there.",
+                    "I mean it."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "You actually beat",
+                    "Giovanni? I thought",
+                    "he was untouchable.",
+                    "Maybe things really",
+                    "can change."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "27": {
+          "name": "EV027 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "22": {
+          "name": "EV022 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Executive memos. Most are",
+                    "about 'Project Mewtwo.'",
+                    "The rest are encrypted."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "11": {
+          "name": "EV011 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "39": {
+          "name": "EV039 \u2014 Coffee Cup",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Cold coffee. It's been",
+                    "sitting here a long time."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "17": {
+          "name": "Hostage Senior Researcher (7F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "The Master Ball data \u2014",
+                    "you'll never get it from",
+                    "me!"
+                  ]
+                },
+                {
+                  "start_index": 4,
+                  "type": "text",
+                  "lines": [
+                    "You're... not Rocket?",
+                    "Thank heavens."
+                  ]
+                },
+                {
+                  "start_index": 8,
+                  "type": "text",
+                  "lines": [
+                    "The Master Ball catches",
+                    "any Pok\u00e9mon without fail.",
+                    "We built it for the League.",
+                    "Now Rocket has the specs."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Stop them before they",
+                    "use it on something",
+                    "irreplaceable."
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Rocket used the Master",
+                    "Balls to capture the",
+                    "legendary birds. Our",
+                    "greatest invention...",
+                    "turned into a weapon."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "28": {
+          "name": "EV028 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "23": {
+          "name": "EV023 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Shredded documents. Someone",
+                    "was destroying evidence."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "12": {
+          "name": "EV012 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "18": {
+          "name": "Trainer(4) \u2014 Rocket Grunt (Disguised)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Heh... Thought I was just",
+                    "another office worker,",
+                    "didn't you?"
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 229
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Like the teleport maze?",
+                    "I helped design it.",
+                    "Giovanni wanted every",
+                    "floor to be a fortress."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "29": {
+          "name": "EV029 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "35": {
+          "name": "lapras guy \u2014 Teleport Guard",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Get back! I won't let",
+                    "Rocket reach the pad!",
+                    "This is the last line",
+                    "of defense!"
+                  ]
+                },
+                {
+                  "start_index": 5,
+                  "type": "text",
+                  "lines": [
+                    "Wait \u2014 you're not Rocket!",
+                    "You actually fought your",
+                    "way up here? Incredible."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "Oh! You came to help us?",
+                    "I've been guarding this",
+                    "teleport pad alone."
+                  ]
+                },
+                {
+                  "start_index": 16,
+                  "type": "text",
+                  "lines": [
+                    "That pad leads straight",
+                    "to the president's office.",
+                    "Giovanni is up there",
+                    "negotiating. Or rather...",
+                    "making demands."
+                  ]
+                },
+                {
+                  "start_index": 22,
+                  "type": "text",
+                  "lines": [
+                    "Take this Pok\u00e9mon. It",
+                    "helped me hold this",
+                    "position. It'll serve",
+                    "you better now."
+                  ]
+                },
+                {
+                  "start_index": 35,
+                  "type": "text",
+                  "lines": [
+                    "The employee registry says",
+                    "\\V[1] workers still need",
+                    "rescuing in this building."
+                  ]
+                },
+                {
+                  "start_index": 39,
+                  "type": "text",
+                  "lines": [
+                    "Are you sure you want to",
+                    "go ahead now? People are",
+                    "still trapped."
+                  ]
+                },
+                {
+                  "start_index": 40,
+                  "type": "choices",
+                  "choices": [
+                    "No",
+                    "Yes"
+                  ],
+                  "cancel_type": 1
+                },
+                {
+                  "start_index": 43,
+                  "type": "text",
+                  "lines": [
+                    "Good call. Make sure",
+                    "everyone's safe first.",
+                    "Giovanni isn't going",
+                    "anywhere."
+                  ]
+                },
+                {
+                  "start_index": 49,
+                  "type": "text",
+                  "lines": [
+                    "...Alright. There are",
+                    "more pressing matters",
+                    "upstairs. Be careful."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "24": {
+          "name": "EV024 \u2014 Trash Can",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Empty takeout containers.",
+                    "Rocket's been here a",
+                    "while."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "13": {
+          "name": "EV013 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "19": {
+          "name": "Trainer(3) \u2014 Rocket Grunt (Enforcer)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "You made it to 7F? That",
+                    "takes guts. Or stupidity."
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "Turn back now. The people",
+                    "above me don't play nice",
+                    "with intruders."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "switch1_id": 230
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "If I'd started training",
+                    "at your age instead of",
+                    "joining Rocket... Nah.",
+                    "I'd still be broke."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "8": {
+          "name": "EV008 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "30": {
+          "name": "EV030 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "14": {
+          "name": "Trainer(3) \u2014 Rocket Grunt (Senior)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A child got past six",
+                    "floors of security?",
+                    "Giovanni will hear of",
+                    "this incompetence."
+                  ]
+                },
+                {
+                  "start_index": 11,
+                  "type": "text",
+                  "lines": [
+                    "You're lost, little rat.",
+                    "This floor is mine."
+                  ]
+                }
+              ]
+            },
+            "1": {
+              "conditions": {
+                "self_switch": "A"
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "Boss... I failed you.",
+                    "This kid is something",
+                    "else entirely."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "25": {
+          "name": "EV025 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Internal communications.",
+                    "The last message reads:",
+                    "'ALL FLOORS: COMPLY.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "9": {
+          "name": "EV009 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "31": {
+          "name": "EV031 \u2014 Blinking Console",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Lights in different colors are flashing on and off."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "15": {
+          "name": "Trapped Worker (7F)",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 2,
+                  "type": "text",
+                  "lines": [
+                    "Someone has to come...",
+                    "The League has to send",
+                    "someone..."
+                  ]
+                },
+                {
+                  "start_index": 6,
+                  "type": "text",
+                  "lines": [
+                    "Kid! What are you doing",
+                    "on this floor!? It's",
+                    "way too dangerous!"
+                  ]
+                },
+                {
+                  "start_index": 10,
+                  "type": "text",
+                  "lines": [
+                    "You can't fight them",
+                    "alone! There are officers",
+                    "on this floor, not just",
+                    "grunts!"
+                  ]
+                }
+              ]
+            },
+            "2": {
+              "conditions": {
+                "switch1_id": 228
+              },
+              "dialogue_blocks": [
+                {
+                  "start_index": 1,
+                  "type": "text",
+                  "lines": [
+                    "I can't believe you",
+                    "actually did it...",
+                    "Thank you. Truly."
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "26": {
+          "name": "EV026 \u2014 Research Terminal",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 0,
+                  "type": "text",
+                  "lines": [
+                    "Classified personnel files.",
+                    "Several names are flagged",
+                    "as 'ROCKET SYMPATHIZER.'"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "10": {
+          "name": "EV010 \u2014 Card Key Door",
+          "pages": {
+            "0": {
+              "conditions": {},
+              "dialogue_blocks": [
+                {
+                  "start_index": 7,
+                  "type": "text",
+                  "lines": [
+                    "A Card Key is needed to open this door."
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
