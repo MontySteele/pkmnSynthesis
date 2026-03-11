@@ -248,6 +248,16 @@ inject_dialogue() {
     error "Game data not found at $DATA_DIR. Run without --inject first."
   fi
 
+  # Remove encrypted archive so game reads loose Data/ files.
+  # RPG Maker XP packages data into Game.rgssad — if present, Game.exe
+  # reads from it instead of the individual .rxdata files we modify.
+  for archive in "$GAME_DIR"/Game.rgssad "$GAME_DIR"/Game.rgss2a "$GAME_DIR"/Game.rgss3a; do
+    if [ -f "$archive" ]; then
+      info "Renaming $(basename "$archive") so game reads loose Data files..."
+      mv "$archive" "${archive}.bak"
+    fi
+  done
+
   local changes_dir="$PROJECT_DIR/dialogue_changes"
   local changes_files=("$changes_dir"/*.json)
 

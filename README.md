@@ -6,14 +6,11 @@ A narrative overhaul mod for Pokemon Infinite Fusion, replacing dialogue across 
 
 ### Windows
 
-**Prerequisites:** [Git for Windows](https://git-scm.com/download/win) and [Ruby](https://rubyinstaller.org/) (choose "Ruby+Devkit").
+Double-click **`play.bat`**. That's it.
 
-Double-click `play.bat`, or from Git Bash:
-```bash
-./build_and_launch.sh
-```
+On first run it will automatically install Git and Ruby (via winget), clone the game data, inject the Synthesis dialogue, and launch the game. You may see a Windows permission prompt — click Yes.
 
-This will clone the game data, inject all Synthesis dialogue, and launch `Game.exe`.
+If the auto-install doesn't work, you can install manually: [Git for Windows](https://git-scm.com/download/win) and [Ruby](https://rubyinstaller.org/) (choose "Ruby+Devkit"), then double-click `play.bat` again.
 
 ### Linux
 
@@ -62,8 +59,9 @@ If mkxp-z doesn't work, install Wine as a fallback (`sudo apt install wine`) —
 dialogue_changes/    # JSON files defining dialogue modifications (59 files)
 tools/               # Ruby scripts for injection, validation, and trainer editing
 docs/                # Story bible, city plans, technical docs (SPOILERS)
-build_and_launch.sh  # Main entry point (cross-platform)
-play.bat             # Windows launcher (double-click to play)
+play.bat             # Windows: double-click to play (auto-installs dependencies)
+setup_windows.bat    # Windows: standalone dependency installer
+build_and_launch.sh  # Linux/macOS/Git Bash entry point
 ```
 
 ## For Playtesters

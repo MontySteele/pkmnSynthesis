@@ -15,8 +15,10 @@
 # All other data is preserved exactly as-is.
 #
 # Block types:
-#   text            — Modify existing Show Text (101) at start_index.
-#                     Provide "lines" array with new text.
+#   text            — Modify existing Show Text (101) or pbMessage Script (355)
+#                     at start_index. Provide "lines" array with new text.
+#                     Automatically detects whether the game uses native Show Text
+#                     or pbMessage script calls, and handles both transparently.
 #   choices         — Modify existing Show Choices (102) at start_index.
 #                     Provide "choices" array with new labels.
 #   script_message  — Modify existing Script (355) at start_index.
@@ -33,17 +35,79 @@
 require "json"
 require_relative "rpgmaker_stubs"
 
-def apply_text_block(command_list, block)
-  start_idx = block["start_index"]
-  new_lines = block["lines"]
+# Maximum distance to search when the exact index doesn't match
+FUZZY_SEARCH_RANGE = 20
 
-  # Verify the command at start_idx is a Show Text (101)
-  cmd = command_list[start_idx]
-  unless cmd && cmd.code == 101
-    $stderr.puts "    Warning: Expected code 101 at index #{start_idx}, found #{cmd&.code}. Skipping."
-    return false
+# ─── Text command detection ──────────────────────────────────────────────────
+
+def pb_message_call?(cmd)
+  cmd && cmd.code == 355 &&
+    cmd.parameters[0].to_s =~ /(?:Kernel\.)?(?:pbMessage|pbMsg)\s*\(/i
+end
+
+def text_command?(cmd)
+  return false unless cmd
+  cmd.code == 101 || pb_message_call?(cmd)
+end
+
+# Search near target_index for a text command (code 101 or pbMessage 355).
+# Returns [actual_index, :show_text | :pb_message] or nil.
+def find_text_command_near(command_list, target_index, range = FUZZY_SEARCH_RANGE)
+  # Check exact index first
+  if target_index >= 0 && target_index < command_list.length
+    cmd = command_list[target_index]
+    return [target_index, :show_text] if cmd.code == 101
+    return [target_index, :pb_message] if pb_message_call?(cmd)
   end
 
+  # Expand outward from target
+  (1..range).each do |offset|
+    [target_index - offset, target_index + offset].each do |idx|
+      next if idx < 0 || idx >= command_list.length
+      cmd = command_list[idx]
+      return [idx, :show_text] if cmd.code == 101
+      return [idx, :pb_message] if pb_message_call?(cmd)
+    end
+  end
+
+  nil
+end
+
+# Search near target_index for a choice command (code 102).
+def find_choice_command_near(command_list, target_index, range = FUZZY_SEARCH_RANGE)
+  if target_index >= 0 && target_index < command_list.length
+    return target_index if command_list[target_index].code == 102
+  end
+
+  (1..range).each do |offset|
+    [target_index - offset, target_index + offset].each do |idx|
+      next if idx < 0 || idx >= command_list.length
+      return idx if command_list[idx].code == 102
+    end
+  end
+
+  nil
+end
+
+# Search near target_index for a script command (code 355).
+def find_script_command_near(command_list, target_index, range = FUZZY_SEARCH_RANGE)
+  if target_index >= 0 && target_index < command_list.length
+    return target_index if command_list[target_index].code == 355
+  end
+
+  (1..range).each do |offset|
+    [target_index - offset, target_index + offset].each do |idx|
+      next if idx < 0 || idx >= command_list.length
+      return idx if command_list[idx].code == 355
+    end
+  end
+
+  nil
+end
+
+# ─── Show Text (101/401) handling ────────────────────────────────────────────
+
+def apply_show_text(command_list, start_idx, new_lines)
   # Count existing continuation lines (401)
   old_line_count = 1
   j = start_idx + 1
@@ -56,24 +120,19 @@ def apply_text_block(command_list, block)
   command_list[start_idx].parameters[0] = new_lines[0]
 
   if new_lines.length == old_line_count
-    # Same number of lines — just replace in place
     new_lines[1..].each_with_index do |line, li|
       command_list[start_idx + 1 + li].parameters[0] = line
     end
   elsif new_lines.length < old_line_count
-    # Fewer lines — remove excess 401 commands
     remove_count = old_line_count - new_lines.length
     new_lines[1..].each_with_index do |line, li|
       command_list[start_idx + 1 + li].parameters[0] = line
     end
-    # Remove the extra 401 commands
     command_list.slice!(start_idx + new_lines.length, remove_count)
   else
-    # More lines — insert additional 401 commands
     new_lines[1...old_line_count].each_with_index do |line, li|
       command_list[start_idx + 1 + li].parameters[0] = line
     end
-    # Insert new 401 commands for extra lines
     insert_at = start_idx + old_line_count
     indent = command_list[start_idx].indent
     new_lines[old_line_count..].each_with_index do |line, li|
@@ -88,59 +147,144 @@ def apply_text_block(command_list, block)
   true
 end
 
-def apply_choice_block(command_list, block)
-  start_idx = block["start_index"]
-  new_choices = block["choices"]
-  new_cancel = block["cancel_type"]
+# ─── pbMessage (355/655) handling ────────────────────────────────────────────
 
+def apply_pb_message(command_list, start_idx, new_lines)
   cmd = command_list[start_idx]
-  unless cmd && cmd.code == 102
-    $stderr.puts "    Warning: Expected code 102 at index #{start_idx}, found #{cmd&.code}. Skipping."
+  existing = cmd.parameters[0].to_s
+
+  # Detect the wrapper format from the existing command
+  wrapper_prefix = if existing =~ /^(Kernel\.pbMessage\(_INTL\()/
+                     $1
+                   elsif existing =~ /^(pbMessage\(_INTL\()/
+                     $1
+                   elsif existing =~ /^(Kernel\.pbMessage\()/
+                     $1
+                   elsif existing =~ /^(pbMessage\()/
+                     $1
+                   else
+                     "pbMessage(_INTL("
+                   end
+
+  # Determine closing based on prefix
+  wrapper_suffix = if wrapper_prefix.include?("_INTL(")
+                     "\"))"
+                   else
+                     "\")"
+                   end
+
+  # Count existing continuation lines (655)
+  old_count = 1
+  j = start_idx + 1
+  while j < command_list.length && command_list[j].code == 655
+    old_count += 1
+    j += 1
+  end
+
+  # Join all new lines and wrap in pbMessage
+  # Use \n for line breaks within the text box
+  joined_text = new_lines.join("\\n")
+  new_script = "#{wrapper_prefix}\"#{joined_text}#{wrapper_suffix}"
+
+  # Replace: single 355 command with new text, remove extra 655s
+  command_list[start_idx].parameters[0] = new_script
+  if old_count > 1
+    command_list.slice!(start_idx + 1, old_count - 1)
+  end
+
+  true
+end
+
+# ─── Block application functions ─────────────────────────────────────────────
+
+def apply_text_block(command_list, block)
+  target_idx = block["start_index"]
+  new_lines = block["lines"]
+
+  result = find_text_command_near(command_list, target_idx)
+
+  unless result
+    $stderr.puts "    Warning: No text command (101 or pbMessage) found near index #{target_idx}. Skipping."
     return false
   end
 
+  actual_idx, cmd_type = result
+  if actual_idx != target_idx
+    $stderr.puts "    Note: Adjusted text index #{target_idx} -> #{actual_idx}"
+  end
+
+  case cmd_type
+  when :show_text
+    apply_show_text(command_list, actual_idx, new_lines)
+  when :pb_message
+    apply_pb_message(command_list, actual_idx, new_lines)
+  end
+end
+
+def apply_choice_block(command_list, block)
+  target_idx = block["start_index"]
+  new_choices = block["choices"]
+  new_cancel = block["cancel_type"]
+
+  actual_idx = find_choice_command_near(command_list, target_idx)
+  unless actual_idx
+    $stderr.puts "    Warning: No choice command (102) found near index #{target_idx}. Skipping."
+    return false
+  end
+
+  if actual_idx != target_idx
+    $stderr.puts "    Note: Adjusted choice index #{target_idx} -> #{actual_idx}"
+  end
+
+  cmd = command_list[actual_idx]
   cmd.parameters[0] = new_choices
   cmd.parameters[1] = new_cancel if new_cancel
   true
 end
 
 def apply_script_message_block(command_list, block)
-  start_idx = block["start_index"]
+  target_idx = block["start_index"]
   new_lines = block["lines"]
 
-  cmd = command_list[start_idx]
-  unless cmd && cmd.code == 355
-    $stderr.puts "    Warning: Expected code 355 at index #{start_idx}, found #{cmd&.code}. Skipping."
+  actual_idx = find_script_command_near(command_list, target_idx)
+  unless actual_idx
+    $stderr.puts "    Warning: No script command (355) found near index #{target_idx}. Skipping."
     return false
   end
 
+  if actual_idx != target_idx
+    $stderr.puts "    Note: Adjusted script index #{target_idx} -> #{actual_idx}"
+  end
+
+  cmd = command_list[actual_idx]
+
   # Count existing continuation lines (655)
   old_line_count = 1
-  j = start_idx + 1
+  j = actual_idx + 1
   while j < command_list.length && command_list[j].code == 655
     old_line_count += 1
     j += 1
   end
 
   # Replace first line
-  command_list[start_idx].parameters[0] = new_lines[0]
+  command_list[actual_idx].parameters[0] = new_lines[0]
 
   if new_lines.length == old_line_count
     new_lines[1..].each_with_index do |line, li|
-      command_list[start_idx + 1 + li].parameters[0] = line
+      command_list[actual_idx + 1 + li].parameters[0] = line
     end
   elsif new_lines.length < old_line_count
     remove_count = old_line_count - new_lines.length
     new_lines[1..].each_with_index do |line, li|
-      command_list[start_idx + 1 + li].parameters[0] = line
+      command_list[actual_idx + 1 + li].parameters[0] = line
     end
-    command_list.slice!(start_idx + new_lines.length, remove_count)
+    command_list.slice!(actual_idx + new_lines.length, remove_count)
   else
     new_lines[1...old_line_count].each_with_index do |line, li|
-      command_list[start_idx + 1 + li].parameters[0] = line
+      command_list[actual_idx + 1 + li].parameters[0] = line
     end
-    insert_at = start_idx + old_line_count
-    indent = command_list[start_idx].indent
+    insert_at = actual_idx + old_line_count
+    indent = command_list[actual_idx].indent
     new_lines[old_line_count..].each_with_index do |line, li|
       new_cmd = RPG::EventCommand.new
       new_cmd.code = 655
@@ -231,6 +375,8 @@ def apply_replace_commands(command_list, block)
   true
 end
 
+# ─── Main ────────────────────────────────────────────────────────────────────
+
 def main
   data_dir = ARGV[0]
   changes_file = ARGV[1]
@@ -257,6 +403,7 @@ def main
 
   total_modifications = 0
   total_failures = 0
+  total_adjusted = 0
   files_written = 0
 
   # Process map changes
