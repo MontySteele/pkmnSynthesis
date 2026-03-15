@@ -323,6 +323,17 @@ def patch_ruby19_apis(line)
     "File.readlines(#{path_arg}).map { |_l| _l.chomp }"
   end
 
+  # 4. .to_h → Hash[...] (Array#to_h is Ruby 2.1+)
+  line = line.gsub(/\.to_h\b(?!\s*\{)/) do
+    ".inject({}) { |_h, (_k, _v)| _h[_k] = _v; _h }"
+  end
+
+  # 5. .bytesize → .length (in Ruby 1.8, String#length IS byte length)
+  line = line.gsub(/\.bytesize\b/, ".length")
+
+  # 6. .bytes → .unpack('C*') (String#bytes is Ruby 1.9+)
+  line = line.gsub(/\.bytes\b(?!\s*\{)/, ".unpack('C*')")
+
   line
 end
 
