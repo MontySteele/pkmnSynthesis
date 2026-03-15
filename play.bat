@@ -28,7 +28,11 @@ if "!MISSING!"=="1" (
         pause
         exit /b 1
     )
-    REM Re-check after setup - need a new shell for PATH changes
+    REM Refresh PATH from registry so we can find newly installed programs
+    for /f "tokens=2*" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path 2^>nul') do set "SYS_PATH=%%b"
+    for /f "tokens=2*" %%a in ('reg query "HKCU\Environment" /v Path 2^>nul') do set "USR_PATH=%%b"
+    if defined SYS_PATH if defined USR_PATH set "PATH=!SYS_PATH!;!USR_PATH!"
+    REM Re-check after setup
     where git >nul 2>&1 || (
         echo.
         echo [INFO] Please close this window and double-click play.bat again.
