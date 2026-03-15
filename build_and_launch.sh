@@ -457,6 +457,13 @@ package_mobile() {
   # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
+  # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.9)
+  if [ -f "$mobile_dir/Data/Scripts.rxdata" ]; then
+    info "Patching scripts for JoiPlay compatibility..."
+    ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts.rxdata" || \
+      warn "Script patching failed — mobile package may not work on JoiPlay"
+  fi
+
   # Include setup instructions
   cp "$PROJECT_DIR/MOBILE_SETUP.txt" "$mobile_dir/" 2>/dev/null || true
 
