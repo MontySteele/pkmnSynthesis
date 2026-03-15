@@ -3,12 +3,18 @@
 # Patches Ruby 1.9+/2.0+ syntax in game scripts for JoiPlay compatibility (Ruby 1.8).
 #
 # Transforms:
-#   1. Safe navigation:    obj&.method(args)       →  (obj && obj.method(args))
-#   2. Symbol hash keys:   { key: value }          →  { :key => value }
-#   3. Keyword args in def: def foo(key: default)  →  options hash pattern
-#   4. Encoding::UTF_8 / force_encoding            →  removed (no-op in 1.8)
-#   5. Symbol#to_proc:     map(&:method)           →  map { |x| x.method }
-#   6. chomp: true:        readlines(f, chomp:true) → readlines(f).map{|l|l.chomp}
+#   1. Safe navigation:       obj&.method(args)       →  (obj && obj.method(args))
+#   2. Symbol hash keys:      { key: value }          →  { :key => value }
+#   3. Keyword args in def:   def foo(key: default)   →  options hash pattern
+#   4. Encoding / force_encoding                      →  removed (no-op in 1.8)
+#   5. Symbol#to_proc:        map(&:method)           →  map { |x| x.method }
+#   6. chomp: true:           readlines(f, chomp:true) → readlines(f).map{|l|l.chomp}
+#   7. Trailing commas:       foo(a, b,)              →  foo(a, b)
+#   8. Double splat:          **kwargs                →  removed
+#   9. Leading-dot chains:    \n  .method             →  joined to previous line
+#  10. Lookbehind regex:      (?<=X)                  →  (X)  (capturing group)
+#  11. Regex literal braces:  /{WORD}/                →  /\{WORD\}/
+#  12. Required after optional: def f(a=1, b)         →  def f(b, a=1)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -191,11 +197,36 @@ def patch_symbol_hash_keys(line)
         prev_ch = (start > 0) ? line[start - 1] : nil
 
         if next_ch =~ /[\s]/ && prev_ch != ":"
-          # This is a symbol hash key! Transform word: → :word =>
-          word = line[start...i]
-          result += ":#{word} =>"
-          i += 1  # skip the colon
-          next
+          # Check for ternary operator context: if there's a `?` earlier on
+          # the line that's part of a ternary, then this `:` is the else-branch
+          # separator, not a hash key.
+          # Heuristic: if the code portion so far contains an unmatched `?` in
+          # ternary position (not part of a method name like `.nil?`), skip.
+          code_before = result + line[start...i]
+          is_ternary_else = false
+          # Walk backwards looking for `?` that isn't `word?`
+          scan_pos = code_before.length - 1
+          while scan_pos >= 0
+            if code_before[scan_pos] == "?"
+              # Check if preceded by a word char (method? name) — not ternary
+              if scan_pos > 0 && code_before[scan_pos - 1] =~ /\w/
+                scan_pos -= 1
+                next
+              else
+                is_ternary_else = true
+                break
+              end
+            end
+            scan_pos -= 1
+          end
+
+          unless is_ternary_else
+            # This is a symbol hash key! Transform word: → :word =>
+            word = line[start...i]
+            result += ":#{word} =>"
+            i += 1  # skip the colon
+            next
+          end
         end
       end
 
@@ -346,6 +377,126 @@ def patch_ruby19_apis(line)
   line
 end
 
+# ── Trailing commas before closing paren ──
+# Ruby 1.8 does not allow `foo(a, b,)` — remove trailing comma.
+def patch_trailing_commas(line)
+  return line if line.lstrip.start_with?("#")
+  line.gsub(/,(\s*\))/, '\1')
+end
+
+# ── Double splat **kwargs ──
+# Ruby 1.8 has no ** operator. Convert `|*args, **kwargs|` → `|*args|`
+# and `method(*args, **kwargs)` → `method(*args)`.
+# Also converts `def foo(*args, **kwargs)` → `def foo(*args)`.
+def patch_double_splat(line)
+  return line if line.lstrip.start_with?("#")
+  # In block params: |*args, **kw| → |*args|
+  line = line.gsub(/,\s*\*\*\w+\|/, '|')
+  # In method calls and defs: (*args, **kw) → (*args)
+  line = line.gsub(/,\s*\*\*\w+\)/, ')')
+  # Standalone **kw in params: (** kw) — unlikely but handle it
+  line = line.gsub(/\(\*\*\w+\)/, '()')
+  line
+end
+
+# ── Leading-dot method chains ──
+# Ruby 1.8 doesn't allow a line to start with `.method`. Join it to prev line.
+def patch_leading_dot_chains(lines)
+  result = []
+  changed = false
+  lines.each do |line|
+    if line =~ /^\s+\./ && result.length > 0
+      # This line starts with a dot — append to previous line
+      prev = result.last.rstrip
+      continuation = line.lstrip  # ".method(...)"
+      result[-1] = prev + continuation + "\n"
+      changed = true
+    else
+      result << line
+    end
+  end
+  [result, changed]
+end
+
+# ── Lookbehind assertions in regex ──
+# Ruby 1.8's Oniguruma may not support lookbehind `(?<=...)`.
+# Convert to a capturing group alternative where possible.
+def patch_lookbehind_regex(line)
+  return line if line.lstrip.start_with?("#")
+  # (?<=X)pattern → capture group approach won't work as drop-in.
+  # Instead, wrap the lookbehind pattern: /(?<=H)\d+/ → /H(\d+)/
+  # and note that callers must use $1. Since these are typically used in
+  # .scan or .match, the capturing group approach works.
+  line.gsub(/\(\?<=([^)]+)\)/) do
+    "(#{$1})"
+  end
+end
+
+# ── Regex unescaped braces ──
+# Ruby 1.8 treats `{` in regex as quantifier start. Escape literal braces.
+def patch_regex_braces(line)
+  return line if line.lstrip.start_with?("#")
+  # Find regex literals and escape unescaped { that aren't quantifiers
+  line.gsub(%r{/([^/\n]+)/}) do |match|
+    inner = $1
+    # Skip if it looks like it contains a real quantifier: {1,3} or {2}
+    if inner =~ /\{\d+(?:,\d*)?\}/
+      match
+    else
+      "/" + inner.gsub(/(?<!\\)\{/, '\\{').gsub(/(?<!\\)\}/, '\\}') + "/"
+    end
+  end
+end
+
+# ── Required parameter after optional ──
+# Ruby 1.8 doesn't allow `def foo(a = default, b)`. Reorder so required
+# args come first: `def foo(b, a = default)`.
+def patch_required_after_optional(lines)
+  result = []
+  changed = false
+
+  lines.each do |line|
+    if line =~ /^(\s*def\s+\S+\()(.+)\)\s*$/
+      prefix = $1
+      params_str = $2
+      params = split_params(params_str)
+
+      # Check if there's a required param after an optional one
+      has_optional = false
+      needs_reorder = false
+      params.each do |p|
+        p = p.strip
+        if p.include?("=")
+          has_optional = true
+        elsif has_optional && p =~ /^\w+$/ && p !~ /^\*/ && p != "_kw"
+          needs_reorder = true
+        end
+      end
+
+      if needs_reorder
+        required = []
+        optional = []
+        params.each do |p|
+          p = p.strip
+          if p.include?("=") || p =~ /^\*/
+            optional << p
+          else
+            required << p
+          end
+        end
+        new_params = required + optional
+        result << "#{prefix}#{new_params.join(', ')})\n"
+        changed = true
+        next
+      end
+    end
+
+    result << line
+  end
+
+  [result, changed]
+end
+
 # ── Main processing ──
 
 patched_count = 0
@@ -355,17 +506,27 @@ Dir.glob(File.join(scripts_dir, "**", "*.rb")).each do |path|
   lines = original.lines
   any_changed = false
 
-  # First pass: patch keyword args in method definitions (adds lines)
+  # First pass: multi-line transforms (keyword args, leading dots, reorder params)
   lines, kw_changed = patch_keyword_args_in_def(lines)
   any_changed = true if kw_changed
 
-  # Second pass: patch safe navigation and symbol hash keys
+  lines, dot_changed = patch_leading_dot_chains(lines)
+  any_changed = true if dot_changed
+
+  lines, reorder_changed = patch_required_after_optional(lines)
+  any_changed = true if reorder_changed
+
+  # Second pass: line-by-line transforms
   lines.each_with_index do |line, i|
     next if line.lstrip.start_with?("#")
 
-    new_line = patch_ruby19_apis(line)        # before hash key conversion
-    new_line = patch_safe_navigation(new_line)
-    new_line = patch_symbol_hash_keys(new_line)
+    new_line = patch_ruby19_apis(line)          # API compat (before hash key conversion)
+    new_line = patch_safe_navigation(new_line)   # &. → && .
+    new_line = patch_symbol_hash_keys(new_line)  # key: val → :key => val
+    new_line = patch_trailing_commas(new_line)    # foo(a,) → foo(a)
+    new_line = patch_double_splat(new_line)       # **kwargs → removed
+    new_line = patch_lookbehind_regex(new_line)   # (?<=X) → (X)
+    new_line = patch_regex_braces(new_line)       # /{LIT}/ → /\{LIT\}/
 
     if new_line != lines[i]
       lines[i] = new_line

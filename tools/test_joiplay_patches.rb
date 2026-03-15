@@ -184,6 +184,67 @@ FIXTURES = [
     /SaveData::FILE_PATH/  # :: must NOT be transformed
   ],
   [
+    "trailing_comma_in_call",
+    <<~'RUBY',
+      download_file(url, path,)
+      draw_text("hello", x + 80, 40,)
+    RUBY
+    /download_file\(url, path\)/
+  ],
+  [
+    "double_splat_kwargs",
+    <<~'RUBY',
+      module TestMod
+        def test_method(name)
+          target = self
+          target.define_method(name) do |*args, **kvargs|
+            method(name).call(*args, **kvargs)
+          end
+        end
+      end
+    RUBY
+    /\|(\*args)\|/  # **kvargs removed
+  ],
+  [
+    "leading_dot_chain",
+    <<~'RUBY',
+      result = items.sort_by { |name, count| -count }
+                   .first(10)
+                   .select { |x| x }
+    RUBY
+    /sort_by.*\.first/  # joined onto one or two lines
+  ],
+  [
+    "ternary_with_method_colon",
+    <<~'RUBY',
+      y = cond ? obj.front_sprite_y: @default_y
+    RUBY
+    /front_sprite_y:/  # must NOT transform the ternary colon
+  ],
+  [
+    "lookbehind_regex",
+    <<~'RUBY',
+      id = str.scan(/(?<=H)\d+/).first
+    RUBY
+    /\(H\)/  # lookbehind converted to capturing group
+  ],
+  [
+    "regex_literal_braces",
+    <<~'RUBY',
+      line.gsub!(/{SPRITER_CREDITS}/, credits_text)
+    RUBY
+    /\\{SPRITER_CREDITS\\}/  # braces escaped
+  ],
+  [
+    "required_after_optional",
+    <<~'RUBY',
+      def openMenu(stock = [], itemType)
+        puts itemType
+      end
+    RUBY
+    /def openMenu\(itemType, stock = \[\]\)/  # reordered
+  ],
+  [
     "deprecation_stub_integration",
     <<~'RUBY',
       module Deprecation
