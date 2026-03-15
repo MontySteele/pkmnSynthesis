@@ -3,11 +3,14 @@
 # Test harness for JoiPlay patcher — validates that patch_scripts_for_joiplay.rb
 # produces output that compiles under Ruby 1.8.
 #
-# Can run in two modes:
-#   1. Local:  ruby test_joiplay_patches.rb
-#              Applies the patcher to test fixtures, checks output syntax.
-#   2. Docker: ruby test_joiplay_patches.rb --docker
-#              Builds a Ruby 1.8 container and compiles patched code inside it.
+# Can run in three modes:
+#   1. Local:    ruby test_joiplay_patches.rb
+#                Applies the patcher to test fixtures, checks output patterns.
+#   2. Ruby 1.8: ruby test_joiplay_patches.rb --ruby18
+#                Syntax-checks patched output with actual Ruby 1.8.7 via rbenv.
+#                Install first: RUBY_CONFIGURE_OPTS="--without-openssl" rbenv install 1.8.7-p374
+#   3. Docker:   ruby test_joiplay_patches.rb --docker
+#                Builds a Ruby 1.8 container and compiles patched code inside it.
 #
 # The test fixtures exercise every transform the patcher handles:
 #   - Safe navigation (&.)
@@ -241,11 +244,24 @@ end
 # ── Main test runner ──
 
 docker_mode = ARGV.include?("--docker")
+ruby18_mode = ARGV.include?("--ruby18")
 verbose = ARGV.include?("--verbose") || ARGV.include?("-v")
+
+# Auto-detect Ruby 1.8 via rbenv
+RUBY18_PATH = "/opt/rbenv/versions/1.8.7-p374/bin/ruby"
+RUBY18_AVAILABLE = File.executable?(RUBY18_PATH)
+
+mode_label = if docker_mode
+  "Docker (Ruby 1.8 compilation)"
+elsif ruby18_mode
+  "Ruby 1.8 (rbenv syntax check)"
+else
+  "Local (pattern matching)"
+end
 
 puts "JoiPlay Patcher Test Harness"
 puts "=" * 40
-puts "Mode: #{docker_mode ? 'Docker (Ruby 1.8 compilation)' : 'Local (pattern matching)'}"
+puts "Mode: #{mode_label}"
 puts
 
 pass = 0
@@ -333,6 +349,39 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
     puts "  No residual 1.9+ syntax found."
   else
     residual_issues.each { |issue| puts "  WARNING: #{issue}" }
+  end
+
+  # Ruby 1.8 mode: syntax-check every patched file with actual Ruby 1.8.7
+  if ruby18_mode
+    puts
+    puts "=" * 40
+    puts "Ruby 1.8.7 syntax check (rbenv)"
+    puts "=" * 40
+
+    unless RUBY18_AVAILABLE
+      puts "SKIP: Ruby 1.8.7 not found at #{RUBY18_PATH}"
+      puts "      Install with: RUBY_CONFIGURE_OPTS=\"--without-openssl\" rbenv install 1.8.7-p374"
+    else
+      puts "Using: #{`#{RUBY18_PATH} --version`.strip}"
+      r18_pass = 0
+      r18_fail = 0
+      FIXTURES.each do |name, _, _|
+        patched_path = File.join(fixture_dir, "#{name}.rb")
+        out2, err2, st2 = Open3.capture3(RUBY18_PATH, "-c", patched_path)
+        if st2.success?
+          puts "  [#{name}] PASS  (Ruby 1.8 syntax OK)"
+          r18_pass += 1
+        else
+          puts "  [#{name}] FAIL  (Ruby 1.8 syntax error)"
+          err2.each_line { |l| puts "    #{l}" }
+          r18_fail += 1
+          fail_count += 1
+          errors << "#{name}: Ruby 1.8 syntax error: #{err2.lines.first&.strip}"
+        end
+      end
+      puts
+      puts "Ruby 1.8 results: #{r18_pass} passed, #{r18_fail} failed"
+    end
   end
 
   # Docker mode: compile all patched files under actual Ruby 1.8
