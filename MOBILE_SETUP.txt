@@ -12,7 +12,34 @@ WHAT YOU NEED
 3. JoiPlay app + RPG Maker XP plugin (both free on the Play Store)
 
 
-STEP 1: Install JoiPlay
+CREATING THE ZIP (on your desktop)
+----------------------------------
+If you already have Pokemon: Synthesis running on your computer
+(i.e. you've already run play.bat or build_and_launch.sh and the
+game works), you can create the mobile package in one step:
+
+  Windows (Git Bash):
+    ./build_and_launch.sh --mobile
+
+  Linux / macOS:
+    ./build_and_launch.sh --mobile
+
+This will produce a file called PokemonSynthesis_Mobile.zip in the
+project folder. It uses your already-injected game data, so it only
+takes a few seconds.
+
+If you haven't set up the game yet, --mobile will do that for you
+automatically (clone the game data and inject the Synthesis dialogue)
+before creating the ZIP.
+
+NOTE FOR WINDOWS USERS: If you used play.bat to set up the game
+originally, you'll need Git Bash to run the --mobile command. Git
+Bash was installed as part of the play.bat setup — you can find it
+in your Start menu. Open it, navigate to the project folder
+(cd /c/path/to/pkmnSynthesis), and run the command above.
+
+
+STEP 1: Install JoiPlay (on your phone)
 ------------------------
 - Open the Google Play Store on your phone
 - Search for "JoiPlay" and install it
