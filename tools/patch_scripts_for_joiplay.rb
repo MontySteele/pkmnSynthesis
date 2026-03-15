@@ -15,6 +15,7 @@
 #  10. Lookbehind regex:      (?<=X)                  →  (X)  (capturing group)
 #  11. Regex literal braces:  /{WORD}/                →  /\{WORD\}/
 #  12. Required after optional: def f(a=1, b)         →  def f(b, a=1)
+#  13. deprecate_constant:      deprecate_constant :X →  commented out (Ruby 2.3+)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -373,6 +374,9 @@ def patch_ruby19_apis(line)
 
   # 6. .bytes → .unpack('C*') (String#bytes is Ruby 1.9+)
   line = line.gsub(/\.bytes\b(?!\s*\{)/, ".unpack('C*')")
+
+  # 7. deprecate_constant — Ruby 2.3+ Module method; comment out in 1.8
+  line = line.gsub(/^(\s*)deprecate_constant\b(.*)$/, '\1# deprecate_constant\2 # removed for JoiPlay')
 
   line
 end
