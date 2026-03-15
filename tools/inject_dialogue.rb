@@ -38,6 +38,23 @@ require_relative "rpgmaker_stubs"
 # Maximum distance to search when the exact index doesn't match
 FUZZY_SEARCH_RANGE = 20
 
+# Characters that RPG Maker XP's bitmap font cannot render (they display as []).
+# Map each to a safe ASCII fallback.
+UNICODE_REPLACEMENTS = {
+  "\u2014" => "--",  # em dash
+  "\u2013" => "-",   # en dash
+  "\u2018" => "'",   # left single curly quote
+  "\u2019" => "'",   # right single curly quote
+  "\u201C" => "\"",  # left double curly quote
+  "\u201D" => "\"",  # right double curly quote
+  "\u2026" => "...", # ellipsis
+}.freeze
+
+def sanitize_text(str)
+  UNICODE_REPLACEMENTS.each { |from, to| str = str.gsub(from, to) }
+  str
+end
+
 # ─── Text command detection ──────────────────────────────────────────────────
 
 def pb_message_call?(cmd)
@@ -108,6 +125,8 @@ end
 # ─── Show Text (101/401) handling ────────────────────────────────────────────
 
 def apply_show_text(command_list, start_idx, new_lines)
+  new_lines = new_lines.map { |l| sanitize_text(l) }
+
   # Count existing continuation lines (401)
   old_line_count = 1
   j = start_idx + 1
@@ -150,6 +169,7 @@ end
 # ─── pbMessage (355/655) handling ────────────────────────────────────────────
 
 def apply_pb_message(command_list, start_idx, new_lines)
+  new_lines = new_lines.map { |l| sanitize_text(l) }
   cmd = command_list[start_idx]
   existing = cmd.parameters[0].to_s
 
@@ -223,7 +243,7 @@ end
 
 def apply_choice_block(command_list, block)
   target_idx = block["start_index"]
-  new_choices = block["choices"]
+  new_choices = block["choices"].map { |c| sanitize_text(c) }
   new_cancel = block["cancel_type"]
 
   actual_idx = find_choice_command_near(command_list, target_idx)
@@ -244,7 +264,7 @@ end
 
 def apply_script_message_block(command_list, block)
   target_idx = block["start_index"]
-  new_lines = block["lines"]
+  new_lines = block["lines"].map { |l| sanitize_text(l) }
 
   actual_idx = find_script_command_near(command_list, target_idx)
   unless actual_idx
