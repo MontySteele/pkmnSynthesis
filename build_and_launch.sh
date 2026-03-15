@@ -7,6 +7,7 @@
 #   ./build_and_launch.sh --launch     # Launch only (skip clone/build/inject)
 #   ./build_and_launch.sh --build-only # Clone + get mkxp-z, don't launch
 #   ./build_and_launch.sh --dry-run    # Preview injection without modifying files
+#   ./build_and_launch.sh --mobile     # Package injected game for Android (JoiPlay)
 #
 # Prerequisites (Ubuntu/Debian):
 #   sudo apt install git build-essential cmake meson autoconf automake libtool \
@@ -425,6 +426,71 @@ Options:
   fi
 }
 
+# ─── Mobile packaging (JoiPlay / Android) ─────────────────────────────────────
+
+package_mobile() {
+  if [ ! -d "$DATA_DIR" ]; then
+    error "Game data not found. Run './build_and_launch.sh' first to clone and inject."
+  fi
+
+  local mobile_dir="$PROJECT_DIR/PokemonSynthesis_Mobile"
+  local zip_name="PokemonSynthesis_Mobile.zip"
+
+  info "Preparing mobile package..."
+
+  # Clean previous mobile build
+  rm -rf "$mobile_dir"
+  mkdir -p "$mobile_dir"
+
+  # Copy game data (everything the game needs at runtime)
+  info "Copying game data..."
+  cp -r "$GAME_DIR/Data"      "$mobile_dir/Data"
+  cp -r "$GAME_DIR/Graphics"  "$mobile_dir/Graphics"  2>/dev/null || true
+  cp -r "$GAME_DIR/Audio"     "$mobile_dir/Audio"      2>/dev/null || true
+  cp -r "$GAME_DIR/Fonts"     "$mobile_dir/Fonts"      2>/dev/null || true
+
+  # Copy Game.ini (required by JoiPlay to identify the game)
+  [ -f "$GAME_DIR/Game.ini" ] && cp "$GAME_DIR/Game.ini" "$mobile_dir/"
+
+  # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
+  [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
+
+  # Exclude the encrypted archive — JoiPlay should read loose Data/ files
+  # (Game.rgssad would override our injected dialogue)
+
+  # Include setup instructions
+  cp "$PROJECT_DIR/MOBILE_SETUP.txt" "$mobile_dir/" 2>/dev/null || true
+
+  # Create the ZIP
+  info "Creating $zip_name..."
+  cd "$PROJECT_DIR"
+  if command -v zip &>/dev/null; then
+    zip -r -q "$zip_name" "$(basename "$mobile_dir")"
+  elif command -v tar &>/dev/null; then
+    tar czf "${zip_name%.zip}.tar.gz" "$(basename "$mobile_dir")"
+    zip_name="${zip_name%.zip}.tar.gz"
+  else
+    error "Neither zip nor tar found. Install zip: sudo apt install zip"
+  fi
+
+  # Clean up the staging directory
+  rm -rf "$mobile_dir"
+
+  local size
+  size=$(du -h "$PROJECT_DIR/$zip_name" | cut -f1)
+  echo ""
+  ok "Mobile package created: $zip_name ($size)"
+  echo ""
+  echo "To play on Android:"
+  echo "  1. Transfer $zip_name to the phone"
+  echo "  2. Extract it to internal storage (NOT Google Drive or SD card)"
+  echo "  3. Install JoiPlay + RPG Maker XP plugin from the Play Store"
+  echo "  4. In JoiPlay, tap '+', set the executable to Game.exe, and"
+  echo "     point the game folder to the extracted PokemonSynthesis_Mobile directory"
+  echo ""
+  echo "See MOBILE_SETUP.txt for detailed instructions."
+}
+
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 main() {
@@ -447,6 +513,11 @@ main() {
       for f in "$PROJECT_DIR/dialogue_changes"/*.json; do
         [ -f "$f" ] && ruby "$PROJECT_DIR/tools/inject_dialogue.rb" "$DATA_DIR" "$f" --dry-run
       done
+      ;;
+    --mobile)
+      clone_game
+      inject_dialogue
+      package_mobile
       ;;
     *)
       echo "═══════════════════════════════════════════════"
