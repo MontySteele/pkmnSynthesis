@@ -1,0 +1,399 @@
+{
+  "_comment": "Route 1 Rework — New layout with same content parity",
+  "_parity": {
+    "original_map": 78,
+    "trainers": ["LASS Mimi"],
+    "items": ["ORANBERRY", "POTION"],
+    "npcs": 2,
+    "signs": 1,
+    "warps": ["Secret Garden (185)", "self-warp (ledge)"],
+    "wild_encounters": "Defined in encounters.dat, not in map events",
+    "special_events": ["pidgeyIdle (hat quest)", "berry tree (timed)", "mart clerk sample"]
+  },
+
+  "mode": "clone",
+  "map_id": 850,
+  "clone_from": 78,
+  "clear_events": true,
+  "bgm": { "name": "route1", "volume": 100 },
+  "map_info": {
+    "name": "Route 1 (Synthesis)",
+    "parent_id": 223
+  },
+
+  "events": [
+    {
+      "_comment": "Item: Oran Berry — moved to a small clearing on the west side",
+      "id": 1,
+      "name": "OranBerry",
+      "x": 7,
+      "y": 32,
+      "pages": [
+        {
+          "graphic": { "character_name": "BWObjects", "direction": 8 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["Kernel.pbItemBall(PBItems::ORANBERRY)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON" }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": {},
+          "trigger": 0,
+          "commands": [],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: Lass Mimi — positioned on east path bend, facing west",
+      "id": 2,
+      "name": "Lass Mimi",
+      "x": 30,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW (34)", "direction": 4 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:LASS)"] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Hey! You're a Pokémon trainer?"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["I'm a new trainer too! "] },
+            { "type": "raw", "code": 106, "parameters": [10] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_lass", "_note": "Cannot serialize AudioFile in JSON — will need raw event injection"}] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["We should have our Pokémon battle each other to make ", "them stronger!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["That's what Pokémon trainers do when they meet!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::LASS,\"Mimi\",_I(\"Woah! Your Pokémon looks like a total mashup!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 411, "parameters": [] },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW (34)", "direction": 4 },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Viridian City isn't too far uphill, don't give up!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Avoid the tall grass if your Pokémon are hurt!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Mart clerk who gives Potion sample — near south entrance",
+      "id": 3,
+      "name": "MartClerk",
+      "x": 18,
+      "y": 42,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW (85)", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Hi, I work at a Pokemon Mart. It's a convenient shop, so ", "please visit us in Viridian City!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Here, have a sample!"] },
+            { "type": "script", "lines": ["Kernel.pbReceiveItem(PBItems::POTION)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON" }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW (85)", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["We also carry Pokeballs for catching Pokemon!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        }
+      ]
+    },
+    {
+      "_comment": "Sign: Trainer Tips",
+      "id": 7,
+      "name": "TrainerTips",
+      "x": 22,
+      "y": 25,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3308 },
+          "trigger": 0,
+          "commands": [
+            { "type": "text", "lines": ["Trainer Tips: You can change the game's control by ", "pressing F1."] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Warp: Secret Garden entrance — hidden path on the east side",
+      "id": 5,
+      "name": "SecretGardenEntry",
+      "x": 38,
+      "y": 12,
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door"}] },
+            { "type": "raw", "code": 106, "parameters": [8] },
+            { "type": "transfer", "map_id": 185, "x": 13, "y": 9, "direction": 0, "fade": 1 },
+            { "type": "self_switch", "ch": "A", "value": "ON" }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 60
+          }
+        },
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door"}] },
+            { "type": "raw", "code": 106, "parameters": [8] },
+            { "type": "transfer", "map_id": 185, "x": 13, "y": 9, "direction": 0, "fade": 1 }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 60,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Self-warp: ledge drop (lands player on the west path after jumping a ledge)",
+      "id": 12,
+      "name": "LedgeWarp",
+      "x": 15,
+      "y": 20,
+      "pages": [
+        {
+          "trigger": 0,
+          "through": false,
+          "commands": [
+            { "type": "transfer", "map_id": 850, "x": 8, "y": 20, "direction": 0, "fade": 1 }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Pidgey idle — ambient bird that flies away when approached (hat quest)",
+      "id": 10,
+      "name": "pidgeyIdle",
+      "x": 12,
+      "y": 5,
+      "pages": [
+        {
+          "trigger": 4,
+          "commands": [
+            { "type": "script", "lines": ["# Pidgey idle behavior — monitors player position"] },
+            { "type": "raw", "code": 111, "parameters": [12, "hasHat?(HAT_PIDGEY_NEST)"] },
+            { "type": "self_switch", "ch": "C", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] }
+          ],
+          "condition": {}
+        },
+        {
+          "trigger": 4,
+          "graphic": { "character_name": "pidgey-flying" },
+          "through": true,
+          "commands": [
+            { "type": "raw", "code": 111, "parameters": [12, "$game_player.moving?"] },
+            { "type": "self_switch", "ch": "B", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "trigger": 3,
+          "graphic": { "character_name": "pidgey-flying" },
+          "through": true,
+          "commands": [
+            { "type": "script", "lines": ["pbSetSelfSwitch(13,\"A\",true)"] },
+            { "type": "script", "lines": ["obtainNewHat(HAT_PIDGEY_NEST)"] },
+            { "type": "self_switch", "ch": "C", "value": "ON" }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "B" }
+        },
+        {
+          "trigger": 0,
+          "commands": [],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "C" }
+        }
+      ]
+    },
+    {
+      "_comment": "Pidgey companion event (tracks player movement)",
+      "id": 13,
+      "name": "pidgey",
+      "x": 11,
+      "y": 5,
+      "pages": [
+        {
+          "trigger": 4,
+          "commands": [
+            { "type": "raw", "code": 111, "parameters": [12, "$game_player.moving?"] },
+            { "type": "raw", "code": 122, "indent": 1, "parameters": [289, 289, 0, 0, 0] },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] }
+          ],
+          "condition": {}
+        },
+        {
+          "trigger": 0,
+          "commands": [],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        }
+      ]
+    },
+    {
+      "_comment": "Unused event placeholder (matches original EV004)",
+      "id": 4,
+      "name": "EV004",
+      "x": 20,
+      "y": 35,
+      "pages": [
+        {
+          "trigger": 0,
+          "commands": [],
+          "condition": { "switch1_valid": true, "switch1_id": 1 }
+        }
+      ]
+    },
+    {
+      "_comment": "Unused event placeholder (matches original EV008)",
+      "id": 8,
+      "name": "EV008",
+      "x": 32,
+      "y": 22,
+      "pages": [
+        {
+          "trigger": 0,
+          "commands": [],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Berry tree display (timed event, matches original EV050)",
+      "id": 50,
+      "name": "BerryTree",
+      "x": 39,
+      "y": 13,
+      "pages": [
+        {
+          "trigger": 4,
+          "through": true,
+          "commands": [
+            { "type": "script", "lines": ["# Berry tree timed display — simplified from original"] }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 60,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Time tracking event (matches original EV011)",
+      "id": 11,
+      "name": "TimeEvent",
+      "x": 39,
+      "y": 11,
+      "pages": [
+        {
+          "trigger": 3,
+          "graphic": { "direction": 8 },
+          "commands": [
+            { "type": "raw", "code": 122, "parameters": [173, 173, 0, 2, 0, 4] },
+            { "type": "raw", "code": 108, "parameters": ["#####"] },
+            { "type": "raw", "code": 408, "parameters": ["Time event"] },
+            { "type": "raw", "code": 408, "parameters": ["#####"] },
+            { "type": "script", "lines": ["pbSetEventTime"] },
+            { "type": "self_switch", "ch": "A", "value": "ON" }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "trigger": 0,
+          "commands": [],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "trigger": 3,
+          "commands": [
+            { "type": "self_switch", "ch": "A", "value": "OFF" },
+            { "type": "switch", "id": 24, "value": "OFF" }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Secret Garden entry v2 (alternative trigger, matches EV006)",
+      "id": 6,
+      "name": "SecretGardenEntry2",
+      "x": 39,
+      "y": 14,
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            { "type": "transfer", "map_id": 185, "x": 13, "y": 9, "direction": 0, "fade": 1 }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        }
+      ]
+    },
+    {
+      "_comment": "Berry tree tile (matches EV009)",
+      "id": 9,
+      "name": "BerryTreeTile",
+      "x": 37,
+      "y": 12,
+      "pages": [
+        {
+          "trigger": 0,
+          "graphic": { "tile_id": 2605 },
+          "commands": [],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 18,
+            "switch2_valid": true,
+            "switch2_id": 60
+          }
+        }
+      ]
+    }
+  ]
+}
