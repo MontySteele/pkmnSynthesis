@@ -199,6 +199,102 @@ def patch_symbol_hash_keys(line)
   result
 end
 
+# ── Keyword arguments in method definitions ──
+
+# Detects `def method(pos_args..., key: default, ...)` and converts to
+# `def method(pos_args..., _kw = {})` with extraction lines injected after.
+# In Ruby 1.8, keyword args don't exist — callers pass a trailing hash
+# that Ruby auto-wraps, and it lands in the last positional parameter.
+def patch_keyword_args_in_def(lines)
+  result = []
+  i = 0
+  changed = false
+
+  while i < lines.length
+    line = lines[i]
+    # Match: def [self.]method_name(... , key: default [, key2: default2])
+    if line =~ /^(\s*def\s+\S+\()(.+)\)\s*$/
+      prefix = $1  # "  def self.save("
+      params_str = $2  # "save_file = SaveData::FILE_PATH, safe: false"
+      indent = line[/^\s*/]
+
+      # Split params, respecting nested parens/brackets
+      params = split_params(params_str)
+
+      # Separate positional params from keyword params
+      positional = []
+      keywords = []
+      params.each do |p|
+        p = p.strip
+        if p =~ /^(\w+):\s*(.+)$/
+          keywords << [$1, $2]  # [name, default]
+        else
+          positional << p
+        end
+      end
+
+      if keywords.any?
+        changed = true
+        # Build new def line with positional params + _kw = {}
+        new_params = positional + ["_kw = {}"]
+        result << "#{prefix}#{new_params.join(', ')})\n"
+
+        # Inject extraction lines: handle case where hash lands in wrong positional param
+        # If a caller passes only keyword args (e.g., Game.save(:safe => true)),
+        # the hash ends up in the first positional param. Detect and fix this.
+        if positional.any?
+          # Get the last positional param name (without default)
+          last_pos_name = positional.last.split("=").first.strip
+          # Also get first positional param name for hash-in-wrong-position detection
+          first_pos_name = positional.first.split("=").first.strip
+          result << "#{indent}  if #{first_pos_name}.is_a?(Hash) && _kw.empty?\n"
+          result << "#{indent}    _kw = #{first_pos_name}\n"
+          # Reset to default
+          first_default = positional.first.include?("=") ? positional.first.split("=", 2).last.strip : "nil"
+          result << "#{indent}    #{first_pos_name} = #{first_default}\n"
+          result << "#{indent}  end\n"
+        end
+
+        # Extract keyword values from _kw hash
+        keywords.each do |name, default|
+          result << "#{indent}  #{name} = _kw.key?(:#{name}) ? _kw[:#{name}] : #{default}\n"
+        end
+
+        i += 1
+        next
+      end
+    end
+
+    result << line
+    i += 1
+  end
+
+  [result, changed]
+end
+
+# Split a parameter string by commas, respecting nested parens/brackets
+def split_params(str)
+  params = []
+  current = ""
+  depth = 0
+  str.each_char do |ch|
+    if ch == "(" || ch == "["
+      depth += 1
+      current += ch
+    elsif ch == ")" || ch == "]"
+      depth -= 1
+      current += ch
+    elsif ch == "," && depth == 0
+      params << current
+      current = ""
+    else
+      current += ch
+    end
+  end
+  params << current unless current.empty?
+  params
+end
+
 # ── Main processing ──
 
 patched_count = 0
@@ -208,6 +304,11 @@ Dir.glob(File.join(scripts_dir, "**", "*.rb")).each do |path|
   lines = original.lines
   any_changed = false
 
+  # First pass: patch keyword args in method definitions (adds lines)
+  lines, kw_changed = patch_keyword_args_in_def(lines)
+  any_changed = true if kw_changed
+
+  # Second pass: patch safe navigation and symbol hash keys
   lines.each_with_index do |line, i|
     next if line.lstrip.start_with?("#")
 
