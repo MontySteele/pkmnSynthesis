@@ -1,0 +1,1211 @@
+{
+  "_comment": "Viridian Gym Rework — New puzzle layout with same content parity",
+  "_parity": {
+    "original_map": 85,
+    "trainers": [
+      "COOLTRAINER_M Yuji",
+      "BLACKBELT Takashi",
+      "COOLTRAINER_F Justine",
+      "COOLTRAINER_M Samuel",
+      "ENGINEER Cole",
+      "BLACKBELT Kiyo",
+      "ENGINEER Jason",
+      "BLACKBELT Atsushi"
+    ],
+    "items": ["REVIVE", "FRESHWATER"],
+    "npcs": 1,
+    "warps": ["Viridian City (853)"],
+    "puzzle": "15 arrow tiles + 14 stopping tiles (spinning tile puzzle)",
+    "gym_leader": "Giovanni",
+    "badges": ["Earth Badge (badge 7)"],
+    "rewards": ["TM26", "HAT_GYM_REWARD_8", "3x Premium Wonder Trade tickets"]
+  },
+
+  "mode": "clone",
+  "map_id": 856,
+  "clone_from": 85,
+  "clear_events": true,
+  "bgm": { "name": "gym", "volume": 100 },
+  "map_info": {
+    "name": "Viridian Gym (Synthesis)",
+    "parent_id": 223
+  },
+
+  "events": [
+    {
+      "_comment": "Warp 1: Exit door (4-tile doorway, tile 1 of 4) — warps to Viridian City rework",
+      "id": 1,
+      "name": "ExitWarp1",
+      "x": 20,
+      "y": 44,
+      "pages": [
+        {
+          "graphic": { "direction": 2 },
+          "trigger": 1,
+          "commands": [
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door", "_vol": 80, "_pitch": 100}] },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
+            { "type": "raw", "code": 106, "parameters": [8] },
+            { "type": "raw", "code": 122, "parameters": [152, 152, 0, 0, -1] },
+            { "type": "transfer", "map_id": 853, "x": 26, "y": 20, "direction": 0, "fade": 1 },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Warp 2: Exit door (tile 2 of 4)",
+      "id": 2,
+      "name": "ExitWarp2",
+      "x": 21,
+      "y": 44,
+      "pages": [
+        {
+          "graphic": { "direction": 2 },
+          "trigger": 1,
+          "commands": [
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door", "_vol": 80, "_pitch": 100}] },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
+            { "type": "raw", "code": 106, "parameters": [8] },
+            { "type": "raw", "code": 122, "parameters": [152, 152, 0, 0, -1] },
+            { "type": "transfer", "map_id": 853, "x": 26, "y": 20, "direction": 0, "fade": 1 },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Warp 3: Exit door (tile 3 of 4)",
+      "id": 3,
+      "name": "ExitWarp3",
+      "x": 22,
+      "y": 44,
+      "pages": [
+        {
+          "graphic": { "direction": 2 },
+          "trigger": 1,
+          "commands": [
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door", "_vol": 80, "_pitch": 100}] },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
+            { "type": "raw", "code": 106, "parameters": [8] },
+            { "type": "raw", "code": 122, "parameters": [152, 152, 0, 0, -1] },
+            { "type": "transfer", "map_id": 853, "x": 26, "y": 20, "direction": 0, "fade": 1 },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Warp 4: Exit door (tile 4 of 4)",
+      "id": 4,
+      "name": "ExitWarp4",
+      "x": 23,
+      "y": 44,
+      "pages": [
+        {
+          "graphic": { "direction": 2 },
+          "trigger": 1,
+          "commands": [
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door", "_vol": 80, "_pitch": 100}] },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
+            { "type": "raw", "code": 106, "parameters": [8] },
+            { "type": "raw", "code": 122, "parameters": [152, 152, 0, 0, -1] },
+            { "type": "transfer", "map_id": 853, "x": 26, "y": 20, "direction": 0, "fade": 1 },
+            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+
+    {
+      "_comment": "Puzzle Arrow 1: RIGHT — entrance area, sends player right toward east corridor",
+      "id": 5,
+      "name": "ArrowRight1",
+      "x": 18,
+      "y": 38,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3122 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding right"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 2: UP — east side, sends player up along east wall",
+      "id": 6,
+      "name": "ArrowUp1",
+      "x": 36,
+      "y": 38,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3129 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding up"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 4] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 3: DOWN — upper east, sends player back down (trap path)",
+      "id": 7,
+      "name": "ArrowDown1",
+      "x": 36,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3130 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding down"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 3] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 4: LEFT — mid-east, sends player west across middle",
+      "id": 8,
+      "name": "ArrowLeft1",
+      "x": 36,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3121 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding left"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 2] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 5: LEFT — east upper area, sends player left",
+      "id": 9,
+      "name": "ArrowLeft2",
+      "x": 36,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3121 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding left"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 2] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 6: UP — west lower area, sends player up along west corridor",
+      "id": 10,
+      "name": "ArrowUp2",
+      "x": 8,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3129 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding up"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 4] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 7: UP — west lower area adjacent, sends player up",
+      "id": 11,
+      "name": "ArrowUp3",
+      "x": 9,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3129 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding up"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 4] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 8: DOWN — west mid area, sends player down (trap)",
+      "id": 12,
+      "name": "ArrowDown2",
+      "x": 8,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3130 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding down"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 3] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 9: RIGHT — west corridor, sends player right across",
+      "id": 13,
+      "name": "ArrowRight2",
+      "x": 8,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3122 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding right"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 10: RIGHT — west mid area, sends player right",
+      "id": 14,
+      "name": "ArrowRight3",
+      "x": 14,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3122 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding right"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 11: DOWN — center area, sends player down",
+      "id": 16,
+      "name": "ArrowDown3",
+      "x": 22,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3130 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding down"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 3] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 12: DOWN — center area adjacent, sends player down",
+      "id": 17,
+      "name": "ArrowDown4",
+      "x": 23,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3130 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding down"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 3] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 13: LEFT — lower center, sends player left toward west side",
+      "id": 36,
+      "name": "ArrowLeft3",
+      "x": 22,
+      "y": 35,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3121 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding left"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 2] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 14: DOWN — upper center pair tile 1, sends player down",
+      "id": 41,
+      "name": "ArrowDown5",
+      "x": 22,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3130 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding down"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 3] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Puzzle Arrow 15: DOWN — upper center pair tile 2, sends player down",
+      "id": 42,
+      "name": "ArrowDown6",
+      "x": 23,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": { "tile_id": 3130 },
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 0] },
+            { "type": "raw", "code": 108, "parameters": ["sliding down"] },
+            { "type": "raw", "code": 122, "parameters": [200, 200, 0, 0, 3] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+
+    {
+      "_comment": "Stop Tile 1: stops player sliding right from Arrow 1",
+      "id": 18,
+      "name": "StopTile1",
+      "x": 35,
+      "y": 38,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 2: stops player sliding up from Arrow 2",
+      "id": 19,
+      "name": "StopTile2",
+      "x": 36,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 3: stops player sliding down from Arrow 3",
+      "id": 20,
+      "name": "StopTile3",
+      "x": 36,
+      "y": 29,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 4: stops player sliding left from Arrow 4",
+      "id": 21,
+      "name": "StopTile4",
+      "x": 22,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 5: stops player sliding left from Arrow 5",
+      "id": 22,
+      "name": "StopTile5",
+      "x": 22,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 6: stops player sliding down from Arrow 7 (trap reset area)",
+      "id": 23,
+      "name": "StopTile6",
+      "x": 36,
+      "y": 37,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 7: stops player sliding left from Arrow 9 near Giovanni path",
+      "id": 24,
+      "name": "StopTile7",
+      "x": 14,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 8: stops player sliding up from Arrow 10 on west side",
+      "id": 25,
+      "name": "StopTile8",
+      "x": 8,
+      "y": 19,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 9: stops player sliding left from Arrow 13 (lower center)",
+      "id": 26,
+      "name": "StopTile9",
+      "x": 9,
+      "y": 35,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 10: stops player sliding up from Arrow 11 on west",
+      "id": 27,
+      "name": "StopTile10",
+      "x": 9,
+      "y": 19,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 11: stops player sliding down from Arrow 8 on west",
+      "id": 28,
+      "name": "StopTile11",
+      "x": 8,
+      "y": 25,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 12: stops player sliding right from Arrow 9 (west corridor)",
+      "id": 29,
+      "name": "StopTile12",
+      "x": 13,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 13: stops player sliding right from Arrow 10 (mid area)",
+      "id": 30,
+      "name": "StopTile13",
+      "x": 21,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+    {
+      "_comment": "Stop Tile 14: stops player sliding down from Arrows 14/15 (upper center)",
+      "id": 43,
+      "name": "StopTile14",
+      "x": 22,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {},
+          "trigger": 2,
+          "commands": [
+            { "type": "raw", "code": 121, "parameters": [978, 978, 1] }
+          ],
+          "condition": {}
+        }
+      ]
+    },
+
+    {
+      "_comment": "Trainer: COOLTRAINER_M Yuji — repositioned to east corridor near upper arrows",
+      "id": 15,
+      "name": "Trainer Yuji",
+      "x": 30,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW023", "direction": 2 },
+          "trigger": 2,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_ace", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Heh! You must be running out of steam by now!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::COOLTRAINER_M,\"Yuji\",_I(\"I ran out of gas!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW023", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["You can go onto Pok\u00e9mon League only by defeating our ", "Gym Leader!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW023", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["You can go onto Pok\u00e9mon League only by defeating our ", "Gym Leader!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: BLACKBELT Takashi (Karate King) — repositioned to upper east area",
+      "id": 31,
+      "name": "Trainer Takashi",
+      "x": 28,
+      "y": 12,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW039", "direction": 2 },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_blackbelt", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["I'm the KARATE KING! Your fate rests with me!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::BLACKBELT,\"Takashi\",_I(\"Ayah!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW039", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Pok\u00e9mon League? You? Don't get cocky!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW039", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Pok\u00e9mon League? You? Don't get cocky!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: COOLTRAINER_F Justine — repositioned to mid-east area, facing right",
+      "id": 32,
+      "name": "Trainer Justine",
+      "x": 33,
+      "y": 25,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW024", "direction": 6 },
+          "trigger": 2,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_ace", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["The truly talented win with style!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"Justine\",_I(\"I lost my grip!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW024", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["The Leader will scold me!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW024", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["The Leader will scold me!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: COOLTRAINER_M Samuel — repositioned to center-east area",
+      "id": 33,
+      "name": "Trainer Samuel",
+      "x": 26,
+      "y": 28,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW023", "direction": 2 },
+          "trigger": 2,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_ace", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Viridian Gym was closed for a long time, but now our ", "Leader is back!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::COOLTRAINER_M,\"Samuel\",_I(\"I was beaten?\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW023", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["You can go onto Pok\u00e9mon League only by defeating our ", "Gym Leader!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW023", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["You can go onto Pok\u00e9mon League only by defeating our ", "Gym Leader!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: ENGINEER Cole — repositioned to center area, facing right",
+      "id": 34,
+      "name": "Trainer Cole",
+      "x": 18,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW110", "direction": 6 },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_psychic", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Your Pok\u00e9mon will cower in fear when I'm done with you!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::ENGINEER,\"Cole\",_I(\"Yowch!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW110", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Wait! I was just careless!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW110", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Wait! I was just careless!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: BLACKBELT Kiyo — repositioned to center-south area, facing right",
+      "id": 35,
+      "name": "Trainer Kiyo",
+      "x": 24,
+      "y": 32,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW039", "direction": 6 },
+          "trigger": 2,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_blackbelt", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Karate is the ultimate form of martial arts!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::BLACKBELT,\"Kiyo\",_I(\"Atcho!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW039", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["If my Pok\u00e9mon were as good at Karate as I..."] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW039", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["If my Pok\u00e9mon were as good at Karate as I..."] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: ENGINEER Jason — repositioned to west-lower area, facing right",
+      "id": 37,
+      "name": "Trainer Jason",
+      "x": 12,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW110", "direction": 6 },
+          "trigger": 2,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_psychic", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Pok\u00e9mon and I, we make wonderful music together!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::ENGINEER,\"Jason\",_I(\"You are in perfect harmony!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW110", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Do you know the identity of our Gym Leader?"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW110", "direction": 6 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["That's right, our Leader was Giovanni himself!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer: BLACKBELT Atsushi — repositioned to west corridor, facing left",
+      "id": 38,
+      "name": "Trainer Atsushi",
+      "x": 6,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW039", "direction": 4 },
+          "trigger": 2,
+          "commands": [
+            { "type": "script", "lines": ["pbTrainerIntro(:YOUNGSTER)"] },
+            { "type": "raw", "code": 249, "parameters": [{"_audio": "spotted_blackbelt", "_vol": 100, "_pitch": 100}] },
+            { "type": "script", "lines": ["Kernel.pbNoticePlayer(get_character(0)", ")"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Rrrroar! I'm working myself into a rage!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::BLACKBELT,\"Atsushi\",_I(\"Wargh!\"),false,0,false)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+            { "type": "script", "lines": ["pbTrainerEnd"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW039", "direction": 4 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["I'm still not worthy!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW039", "direction": 4 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["I'm still not worthy!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        }
+      ]
+    },
+
+    {
+      "_comment": "Item: REVIVE — repositioned to east side alcove",
+      "id": 39,
+      "name": "ItemRevive",
+      "x": 34,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": { "character_name": "BWObjects", "direction": 8 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["Kernel.pbItemBall(PBItems::REVIVE)"] },
+            { "type": "self_switch", "ch": "A", "value": "ON" }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": {},
+          "trigger": 0,
+          "commands": [],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        }
+      ]
+    },
+
+    {
+      "_comment": "Gym Guide — near entrance, gives FRESHWATER and gym type hint (4 pages)",
+      "id": 40,
+      "name": "GymGuide",
+      "x": 26,
+      "y": 40,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW117", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": [
+              "if $game_switches[987]",
+              "gymArray = pbGet(151)",
+              "else",
+              "gymArray = GYM_TYPES_ARRAY",
+              "end",
+              "currentGym = pbGet(152)",
+              "typeIndex = gymArray[currentGym]",
+              "type = PBTypes.getName(typeIndex)",
+              "$game_variables[5] = type"
+            ] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Yo! Champ in making! Even I don't know the identity of the ", "Gym Leader!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["What? It's Giovanni?! I don't believe you!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Anyhow Trainers here like \\V[5]-type Pok\u00e9mon so you ", "better be careful!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Take this, you'll need it!"] },
+            { "type": "script", "lines": ["Kernel.pbReceiveItem(:FRESHWATER)\t"] },
+            { "type": "self_switch", "ch": "A", "value": "ON" }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW117", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": [
+              "if $game_switches[987]",
+              "gymArray = pbGet(151)",
+              "else",
+              "gymArray = GYM_TYPES_ARRAY",
+              "end",
+              "currentGym = pbGet(152)",
+              "typeIndex = gymArray[currentGym]",
+              "type = PBTypes.getName(typeIndex)",
+              "$game_variables[5] = type"
+            ] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["This will be the toughest of all the Gym Leaders! I heard ", "that the trainers here like \\V[5]-type Pok\u00e9mon!"] }
+          ],
+          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+        },
+        {
+          "graphic": { "character_name": "BW117", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Blow me away! Giovanni really was the Gym Leader here!"] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        },
+        {
+          "graphic": { "character_name": "BW117", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["The Gym has been empty ever since Giovanni left. I ", "wonder who'll take over next."] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 12 }
+        }
+      ]
+    },
+
+    {
+      "_comment": "Giovanni — Gym Leader at upper area. Full battle event with PokemonSelection, custom battleback, rewards",
+      "id": 92,
+      "name": "Giovanni",
+      "x": 14,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": { "character_name": "BW_giovanni", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Fwahahaha! This is my hideout! I planned to resurrect ", "Team Rocket here! But, you have caught me again!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["So be it! This time, I'm not holding back!"] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Choose your five strongest Pok\u00e9mon!"] },
+            { "type": "raw", "code": 111, "parameters": [12, "PokemonSelection.choose(1,5, true,true)"] },
+
+            { "type": "script", "lines": ["$PokemonGlobal.nextBattleBack=\"Giovanni\""], "indent": 1 },
+            { "type": "raw", "code": 111, "parameters": [0, 921, 0], "indent": 1 },
+            { "type": "raw", "code": 117, "parameters": [18], "indent": 2 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 2 },
+            { "type": "raw", "code": 412, "parameters": [], "indent": 1 },
+
+            { "type": "script", "lines": ["$PokemonGlobal.nextBattleBGM=\"kanto_gym_battle-BW\""], "indent": 1 },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 1 },
+            { "type": "text", "lines": ["Once more, you shall face Giovanni the greatest trainer!"], "indent": 1 },
+
+            { "type": "raw", "code": 111, "indent": 1, "parameters": [12, "pbTrainerBattle(PBTrainers::LEADER_Giovanni,\"Giovanni\",_I(\"Ha! That was a truly intense fight! You have won! As proof, here is the Earth Badge!\"),false,0,false)"] },
+
+            { "type": "script", "lines": ["PokemonSelection.restore"], "indent": 2 },
+            { "type": "script", "lines": ["$Trainer.badges[7]=true"], "indent": 2 },
+            { "type": "raw", "code": 121, "parameters": [11, 11, 0], "indent": 2 },
+            { "type": "raw", "code": 121, "parameters": [291, 291, 0], "indent": 2 },
+            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 2 },
+            { "type": "raw", "code": 106, "parameters": [20], "indent": 2 },
+
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
+            { "type": "text", "lines": ["Having lost, I cannot face my underlings! Team Rocket", "is finished! "], "indent": 2 },
+
+            { "type": "raw", "code": 121, "parameters": [1106, 1106, 0], "indent": 2 },
+            { "type": "raw", "code": 106, "parameters": [20], "indent": 2 },
+
+            { "type": "script", "lines": ["obtainBadgeMessage(\"Earth Badge\")"], "indent": 2 },
+            { "type": "script", "lines": ["obtainHat(HAT_GYM_REWARD_8)"], "indent": 2 },
+
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
+            { "type": "text", "lines": ["The Earth Badge makes Pok\u00e9mon of any level obey! It ", "is evidence of your mastery as a Pok\u00e9mon trainer!"], "indent": 2 },
+
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
+            { "type": "text", "lines": ["With it, you can enter the Pok\u00e9mon League! It is my gift ", "for your Pok\u00e9mon League challenge!"], "indent": 2 },
+
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
+            { "type": "text", "lines": ["Please also take this with you."], "indent": 2 },
+            { "type": "script", "lines": ["Kernel.pbReceiveItem(PBItems::TM26)"], "indent": 2 },
+
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
+            { "type": "text", "lines": ["TM26 is Earthquake. It will make your opponents beg for ", "mercy."], "indent": 2 },
+
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
+            { "type": "text", "lines": ["I made it when I ran the Gym here, too long ago..."], "indent": 2 },
+
+            { "type": "raw", "code": 122, "parameters": [111, 111, 1, 0, 3], "indent": 2 },
+            { "type": "raw", "code": 250, "parameters": [{"_audio": "itemlevel", "_vol": 50, "_pitch": 100}], "indent": 2 },
+            { "type": "text", "lines": ["\\C[3]\\PN obtained 3 Premium Wonder Trade ticket!"], "indent": 2 },
+
+            { "type": "raw", "code": 0, "parameters": [], "indent": 2 },
+            { "type": "raw", "code": 412, "parameters": [], "indent": 1 },
+
+            { "type": "raw", "code": 411, "parameters": [] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 1 },
+            { "type": "text", "lines": ["Come back when you are ready for our battle."], "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] },
+
+            { "type": "script", "lines": ["pbTrainerEnd"] },
+            { "type": "script", "lines": ["PokemonSelection.restore"] }
+          ],
+          "condition": {}
+        },
+        {
+          "graphic": { "character_name": "BW_giovanni", "direction": 2 },
+          "trigger": 0,
+          "commands": [
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["Having lost, I cannot face my underlings! Team Rocket", "is finished! "] },
+            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
+            { "type": "text", "lines": ["I will dedicate my life to the study of Pok\u00e9mon!"] },
+            { "type": "script", "lines": ["pbSet(1,HAT_GYM_REWARD_8)"] },
+            { "type": "raw", "code": 111, "parameters": [12, "!hasHat?(pbGet(1))"] },
+            { "type": "script", "lines": ["obtainHat(pbGet(1))"], "indent": 1 },
+            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
+            { "type": "raw", "code": 412, "parameters": [] }
+          ],
+          "condition": { "switch1_valid": true, "switch1_id": 11 }
+        },
+        {
+          "graphic": {},
+          "trigger": 0,
+          "commands": [],
+          "condition": { "switch1_valid": true, "switch1_id": 12 }
+        }
+      ]
+    }
+  ]
+}
