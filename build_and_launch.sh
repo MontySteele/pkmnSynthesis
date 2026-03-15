@@ -442,7 +442,9 @@ package_mobile() {
   rm -rf "$mobile_dir"
   mkdir -p "$mobile_dir"
 
-  # Copy game data (everything the game needs at runtime)
+  # Copy only what the game needs at runtime — skip build artifacts,
+  # backups, .git, Windows binaries, and the encrypted archive
+  # (Game.rgssad would override our injected dialogue).
   info "Copying game data..."
   cp -r "$GAME_DIR/Data"      "$mobile_dir/Data"
   cp -r "$GAME_DIR/Graphics"  "$mobile_dir/Graphics"  2>/dev/null || true
@@ -455,17 +457,56 @@ package_mobile() {
   # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
-  # Exclude the encrypted archive — JoiPlay should read loose Data/ files
-  # (Game.rgssad would override our injected dialogue)
+  # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.9)
+  # 005_Deprecation.rb uses keyword args and **kwargs which JoiPlay's Ruby 1.9 can't parse.
+  # It only prints developer warnings, so replacing it with a no-op stub is safe.
+  local deprecation_script="$mobile_dir/Data/Scripts/001_Technical/001_Debugging/005_Deprecation.rb"
+  if [ -f "$deprecation_script" ]; then
+    info "Patching 005_Deprecation.rb for JoiPlay compatibility..."
+    cat > "$deprecation_script" << 'RUBY'
+# Deprecation stub for JoiPlay compatibility.
+# The original uses Ruby 2.0+ keyword args that JoiPlay's Ruby 1.9 cannot parse.
+# This module only prints developer warnings — safe to stub out for players.
+module Deprecation
+  module_function
+  def warn_method(method_name, removal_version = nil, alternative = nil); end
+end
+
+class Module
+  private
+  def deprecated_method_alias(name, aliased_method, *args)
+    opts = args.last.is_a?(Hash) ? args.last : {}
+    removal_in = opts[:removal_in]
+    class_method = opts[:class_method] || false
+    target = class_method ? self.class : self
+    return unless target.method_defined?(aliased_method)
+    target.define_method(name) do |*a|
+      method(aliased_method).call(*a)
+    end
+  end
+end
+RUBY
+  fi
 
   # Include setup instructions
   cp "$PROJECT_DIR/MOBILE_SETUP.txt" "$mobile_dir/" 2>/dev/null || true
 
-  # Create the ZIP
-  info "Creating $zip_name..."
+  # Remove things JoiPlay doesn't need that may have been copied
+  rm -rf "$mobile_dir"/.git \
+         "$mobile_dir"/.originals \
+         "$mobile_dir"/*.exe \
+         "$mobile_dir"/*.dll \
+         "$mobile_dir"/System \
+         "$mobile_dir"/Game.rgssad \
+         "$mobile_dir"/Game.rgss2a \
+         "$mobile_dir"/Game.rgss3a \
+         2>/dev/null || true
+
+  # Create the ZIP (use max compression)
+  info "Creating $zip_name (this may take a minute)..."
   cd "$PROJECT_DIR"
   if command -v zip &>/dev/null; then
-    zip -r -q "$zip_name" "$(basename "$mobile_dir")"
+    zip -9 -r -q "$zip_name" "$(basename "$mobile_dir")"
   elif command -v tar &>/dev/null; then
     tar czf "${zip_name%.zip}.tar.gz" "$(basename "$mobile_dir")"
     zip_name="${zip_name%.zip}.tar.gz"
