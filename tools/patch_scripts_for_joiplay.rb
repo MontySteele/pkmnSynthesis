@@ -3,9 +3,12 @@
 # Patches Ruby 1.9+/2.0+ syntax in game scripts for JoiPlay compatibility (Ruby 1.8).
 #
 # Transforms:
-#   1. Safe navigation:  obj&.method(args)  →  (obj && obj.method(args))
-#   2. Symbol hash keys:  { key: value }    →  { :key => value }
-#      Also in method calls:  foo(key: val) →  foo(:key => val)
+#   1. Safe navigation:    obj&.method(args)       →  (obj && obj.method(args))
+#   2. Symbol hash keys:   { key: value }          →  { :key => value }
+#   3. Keyword args in def: def foo(key: default)  →  options hash pattern
+#   4. Encoding::UTF_8 / force_encoding            →  removed (no-op in 1.8)
+#   5. Symbol#to_proc:     map(&:method)           →  map { |x| x.method }
+#   6. chomp: true:        readlines(f, chomp:true) → readlines(f).map{|l|l.chomp}
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -295,6 +298,34 @@ def split_params(str)
   params
 end
 
+# ── Additional Ruby 1.9+ API patches ──
+
+# Patches applied line-by-line for specific API incompatibilities
+def patch_ruby19_apis(line)
+  # Skip comments
+  return line if line.lstrip.start_with?("#")
+
+  # 1. Remove .force_encoding(Encoding::UTF_8) — no-op in Ruby 1.8
+  line = line.gsub(/\.force_encoding\(Encoding::UTF_8\)/, "")
+
+  # 2. Symbol#to_proc: map(&:method) → map { |_e| _e.method }
+  #    Handles: .map(&:strip), .map(&:to_i), .map(&:dup), .map(&:capitalize)
+  line = line.gsub(/\.\s*(map|select|reject|detect|collect|sort_by|min_by|max_by|flat_map|each)\(\&:(\w+[?!]?)\)/) do
+    method = $1
+    sym = $2
+    ".#{method} { |_e| _e.#{sym} }"
+  end
+
+  # 3. chomp: true in File.readlines → readlines + map chomp
+  #    File.readlines(path, chomp: true) → File.readlines(path).map { |_l| _l.chomp }
+  line = line.gsub(/File\.readlines\(([^,)]+),\s*chomp:\s*true\)/) do
+    path_arg = $1
+    "File.readlines(#{path_arg}).map { |_l| _l.chomp }"
+  end
+
+  line
+end
+
 # ── Main processing ──
 
 patched_count = 0
@@ -312,7 +343,8 @@ Dir.glob(File.join(scripts_dir, "**", "*.rb")).each do |path|
   lines.each_with_index do |line, i|
     next if line.lstrip.start_with?("#")
 
-    new_line = patch_safe_navigation(line)
+    new_line = patch_ruby19_apis(line)        # before hash key conversion
+    new_line = patch_safe_navigation(new_line)
     new_line = patch_symbol_hash_keys(new_line)
 
     if new_line != lines[i]
