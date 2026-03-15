@@ -457,15 +457,16 @@ package_mobile() {
   # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
-  # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.9)
-  # 005_Deprecation.rb uses keyword args and **kwargs which JoiPlay's Ruby 1.9 can't parse.
+  # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.8)
+  # JoiPlay's RPG Maker XP plugin uses libmkxp18.so which embeds Ruby 1.8.
+  # 005_Deprecation.rb uses keyword args and **kwargs which Ruby 1.8 can't parse.
   # It only prints developer warnings, so replacing it with a no-op stub is safe.
   local deprecation_script="$mobile_dir/Data/Scripts/001_Technical/001_Debugging/005_Deprecation.rb"
   if [ -f "$deprecation_script" ]; then
     info "Patching 005_Deprecation.rb for JoiPlay compatibility..."
     cat > "$deprecation_script" << 'RUBY'
 # Deprecation stub for JoiPlay compatibility.
-# The original uses Ruby 2.0+ keyword args that JoiPlay's Ruby 1.9 cannot parse.
+# The original uses Ruby 2.0+ keyword args that JoiPlay's Ruby 1.8 cannot parse.
 # This module only prints developer warnings — safe to stub out for players.
 module Deprecation
   module_function
@@ -488,9 +489,15 @@ end
 RUBY
   fi
 
-  # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime:
+  # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime
+  # (JoiPlay mkxp builds libmkxp18.so / libmkxp19.so / libmkxp30.so —
+  #  RPG Maker XP games load the Ruby 1.8 variant):
   #   - Safe navigation operator (&.) → conditional && chains
   #   - Symbol hash keys (key: val) → (:key => val)
+  #   - Keyword args in defs → options hash pattern
+  #   - Encoding/force_encoding → removed
+  #   - Symbol#to_proc → explicit blocks
+  #   - Array#to_h, String#bytesize, String#bytes → 1.8 equivalents
   if [ -d "$mobile_dir/Data/Scripts" ]; then
     info "Patching Ruby 1.9+/2.0+ syntax for JoiPlay compatibility..."
     ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts" || \

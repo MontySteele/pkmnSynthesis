@@ -85,24 +85,33 @@ def find_method_end(line, dot_pos)
 end
 
 def patch_safe_navigation(line)
-  positions = []
-  idx = 0
-  while (found = line.index("&.", idx))
-    positions << found
-    idx = found + 2
-  end
+  # Loop until no &. remain — chained safe navigation (a&.b&.c) requires
+  # multiple passes because each replacement changes the string layout.
+  max_passes = 10  # safety limit
+  max_passes.times do
+    positions = []
+    idx = 0
+    while (found = line.index("&.", idx))
+      positions << found
+      idx = found + 2
+    end
+    break if positions.empty?
 
-  positions.reverse.each do |amp_pos|
-    dot_pos = amp_pos + 1
-    recv_start = find_receiver_start(line, amp_pos)
-    meth_end = find_method_end(line, dot_pos)
-    next unless recv_start && meth_end
+    changed = false
+    positions.reverse.each do |amp_pos|
+      dot_pos = amp_pos + 1
+      recv_start = find_receiver_start(line, amp_pos)
+      meth_end = find_method_end(line, dot_pos)
+      next unless recv_start && meth_end
 
-    receiver = line[recv_start...amp_pos]
-    method_call = line[(dot_pos + 1)...meth_end]
+      receiver = line[recv_start...amp_pos]
+      method_call = line[(dot_pos + 1)...meth_end]
 
-    replacement = "(#{receiver} && #{receiver}.#{method_call})"
-    line = line[0...recv_start] + replacement + line[meth_end..]
+      replacement = "(#{receiver} && #{receiver}.#{method_call})"
+      line = line[0...recv_start] + replacement + line[meth_end..]
+      changed = true
+    end
+    break unless changed
   end
 
   line
