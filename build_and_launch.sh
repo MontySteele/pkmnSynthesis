@@ -488,9 +488,11 @@ end
 RUBY
   fi
 
-  # Patch safe navigation operator (&.) and other Ruby 2.0+ syntax across all scripts
+  # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime:
+  #   - Safe navigation operator (&.) → conditional && chains
+  #   - Symbol hash keys (key: val) → (:key => val)
   if [ -d "$mobile_dir/Data/Scripts" ]; then
-    info "Patching Ruby 2.0+ syntax (safe navigation operator) for JoiPlay..."
+    info "Patching Ruby 1.9+/2.0+ syntax for JoiPlay compatibility..."
     ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts" || \
       warn "Script patching failed — mobile package may not work on JoiPlay"
   fi
