@@ -1,0 +1,88 @@
+Pokemon: Synthesis — Android Setup Guide (JoiPlay)
+===================================================
+
+Pokemon: Synthesis can be played on Android using JoiPlay, a free app
+that runs RPG Maker games on mobile devices.
+
+
+WHAT YOU NEED
+-------------
+1. An Android phone (Android 8.0+)
+2. This game package (PokemonSynthesis_Mobile.zip)
+3. JoiPlay app + RPG Maker XP plugin (both free on the Play Store)
+
+
+STEP 1: Install JoiPlay
+------------------------
+- Open the Google Play Store on your phone
+- Search for "JoiPlay" and install it
+- Search for "JoiPlay RPG Maker Plugin" and install that too
+  (this is a separate app that adds RPG Maker XP support)
+
+
+STEP 2: Transfer and extract the game
+--------------------------------------
+- Copy PokemonSynthesis_Mobile.zip to your phone
+- Extract it to your phone's INTERNAL STORAGE — for example:
+    /storage/emulated/0/Games/PokemonSynthesis_Mobile/
+
+  IMPORTANT: Do NOT extract to:
+    - Google Drive or any cloud-synced folder
+    - An SD card (some phones have permission issues)
+    - The Downloads folder if it auto-syncs to the cloud
+
+  The game needs direct file access. Cloud storage services
+  intercept file reads, which prevents the game engine from
+  loading assets correctly.
+
+
+STEP 3: Add the game in JoiPlay
+-------------------------------
+- Open JoiPlay
+- Tap the "+" button to add a new game
+- Fill in:
+    Name:       Pokemon: Synthesis
+    Executable: (browse to the extracted folder and select Game.exe)
+    Game Folder: (should auto-fill to the extracted folder)
+- Tap the checkmark to save
+
+
+STEP 4: Play!
+-------------
+- Tap "Pokemon: Synthesis" in JoiPlay's game list
+- The game should launch. First load may take a moment.
+
+
+TROUBLESHOOTING
+---------------
+
+"Game crashes on launch"
+  - Make sure you installed the RPG Maker XP plugin (not just JoiPlay)
+  - Make sure the game is on internal storage, not cloud/SD
+
+"Black screen or missing graphics"
+  - Check that the Graphics/ folder was fully extracted
+  - Try re-extracting the ZIP with a different app (ZArchiver works well)
+
+"Audio doesn't play"
+  - Check that the Audio/ folder was fully extracted
+  - Some audio formats may not work on all devices — this is a JoiPlay
+    limitation, not a game issue
+
+"Game is slow"
+  - In JoiPlay settings, try lowering the rendering resolution
+  - Close other apps running in the background
+
+"Google Drive keeps uploading game files"
+  - Move the game folder out of any Drive-synced directory
+  - On Pixel phones: Settings > Google > Backup > turn off "Google Drive"
+    for the file manager, or simply use a folder that isn't synced
+
+
+NOTES
+-----
+- Save files are stored in the game folder. If you move the game,
+  copy your save files too.
+- This package already includes the Synthesis mod dialogue. You do
+  NOT need to run any injection scripts on your phone.
+- JoiPlay is a third-party app and is not affiliated with this project.
