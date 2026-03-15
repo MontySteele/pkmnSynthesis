@@ -488,6 +488,13 @@ end
 RUBY
   fi
 
+  # Patch safe navigation operator (&.) and other Ruby 2.0+ syntax across all scripts
+  if [ -d "$mobile_dir/Data/Scripts" ]; then
+    info "Patching Ruby 2.0+ syntax (safe navigation operator) for JoiPlay..."
+    ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts" || \
+      warn "Script patching failed — mobile package may not work on JoiPlay"
+  fi
+
   # Include setup instructions
   cp "$PROJECT_DIR/MOBILE_SETUP.txt" "$mobile_dir/" 2>/dev/null || true
 
