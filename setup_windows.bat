@@ -13,7 +13,7 @@ echo.
 
 set NEEDS_RESTART=0
 
-REM ── Install Git if missing ──
+REM -- Install Git if missing --
 where git >nul 2>&1
 if errorlevel 1 (
     echo [INFO] Git not found. Installing...
@@ -25,12 +25,13 @@ if errorlevel 1 (
         pause
         exit /b 1
     )
+    call :refresh_path
     set NEEDS_RESTART=1
 ) else (
     echo [OK] Git is already installed.
 )
 
-REM ── Install Ruby if missing ──
+REM -- Install Ruby if missing --
 where ruby >nul 2>&1
 if errorlevel 1 (
     echo [INFO] Ruby not found. Installing...
@@ -43,6 +44,7 @@ if errorlevel 1 (
         pause
         exit /b 1
     )
+    call :refresh_path
     set NEEDS_RESTART=1
 ) else (
     echo [OK] Ruby is already installed.
@@ -62,9 +64,16 @@ if %NEEDS_RESTART%==1 (
     exit /b 0
 )
 
-REM ══════════════════════════════════════════════════════════════════════════════
+REM ================================================================
 REM  Installer subroutines
-REM ══════════════════════════════════════════════════════════════════════════════
+REM ================================================================
+
+:refresh_path
+REM Reload PATH from the registry so newly installed programs are found
+for /f "tokens=2*" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path 2^>nul') do set "SYS_PATH=%%b"
+for /f "tokens=2*" %%a in ('reg query "HKCU\Environment" /v Path 2^>nul') do set "USR_PATH=%%b"
+if defined SYS_PATH if defined USR_PATH set "PATH=!SYS_PATH!;!USR_PATH!"
+exit /b 0
 
 :install_git
 REM Try winget first, then fall back to direct download
