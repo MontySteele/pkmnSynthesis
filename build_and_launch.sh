@@ -458,10 +458,34 @@ package_mobile() {
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
   # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.9)
-  if [ -f "$mobile_dir/Data/Scripts.rxdata" ]; then
-    info "Patching scripts for JoiPlay compatibility..."
-    ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts.rxdata" || \
-      warn "Script patching failed — mobile package may not work on JoiPlay"
+  # 005_Deprecation.rb uses keyword args and **kwargs which JoiPlay's Ruby 1.9 can't parse.
+  # It only prints developer warnings, so replacing it with a no-op stub is safe.
+  local deprecation_script="$mobile_dir/Data/Scripts/001_Technical/001_Debugging/005_Deprecation.rb"
+  if [ -f "$deprecation_script" ]; then
+    info "Patching 005_Deprecation.rb for JoiPlay compatibility..."
+    cat > "$deprecation_script" << 'RUBY'
+# Deprecation stub for JoiPlay compatibility.
+# The original uses Ruby 2.0+ keyword args that JoiPlay's Ruby 1.9 cannot parse.
+# This module only prints developer warnings — safe to stub out for players.
+module Deprecation
+  module_function
+  def warn_method(method_name, removal_version = nil, alternative = nil); end
+end
+
+class Module
+  private
+  def deprecated_method_alias(name, aliased_method, *args)
+    opts = args.last.is_a?(Hash) ? args.last : {}
+    removal_in = opts[:removal_in]
+    class_method = opts[:class_method] || false
+    target = class_method ? self.class : self
+    return unless target.method_defined?(aliased_method)
+    target.define_method(name) do |*a|
+      method(aliased_method).call(*a)
+    end
+  end
+end
+RUBY
   fi
 
   # Include setup instructions
