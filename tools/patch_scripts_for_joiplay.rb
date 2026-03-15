@@ -18,6 +18,8 @@
 #  13. deprecate_constant:      deprecate_constant :X →  commented out (Ruby 2.3+)
 #  14. Private define_method:   obj.define_method(m)  →  obj.send(:define_method, m)
 #  15. File/Dir.exist?:         File.exist?(p)        →  File.exists?(p) (Ruby 1.8)
+#  16. .each_char:              str.each_char         →  str.split('').each
+#  17. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -388,6 +390,12 @@ def patch_ruby19_apis(line)
 
   # 9. File.exist? / Dir.exist? → File.exists? / Dir.exists? (Ruby 1.8 uses 'exists?')
   line = line.gsub(/(File|Dir)\.exist\?/, '\1.exists?')
+
+  # 10. .each_char → .split('').each (Ruby 1.9+)
+  line = line.gsub(/\.each_char\b/, ".split('').each")
+
+  # 11. Array#prepend → Array#unshift (Ruby 1.9+ alias)
+  line = line.gsub(/\.prepend\(/, '.unshift(')
 
   line
 end
