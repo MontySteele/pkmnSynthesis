@@ -232,9 +232,61 @@ Example — inserting a 4-option choice that sets a variable and switches:
 }
 ```
 
+### patch_scripts_for_joiplay.rb
+Patches Ruby 1.9+/2.0+ syntax in game scripts for JoiPlay compatibility (Ruby 1.8). Run automatically by `--mobile` on a **copy** of the game data — never modifies the original `game_data/`.
+
+```bash
+ruby tools/patch_scripts_for_joiplay.rb <scripts_dir>
+```
+
+Handles 17 syntax transformations including safe navigation (`&.`), symbol hash keys, keyword arguments, `File/Dir.exist?` → `exists?`, and more. See the script header or `CLAUDE.md` for the full list.
+
+**Important:** JoiPlay's Ruby 1.8 only has `File.exists?`/`Dir.exists?`, NOT `File.exist?`/`Dir.exist?`. The patcher converts `exist?` → `exists?`. This has been a source of bugs — do not reverse this direction.
+
+### validate_ruby18_compat.rb
+Scans `.rb` files for Ruby 1.9+/2.0+ syntax that would crash on JoiPlay's Ruby 1.8 runtime.
+
+```bash
+ruby tools/validate_ruby18_compat.rb game_data/Data/Scripts
+```
+
+Checks for: safe navigation (`&.`), symbol hash keys, keyword args in defs, `force_encoding`, `Symbol#to_proc`, double splat, `deprecate_constant`, `.each_char`, `.prepend`, and more.
+
+### test_joiplay_patches.rb
+Unit tests for the JoiPlay patcher. Verifies each of the 17 syntax transformations produces correct output.
+
+```bash
+ruby tools/test_joiplay_patches.rb
+```
+
 ### Round-Trip Verification
 - Byte-identical round-trip confirmed on all 809 map files
 - Tested: extract → modify one line → inject → re-extract → verify change present
+
+---
+
+## Mobile Build Pipeline
+
+`./build_and_launch.sh --mobile` creates `PokemonSynthesis_Mobile.zip`:
+
+1. Copies `game_data/` to `PokemonSynthesis_Mobile/` (Data, Graphics, Audio, Fonts)
+2. Stubs out `005_Deprecation.rb` (uses Ruby 2.0+ keyword args that can't be auto-patched)
+3. Runs `tools/patch_scripts_for_joiplay.rb` on the copy's `Data/Scripts/`
+4. Strips unneeded files (.git, .exe, .dll, System/, .rgssad)
+5. Zips with max compression
+
+The mobile package is self-contained — users just extract and point JoiPlay at it.
+
+### JoiPlay Ruby 1.8 Constraints
+- No safe navigation operator (`&.`)
+- No symbol hash key syntax (`key: value`)
+- No keyword arguments in method definitions
+- No `File.exist?` / `Dir.exist?` (only `exists?`)
+- No `String#each_char`, `Array#prepend`, `String#bytesize`
+- No `deprecate_constant` (Ruby 2.3+)
+- No `define_method` as public call (private in 1.8)
+- No lookbehind regex assertions
+- No leading-dot method chains across lines
 
 ---
 
