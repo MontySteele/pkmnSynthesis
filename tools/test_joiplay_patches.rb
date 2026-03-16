@@ -317,6 +317,16 @@ FIXTURES = [
     /\.match\(/  # match? → match
   ],
   [
+    "hash_key_question_to_has_key",
+    <<~'RUBY',
+      if cache.key?(sprite_key)
+        return cache[sprite_key]
+      end
+      result = pokemon_map.key?(headNum) ? pokemon_map[headNum] : []
+    RUBY
+    /\.has_key\?\(sprite_key\)/
+  ],
+  [
     "string_prepend_unchanged",
     <<~'RUBY',
       name.prepend("Mr. ")
