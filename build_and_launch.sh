@@ -489,14 +489,25 @@ end
 RUBY
   fi
 
-  # Inject Ruby 1.8 polyfills for methods added in 1.9+.
-  # Array#sample is used ~40 times across the codebase and cannot be reliably
-  # transformed by regex (arbitrary receiver expressions). A polyfill is safer.
+  # Inject Ruby 1.8 polyfills for methods added in 1.9+/2.x.
+  # These methods are used extensively across the game scripts and cannot be
+  # reliably transformed by regex. A polyfill that adds missing methods is safer
+  # and handles every call site automatically.
+  #
+  # Audit findings (active, non-commented usage counts):
+  #   Array#sample    — 61 calls (Ruby 1.9+)
+  #   Comparable#clamp — 45 calls (Ruby 2.4+)
+  #   Array#shuffle   — 10 calls (Ruby 1.9+)
+  #   Array#rotate    —  1 call  (Ruby 1.9+)
+  #   Integer#digits  —  1 call  (Ruby 2.1+)
   local polyfill_script="$mobile_dir/Data/Scripts/001_Technical/000_Ruby18_Polyfills.rb"
   info "Injecting Ruby 1.8 polyfills..."
   cat > "$polyfill_script" << 'RUBY'
 # Ruby 1.8 polyfills for JoiPlay compatibility.
-# Array#sample was added in Ruby 1.9. This provides a compatible implementation.
+# Adds methods introduced in Ruby 1.9+ / 2.x that the game scripts use.
+# Each polyfill is guarded so it only activates when the method is missing.
+
+# Array#sample (Ruby 1.9+) — 61 usages
 unless Array.method_defined?(:sample)
   class Array
     def sample(n = nil)
@@ -505,6 +516,57 @@ unless Array.method_defined?(:sample)
       else
         self[rand(size)]
       end
+    end
+  end
+end
+
+# Array#shuffle / #shuffle! (Ruby 1.9+) — 10 usages
+unless Array.method_defined?(:shuffle)
+  class Array
+    def shuffle
+      sort_by { rand }
+    end
+    def shuffle!
+      replace(sort_by { rand })
+    end
+  end
+end
+
+# Array#rotate (Ruby 1.9+) — 1 usage
+unless Array.method_defined?(:rotate)
+  class Array
+    def rotate(n = 1)
+      return [] if empty?
+      n = n % size
+      self[n..-1] + self[0...n]
+    end
+  end
+end
+
+# Comparable#clamp (Ruby 2.4+) — 45 usages
+# Applied to Numeric since that covers Integer/Float which are the actual receivers.
+unless 0.respond_to?(:clamp)
+  class Numeric
+    def clamp(min, max)
+      return min if self < min
+      return max if self > max
+      self
+    end
+  end
+end
+
+# Integer#digits (Ruby 2.1+) — 1 usage
+unless 0.respond_to?(:digits)
+  class Integer
+    def digits(base = 10)
+      return [0] if self == 0
+      n = self.abs
+      result = []
+      while n > 0
+        n, remainder = n.divmod(base)
+        result << remainder
+      end
+      result
     end
   end
 end
