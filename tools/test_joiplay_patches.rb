@@ -280,6 +280,15 @@ FIXTURES = [
     /# deprecate_constant/  # must be commented out
   ],
   [
+    "private_define_method",
+    <<~'RUBY',
+      target.define_method(name) do |*args|
+        method(name).call(*args)
+      end
+    RUBY
+    /target\.send\(:define_method, name\)/  # public call → send
+  ],
+  [
     "each_char_to_split",
     <<~'RUBY',
       str.each_char { |c| puts c }
@@ -522,6 +531,18 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       end
       if line =~ /Dir\.exists?\?/
         residual_issues << "#{name}:#{lineno + 1}: residual Dir.exist(s)? (should be File.directory?): #{line.strip}"
+      end
+      if line =~ /\.\w+\(&:\w+[?!]?\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual Symbol#to_proc (&:method): #{line.strip}"
+      end
+      if line =~ /readlines\([^)]+,\s*chomp:\s*true\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual chomp: true: #{line.strip}"
+      end
+      if line =~ /,\s*\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual trailing comma: #{line.strip}"
+      end
+      if line =~ /\w+\.define_method\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual public define_method: #{line.strip}"
       end
     end
   end

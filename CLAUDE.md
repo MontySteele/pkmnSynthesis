@@ -36,7 +36,7 @@ Key flags: `--inject` (re-inject only), `--launch` (launch only), `--build-only`
 
 JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The original game scripts use Ruby 1.9+/2.0+ syntax that crashes on Ruby 1.8. The mobile build runs `tools/patch_scripts_for_joiplay.rb` to downgrade syntax.
 
-**The patcher (`tools/patch_scripts_for_joiplay.rb`) handles 19 transformations:**
+**The patcher (`tools/patch_scripts_for_joiplay.rb`) handles 22 transformations:**
 
 | # | Transform | Example |
 |---|-----------|---------|
@@ -55,10 +55,13 @@ JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The
 | 13 | `deprecate_constant` | Commented out (Ruby 2.3+) |
 | 14 | Private `define_method` | `obj.define_method(m)` → `obj.send(:define_method, m)` |
 | 15 | `File.exists?` | → `File.exist?` (`exists?` removed in Ruby 3.0+; `exist?` works everywhere) |
-| 18 | `Dir.exist?`/`Dir.exists?` | → `File.directory?` (`Dir.exist?` not in Ruby 1.8; `Dir.exists?` removed in 3.0; `File.directory?` works everywhere) |
 | 16 | `.each_char` | → `.split('').each` |
 | 17 | `Array#prepend` | → `Array#unshift` |
+| 18 | `Dir.exist?`/`Dir.exists?` | → `File.directory?` (`Dir.exist?` not in Ruby 1.8; `Dir.exists?` removed in 3.0; `File.directory?` works everywhere) |
 | 19 | `.match?` | → `.match` (`match?` is Ruby 2.4+; `match` works in all versions) |
+| 20 | `.to_h` | → `.inject({}) { \|h,(k,v)\| h[k]=v; h }` (`Array#to_h` is Ruby 2.1+) |
+| 21 | `.bytesize` | → `.length` (in Ruby 1.8, `String#length` is byte length) |
+| 22 | `.bytes` | → `.unpack('C*')` (`String#bytes` is Ruby 1.9+) |
 
 ### Key Lesson: exist? vs exists?
 
