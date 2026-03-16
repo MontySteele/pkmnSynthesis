@@ -257,7 +257,17 @@ FIXTURES = [
       end
       Dir.mkdir(dir) unless Dir.exists?(dir)
     RUBY
-    /File\.exist\?\(path\)/  # exists? → exist?
+    /File\.exist\?\(path\)/  # File.exists? → File.exist?
+  ],
+  [
+    "dir_exist_to_file_directory",
+    <<~'RUBY',
+      if Dir.exist?(path)
+        puts "found"
+      end
+      Dir.mkdir(dir) unless Dir.exist?(dir)
+    RUBY
+    /File\.directory\?\(path\)/  # Dir.exist? → File.directory? (Dir.exist? not in Ruby 1.8)
   ],
   [
     "deprecate_constant",
@@ -268,6 +278,15 @@ FIXTURES = [
       end
     RUBY
     /# deprecate_constant/  # must be commented out
+  ],
+  [
+    "private_define_method",
+    <<~'RUBY',
+      target.define_method(name) do |*args|
+        method(name).call(*args)
+      end
+    RUBY
+    /target\.send\(:define_method, name\)/  # public call → send
   ],
   [
     "each_char_to_split",
@@ -286,6 +305,16 @@ FIXTURES = [
       items.prepend(first_item)
     RUBY
     /\.unshift\(/  # Array#prepend → unshift
+  ],
+  [
+    "match_question_to_match",
+    <<~'RUBY',
+      if name.match?(/^B\d+H\d+$/)
+        puts "valid"
+      end
+      result = /pattern/.match?("test string")
+    RUBY
+    /\.match\(/  # match? → match
   ],
   [
     "string_prepend_unchanged",
@@ -308,9 +337,8 @@ FIXTURES = [
       if File.exist?(path)
         puts "found"
       end
-      Dir.mkdir(dir) unless Dir.exist?(dir)
     RUBY
-    /File\.exist\?\(path\)/  # exist? must NOT be changed to exists?
+    /File\.exist\?\(path\)/  # File.exist? must stay as-is (works in all Ruby versions)
   ],
   [
     "game_class_exists_untouched",
@@ -495,8 +523,26 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       if line =~ /\.bytesize\b/
         residual_issues << "#{name}:#{lineno + 1}: residual bytesize: #{line.strip}"
       end
-      if line =~ /(File|Dir)\.exists\?/
-        residual_issues << "#{name}:#{lineno + 1}: residual exists?: #{line.strip}"
+      if line =~ /\.match\?\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual .match?(): #{line.strip}"
+      end
+      if line =~ /File\.exists\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual File.exists?: #{line.strip}"
+      end
+      if line =~ /Dir\.exists?\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual Dir.exist(s)? (should be File.directory?): #{line.strip}"
+      end
+      if line =~ /\.\w+\(&:\w+[?!]?\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual Symbol#to_proc (&:method): #{line.strip}"
+      end
+      if line =~ /readlines\([^)]+,\s*chomp:\s*true\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual chomp: true: #{line.strip}"
+      end
+      if line =~ /,\s*\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual trailing comma: #{line.strip}"
+      end
+      if line =~ /\w+\.define_method\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual public define_method: #{line.strip}"
       end
     end
   end

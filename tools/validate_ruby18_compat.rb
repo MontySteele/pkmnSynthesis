@@ -21,10 +21,15 @@ LINE_CHECKS = [
   [/(?<!\w)&\./, "Safe navigation operator (&.)", :error],
   [/(?<!:)\b\w+:\s(?!:)(?!.*=>)/, "Ruby 1.9 symbol hash key syntax (key: value)", :warn],
   [/(?:,\s*|[\(|]\s*)\*\*\w+/, "Double splat operator (**kwargs)", :error],
+  [/,\s*\)/, "Trailing comma before closing paren (Ruby 1.8 syntax error)", :error],
+  [/^\s+\./, "Leading-dot method chain (Ruby 1.8 syntax error)", :error],
 
   # Method APIs that don't exist in 1.8
-  # File/Dir.exist? is supported by JoiPlay's Ruby; exists? has been removed
-  # [/(?:File|Dir)\.exist\?/, "File/Dir.exist? (use .exists? in 1.8)", :error],
+  # File.exist? works everywhere. Dir.exist? does NOT exist in Ruby 1.8 (added in 1.9).
+  # Dir.exist?/Dir.exists? should be converted to File.directory? by the patcher.
+  [/Dir\.exists?\?/, "Dir.exist?/Dir.exists? (not in Ruby 1.8, use File.directory?)", :error],
+  [/File\.exists\?/, "File.exists? (removed in Ruby 3.0, use File.exist?)", :error],
+  [/\.match\?\(/, ".match? (Ruby 2.4+, use .match)", :error],
   [/\.force_encoding\b/, ".force_encoding (no encoding API in 1.8)", :error],
   [/\.encode\(/, ".encode() (no encoding API in 1.8)", :error],
   [/Encoding::/, "Encoding constants (no Encoding class in 1.8)", :error],
@@ -33,8 +38,13 @@ LINE_CHECKS = [
   [/\.to_h\b(?!\s*\{)/, ".to_h (Array#to_h is Ruby 2.1+)", :error],
   [/\.chars\b(?!\s*\{)/, ".chars without block (Ruby 1.9+)", :warn],
   [/\.each_char\b/, ".each_char (Ruby 1.9+, use .split('').each)", :warn],
+  # Array#sample is Ruby 1.9+ but handled by polyfill (000_Ruby18_Polyfills.rb), not patching.
+  # This is informational only — will be present in patched output but safe at runtime.
+  # [/\.sample\b/, ".sample (Ruby 1.9+, polyfilled for JoiPlay)", :info],
   [/\.prepend\b/, ".prepend (String#prepend is Ruby 1.9+)", :error],
   [/(?<!Graphics)\.freeze\b/, ".freeze (harmless but unnecessary in 1.8)", :warn],
+  [/\.\w+\(&:\w+[?!]?\)/, "Symbol#to_proc (&:method) (Ruby 1.9+)", :error],
+  [/readlines\([^)]+,\s*chomp:\s*true\)/, "chomp: true keyword arg (Ruby 2.4+)", :error],
 
   # Class/Module methods
   [/^\s*deprecate_constant\b/, "deprecate_constant (Ruby 2.3+)", :error],
@@ -42,6 +52,9 @@ LINE_CHECKS = [
   [/\w+\.public_send\(/, "public_send (Ruby 1.9+, use send)", :error],
   [/\brespond_to_missing\?\b/, "respond_to_missing? (Ruby 1.9+)", :warn],
   [/\bdefine_singleton_method\b/, "define_singleton_method (Ruby 1.9+)", :error],
+
+  # Keyword arguments in def
+  [/^\s*def\s+\S+\([^)]*\w+:\s*[^)]+\)\s*$/, "Keyword arguments in def (Ruby 2.0+)", :error],
 
   # Kernel / Object methods
   [/\b__dir__\b/i, "__dir__ (Ruby 2.0+)", :error],
@@ -63,9 +76,6 @@ LINE_CHECKS = [
 
   # String
   [/\?\w\s*==\s*\d/, "?char returns String in 1.9+ but Integer in 1.8", :warn],
-
-  # Keyword arguments in def (should already be patched)
-  # We check for the pattern but with lower confidence since the hash key check may false-positive
 ]
 
 # Patterns that are OK in comments/strings but bad in code

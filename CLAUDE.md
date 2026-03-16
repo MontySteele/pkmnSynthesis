@@ -36,7 +36,7 @@ Key flags: `--inject` (re-inject only), `--launch` (launch only), `--build-only`
 
 JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The original game scripts use Ruby 1.9+/2.0+ syntax that crashes on Ruby 1.8. The mobile build runs `tools/patch_scripts_for_joiplay.rb` to downgrade syntax.
 
-**The patcher (`tools/patch_scripts_for_joiplay.rb`) handles 17 transformations:**
+**The patcher (`tools/patch_scripts_for_joiplay.rb`) handles 22 transformations:**
 
 | # | Transform | Example |
 |---|-----------|---------|
@@ -54,9 +54,14 @@ JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The
 | 12 | Required after optional params | `def f(a=1, b)` → `def f(b, a=1)` |
 | 13 | `deprecate_constant` | Commented out (Ruby 2.3+) |
 | 14 | Private `define_method` | `obj.define_method(m)` → `obj.send(:define_method, m)` |
-| 15 | `File/Dir.exists?` | → `File/Dir.exist?` (`exists?` removed in Ruby 3.0+; `exist?` works everywhere) |
+| 15 | `File.exists?` | → `File.exist?` (`exists?` removed in Ruby 3.0+; `exist?` works everywhere) |
 | 16 | `.each_char` | → `.split('').each` |
 | 17 | `Array#prepend` | → `Array#unshift` |
+| 18 | `Dir.exist?`/`Dir.exists?` | → `File.directory?` (`Dir.exist?` not in Ruby 1.8; `Dir.exists?` removed in 3.0; `File.directory?` works everywhere) |
+| 19 | `.match?` | → `.match` (`match?` is Ruby 2.4+; `match` works in all versions) |
+| 20 | `.to_h` | → `.inject({}) { \|h,(k,v)\| h[k]=v; h }` (`Array#to_h` is Ruby 2.1+) |
+| 21 | `.bytesize` | → `.length` (in Ruby 1.8, `String#length` is byte length) |
+| 22 | `.bytes` | → `.unpack('C*')` (`String#bytes` is Ruby 1.9+) |
 
 ### Key Lesson: exist? vs exists?
 
@@ -66,9 +71,12 @@ This was a major debugging saga with three wrong turns:
 - **Commit 80def0e**: Re-enabled `exist?` → `exists?` (wrong — re-introduced the crash)
 - **Current fix**: Reversed direction to `exists?` → `exist?`
 
-The root cause: JoiPlay may load **`libmkxp30.so` (Ruby 3.0)**, not just `libmkxp18.so`. In Ruby 3.0, `exists?` was **removed entirely**. The method `exist?` works across ALL Ruby versions (1.8.7 through 3.x), so the patcher now normalizes everything to `exist?`.
+The root cause: JoiPlay may load **`libmkxp30.so` (Ruby 3.0)**, not just `libmkxp18.so`. In Ruby 3.0, `exists?` was **removed entirely**. But there's a second problem: **`Dir.exist?` was only added in Ruby 1.9** — it doesn't exist in Ruby 1.8 at all! So neither `Dir.exist?` nor `Dir.exists?` works across all versions.
 
-**Rule: Always convert `exists?` → `exist?`, never the other direction.**
+**Rules:**
+- `File.exists?` → `File.exist?` (works in Ruby 1.8 through 3.x)
+- `Dir.exist?` / `Dir.exists?` → `File.directory?` (works in ALL Ruby versions)
+- Never use `Dir.exist?` or `Dir.exists?` — neither is cross-version safe
 
 ## Key Tools
 

@@ -20,6 +20,7 @@
 #  15. File/Dir.exists?:        File.exists? → File.exist?  (exists? removed in Ruby 3.0+)
 #  16. .each_char:              str.each_char         →  str.split('').each
 #  17. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
+#  18. .match?:                 str.match?(pat)       →  str.match(pat)  (match? is Ruby 2.4+)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -388,16 +389,23 @@ def patch_ruby19_apis(line)
     "#{$1}.send(:define_method, #{$2})"
   end
 
-  # 9. File.exists? / Dir.exists? → File.exist? / Dir.exist?
-  #    exists? is deprecated in Ruby 1.9+ and REMOVED in Ruby 3.0+.
-  #    JoiPlay may load libmkxp30.so (Ruby 3.0) where exists? is gone.
-  #    exist? works on Ruby 1.8.7+ through 3.x, so normalize to exist?.
-  line = line.gsub(/(File|Dir)\.exists\?/, '\1.exist?')
+  # 9. File.exists? → File.exist? and Dir.exist?/Dir.exists? → File.directory?
+  #    - File.exist? works on Ruby 1.8.7+ through 3.x (exists? removed in 3.0)
+  #    - Dir.exist? was added in Ruby 1.9 — does NOT exist in Ruby 1.8!
+  #    - Dir.exists? was removed in Ruby 3.0
+  #    - File.directory? works on ALL Ruby versions (1.8 through 3.x)
+  #    So: normalize File to exist?, and Dir to File.directory?.
+  line = line.gsub(/Dir\.exists?\?/, 'File.directory?')
+  line = line.gsub(/File\.exists\?/, 'File.exist?')
 
-  # 10. .each_char → .split('').each (Ruby 1.9+)
+  # 10. .match? → .match (Ruby 2.4+; match? doesn't exist in 1.8)
+  #     String#match and Regexp#match both exist in Ruby 1.8 and return truthy/falsy.
+  line = line.gsub(/\.match\?\(/, '.match(')
+
+  # 11. .each_char → .split('').each (Ruby 1.9+)
   line = line.gsub(/\.each_char\b/, ".split('').each")
 
-  # 11. Array#prepend → Array#unshift (Ruby 2.5+ alias)
+  # 12. Array#prepend → Array#unshift (Ruby 2.5+ alias)
   #     Only convert when clearly an Array method (not String#prepend which exists in 1.8).
   #     Heuristic: skip if the argument is a string literal (String#prepend use case).
   line = line.gsub(/\.prepend\(([^)]*)\)/) do
