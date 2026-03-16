@@ -165,6 +165,11 @@ FIXTURES = [
         opts = { mode: "fast", count: names.bytesize }
         lines = File.readlines("f.txt", chomp: true)
         result = lines.to_h
+        path = File.exists?("x") ? "x" : "y"
+        names.each_char { |c| puts c }
+        arr = [2, 3]
+        arr.prepend(1)
+        deprecate_constant :OLD
       end
     RUBY
     /_kw = \{\}/  # keyword args patched
@@ -253,6 +258,49 @@ FIXTURES = [
       Dir.mkdir(dir) unless Dir.exists?(dir)
     RUBY
     /File\.exist\?\(path\)/  # exists? → exist?
+  ],
+  [
+    "deprecate_constant",
+    <<~'RUBY',
+      module MyModule
+        MY_OLD_CONST = 42
+        deprecate_constant :MY_OLD_CONST
+      end
+    RUBY
+    /# deprecate_constant/  # must be commented out
+  ],
+  [
+    "each_char_to_split",
+    <<~'RUBY',
+      str.each_char { |c| puts c }
+      "hello".each_char do |ch|
+        result << ch
+      end
+    RUBY
+    /\.split\(''\)\.each/  # each_char → split('').each
+  ],
+  [
+    "array_prepend_to_unshift",
+    <<~'RUBY',
+      arr.prepend(1)
+      items.prepend(first_item)
+    RUBY
+    /\.unshift\(/  # Array#prepend → unshift
+  ],
+  [
+    "string_prepend_unchanged",
+    <<~'RUBY',
+      name.prepend("Mr. ")
+      buf.prepend('prefix')
+    RUBY
+    /\.prepend\("Mr\. "\)/  # String#prepend must NOT become unshift
+  ],
+  [
+    "negative_lookbehind",
+    <<~'RUBY',
+      cleaned = str.gsub(/(?<!\\)\./, "_")
+    RUBY
+    nil  # just check it compiles (negative lookbehind removed)
   ],
   [
     "file_exist_unchanged",
@@ -429,9 +477,26 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       if line =~ /&\./
         residual_issues << "#{name}:#{lineno + 1}: residual safe navigation: #{line.strip}"
       end
-      # Check for force_encoding
       if line =~ /force_encoding/
         residual_issues << "#{name}:#{lineno + 1}: residual force_encoding: #{line.strip}"
+      end
+      if line =~ /\*\*\w+/ && line !~ /^\s*#/
+        residual_issues << "#{name}:#{lineno + 1}: residual double splat: #{line.strip}"
+      end
+      if line =~ /(?<!\w)deprecate_constant\b/ && line !~ /^\s*#/
+        residual_issues << "#{name}:#{lineno + 1}: residual deprecate_constant: #{line.strip}"
+      end
+      if line =~ /\.each_char\b/
+        residual_issues << "#{name}:#{lineno + 1}: residual each_char: #{line.strip}"
+      end
+      if line =~ /\(\?<=/ || line =~ /\(\?<!/
+        residual_issues << "#{name}:#{lineno + 1}: residual lookbehind: #{line.strip}"
+      end
+      if line =~ /\.bytesize\b/
+        residual_issues << "#{name}:#{lineno + 1}: residual bytesize: #{line.strip}"
+      end
+      if line =~ /(File|Dir)\.exists\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual exists?: #{line.strip}"
       end
     end
   end
