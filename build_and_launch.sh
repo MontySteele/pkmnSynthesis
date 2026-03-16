@@ -611,11 +611,20 @@ RUBY
   cd "$PROJECT_DIR"
   if command -v zip &>/dev/null; then
     zip -9 -r -q "$zip_name" "$(basename "$mobile_dir")"
+  elif command -v powershell.exe &>/dev/null || command -v powershell &>/dev/null; then
+    # Git Bash on Windows: use PowerShell's Compress-Archive
+    local ps_src ps_dst
+    ps_src="$(cygpath -w "$PROJECT_DIR/$(basename "$mobile_dir")")"
+    ps_dst="$(cygpath -w "$PROJECT_DIR/$zip_name")"
+    powershell.exe -NoProfile -Command \
+      "Compress-Archive -Path '${ps_src}' -DestinationPath '${ps_dst}' -Force" || \
+      error "PowerShell Compress-Archive failed"
   elif command -v tar &>/dev/null; then
     tar czf "${zip_name%.zip}.tar.gz" "$(basename "$mobile_dir")"
     zip_name="${zip_name%.zip}.tar.gz"
+    warn "Created .tar.gz instead of .zip (install 'zip' for better Android compatibility)"
   else
-    error "Neither zip nor tar found. Install zip: sudo apt install zip"
+    error "No zip, PowerShell, or tar found. Install zip or run on a system with PowerShell."
   fi
 
   # Clean up the staging directory
