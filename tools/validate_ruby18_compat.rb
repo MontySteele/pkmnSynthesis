@@ -27,6 +27,7 @@ LINE_CHECKS = [
   # Dir.exist?/Dir.exists? should be converted to File.directory? by the patcher.
   [/Dir\.exists?\?/, "Dir.exist?/Dir.exists? (not in Ruby 1.8, use File.directory?)", :error],
   [/File\.exists\?/, "File.exists? (removed in Ruby 3.0, use File.exist?)", :error],
+  [/\.match\?\(/, ".match? (Ruby 2.4+, use .match)", :error],
   [/\.force_encoding\b/, ".force_encoding (no encoding API in 1.8)", :error],
   [/\.encode\(/, ".encode() (no encoding API in 1.8)", :error],
   [/Encoding::/, "Encoding constants (no Encoding class in 1.8)", :error],

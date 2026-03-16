@@ -298,6 +298,16 @@ FIXTURES = [
     /\.unshift\(/  # Array#prepend → unshift
   ],
   [
+    "match_question_to_match",
+    <<~'RUBY',
+      if name.match?(/^B\d+H\d+$/)
+        puts "valid"
+      end
+      result = /pattern/.match?("test string")
+    RUBY
+    /\.match\(/  # match? → match
+  ],
+  [
     "string_prepend_unchanged",
     <<~'RUBY',
       name.prepend("Mr. ")
@@ -503,6 +513,9 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       end
       if line =~ /\.bytesize\b/
         residual_issues << "#{name}:#{lineno + 1}: residual bytesize: #{line.strip}"
+      end
+      if line =~ /\.match\?\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual .match?(): #{line.strip}"
       end
       if line =~ /File\.exists\?/
         residual_issues << "#{name}:#{lineno + 1}: residual File.exists?: #{line.strip}"
