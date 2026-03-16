@@ -257,7 +257,17 @@ FIXTURES = [
       end
       Dir.mkdir(dir) unless Dir.exists?(dir)
     RUBY
-    /File\.exist\?\(path\)/  # exists? → exist?
+    /File\.exist\?\(path\)/  # File.exists? → File.exist?
+  ],
+  [
+    "dir_exist_to_file_directory",
+    <<~'RUBY',
+      if Dir.exist?(path)
+        puts "found"
+      end
+      Dir.mkdir(dir) unless Dir.exist?(dir)
+    RUBY
+    /File\.directory\?\(path\)/  # Dir.exist? → File.directory? (Dir.exist? not in Ruby 1.8)
   ],
   [
     "deprecate_constant",
@@ -308,9 +318,8 @@ FIXTURES = [
       if File.exist?(path)
         puts "found"
       end
-      Dir.mkdir(dir) unless Dir.exist?(dir)
     RUBY
-    /File\.exist\?\(path\)/  # exist? must NOT be changed to exists?
+    /File\.exist\?\(path\)/  # File.exist? must stay as-is (works in all Ruby versions)
   ],
   [
     "game_class_exists_untouched",
@@ -495,8 +504,11 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       if line =~ /\.bytesize\b/
         residual_issues << "#{name}:#{lineno + 1}: residual bytesize: #{line.strip}"
       end
-      if line =~ /(File|Dir)\.exists\?/
-        residual_issues << "#{name}:#{lineno + 1}: residual exists?: #{line.strip}"
+      if line =~ /File\.exists\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual File.exists?: #{line.strip}"
+      end
+      if line =~ /Dir\.exists?\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual Dir.exist(s)? (should be File.directory?): #{line.strip}"
       end
     end
   end

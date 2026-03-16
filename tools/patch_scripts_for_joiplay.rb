@@ -388,11 +388,14 @@ def patch_ruby19_apis(line)
     "#{$1}.send(:define_method, #{$2})"
   end
 
-  # 9. File.exists? / Dir.exists? → File.exist? / Dir.exist?
-  #    exists? is deprecated in Ruby 1.9+ and REMOVED in Ruby 3.0+.
-  #    JoiPlay may load libmkxp30.so (Ruby 3.0) where exists? is gone.
-  #    exist? works on Ruby 1.8.7+ through 3.x, so normalize to exist?.
-  line = line.gsub(/(File|Dir)\.exists\?/, '\1.exist?')
+  # 9. File.exists? → File.exist? and Dir.exist?/Dir.exists? → File.directory?
+  #    - File.exist? works on Ruby 1.8.7+ through 3.x (exists? removed in 3.0)
+  #    - Dir.exist? was added in Ruby 1.9 — does NOT exist in Ruby 1.8!
+  #    - Dir.exists? was removed in Ruby 3.0
+  #    - File.directory? works on ALL Ruby versions (1.8 through 3.x)
+  #    So: normalize File to exist?, and Dir to File.directory?.
+  line = line.gsub(/Dir\.exists?\?/, 'File.directory?')
+  line = line.gsub(/File\.exists\?/, 'File.exist?')
 
   # 10. .each_char → .split('').each (Ruby 1.9+)
   line = line.gsub(/\.each_char\b/, ".split('').each")
