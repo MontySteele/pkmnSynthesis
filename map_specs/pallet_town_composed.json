@@ -1,10 +1,5 @@
 {
-  "_comment": "Pallet Town — redesigned cozy starter village (iteration 3 - polished)",
-  "_design_notes": {
-    "concept": "A compact starter town clustered around a central crossroads. Oak's Lab sits prominently at the intersection. Player and Rival houses are on the west side, Pokecenter and Mart on the east. Dense tree borders all around.",
-    "dimensions": "48x35",
-    "flow": "South entrance -> Main road north -> Central plaza with Oak Lab -> West to houses -> East to services -> North exit"
-  },
+  "_comment": "Pallet Town - redesign v5",
   "map_id": 851,
   "tileset_id": 23,
   "width": 48,
@@ -18,297 +13,1579 @@
     "name": "Pallet Town (Synthesis)",
     "parent_id": 223
   },
-  "fills": [],
-  "paths": [
+  "fills": [
     {
-      "_comment": "Main south entrance road — from bottom edge up to crossroads",
-      "type": "vertical",
-      "tile": "dirt_path",
-      "x": 22,
-      "y1": 17,
-      "y2": 34,
-      "width": 3
+      "type": "rect",
+      "tile": "sand",
+      "x": 29,
+      "y": 3,
+      "w": 11,
+      "h": 11
     },
     {
-      "_comment": "Main road north — from crossroads to north exit",
+      "type": "rect",
+      "tile": "dirt_path",
+      "x": 29,
+      "y": 15,
+      "w": 8,
+      "h": 9
+    },
+    {
+      "type": "rect",
+      "tile": "dirt_path",
+      "x": 29,
+      "y": 25,
+      "w": 10,
+      "h": 9
+    }
+  ],
+  "paths": [
+    {
       "type": "vertical",
       "tile": "dirt_path",
       "x": 22,
       "y1": 0,
-      "y2": 17,
+      "y2": 34,
       "width": 3
     },
     {
-      "_comment": "East-west crossroad through town center",
       "type": "horizontal",
       "tile": "dirt_path",
-      "x1": 7,
-      "x2": 41,
-      "y": 16,
+      "x1": 5,
+      "x2": 42,
+      "y": 12,
       "width": 2
     },
     {
-      "_comment": "West branch — path to Player/Rival houses",
       "type": "vertical",
       "tile": "dirt_path",
-      "x": 14,
-      "y1": 7,
-      "y2": 16,
+      "x": 16,
+      "y1": 8,
+      "y2": 25,
       "width": 2
     },
     {
-      "_comment": "East branch — path to Pokecenter/Mart",
       "type": "vertical",
       "tile": "dirt_path",
-      "x": 33,
-      "y1": 7,
-      "y2": 16,
+      "x": 28,
+      "y1": 8,
+      "y2": 25,
       "width": 2
     },
     {
-      "_comment": "Horizontal connector — west houses to main road",
       "type": "horizontal",
       "tile": "dirt_path",
-      "x1": 14,
-      "x2": 22,
-      "y": 10,
+      "x1": 5,
+      "x2": 42,
+      "y": 24,
       "width": 2
     },
     {
-      "_comment": "Horizontal connector — east area to main road",
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 11,
+      "y1": 11,
+      "y2": 13,
+      "width": 1
+    },
+    {
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 11,
+      "y1": 21,
+      "y2": 25,
+      "width": 1
+    },
+    {
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 34,
+      "y1": 12,
+      "y2": 14,
+      "width": 1
+    },
+    {
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 32,
+      "y1": 22,
+      "y2": 25,
+      "width": 1
+    },
+    {
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 34,
+      "y1": 26,
+      "y2": 34,
+      "width": 2
+    },
+    {
       "type": "horizontal",
       "tile": "dirt_path",
-      "x1": 25,
-      "x2": 33,
-      "y": 10,
-      "width": 2
+      "x1": 22,
+      "x2": 36,
+      "y": 33,
+      "width": 1
     }
   ],
   "stamps": [
-    {"_comment": "=== TOP BORDER: viridian_tree_row_top (x=10-17, y=0-5) ===",
-     "stamp": "viridian_tree_row_top", "x": 10, "y": 0},
-
-    {"_comment": "=== TOP BORDER: tree_2x2 fill for x=0-9 at y=0 ===",
-     "stamp": "tree_2x2", "x": 0, "y": 0},
-    {"stamp": "tree_2x2", "x": 2, "y": 0},
-    {"stamp": "tree_2x2", "x": 4, "y": 0},
-    {"stamp": "tree_2x2", "x": 6, "y": 0},
-    {"stamp": "tree_2x2", "x": 8, "y": 0},
-
-    {"_comment": "Top border gap fill x=18-21",
-     "stamp": "tree_2x2", "x": 18, "y": 0},
-    {"stamp": "tree_2x2", "x": 20, "y": 0},
-
-    {"_comment": "Top border fill x=26-45 (no tree_row_top here to avoid pokecenter overlap)",
-     "stamp": "tree_2x2", "x": 26, "y": 0},
-    {"stamp": "tree_2x2", "x": 28, "y": 0},
-    {"stamp": "tree_2x2", "x": 30, "y": 0},
-    {"stamp": "tree_2x2", "x": 32, "y": 0},
-    {"stamp": "tree_2x2", "x": 34, "y": 0},
-    {"stamp": "tree_2x2", "x": 36, "y": 0},
-    {"stamp": "tree_2x2", "x": 38, "y": 0},
-    {"stamp": "tree_2x2", "x": 40, "y": 0},
-    {"stamp": "tree_2x2", "x": 42, "y": 0},
-    {"stamp": "tree_2x2", "x": 44, "y": 0},
-
-    {"_comment": "Second row of trees x=26-45 at y=2 for visual depth",
-     "stamp": "tree_2x2", "x": 26, "y": 2},
-    {"stamp": "tree_2x2", "x": 28, "y": 2},
-    {"stamp": "tree_2x2", "x": 34, "y": 2},
-    {"stamp": "tree_2x2", "x": 36, "y": 2},
-    {"stamp": "tree_2x2", "x": 38, "y": 2},
-    {"stamp": "tree_2x2", "x": 40, "y": 2},
-    {"stamp": "tree_2x2", "x": 42, "y": 2},
-    {"stamp": "tree_2x2", "x": 44, "y": 2},
-
-    {"_comment": "=== LEFT BORDER: tree_2x2 at x=0 every 2 rows (y=2-34, y=0 already covered) ===",
-     "stamp": "tree_2x2", "x": 0, "y": 2},
-    {"stamp": "tree_2x2", "x": 0, "y": 4},
-    {"stamp": "tree_2x2", "x": 0, "y": 6},
-    {"stamp": "tree_2x2", "x": 0, "y": 8},
-    {"stamp": "tree_2x2", "x": 0, "y": 10},
-    {"stamp": "tree_2x2", "x": 0, "y": 12},
-    {"stamp": "tree_2x2", "x": 0, "y": 14},
-    {"stamp": "tree_2x2", "x": 0, "y": 16},
-    {"stamp": "tree_2x2", "x": 0, "y": 18},
-    {"stamp": "tree_2x2", "x": 0, "y": 20},
-    {"stamp": "tree_2x2", "x": 0, "y": 22},
-    {"stamp": "tree_2x2", "x": 0, "y": 24},
-    {"stamp": "tree_2x2", "x": 0, "y": 26},
-    {"stamp": "tree_2x2", "x": 0, "y": 28},
-    {"stamp": "tree_2x2", "x": 0, "y": 30},
-    {"stamp": "tree_2x2", "x": 0, "y": 32},
-
-    {"_comment": "Left border depth: second column at x=2 for visual fill (y=2-32, no y=34)",
-     "stamp": "tree_2x2", "x": 2, "y": 2},
-    {"stamp": "tree_2x2", "x": 2, "y": 4},
-    {"stamp": "tree_2x2", "x": 2, "y": 6},
-    {"stamp": "tree_2x2", "x": 2, "y": 8},
-    {"stamp": "tree_2x2", "x": 2, "y": 10},
-    {"stamp": "tree_2x2", "x": 2, "y": 12},
-    {"stamp": "tree_2x2", "x": 2, "y": 14},
-    {"stamp": "tree_2x2", "x": 2, "y": 16},
-    {"stamp": "tree_2x2", "x": 2, "y": 18},
-    {"stamp": "tree_2x2", "x": 2, "y": 20},
-    {"stamp": "tree_2x2", "x": 2, "y": 22},
-    {"stamp": "tree_2x2", "x": 2, "y": 24},
-    {"stamp": "tree_2x2", "x": 2, "y": 26},
-    {"stamp": "tree_2x2", "x": 2, "y": 28},
-    {"stamp": "tree_2x2", "x": 2, "y": 30},
-    {"stamp": "tree_2x2", "x": 2, "y": 32},
-
-    {"_comment": "Left border depth: third column at x=4 (y=2-32, no y=34)",
-     "stamp": "tree_2x2", "x": 4, "y": 2},
-    {"stamp": "tree_2x2", "x": 4, "y": 4},
-    {"stamp": "tree_2x2", "x": 4, "y": 6},
-    {"stamp": "tree_2x2", "x": 4, "y": 8},
-    {"stamp": "tree_2x2", "x": 4, "y": 10},
-    {"stamp": "tree_2x2", "x": 4, "y": 12},
-    {"stamp": "tree_2x2", "x": 4, "y": 14},
-    {"stamp": "tree_2x2", "x": 4, "y": 16},
-    {"stamp": "tree_2x2", "x": 4, "y": 18},
-    {"stamp": "tree_2x2", "x": 4, "y": 20},
-    {"stamp": "tree_2x2", "x": 4, "y": 22},
-    {"stamp": "tree_2x2", "x": 4, "y": 24},
-    {"stamp": "tree_2x2", "x": 4, "y": 26},
-    {"stamp": "tree_2x2", "x": 4, "y": 28},
-    {"stamp": "tree_2x2", "x": 4, "y": 30},
-    {"stamp": "tree_2x2", "x": 4, "y": 32},
-
-    {"_comment": "=== RIGHT BORDER: tree_2x2 at x=46 every 2 rows ===",
-     "stamp": "tree_2x2", "x": 46, "y": 0},
-    {"stamp": "tree_2x2", "x": 46, "y": 2},
-    {"stamp": "tree_2x2", "x": 46, "y": 4},
-    {"stamp": "tree_2x2", "x": 46, "y": 6},
-    {"stamp": "tree_2x2", "x": 46, "y": 8},
-    {"stamp": "tree_2x2", "x": 46, "y": 10},
-    {"stamp": "tree_2x2", "x": 46, "y": 12},
-    {"stamp": "tree_2x2", "x": 46, "y": 14},
-    {"stamp": "tree_2x2", "x": 46, "y": 16},
-    {"stamp": "tree_2x2", "x": 46, "y": 18},
-    {"stamp": "tree_2x2", "x": 46, "y": 20},
-    {"stamp": "tree_2x2", "x": 46, "y": 22},
-    {"stamp": "tree_2x2", "x": 46, "y": 24},
-    {"stamp": "tree_2x2", "x": 46, "y": 26},
-    {"stamp": "tree_2x2", "x": 46, "y": 28},
-    {"stamp": "tree_2x2", "x": 46, "y": 30},
-    {"stamp": "tree_2x2", "x": 46, "y": 32},
-
-    {"_comment": "Right border depth: x=44 (y=4-32, no y=34)",
-     "stamp": "tree_2x2", "x": 44, "y": 4},
-    {"stamp": "tree_2x2", "x": 44, "y": 6},
-    {"stamp": "tree_2x2", "x": 44, "y": 8},
-    {"stamp": "tree_2x2", "x": 44, "y": 10},
-    {"stamp": "tree_2x2", "x": 44, "y": 12},
-    {"stamp": "tree_2x2", "x": 44, "y": 14},
-    {"stamp": "tree_2x2", "x": 44, "y": 16},
-    {"stamp": "tree_2x2", "x": 44, "y": 18},
-    {"stamp": "tree_2x2", "x": 44, "y": 20},
-    {"stamp": "tree_2x2", "x": 44, "y": 22},
-    {"stamp": "tree_2x2", "x": 44, "y": 24},
-    {"stamp": "tree_2x2", "x": 44, "y": 26},
-    {"stamp": "tree_2x2", "x": 44, "y": 28},
-    {"stamp": "tree_2x2", "x": 44, "y": 30},
-    {"stamp": "tree_2x2", "x": 44, "y": 32},
-
-    {"_comment": "Right border depth: x=42 (y=4-28, no y=30+ to avoid fence overlap)",
-     "stamp": "tree_2x2", "x": 42, "y": 4},
-    {"stamp": "tree_2x2", "x": 42, "y": 6},
-    {"stamp": "tree_2x2", "x": 42, "y": 8},
-    {"stamp": "tree_2x2", "x": 42, "y": 10},
-    {"stamp": "tree_2x2", "x": 42, "y": 12},
-    {"stamp": "tree_2x2", "x": 42, "y": 14},
-    {"stamp": "tree_2x2", "x": 42, "y": 16},
-    {"stamp": "tree_2x2", "x": 42, "y": 18},
-    {"stamp": "tree_2x2", "x": 42, "y": 20},
-    {"stamp": "tree_2x2", "x": 42, "y": 22},
-    {"stamp": "tree_2x2", "x": 42, "y": 24},
-    {"stamp": "tree_2x2", "x": 42, "y": 26},
-    {"stamp": "tree_2x2", "x": 42, "y": 28},
-
-    {"_comment": "Bottom border second row at y=32 - only where no fence/sign/other tree overlaps",
-     "stamp": "tree_2x2", "x": 6, "y": 32},
-
-    {"_comment": "=== INTERIOR TREES ===",
-     "stamp": "tree_2x2", "x": 6, "y": 3},
-    {"stamp": "tree_2x2", "x": 18, "y": 4},
-    {"stamp": "tree_2x2", "x": 26, "y": 4},
-    {"stamp": "tree_2x2", "x": 28, "y": 4},
-    {"stamp": "tree_2x2", "x": 18, "y": 7},
-    {"stamp": "tree_2x2", "x": 28, "y": 7},
-    {"stamp": "tree_2x2", "x": 8, "y": 23},
-    {"stamp": "tree_2x2", "x": 16, "y": 28},
-    {"stamp": "tree_2x2", "x": 28, "y": 28},
-    {"stamp": "tree_2x2", "x": 10, "y": 27},
-
-    {"_comment": "=== DECORATIVE: west garden ===",
-     "stamp": "pallet_garden_flowers", "x": 12, "y": 22},
-
-    {"_comment": "=== FENCES ===",
-     "stamp": "pallet_fence_south", "x": 8, "y": 30},
-    {"stamp": "pallet_fence_south", "x": 14, "y": 30},
-    {"stamp": "pallet_fence_south", "x": 26, "y": 30},
-    {"stamp": "pallet_fence_south", "x": 32, "y": 30},
-    {"stamp": "pallet_fence_south", "x": 38, "y": 30},
-
-    {"_comment": "=== BUILDINGS ===",
-     "stamp": "pallet_oak_lab", "x": 19, "y": 19},
-    {"stamp": "pallet_house_red", "x": 7, "y": 6},
-    {"stamp": "pallet_house_rival", "x": 7, "y": 14},
-    {"stamp": "viridian_pokecenter", "x": 30, "y": 4},
-    {"stamp": "pewter_mart", "x": 31, "y": 13},
-    {"stamp": "pallet_house_south", "x": 32, "y": 21},
-
-    {"_comment": "=== SMALL STRUCTURES (LAST) ===",
-     "stamp": "lamppost", "x": 20, "y": 6},
-    {"stamp": "lamppost", "x": 20, "y": 13},
-
-    {"_comment": "Sign at town entrance",
-     "stamp": "sign_post", "x": 20, "y": 30}
+    {
+      "stamp": "celadon_tree_row_bottom",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "stamp": "celadon_tree_row_bottom",
+      "x": 8,
+      "y": 0
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 16,
+      "y": 0
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 18,
+      "y": 0
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 20,
+      "y": 0
+    },
+    {
+      "stamp": "celadon_tree_row_bottom",
+      "x": 25,
+      "y": 0
+    },
+    {
+      "stamp": "celadon_tree_row_bottom",
+      "x": 33,
+      "y": 0
+    },
+    {
+      "stamp": "celadon_tree_cluster_ne",
+      "x": 41,
+      "y": 0
+    },
+    {
+      "stamp": "map095_tree_cluster_11_4",
+      "x": 7,
+      "y": 2
+    },
+    {
+      "stamp": "map095_tree_cluster_11_4",
+      "x": 11,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 15,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 17,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 19,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 32,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 34,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 36,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 2
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 6,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 8,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 10,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 12,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 14,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 16,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 18,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 20,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 28,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 44,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 4
+    },
+    {
+      "stamp": "cerulean_tree_cluster_nw",
+      "x": 0,
+      "y": 6
+    },
+    {
+      "stamp": "cerulean_tree_cluster_nw",
+      "x": 0,
+      "y": 12
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 18
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 18
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 20
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 20
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 22
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 22
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 24
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 24
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 26
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 26
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 28
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 2,
+      "y": 30
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 22
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 24
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 26
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 28
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 4,
+      "y": 30
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 18,
+      "y": 27
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 26,
+      "y": 27
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 14,
+      "y": 29
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 8,
+      "y": 30
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 16,
+      "y": 29
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 6,
+      "y": 30
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 20,
+      "y": 29
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 10,
+      "y": 29
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 36,
+      "y": 14
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 14
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 18
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 22
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 36,
+      "y": 24
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 46,
+      "y": 3
+    },
+    {
+      "stamp": "tree_single",
+      "x": 44,
+      "y": 5
+    },
+    {
+      "stamp": "map095_tree_cluster_11_4",
+      "x": 44,
+      "y": 9
+    },
+    {
+      "stamp": "celadon_tree_cluster_ne",
+      "x": 41,
+      "y": 11
+    },
+    {
+      "stamp": "map095_tree_cluster_11_4",
+      "x": 44,
+      "y": 14
+    },
+    {
+      "stamp": "tree_single",
+      "x": 44,
+      "y": 16
+    },
+    {
+      "stamp": "celadon_tree_cluster_ne",
+      "x": 41,
+      "y": 20
+    },
+    {
+      "stamp": "map095_tree_cluster_11_4",
+      "x": 44,
+      "y": 23
+    },
+    {
+      "stamp": "tree_single",
+      "x": 44,
+      "y": 25
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 46,
+      "y": 29
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 46,
+      "y": 31
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 46,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 30
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 30
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 44,
+      "y": 30
+    },
+    {
+      "stamp": "map079_tree_cluster_15_10",
+      "x": 0,
+      "y": 28
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 0,
+      "y": 33
+    },
+    {
+      "stamp": "sign_post",
+      "x": 12,
+      "y": 26
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 26,
+      "y": 33
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 28
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 28
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 26
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 26
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 20
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 18
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 18
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 16
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 16
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 38,
+      "y": 16
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 42,
+      "y": 14
+    },
+    {
+      "stamp": "tree_2x2",
+      "x": 40,
+      "y": 14
+    },
+    {
+      "stamp": "pallet_house_red",
+      "x": 6,
+      "y": 4
+    },
+    {
+      "stamp": "pallet_house_rival",
+      "x": 6,
+      "y": 14
+    },
+    {
+      "stamp": "pallet_oak_lab",
+      "x": 18,
+      "y": 16
+    },
+    {
+      "stamp": "viridian_pokecenter",
+      "x": 30,
+      "y": 4
+    },
+    {
+      "stamp": "pewter_mart",
+      "x": 30,
+      "y": 16
+    },
+    {
+      "stamp": "pallet_house_south",
+      "x": 30,
+      "y": 26
+    },
+    {
+      "stamp": "lamppost",
+      "x": 19,
+      "y": 8
+    }
   ],
   "tiles": [
-    {"x": 0, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 1, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 2, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 3, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 4, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 5, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 6, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 7, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 8, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 9, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 10, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 11, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 12, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 13, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 14, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 15, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 16, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 17, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 18, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 19, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 20, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 27, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 28, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 29, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 30, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 31, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 32, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 33, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 34, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 35, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 36, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 37, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 38, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 39, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 40, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 41, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 42, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 43, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 44, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 45, "y": 34, "layer": 2, "tile_id": 8987},
-    {"x": 46, "y": 34, "layer": 2, "tile_id": 8986},
-    {"x": 47, "y": 34, "layer": 2, "tile_id": 8987}
+    {
+      "x": 6,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 7,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9875
+    },
+    {
+      "x": 8,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9871
+    },
+    {
+      "x": 9,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 10,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 11,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 12,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 13,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 14,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 15,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "layer": 0,
+      "tile_id": 240
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "layer": 0,
+      "tile_id": 268
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "layer": 0,
+      "tile_id": 560
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "layer": 0,
+      "tile_id": 561
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "layer": 0,
+      "tile_id": 569
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 5,
+      "y": 11,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 16,
+      "y": 4,
+      "layer": 0,
+      "tile_id": 268
+    },
+    {
+      "x": 16,
+      "y": 5,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 16,
+      "y": 6,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 16,
+      "y": 7,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 16,
+      "y": 8,
+      "layer": 0,
+      "tile_id": 562
+    },
+    {
+      "x": 16,
+      "y": 9,
+      "layer": 0,
+      "tile_id": 570
+    },
+    {
+      "x": 16,
+      "y": 10,
+      "layer": 0,
+      "tile_id": 546
+    },
+    {
+      "x": 16,
+      "y": 11,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 6,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 7,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 8,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 9,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 10,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 11,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 12,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 13,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 14,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 15,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 5,
+      "y": 14,
+      "layer": 0,
+      "tile_id": 268
+    },
+    {
+      "x": 5,
+      "y": 15,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 5,
+      "y": 16,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 5,
+      "y": 17,
+      "layer": 0,
+      "tile_id": 552
+    },
+    {
+      "x": 5,
+      "y": 18,
+      "layer": 0,
+      "tile_id": 560
+    },
+    {
+      "x": 5,
+      "y": 19,
+      "layer": 0,
+      "tile_id": 568
+    },
+    {
+      "x": 5,
+      "y": 20,
+      "layer": 0,
+      "tile_id": 544
+    },
+    {
+      "x": 5,
+      "y": 21,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 16,
+      "y": 14,
+      "layer": 0,
+      "tile_id": 268
+    },
+    {
+      "x": 16,
+      "y": 15,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 16,
+      "y": 16,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 16,
+      "y": 17,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 16,
+      "y": 18,
+      "layer": 0,
+      "tile_id": 561
+    },
+    {
+      "x": 16,
+      "y": 19,
+      "layer": 0,
+      "tile_id": 569
+    },
+    {
+      "x": 16,
+      "y": 20,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 16,
+      "y": 21,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 18,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 19,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 20,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 21,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 22,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 9869
+    },
+    {
+      "x": 23,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 552
+    },
+    {
+      "x": 24,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 25,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 401
+    },
+    {
+      "x": 26,
+      "y": 24,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 17,
+      "y": 16,
+      "layer": 0,
+      "tile_id": 268
+    },
+    {
+      "x": 17,
+      "y": 17,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 17,
+      "y": 18,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 17,
+      "y": 19,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 17,
+      "y": 20,
+      "layer": 0,
+      "tile_id": 563
+    },
+    {
+      "x": 17,
+      "y": 21,
+      "layer": 0,
+      "tile_id": 571
+    },
+    {
+      "x": 17,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 547
+    },
+    {
+      "x": 17,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 27,
+      "y": 16,
+      "layer": 0,
+      "tile_id": 248
+    },
+    {
+      "x": 27,
+      "y": 17,
+      "layer": 0,
+      "tile_id": 280
+    },
+    {
+      "x": 27,
+      "y": 18,
+      "layer": 0,
+      "tile_id": 547
+    },
+    {
+      "x": 27,
+      "y": 19,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 27,
+      "y": 20,
+      "layer": 0,
+      "tile_id": 563
+    },
+    {
+      "x": 27,
+      "y": 21,
+      "layer": 0,
+      "tile_id": 571
+    },
+    {
+      "x": 27,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 547
+    },
+    {
+      "x": 27,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 555
+    },
+    {
+      "x": 30,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 31,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 546
+    },
+    {
+      "x": 32,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 547
+    },
+    {
+      "x": 33,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 544
+    },
+    {
+      "x": 34,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 35,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 546
+    },
+    {
+      "x": 36,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 547
+    },
+    {
+      "x": 37,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 544
+    },
+    {
+      "x": 38,
+      "y": 13,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 29,
+      "y": 4,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 29,
+      "y": 5,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 29,
+      "y": 6,
+      "layer": 0,
+      "tile_id": 561
+    },
+    {
+      "x": 29,
+      "y": 7,
+      "layer": 0,
+      "tile_id": 569
+    },
+    {
+      "x": 29,
+      "y": 8,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 29,
+      "y": 9,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 29,
+      "y": 10,
+      "layer": 0,
+      "tile_id": 561
+    },
+    {
+      "x": 29,
+      "y": 11,
+      "layer": 0,
+      "tile_id": 569
+    },
+    {
+      "x": 29,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 39,
+      "y": 4,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 39,
+      "y": 5,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 39,
+      "y": 6,
+      "layer": 0,
+      "tile_id": 561
+    },
+    {
+      "x": 39,
+      "y": 7,
+      "layer": 0,
+      "tile_id": 569
+    },
+    {
+      "x": 39,
+      "y": 8,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 39,
+      "y": 9,
+      "layer": 0,
+      "tile_id": 553
+    },
+    {
+      "x": 39,
+      "y": 10,
+      "layer": 0,
+      "tile_id": 561
+    },
+    {
+      "x": 39,
+      "y": 11,
+      "layer": 0,
+      "tile_id": 569
+    },
+    {
+      "x": 39,
+      "y": 12,
+      "layer": 0,
+      "tile_id": 545
+    },
+    {
+      "x": 30,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 401
+    },
+    {
+      "x": 31,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 401
+    },
+    {
+      "x": 32,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 9971
+    },
+    {
+      "x": 33,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 9947
+    },
+    {
+      "x": 34,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 9948
+    },
+    {
+      "x": 35,
+      "y": 23,
+      "layer": 0,
+      "tile_id": 9948
+    },
+    {
+      "x": 29,
+      "y": 16,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 29,
+      "y": 17,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 29,
+      "y": 18,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 29,
+      "y": 19,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 29,
+      "y": 20,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 29,
+      "y": 21,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 29,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 401
+    },
+    {
+      "x": 36,
+      "y": 16,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 36,
+      "y": 17,
+      "layer": 0,
+      "tile_id": 10965
+    },
+    {
+      "x": 36,
+      "y": 18,
+      "layer": 0,
+      "tile_id": 401
+    },
+    {
+      "x": 36,
+      "y": 19,
+      "layer": 0,
+      "tile_id": 9964
+    },
+    {
+      "x": 36,
+      "y": 20,
+      "layer": 0,
+      "tile_id": 9940
+    },
+    {
+      "x": 36,
+      "y": 21,
+      "layer": 0,
+      "tile_id": 9948
+    },
+    {
+      "x": 36,
+      "y": 22,
+      "layer": 0,
+      "tile_id": 9948
+    },
+    {
+      "x": 30,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9871
+    },
+    {
+      "x": 30,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 31,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 31,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 32,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 32,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 33,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 33,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 34,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 34,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 35,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 35,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 36,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 36,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 37,
+      "y": 33,
+      "layer": 0,
+      "tile_id": 9868
+    },
+    {
+      "x": 37,
+      "y": 34,
+      "layer": 1,
+      "tile_id": 1201
+    },
+    {
+      "x": 29,
+      "y": 26,
+      "layer": 0,
+      "tile_id": 9879
+    },
+    {
+      "x": 29,
+      "y": 27,
+      "layer": 0,
+      "tile_id": 9877
+    },
+    {
+      "x": 29,
+      "y": 28,
+      "layer": 0,
+      "tile_id": 9877
+    },
+    {
+      "x": 29,
+      "y": 29,
+      "layer": 0,
+      "tile_id": 9877
+    },
+    {
+      "x": 29,
+      "y": 30,
+      "layer": 0,
+      "tile_id": 9877
+    },
+    {
+      "x": 29,
+      "y": 31,
+      "layer": 0,
+      "tile_id": 9877
+    },
+    {
+      "x": 29,
+      "y": 32,
+      "layer": 0,
+      "tile_id": 9871
+    },
+    {
+      "x": 38,
+      "y": 26,
+      "layer": 0,
+      "tile_id": 9884
+    },
+    {
+      "x": 38,
+      "y": 27,
+      "layer": 0,
+      "tile_id": 8998
+    },
+    {
+      "x": 38,
+      "y": 28,
+      "layer": 0,
+      "tile_id": 8998
+    },
+    {
+      "x": 38,
+      "y": 29,
+      "layer": 0,
+      "tile_id": 8998
+    },
+    {
+      "x": 38,
+      "y": 30,
+      "layer": 0,
+      "tile_id": 8998
+    },
+    {
+      "x": 38,
+      "y": 31,
+      "layer": 0,
+      "tile_id": 8998
+    },
+    {
+      "x": 38,
+      "y": 32,
+      "layer": 0,
+      "tile_id": 9868
+    }
   ],
   "events": [
     {
@@ -316,140 +1593,240 @@
       "name": "SouthExit1",
       "x": 23,
       "y": 34,
-      "pages": [{
-        "trigger": 1,
-        "through": true,
-        "commands": [
-          {"type": "transfer", "map_id": 850, "x": 14, "y": 0, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "pages": [
+        {
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 850,
+              "x": 14,
+              "y": 0,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 2,
       "name": "SouthExit2",
       "x": 24,
       "y": 34,
-      "pages": [{
-        "trigger": 1,
-        "through": true,
-        "commands": [
-          {"type": "transfer", "map_id": 850, "x": 15, "y": 0, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "pages": [
+        {
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 850,
+              "x": 15,
+              "y": 0,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 3,
       "name": "NorthExit1",
       "x": 23,
       "y": 0,
-      "pages": [{
-        "trigger": 1,
-        "through": true,
-        "commands": [
-          {"type": "transfer", "map_id": 852, "x": 25, "y": 34, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "pages": [
+        {
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 852,
+              "x": 25,
+              "y": 34,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 4,
       "name": "NorthExit2",
       "x": 24,
       "y": 0,
-      "pages": [{
-        "trigger": 1,
-        "through": true,
-        "commands": [
-          {"type": "transfer", "map_id": 852, "x": 26, "y": 34, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "pages": [
+        {
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 852,
+              "x": 26,
+              "y": 34,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 5,
       "name": "OakLabDoor",
-      "x": 23,
-      "y": 26,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 862, "x": 7, "y": 13, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "x": 22,
+      "y": 23,
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 7,
+              "y": 13,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 6,
       "name": "PlayerHouseDoor",
-      "x": 12,
-      "y": 13,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 860, "x": 7, "y": 13, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "x": 11,
+      "y": 11,
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 860,
+              "x": 7,
+              "y": 13,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 7,
       "name": "RivalHouseDoor",
-      "x": 12,
+      "x": 11,
       "y": 21,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 861, "x": 7, "y": 13, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 861,
+              "x": 7,
+              "y": 13,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 8,
       "name": "PokecenterDoor",
       "x": 34,
       "y": 12,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 866, "x": 7, "y": 13, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 866,
+              "x": 7,
+              "y": 13,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 9,
       "name": "MartDoor",
-      "x": 33,
-      "y": 19,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 867, "x": 5, "y": 11, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "x": 32,
+      "y": 22,
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 867,
+              "x": 5,
+              "y": 11,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     },
     {
       "id": 10,
       "name": "SouthHouseDoor",
-      "x": 36,
-      "y": 27,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 865, "x": 5, "y": 11, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
+      "x": 34,
+      "y": 32,
+      "pages": [
+        {
+          "trigger": 1,
+          "through": false,
+          "commands": [
+            {
+              "type": "transfer",
+              "map_id": 865,
+              "x": 5,
+              "y": 11,
+              "direction": 0,
+              "fade": 1
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
     }
   ]
 }
