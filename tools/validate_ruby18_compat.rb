@@ -35,6 +35,9 @@ LINE_CHECKS = [
   [/\.to_h\b(?!\s*\{)/, ".to_h (Array#to_h is Ruby 2.1+)", :error],
   [/\.chars\b(?!\s*\{)/, ".chars without block (Ruby 1.9+)", :warn],
   [/\.each_char\b/, ".each_char (Ruby 1.9+, use .split('').each)", :warn],
+  # Array#sample is Ruby 1.9+ but handled by polyfill (000_Ruby18_Polyfills.rb), not patching.
+  # This is informational only — will be present in patched output but safe at runtime.
+  # [/\.sample\b/, ".sample (Ruby 1.9+, polyfilled for JoiPlay)", :info],
   [/\.prepend\b/, ".prepend (String#prepend is Ruby 1.9+)", :error],
   [/(?<!Graphics)\.freeze\b/, ".freeze (harmless but unnecessary in 1.8)", :warn],
 

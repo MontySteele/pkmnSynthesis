@@ -489,6 +489,27 @@ end
 RUBY
   fi
 
+  # Inject Ruby 1.8 polyfills for methods added in 1.9+.
+  # Array#sample is used ~40 times across the codebase and cannot be reliably
+  # transformed by regex (arbitrary receiver expressions). A polyfill is safer.
+  local polyfill_script="$mobile_dir/Data/Scripts/001_Technical/000_Ruby18_Polyfills.rb"
+  info "Injecting Ruby 1.8 polyfills..."
+  cat > "$polyfill_script" << 'RUBY'
+# Ruby 1.8 polyfills for JoiPlay compatibility.
+# Array#sample was added in Ruby 1.9. This provides a compatible implementation.
+unless Array.method_defined?(:sample)
+  class Array
+    def sample(n = nil)
+      if n
+        sort_by { rand }.first(n)
+      else
+        self[rand(size)]
+      end
+    end
+  end
+end
+RUBY
+
   # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime
   # (JoiPlay mkxp builds libmkxp18.so / libmkxp19.so / libmkxp30.so —
   #  RPG Maker XP games load the Ruby 1.8 variant):
