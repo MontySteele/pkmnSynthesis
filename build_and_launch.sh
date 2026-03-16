@@ -502,6 +502,11 @@ RUBY
     info "Patching Ruby 1.9+/2.0+ syntax for JoiPlay compatibility..."
     ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts" || \
       warn "Script patching failed — mobile package may not work on JoiPlay"
+
+    # Validate patched scripts for residual Ruby 1.8 incompatibilities
+    info "Validating patched scripts for Ruby 1.8 compatibility..."
+    ruby "$PROJECT_DIR/tools/validate_ruby18_compat.rb" --post-patch "$mobile_dir/Data/Scripts" || \
+      warn "Ruby 1.8 compatibility issues detected — review output above"
   fi
 
   # Include setup instructions

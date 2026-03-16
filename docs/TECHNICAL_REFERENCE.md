@@ -232,9 +232,62 @@ Example — inserting a 4-option choice that sets a variable and switches:
 }
 ```
 
+### patch_scripts_for_joiplay.rb
+Patches Ruby 1.9+/2.0+ syntax in game scripts for JoiPlay compatibility (Ruby 1.8). Run automatically by `--mobile` on a **copy** of the game data — never modifies the original `game_data/`.
+
+```bash
+ruby tools/patch_scripts_for_joiplay.rb <scripts_dir>
+```
+
+Handles 17 syntax transformations including safe navigation (`&.`), symbol hash keys, keyword arguments, `File/Dir.exists?` → `exist?`, and more. See the script header or `CLAUDE.md` for the full list.
+
+**Important:** JoiPlay may use Ruby 3.0 (`libmkxp30.so`) where `exists?` is **removed**. The patcher converts `exists?` → `exist?` since `exist?` works across all Ruby versions. Do NOT reverse this to `exist?` → `exists?` — that direction causes crashes.
+
+### validate_ruby18_compat.rb
+Scans `.rb` files for Ruby 1.9+/2.0+ syntax that would crash on JoiPlay's Ruby 1.8 runtime.
+
+```bash
+ruby tools/validate_ruby18_compat.rb game_data/Data/Scripts
+```
+
+Checks for: safe navigation (`&.`), symbol hash keys, keyword args in defs, `force_encoding`, `Symbol#to_proc`, double splat, `deprecate_constant`, `.each_char`, `.prepend`, and more.
+
+### test_joiplay_patches.rb
+Unit tests for the JoiPlay patcher. Verifies each of the 17 syntax transformations produces correct output.
+
+```bash
+ruby tools/test_joiplay_patches.rb
+```
+
 ### Round-Trip Verification
 - Byte-identical round-trip confirmed on all 809 map files
 - Tested: extract → modify one line → inject → re-extract → verify change present
+
+---
+
+## Mobile Build Pipeline
+
+`./build_and_launch.sh --mobile` creates `PokemonSynthesis_Mobile.zip`:
+
+1. Copies `game_data/` to `PokemonSynthesis_Mobile/` (Data, Graphics, Audio, Fonts)
+2. Stubs out `005_Deprecation.rb` (uses Ruby 2.0+ keyword args that can't be auto-patched)
+3. Runs `tools/patch_scripts_for_joiplay.rb` on the copy's `Data/Scripts/`
+4. Strips unneeded files (.git, .exe, .dll, System/, .rgssad)
+5. Zips with max compression
+
+The mobile package is self-contained — users just extract and point JoiPlay at it.
+
+### JoiPlay Ruby Constraints
+JoiPlay ships multiple Ruby runtimes (`libmkxp18.so`, `libmkxp19.so`, `libmkxp30.so`). The RPG Maker XP plugin may load any of these. The patcher must produce code compatible across all:
+- No safe navigation operator (`&.`) — Ruby 1.8
+- No symbol hash key syntax (`key: value`) — Ruby 1.8
+- No keyword arguments in method definitions — Ruby 1.8
+- No `File.exists?` / `Dir.exists?` (removed in Ruby 3.0; use `exist?` which works everywhere)
+- No `String#each_char`, `Array#prepend`, `String#bytesize` — Ruby 1.8
+- No `deprecate_constant` (Ruby 2.3+)
+- No `define_method` as public call (private in 1.8)
+- No lookbehind regex assertions — Ruby 1.8
+- No leading-dot method chains across lines — Ruby 1.8
 
 ---
 

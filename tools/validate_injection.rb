@@ -242,11 +242,48 @@ def validate_page_blocks(command_list, blocks, context_label)
 end
 
 def main
+  # --all mode: validate all dialogue_changes/*.json files against a data dir
+  if ARGV[0] == "--all"
+    data_dir = ARGV[1]
+    unless data_dir && Dir.exist?(data_dir)
+      $stderr.puts "Usage: ruby tools/validate_injection.rb --all <data_dir>"
+      exit 1
+    end
+    dialogue_dir = File.join(File.dirname(__FILE__), "..", "dialogue_changes")
+    json_files = Dir.glob(File.join(dialogue_dir, "*.json")).sort
+    if json_files.empty?
+      $stderr.puts "No JSON files found in #{dialogue_dir}"
+      exit 1
+    end
+    grand_pass = 0
+    grand_fail = 0
+    grand_skip = 0
+    json_files.each do |f|
+      puts "\n#{"=" * 60}"
+      puts "Validating: #{File.basename(f)}"
+      puts "=" * 60
+      p, fl, s = validate_changes_file(data_dir, f)
+      grand_pass += p
+      grand_fail += fl
+      grand_skip += s
+    end
+    puts "\n#{"=" * 60}"
+    puts "GRAND TOTAL across #{json_files.length} files"
+    puts "=" * 60
+    puts "  PASS:    #{grand_pass}"
+    puts "  FAIL:    #{grand_fail}"
+    puts "  SKIP:    #{grand_skip}"
+    puts "  TOTAL:   #{grand_pass + grand_fail + grand_skip}"
+    puts "=" * 60
+    exit(grand_fail > 0 ? 1 : 0)
+  end
+
   data_dir = ARGV[0]
   changes_file = ARGV[1]
 
   unless data_dir && changes_file
     $stderr.puts "Usage: ruby tools/validate_injection.rb <data_dir> <changes.json>"
+    $stderr.puts "       ruby tools/validate_injection.rb --all <data_dir>"
     exit 1
   end
 
@@ -260,6 +297,11 @@ def main
     exit 1
   end
 
+  p, f, s = validate_changes_file(data_dir, changes_file)
+  exit(f > 0 ? 1 : 0)
+end
+
+def validate_changes_file(data_dir, changes_file)
   changes = JSON.parse(File.read(changes_file))
   maps_changed = changes["maps"] || {}
   common_events_changed = changes["common_events"] || {}
@@ -374,7 +416,7 @@ def main
   puts "  TOTAL:   #{total_pass + total_fail + total_skip}"
   puts "=" * 60
 
-  exit(total_fail > 0 ? 1 : 0)
+  [total_pass, total_fail, total_skip]
 end
 
 main

@@ -1,0 +1,100 @@
+name: Validate
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'dialogue_changes/**'
+      - 'tools/**'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    paths:
+      - 'dialogue_changes/**'
+      - 'tools/**'
+      - '.github/workflows/validate.yml'
+
+jobs:
+  # ── Tests that DON'T need game_data/ ──
+  validate-no-gamedata:
+    name: Validate (no game data)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Dialogue JSON schema validation
+        run: ruby tools/validate_dialogue_schema.rb
+
+      - name: Cross-file conflict check
+        run: ruby tools/validate_conflicts.rb
+
+      - name: JoiPlay patcher tests
+        run: ruby tools/test_joiplay_patches.rb
+
+  # ── Tests that need game_data/ (clone the upstream game) ──
+  validate-with-gamedata:
+    name: Validate (with game data)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Clone game data (shallow)
+        run: |
+          git clone --depth 1 https://github.com/infinitefusion/infinitefusion-e18.git game_data
+        timeout-minutes: 10
+
+      - name: Pre-validate (event/page/index existence)
+        run: ruby tools/pre_validate.rb game_data/Data dialogue_changes/*.json
+
+      - name: Inject dialogue (dry run)
+        run: |
+          for f in dialogue_changes/*.json; do
+            echo "--- Injecting: $(basename "$f") ---"
+            ruby tools/inject_dialogue.rb game_data/Data "$f" --dry-run || exit 1
+          done
+
+      - name: Switch collision check
+        run: ruby tools/validate_switches.rb game_data
+
+  # ── Mobile build validation (patcher + Ruby 1.8 compat) ──
+  validate-mobile:
+    name: Validate mobile (JoiPlay compat)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Clone game data (shallow)
+        run: |
+          git clone --depth 1 https://github.com/infinitefusion/infinitefusion-e18.git game_data
+        timeout-minutes: 10
+
+      - name: Extract and patch scripts
+        run: |
+          # The game scripts are in Scripts.rxdata; extract them for patching
+          if [ -d "game_data/Data/Scripts" ]; then
+            cp -r game_data/Data/Scripts /tmp/scripts_to_patch
+          else
+            echo "No Scripts directory found — skipping mobile validation"
+            exit 0
+          fi
+          ruby tools/patch_scripts_for_joiplay.rb /tmp/scripts_to_patch
+
+      - name: Validate Ruby 1.8 compatibility (post-patch)
+        run: |
+          if [ -d "/tmp/scripts_to_patch" ]; then
+            ruby tools/validate_ruby18_compat.rb --post-patch /tmp/scripts_to_patch
+          fi

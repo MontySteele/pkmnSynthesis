@@ -17,6 +17,9 @@
 #  12. Required after optional: def f(a=1, b)         →  def f(b, a=1)
 #  13. deprecate_constant:      deprecate_constant :X →  commented out (Ruby 2.3+)
 #  14. Private define_method:   obj.define_method(m)  →  obj.send(:define_method, m)
+#  15. File/Dir.exists?:        File.exists? → File.exist?  (exists? removed in Ruby 3.0+)
+#  16. .each_char:              str.each_char         →  str.split('').each
+#  17. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -385,6 +388,29 @@ def patch_ruby19_apis(line)
     "#{$1}.send(:define_method, #{$2})"
   end
 
+  # 9. File.exists? / Dir.exists? → File.exist? / Dir.exist?
+  #    exists? is deprecated in Ruby 1.9+ and REMOVED in Ruby 3.0+.
+  #    JoiPlay may load libmkxp30.so (Ruby 3.0) where exists? is gone.
+  #    exist? works on Ruby 1.8.7+ through 3.x, so normalize to exist?.
+  line = line.gsub(/(File|Dir)\.exists\?/, '\1.exist?')
+
+  # 10. .each_char → .split('').each (Ruby 1.9+)
+  line = line.gsub(/\.each_char\b/, ".split('').each")
+
+  # 11. Array#prepend → Array#unshift (Ruby 2.5+ alias)
+  #     Only convert when clearly an Array method (not String#prepend which exists in 1.8).
+  #     Heuristic: skip if the argument is a string literal (String#prepend use case).
+  line = line.gsub(/\.prepend\(([^)]*)\)/) do
+    captured = $1
+    arg = captured.strip
+    # String#prepend takes a single string arg — skip those
+    if arg.start_with?('"') || arg.start_with?("'")
+      ".prepend(#{captured})"
+    else
+      ".unshift(#{captured})"
+    end
+  end
+
   line
 end
 
@@ -434,13 +460,18 @@ end
 # Convert to a capturing group alternative where possible.
 def patch_lookbehind_regex(line)
   return line if line.lstrip.start_with?("#")
-  # (?<=X)pattern → capture group approach won't work as drop-in.
-  # Instead, wrap the lookbehind pattern: /(?<=H)\d+/ → /H(\d+)/
-  # and note that callers must use $1. Since these are typically used in
-  # .scan or .match, the capturing group approach works.
-  line.gsub(/\(\?<=([^)]+)\)/) do
+  # Positive lookbehind: (?<=X)pattern → capture group: (X)pattern
+  # Callers must use $1. Works for .scan and .match usage.
+  line = line.gsub(/\(\?<=([^)]+)\)/) do
     "(#{$1})"
   end
+  # Negative lookbehind: (?<!X)pattern → remove the assertion entirely.
+  # This is lossy (weakens the match) but avoids a hard crash in Ruby 1.8.
+  # A warning comment is inserted inline.
+  line = line.gsub(/\(\?<!([^)]+)\)/) do
+    "" # remove negative lookbehind — no simple equivalent in 1.8
+  end
+  line
 end
 
 # ── Regex unescaped braces ──

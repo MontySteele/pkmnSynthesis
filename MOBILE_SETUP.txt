@@ -87,6 +87,19 @@ TROUBLESHOOTING
 "Game crashes on launch"
   - Make sure you installed the RPG Maker XP plugin (not just JoiPlay)
   - Make sure the game is on internal storage, not cloud/SD
+  - If the error mentions "NoMethodError" or "undefined method", the
+    mobile package may need to be rebuilt with the latest patcher fixes.
+    Re-run ./build_and_launch.sh --mobile on your computer and transfer
+    the new ZIP to your phone.
+
+"Script error: NoMethodError / undefined method"
+  - This means a Ruby compatibility issue slipped through the patcher.
+    JoiPlay uses Ruby 1.8, which is missing many methods from newer Ruby.
+  - Note the script name and line number from the error dialog.
+  - Rebuild the mobile package (./build_and_launch.sh --mobile) — the
+    patcher is regularly updated to fix these issues.
+  - If the error persists after rebuilding, report it as an issue with
+    the exact error text.
 
 "Black screen or missing graphics"
   - Check that the Graphics/ folder was fully extracted
