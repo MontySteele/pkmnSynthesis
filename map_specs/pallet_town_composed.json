@@ -1,0 +1,3836 @@
+{
+  "_comment": "Pallet Town Composed — genuinely new layout with same content parity",
+  "_design_notes": {
+    "concept": "A cozy, organic starter town. The player enters from the south and sees the Pokemon Center immediately to the right. Winding dirt paths lead north through a small park with a pond on the west side, up to Oak's Lab sitting prominently in the town center. Player's house is tucked in the northwest on higher ground, rival's house mirrors it in the northeast. Ranch Pokemon roam the east. Tree clusters break up sight lines and create discovery moments.",
+    "dimensions": "55x35 — wider and taller than the original 45x30, giving more breathing room",
+    "flow": "South entrance -> PokeCenter -> fork: west to park/pond, center to Oak Lab, east to ranch -> north to houses -> north exit to Route 21"
+  },
+  "_parity": {
+    "original_map": 42,
+    "warps": [
+      "Player House (860)",
+      "Rival House (861)",
+      "Oak Lab (862/551/552/593/659)"
+    ],
+    "trainers": [
+
+    ],
+    "items": [
+
+    ],
+    "npcs": 7,
+    "signs": 4,
+    "ranch_pokemon": [
+      "Tauros x3",
+      "Exeggcute",
+      "Lickitung"
+    ],
+    "story_events": [
+      "Blue intro",
+      "Oak intercept",
+      "Colress call",
+      "Blue gym leader",
+      "Oak necrozma"
+    ],
+    "special": [
+      "Starter zone triggers x4",
+      "Pokemon trader"
+    ]
+  },
+  "map_id": 851,
+  "tileset_id": 23,
+  "width": 55,
+  "height": 35,
+  "base_fill": "grass",
+  "bgm": {
+    "name": "Pallet Town",
+    "volume": 100
+  },
+  "map_info": {
+    "name": "Pallet Town (Synthesis)",
+    "parent_id": 223
+  },
+  "fills": [
+    {
+      "_comment": "Park pond — west side clearing",
+      "type": "rect",
+      "tile": "water",
+      "x": 6,
+      "y": 14,
+      "w": 8,
+      "h": 5
+    },
+    {
+      "_comment": "Tall grass patch — southwest corner near south entrance",
+      "type": "rect",
+      "tile": "tall_grass",
+      "x": 2,
+      "y": 28,
+      "w": 5,
+      "h": 4
+    },
+    {
+      "_comment": "Tall grass patch — northeast ranch area",
+      "type": "rect",
+      "tile": "tall_grass",
+      "x": 45,
+      "y": 6,
+      "w": 4,
+      "h": 3
+    },
+    {
+      "_comment": "Tall grass patch — small patch near park",
+      "type": "rect",
+      "tile": "tall_grass",
+      "x": 4,
+      "y": 20,
+      "w": 3,
+      "h": 2
+    }
+  ],
+  "paths": [
+    {
+      "_comment": "Main south entrance path — vertical from south edge up to town center fork",
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 27,
+      "y": 26,
+      "y1": 26,
+      "y2": 34,
+      "width": 3
+    },
+    {
+      "_comment": "Central path — south entrance up to Oak Lab area",
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 27,
+      "y": 16,
+      "y1": 16,
+      "y2": 26,
+      "width": 3
+    },
+    {
+      "_comment": "Path curving west from center fork toward park",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 27,
+      "y1": 22,
+      "x2": 16,
+      "y2": 18,
+      "width": 3
+    },
+    {
+      "_comment": "Path continuing west to pond area",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 16,
+      "y1": 18,
+      "x2": 14,
+      "y2": 14,
+      "width": 2
+    },
+    {
+      "_comment": "Path east from center fork toward ranch",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 30,
+      "y1": 22,
+      "x2": 40,
+      "y2": 20,
+      "width": 3
+    },
+    {
+      "_comment": "Path from Oak Lab north toward houses — slight curve left",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 27,
+      "y1": 16,
+      "x2": 24,
+      "y2": 10,
+      "width": 3
+    },
+    {
+      "_comment": "Path northwest to Player's house",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 24,
+      "y1": 10,
+      "x2": 14,
+      "y2": 7,
+      "width": 2
+    },
+    {
+      "_comment": "Path northeast to Rival's house",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 26,
+      "y1": 10,
+      "x2": 38,
+      "y2": 7,
+      "width": 2
+    },
+    {
+      "_comment": "North exit path — vertical to top edge (Route 21/Viridian connection)",
+      "type": "vertical",
+      "tile": "dirt_path",
+      "x": 25,
+      "y": 0,
+      "y1": 0,
+      "y2": 10,
+      "width": 3
+    },
+    {
+      "_comment": "Path from PokeCenter to main road",
+      "type": "horizontal",
+      "tile": "dirt_path",
+      "x1": 30,
+      "x2": 36,
+      "y": 29,
+      "width": 2
+    },
+    {
+      "_comment": "Small path from ranch back south",
+      "type": "line",
+      "tile": "dirt_path",
+      "x1": 40,
+      "y1": 20,
+      "x2": 44,
+      "y2": 14,
+      "width": 2
+    }
+  ],
+  "stamps": [
+    {
+      "_comment": "Oak's Lab — prominently centered in town",
+      "stamp": "map001_misc_0_6",
+      "x": 23,
+      "y": 16,
+      "_note": "Placeholder stamp position — lab is 12x8 conceptually at (22,13) to (33,20)"
+    },
+    {
+      "_comment": "Player's House — northwest hill",
+      "stamp": "viridian_house_1",
+      "x": 10,
+      "y": 3
+    },
+    {
+      "_comment": "Rival's House — northeast, mirror position",
+      "stamp": "viridian_house_2",
+      "x": 36,
+      "y": 3
+    },
+    {
+      "_comment": "Pokemon Center — near south entrance for convenience",
+      "stamp": "celadon_pokecenter",
+      "x": 36,
+      "y": 26
+    },
+    {
+      "_comment": "Flowerbed near park pond",
+      "stamp": "celadon_garden",
+      "x": 5,
+      "y": 9
+    },
+    {
+      "_comment": "Tree cluster — northwest border",
+      "stamp": "viridian_tree_cluster_sw",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "_comment": "Tree row — top border",
+      "stamp": "viridian_tree_row_top",
+      "x": 8,
+      "y": 0
+    },
+    {
+      "_comment": "Tree cluster — east border",
+      "stamp": "map079_tree_cluster_37_21",
+      "x": 49,
+      "y": 0
+    },
+    {
+      "_comment": "Lamppost near player house",
+      "stamp": "viridian_lamppost_1",
+      "x": 18,
+      "y": 6
+    },
+    {
+      "_comment": "Lamppost near rival house",
+      "stamp": "viridian_lamppost_2",
+      "x": 34,
+      "y": 6
+    }
+  ],
+  "events": [
+    {
+      "_comment": "==== BUILDING DOOR WARPS ====",
+      "_separator": true,
+      "id": 58,
+      "name": "EV058"
+    },
+    {
+      "_comment": "Warp: Player House door — transfers to Map860 (player house interior)",
+      "id": 4,
+      "name": "Home door",
+      "x": 14,
+      "y": 9,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 860,
+              "x": 7,
+              "y": 10,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "door_spin_enter",
+                  "_note": "Door animation: SE + spin"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": "step_down"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "door_spin_close"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Warp: Rival House door — transfers to Map861 (rival house interior)",
+      "id": 5,
+      "name": "Home door",
+      "x": 40,
+      "y": 9,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 861,
+              "x": 6,
+              "y": 9,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "door_spin_enter"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": "step_down"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "door_spin_close"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Warp: Oak Lab door (left tile) — complex regional lab routing based on badges/switches",
+      "id": 6,
+      "name": "LabDoor",
+      "x": 28,
+      "y": 21,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "$Trainer.badge_count>=16 && $game_switches[825]"
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 651,
+              "value": "ON",
+              "indent": 1
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                884,
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "transfer",
+              "map_id": 551,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                885,
+                0
+              ],
+              "indent": 2
+            },
+            {
+              "type": "transfer",
+              "map_id": 552,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 3
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ],
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                886,
+                0
+              ],
+              "indent": 3
+            },
+            {
+              "type": "transfer",
+              "map_id": 593,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 4
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ],
+              "indent": 3
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                883,
+                0
+              ],
+              "indent": 4
+            },
+            {
+              "type": "transfer",
+              "map_id": 659,
+              "x": 10,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 5
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ],
+              "indent": 4
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 10,
+              "y": 25,
+              "direction": 0,
+              "fade": 1,
+              "indent": 5
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ],
+              "indent": 4
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ],
+              "indent": 3
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ],
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 651
+          }
+        },
+        {
+          "_comment": "Page 2: Note on door when Oak is away investigating darkness",
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "There's a note on the door:"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I went out to investigate this strange darkness.\n- Prof. ",
+                "Oak"
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 701,
+            "switch2_valid": true,
+            "switch2_id": 717
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Warp: Oak Lab door (right tile) — simpler routing, sw883 check only",
+      "id": 20,
+      "name": "LabDoor2",
+      "x": 26,
+      "y": 21,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "$Trainer.badge_count>=16 && $game_switches[825]"
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 651,
+              "value": "ON",
+              "indent": 1
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                883,
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "transfer",
+              "map_id": 659,
+              "x": 10,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 10,
+              "y": 25,
+              "direction": 0,
+              "fade": 1,
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 9,
+              "y": 24,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 651
+          }
+        },
+        {
+          "_comment": "Page 2: Note on door when Oak is away",
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "There's a note on the door:"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I went out to investigate this strange darkness\n- Prof. ",
+                "Oak"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== SIGNS ====",
+      "_separator": true,
+      "id": 59,
+      "name": "EV059"
+    },
+    {
+      "_comment": "Sign: Professor Oak Research Lab — south of lab entrance",
+      "id": 7,
+      "name": "LabSign",
+      "x": 24,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "Professor Oak Research Lab."
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Sign: Home — beside player house",
+      "id": 8,
+      "name": "HomeSign",
+      "x": 17,
+      "y": 9,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "Home"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Sign: Rival house — beside rival's house",
+      "id": 9,
+      "name": "RivalSign",
+      "x": 43,
+      "y": 9,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "\\V[12]'s House"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Sign: Oak note on lab door (conditional — always visible as a fallback sign)",
+      "id": 18,
+      "name": "LabNoteSign",
+      "x": 30,
+      "y": 21,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "There's a note on the door:"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I went out to investigate this strange darkness\n- Prof. ",
+                "Oak"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== RANCH POKEMON (east field) ====",
+      "_separator": true,
+      "id": 60,
+      "name": "EV060"
+    },
+    {
+      "_comment": "Ranch Pokemon: Tauros #1 — east field, wanders",
+      "id": 1,
+      "name": "EV001",
+      "x": 46,
+      "y": 12,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "128",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "128Cry",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Mooooooooo!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Ranch Pokemon: Exeggcute — east field, random move",
+      "id": 2,
+      "name": "EV002",
+      "x": 48,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "103",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "103Cry",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Guuuuuguguh!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Ranch Pokemon: Tauros #2 — east field, wanders",
+      "id": 21,
+      "name": "EV021",
+      "x": 50,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "128",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "128Cry",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Mooooooooo!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Ranch Pokemon: Tauros #3 — east field, wanders",
+      "id": 24,
+      "name": "EV024",
+      "x": 47,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "128",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "128Cry",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Mooooooooo!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Ranch Pokemon: Lickitung — east field far side, wanders",
+      "id": 26,
+      "name": "EV026",
+      "x": 51,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "108",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "108Cry",
+                  "_volume": 80
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Sluuuuuurp!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== STORY EVENTS ====",
+      "_separator": true,
+      "id": 61,
+      "name": "EV061"
+    },
+    {
+      "_comment": "Story: Blue rival intro cutscene — appears near rival house, greets player, walks to lab",
+      "id": 3,
+      "name": "Blue",
+      "x": 42,
+      "y": 10,
+      "pages": [
+        {
+          "_comment": "Page 0: Initial autorun — Blue says Yo and sets self_sw A",
+          "graphic": {
+            "character_name": "gary_oak_overworld_bw_completed_by_malice936-d5ruwuc",
+            "direction": 4
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_rival",
+                  "_volume": 100
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Yo, \\pn!"
+              ]
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "_comment": "Page 1: Blue talks about being a trainer, walks toward lab. Sets sw96.",
+          "graphic": {
+            "character_name": "gary_oak_overworld_bw_completed_by_malice936-d5ruwuc",
+            "direction": 4
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": "turn_right"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": "turn_right"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "step_down_x3"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": "step_down"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": "step_down"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": "step_down"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Guess who just got accepted as an official Pokémon ",
+                "trainer?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "That's right, me!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Uh? You got a letter too?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I'm surprised they let you in. I assumed they had higher ",
+                "standards!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Well I guess there's no point in bragging about mine now ",
+                "then."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Anyway, gramps told me he's going to give me my first ",
+                "Pokémon!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "He went to Viridian City to run an errand, but he told me to ",
+                "wait for him at the lab!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "See ya!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "walk_down5_left7_set_speed",
+                  "_note": "Blue walks down then left toward lab, switch 96 set at end"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                60
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "Audio.me_stop"
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 96,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "_comment": "Page 2: After Blue leaves — empty, random move",
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 96
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Story: Oak intercept — stops player from going north into Route 21 without Pokemon",
+      "id": 29,
+      "name": "OakIntercept",
+      "x": 26,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 241,
+              "parameters": [
+                {
+                  "_audio": "oak_theme",
+                  "_volume": 100
+                }
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 994,
+              "value": "ON"
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,11) "
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 203,
+              "parameters": [
+                8,
+                1,
+                3
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Hey! Wait! Don't go out!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                1,
+                169,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 202,
+              "parameters": [
+                11,
+                0,
+                22,
+                0,
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                1,
+                169,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 202,
+              "parameters": [
+                11,
+                0,
+                23,
+                0,
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                1,
+                169,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 202,
+              "parameters": [
+                11,
+                0,
+                24,
+                0,
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                1,
+                169,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 202,
+              "parameters": [
+                11,
+                0,
+                25,
+                0,
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                11,
+                {
+                  "_move_route": "set_graphic_BW-oak_step_down_x2",
+                  "_note": "Oak appears and walks down to player"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,11) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It's unsafe! Wild Pokémon live in tall grass! You need your ",
+                "own Pokémon for your protection."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,11) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I know! Here, come with me!"
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 51,
+              "value": "ON"
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                883,
+                0
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 659,
+              "x": 10,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 862,
+              "x": 10,
+              "y": 24,
+              "direction": 0,
+              "fade": 0,
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 241,
+              "parameters": [
+                {
+                  "_audio": "oak_theme",
+                  "_volume": 100
+                }
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 996,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 898
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 61
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Oak movement target — invisible event Oak walks to during intercept",
+      "id": 11,
+      "name": "Oak",
+      "x": 25,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Story: Colress phone call — one-time autorun about triple fusion machine",
+      "id": 31,
+      "name": "ColressCall",
+      "x": 20,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "computeropen",
+                  "_volume": 80,
+                  "_pitch": 70
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "computeropen",
+                  "_volume": 80,
+                  "_pitch": 70
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "\\PN!"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It's me, Colress! I put a telephone chip in your Pokédex, ",
+                "remember?"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Anyway, I called to tell you that my triple fusion machine ",
+                "is finally ready!"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "You can come see me at Silph Co. so we can finally test it. ",
+                "Oh and bring Reshiram, Zekrom and Kyurem with you!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "computerclose",
+                  "_volume": 80,
+                  "_pitch": 115
+                }
+              ]
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON"
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 550,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Story: Blue announces becoming Viridian Gym Leader — near east path by ranch",
+      "id": 37,
+      "name": "BlueGymLeader",
+      "x": 42,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_rival",
+                  "_volume": 65
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": "turn_left"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                10,
+                {
+                  "_move_route": "set_graphic_blue_walk_down6",
+                  "_note": "Blue appears and walks down to player"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 207,
+              "parameters": [
+                10,
+                3
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,38) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Hey \\PN! I just came back to Pallet Town to tell ",
+                "Gramps the great news."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,38) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I'm the new Gym Leader of Viridian City! After all, ",
+                "Giovanni retired and I gave up on the whole ",
+                "champion deal."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,38) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Gramps was right - there is more to being a ",
+                "Pokémon Trainer than victory after victory."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,38) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "What about you, dork? I've heard you're the ",
+                "strongest trainer around Kanto AND Johto now. ",
+                "What's gonna be next?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 207,
+              "parameters": [
+                -1,
+                4
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,38) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Anyway, why don't you come down to my Gym ",
+                "later? We can have a match for old-times-sake. I'm ",
+                "excited to see myself how strong you are now!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,38) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Smell ya later!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                10,
+                {
+                  "_move_route": "walk_down8_right5_vanish",
+                  "_note": "Blue walks away and disappears"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 248,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 802,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 918,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 817,
+            "switch2_valid": true,
+            "switch2_id": 918
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Blue movement target for gym leader scene",
+      "id": 38,
+      "name": "BlueTarget",
+      "x": 42,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Story: Oak examines Strange Fruit — quest cutscene near lab entrance",
+      "id": 43,
+      "name": "oak-necrozma",
+      "x": 25,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW-oak",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                2,
+                "A",
+                1
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Hmm... It appears that Cinnabar Island has been entirely ",
+                "plunged into darkness as well... How peculiar..."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "speed_up_face_player"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "\\PN! I am glad to see you."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Something very perplexing appears to be happening to the ",
+                "region. "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It started when the eastern cities were plunged in ",
+                "darkness, but now it appears to have spread to the entire ",
+                "region!"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                24
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Hmm? What's that about a strange fruit you've found?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Hmm... This could very well be related to this darkness. ",
+                "Would you please let me examine it?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "\\PN handed over the strange fruit to Professor Oak."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "turn_right"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "How odd..."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                16
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "turn_up"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 235,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I see..."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": "face_player"
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "The fruit appears to have a very faint glow... But ",
+                "there doesn't seem to be anything else unusual about it."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "However..."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It only seems to glow when it's facing a certain direction. "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 235,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "itemlevel",
+                  "_volume": 80
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Professor Oak handed back the Strange Fruit"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "\\PN! The Strange Fruit appears to glow whenever you're ",
+                "facing North. Take it out of your inventory and try it ",
+                "yourself!"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It looks like it could lead you somewhere. You should try to ",
+                "use it like a compass and follow its glow."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "There is a chance that it could lead you to the source of it ",
+                "all!"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "finishQuest(52)"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbAcceptNewQuest(53,44)"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON",
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "This strange fruit could very well be the key that leads us ",
+                "to the cause of the darkness to which the region has ",
+                "succombed."
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 404,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 717,
+            "switch2_valid": true,
+            "switch2_id": 701
+          }
+        },
+        {
+          "_comment": "Page 1: After quest — Oak repeats compass hint",
+          "graphic": {
+            "character_name": "BW-oak",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "\\PN! The Strange Fruit you found appears to glow ",
+                "whenever you're facing North. Take it out of your inventory ",
+                "and try it yourself!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It looks like it could lead you somewhere. You should try to ",
+                "use it like a compass and follow its glow."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "There is a chance that it could lead you to the source of it ",
+                "all!"
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 717,
+            "switch2_valid": true,
+            "switch2_id": 701,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== STARTER ZONE TRIGGERS (north exit area) ====",
+      "_separator": true,
+      "id": 62,
+      "name": "EV062"
+    },
+    {
+      "_comment": "Starter zone trigger 0 — sets var169=0, sw898 ON (north exit, left tile)",
+      "id": 12,
+      "name": "EV012",
+      "x": 24,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 122,
+              "parameters": [
+                169,
+                169,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 898,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 61
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Starter zone trigger 1 — sets var169=1, sw898 ON",
+      "id": 13,
+      "name": "EV013",
+      "x": 25,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 122,
+              "parameters": [
+                169,
+                169,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 898,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 61
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Starter zone trigger 2 — sets var169=2, sw898 ON",
+      "id": 14,
+      "name": "EV014",
+      "x": 26,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 122,
+              "parameters": [
+                169,
+                169,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 898,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 61
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Starter zone trigger 3 — sets var169=3, sw898 ON",
+      "id": 15,
+      "name": "EV015",
+      "x": 27,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 122,
+              "parameters": [
+                169,
+                169,
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "switch",
+              "id": 898,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 61
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== OUTDOOR LIGHTS ====",
+      "_separator": true,
+      "id": 63,
+      "name": "EV063"
+    },
+    {
+      "_comment": "OutdoorLight — near player house",
+      "id": 16,
+      "name": "OutdoorLight",
+      "x": 18,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "OutdoorLight — near rival house",
+      "id": 17,
+      "name": "OutdoorLight",
+      "x": 34,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "OutdoorLight — near Oak Lab south entrance",
+      "id": 45,
+      "name": "OutdoorLight",
+      "x": 24,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "OutdoorLight — near PokeCenter",
+      "id": 46,
+      "name": "OutdoorLight",
+      "x": 36,
+      "y": 28,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "OutdoorLight — park area by pond",
+      "id": 47,
+      "name": "OutdoorLight",
+      "x": 14,
+      "y": 13,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "OutdoorLight — south entrance",
+      "id": 48,
+      "name": "OutdoorLight",
+      "x": 26,
+      "y": 32,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== SPECIAL NPCs ====",
+      "_separator": true,
+      "id": 64,
+      "name": "EV064"
+    },
+    {
+      "_comment": "Pokemon Trader — near the park, offers Squirtle->Mudkip, Bulbasaur->Treecko etc.",
+      "id": 28,
+      "name": "PokemonTrader",
+      "x": 12,
+      "y": 19,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (22)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I'm a Pokémon trader! I travel the world looking for ",
+                "rare Pokémon to trade."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Want to make a trade?"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== ZONE TRIGGERS ====",
+      "_separator": true,
+      "id": 65,
+      "name": "EV065"
+    },
+    {
+      "_comment": "Zone trigger — sets var193=1 (area identifier), near south entrance",
+      "id": 30,
+      "name": "ZoneTrigger",
+      "x": 28,
+      "y": 32,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "raw",
+              "code": 122,
+              "parameters": [
+                193,
+                193,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Zone trigger — sets sw842 ON (east edge trigger for ranch area)",
+      "id": 32,
+      "name": "EV032",
+      "x": 52,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "type": "switch",
+              "id": 842,
+              "value": "ON"
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== QUEST MARKER ====",
+      "_separator": true,
+      "id": 66,
+      "name": "EV066"
+    },
+    {
+      "_comment": "Empty placeholder — quest marker position near lab",
+      "id": 44,
+      "name": "QUEST",
+      "x": 27,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== DEBUG ====",
+      "_separator": true,
+      "id": 67,
+      "name": "EV067"
+    },
+    {
+      "_comment": "Debug event — adds test Pokemon (self_sw A gated)",
+      "id": 19,
+      "name": "EV019",
+      "x": 53,
+      "y": 33,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "==== ADDITIONAL NPCs FOR NEW LAYOUT ====",
+      "_separator": true,
+      "id": 68,
+      "name": "EV068"
+    },
+    {
+      "_comment": "NPC: Old man fishing by the pond",
+      "id": 50,
+      "name": "FishermanNPC",
+      "x": 14,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (53)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "This pond might be small, but I've seen Magikarp ",
+                "splashing around in here!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Pallet Town has always been a peaceful little place. ",
+                "Perfect for fishing."
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Young girl near flowerbeds in the park",
+      "id": 51,
+      "name": "GardenGirl",
+      "x": 8,
+      "y": 12,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (37)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I love the flowers in Pallet Town! They bloom all year ",
+                "round because the weather here is so mild."
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Researcher near Oak Lab — gives info about the lab",
+      "id": 52,
+      "name": "Researcher",
+      "x": 31,
+      "y": 19,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (85)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Professor Oak is world-renowned for his research on ",
+                "Pokémon. His laboratory is right here in Pallet Town!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "He's been studying the relationships between Pokémon ",
+                "and their trainers for decades."
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Mom's friend near player house — gives flavor text",
+      "id": 53,
+      "name": "MomFriend",
+      "x": 12,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (30)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Pallet Town is a small and quiet town. It's been known ",
+                "as the start of many great trainers' journeys!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Kid playing near south entrance",
+      "id": 54,
+      "name": "PlayingKid",
+      "x": 30,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (12)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I want to be a Pokémon trainer when I grow up! Just ",
+                "like the Champion!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Hiker visiting from Viridian — standing near north path",
+      "id": 55,
+      "name": "VisitingHiker",
+      "x": 22,
+      "y": 6,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (49)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I came all the way from Viridian City! The path between ",
+                "our towns is beautiful, but watch out for wild Pokémon!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Ranch owner near east fenced area",
+      "id": 56,
+      "name": "RanchOwner",
+      "x": 44,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (52)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "These Pokémon belong to Professor Oak. He lets them ",
+                "roam around the ranch to stay healthy and happy!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "The Tauros are a bit rowdy, but the Lickitung is very ",
+                "friendly. Go say hello!"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "NPC: Town welcome sign NPC near south entrance",
+      "id": 57,
+      "name": "WelcomeSign",
+      "x": 24,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 3308
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "type": "text",
+              "lines": [
+                "PALLET TOWN - A Quiet, Peaceful Place to Call Home"
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}
