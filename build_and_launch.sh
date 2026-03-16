@@ -454,6 +454,11 @@ package_mobile() {
   # Copy Game.ini (required by JoiPlay to identify the game)
   [ -f "$GAME_DIR/Game.ini" ] && cp "$GAME_DIR/Game.ini" "$mobile_dir/"
 
+  # Copy Game.exe (JoiPlay requires an .exe file as the "Executable" entry —
+  # it doesn't run it, the RPG Maker XP plugin takes over, but it won't
+  # recognize the game without one)
+  [ -f "$GAME_DIR/Game.exe" ] && cp "$GAME_DIR/Game.exe" "$mobile_dir/"
+
   # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
@@ -607,8 +612,7 @@ RUBY
 
   # NOTE: Game.exe must remain in the package. JoiPlay only accepts
   # .exe/.sh/.py/.html as the "Executable" — it doesn't run the exe,
-  # the RPG Maker XP plugin takes over. The original Game.exe is
-  # copied from game_data/ along with the other game files above.
+  # the RPG Maker XP plugin takes over.
 
   # Create the ZIP (use max compression)
   info "Creating $zip_name (this may take a minute)..."
