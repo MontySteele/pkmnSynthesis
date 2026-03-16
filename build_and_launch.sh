@@ -605,13 +605,10 @@ RUBY
          "$mobile_dir"/Game.rgss3a \
          2>/dev/null || true
 
-  # JoiPlay requires a Game.exe to identify RPG Maker XP projects (it only
-  # accepts .exe/.sh/.py/.html as the "Executable"). It doesn't actually run
-  # the exe — the RPG Maker plugin takes over. Create a placeholder if the
-  # original wasn't copied or was stripped.
-  if [ ! -f "$mobile_dir/Game.exe" ]; then
-    touch "$mobile_dir/Game.exe"
-  fi
+  # NOTE: Game.exe must remain in the package. JoiPlay only accepts
+  # .exe/.sh/.py/.html as the "Executable" — it doesn't run the exe,
+  # the RPG Maker XP plugin takes over. The original Game.exe is
+  # copied from game_data/ along with the other game files above.
 
   # Create the ZIP (use max compression)
   info "Creating $zip_name (this may take a minute)..."
