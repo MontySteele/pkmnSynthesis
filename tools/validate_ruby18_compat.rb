@@ -63,6 +63,7 @@ LINE_CHECKS = [
   [/\bArray\.try_convert\b/, "Array.try_convert (Ruby 1.9+)", :error],
 
   # Hash methods
+  [/\.key\?\(/, ".key? (Hash#key? is Ruby 1.9+, use .has_key?)", :error],
   [/\.key\b(?!\s*=>)(?!\?)/, ".key (Hash#key is Ruby 1.9+, use .index)", :warn],
 
   # Proc / Lambda

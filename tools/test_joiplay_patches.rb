@@ -110,7 +110,7 @@ FIXTURES = [
         puts trainer
       end
     RUBY
-    /auto_level = _kw.key\?\(:auto_level\)/
+    /auto_level = _kw.has_key\?\(:auto_level\)/
   ],
   [
     "encoding_removal",
@@ -543,6 +543,9 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       end
       if line =~ /\w+\.define_method\(/
         residual_issues << "#{name}:#{lineno + 1}: residual public define_method: #{line.strip}"
+      end
+      if line =~ /\.key\?\(/ && line !~ /has_key\?\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual .key?() (Ruby 1.9+, use .has_key?): #{line.strip}"
       end
     end
   end

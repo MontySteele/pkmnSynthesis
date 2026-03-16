@@ -306,7 +306,7 @@ def patch_keyword_args_in_def(lines)
 
         # Extract keyword values from _kw hash
         keywords.each do |name, default|
-          result << "#{indent}  #{name} = _kw.key?(:#{name}) ? _kw[:#{name}] : #{default}\n"
+          result << "#{indent}  #{name} = _kw.has_key?(:#{name}) ? _kw[:#{name}] : #{default}\n"
         end
 
         i += 1
