@@ -57,6 +57,9 @@ class MapCreator
     if spec["warp_patches"]
       apply_warp_patches(map, spec["warp_patches"])
     end
+    if spec["warp_patches_list"]
+      spec["warp_patches_list"].each { |p| apply_warp_patches(map, p) }
+    end
 
     # Apply tile overrides if present
     if spec["tile_overrides"]

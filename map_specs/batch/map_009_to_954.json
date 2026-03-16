@@ -1,0 +1,4962 @@
+{
+  "_comment": "Route 25 Rework (auto-generated)",
+  "_parity": {
+    "original_map": 9,
+    "events": 27,
+    "dimensions": "40x25"
+  },
+  "mode": "clone",
+  "map_id": 954,
+  "clone_from": 9,
+  "clear_events": true,
+  "map_info": {
+    "name": "Route 25 (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 22,10)",
+      "id": 1,
+      "name": "EV001",
+      "x": 23,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::ETHER)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 27,11)",
+      "id": 2,
+      "name": "Trainer(4)",
+      "x": 28,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 4
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_hiker",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You're going to see Bill? First, let's fight!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::HIKER,\"Franklin\",_I(\"You're something.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Bill's lighthouse isn't very far from here, we should have "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "time for another battle, what do you think?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I just have to heal my Pokemon and..."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "..."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Alright, I'm ready. Let's do this!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::HIKER,\"Franklin\",_I(\"You really are something!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You're a busy little guy, aren't you? I can understand that!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 14,9)",
+      "id": 3,
+      "name": "Trainer(4)",
+      "x": 14,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 6
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_hiker",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(3)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I just got down from Mt. Moon, but I'm ready!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::HIKER,\"Nob\",_I(\"You work hard!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I just healed my Pokemon, what do you say we have "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "another battle?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Get ready, here I come!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::HIKER,\"Nob\",_I(\"You work hard!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "No worries, I'll just keep on training on my own over here."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 4,16)",
+      "id": 4,
+      "name": "Trainer(4)",
+      "x": 3,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (22)",
+            "direction": 8
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Local trainers come here to practice!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::PICNICKER,\"Kelsey\",_I(\"You're decent.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (22)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "All Pok??mon have weaknesses. It's best to raise different "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "kinds."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Say, would you like to have another battle?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Okay, get ready, here I come!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::PICNICKER,\"Kelsey\",_I(\"You're decent.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "It's fine, I don't want to pressure you!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 18,15)",
+      "id": 5,
+      "name": "Trainer(4)",
+      "x": 17,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_youngster",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "This is the perfect place to train my water-type Pok??mon!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Dan\",_I(\"I lost!?\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "My Pok??mon can't get enough of all these puddles! Do you "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "want to have another fight?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Dan\",_I(\"I lost!?\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "On the S.S. Anne, I saw trainers from around the world."
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey by the way, would you like to trade for one of my "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pokemon?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I've always wanted a Rock-type Pokemon, so I'll trade you "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "my Pok??mon for any rock type Pokemon."
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Which Pokemon do you want?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Papoke",
+                  "Polirow"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Papoke"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Which Pokemon are you going to give me?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " poke.hasType?(\"ROCK\")"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You don't want to trade? Aww..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                ":B79H46,\"Papoke\",\"Dan\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke.level=15"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "I hope you take care of Papoke!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "Polirow"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " poke.hasType?(\"ROCK\")"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You don't want to trade? Aww..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                ":B21H60,\"Polirow\",\"Dan\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke.level=15"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "I hope you take care of Polirow!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "D"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I would've impressed so many people on the S.S. Anne with "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "my new Rock-type Pokemon!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 36,10)",
+      "id": 6,
+      "name": "Trainer(4)",
+      "x": 37,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 6
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_hiker",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'm off to see a Pok??mon collector at the cape!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::HIKER,\"Wayne\",_I(\"I lost!?\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The collector has many rare kinds of POKEMON."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, you look like you have some pretty cool Pokemon "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "yourself."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What do you think of having a trade with me, right here, "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "right now?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll trade you my Oddix for any of your Pokemon, so long as "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "it's at least level 17, is that fine?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "So, which Pokemon are you going to give me?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " poke.level>=17"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "You don't want to trade? Aww..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ":B95H43,\"Oddix\",\"Wayne\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke.level=17"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I hope you take care of Oddix!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I guess I'll hold on to my Oddix then."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That Pok??mon you gave me, it's a pretty good fighter!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 24,15)",
+      "id": 7,
+      "name": "Trainer(4)",
+      "x": 23,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWBackpacker_male",
+            "direction": 6
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:CAMPER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_pokefan",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I knew I had to fight you!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::CAMPER,\"Flint\",_I(\"I'd knew I'd lose too!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWBackpacker_male",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I think I saw something move under these lilypads..."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, while we're at it, what do you think of trading a "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pokemon for one of mines?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll take any Poison-type Pok??mon as long as it's at least "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "level 14."
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Which of my Pok??mon do you want to trade for?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Venokans",
+                  "Venoshrew"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Venokans"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Which Pok??mon are you going to give me?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " poke.hasType?(\"POISON\") &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " poke.level >= 14"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You don't want to trade? Aww..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                ":B23H48,\"Venokans\",\"Flint\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke.level=14"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You'll see, Venokans can be a very strong Pok??mon!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "Venoshrew"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " poke.hasType?(\"POISON\") &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                " poke.level >= 14"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You don't want to trade? Aww..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                ":B27H48,\"Venoshrew\",\"Flint\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 3,
+              "parameters": [
+                "poke.level=14"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You'll see, Venoshrew can be a very strong Pok??mon!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I'll hang on to my Pok??mon then!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWBackpacker_male",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Thanks for your Pok??mon, I'll take care of it!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "And remember, if your Pok??mon gets confused or falls "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "asleep, switch it!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "CutTree (orig: 30,11)",
+      "id": 8,
+      "name": "CutTree",
+      "x": 30,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 8,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "Kernel.pbCut"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSmashThisEvent"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 39,12)",
+      "id": 9,
+      "name": "Trainer(4)",
+      "x": 39,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_youngster",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'm a cool guy. I've got a girlfriend!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Chad\",_I(\"Oh well. My girl will cheer me up.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll impress my girl by being a gentleman and trade you my "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "rare Bulbtata."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll take any Pokemon that's at least level 20 for it, what do "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "you think?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Which Pokemon are you giving me?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " poke.level >= 20"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Oh, you changed your mind after all?"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ":B19H1,\"Bulbtata\",\"Chad\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke.level=14"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Take care of Bulbtata, it's a very rare Pokemon!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "It's fine, my girlfriend won't think any less of me for not "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "being a gentleman!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "My girlfriend has been in such awe with me since we did "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "that trade!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(7) (orig: 38,15)",
+      "id": 10,
+      "name": "Trainer(7)",
+      "x": 38,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "LASS_blue",
+            "direction": 8
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:LASS)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hi! My boyfriend is cool!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(:LASS_blue,\"Haley\",_I(\"I was in bad condition!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "LASS_blue",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I wish my guy was as good as you!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, you want to have another battle?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Just let me heal my Pok??mon."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "..."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Okay, let's do this!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(:LASS_blue,\"Haley\",_I(\"You win again, no big surprise here!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Oh well, I'll stick to practicing with my boyfriend then."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 18,8)",
+      "id": 12,
+      "name": "EV012",
+      "x": 17,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::REVIVE)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 24,16)",
+      "id": 13,
+      "name": "EV013",
+      "x": 23,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::ELIXIR)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV014 (orig: 5,12)",
+      "id": 14,
+      "name": "EV014",
+      "x": 5,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::ORANBERRY)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 5,9)",
+      "id": 15,
+      "name": "EV015",
+      "x": 5,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::PROTEIN)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV016 (orig: 0,9)",
+      "id": 16,
+      "name": "EV016",
+      "x": 0,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 2541,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                109,
+                109,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Mettre celui utilis?? en dernier. L'ordre des deux "
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "autre pas important."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "supereffective berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Stats affecting berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "other berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "all berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Regular berries"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[109]="
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "[PBItems::CHERIBERRY,PBItems::CHESTOBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::PECHABERRY,PBItems::RAWSTBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ASPEARBERRY,PBItems::LEPPABERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ORANBERRY,PBItems::PERSIMBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::LUMBERRY,PBItems::SITRUSBERRY]"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "n = rand(pbGet(109).size)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "item = pbGet(109)[n]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "Kernel.pbItemBall(item,rand(1)+1)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Time event"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEventTime"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "There's nothing there."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV017 (orig: 34,8)",
+      "id": 17,
+      "name": "EV017",
+      "x": 34,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 2541,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                109,
+                109,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Mettre celui utilis?? en dernier. L'ordre des deux "
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "autre pas important."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "supereffective berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Stats affecting berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "other berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "all berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Regular berries"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[109]="
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "[PBItems::CHERIBERRY,PBItems::CHESTOBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::PECHABERRY,PBItems::RAWSTBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ASPEARBERRY,PBItems::LEPPABERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ORANBERRY,PBItems::PERSIMBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::LUMBERRY,PBItems::SITRUSBERRY]"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "n = rand(pbGet(109).size)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "item = pbGet(109)[n]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "Kernel.pbItemBall(item,rand(1)+1)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Time event"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEventTime"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "There's nothing there."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV018 (orig: 33,8)",
+      "id": 18,
+      "name": "EV018",
+      "x": 32,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 2541,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                109,
+                109,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Mettre celui utilis?? en dernier. L'ordre des deux "
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "autre pas important."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "supereffective berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Stats affecting berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "other berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "all berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Regular berries"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[109]="
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "[PBItems::CHERIBERRY,PBItems::CHESTOBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::PECHABERRY,PBItems::RAWSTBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ASPEARBERRY,PBItems::LEPPABERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ORANBERRY,PBItems::PERSIMBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::LUMBERRY,PBItems::SITRUSBERRY]"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "n = rand(pbGet(109).size)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "item = pbGet(109)[n]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "Kernel.pbItemBall(item,rand(1)+1)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Time event"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEventTime"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "There's nothing there."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 26,14)",
+      "id": 19,
+      "name": "lilypad.sl",
+      "x": 26,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 2
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 27,15)",
+      "id": 20,
+      "name": "lilypad.sl",
+      "x": 28,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 2
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 28,15)",
+      "id": 21,
+      "name": "lilypad.sl",
+      "x": 27,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 4
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 27,14)",
+      "id": 22,
+      "name": "lilypad.sl",
+      "x": 28,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 4
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 27,13)",
+      "id": 23,
+      "name": "lilypad.sl",
+      "x": 28,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 2
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 38,9)",
+      "id": 24,
+      "name": "lilypad.sl",
+      "x": 38,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 4
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "lilypad.sl (orig: 38,10)",
+      "id": 25,
+      "name": "lilypad.sl",
+      "x": 38,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "lilypad",
+            "direction": 4
+          },
+          "trigger": 2,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "lilypadEncounter(:LOTAD,11,14)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV026 (orig: 30,8)",
+      "id": 26,
+      "name": "EV026",
+      "x": 30,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::TM18)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "CutTree (orig: 19,8)",
+      "id": 27,
+      "name": "CutTree",
+      "x": 18,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 8,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "Kernel.pbCut"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSmashThisEvent"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "TYPE_EXPERT_WATER (orig: 22,6)",
+      "id": 28,
+      "name": "TYPE_EXPERT_WATER",
+      "x": 23,
+      "y": 6,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "walk",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "type_expert_battle(:WATER)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "walk",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You beat me at my own game. I'll never be able to live it "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "down!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

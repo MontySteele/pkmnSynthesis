@@ -1,0 +1,402 @@
+{
+  "_comment": "Navel Rock Rework (auto-generated)",
+  "_parity": {
+    "original_map": 361,
+    "events": 2,
+    "dimensions": "25x40"
+  },
+  "mode": "clone",
+  "map_id": 1332,
+  "clone_from": 361,
+  "clear_events": true,
+  "map_info": {
+    "name": "Navel Rock (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 12,13)",
+      "id": 1,
+      "name": "EV001",
+      "x": 11,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 203,
+              "parameters": [
+                8,
+                5,
+                3
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveEntrance"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1336,
+                13,
+                148,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 42,
+                      "parameters": [
+                        255
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    255
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                6
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 210,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 13,32)",
+      "id": 2,
+      "name": "EV002",
+      "x": 14,
+      "y": 32,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (36)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you want to go back already?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Come onboard then, we're setting sail for Boon Island!"
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 1,
+              "parameters": [
+                32
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1081,
+                10,
+                7,
+                8,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}

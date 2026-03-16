@@ -1,0 +1,3968 @@
+{
+  "_comment": "Azalea Town Gym Rework (auto-generated)",
+  "_parity": {
+    "original_map": 337,
+    "events": 20,
+    "dimensions": "25x30"
+  },
+  "mode": "clone",
+  "map_id": 1198,
+  "clone_from": 337,
+  "clear_events": true,
+  "map_info": {
+    "name": "Azalea Town Gym (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 9,25)",
+      "id": 1,
+      "name": "EV001",
+      "x": 8,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1637,
+                20,
+                29,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(1) (orig: 12,21)",
+      "id": 2,
+      "name": "Trainer(1)",
+      "x": 11,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_male",
+            "direction": 4
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_youngster",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll give you a tip if you beat me!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BUGCATCHER,\"Josh\",_I(\"I bugged out!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_male",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Touch the webs in the correct order to unlock the way! "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Use your ears!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 15,8)",
+      "id": 3,
+      "name": "EV003",
+      "x": 16,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "Kurt_overworld_by_Knuckles",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hello, young one. My name is Kurt, I have studied \\V[5] "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon for my entire life."
+              ]
+            },
+            {
+              "code": 241,
+              "parameters": [
+                {
+                  "_audio": "Kid Encounter",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I will teach you not to undererstimate \\V[5]-type "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon! Champion or not, get ready for some schooling!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Erika\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                921,
+                0
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 1,
+              "parameters": [
+                18
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"johto_gym_battle-BW\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::LEADER_Kurt,\"Kurt\",_I(\"Unbelievable. Very well, you can have the Hive badge.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$Trainer.badges[9]=true"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You have proved your worth! Here is the Hive Badge!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "obtainBadgeMessage(\"Hive Badge\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "obtainHat(HAT_GYM_REWARD_10)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You can also have this TM. It's an old favourite of mine!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::TM99)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                111,
+                111,
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "itemlevel",
+                  "_vol": 50,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "\\C[3]\\PN obtained 3 Premium Wonder Trade ticket!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "$Trainer.numbadges >= NUM_BADGES"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "You've obtained so many badges now, and at such a young "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "age. I must say I'm impressed. Professor Oak must be very "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "proud."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Now excuse me, but I must leave. Come pay me a visit a "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "my house if you fancy a chat."
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                39,
+                39,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "PokemonSelection.restore"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 39
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 10,25)",
+      "id": 4,
+      "name": "EV004",
+      "x": 10,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1637,
+                20,
+                29,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 7,11)",
+      "id": 5,
+      "name": "EV005",
+      "x": 7,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                135,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 3
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "D"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 14,14)",
+      "id": 6,
+      "name": "EV006",
+      "x": 14,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                135,
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[136] = pbGet(138)[0..7]"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 3
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "D"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 7,16)",
+      "id": 7,
+      "name": "Trainer(3)",
+      "x": 7,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_male",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[4] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\V[4]  Pok??mon are cool and tough! I'll prove it to you!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BUGCATCHER,\"Albert\",_I(\"You proved how tough you are...\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_male",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "They're so cool, but most girls don't like \\V[4] Pok??mon. I "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "don't know why..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(1) (orig: 11,13)",
+      "id": 8,
+      "name": "Trainer(1)",
+      "x": 11,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_male",
+            "direction": 6
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You're the one who stopped the flood? Whew, you're mighty! "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "But my Pok??mon is pretty tough too!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BUGCATCHER,\"Bugsy\",_I(\"Urrgggh!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_male",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I guess I should teach it better moves..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "A (orig: 5,14)",
+      "id": 9,
+      "name": "A",
+      "x": 5,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(5,pbGet(5).to_s+ \"A\")"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "C (orig: 8,14)",
+      "id": 10,
+      "name": "C",
+      "x": 8,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(5,pbGet(5).to_s+ \"C\")"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 8,23)",
+      "id": 11,
+      "name": "EV011",
+      "x": 8,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[4] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Champion \\PN! In addition to being a specialist of Pok??ball "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "technology, Kurt is also an expert on \\V[4]?? Pok??mon."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Don't be fooled by it, he's incredibly powerful!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "This should help you!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(:FRESHWATER)\t"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Champion \\PN! In addition to be a specialist of Pok??ball "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "technology, Kurt is also an expert on \\V[4]?? Pok??mon."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Don't be fooled by it, he's incredibly powerful!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You beat Kurt! Not that I had any doubts about it, of "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "course!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 39
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 8,25)",
+      "id": 12,
+      "name": "EV012",
+      "x": 8,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1637,
+                20,
+                29,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "D (orig: 12,14)",
+      "id": 13,
+      "name": "D",
+      "x": 11,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[5]= pbGet(5).to_s+ \"E\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "A (orig: 6,16)",
+      "id": 14,
+      "name": "A",
+      "x": 6,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(5,pbGet(5).to_s+ \"B\")"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "E (orig: 12,17)",
+      "id": 15,
+      "name": "E",
+      "x": 11,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[5]= pbGet(5).to_s+ \"D\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "F (orig: 8,11)",
+      "id": 16,
+      "name": "F",
+      "x": 8,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[5]= pbGet(5).to_s+ \"F\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "G (orig: 14,11)",
+      "id": 17,
+      "name": "G",
+      "x": 14,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[5]= pbGet(5).to_s+ \"H\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV018 (orig: 14,19)",
+      "id": 18,
+      "name": "EV018",
+      "x": 14,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                135,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[136] = pbGet(138)[0..4]"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW157",
+            "direction": 2,
+            "pattern": 3
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Fury Swipes",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "D"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV019 (orig: 11,11)",
+      "id": 19,
+      "name": "EV019",
+      "x": 11,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[5]= pbGet(5).to_s+ \"G\""
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(5)[pbGet(137)] == pbGet(136)[pbGet(137)]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbGet(5).eql?(pbGet(136))"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningFullyRevealItem",
+                  "_vol": 80,
+                  "_pitch": 80
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                135,
+                135,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 2,
+              "parameters": [
+                0,
+                7
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "MiningRevealItem",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                137,
+                137,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                137,
+                137,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$game_variables[5] = \"\""
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(1) (orig: 14,16)",
+      "id": 20,
+      "name": "Trainer(1)",
+      "x": 14,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_female",
+            "direction": 4
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Most \\V[4] Pok??mon evolve young. So they get stronger "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "that much faster."
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BUGCATCHER_F,\"Charlotte\",_I(\"Just evolving isn't enough!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWBugCatcher_female",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Pok??mon become stronger if they evolve. Really!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "_comment": "Mt. Ember Rework (auto-generated)",
+  "_parity": {
+    "original_map": 753,
+    "events": 4,
+    "dimensions": "20x25"
+  },
+  "mode": "clone",
+  "map_id": 1147,
+  "clone_from": 753,
+  "clear_events": true,
+  "map_info": {
+    "name": "Mt. Ember (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 12,3)",
+      "id": 1,
+      "name": "EV001",
+      "x": 11,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1153,
+                6,
+                24,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 15,17)",
+      "id": 2,
+      "name": "EV002",
+      "x": 16,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1141,
+                4,
+                5,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 3,12)",
+      "id": 3,
+      "name": "Trainer(3)",
+      "x": 3,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW2_rocket(female)",
+            "direction": 6
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:TEAMROCKET_M)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_teamrocket",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Volcano\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"Team Rocket Battle\""
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Who let you in here?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::TEAMROCKET_F,\"Jessie\",_I(\"Scorched!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW2_rocket(female)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "BOSS! I'm sorry I failed you!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 638
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 385
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(5) (orig: 6,12)",
+      "id": 4,
+      "name": "Trainer(5)",
+      "x": 6,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW2_rocket(male)",
+            "direction": 4
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:TEAMROCKET_M)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_teamrocket",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Volcano\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"Team Rocket Battle\""
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Intruder!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::TEAMROCKET_M,\"James\",_I(\"I lost my balance!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW2_rocket(male)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You shouldn't be here. This is a Team Rocket operation."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 638
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 385
+          }
+        }
+      ]
+    }
+  ]
+}

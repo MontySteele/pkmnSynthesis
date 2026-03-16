@@ -1,0 +1,477 @@
+{
+  "_comment": "Mt. Ember Rework (auto-generated)",
+  "_parity": {
+    "original_map": 752,
+    "events": 5,
+    "dimensions": "30x20"
+  },
+  "mode": "clone",
+  "map_id": 1141,
+  "clone_from": 752,
+  "clear_events": true,
+  "map_info": {
+    "name": "Mt. Ember (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 4,5)",
+      "id": 1,
+      "name": "EV001",
+      "x": 3,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1147,
+                15,
+                18,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 21,18)",
+      "id": 2,
+      "name": "EV002",
+      "x": 22,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveExit"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1636,
+                15,
+                37,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 16,7)",
+      "id": 3,
+      "name": "Trainer(4)",
+      "x": 15,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW2_rocket(male)",
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:TEAMROCKET_M)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_teamrocket",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Volcano\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"Team Rocket Battle\""
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Huh? You followed us all the way over here without a boat?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Well that area's off limit, so get out of my sight!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::TEAMROCKET_M,\"Larry\",_I(\"How...?\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW2_rocket(male)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "They put me on guard duty because they said I can't be "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "trusted with the legendary's capture..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 638
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 385
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 20,18)",
+      "id": 4,
+      "name": "EV004",
+      "x": 20,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveExit"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1636,
+                15,
+                37,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 21,4)",
+      "id": 5,
+      "name": "EV005",
+      "x": 22,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1269,
+                6,
+                5,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}

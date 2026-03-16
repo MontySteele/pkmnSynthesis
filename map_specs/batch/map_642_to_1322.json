@@ -1,0 +1,501 @@
+{
+  "_comment": "Sky Pillar Rework (auto-generated)",
+  "_parity": {
+    "original_map": 642,
+    "events": 3,
+    "dimensions": "30x25"
+  },
+  "mode": "clone",
+  "map_id": 1322,
+  "clone_from": 642,
+  "clear_events": true,
+  "map_info": {
+    "name": "Sky Pillar (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 18,11)",
+      "id": 1,
+      "name": "EV001",
+      "x": 17,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1316,
+                17,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                6
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 210,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 11,10)",
+      "id": 2,
+      "name": "EV002",
+      "x": 11,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "384_0",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"Legendary Birds\""
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Peak\""
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "334Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "GRAAAAH!!!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbWildBattle(:RAYQUAZA,70,1,true,false)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 2,
+              "parameters": [
+                "Caught"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                489,
+                489,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                490,
+                490,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "vortex",
+            "direction": 6,
+            "opacity": 150
+          },
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "\\PN stepped into the vortex..."
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Whirlwind",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1070,
+                20,
+                36,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                5
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 490
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "vortex",
+            "direction": 6,
+            "opacity": 150
+          },
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "\\PN stepped into the vortex..."
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Whirlwind",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1070,
+                20,
+                36,
+                2,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                5
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 489
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 9,6)",
+      "id": 4,
+      "name": "EV004",
+      "x": 8,
+      "y": 6,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 204,
+              "parameters": [
+                0,
+                "1461432291450",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}

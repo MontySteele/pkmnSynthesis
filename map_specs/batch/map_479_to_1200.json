@@ -1,0 +1,3425 @@
+{
+  "_comment": "Fuchsia City Gym Rework (auto-generated)",
+  "_parity": {
+    "original_map": 479,
+    "events": 15,
+    "dimensions": "25x20"
+  },
+  "mode": "clone",
+  "map_id": 1200,
+  "clone_from": 479,
+  "clear_events": true,
+  "map_info": {
+    "name": "Fuchsia City Gym (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 13,9)",
+      "id": 1,
+      "name": "EV001",
+      "x": 14,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW_koga2",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Fwahahaha! "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "A mere child like you dares to challenge me?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Very well, I shall show you true terror as a ninja master!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You shall feel the despair of \\V[5]?? and sleep techniques!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We'll be using four Pok??mon for this battle. Choose "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "carefully!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "PokemonSelection.choose(1,4, true,true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Koga\""
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                0,
+                921,
+                0
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 2,
+              "parameters": [
+                18
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"kanto_gym_battle-BW\""
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::LEADER_Koga,\"Koga\",_I(\" Humph! You have proven your worth! Here! Take the SOULBADGE!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "PokemonSelection.restore"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "$Trainer.badges[4]=true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                8,
+                8,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Humph! You have proven your worth! Here! Take the Soul "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "Badge!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "obtainBadgeMessage(\"Soul Badge\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "obtainHat(HAT_GYM_REWARD_5)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Now that you have the Soul Badge, the Defense of your "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "Pok??mon increases!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                " It also lets you use Strength outside of battle! "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "Ah! Take this too!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::TM06)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "TM06 contains TOXIC! It is a secret technique over 400 "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "years old!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "When afflicted by Toxic, Pok??mon suffer more and more as "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "battle progresses."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "It will surely terrorize foes!"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                111,
+                111,
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "itemlevel",
+                  "_vol": 50,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\C[3]\\PN obtained 2 Premium Wonder Trade ticket!"
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                0,
+                825,
+                1
+              ]
+            },
+            {
+              "code": 242,
+              "indent": 3,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_audio": "Entering Door",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 3,
+              "parameters": [
+                180,
+                180,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Koga!"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 3,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 3,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 16,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 16,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 3,
+              "parameters": [
+                -1,
+                3
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                14,
+                {
+                  "_move_route": [
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 17,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 17,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 3,
+              "parameters": [
+                30
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 18,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 18,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 19,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 19,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 3,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Koga, this is bad. Really bad."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Team Rocket have used the stolen Master Ball prototype "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "to build more Master Balls."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "But that's not all."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "They used these Master Balls to capture the three "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "legendary bird Pok??mon: Articuno, Zapdos and Moltres!"
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 3,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 3,
+              "parameters": [
+                5
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id,true) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "The Legendary birds?! This can't be!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "It's all true! They've taken over Silph Co. in Saffron City "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "and are holding the birds hostage."
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 3,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                14,
+                {
+                  "_move_route": [
+                    {
+                      "code": 16,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 16,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 16,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 16,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Oh, I'm sorry. Allow me to introduce myself."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "My name is Lance. I am a master of Dragon-type "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "Pok??mon and the Pok??mon League champion of the Kanto "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "region."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "So you just defeated Koga? That's very impressive!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "\\PN, you're obviously a very strong trainer too. "
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "I beg you to come help me deal with Team Rocket in "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "Saffron City!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "I'm counting on you, \\PN. Please don't let me down!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,14) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "I'll be waiting for you in Saffron City!"
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                14,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afb39d1f8>"
+                      ]
+                    },
+                    {
+                      "code": 27,
+                      "parameters": [
+                        181
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afb39d1f8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 27,
+                  "_params": [
+                    181
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 3,
+              "parameters": [
+                60
+              ]
+            },
+            {
+              "code": 241,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_audio": "Gym - Pokémon HeartGold-SoulSilver",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "You heard Lance, go to Saffron City as quickly as possible "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 3,
+              "parameters": [
+                "to help save the Legendary Birds from Team Rocket!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 3,
+              "parameters": [
+                213,
+                213,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Come back when you are ready to challenge me!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "PokemonSelection.restore"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW_koga2",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$Trainer.badges[4]=true"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "When afflicted by Toxic, Pok??mon suffer more and more as "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "battle progresses! It will surely terrorize foes!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Head to Saffron City for your next challenge!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(1,HAT_GYM_REWARD_5)"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "!hasHat?(pbGet(1))"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "obtainHat(pbGet(1))"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 12,17)",
+      "id": 2,
+      "name": "EV002",
+      "x": 11,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1160,
+                11,
+                27,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 14,17)",
+      "id": 3,
+      "name": "EV003",
+      "x": 14,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1160,
+                11,
+                27,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 13,17)",
+      "id": 4,
+      "name": "EV004",
+      "x": 14,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1160,
+                11,
+                27,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 20,7)",
+      "id": 5,
+      "name": "Trainer(3)",
+      "x": 20,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_clown",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Strength isn't the key for Pok??mon! It's strategy! "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll show you how strategy can beat brute strength!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::JUGGLER,\"Kayden\",_I(\"What? Extraordinary!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "So, you mix brawn with brains? Good strategy!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "this event (speech bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That was one of the greatest battles I've seen! "
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "event 2 (round floating bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(1,3) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Good job!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 16,7)",
+      "id": 6,
+      "name": "Trainer(3)",
+      "x": 15,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 4
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_clown",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Let's see you beat my special techniques!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::JUGGLER,\"Nate\",_I(\"You had me fooled!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I like poison and sleep techniques, as they linger after "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "battle!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "this event (speech bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That was one of the greatest battles I've seen! "
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "event 2 (round floating bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(1,3) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Good job!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 5,5)",
+      "id": 7,
+      "name": "Trainer(3)",
+      "x": 5,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 6
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_clown",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I wanted to become a ninja, so I joined this Gym!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::JUGGLER,\"Kirk\",_I(\"I'm done for!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 110
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I will keep on training under Koga, my ninja master!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "this event (speech bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That was one of the greatest battles I've seen! "
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "event 2 (round floating bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(1,3) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Good job!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 7,7)",
+      "id": 8,
+      "name": "Trainer(3)",
+      "x": 7,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_clown",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Stop right there! Our invisible walls have you frustrated?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::JUGGLER,\"Shawn\",_I(\"Dropped my balls!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Where there is light, there is shadow! "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Light and shadow! Which do you choose?"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (66)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "this event (speech bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That was one of the greatest battles I've seen! "
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "event 2 (round floating bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(1,3) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Good job!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 16,5)",
+      "id": 9,
+      "name": "Trainer(3)",
+      "x": 15,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWPunkGuy",
+            "direction": 8
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_punk",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I also study the way of the ninja with master Koga!"
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "              "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                " Ninja have a long history of using animals!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::TAMER,\"Edgar\",_I(\"Awoo!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWPunkGuy",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I still have much to learn!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWPunkGuy",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "this event (speech bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That was one of the greatest battles I've seen! "
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "event 2 (round floating bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(1,3) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Good job!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 11,8)",
+      "id": 10,
+      "name": "Trainer(3)",
+      "x": 11,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWPunkGuy",
+            "direction": 8
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:HIKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_punk",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Master Koga comes from a long line of ninjas! "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What do you descend from?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::TAMER,\"Phil\",_I(\"Whoa! He's got it!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWPunkGuy",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You might be ready to take on Koga!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BWPunkGuy",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "this event (speech bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,2) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That was one of the greatest battles I've seen! "
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "event 2 (round floating bubble)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(1,3) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Good job!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 4,13)",
+      "id": 11,
+      "name": "EV011",
+      "x": 3,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 204,
+              "parameters": [
+                1,
+                "001-Fog01",
+                0,
+                64,
+                2,
+                200,
+                0,
+                -5
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 13,12)",
+      "id": 12,
+      "name": "EV012",
+      "x": 14,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 403,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 12,11)",
+      "id": 13,
+      "name": "EV013",
+      "x": 11,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 403,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Lance (orig: 13,16)",
+      "id": 14,
+      "name": "Lance",
+      "x": 14,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW_Lance",
+            "direction": 8
+          },
+          "trigger": 0,
+          "through": true,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 180
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 181
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 11,15)",
+      "id": 15,
+      "name": "EV015",
+      "x": 11,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Yo! Champ in making! Fuchsia Gym is riddled with invisible "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "walls!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Koga might appear close, but he's blocked off! You have to "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "find gaps in the walls to reach him and his \\V[5]-type "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Take this!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(:FRESHWATER)\t"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Yo! Champ in making! Fuchsia Gym is riddled with invisible "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "walls!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Koga might appear close, but he's blocked off! You have to "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "find gaps in the walls to reach him and his \\V[5]-type "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It's amazing how ninja can terrify even now!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 8
+          }
+        }
+      ]
+    }
+  ]
+}

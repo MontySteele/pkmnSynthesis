@@ -1,0 +1,444 @@
+{
+  "_comment": "Goldenrod City Gym Rework (auto-generated)",
+  "_parity": {
+    "original_map": 245,
+    "events": 5,
+    "dimensions": "30x40"
+  },
+  "mode": "clone",
+  "map_id": 1464,
+  "clone_from": 245,
+  "clear_events": true,
+  "map_info": {
+    "name": "Goldenrod City Gym (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 4,34)",
+      "id": 1,
+      "name": "EV001",
+      "x": 3,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1420,
+                38,
+                10,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 5,34)",
+      "id": 2,
+      "name": "EV002",
+      "x": 5,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1420,
+                38,
+                10,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 6,34)",
+      "id": 3,
+      "name": "EV003",
+      "x": 6,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1420,
+                38,
+                10,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 15,14)",
+      "id": 4,
+      "name": "EV004",
+      "x": 16,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW_Whitney",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "This isn't the gym leader you are looking for..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 3,31)",
+      "id": 10,
+      "name": "EV010",
+      "x": 3,
+      "y": 31,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You're already the champion and you still won't stop?! "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Truly, I admire you."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Whitney uses \\V[5]??type Pok??mon. But don't lower your "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "guard. She's a fierce opponent!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Take this!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(:FRESHWATER)\t"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Whitney uses \\V[5]??type Pok??mon. But don't lower your "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "guard. She's a fierce opponent!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

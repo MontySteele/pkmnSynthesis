@@ -1,0 +1,8662 @@
+{
+  "_comment": "Route 11 Rework (auto-generated)",
+  "_parity": {
+    "original_map": 155,
+    "events": 16,
+    "dimensions": "57x35"
+  },
+  "mode": "clone",
+  "map_id": 979,
+  "clone_from": 155,
+  "clear_events": true,
+  "map_info": {
+    "name": "Route 11 (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 13,12)",
+      "id": 1,
+      "name": "EV001",
+      "x": 14,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEscapePoint"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1529,
+                8,
+                9,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 24,12)",
+      "id": 2,
+      "name": "Trainer(4)",
+      "x": 23,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_youngster",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Let's go, but don't cheat!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Eddie\",_I(\"Huh? That's not right!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I did my best! I have no regrets!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "So, you want a rematch?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I'll just heal up my Pok??mon and..."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "All ready, let's go!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Eddie\",_I(\"Well, you won again. What a surprise.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Shame, I was really looking forward to fighting you again!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 48,15)",
+      "id": 3,
+      "name": "EV003",
+      "x": 48,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                997,
+                2,
+                6,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 48,16)",
+      "id": 4,
+      "name": "EV004",
+      "x": 48,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                997,
+                2,
+                6,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 48,17)",
+      "id": 5,
+      "name": "EV005",
+      "x": 48,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                997,
+                2,
+                6,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 30,16)",
+      "id": 6,
+      "name": "Trainer(4)",
+      "x": 30,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_youngster",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I just became a trainer! But, I think I can win!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Dave\",_I(\"My Pok??mon couldn't!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW004",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What do you want? Leave me alone!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Oh wait, you want a rematch?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I guess I could do that!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Get ready, I won't go easy like I did last time!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::YOUNGSTER,\"Dave\",_I(\"I lost!?\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Leave me alone then!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 35,13)",
+      "id": 7,
+      "name": "Trainer(3)",
+      "x": 34,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_asian",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Win, lose or draw!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::GAMBLER,\"Hugo\",_I(\"Lose!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Pok??mon is life! And to live is to gamble!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, you want to play a game?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It'll cost you $2000 to play, but I'll give something good if "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "you win!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What do you say?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                7,
+                2000,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "B",
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "C",
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "D",
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\G\\B \\PN handed $2000 to the gambler."
+              ]
+            },
+            {
+              "code": 125,
+              "indent": 2,
+              "parameters": [
+                1,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\GDo you know how to play Blackjack?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I'll hand you cards. The total of your cards has to be as "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "close as possible to 21."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "If you go over 21, I win."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "If the total of your cards is closer to 21 than the total of "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "mines, you win!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Okay, here's your first card."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                29,
+                29,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                32,
+                32,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                87,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 112,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Player"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                0,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                30,
+                30,
+                0,
+                2,
+                1,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Hearts'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Spades'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Diamonds'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Clubs'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                28,
+                28,
+                0,
+                2,
+                1,
+                13
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 5,
+              "parameters": [
+                29,
+                29,
+                1,
+                0,
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 5,
+              "parameters": [
+                29,
+                29,
+                1,
+                1,
+                28
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Ace'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Jack'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Queen'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                13,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'King'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\b\\PN gets the \\V[28] of \\V[31]"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 4,
+              "parameters": [
+                "(total : \\V[29])"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Gambler"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                12,
+                "$game_variables[32]<=14 || (($game_variables[29]>=17 && $game_variables[29]<=21) && ($game_variables[32] < pbGet(29)))"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "Continue"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                30,
+                30,
+                0,
+                2,
+                1,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Hearts'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Spades'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Diamonds'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Clubs'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                28,
+                28,
+                0,
+                2,
+                1,
+                13
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                32,
+                32,
+                1,
+                1,
+                28
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Ace'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Jack'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Queen'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                13,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'King'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\rGambler Hugo gets the \\V[28] of \\V[31]"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 4,
+              "parameters": [
+                "(total : \\V[32])"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Gambler Hugo stands."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Tie"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 5,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Gambler wins"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "Gambler Hugo wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 5,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Player wins!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 5,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 6,
+              "parameters": [
+                "Gambler Hugo busts!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 6,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You bust!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 7,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 6,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You bust!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 7,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "Gambler Hugo busts!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 8,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "Gambler Hugo wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 8,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "Continue?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 7,
+              "parameters": [
+                [
+                  "Hit",
+                  "Stand"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 7,
+              "parameters": [
+                0,
+                "Hit"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 8,
+              "parameters": [
+                87,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 7,
+              "parameters": [
+                1,
+                "Stand"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 8,
+              "parameters": [
+                87,
+                87,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 8,
+              "parameters": [
+                1,
+                32,
+                0,
+                14,
+                2
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Gambler Hugo stands."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Your total is \\V[29]"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Gambler Hugo's total is \\V[32]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 9,
+              "parameters": [
+                1,
+                29,
+                1,
+                32,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 10,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 10,
+              "parameters": [
+                1,
+                29,
+                1,
+                32,
+                0
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 11,
+              "parameters": [
+                "It's a tie..."
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 11,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 11,
+              "parameters": [
+                "Gambler Hugo wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 11,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 413,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 2,
+              "parameters": [
+                "Player lost"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                2,
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Well I'm sorry, but it looks like you lost."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 3,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "There's no shame in it, it happens to the best of us!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "D",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Tie"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                2,
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Well since this was a tie, we're both getting our $2000 back!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\G\\B \\PN got $2000!"
+              ]
+            },
+            {
+              "code": 125,
+              "indent": 4,
+              "parameters": [
+                0,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\GLet's play again some time!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 4,
+              "parameters": [
+                "C",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "Player won"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Woohoo, you won!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Alright, here's the prize I promised you!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::BIGNUGGET)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 4,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Oh, but you don't even have $2000."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I'd love to play with you, but I just can't give away my prize "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "for free, you know!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I suppose I probably shouldn't be gambling with kids "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "anyhow."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Some people like to gamble with money, but I prefer "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "gambling with a prize."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I find it much more exciting that way!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 40,12)",
+      "id": 8,
+      "name": "Trainer(4)",
+      "x": 41,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 8
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_asian",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                " Competition! I can't get enough!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::GAMBLER,\"Jasper\",_I(\"I had a chance!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, you want to play a game?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It'll cost you $2000 to play, but I'll give something good if "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "you win!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What do you say?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                7,
+                2000,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "B",
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "C",
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "D",
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\G\\B \\PN handed $2000 to the gambler."
+              ]
+            },
+            {
+              "code": 125,
+              "indent": 2,
+              "parameters": [
+                1,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\GDo you know how to play Blackjack?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I'll hand you cards. The total of your cards has to be as "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "close as possible to 21."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "If you go over 21, I win."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "If the total of your cards is closer to 21 than the total of "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "mines, you win!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Okay, here's your first card."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                29,
+                29,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                32,
+                32,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                87,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 112,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Player"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                0,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                30,
+                30,
+                0,
+                2,
+                1,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Hearts'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Spades'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Diamonds'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Clubs'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                28,
+                28,
+                0,
+                2,
+                1,
+                13
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                29,
+                29,
+                1,
+                1,
+                28
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Ace'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Jack'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Queen'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                13,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'King'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\b\\PN gets the \\V[28] of \\V[31]"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 4,
+              "parameters": [
+                "(total : \\V[29])"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Gambler"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                12,
+                "$game_variables[32]<=14 || (($game_variables[29]>=17 && $game_variables[29]<=21) && ($game_variables[32] < pbGet(29)))"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "Continue"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                30,
+                30,
+                0,
+                2,
+                1,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Hearts'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Spades'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Diamonds'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Clubs'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                28,
+                28,
+                0,
+                2,
+                1,
+                13
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                32,
+                32,
+                1,
+                1,
+                28
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Ace'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Jack'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Queen'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                13,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'King'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\rGambler Jasper gets the \\V[28] of \\V[31]"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 4,
+              "parameters": [
+                "(total : \\V[32])"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Gambler Hugo stands."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Tie"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 5,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Gambler wins"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "Gambler Jasper wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 5,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Player wins!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 5,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 6,
+              "parameters": [
+                "Gambler Jasper busts!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 6,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You bust!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 7,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 6,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You bust!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 7,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "Gambler Jasper busts!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 8,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "Gambler Jasper wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 8,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "Continue?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 7,
+              "parameters": [
+                [
+                  "Hit",
+                  "Stand"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 7,
+              "parameters": [
+                0,
+                "Hit"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 8,
+              "parameters": [
+                87,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 7,
+              "parameters": [
+                1,
+                "Stand"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 8,
+              "parameters": [
+                87,
+                87,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 8,
+              "parameters": [
+                1,
+                32,
+                0,
+                14,
+                2
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Gambler Jasper stands."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Your total is \\V[29]"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Gambler Jasper's total is \\V[32]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 9,
+              "parameters": [
+                1,
+                29,
+                1,
+                32,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 10,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 10,
+              "parameters": [
+                1,
+                29,
+                1,
+                32,
+                0
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 11,
+              "parameters": [
+                "It's a tie..."
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 11,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 11,
+              "parameters": [
+                "Gambler Jasper wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 11,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 413,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 2,
+              "parameters": [
+                "Player lost"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                2,
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Well I'm sorry, but it looks like you lost."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "There's no shame in it, it happens to the best of us!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "D",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Tie"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                2,
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Well since this was a tie, we're both getting our $2000 back!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\G\\B \\PN got $2000!"
+              ]
+            },
+            {
+              "code": 125,
+              "indent": 4,
+              "parameters": [
+                0,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\GLet's play again some time!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 4,
+              "parameters": [
+                "C",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "Player won"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Woohoo, you won!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Alright, here's the prize I promised you!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::RARECANDY)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 4,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Oh, but you don't even have $2000."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I'd love to play with you, but I just can't give away my prize "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "for free, you know!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I suppose I probably shouldn't be gambling with kids "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "anyhow."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Some people like to gamble with money, but I prefer "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "gambling with a prize."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I find it much more exciting that way!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 50,24)",
+      "id": 9,
+      "name": "EV009",
+      "x": 51,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(:NUGGET)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 52,24)",
+      "id": 10,
+      "name": "EV010",
+      "x": 53,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 2,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "itemlevel",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\G\\bYou found $2000!"
+              ]
+            },
+            {
+              "code": 125,
+              "parameters": [
+                0,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\G\\b\\PN put the money in the wallet."
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "D"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 43,19)",
+      "id": 11,
+      "name": "Trainer(3)",
+      "x": 42,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (43)",
+            "direction": 4
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_sport",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Careful! I'm laying down some cables!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::ENGINEER,\"Braxton\",_I(\"That was electric!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (43)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'm looking for an Electric Pok??mon."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you want to trade me one for my Magnefing?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I don't really mind which one, so long as Electric-type and "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "at least level 15!"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Which of my Pok??mon do you want to trade for?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " poke.hasType?(\"ELECTRIC\") &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " poke.level >= 15"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "You don't want to trade? Aww..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ":B109H81,\"Magnefing\",\"Bernie\",0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke.level=21"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "That's cool, I can probably find one on my own!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (43)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, take care of Magnefing, mate!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 36,18)",
+      "id": 12,
+      "name": "Trainer(3)",
+      "x": 37,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (43)",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_sport",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Watch out for live wires!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::ENGINEER,\"Bernie\",_I(\"Whoa! You spark plug!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (43)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Well, better get back to work."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Unless, of course if you want to have another battle, what "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "do you think?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Well I can always extend my break a little!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Get ready, here I come!"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::ENGINEER,\"Braxton\",_I(\"Again!?\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                200,
+                200,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Back to work, then!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 20,15)",
+      "id": 13,
+      "name": "EV013",
+      "x": 20,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV014 (orig: 20,16)",
+      "id": 14,
+      "name": "EV014",
+      "x": 20,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 20,14)",
+      "id": 15,
+      "name": "EV015",
+      "x": 20,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 23,26)",
+      "id": 16,
+      "name": "Trainer(4)",
+      "x": 23,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 8
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_asian",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I have never won before..."
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::GAMBLER,\"Dirk\",_I(\"I saw this coming.\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, you want to play a game?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It'll cost you $2000 to play, but I'll give something good if "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "you win!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What do you say?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                7,
+                2000,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "B",
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "C",
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "D",
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\G\\B \\PN handed $2000 to the gambler."
+              ]
+            },
+            {
+              "code": 125,
+              "indent": 2,
+              "parameters": [
+                1,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\GDo you know how to play Blackjack?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I'll hand you cards. The total of your cards has to be as "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "close as possible to 21."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "If you go over 21, I win."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "If the total of your cards is closer to 21 than the total of "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "mines, you win!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Okay, here's your first card."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                29,
+                29,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                32,
+                32,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                87,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 112,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Player"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                0,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                30,
+                30,
+                0,
+                2,
+                1,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Hearts'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Spades'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Diamonds'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Clubs'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                28,
+                28,
+                0,
+                2,
+                1,
+                13
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                29,
+                29,
+                1,
+                1,
+                28
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Ace'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Jack'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Queen'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                13,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'King'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\b\\PN gets the \\V[28] of \\V[31]"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 4,
+              "parameters": [
+                "(total : \\V[29])"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Gambler"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                12,
+                "$game_variables[32]<=14 || (($game_variables[29]>=17 && $game_variables[29]<=21) && ($game_variables[32] < pbGet(29)))"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "Continue"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                30,
+                30,
+                0,
+                2,
+                1,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Hearts'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Spades'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Diamonds'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                30,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[31] = 'Clubs'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                28,
+                28,
+                0,
+                2,
+                1,
+                13
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 4,
+              "parameters": [
+                32,
+                32,
+                1,
+                1,
+                28
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Ace'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                11,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Jack'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'Queen'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                28,
+                0,
+                13,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 5,
+              "parameters": [
+                "$game_variables[28] = 'King'"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\rGambler Jasper gets the \\V[28] of \\V[31]"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 4,
+              "parameters": [
+                "(total : \\V[32])"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Gambler Hugo stands."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Tie"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 5,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Gambler wins"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "Gambler Jasper wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 5,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 5,
+              "parameters": [
+                "Player wins!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 5,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 5,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 6,
+              "parameters": [
+                "Gambler Jasper busts!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 6,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You bust!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 7,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 6,
+              "parameters": [
+                1,
+                29,
+                0,
+                21,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "You bust!"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 7,
+              "parameters": [
+                1,
+                32,
+                0,
+                21,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "Gambler Jasper busts!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "It's a tie! Nobody wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 8,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 8,
+              "parameters": [
+                "Gambler Jasper wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 8,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 7,
+              "parameters": [
+                "Continue?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 7,
+              "parameters": [
+                [
+                  "Hit",
+                  "Stand"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 7,
+              "parameters": [
+                0,
+                "Hit"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 8,
+              "parameters": [
+                87,
+                87,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 7,
+              "parameters": [
+                1,
+                "Stand"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 8,
+              "parameters": [
+                87,
+                87,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 8,
+              "parameters": [
+                1,
+                32,
+                0,
+                14,
+                2
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Gambler Jasper stands."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Your total is \\V[29]"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 9,
+              "parameters": [
+                "Gambler Jasper's total is \\V[32]"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 9,
+              "parameters": [
+                1,
+                29,
+                1,
+                32,
+                3
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 10,
+              "parameters": [
+                "You win!"
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 10,
+              "parameters": [
+                1,
+                29,
+                1,
+                32,
+                0
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 11,
+              "parameters": [
+                "It's a tie..."
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 11,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 11,
+              "parameters": [
+                "Gambler Jasper wins!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 11,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 11,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 10,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 9,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 8,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 7,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 413,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 2,
+              "parameters": [
+                "Player lost"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                2,
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "Well I'm sorry, but it looks like you lost."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 3,
+              "parameters": [
+                "There's no shame in it, it happens to the best of us!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 3,
+              "parameters": [
+                "D",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "Tie"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                2,
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Well since this was a tie, we're both getting our $2000 back!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\G\\B \\PN got $2000!"
+              ]
+            },
+            {
+              "code": 125,
+              "indent": 4,
+              "parameters": [
+                0,
+                0,
+                2000
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "\\GLet's play again some time!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 4,
+              "parameters": [
+                "C",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "Player won"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Woohoo, you won!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 4,
+              "parameters": [
+                "Alright, here's the prize I promised you!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 4,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::NUGGET)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 4,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Oh, but you don't even have $2000."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I'd love to play with you, but I just can't give away my prize "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "for free, you know!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "I suppose I probably shouldn't be gambling with kids "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "anyhow."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW094",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Some people like to gamble with money, but I prefer "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "gambling with a prize."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I find it much more exciting that way!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        }
+      ]
+    }
+  ]
+}

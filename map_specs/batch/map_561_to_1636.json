@@ -1,0 +1,5338 @@
+{
+  "_comment": "Mt. Ember Rework (auto-generated)",
+  "_parity": {
+    "original_map": 561,
+    "events": 38,
+    "dimensions": "60x60"
+  },
+  "mode": "clone",
+  "map_id": 1636,
+  "clone_from": 561,
+  "clear_events": true,
+  "map_info": {
+    "name": "Mt. Ember (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 31,6)",
+      "id": 1,
+      "name": "EV001",
+      "x": 31,
+      "y": 6,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveEntrance"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                919,
+                17,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                6
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 210,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 31,26)",
+      "id": 2,
+      "name": "EV002",
+      "x": 31,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 23,57)",
+      "id": 3,
+      "name": "EV003",
+      "x": 23,
+      "y": 57,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::HEARTSCALE)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(3) (orig: 29,41)",
+      "id": 4,
+      "name": "Trainer(3)",
+      "x": 30,
+      "y": 40,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW040",
+            "direction": 8
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_blackbelt",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I've been training so I can mend my broken heart..."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It toughened me up physically at least. Hi-yah!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::CRUSHGIRL,\"Jocelyn\",_I(\"I think I tried to overdo it...\"),true,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW040",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll train even harder from now on!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(6) (orig: 22,21)",
+      "id": 5,
+      "name": "Trainer(6)",
+      "x": 23,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW029",
+            "direction": 6
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_hiker",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "An active volcano is one that's erupting, or about to."
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::POKEMONRANGER_M,\"Logan\",_I(\"Whew... That was hot!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW029",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "They say there are over 1,500 active volcanoes in the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "world."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Just thinking about that makes me feel all hot and gooey "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "inside!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(6) (orig: 44,32)",
+      "id": 6,
+      "name": "Trainer(6)",
+      "x": 43,
+      "y": 32,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW030",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_hiker",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you know how caves form inside volcanoes?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::POKEMONRANGER_F,\"Beth\",_I(\"Atchah! You're shockingly good!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW030",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "When lava at the surface of magma hardens, and the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "magma inside flows out, caverns are left behind."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(6) (orig: 16,18)",
+      "id": 7,
+      "name": "Trainer(6)",
+      "x": 15,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW029",
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:YOUNGSTER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_hiker",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Halt! I'll tell you a secret about this mountain if you beat "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "me!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::POKEMONRANGER_M,\"Richard\",_I(\"Okay, I give in!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW029",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "There's a cavern that goes deep into the volcano, but you "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "need to unlock it with a gemstone..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV008 (orig: 38,3)",
+      "id": 8,
+      "name": "EV008",
+      "x": 39,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 7577,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$PokemonBag.pbQuantity(:RUBY)>=1"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "It's blocked off, but it looks like it could be opened "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "somehow..."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Insert the Ruby?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\PN inserted the ruby."
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "Explosion7",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 224,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_color": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "$PokemonBag.pbDeleteItem(:RUBY,1)"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                488,
+                488,
+                0
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "An entrance appeared!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "It's blocked off, but it looks like it could be opened "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "somehow..."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                919,
+                17,
+                2,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 488,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 31,25)",
+      "id": 9,
+      "name": "EV009",
+      "x": 31,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 31,27)",
+      "id": 10,
+      "name": "EV010",
+      "x": 31,
+      "y": 28,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 30,25)",
+      "id": 11,
+      "name": "EV011",
+      "x": 30,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 30,26)",
+      "id": 12,
+      "name": "EV012",
+      "x": 30,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 30,24)",
+      "id": 13,
+      "name": "EV013",
+      "x": 30,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV014 (orig: 42,26)",
+      "id": 14,
+      "name": "EV014",
+      "x": 43,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 42,25)",
+      "id": 15,
+      "name": "EV015",
+      "x": 43,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV016 (orig: 42,24)",
+      "id": 16,
+      "name": "EV016",
+      "x": 43,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV017 (orig: 43,25)",
+      "id": 17,
+      "name": "EV017",
+      "x": 42,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV018 (orig: 43,26)",
+      "id": 18,
+      "name": "EV018",
+      "x": 42,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV019 (orig: 43,27)",
+      "id": 19,
+      "name": "EV019",
+      "x": 42,
+      "y": 28,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "sailor (orig: 10,45)",
+      "id": 20,
+      "name": "sailor",
+      "x": 10,
+      "y": 45,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW_Sailor",
+            "direction": 8
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 121,
+              "parameters": [
+                295,
+                295,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                640,
+                640,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                639,
+                639,
+                1
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_rival",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,35) #rival"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\PN!"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                35,
+                {
+                  "_move_route": [
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                35
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,35) #rival"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "So you really took down Team Rocket all on your own, "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "huh? You could've at least waited for me!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Humph... Wait up!"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 4,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 4,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                60
+              ]
+            },
+            {
+              "code": 251,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We came as fast as we could! \\V[12] flew me here on "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "his Pok??mon!"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,35) #rival"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "So the Rocket Boss really went back into hiding?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,35) #rival"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Humph... There's no telling where he went."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,35) #rival"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I think I'll go check that old abandonned gym in Viridian "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "City then. "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,35) #rival"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I've heard rumors that something shady was going on "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "there. We might at least get some information out of it if "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "we're lucky."
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I cannot thank you enough for helping me to recover my "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "precious ship. Take this Seagallop pass and I'll gladly take "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "you around the Sevii Islands!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(:MANSIONKEY)\t"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Well it looks like we're all set here. Now that the Seagallop "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "has been recovered, I'll gladly take you back to Cinnabar "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Island!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Or would you prefer to go explore the Sevii Islands "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "instead?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "To Cinnabar Island!",
+                  "To the Sevii Islands!",
+                  "Actually, I'll stay here"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "To Cinnabar Island!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "All aboard then, we're setting sail for Cinnabar Island!"
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 1,
+              "parameters": [
+                32
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1435,
+                30,
+                38,
+                8,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "To the Sevii Islands!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Come onboard then, we're setting sail for island number 1: "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "Knot Island!"
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 1,
+              "parameters": [
+                32
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1460,
+                10,
+                7,
+                8,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Actually, I'll stay here"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "As you wish, sailor! Come see me at the Cinnabar Island or "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "Knot Island harbour if you want me to take you somewhere!"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                287,
+                287,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                287,
+                287,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 638
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 287
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV021 (orig: 22,44)",
+      "id": 21,
+      "name": "EV021",
+      "x": 23,
+      "y": 43,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::FIRESTONE)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV022 (orig: 16,38)",
+      "id": 22,
+      "name": "EV022",
+      "x": 15,
+      "y": 39,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::FIREGEM)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV023 (orig: 37,18)",
+      "id": 23,
+      "name": "EV023",
+      "x": 37,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::FIREGEM)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV024 (orig: 43,20)",
+      "id": 24,
+      "name": "EV024",
+      "x": 42,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::DIREHIT)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV025 (orig: 27,20)",
+      "id": 25,
+      "name": "EV025",
+      "x": 28,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::REPEL)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV026 (orig: 21,15)",
+      "id": 26,
+      "name": "EV026",
+      "x": 22,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::HEATROCK)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV027 (orig: 20,7)",
+      "id": 27,
+      "name": "EV027",
+      "x": 20,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::LAVACOOKIE)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV028 (orig: 37,5)",
+      "id": 28,
+      "name": "EV028",
+      "x": 37,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::ULTRABALL)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "corsola (orig: 33,57)",
+      "id": 29,
+      "name": "corsola",
+      "x": 32,
+      "y": 57,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "222_0",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "222Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Corr!"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_switches[501] || has_species_or_fusion?(:MAREANIE) || has_species_or_fusion?(:TOXAPEX)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "\\PN pulled out the Mareanie Doll."
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                519,
+                519,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "The Corsola reef scattered in fear!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "A reef of Corsola is blocking the way!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "222_0",
+            "direction": 2
+          },
+          "trigger": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 245,
+              "parameters": [
+                {
+                  "_audio": "Flee",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 246,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 519
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "corsola (orig: 32,57)",
+      "id": 30,
+      "name": "corsola",
+      "x": 32,
+      "y": 57,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "222_0",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "222Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Corr!"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_switches[501] || has_species_or_fusion?(:MAREANIE) || has_species_or_fusion?(:TOXAPEX)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "\\PN pulled out the Mareanie Doll."
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                519,
+                519,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "The Corsola reef scattered in fear!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "A reef of Corsola is blocking the way!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "222_0",
+            "direction": 2
+          },
+          "trigger": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 245,
+              "parameters": [
+                {
+                  "_audio": "Flee",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 246,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 519
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "corsola (orig: 32,58)",
+      "id": 31,
+      "name": "corsola",
+      "x": 32,
+      "y": 58,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "222_0",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "222Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Corr!"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_switches[501] || has_species_or_fusion?(:MAREANIE) || has_species_or_fusion?(:TOXAPEX)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "\\PN pulled out the Mareanie Doll."
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                519,
+                519,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "The Corsola reef scattered in fear!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "A reef of Corsola is blocking the way!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "222_0",
+            "direction": 2
+          },
+          "trigger": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 245,
+              "parameters": [
+                {
+                  "_audio": "Flee",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 11,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 11,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 246,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 519
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV032 (orig: 43,17)",
+      "id": 32,
+      "name": "EV032",
+      "x": 42,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::MAGMARIZER)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV033 (orig: 15,36)",
+      "id": 33,
+      "name": "EV033",
+      "x": 16,
+      "y": 37,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveEntrance"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1141,
+                21,
+                17,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 825
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV034 (orig: 35,57)",
+      "id": 34,
+      "name": "EV034",
+      "x": 34,
+      "y": 57,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(:TM50)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Blue (orig: 15,44)",
+      "id": 35,
+      "name": "Blue",
+      "x": 16,
+      "y": 43,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "gary_oak_overworld_bw_completed_by_malice936-d5ruwuc",
+            "direction": 8
+          },
+          "trigger": 0,
+          "through": true,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 638
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 287
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV036 (orig: 0,28)",
+      "id": 36,
+      "name": "EV036",
+      "x": 0,
+      "y": 27,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "201_27",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 121,
+              "parameters": [
+                287,
+                287,
+                1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1141,
+                21,
+                15,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV037 (orig: 0,40)",
+      "id": 37,
+      "name": "EV037",
+      "x": 0,
+      "y": 41,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "007s",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                274,
+                274,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[273]=Time.now #initial time"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[272]=Time.now #time elapsed"
+              ]
+            },
+            {
+              "code": 241,
+              "parameters": [
+                {
+                  "_audio": "INTRO_music_cries",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 112,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "Time.now-$game_variables[272] >= 5"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "$game_variables[107] = pbAutoregulador"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "name=sprintf(\"Intro\\\\INTRO-%03d\",pbGet(274))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "echo name"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "$game_screen.pictures[12].show(name, 0,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "0,0, 100, 100, 255, 0)"
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 235,
+              "indent": 1,
+              "parameters": [
+                12
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                274,
+                0,
+                230,
+                1
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "fin"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                274,
+                274,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 413,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 241,
+              "parameters": [
+                {
+                  "_audio": "Reversal Mountain (White 2)",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV038 (orig: 0,41)",
+      "id": 38,
+      "name": "EV038",
+      "x": 0,
+      "y": 40,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "224_0",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "path = \"Intro\\\\INTRO-%03d\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "bgm = \"INTRO_music_cries\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "movie = Movie.new(path,bgm,230,true)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "movie.play"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

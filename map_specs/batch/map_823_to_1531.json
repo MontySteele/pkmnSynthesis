@@ -1,0 +1,6247 @@
+{
+  "_comment": "Fullmoon Island Rework (auto-generated)",
+  "_parity": {
+    "original_map": 823,
+    "events": 27,
+    "dimensions": "45x32"
+  },
+  "mode": "clone",
+  "map_id": 1531,
+  "clone_from": 823,
+  "clear_events": true,
+  "map_info": {
+    "name": "Fullmoon Island (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 12,20)",
+      "id": 1,
+      "name": "EV001",
+      "x": 11,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 8,1)",
+      "id": 2,
+      "name": "EV002",
+      "x": 8,
+      "y": 1,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                279,
+                279,
+                0,
+                0,
+                16
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1526,
+                15,
+                20,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 9,1)",
+      "id": 3,
+      "name": "EV003",
+      "x": 8,
+      "y": 1,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                279,
+                279,
+                0,
+                0,
+                16
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1526,
+                15,
+                20,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 19,21)",
+      "id": 4,
+      "name": "EV004",
+      "x": 18,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$PokemonBag.pbQuantity(:CORRUPTEDFEATHER)>=1"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Place the \\C[2]Corrupted feather\\C[0] in the bed?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "$PokemonBag.pbDeleteItem(:CORRUPTEDFEATHER,1)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\PN placed the feather under the pillow..."
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "You feel like you are falling asleep..."
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                20
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                25
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                5
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                30
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 2,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "Sleep",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                812,
+                812,
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                811,
+                811,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 2,
+              "parameters": [
+                0,
+                1536,
+                9,
+                7,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                15
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                20
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                25
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                5
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                30
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Sleep",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1536,
+                9,
+                7,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1030
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 27,10)",
+      "id": 5,
+      "name": "EV005",
+      "x": 28,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 117,
+              "parameters": [
+                95
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                279,
+                279,
+                0,
+                0,
+                16
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1526,
+                15,
+                20,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 28,10)",
+      "id": 6,
+      "name": "EV006",
+      "x": 27,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 117,
+              "parameters": [
+                95
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                279,
+                279,
+                0,
+                0,
+                16
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1526,
+                15,
+                20,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV007 (orig: 15,13)",
+      "id": 7,
+      "name": "EV007",
+      "x": 16,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV008 (orig: 10,15)",
+      "id": 8,
+      "name": "EV008",
+      "x": 10,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 6,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 10,20)",
+      "id": 9,
+      "name": "EV009",
+      "x": 10,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 6,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 18,17)",
+      "id": 10,
+      "name": "EV010",
+      "x": 17,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 20,17)",
+      "id": 11,
+      "name": "EV011",
+      "x": 20,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 23,23)",
+      "id": 12,
+      "name": "EV012",
+      "x": 23,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 4,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 27,23)",
+      "id": 13,
+      "name": "EV013",
+      "x": 28,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV014 (orig: 30,21)",
+      "id": 14,
+      "name": "EV014",
+      "x": 30,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 31,23)",
+      "id": 15,
+      "name": "EV015",
+      "x": 31,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV016 (orig: 33,13)",
+      "id": 16,
+      "name": "EV016",
+      "x": 32,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV017 (orig: 23,13)",
+      "id": 17,
+      "name": "EV017",
+      "x": 23,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 2,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV018 (orig: 8,14)",
+      "id": 18,
+      "name": "EV018",
+      "x": 8,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 6,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV019 (orig: 8,19)",
+      "id": 19,
+      "name": "EV019",
+      "x": 8,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "silhouette",
+            "direction": 6,
+            "opacity": 200
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        180
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        140
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        60
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        100
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        2
+                      ]
+                    },
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    180
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    140
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    60
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    100
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    2
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV020 (orig: 25,10)",
+      "id": 20,
+      "name": "EV020",
+      "x": 26,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                1029,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                808,
+                808,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                809,
+                809,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                20
+              ]
+            },
+            {
+              "code": 241,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "newmoonIsland",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                0
+              ]
+            },
+            {
+              "code": 204,
+              "indent": 1,
+              "parameters": [
+                1,
+                "001-Fog01",
+                0,
+                64,
+                1,
+                200,
+                0,
+                -2
+              ]
+            },
+            {
+              "code": 241,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "fullmoonIsland",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV021 (orig: 28,20)",
+      "id": 21,
+      "name": "EV021",
+      "x": 27,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "CRESSELIA",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "cry_CRESSELIA",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                1
+              ]
+            },
+            {
+              "code": 206,
+              "parameters": [
+                200,
+                20
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[9]It is not too late to stop the horrors of the night from "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "spreading further."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[9]You made the right decision by choosing to follow the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "light instead of the darkness."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[9]Lunar feathers protect people and Pok??mon from "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "nightmares."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[9]To save the realm of dreams, place this Lunar "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Feather in the bed on \\C[1]Newmoon Island\\C[9]."
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(:LUNARFEATHER)\t"
+              ]
+            },
+            {
+              "code": 206,
+              "parameters": [
+                64,
+                20
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "CRESSELIA",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "cry_CRESSELIA",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 206,
+              "parameters": [
+                200,
+                20
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[9]To save the realm of dreams, place the Lunar "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Feather in the bed on \\C[1]Newmoon Island\\C[9]."
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                0
+              ]
+            },
+            {
+              "code": 206,
+              "parameters": [
+                64,
+                20
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "CRESSELIA",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[9]Child, what have you done. The realm of dreams is "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "forsaken, it can no longer be saved."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"Legendary Birds\""
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Forest_eve\""
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "cry_CRESSELIA",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Cresssa!!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbWildBattle(:CRESSELIA,60,1,true,false)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 2,
+              "parameters": [
+                "Caught"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                722,
+                722,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                723,
+                723,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 723
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 722
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1030
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "darkrai (orig: 17,21)",
+      "id": 22,
+      "name": "darkrai",
+      "x": 17,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "491_0",
+            "direction": 6
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "347Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[2]You have done well."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[2]Now that Fullmoon Island has succumbed to "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "nightmares, there is nothing else to stop us."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[2]Come, bring me to your world and spread my "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "darkness."
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbAddPokemon(:DARKRAI,50)\t"
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                805,
+                805,
+                1
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                222,
+                222,
+                2,
+                0,
+                20
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                724,
+                724,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "finishQuest(61)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                20
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1029
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV023 (orig: 12,19)",
+      "id": 23,
+      "name": "EV023",
+      "x": 11,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV024 (orig: 12,18)",
+      "id": 24,
+      "name": "EV024",
+      "x": 11,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV025 (orig: 15,19)",
+      "id": 25,
+      "name": "EV025",
+      "x": 16,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV026 (orig: 15,20)",
+      "id": 26,
+      "name": "EV026",
+      "x": 16,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV027 (orig: 15,21)",
+      "id": 27,
+      "name": "EV027",
+      "x": 16,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 6,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 6,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 7,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 7,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}

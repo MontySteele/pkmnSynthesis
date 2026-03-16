@@ -1,0 +1,7760 @@
+{
+  "_comment": "S.S. Anne Rework (auto-generated)",
+  "_parity": {
+    "original_map": 29,
+    "events": 25,
+    "dimensions": "20x20"
+  },
+  "mode": "clone",
+  "map_id": 1063,
+  "clone_from": 29,
+  "clear_events": true,
+  "map_info": {
+    "name": "S.S. Anne (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 10,4)",
+      "id": 1,
+      "name": "EV001",
+      "x": 10,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1051,
+                8,
+                28,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 6,7)",
+      "id": 2,
+      "name": "EV002",
+      "x": 6,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Preparing food for an entire ship..."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Let me tell you, it's a lot of hard work!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 1
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Preparing food for an entire ship..."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Let me tell you, it's a lot of hard work!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "cook (orig: 4,7)",
+      "id": 3,
+      "name": "cook",
+      "x": 3,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You, mon petit! We're busy here! Out of the way!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Go in the restaurant and take the orders from the waiting "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "customers. I will prepare some food in the meantime."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The waiter still hasn't been back. Can you take the dishes "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "I've prepared to each of the customers? I'll prepare some "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "more."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091,
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 11,15)",
+      "id": 4,
+      "name": "EV004",
+      "x": 11,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW2 (16)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Er-hem! Indeed I am le CHEF! Le main course is"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                34,
+                34,
+                0,
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                34,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                " Prime Beef Steak! But, have I enough fillets de beef?"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                34,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Eels au Barbecue! Les guests will mutiny, I fear."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                34,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Salade de Salmon! Les guests may gripe it's fish again, "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "however!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW2 (16)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Er-hem! Indeed I am le CHEF!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Oh, you're looking for leftover Krabby legs?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Sure, just go ask the lady by the stoves. I'm sure we have "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "some leftovers!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 929
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW2 (16)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Er-hem! Indeed I am le CHEF! Le main course is"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                34,
+                34,
+                0,
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                34,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                " Prime Beef Steak! But, have I enough fillets de beef?"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                34,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Eels au Barbecue! Les guests will mutiny, I fear."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                34,
+                0,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Salade de Salmon! Les guests may gripe it's fish again, "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "however!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 930
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 10,10)",
+      "id": 5,
+      "name": "EV005",
+      "x": 10,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Snivel...Sniff... I only get to peel onions... Snivel..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 10,8)",
+      "id": 6,
+      "name": "EV006",
+      "x": 10,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 6
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'm so busy I'm getting dizzy!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Oh, you're looking for some steamed Krabby legs?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Of course! We have lots of leftovers!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Here, enjoy! They're still warm!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::KRABBYLEGS)"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                5
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[5]Quick! Bring them to the hotel before they cool down!"
+              ]
+            },
+            {
+              "code": 124,
+              "parameters": [
+                0,
+                30
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                595,
+                595,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                930,
+                930,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 929
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What did you think of the steamed Krabby legs? Delicious, "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "weren't they?"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 930
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV007 (orig: 14,13)",
+      "id": 7,
+      "name": "EV007",
+      "x": 14,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 3
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::GREATBALL)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV008 (orig: 14,10)",
+      "id": 8,
+      "name": "EV008",
+      "x": 14,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 3
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::CHESTOBERRY)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 14,7)",
+      "id": 9,
+      "name": "EV009",
+      "x": 14,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "There's nothing but trash in there!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 11,4)",
+      "id": 10,
+      "name": "EV010",
+      "x": 11,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1051,
+                9,
+                28,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 6,5)",
+      "id": 11,
+      "name": "EV011",
+      "x": 6,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 3
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::PIZZA)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "le waiter (orig: 4,9)",
+      "id": 12,
+      "name": "le waiter",
+      "x": 3,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (53)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                4
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Quoi?! How can zere be no more <i>gâteau</i>?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Ze restaurant is full wiz customers who are already waiting "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "to order! Zey will need ze cake for dessert!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubDown(2,3)  #cook"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "But it was just on the table over there..."
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 36,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 16,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 36,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 16,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetSelfSwitch(16,\"A\",true)#swirlix appears"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "playCry(:SWIRLIX)"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                16,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc952b0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        8
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc95170>"
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc952b0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    8
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc95170>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                24
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It's ze Swirlix again! Surely it is him who ate all ze "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "<i>gâteau</i>!!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I will get you zis time!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                8
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 17,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 17,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                16,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc94838>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc946f8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc945b8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc94478>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc94338>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc941f8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc940b8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc93f78>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 19,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc94838>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc946f8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc945b8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc94478>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc94338>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc941f8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc940b8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc93f78>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 19,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 18,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 18,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                40
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Oh la la! It iz much too <i>rapide</i> to catch!"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 19,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 19,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We have no choice, I will 'ave to run outside to get more "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "dessert."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Oh, but who will serve ze customers?"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                16
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "isPlayerMale()"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You, mon petit!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You, ma petite!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 10,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 10,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 10,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 10,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 10,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 10,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 10,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 10,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 10,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 10,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 10,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 10,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                30
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Will you take ze orders for me? Ze chef will be eternally "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "grateful!"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Oui",
+                  "Non"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Oui"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Non"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Oh la la, what will we do?"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (53)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "isPlayerMale()"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Mon petit, will you take ze orders for me? Ze chef will be "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "eternally grateful!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Ma petite, will you take ze orders for me? Ze chef will be "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "eternally grateful!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Oui",
+                  "Non"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Oui"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Non"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Oh la la, what will we do?"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (53)",
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "MENU"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(VAR_SSANNE_MENU,["
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "\"Confit de volaille aux poireaux\","
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "\"Savoury Cinnabar\","
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "\"Bellossom Garden Salad\"])"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "."
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I can't zank you enough, I will be right back. Tout de suite!"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 42,
+                      "parameters": [
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 42,
+                  "_params": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbAcceptNewQuest(64)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#INITIALIZE ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "array= pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "if !array.is_a?(Array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  array = []"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                1091,
+                1091,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (53)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I am back wiz ze new cake. Zank you so much for helping "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "me. I am incredibly grateful."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "map=17"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "orders_messed_up=0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "guests_events = [2,3,4,5,16,17,18,19]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "for id in guests_events"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "is_messed = $game_self_switches[[map,id,\"E\"]]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "orders_messed_up+=1 if is_messed "
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,orders_messed_up)"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                2,
+                2,
+                0,
+                0,
+                8000
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                1,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You did not mix up any of ze orders, you truly are a "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "<i>naturel</i>!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "For zis, you deserve a petit bonus!"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                2,
+                2,
+                1,
+                0,
+                4000
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You mixed up ze orders \\V[1] times, but zat's okay!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "payout = pbGet(2)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "messed_orders= pbGet(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "payout-= (500*messed_orders)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(2,payout)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\GHere iz a little bit of money for helping."
+              ]
+            },
+            {
+              "code": 125,
+              "parameters": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\G\\PN obtained $\\V[2]"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I was able to catch ze pesky Swirlix before it got to the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "new <i>gâteau</i>."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It was not very <i>difficile</i>. I zink it wanted to taste ze "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "new dessert."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "S'il vous plaît, take him far away from ze kitchen..."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetSelfSwitch(26,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbAddPokemon(:SWIRLIX,20)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "finishQuest(64)"
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                1091,
+                1091,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091,
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (53)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBubUp(2,@event_id) #waiter"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Les guests will love ze new <i>gâteau</i>, I zink."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 0,8)",
+      "id": 13,
+      "name": "EV013",
+      "x": 0,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1001,
+                6,
+                16,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV014 (orig: 1,8)",
+      "id": 14,
+      "name": "EV014",
+      "x": 1,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1001,
+                7,
+                16,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 5,13)",
+      "id": 15,
+      "name": "EV015",
+      "x": 5,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 2,
+            "pattern": 3
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 1
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "swirlix (orig: 2,12)",
+      "id": 16,
+      "name": "swirlix",
+      "x": 2,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "SWIRLIX",
+            "direction": 6
+          },
+          "trigger": 0,
+          "through": true,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV017 (orig: 11,10)",
+      "id": 17,
+      "name": "EV017",
+      "x": 11,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV018 (orig: 11,8)",
+      "id": 18,
+      "name": "EV018",
+      "x": 11,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "swirlix1 (orig: 10,14)",
+      "id": 19,
+      "name": "swirlix1",
+      "x": 10,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "SWIRLIX",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "playCry(:SWIRLIX)"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 37,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 37,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8d3a8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8d268>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8d128>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8cfe8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8d3a8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8d268>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8d128>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8cfe8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                32
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8c930>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8c7f0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8c930>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8c7f0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                16
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8c318>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8c318>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                16
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8bfd0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8be90>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8bd50>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8bc10>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8bad0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8b990>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8b850>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8b710>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        -1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc8b5d0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8bfd0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8be90>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8bd50>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8bc10>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8bad0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8b990>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8b850>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8b710>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc8b5d0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                80
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 38,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 38,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetSelfSwitch(20,\"A\",true)"
+              ]
+            },
+            {
+              "code": 202,
+              "parameters": [
+                20,
+                0,
+                14,
+                5,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "swirlix2 (orig: 14,5)",
+      "id": 20,
+      "name": "swirlix2",
+      "x": 14,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "SWIRLIX",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                3
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "playCry(:SWIRLIX)"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 37,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 37,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                6
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc89140>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        -1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc89000>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc89140>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    -1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc89000>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                16
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        -1,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc88b28>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc889e8>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    -1,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc88b28>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc889e8>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                16
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc88510>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc883d0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc88290>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc88150>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc88010>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc87ed0>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        1
+                      ]
+                    },
+                    {
+                      "code": 44,
+                      "parameters": [
+                        "#<RPG::AudioFile:0x00007f3afbc87d90>"
+                      ]
+                    },
+                    {
+                      "code": 15,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc88510>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc883d0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc88290>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc88150>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc88010>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc87ed0>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 44,
+                  "_params": [
+                    "#<RPG::AudioFile:0x00007f3afbc87d90>"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                64
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 38,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 38,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetSelfSwitch(19,\"A\",false)"
+              ]
+            },
+            {
+              "code": 202,
+              "parameters": [
+                19,
+                0,
+                10,
+                14,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV021 (orig: 4,13)",
+      "id": 21,
+      "name": "EV021",
+      "x": 3,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                314,
+                314,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#meal name in variable 1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "choice_id = pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "order = menu[choice_id ]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,order)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#INITIALIZE ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "array= pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "if !array.is_a?(Array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  array = []"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(VAR_SSANNE_DISHES_HELD_ARRAY).length >= 3"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "firstDish = heldDishes.first"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "firstDishName= menu[firstDish]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(2,firstDishName)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Hands full!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Your hands are full!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "holding=\"\""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "i =0"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "for dishIndex in heldDishes"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  holding += \"<br>- \" if i != 0"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  holding += menu[dishIndex]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  i+=1"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(3,holding)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You are currently holding:<br>\\C[1]- \\V[3]"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Swap the \\C[1]\\V[2]\\C[0] you're holding for the"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "\\C[1]\\V[1]\\C[0]?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "thisDishIndex= pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes[0] = thisDishIndex"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,heldDishes)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Take the \\C[1]\\V[1]\\C[0]?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "thisDishIndex= pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes << thisDishIndex"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,heldDishes)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "holding=\"\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "i =0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "for dishIndex in heldDishes"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  holding += \"<br>- \" if i != 0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  holding += menu[dishIndex]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  i+=1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(3,holding)"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You are currently holding:<br>\\C[1]- \\V[3]"
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 1
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV022 (orig: 8,13)",
+      "id": 22,
+      "name": "EV022",
+      "x": 8,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 2,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                314,
+                314,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#meal name in variable 1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "choice_id = pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "order = menu[choice_id ]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,order)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#INITIALIZE ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "array= pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "if !array.is_a?(Array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  array = []"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(VAR_SSANNE_DISHES_HELD_ARRAY).length >= 3"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "firstDish = heldDishes.first"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "firstDishName= menu[firstDish]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(2,firstDishName)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Hands full!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Your hands are full!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "holding=\"\""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "i =0"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "for dishIndex in heldDishes"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  holding += \"<br>- \" if i != 0"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  holding += menu[dishIndex]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  i+=1"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(3,holding)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You are currently holding:<br>\\C[1]- \\V[3]"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Swap the \\C[1]\\V[2]\\C[0] you're holding for the"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "\\C[1]\\V[1]\\C[0]?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "thisDishIndex= pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes[0] = thisDishIndex"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,heldDishes)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Take the \\C[1]\\V[1]\\C[0]?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "thisDishIndex= pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes << thisDishIndex"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,heldDishes)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "holding=\"\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "i =0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "for dishIndex in heldDishes"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  holding += \"<br>- \" if i != 0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  holding += menu[dishIndex]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  i+=1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(3,holding)"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You are currently holding:<br>\\C[1]- \\V[3]"
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 1
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV023 (orig: 6,13)",
+      "id": 23,
+      "name": "EV023",
+      "x": 6,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                314,
+                314,
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#meal name in variable 1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "choice_id = pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "order = menu[choice_id ]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,order)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "#INITIALIZE ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "array= pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "if !array.is_a?(Array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  array = []"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,array)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbGet(VAR_SSANNE_DISHES_HELD_ARRAY).length >= 3"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "firstDish = heldDishes.first"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "firstDishName= menu[firstDish]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(2,firstDishName)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Hands full!"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Your hands are full!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "holding=\"\""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "i =0"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "for dishIndex in heldDishes"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  holding += \"<br>- \" if i != 0"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  holding += menu[dishIndex]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "  i+=1"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(3,holding)"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "You are currently holding:<br>\\C[1]- \\V[3]"
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Swap the \\C[1]\\V[2]\\C[0] you're holding for the"
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "\\C[1]\\V[1]\\C[0]?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "thisDishIndex= pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes[0] = thisDishIndex"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,heldDishes)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Take the \\C[1]\\V[1]\\C[0]?"
+              ]
+            },
+            {
+              "code": 102,
+              "indent": 1,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "thisDishIndex= pbGet(VAR_TEMP_SSANNE_ORDER)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "heldDishes << thisDishIndex"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(VAR_SSANNE_DISHES_HELD_ARRAY,heldDishes)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "indent": 1,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "menu = pbGet(VAR_SSANNE_MENU)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "heldDishes = pbGet(VAR_SSANNE_DISHES_HELD_ARRAY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "holding=\"\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "i =0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "for dishIndex in heldDishes"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  holding += \"<br>- \" if i != 0"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  holding += menu[dishIndex]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  i+=1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(3,holding)"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You are currently holding:<br>\\C[1]- \\V[3]"
+              ]
+            },
+            {
+              "code": 116,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 1
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "food",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "The waiter came back with the cake. It wasn't a lie!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV024 (orig: 6,10)",
+      "id": 24,
+      "name": "EV024",
+      "x": 6,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW059",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The dishes we've prepared are on the table over here. You "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "should be able to hold three at once."
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 16,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 16,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 17,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 17,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The waiter still isn't back, so please bring them to the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "customers."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We'll make sure that you don't run out!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 315,
+            "variable_value": 1
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "swirlix1 (orig: 5,9)",
+      "id": 26,
+      "name": "swirlix1",
+      "x": 5,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "SWIRLIX",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "playCry(:SWIRLIX)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Sweeee!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 1091,
+            "variable_valid": true,
+            "variable_id": 326,
+            "variable_value": 8
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

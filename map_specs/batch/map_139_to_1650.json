@@ -1,0 +1,823 @@
+{
+  "_comment": "letter Rework (auto-generated)",
+  "_parity": {
+    "original_map": 139,
+    "events": 8,
+    "dimensions": "44x50"
+  },
+  "mode": "clone",
+  "map_id": 1650,
+  "clone_from": 139,
+  "clear_events": true,
+  "map_info": {
+    "name": "letter (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 9,21)",
+      "id": 1,
+      "name": "EV001",
+      "x": 8,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::POKEBALL)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 24,23)",
+      "id": 2,
+      "name": "Trainer(4)",
+      "x": 23,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (34)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:LASS)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey! You're a Pok??mon trainer?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'm a new trainer too! "
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We should have our Pok??mon battle each other to make "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "them stronger!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That's what Pok??mon trainers do when they meet!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::LASS,\"Mimi\",_I(\"Woah! Your Pok??mon looks like a total powerhouse!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (34)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Viridian City isn't too far uphill, don't give up!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Avoid the tall grass if your Pok??mon are hurt!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 13,38)",
+      "id": 3,
+      "name": "EV003",
+      "x": 14,
+      "y": 39,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (85)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (85)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We also carry Pokeballs for catching Pokemon!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 19,23)",
+      "id": 5,
+      "name": "Trainer(4)",
+      "x": 18,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (19)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:LASS)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey! You're a Pok??mon trainer?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'm a new trainer too! "
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We should have our Pok??mon battle each other to make "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "them stronger!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That's what Pok??mon trainers do when they meet!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::LASS,\"Mimi\",_I(\"Woah! Your Pok??mon looks like a total powerhouse!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (34)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Viridian City isn't too far uphill, don't give up!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Avoid the tall grass if your Pok??mon are hurt!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "pidgeotto (orig: 23,23)",
+      "id": 6,
+      "name": "pidgeotto",
+      "x": 23,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "017-019",
+            "direction": 4
+          },
+          "trigger": 0,
+          "through": true,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "pidgeotto (orig: 20,23)",
+      "id": 7,
+      "name": "pidgeotto",
+      "x": 20,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "011",
+            "direction": 6
+          },
+          "trigger": 0,
+          "through": true,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "pidgeot.noshadow (orig: 19,3)",
+      "id": 8,
+      "name": "pidgeot.noshadow",
+      "x": 18,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "018_mail",
+            "direction": 2
+          },
+          "trigger": 4,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_system.menu_disabled=true"
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                20
+              ]
+            },
+            {
+              "code": 203,
+              "parameters": [
+                2,
+                25,
+                2
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 231,
+              "parameters": [
+                1,
+                "PokemonInfiniteFusionLogo_Main_25",
+                0,
+                0,
+                150,
+                50,
+                100,
+                100,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 232,
+              "parameters": [
+                1,
+                20,
+                0,
+                0,
+                150,
+                50,
+                100,
+                100,
+                255,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                80
+              ]
+            },
+            {
+              "code": 232,
+              "parameters": [
+                1,
+                20,
+                0,
+                0,
+                150,
+                50,
+                100,
+                100,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                993,
+                993,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                2
+              ]
+            },
+            {
+              "code": 235,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 224,
+              "parameters": [
+                {
+                  "_color": "raw"
+                },
+                20
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1140,
+                17,
+                9,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 4,1)",
+      "id": 9,
+      "name": "EV009",
+      "x": 3,
+      "y": 1,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "Input.press?(Input::CTRL)"
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 1,
+              "parameters": [
+                105
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}

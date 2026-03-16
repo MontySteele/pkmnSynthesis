@@ -1,0 +1,628 @@
+{
+  "_comment": "Birth Island Rework (auto-generated)",
+  "_parity": {
+    "original_map": 607,
+    "events": 2,
+    "dimensions": "35x35"
+  },
+  "mode": "clone",
+  "map_id": 1125,
+  "clone_from": 607,
+  "clear_events": true,
+  "map_info": {
+    "name": "Birth Island (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 16,25)",
+      "id": 1,
+      "name": "EV001",
+      "x": 15,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (36)",
+            "direction": 8
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "What a strange island... So are you ready to head back?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Come onboard then, we're setting sail for Cinnabar Island!"
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 1,
+              "parameters": [
+                33
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1174,
+                10,
+                7,
+                8,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Take your time!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 16,15)",
+      "id": 2,
+      "name": "EV002",
+      "x": 15,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 6486,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 225,
+              "parameters": [
+                2,
+                8,
+                30
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Teleport",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 6486,
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 225,
+              "parameters": [
+                2,
+                8,
+                30
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 202,
+              "parameters": [
+                0,
+                0,
+                16,
+                15,
+                0
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Teleport",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 6486,
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 225,
+              "parameters": [
+                2,
+                8,
+                30
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 202,
+              "parameters": [
+                0,
+                0,
+                16,
+                15,
+                0
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Teleport",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 6486,
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 225,
+              "parameters": [
+                2,
+                8,
+                30
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 202,
+              "parameters": [
+                0,
+                0,
+                16,
+                15,
+                0
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                10
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Teleport",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "D",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "C"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "386_0",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"mewtwo\""
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Beach\""
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "380Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 33,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 33,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbWildBattle(:DEOXYS,70,1,true,false)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                4,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 2,
+              "parameters": [
+                "Caught"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                606,
+                606,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                607,
+                607,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "D"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 607
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 606
+          }
+        }
+      ]
+    }
+  ]
+}

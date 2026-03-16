@@ -1,0 +1,2443 @@
+{
+  "_comment": "Blackthorn City Gym Rework (auto-generated)",
+  "_parity": {
+    "original_map": 426,
+    "events": 16,
+    "dimensions": "20x30"
+  },
+  "mode": "clone",
+  "map_id": 913,
+  "clone_from": 426,
+  "clear_events": true,
+  "map_info": {
+    "name": "Blackthorn City Gym (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "StrengthBoulder (orig: 8,7)",
+      "id": 1,
+      "name": "StrengthBoulder",
+      "x": 8,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 1"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [7,9]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[360] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 2"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,12]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[361] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 3"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,5]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[362] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 6,11)",
+      "id": 2,
+      "name": "EV002",
+      "x": 6,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1411,
+                4,
+                13,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.refresh"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "StrengthBoulder (orig: 11,3)",
+      "id": 3,
+      "name": "StrengthBoulder",
+      "x": 11,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 1"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [7,9]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[360] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 2"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,12]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[361] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 3"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,5]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[362] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "StrengthBoulder (orig: 13,4)",
+      "id": 4,
+      "name": "StrengthBoulder",
+      "x": 14,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 1"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [7,9]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[360] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 2"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,12]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[361] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 3"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,5]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[362] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 12,14)",
+      "id": 5,
+      "name": "EV005",
+      "x": 11,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1411,
+                12,
+                16,
+                2,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.refresh"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "StrengthBoulder (orig: 7,7)",
+      "id": 6,
+      "name": "StrengthBoulder",
+      "x": 7,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 1"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [7,9]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[360] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 2"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,12]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[361] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 3"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,5]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[362] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "StrengthBoulder (orig: 13,19)",
+      "id": 7,
+      "name": "StrengthBoulder",
+      "x": 14,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 1"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [7,9]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[360] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 2"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,12]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[361] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 3"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,5]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[362] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "StrengthBoulder (orig: 11,21)",
+      "id": 8,
+      "name": "StrengthBoulder",
+      "x": 11,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 1"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [7,9]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[360] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 2"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,12]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[361] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "HOLE 3"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "hpos = [13,5]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "xpos = $game_map.events[@event_id].x"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "ypos = $game_map.events[@event_id].y"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " if xpos == hpos[0] && ypos == hpos[1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_switches[362] = true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_self_switches[[426,@event_id,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   pbSEPlay(\"Wind1\",80)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "   $game_map.need_refresh=true"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(1) (orig: 9,15)",
+      "id": 9,
+      "name": "Trainer(1)",
+      "x": 8,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW024",
+            "direction": 4
+          },
+          "trigger": 2,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_ace",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We go through rigorous training under Clair. I can't afford "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "to lose."
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"Francine\",_I(\"Aww... I lost...\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW024",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Whew... I'll have to rethink my training..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 7,9)",
+      "id": 10,
+      "name": "EV010",
+      "x": 7,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                360,
+                0
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1411,
+                7,
+                15,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1411,
+                6,
+                15,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.refresh"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 6,2)",
+      "id": 11,
+      "name": "EV011",
+      "x": 6,
+      "y": 2,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It's a painting of a rare \\V[5]-type Pokémon."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 8,2)",
+      "id": 12,
+      "name": "EV012",
+      "x": 8,
+      "y": 2,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It's a painting of a rare \\V[5]-type Pokémon."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 10,2)",
+      "id": 13,
+      "name": "EV013",
+      "x": 10,
+      "y": 2,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "It's a painting of a rare \\V[5]-type Pokémon."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV020 (orig: 13,12)",
+      "id": 20,
+      "name": "EV020",
+      "x": 14,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                361,
+                0
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1411,
+                16,
+                17,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1411,
+                15,
+                17,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.refresh"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV021 (orig: 13,5)",
+      "id": 21,
+      "name": "EV021",
+      "x": 14,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "through": true,
+          "commands": [
+            {
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 14,
+                      "parameters": [
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 14,
+                  "_params": [
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                362,
+                0
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1411,
+                17,
+                9,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.refresh"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 362
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(1) (orig: 8,4)",
+      "id": 28,
+      "name": "Trainer(1)",
+      "x": 8,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW023",
+            "direction": 4
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:PICNICKER)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_ace",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "My chance of losing? Not even one percent!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_M,\"Cody\",_I(\"Rats!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW023",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I know my shortcomings now. Thanks for showing me!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

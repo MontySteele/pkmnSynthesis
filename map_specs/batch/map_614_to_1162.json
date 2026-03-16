@@ -1,0 +1,1951 @@
+{
+  "_comment": "Dodrio Run Rework (auto-generated)",
+  "_parity": {
+    "original_map": 614,
+    "events": 13,
+    "dimensions": "100x20"
+  },
+  "mode": "clone",
+  "map_id": 1162,
+  "clone_from": 614,
+  "clear_events": true,
+  "map_info": {
+    "name": "Dodrio Run (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 34,12)",
+      "id": 1,
+      "name": "EV001",
+      "x": 34,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                15,
+                0
+              ]
+            },
+            {
+              "code": 204,
+              "indent": 1,
+              "parameters": [
+                0,
+                "Nightsky",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 204,
+              "indent": 1,
+              "parameters": [
+                0,
+                "1461432291450",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 33,14)",
+      "id": 2,
+      "name": "EV002",
+      "x": 32,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 6
+          },
+          "trigger": 4,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_map.events[@event_id].x == $game_player.x && $game_map.events[@event_id].y == $game_player.y"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "recall",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Explosion2",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "$game_map.events[@event_id].y >= 40 "
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 2,
+              "parameters": [
+                0,
+                0,
+                12,
+                3,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 2,
+              "parameters": [
+                12,
+                "$game_map.passable?($game_map.events[@event_id].x, $game_map.events[@event_id].y+1,2)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "FALLING"
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 3,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 29,
+                      "parameters": [
+                        4
+                      ]
+                    },
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 24,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 29,
+                  "_params": [
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 3,
+              "parameters": [
+                {
+                  "_move_cmd": 24,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 3,
+              "parameters": [
+                "ON FLOOR"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 3,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "VIENT JUSTE DE TOMBER"
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 4,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 29,
+                      "parameters": [
+                        3
+                      ]
+                    },
+                    {
+                      "code": 23,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 4,
+              "parameters": [
+                {
+                  "_move_cmd": 29,
+                  "_params": [
+                    3
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 4,
+              "parameters": [
+                {
+                  "_move_cmd": 23,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 4,
+              "parameters": [
+                "ROULE"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 4,
+              "parameters": [
+                6,
+                0,
+                4
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 5,
+              "parameters": [
+                12,
+                "$game_map.passable?($game_map.events[@event_id].x-1, $game_map.events[@event_id].y,4)"
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 6,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 2,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 6,
+              "parameters": [
+                {
+                  "_move_cmd": 2,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 6,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 22,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 6,
+              "parameters": [
+                {
+                  "_move_cmd": 22,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 5,
+              "parameters": [
+                12,
+                "$game_map.passable?($game_map.events[@event_id].x+1, $game_map.events[@event_id].y,6)"
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 6,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 3,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 6,
+              "parameters": [
+                {
+                  "_move_cmd": 3,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 6,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 22,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 6,
+              "parameters": [
+                {
+                  "_move_cmd": 22,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 6,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 5,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 4,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 3,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 34,13)",
+      "id": 3,
+      "name": "EV003",
+      "x": 34,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_player.x >= 80 "
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                187,
+                187,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                5,
+                0,
+                2,
+                7,
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                4
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1162,
+                20,
+                9,
+                6,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "speed=pbGet(186)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(186,speed+0.1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "#player speed"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(18,pbGet(18)+0.05)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 33,10)",
+      "id": 4,
+      "name": "EV004",
+      "x": 32,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 468,
+            "direction": 2
+          },
+          "trigger": 4,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 202,
+              "parameters": [
+                0,
+                0,
+                99,
+                12,
+                0
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_map.events[@event_id].x == 0"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "coyote (orig: 2,7)",
+      "id": 5,
+      "name": "coyote",
+      "x": 2,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "018",
+            "direction": 6
+          },
+          "trigger": 4,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.events[@event_id].move_speed = pbGet(186)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "018",
+            "direction": 6
+          },
+          "trigger": 4,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "$game_map.events[@event_id].move_speed = pbGet(186)"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 893
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 28,12)",
+      "id": 6,
+      "name": "EV006",
+      "x": 27,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                1
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Welcome to \\C[6]\\V[1] Run!"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Use the \\C[5]arrows\\C[0] to run and the \\C[5]A Button"
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "\\C[0] to jump."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Don't let Pidgeot overtake you and watch out for the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "falling Voltorb!"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Ready?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Set..."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Run !!!"
+              ]
+            },
+            {
+              "code": 104,
+              "parameters": [
+                2,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                893,
+                893,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_map.events[5].x >= $game_player.x"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                892,
+                892,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "$game_player.y >= 16 "
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                892,
+                892,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 893
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "Game over!"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                18,
+                18,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                893,
+                893,
+                1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1156,
+                10,
+                7,
+                8,
+                0
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 34,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 34,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                52,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbChangePlayer(1)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbChangePlayer(0)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.runningShoes = true"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 892
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV007 (orig: 36,0)",
+      "id": 7,
+      "name": "EV007",
+      "x": 37,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV008 (orig: 31,0)",
+      "id": 8,
+      "name": "EV008",
+      "x": 31,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 44,0)",
+      "id": 9,
+      "name": "EV009",
+      "x": 43,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 51,0)",
+      "id": 10,
+      "name": "EV010",
+      "x": 50,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 63,0)",
+      "id": 11,
+      "name": "EV011",
+      "x": 64,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 70,0)",
+      "id": 12,
+      "name": "EV012",
+      "x": 69,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 55,0)",
+      "id": 13,
+      "name": "EV013",
+      "x": 55,
+      "y": 0,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "100",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                6,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "Paralyze1",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 15,
+                      "parameters": [
+                        20
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 15,
+                  "_params": [
+                    20
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}

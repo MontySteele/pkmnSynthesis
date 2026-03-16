@@ -1,0 +1,1489 @@
+{
+  "_comment": "Route 4 Rework (auto-generated)",
+  "_parity": {
+    "original_map": 106,
+    "events": 9,
+    "dimensions": "60x42"
+  },
+  "mode": "clone",
+  "map_id": 1480,
+  "clone_from": 106,
+  "clear_events": true,
+  "map_info": {
+    "name": "Route 4 (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 8,26)",
+      "id": 1,
+      "name": "EV001",
+      "x": 8,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveEntranceEx(false)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEscapePoint"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1468,
+                15,
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 34,12)",
+      "id": 2,
+      "name": "EV002",
+      "x": 34,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "vortex",
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "Step into the strange vortex?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                0,
+                {
+                  "_move_route": [
+                    {
+                      "code": 37,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 37,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 12,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 38,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 12,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 38,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 207,
+              "indent": 1,
+              "parameters": [
+                -1,
+                9
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                100
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 241,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "fusion_reversed",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                100
+              ]
+            },
+            {
+              "code": 201,
+              "indent": 1,
+              "parameters": [
+                0,
+                1395,
+                9,
+                9,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 223,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                10
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 816
+          }
+        }
+      ]
+    },
+    {
+      "_comment": " (orig: 51,24)",
+      "id": 4,
+      "name": "EV004",
+      "x": 50,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (22)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "That cave up there... Something about it feels unnatural."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I bet you could find some crazy-strong Pok??mon if you "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "found a way inside."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 10,2)",
+      "id": 5,
+      "name": "EV005",
+      "x": 10,
+      "y": 2,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "008s",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "That's it, that's every last one of them!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Now that you've mapped the entire route, you should be "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "able to find this route's \\C[1]rare encounter\\C[0] with your "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "Pok??radar."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "If Prof Oaks's predictions are correct, it should be a "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "Normal-type Pok??mon called \\C[1]Buneary\\C[0]. Use the "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "Pok??radar and see if you can find one!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "C",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                2,
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "You're almost there! There's only one more Pok??mon that "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "should appear on this route at this time of day."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "It's the Pok??mon called \\C[1]\\V[1]\\C[0]. It must be pretty "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "rare!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "According to my research, there should still be \\V[2] more "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "Pok??mon that you can encounter on this route at this time "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "of the day."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Your Pok??radar's light will flash green when you have "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "encountered every Pok??mon on a route. Come and see me "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "when it does!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 17,34)",
+      "id": 6,
+      "name": "EV006",
+      "x": 17,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveEntranceEx(false)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEscapePoint"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1297,
+                31,
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                6
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 210,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV007 (orig: 32,24)",
+      "id": 7,
+      "name": "EV007",
+      "x": 32,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 2541,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                109,
+                109,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Mettre celui utilis?? en dernier. L'ordre des deux "
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "autre pas important."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "supereffective berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Stats affecting berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "other berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "all berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Regular berries"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[109]="
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "[PBItems::CHERIBERRY,PBItems::CHESTOBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::PECHABERRY,PBItems::RAWSTBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ASPEARBERRY,PBItems::LEPPABERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ORANBERRY,PBItems::PERSIMBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::LUMBERRY,PBItems::SITRUSBERRY]"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "n = rand(pbGet(109).size)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "item = pbGet(109)[n]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "Kernel.pbItemBall(item,rand(1)+1)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Time event"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEventTime"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "There's nothing there."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV008 (orig: 33,24)",
+      "id": 8,
+      "name": "EV008",
+      "x": 32,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 2541,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                109,
+                109,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Mettre celui utilis?? en dernier. L'ordre des deux "
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "autre pas important."
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "################################"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "supereffective berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Stats affecting berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "other berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "all berries"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Regular berries"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_variables[109]="
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "[PBItems::CHERIBERRY,PBItems::CHESTOBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::PECHABERRY,PBItems::RAWSTBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ASPEARBERRY,PBItems::LEPPABERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::ORANBERRY,PBItems::PERSIMBERRY,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "PBItems::LUMBERRY,PBItems::SITRUSBERRY]"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "n = rand(pbGet(109).size)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "item = pbGet(109)[n]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "Kernel.pbItemBall(item,rand(1)+1)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Time event"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#####"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEventTime"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "There's nothing there."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 53,17)",
+      "id": 9,
+      "name": "EV009",
+      "x": 53,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCaveEntrance"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1113,
+                33,
+                27,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer(4) (orig: 39,25)",
+      "id": 15,
+      "name": "Trainer(4)",
+      "x": 38,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW008",
+            "direction": 6
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerIntro(:LASS)"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_lass",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbNoticePlayer(get_character(0)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ")"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hah! I must be strong! I'm the only trainer on this "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Route!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::LASS,\"Crissy\",_I(\"Not the only trainer anymore...\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW008",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Why did you need to ruin my day??"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

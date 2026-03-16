@@ -1,0 +1,1218 @@
+{
+  "_comment": "Diglett's Cave Rework (auto-generated)",
+  "_parity": {
+    "original_map": 140,
+    "events": 7,
+    "dimensions": "30x40"
+  },
+  "mode": "clone",
+  "map_id": 1655,
+  "clone_from": 140,
+  "clear_events": true,
+  "map_info": {
+    "name": "Diglett's Cave (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 24,29)",
+      "id": 1,
+      "name": "EV001",
+      "x": 23,
+      "y": 30,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1529,
+                10,
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                6
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 210,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "diglettController (orig: 21,15)",
+      "id": 2,
+      "name": "diglettController",
+      "x": 22,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Earth1",
+                  "_vol": 75,
+                  "_pitch": 140
+                }
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "MAX NM OF EVENTS"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                4,
+                4,
+                0,
+                0,
+                61
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "for ev in 8..pbGet(4)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " pbSetSelfSwitch(ev,\"B\",false)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "for event_id in 8..pbGet(4)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "x = rand(6)+4"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "y = rand(12)+14"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "e=$game_map.events[event_id]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "e.moveto(x,y)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_map.need_refresh = true"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "for ev in 8..pbGet(4)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " pbSetSelfSwitch(ev,\"B\",true)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                45
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 6,5)",
+      "id": 3,
+      "name": "EV003",
+      "x": 6,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1534,
+                11,
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "code": 106,
+              "indent": 1,
+              "parameters": [
+                6
+              ]
+            },
+            {
+              "code": 208,
+              "indent": 1,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "code": 209,
+              "indent": 1,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": [
+                    {
+                      "code": 1,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": true
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_move_cmd": 1,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 210,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "TYPE_EXPERT_GROUND (orig: 16,15)",
+      "id": 4,
+      "name": "TYPE_EXPERT_GROUND",
+      "x": 15,
+      "y": 16,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "walk",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "type_expert_battle(:GROUND)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "walk",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You beat me at my own game. I'll never be able to live it "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "down!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "StrengthBoulder (orig: 15,17)",
+      "id": 5,
+      "name": "StrengthBoulder",
+      "x": 16,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (8)",
+            "direction": 2,
+            "pattern": 1
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPushThisBoulder"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 20,22)",
+      "id": 6,
+      "name": "EV006",
+      "x": 20,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 3
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "##################################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Enlever les random encounters sur cette map"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "###################################################"
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                2
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 112,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                124,
+                124,
+                0,
+                2,
+                0,
+                29
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                125,
+                125,
+                0,
+                2,
+                0,
+                39
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "$game_map.passable?(pbGet(124),pbGet(125),2)"
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 2,
+              "parameters": [
+                0,
+                1,
+                124,
+                125,
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 413,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                20
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                2
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "051",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "051Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Dahh Duururu!"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                123,
+                123,
+                0,
+                2,
+                17,
+                23
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbWildBattle(PBSpecies::DUGTRIO,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbGet(123))"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                2
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "###################################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Desactiver interrupteur local A dans parcours"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "pis utiliser les self switches pour les autres digletts aussi"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 20,19)",
+      "id": 11,
+      "name": "EV011",
+      "x": 20,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 8,
+            "pattern": 3
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "##################################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Enlever les random encounters sur cette map"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "###################################################"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                30
+              ]
+            },
+            {
+              "code": 112,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                124,
+                124,
+                0,
+                2,
+                0,
+                29
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                125,
+                125,
+                0,
+                2,
+                0,
+                39
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "$game_map.passable?(pbGet(124),pbGet(125),2)"
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 2,
+              "parameters": [
+                0,
+                1,
+                124,
+                125,
+                0
+              ]
+            },
+            {
+              "code": 113,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 413,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                50
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                2
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "051",
+            "direction": 2
+          },
+          "trigger": 2,
+          "move_type": 3,
+          "through": true,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "051Cry",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Dih Didididi!"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                123,
+                123,
+                0,
+                2,
+                13,
+                18
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Cave\""
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbWildBattle(PBSpecies::DUGTRIO,pbGet(123))"
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                10
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 207,
+              "parameters": [
+                0,
+                2
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "###################################################"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "Desactiver interrupteur local A dans parcours"
+              ]
+            },
+            {
+              "code": 408,
+              "parameters": [
+                "pis utiliser les self switches pour les autres digletts aussi"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

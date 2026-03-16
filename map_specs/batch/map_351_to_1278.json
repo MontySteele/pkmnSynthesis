@@ -1,0 +1,432 @@
+{
+  "_comment": "Route 9 Rework (auto-generated)",
+  "_parity": {
+    "original_map": 351,
+    "events": 3,
+    "dimensions": "42x30"
+  },
+  "mode": "clone",
+  "map_id": 1278,
+  "clone_from": 351,
+  "clear_events": true,
+  "map_info": {
+    "name": "Route 9 (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 24,5)",
+      "id": 1,
+      "name": "EV001",
+      "x": 23,
+      "y": 5,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 2,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::TM95)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 33,3)",
+      "id": 2,
+      "name": "EV002",
+      "x": 32,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Using your Pok??mon to climb up waterfalls, that's pretty "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "clever!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you want to know how I do it without a Pok??mon?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Show me a Pok??mon that knows the moves \\C[1]Aqua Jet, "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Waterfall\\C[0] and \\C[1]Fly\\C[0] and I'll teach you the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "secret!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " !(poke.isShadow? rescue false) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " poke.knowsMove?(:AQUAJET)&&"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " poke.knowsMove?(:WATERFALL)&&"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " poke.knowsMove?(:FLY)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "No, no, no! It needs to know all three moves!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "That's it! You're obviously a connoisseur of water sports, "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "so I'm surprised you didn't know already."
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "But anyway, the secret to climb waterfalls is to use a "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "water propelled \\C[1]Jetpack\\C[0] like this one!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::JETPACK)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "And it's super fun to use too!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "This \\C[1]Jetpack\\C[0] I gave you allows you to go up "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "waterfalls without a Pok??mon."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "And it's also totally rad!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 18,13)",
+      "id": 4,
+      "name": "EV004",
+      "x": 17,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8,
+            "pattern": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbItemBall(PBItems::TM43)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8622 @@
+{
+  "_comment": "Cinnabar Island Gym Rework (auto-generated)",
+  "_parity": {
+    "original_map": 221,
+    "events": 43,
+    "dimensions": "40x25"
+  },
+  "mode": "clone",
+  "map_id": 1338,
+  "clone_from": 221,
+  "clear_events": true,
+  "map_info": {
+    "name": "Cinnabar Island Gym (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 25,11)",
+      "id": 1,
+      "name": "EV001",
+      "x": 26,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1929,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1932,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 1
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 14,4)",
+      "id": 2,
+      "name": "EV002",
+      "x": 14,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW_Blaine",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "PokemonSelection.restore"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hah! I am Blaine! I am the Leader of Cinnabar Gym!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "My \\V[5] Pok??mon will incinerate all challengers! Hah! You "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "better have Burn Heal!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll allow 4 Pok??mon for this fight, so choose wisely!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "PokemonSelection.choose(1,4, true,true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBack=\"Blaine\""
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                0,
+                921,
+                0
+              ]
+            },
+            {
+              "code": 117,
+              "indent": 2,
+              "parameters": [
+                18
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "$PokemonGlobal.nextBattleBGM=\"kanto_gym_battle-BW\""
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::LEADER_Blaine,\"Blaine\",_I(\"I have burnt out! You have earned the VolcanoBadge!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "PokemonSelection.restore"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "$Trainer.badges[6]=true"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 2,
+              "parameters": [
+                10,
+                10,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "I have burnt out! You have earned the Volcano Badge!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "obtainBadgeMessage(\"Volcano Badge\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "obtainHat(HAT_GYM_REWARD_7)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Hah! The Volcano Badge heightens the abilities of your "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "Pok??mon! Here, you can have this too!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::TM38)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "TM38 contains FIRE BLAST! Teach it to fire-type "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 2,
+              "parameters": [
+                "Pok??mon!"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 2,
+              "parameters": [
+                111,
+                111,
+                1,
+                0,
+                3
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 2,
+              "parameters": [
+                {
+                  "_audio": "itemlevel",
+                  "_vol": 50,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "\\C[3]\\PN obtained 3 Premium Wonder Trade ticket!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Come back when you are ready to challenge me!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbTrainerEnd"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "PokemonSelection.restore"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW_Blaine",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Fire Blast is the ultimate fire technique! Don't waste it on "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "water Pok??mon!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(1,HAT_GYM_REWARD_7)"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "!hasHat?(pbGet(1))"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "obtainHat(pbGet(1))"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 10
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 26,11)",
+      "id": 3,
+      "name": "EV003",
+      "x": 26,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1930,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 1
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 27,11)",
+      "id": 4,
+      "name": "EV004",
+      "x": 28,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1931,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1928,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 1
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV005 (orig: 19,11)",
+      "id": 5,
+      "name": "EV005",
+      "x": 18,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1929,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1932,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 2
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV006 (orig: 20,11)",
+      "id": 6,
+      "name": "EV006",
+      "x": 20,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1930,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 2
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV007 (orig: 21,11)",
+      "id": 7,
+      "name": "EV007",
+      "x": 22,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1931,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1928,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 2
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV008 (orig: 17,17)",
+      "id": 8,
+      "name": "EV008",
+      "x": 17,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1929,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1932,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 3
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV009 (orig: 18,17)",
+      "id": 9,
+      "name": "EV009",
+      "x": 17,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1930,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 3
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV010 (orig: 19,17)",
+      "id": 10,
+      "name": "EV010",
+      "x": 18,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1931,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1928,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 3
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV011 (orig: 5,17)",
+      "id": 11,
+      "name": "EV011",
+      "x": 5,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1929,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1932,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 5
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV012 (orig: 7,17)",
+      "id": 12,
+      "name": "EV012",
+      "x": 7,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1931,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1928,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 5
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 6,17)",
+      "id": 13,
+      "name": "EV013",
+      "x": 6,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1930,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 5
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV014 (orig: 5,11)",
+      "id": 14,
+      "name": "EV014",
+      "x": 5,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1929,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1932,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 6
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV015 (orig: 6,11)",
+      "id": 15,
+      "name": "EV015",
+      "x": 6,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1930,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 6
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV016 (orig: 7,11)",
+      "id": 16,
+      "name": "EV016",
+      "x": 7,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1931,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "tile_id": 1928,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 6
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV017 (orig: 32,13)",
+      "id": 17,
+      "name": "EV017",
+      "x": 32,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #1: A fusion between Charmander and Ponyta "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "evolves at which level?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "28",
+                  "40",
+                  "16",
+                  "Does not evolve."
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "28"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "40"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "16"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(22,\"B\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(17,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(34,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Does not evolve."
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                22,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I was a thief, but I became straight as a trainer!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BURGLAR,\"Quinn\",_I(\"I surrender!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(22,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(17,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(34,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #1: A fusion between Charmander and Ponyta "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "evolves at which level?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 16."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV018 (orig: 20,7)",
+      "id": 18,
+      "name": "EV018",
+      "x": 20,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #2: Which of these Pok??mon is not Steel type?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Lucario",
+                  "Nosepass",
+                  "Jirachi",
+                  "Mawile"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Lucario"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Nosepass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"B\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Jirachi"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Mawile"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                24,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you know how hot Pok??mon fire breath can get?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Erik\",_I(\"Yow! Hot, hot, hot!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "Which of these Pok??mon is not Steel type?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was Nosepass."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV019 (orig: 28,24)",
+      "id": 19,
+      "name": "EV019",
+      "x": 27,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1435,
+                52,
+                12,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV020 (orig: 29,24)",
+      "id": 20,
+      "name": "EV020",
+      "x": 30,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1435,
+                52,
+                12,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV021 (orig: 30,24)",
+      "id": 21,
+      "name": "EV021",
+      "x": 30,
+      "y": 24,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                -1
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1435,
+                52,
+                12,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "tr1 (orig: 30,13)",
+      "id": 22,
+      "name": "tr1",
+      "x": 30,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW025",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Yo! You need to answer the question on this computer right "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "here to open the gate."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW025",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I was a thief, but I became straight as a trainer!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BURGLAR,\"Quinn\",_I(\"I surrender!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(22,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(17,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(34,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW025",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "One wrong answer here and it'll be the end of you!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV023 (orig: 27,20)",
+      "id": 23,
+      "name": "EV023",
+      "x": 28,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Yo! Champ in making! The hot-headed Blaine is a \\V[5]"
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon pro!   "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You better take some Burn "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Heals! Douse his spirits with water! "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Take this!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(:FRESHWATER)\t"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Yo! Champ in making! The hot-headed Blaine is a \\V[5]"
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon pro!   "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Douse his spirits with water! You better take some Burn "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Heals!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\PN! You beat that fire brand!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 10
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "tr2 (orig: 22,7)",
+      "id": 24,
+      "name": "tr2",
+      "x": 23,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Next is question #2! It's not an easy one!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you know how hot Pok??mon \\V[5]??breath can get?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Erik\",_I(\"Yow! Hot, hot, hot!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym-1]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\V[5], or to be more precise, combustion..."
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Blah, blah, blah, blah..."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV025 (orig: 11,21)",
+      "id": 25,
+      "name": "EV025",
+      "x": 11,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1939,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 4
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV026 (orig: 11,22)",
+      "id": 26,
+      "name": "EV026",
+      "x": 11,
+      "y": 22,
+      "pages": [
+        {
+          "graphic": {
+            "tile_id": 1947,
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "variable_valid": true,
+            "variable_id": 117,
+            "variable_value": 4
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "tr3 (orig: 16,13)",
+      "id": 27,
+      "name": "tr3",
+      "x": 15,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW025",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "These questions are pretty tricky, eh?"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW025",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I just like using \\V[5] Pok??mon!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BURGLAR,\"Ramon\",_I(\"Too hot to handle!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(28,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(36,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW025",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I wish there was a thief Pok??mon! I'd use that!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV028 (orig: 14,13)",
+      "id": 28,
+      "name": "EV028",
+      "x": 14,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #3: Which type is Super-effective against a "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Fire/Grass Pok??mon?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Water",
+                  "Rock",
+                  "Ground",
+                  "None"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Water"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Rock"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(27,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(28,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(36,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Ground"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "None"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                27,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I just like using fire Pok??mon!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BURGLAR,\"Ramon\",_I(\"Too hot to handle!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(27,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(28,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(36,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #3: Which type is Super-effective against a "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Fire/Grass Pok??mon?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was Rock."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "tr4 (orig: 16,19)",
+      "id": 29,
+      "name": "tr4",
+      "x": 15,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,29) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Heheh, this next question is sure to stump you!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,29) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You can't win! I have studied Pok??mon totally!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Avery\",_I(\"Waah! My studies!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(30,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(37,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "My theories are too complicated for you!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV030 (orig: 14,19)",
+      "id": 30,
+      "name": "EV030",
+      "x": 14,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #4: A fusion with Oddish as the body and "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Rhyhorn as the head would have which typing?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Rock / Grass",
+                  "Rock / Poison",
+                  "Ground / Grass",
+                  "Ground / Poison"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Rock / Grass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Rock / Poison"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Ground / Grass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Ground / Poison"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(29,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(30,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(37,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                29,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,29) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You can't win! I have studied Pok??mon totally!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Avery\",_I(\"Waah! My studies!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(29,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(30,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(37,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #4: A fusion with Oddish as the body and "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Rhyhorn as the head would have which typing?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was Ground / Poison."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV031 (orig: 8,19)",
+      "id": 31,
+      "name": "EV031",
+      "x": 8,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #5: How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "3"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "4"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "5"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "6"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(32,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(31,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                32,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,32) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You can't win! I have studied Pok??mon totally!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Derek\",_I(\"Ow!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(32,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(31,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #5: How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 6"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "tr5 (orig: 9,20)",
+      "id": 32,
+      "name": "tr5",
+      "x": 8,
+      "y": 20,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,32) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You better know how to count for this next question!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,32) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I know why Blaine became a trainer!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Derek\",_I(\"Ow!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(31,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Blaine was lost in the mountains when a fiery bird "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pok??mon appeared. Its light enabled Blaine to find his way "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "down!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "tr6 (orig: 8,13)",
+      "id": 33,
+      "name": "tr6",
+      "x": 8,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,33) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Blaine let me come up with this final question myself! I'm "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "quite proud of it."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "if $game_switches[987]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = pbGet(151)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "else"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "gymArray = GYM_TYPES_ARRAY"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "currentGym = pbGet(152)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "typeIndex = gymArray[currentGym]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type = PBTypes.getName(typeIndex)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_variables[5] = type"
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,33) "
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,33) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\V[5] is weak against H2O!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Zac\",_I(\"Oh! Snuffed out!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(33,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(39,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(38,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Water beats fire! But, fire melts ice Pok??mon!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV034 (orig: 33,13)",
+      "id": 34,
+      "name": "EV034",
+      "x": 32,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #1: A fusion between Charmander and Ponyta "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "evolves at which level?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "28",
+                  "40",
+                  "16",
+                  "Does not evolve."
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "28"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "40"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "16"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(22,\"B\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(17,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(34,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Does not evolve."
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                22,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I was a thief, but I became straight as a trainer!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BURGLAR,\"Quinn\",_I(\"I surrender!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(22,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(17,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(34,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #1: A fusion between Charmander and Ponyta "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "evolves at which level?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 16."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV035 (orig: 19,7)",
+      "id": 35,
+      "name": "EV035",
+      "x": 18,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #2: Which of these Pok??mon is not Steel type?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Lucario",
+                  "Nosepass",
+                  "Jirachi",
+                  "Mawile"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Lucario"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Nosepass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"B\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Jirachi"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Mawile"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                24,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you know how hot Pok??mon fire breath can get?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Erik\",_I(\"Yow! Hot, hot, hot!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 6."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV036 (orig: 13,13)",
+      "id": 36,
+      "name": "EV036",
+      "x": 14,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #3: Which type is Super-effective against a "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Fire/Grass Pok??mon?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Water",
+                  "Rock",
+                  "Ground",
+                  "None"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Water"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Rock"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(27,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(28,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(36,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Ground"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "None"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                27,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,22) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I just like using fire Pok??mon!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::BURGLAR,\"Ramon\",_I(\"Too hot to handle!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(27,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(28,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(36,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #3: Which type is Super-effective against a "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Fire/Grass Pok??mon?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was Rock."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV037 (orig: 13,19)",
+      "id": 37,
+      "name": "EV037",
+      "x": 14,
+      "y": 18,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #4: A fusion with Oddish as the body and "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Rhyhorn as the head would have which typing?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Rock / Grass",
+                  "Rock / Poison",
+                  "Ground / Grass",
+                  "Ground / Poison"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Rock / Grass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Rock / Poison"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Ground / Grass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Ground / Poison"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(29,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(30,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(37,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                29,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,29) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You can't win! I have studied Pok??mon totally!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Avery\",_I(\"Waah! My studies!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(29,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(30,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(37,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #4: A fusion with Oddish as the body and "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Rhyhorn as the head would have which typing?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was Ground / Poison."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV038 (orig: 4,13)",
+      "id": 38,
+      "name": "EV038",
+      "x": 3,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #6: Which TM contains the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "move TOMBSTONER?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "TM28",
+                  "TM36",
+                  "TM94",
+                  "None"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "TM28"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "TM36"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "TM94"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "None"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(33,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(39,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(38,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                33,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,33) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Fire is weak against H2O!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Zac\",_I(\"Oh! Snuffed out!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(33,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(39,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(38,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #6: Which TM contains the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "move TOMBSTONER?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 'None'."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV039 (orig: 3,13)",
+      "id": 39,
+      "name": "EV039",
+      "x": 3,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #6: Which TM contains the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "move TOMBSTONER?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "TM28",
+                  "TM36",
+                  "TM94",
+                  "None"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "TM28"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "TM36"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "TM94"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "None"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(33,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(39,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(38,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                33,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,33) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Fire is weak against H2O!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Zac\",_I(\"Oh! Snuffed out!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(33,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(39,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(38,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV040 (orig: 20,4)",
+      "id": 40,
+      "name": "EV040",
+      "x": 20,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #5: Which of these Pok??mon is not Steel type?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Lucario",
+                  "Nosepass",
+                  "Jirachi",
+                  "Cobalion"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Lucario"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "Nosepass"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(32,\"B\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(31,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "Jirachi"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "Cobalion"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                32,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,32) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You can't win! I have studied Pok??mon totally!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Derek\",_I(\"Ow!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(32,\"A\",true)"
+              ]
+            },
+            {
+              "code": 108,
+              "indent": 1,
+              "parameters": [
+                "Machines"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(31,\"A\",true)"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #5: Which of these Pok??mon is not Steel type?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was  Nosepass."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV041 (orig: 11,18)",
+      "id": 41,
+      "name": "EV041",
+      "x": 11,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #2: How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "3"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "4"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "5"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "6"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"B\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                24,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you know how hot Pok??mon fire breath can get?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Erik\",_I(\"Yow! Hot, hot, hot!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 6."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV042 (orig: 21,2)",
+      "id": 42,
+      "name": "EV042",
+      "x": 22,
+      "y": 2,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "QUESTION #2: How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "3",
+                  "4",
+                  "5",
+                  "6"
+                ],
+                0
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "3"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "4"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                2,
+                "5"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "buzzer",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "WRONG! Prepare to fight!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                3,
+                "6"
+              ]
+            },
+            {
+              "code": 250,
+              "indent": 1,
+              "parameters": [
+                {
+                  "_audio": "navopen",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Correct! Proceed to the next room."
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"B\",true)"
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "FIGHT"
+              ]
+            },
+            {
+              "code": 209,
+              "parameters": [
+                24,
+                {
+                  "_move_route": [
+                    {
+                      "code": 25,
+                      "parameters": [
+
+                      ]
+                    },
+                    {
+                      "code": 0,
+                      "parameters": [
+
+                      ]
+                    }
+                  ],
+                  "_repeat": false,
+                  "_skippable": false
+                }
+              ]
+            },
+            {
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_cmd": 25,
+                  "_params": [
+
+                  ]
+                }
+              ]
+            },
+            {
+              "code": 249,
+              "parameters": [
+                {
+                  "_audio": "spotted_psychic",
+                  "_vol": 100,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Do you know how hot Pok??mon fire breath can get?"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::SUPERNERD,\"Erik\",_I(\"Yow! Hot, hot, hot!\"),false,0,false)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(24,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(18,\"A\",true)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSetSelfSwitch(35,\"A\",true)"
+              ]
+            },
+            {
+              "code": 122,
+              "indent": 1,
+              "parameters": [
+                117,
+                117,
+                1,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "How many types are Not Very Effective "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "against Fire-type Pok??mon?"
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "The correct answer was 6."
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Proceed to next room."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV043 (orig: 39,23)",
+      "id": 43,
+      "name": "EV043",
+      "x": 39,
+      "y": 23,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "m_id = $game_map.map_id"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "for event in $game_map.events.values"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_self_switches[[m_id ,event.id,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_self_switches[[m_id ,event.id,\"B\"]]=false"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 727
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

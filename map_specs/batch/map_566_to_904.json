@@ -1,0 +1,194 @@
+{
+  "_comment": "Resort Gorgeous Rework (auto-generated)",
+  "_parity": {
+    "original_map": 566,
+    "events": 1,
+    "dimensions": "41x30"
+  },
+  "mode": "clone",
+  "map_id": 904,
+  "clone_from": 566,
+  "clear_events": true,
+  "map_info": {
+    "name": "Resort Gorgeous (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 26,13)",
+      "id": 1,
+      "name": "EV001",
+      "x": 26,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 108,
+              "parameters": [
+                "set Pokemon"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "customs=getCustomSpeciesList(true,false)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "poke = getRandomCustomFusion(true,customs)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(203,poke[0])"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(204,poke[1])"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[630,4,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSetEventTime"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1255,
+                9,
+                11,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1255,
+                9,
+                11,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 121,
+              "parameters": [
+                24,
+                24,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 24,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

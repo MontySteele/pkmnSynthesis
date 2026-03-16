@@ -1,0 +1,162 @@
+{
+  "_comment": "Route 1 Rework (auto-generated)",
+  "_parity": {
+    "original_map": 97,
+    "events": 2,
+    "dimensions": "42x50"
+  },
+  "mode": "clone",
+  "map_id": 1429,
+  "clone_from": 97,
+  "clear_events": true,
+  "map_info": {
+    "name": "Route 1 (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV002 (orig: 17,26)",
+      "id": 2,
+      "name": "EV002",
+      "x": 17,
+      "y": 26,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (34)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Viridian City is just down the road."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Avoid the tall grass if your Pokemon are hurt!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 16,34)",
+      "id": 3,
+      "name": "EV003",
+      "x": 15,
+      "y": 34,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (85)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hi, I work at a Pokemon Mart. It's a convenient shop, so "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "please visit us in Viridian City!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Here, have a sample!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::POTION)"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (85)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 101,
+              "parameters": [
+                "We also carry Pokeballs for catching Pokemon!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

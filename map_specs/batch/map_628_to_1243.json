@@ -1,0 +1,3207 @@
+{
+  "_comment": "Kin Island Rework (auto-generated)",
+  "_parity": {
+    "original_map": 628,
+    "events": 17,
+    "dimensions": "20x20"
+  },
+  "mode": "clone",
+  "map_id": 1243,
+  "clone_from": 628,
+  "clear_events": true,
+  "map_info": {
+    "name": "Kin Island (Synthesis)",
+    "parent_id": 223
+  },
+  "events": [
+    {
+      "_comment": "EV001 (orig: 8,16)",
+      "id": 1,
+      "name": "EV001",
+      "x": 8,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[563,24,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1648,
+                19,
+                11,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV002 (orig: 9,16)",
+      "id": 2,
+      "name": "EV002",
+      "x": 8,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[563,24,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1648,
+                19,
+                11,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV003 (orig: 10,16)",
+      "id": 3,
+      "name": "EV003",
+      "x": 10,
+      "y": 15,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 1,
+          "commands": [
+            {
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door",
+                  "_vol": 80,
+                  "_pitch": 100
+                }
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[563,24,\"A\"]]=true"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1648,
+                19,
+                11,
+                0,
+                1
+              ]
+            },
+            {
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": "raw"
+                },
+                6
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV004 (orig: 9,11)",
+      "id": 4,
+      "name": "EV004",
+      "x": 8,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW021",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hello there! Welcome to the Pokémon Appreciation Club!"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                12,
+                "listLegendaryPokemonIds().include?(pbGet(244))"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Today is a special day! It's all about about appreciating the "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "rare Pok??mon \\C[1]\\V[1]\\C[0]!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Today is all about appreciating the Pokémon called "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "\\C[1]\\V[1]\\C[0]."
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Feel free to chat about \\V[1] with everyone here!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 467
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "poke (orig: 15,7)",
+      "id": 5,
+      "name": "poke",
+      "x": 16,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 117,
+              "parameters": [
+                68
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "pokeChanger (orig: 4,17)",
+      "id": 6,
+      "name": "pokeChanger",
+      "x": 3,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "events = [5,7,8]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "species= getSpecies(pbGet(244)).species.to_s"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "path=\"Followers\\\\\""
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "for i in events"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  event = $game_map.events[i]"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  event.character_name= path+species"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "  event.refresh"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "end"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "poke (orig: 4,7)",
+      "id": 7,
+      "name": "poke",
+      "x": 3,
+      "y": 7,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 117,
+              "parameters": [
+                68
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "poke (orig: 16,14)",
+      "id": 8,
+      "name": "poke",
+      "x": 15,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 117,
+              "parameters": [
+                68
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer1 (orig: 7,6)",
+      "id": 9,
+      "name": "Trainer1",
+      "x": 7,
+      "y": 6,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                245,
+                245,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Trainer class"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(4,PBTrainers::COOLTRAINER_M)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 117,
+              "parameters": [
+                69
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Are you ready to fight?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSet(240,50)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "setBattleRule(\"noMoney\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "num = pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "#allowLegendaries only if beat mt. silver"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "a = $game_switches[BEAT_MT_SILVER]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "poke=generateRandomFusionFromPokemon(num,true,a)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "name = get_random_trainer_name(pbGet(4))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "trainerInfo = [poke,name]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(245,trainerInfo)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,poke)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"lounge_member_single\",_I(\"Ok, you won! That was fun!\"),false,0,false,1,pbGet(245)[1],pbGet(4))"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Trainer class"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(4,PBTrainers::COOLTRAINER_M)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I simply can't get enough of \\V[1]! Oh, did you want a "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "rematch?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSet(240,50)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "setBattleRule(\"noMoney\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "num = pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "poke=pbGet(245)[0]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,poke)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"lounge_member_single\",_I(\"Ok, you won! That was fun!\"),false,0,false,1,pbGet(245)[1],pbGet(4))"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 115,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer2 (orig: 16,8)",
+      "id": 10,
+      "name": "Trainer2",
+      "x": 15,
+      "y": 8,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                246,
+                246,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Trainer class"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(4,PBTrainers::COOLTRAINER_M)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 117,
+              "parameters": [
+                69
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Are you ready to fight?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSet(240,50)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "setBattleRule(\"noMoney\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "num = pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "#allowLegendaries only if beat mt. silver"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "a = $game_switches[BEAT_MT_SILVER]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "poke=generateRandomFusionFromPokemon(num,true,a)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "name = get_random_trainer_name(pbGet(4))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "trainerInfo = [poke,name]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(246,trainerInfo)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,poke)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"lounge_member_single\",_I(\"Ok, you won! That was fun!\"),false,0,false,1,pbGet(246)[1],pbGet(4))"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Trainer class"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(4,PBTrainers::COOLTRAINER_M)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\V[1]??is simply too good for this world! Oh, a rematch? I'm "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "up for it!"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSet(240,50)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "setBattleRule(\"noMoney\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "num = pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "poke=pbGet(246)[0]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,poke)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"lounge_member_single\",_I(\"Ok, you won! That was fun!\"),false,0,false,1,pbGet(246)[1],pbGet(4))"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer3 (orig: 4,10)",
+      "id": 11,
+      "name": "Trainer3",
+      "x": 3,
+      "y": 10,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                247,
+                247,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Trainer class"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbSet(4,PBTrainers::COOLTRAINER_M)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 117,
+              "parameters": [
+                69
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Are you ready to fight?"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbSet(240,50)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "setBattleRule(\"noMoney\")"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "num = pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "#allowLegendaries only if beat mt. silver"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "a = $game_switches[BEAT_MT_SILVER]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "poke=generateRandomFusionFromPokemon(num,true,a)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "name = get_random_trainer_name(pbGet(4))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "trainerInfo = [poke,name]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(247,trainerInfo)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,poke)"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::COOLTRAINER_F,\"lounge_member_single\",_I(\"Ok, you won! That was fun!\"),false,0,false,1,pbGet(247)[1],pbGet(4))"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 121,
+              "indent": 1,
+              "parameters": [
+                785,
+                785,
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "trainer_poke = getPokemon(pbGet(247)[0])"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,trainer_poke.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Hey, would be interested to trade a Pokémon for my"
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "\\C[1]\\V[1]\\C[0] by the way?"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I'll take any \\C[1]\\V[1] fusion\\C[0] in exchange!"
+              ]
+            },
+            {
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Great! So which Pokemon are you going to give me?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                " !(poke.isShadow? rescue false) && "
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "Kernel.isPartPokemon(poke.species,pbGet(244)) &&"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "dexNum(poke.species) != pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "indent": 1,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Come back before tomorrow if you change your mind!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "num = pbGet(244)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "poke=pbGet(247)[0]"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(2,poke)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Perfect, let's get started!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "name= getPokemon(pbGet(247)[0]).real_name"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbStartTrade(pbGet(1),"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbGet(2),name,pbGet(247)[1],0)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "#poke=pbGetPokemon(1)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "#poke.level=11"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 2,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 2,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 2,
+              "parameters": [
+                "Long live \\V[1]!"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 2,
+              "parameters": [
+                "B",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 2,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Come back before tomorrow if you change your mind!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 404,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (41)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\V[1] are truly great. I can't get enough."
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "B"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "trainerMover (orig: 6,17)",
+      "id": 12,
+      "name": "trainerMover",
+      "x": 6,
+      "y": 17,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 4,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                2,
+                2,
+                0,
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                9,
+                0,
+                4,
+                10,
+                6
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                10,
+                0,
+                7,
+                6,
+                2
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                11,
+                0,
+                13,
+                8,
+                4
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                2,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                10,
+                0,
+                4,
+                10,
+                6
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                11,
+                0,
+                7,
+                6,
+                2
+              ]
+            },
+            {
+              "code": 202,
+              "indent": 1,
+              "parameters": [
+                9,
+                0,
+                13,
+                8,
+                4
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV013 (orig: 13,6)",
+      "id": 13,
+      "name": "EV013",
+      "x": 14,
+      "y": 6,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 3,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pbPokeCenterPC"
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                1
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer2 (orig: 17,11)",
+      "id": 14,
+      "name": "Trainer2",
+      "x": 17,
+      "y": 11,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "\\C[1]\\V[1]\\C[0] has always been one of my favourite "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "Pokémon!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "I believe it has a very unique typing as well. It must be the "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "only one of its kind!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "You disagree? Hohoho! Well prove me wrong, will ya? Show "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "me a Pokémon that has the same type as \\C[1]\\V[1]\\C[0] "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "and I might believe you."
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "type1 = getPokemon(pbGet(244)).type1"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "type2 = getPokemon(pbGet(244)).type2"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbChoosePokemon(1,2,"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "proc {|poke|"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " !poke.egg? &&"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                " !(poke.isShadow? rescue false) && "
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "dexNum(poke.species) != pbGet(244) && ("
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "poke.type1 == type1  && poke.type2 == type2  ||"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "poke.type2 == type1  && poke.type1 == type2)"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "})"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                1,
+                1,
+                0,
+                -1,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "No other Pokémon could possibly have the same type "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "combination as \\V[1]. I'm almost certain of it!"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Ah, yes! Of course!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "This Pokémon has the exact same typing as \\V[1]. How "
+              ]
+            },
+            {
+              "code": 401,
+              "indent": 1,
+              "parameters": [
+                "could I not see this?"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "indent": 1,
+              "parameters": [
+                "Hohoho! I stand corrected. Here's for you!"
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "Kernel.pbReceiveItem(PBItems::NUGGET)\t"
+              ]
+            },
+            {
+              "code": 123,
+              "indent": 1,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Who would've thought that there were other Pokémon so "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "similar to \\C[1]\\V[1]\\C[0]!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer2 (orig: 4,13)",
+      "id": 15,
+      "name": "Trainer2",
+      "x": 3,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (46)",
+            "direction": 6
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "We honor a different Pokémon everyday here. Today it's all "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "about \\C[1]\\V[1]\\C[0]!"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "But I love all kinds Pokémon so I end up coming back "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "every day anyway!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Who would've thought that there were other Pokémon so "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "similar to \\C[1]\\V[1]\\C[0]!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "Trainer2 (orig: 15,14)",
+      "id": 16,
+      "name": "Trainer2",
+      "x": 16,
+      "y": 14,
+      "pages": [
+        {
+          "graphic": {
+            "character_name": "BW (32)",
+            "direction": 2
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Some people come here to fight, but I'm just here to play "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "with all the cute \\C[1]\\V[1]\\C[0]!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        },
+        {
+          "graphic": {
+            "character_name": "BW (72)",
+            "direction": 4
+          },
+          "trigger": 0,
+          "move_type": 1,
+          "commands": [
+            {
+              "code": 355,
+              "parameters": [
+                "pokeOfTheDay = getPokemon(pbGet(244))"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "pbSet(1,pokeOfTheDay.real_name)"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "code": 101,
+              "parameters": [
+                "Who would've thought that there were other Pokémon so "
+              ]
+            },
+            {
+              "code": 401,
+              "parameters": [
+                "similar to \\C[1]\\V[1]\\C[0]!"
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
+        }
+      ]
+    },
+    {
+      "_comment": "EV017 (orig: 17,4)",
+      "id": 17,
+      "name": "EV017",
+      "x": 17,
+      "y": 3,
+      "pages": [
+        {
+          "graphic": {
+            "direction": 2
+          },
+          "trigger": 0,
+          "commands": [
+            {
+              "code": 122,
+              "parameters": [
+                244,
+                244,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "set Pokemon"
+              ]
+            },
+            {
+              "code": 111,
+              "parameters": [
+                0,
+                918,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pokeOfTheDay=getRandomBasePokemon(true)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(244,pokeOfTheDay)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 355,
+              "indent": 1,
+              "parameters": [
+                "pokeOfTheDay=getRandomBasePokemon(false)"
+              ]
+            },
+            {
+              "code": 655,
+              "indent": 1,
+              "parameters": [
+                "pbSet(244,pokeOfTheDay)"
+              ]
+            },
+            {
+              "code": 0,
+              "indent": 1,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "reset pokemon changer"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[628,6,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[628,12,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 108,
+              "parameters": [
+                "Reset trainers"
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                245,
+                245,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                246,
+                246,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 122,
+              "parameters": [
+                247,
+                247,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[628,9,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[628,10,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[628,11,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 655,
+              "parameters": [
+                "$game_self_switches[[628,11,\"B\"]]=false"
+              ]
+            },
+            {
+              "code": 355,
+              "parameters": [
+                "$game_self_switches[[628,14,\"A\"]]=false"
+              ]
+            },
+            {
+              "code": 201,
+              "parameters": [
+                0,
+                1243,
+                9,
+                15,
+                0,
+                0
+              ]
+            },
+            {
+              "code": 123,
+              "parameters": [
+                "A",
+                0
+              ]
+            },
+            {
+              "code": 0,
+              "parameters": [
+
+              ]
+            }
+          ],
+          "condition": {
+          }
+        }
+      ]
+    }
+  ]
+}
