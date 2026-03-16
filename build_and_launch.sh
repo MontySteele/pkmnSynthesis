@@ -598,13 +598,20 @@ RUBY
   # Remove things JoiPlay doesn't need that may have been copied
   rm -rf "$mobile_dir"/.git \
          "$mobile_dir"/.originals \
-         "$mobile_dir"/*.exe \
          "$mobile_dir"/*.dll \
          "$mobile_dir"/System \
          "$mobile_dir"/Game.rgssad \
          "$mobile_dir"/Game.rgss2a \
          "$mobile_dir"/Game.rgss3a \
          2>/dev/null || true
+
+  # JoiPlay requires a Game.exe to identify RPG Maker XP projects (it only
+  # accepts .exe/.sh/.py/.html as the "Executable"). It doesn't actually run
+  # the exe — the RPG Maker plugin takes over. Create a placeholder if the
+  # original wasn't copied or was stripped.
+  if [ ! -f "$mobile_dir/Game.exe" ]; then
+    touch "$mobile_dir/Game.exe"
+  fi
 
   # Create the ZIP (use max compression)
   info "Creating $zip_name (this may take a minute)..."
@@ -639,7 +646,7 @@ RUBY
   echo "  1. Transfer $zip_name to the phone"
   echo "  2. Extract it to internal storage (NOT Google Drive or SD card)"
   echo "  3. Install JoiPlay + RPG Maker XP plugin from the Play Store"
-  echo "  4. In JoiPlay, tap '+', set the executable to Game.ini, and"
+  echo "  4. In JoiPlay, tap '+', set the executable to Game.exe, and"
   echo "     point the game folder to the extracted PokemonSynthesis_Mobile directory"
   echo ""
   echo "See MOBILE_SETUP.txt for detailed instructions."
