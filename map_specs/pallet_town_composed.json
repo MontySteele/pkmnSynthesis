@@ -1,7 +1,7 @@
 {
   "_comment": "Pallet Town — redesigned cozy starter village (iteration 3 - polished)",
   "_design_notes": {
-    "concept": "A compact starter town clustered around a central crossroads. Oak's Lab sits prominently at the intersection. Player and Rival houses are on the west side, Pokecenter and Mart on the east. Dense tree borders all around. A pond in the southeast adds character.",
+    "concept": "A compact starter town clustered around a central crossroads. Oak's Lab sits prominently at the intersection. Player and Rival houses are on the west side, Pokecenter and Mart on the east. Dense tree borders all around.",
     "dimensions": "48x35",
     "flow": "South entrance -> Main road north -> Central plaza with Oak Lab -> West to houses -> East to services -> North exit"
   },
@@ -85,287 +85,230 @@
     }
   ],
   "stamps": [
-    {
-      "_comment": "=== BUILDINGS ===  Oak's Lab — central, just south of crossroads",
-      "stamp": "pallet_oak_lab",
-      "x": 19,
-      "y": 19
-    },
-    {
-      "_comment": "Player's House — west side (moved down to y=6 to avoid tree overlap)",
-      "stamp": "pallet_house_red",
-      "x": 7,
-      "y": 6
-    },
-    {
-      "_comment": "Rival's House — west side, below player's house",
-      "stamp": "pallet_house_rival",
-      "x": 7,
-      "y": 14
-    },
-    {
-      "_comment": "Pokemon Center — east side, upper",
-      "stamp": "viridian_pokecenter",
-      "x": 30,
-      "y": 4
-    },
-    {
-      "_comment": "Mart — east side, below pokecenter",
-      "stamp": "pewter_mart",
-      "x": 31,
-      "y": 13
-    },
-    {
-      "_comment": "Extra house — southeast of crossroads",
-      "stamp": "pallet_house_south",
-      "x": 32,
-      "y": 21
-    },
+    {"_comment": "=== TOP BORDER: viridian_tree_row_top (x=10-17, y=0-5) ===",
+     "stamp": "viridian_tree_row_top", "x": 10, "y": 0},
 
-    {
-      "_comment": "=== DECORATIVE ===  Flower garden west of Oak's Lab in the plaza",
-      "stamp": "pallet_garden_flowers",
-      "x": 12,
-      "y": 20
-    },
-    {
-      "_comment": "Flower garden east of Oak's Lab",
-      "stamp": "pallet_garden_flowers",
-      "x": 29,
-      "y": 20
-    },
-    {
-      "_comment": "Pond in southeast area",
-      "stamp": "celadon_pond",
-      "x": 34,
-      "y": 24
-    },
+    {"_comment": "=== TOP BORDER: tree_2x2 fill for x=0-9 at y=0 ===",
+     "stamp": "tree_2x2", "x": 0, "y": 0},
+    {"stamp": "tree_2x2", "x": 2, "y": 0},
+    {"stamp": "tree_2x2", "x": 4, "y": 0},
+    {"stamp": "tree_2x2", "x": 6, "y": 0},
+    {"stamp": "tree_2x2", "x": 8, "y": 0},
 
-    {
-      "_comment": "=== TREE BORDERS - LEFT EDGE ===",
-      "stamp": "viridian_tree_border_left",
-      "x": 0,
-      "y": 0
-    },
-    {
-      "stamp": "viridian_tree_border_left",
-      "x": 0,
-      "y": 12
-    },
-    {
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 0,
-      "y": 24
-    },
-    {
-      "_comment": "Bottom-left fill",
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 0,
-      "y": 30
-    },
+    {"_comment": "Top border gap fill x=18-21",
+     "stamp": "tree_2x2", "x": 18, "y": 0},
+    {"stamp": "tree_2x2", "x": 20, "y": 0},
 
-    {
-      "_comment": "=== TREE BORDERS - TOP EDGE ===  Section 1 (x=10-17)",
-      "stamp": "viridian_tree_row_top",
-      "x": 10,
-      "y": 0
-    },
-    {
-      "_comment": "Section 2 — right of north exit gap (x=26-33)",
-      "stamp": "viridian_tree_row_top",
-      "x": 26,
-      "y": 0
-    },
-    {
-      "_comment": "Section 3 (x=34-41)",
-      "stamp": "viridian_tree_row_top",
-      "x": 34,
-      "y": 0
-    },
+    {"_comment": "Top border fill x=26-45 (no tree_row_top here to avoid pokecenter overlap)",
+     "stamp": "tree_2x2", "x": 26, "y": 0},
+    {"stamp": "tree_2x2", "x": 28, "y": 0},
+    {"stamp": "tree_2x2", "x": 30, "y": 0},
+    {"stamp": "tree_2x2", "x": 32, "y": 0},
+    {"stamp": "tree_2x2", "x": 34, "y": 0},
+    {"stamp": "tree_2x2", "x": 36, "y": 0},
+    {"stamp": "tree_2x2", "x": 38, "y": 0},
+    {"stamp": "tree_2x2", "x": 40, "y": 0},
+    {"stamp": "tree_2x2", "x": 42, "y": 0},
+    {"stamp": "tree_2x2", "x": 44, "y": 0},
 
-    {
-      "_comment": "=== TREE BORDERS - RIGHT EDGE ===",
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 42,
-      "y": 0
-    },
-    {
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 42,
-      "y": 6
-    },
-    {
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 42,
-      "y": 12
-    },
-    {
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 42,
-      "y": 18
-    },
-    {
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 42,
-      "y": 24
-    },
-    {
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 42,
-      "y": 30
-    },
+    {"_comment": "Second row of trees x=26-45 at y=2 for visual depth",
+     "stamp": "tree_2x2", "x": 26, "y": 2},
+    {"stamp": "tree_2x2", "x": 28, "y": 2},
+    {"stamp": "tree_2x2", "x": 34, "y": 2},
+    {"stamp": "tree_2x2", "x": 36, "y": 2},
+    {"stamp": "tree_2x2", "x": 38, "y": 2},
+    {"stamp": "tree_2x2", "x": 40, "y": 2},
+    {"stamp": "tree_2x2", "x": 42, "y": 2},
+    {"stamp": "tree_2x2", "x": 44, "y": 2},
 
-    {
-      "_comment": "=== TREE BORDERS - BOTTOM EDGE ===  Left of south entrance",
-      "stamp": "map001_tree_cluster_26_27",
-      "x": 2,
-      "y": 32
-    },
-    {
-      "_comment": "Right of south entrance",
-      "stamp": "map001_tree_cluster_26_27",
-      "x": 26,
-      "y": 32
-    },
+    {"_comment": "=== LEFT BORDER: tree_2x2 at x=0 every 2 rows (y=2-34, y=0 already covered) ===",
+     "stamp": "tree_2x2", "x": 0, "y": 2},
+    {"stamp": "tree_2x2", "x": 0, "y": 4},
+    {"stamp": "tree_2x2", "x": 0, "y": 6},
+    {"stamp": "tree_2x2", "x": 0, "y": 8},
+    {"stamp": "tree_2x2", "x": 0, "y": 10},
+    {"stamp": "tree_2x2", "x": 0, "y": 12},
+    {"stamp": "tree_2x2", "x": 0, "y": 14},
+    {"stamp": "tree_2x2", "x": 0, "y": 16},
+    {"stamp": "tree_2x2", "x": 0, "y": 18},
+    {"stamp": "tree_2x2", "x": 0, "y": 20},
+    {"stamp": "tree_2x2", "x": 0, "y": 22},
+    {"stamp": "tree_2x2", "x": 0, "y": 24},
+    {"stamp": "tree_2x2", "x": 0, "y": 26},
+    {"stamp": "tree_2x2", "x": 0, "y": 28},
+    {"stamp": "tree_2x2", "x": 0, "y": 30},
+    {"stamp": "tree_2x2", "x": 0, "y": 32},
 
-    {
-      "_comment": "=== INTERIOR TREES — fill empty areas ===  Upper-west trees between border and houses",
-      "stamp": "tree_2x2",
-      "x": 5,
-      "y": 3
-    },
-    {
-      "_comment": "Upper-center-left",
-      "stamp": "tree_2x2",
-      "x": 18,
-      "y": 4
-    },
-    {
-      "_comment": "Upper-center-right",
-      "stamp": "tree_2x2",
-      "x": 27,
-      "y": 4
-    },
-    {
-      "_comment": "Trees in northwest area",
-      "stamp": "tree_2x2",
-      "x": 18,
-      "y": 7
-    },
-    {
-      "_comment": "Trees near east branch top",
-      "stamp": "tree_2x2",
-      "x": 28,
-      "y": 7
-    },
-    {
-      "_comment": "Trees southwest of Lab",
-      "stamp": "tree_2x2",
-      "x": 8,
-      "y": 23
-    },
-    {
-      "_comment": "Trees between lab and south entrance (west of path)",
-      "stamp": "tree_2x2",
-      "x": 16,
-      "y": 28
-    },
-    {
-      "_comment": "Trees between lab and south entrance (east of path)",
-      "stamp": "tree_2x2",
-      "x": 28,
-      "y": 28
-    },
-    {
-      "_comment": "Extra tree south area",
-      "stamp": "tree_2x2",
-      "x": 10,
-      "y": 27
-    },
+    {"_comment": "Left border depth: second column at x=2 for visual fill (y=2-32, no y=34)",
+     "stamp": "tree_2x2", "x": 2, "y": 2},
+    {"stamp": "tree_2x2", "x": 2, "y": 4},
+    {"stamp": "tree_2x2", "x": 2, "y": 6},
+    {"stamp": "tree_2x2", "x": 2, "y": 8},
+    {"stamp": "tree_2x2", "x": 2, "y": 10},
+    {"stamp": "tree_2x2", "x": 2, "y": 12},
+    {"stamp": "tree_2x2", "x": 2, "y": 14},
+    {"stamp": "tree_2x2", "x": 2, "y": 16},
+    {"stamp": "tree_2x2", "x": 2, "y": 18},
+    {"stamp": "tree_2x2", "x": 2, "y": 20},
+    {"stamp": "tree_2x2", "x": 2, "y": 22},
+    {"stamp": "tree_2x2", "x": 2, "y": 24},
+    {"stamp": "tree_2x2", "x": 2, "y": 26},
+    {"stamp": "tree_2x2", "x": 2, "y": 28},
+    {"stamp": "tree_2x2", "x": 2, "y": 30},
+    {"stamp": "tree_2x2", "x": 2, "y": 32},
 
-    {
-      "_comment": "=== LAMPPOSTS ===  Near Oak's Lab west",
-      "stamp": "lamppost",
-      "x": 17,
-      "y": 18
-    },
-    {
-      "_comment": "Near Oak's Lab east",
-      "stamp": "lamppost",
-      "x": 28,
-      "y": 18
-    },
-    {
-      "_comment": "South entrance west",
-      "stamp": "lamppost",
-      "x": 20,
-      "y": 29
-    },
-    {
-      "_comment": "South entrance east",
-      "stamp": "lamppost",
-      "x": 25,
-      "y": 29
-    },
-    {
-      "_comment": "Near west houses on path",
-      "stamp": "lamppost",
-      "x": 12,
-      "y": 10
-    },
-    {
-      "_comment": "Near pokecenter on path",
-      "stamp": "lamppost",
-      "x": 31,
-      "y": 10
-    },
-    {
-      "_comment": "North road lamppost",
-      "stamp": "lamppost",
-      "x": 20,
-      "y": 6
-    },
-    {
-      "_comment": "Crossroads north lamppost",
-      "stamp": "lamppost",
-      "x": 20,
-      "y": 13
-    },
+    {"_comment": "Left border depth: third column at x=4 (y=2-32, no y=34)",
+     "stamp": "tree_2x2", "x": 4, "y": 2},
+    {"stamp": "tree_2x2", "x": 4, "y": 4},
+    {"stamp": "tree_2x2", "x": 4, "y": 6},
+    {"stamp": "tree_2x2", "x": 4, "y": 8},
+    {"stamp": "tree_2x2", "x": 4, "y": 10},
+    {"stamp": "tree_2x2", "x": 4, "y": 12},
+    {"stamp": "tree_2x2", "x": 4, "y": 14},
+    {"stamp": "tree_2x2", "x": 4, "y": 16},
+    {"stamp": "tree_2x2", "x": 4, "y": 18},
+    {"stamp": "tree_2x2", "x": 4, "y": 20},
+    {"stamp": "tree_2x2", "x": 4, "y": 22},
+    {"stamp": "tree_2x2", "x": 4, "y": 24},
+    {"stamp": "tree_2x2", "x": 4, "y": 26},
+    {"stamp": "tree_2x2", "x": 4, "y": 28},
+    {"stamp": "tree_2x2", "x": 4, "y": 30},
+    {"stamp": "tree_2x2", "x": 4, "y": 32},
 
-    {
-      "_comment": "=== FENCES ===  South border fence sections",
-      "stamp": "pallet_fence_south",
-      "x": 8,
-      "y": 30
-    },
-    {
-      "stamp": "pallet_fence_south",
-      "x": 14,
-      "y": 30
-    },
-    {
-      "_comment": "Fence right of entrance",
-      "stamp": "pallet_fence_south",
-      "x": 26,
-      "y": 30
-    },
-    {
-      "stamp": "pallet_fence_south",
-      "x": 32,
-      "y": 30
-    },
-    {
-      "stamp": "pallet_fence_south",
-      "x": 38,
-      "y": 30
-    },
+    {"_comment": "=== RIGHT BORDER: tree_2x2 at x=46 every 2 rows ===",
+     "stamp": "tree_2x2", "x": 46, "y": 0},
+    {"stamp": "tree_2x2", "x": 46, "y": 2},
+    {"stamp": "tree_2x2", "x": 46, "y": 4},
+    {"stamp": "tree_2x2", "x": 46, "y": 6},
+    {"stamp": "tree_2x2", "x": 46, "y": 8},
+    {"stamp": "tree_2x2", "x": 46, "y": 10},
+    {"stamp": "tree_2x2", "x": 46, "y": 12},
+    {"stamp": "tree_2x2", "x": 46, "y": 14},
+    {"stamp": "tree_2x2", "x": 46, "y": 16},
+    {"stamp": "tree_2x2", "x": 46, "y": 18},
+    {"stamp": "tree_2x2", "x": 46, "y": 20},
+    {"stamp": "tree_2x2", "x": 46, "y": 22},
+    {"stamp": "tree_2x2", "x": 46, "y": 24},
+    {"stamp": "tree_2x2", "x": 46, "y": 26},
+    {"stamp": "tree_2x2", "x": 46, "y": 28},
+    {"stamp": "tree_2x2", "x": 46, "y": 30},
+    {"stamp": "tree_2x2", "x": 46, "y": 32},
 
-    {
-      "_comment": "Sign at town entrance",
-      "stamp": "sign_post",
-      "x": 19,
-      "y": 30
-    }
+    {"_comment": "Right border depth: x=44 (y=4-32, no y=34)",
+     "stamp": "tree_2x2", "x": 44, "y": 4},
+    {"stamp": "tree_2x2", "x": 44, "y": 6},
+    {"stamp": "tree_2x2", "x": 44, "y": 8},
+    {"stamp": "tree_2x2", "x": 44, "y": 10},
+    {"stamp": "tree_2x2", "x": 44, "y": 12},
+    {"stamp": "tree_2x2", "x": 44, "y": 14},
+    {"stamp": "tree_2x2", "x": 44, "y": 16},
+    {"stamp": "tree_2x2", "x": 44, "y": 18},
+    {"stamp": "tree_2x2", "x": 44, "y": 20},
+    {"stamp": "tree_2x2", "x": 44, "y": 22},
+    {"stamp": "tree_2x2", "x": 44, "y": 24},
+    {"stamp": "tree_2x2", "x": 44, "y": 26},
+    {"stamp": "tree_2x2", "x": 44, "y": 28},
+    {"stamp": "tree_2x2", "x": 44, "y": 30},
+    {"stamp": "tree_2x2", "x": 44, "y": 32},
+
+    {"_comment": "Right border depth: x=42 (y=4-28, no y=30+ to avoid fence overlap)",
+     "stamp": "tree_2x2", "x": 42, "y": 4},
+    {"stamp": "tree_2x2", "x": 42, "y": 6},
+    {"stamp": "tree_2x2", "x": 42, "y": 8},
+    {"stamp": "tree_2x2", "x": 42, "y": 10},
+    {"stamp": "tree_2x2", "x": 42, "y": 12},
+    {"stamp": "tree_2x2", "x": 42, "y": 14},
+    {"stamp": "tree_2x2", "x": 42, "y": 16},
+    {"stamp": "tree_2x2", "x": 42, "y": 18},
+    {"stamp": "tree_2x2", "x": 42, "y": 20},
+    {"stamp": "tree_2x2", "x": 42, "y": 22},
+    {"stamp": "tree_2x2", "x": 42, "y": 24},
+    {"stamp": "tree_2x2", "x": 42, "y": 26},
+    {"stamp": "tree_2x2", "x": 42, "y": 28},
+
+    {"_comment": "Bottom border second row at y=32 - only where no fence/sign/other tree overlaps",
+     "stamp": "tree_2x2", "x": 6, "y": 32},
+
+    {"_comment": "=== INTERIOR TREES ===",
+     "stamp": "tree_2x2", "x": 6, "y": 3},
+    {"stamp": "tree_2x2", "x": 18, "y": 4},
+    {"stamp": "tree_2x2", "x": 26, "y": 4},
+    {"stamp": "tree_2x2", "x": 28, "y": 4},
+    {"stamp": "tree_2x2", "x": 18, "y": 7},
+    {"stamp": "tree_2x2", "x": 28, "y": 7},
+    {"stamp": "tree_2x2", "x": 8, "y": 23},
+    {"stamp": "tree_2x2", "x": 16, "y": 28},
+    {"stamp": "tree_2x2", "x": 28, "y": 28},
+    {"stamp": "tree_2x2", "x": 10, "y": 27},
+
+    {"_comment": "=== DECORATIVE: west garden ===",
+     "stamp": "pallet_garden_flowers", "x": 12, "y": 22},
+
+    {"_comment": "=== FENCES ===",
+     "stamp": "pallet_fence_south", "x": 8, "y": 30},
+    {"stamp": "pallet_fence_south", "x": 14, "y": 30},
+    {"stamp": "pallet_fence_south", "x": 26, "y": 30},
+    {"stamp": "pallet_fence_south", "x": 32, "y": 30},
+    {"stamp": "pallet_fence_south", "x": 38, "y": 30},
+
+    {"_comment": "=== BUILDINGS ===",
+     "stamp": "pallet_oak_lab", "x": 19, "y": 19},
+    {"stamp": "pallet_house_red", "x": 7, "y": 6},
+    {"stamp": "pallet_house_rival", "x": 7, "y": 14},
+    {"stamp": "viridian_pokecenter", "x": 30, "y": 4},
+    {"stamp": "pewter_mart", "x": 31, "y": 13},
+    {"stamp": "pallet_house_south", "x": 32, "y": 21},
+
+    {"_comment": "=== SMALL STRUCTURES (LAST) ===",
+     "stamp": "lamppost", "x": 20, "y": 6},
+    {"stamp": "lamppost", "x": 20, "y": 13},
+
+    {"_comment": "Sign at town entrance",
+     "stamp": "sign_post", "x": 20, "y": 30}
+  ],
+  "tiles": [
+    {"x": 0, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 1, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 2, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 3, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 4, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 5, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 6, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 7, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 8, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 9, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 10, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 11, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 12, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 13, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 14, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 15, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 16, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 17, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 18, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 19, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 20, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 27, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 28, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 29, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 30, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 31, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 32, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 33, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 34, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 35, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 36, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 37, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 38, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 39, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 40, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 41, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 42, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 43, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 44, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 45, "y": 34, "layer": 2, "tile_id": 8987},
+    {"x": 46, "y": 34, "layer": 2, "tile_id": 8986},
+    {"x": 47, "y": 34, "layer": 2, "tile_id": 8987}
   ],
   "events": [
     {
