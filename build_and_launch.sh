@@ -639,7 +639,7 @@ RUBY
   echo "  1. Transfer $zip_name to the phone"
   echo "  2. Extract it to internal storage (NOT Google Drive or SD card)"
   echo "  3. Install JoiPlay + RPG Maker XP plugin from the Play Store"
-  echo "  4. In JoiPlay, tap '+', set the executable to Game.exe, and"
+  echo "  4. In JoiPlay, tap '+', set the executable to Game.ini, and"
   echo "     point the game folder to the extracted PokemonSynthesis_Mobile directory"
   echo ""
   echo "See MOBILE_SETUP.txt for detailed instructions."
