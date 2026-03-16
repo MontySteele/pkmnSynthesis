@@ -1,13 +1,13 @@
 {
-  "_comment": "Pallet Town — new village layout with organic feel",
+  "_comment": "Pallet Town — redesigned cozy starter village (iteration 3 - polished)",
   "_design_notes": {
-    "concept": "A compact seaside starter town arranged around a central plaza. Player enters from south, walks north along a main road to a town square with Oak's Lab prominently facing south. Player/Rival houses sit west in a residential cluster. Pokecenter and Mart are east near the north exit. A small garden sits in the town square, and tree borders enclose the town.",
-    "dimensions": "50x35",
-    "flow": "South entrance -> Main road north -> Town square with Oak Lab -> West fork to houses -> East fork to services -> North exit"
+    "concept": "A compact starter town clustered around a central crossroads. Oak's Lab sits prominently at the intersection. Player and Rival houses are on the west side, Pokecenter and Mart on the east. Dense tree borders all around. A pond in the southeast adds character.",
+    "dimensions": "48x35",
+    "flow": "South entrance -> Main road north -> Central plaza with Oak Lab -> West to houses -> East to services -> North exit"
   },
   "map_id": 851,
   "tileset_id": 23,
-  "width": 50,
+  "width": 48,
   "height": 35,
   "base_fill": "grass",
   "bgm": {
@@ -21,235 +21,357 @@
   "fills": [],
   "paths": [
     {
-      "_comment": "Main south entrance road — vertical from bottom edge up to town square",
+      "_comment": "Main south entrance road — from bottom edge up to crossroads",
       "type": "vertical",
       "tile": "dirt_path",
-      "x": 24,
-      "y1": 27,
+      "x": 22,
+      "y1": 17,
       "y2": 34,
       "width": 3
     },
     {
-      "_comment": "Main road continues north through town to square area",
+      "_comment": "Main road north — from crossroads to north exit",
       "type": "vertical",
       "tile": "dirt_path",
-      "x": 24,
-      "y1": 12,
-      "y2": 27,
+      "x": 22,
+      "y1": 0,
+      "y2": 17,
       "width": 3
     },
     {
-      "_comment": "East-west crossroad at town square level (y=16)",
+      "_comment": "East-west crossroad through town center",
       "type": "horizontal",
       "tile": "dirt_path",
-      "x1": 8,
-      "x2": 42,
+      "x1": 7,
+      "x2": 41,
       "y": 16,
       "width": 2
     },
     {
-      "_comment": "Path north from crossroad to north exit",
+      "_comment": "West branch — path to Player/Rival houses",
       "type": "vertical",
       "tile": "dirt_path",
-      "x": 24,
-      "y1": 0,
-      "y2": 12,
-      "width": 3
-    },
-    {
-      "_comment": "West residential branch - path to houses",
-      "type": "vertical",
-      "tile": "dirt_path",
-      "x": 12,
-      "y1": 10,
+      "x": 14,
+      "y1": 7,
       "y2": 16,
       "width": 2
     },
     {
-      "_comment": "East service branch - path from crossroad to pokecenter/mart",
+      "_comment": "East branch — path to Pokecenter/Mart",
       "type": "vertical",
       "tile": "dirt_path",
-      "x": 38,
-      "y1": 10,
+      "x": 33,
+      "y1": 7,
       "y2": 16,
+      "width": 2
+    },
+    {
+      "_comment": "Horizontal connector — west houses to main road",
+      "type": "horizontal",
+      "tile": "dirt_path",
+      "x1": 14,
+      "x2": 22,
+      "y": 10,
+      "width": 2
+    },
+    {
+      "_comment": "Horizontal connector — east area to main road",
+      "type": "horizontal",
+      "tile": "dirt_path",
+      "x1": 25,
+      "x2": 33,
+      "y": 10,
       "width": 2
     }
   ],
   "stamps": [
     {
-      "_comment": "Oak's Lab — prominent position facing south at the town square",
+      "_comment": "=== BUILDINGS ===  Oak's Lab — central, just south of crossroads",
       "stamp": "pallet_oak_lab",
-      "x": 21,
-      "y": 18
+      "x": 19,
+      "y": 19
     },
     {
-      "_comment": "Player's House (Red) — west residential area, upper",
+      "_comment": "Player's House — west side (moved down to y=6 to avoid tree overlap)",
       "stamp": "pallet_house_red",
-      "x": 5,
-      "y": 3
+      "x": 7,
+      "y": 6
     },
     {
-      "_comment": "Rival's House — west residential area, lower",
+      "_comment": "Rival's House — west side, below player's house",
       "stamp": "pallet_house_rival",
-      "x": 5,
-      "y": 11
+      "x": 7,
+      "y": 14
     },
     {
-      "_comment": "Pokemon Center — east side near north exit",
+      "_comment": "Pokemon Center — east side, upper",
       "stamp": "viridian_pokecenter",
-      "x": 35,
-      "y": 3
+      "x": 30,
+      "y": 4
     },
     {
-      "_comment": "Mart — east side below pokecenter",
+      "_comment": "Mart — east side, below pokecenter",
       "stamp": "pewter_mart",
-      "x": 36,
-      "y": 11
-    },
-    {
-      "_comment": "Extra house — south east area",
-      "stamp": "pallet_house_south",
-      "x": 35,
-      "y": 22
-    },
-    {
-      "_comment": "Garden flowers near town square",
-      "stamp": "pallet_garden_flowers",
-      "x": 16,
-      "y": 20
-    },
-    {
-      "_comment": "Flowerbed on east side of square",
-      "stamp": "pallet_garden_flowers",
       "x": 31,
+      "y": 13
+    },
+    {
+      "_comment": "Extra house — southeast of crossroads",
+      "stamp": "pallet_house_south",
+      "x": 32,
+      "y": 21
+    },
+
+    {
+      "_comment": "=== DECORATIVE ===  Flower garden west of Oak's Lab in the plaza",
+      "stamp": "pallet_garden_flowers",
+      "x": 12,
       "y": 20
     },
     {
-      "_comment": "Tree border — left edge top",
+      "_comment": "Flower garden east of Oak's Lab",
+      "stamp": "pallet_garden_flowers",
+      "x": 29,
+      "y": 20
+    },
+    {
+      "_comment": "Pond in southeast area",
+      "stamp": "celadon_pond",
+      "x": 34,
+      "y": 24
+    },
+
+    {
+      "_comment": "=== TREE BORDERS - LEFT EDGE ===",
       "stamp": "viridian_tree_border_left",
       "x": 0,
       "y": 0
     },
     {
-      "_comment": "Tree border — left edge bottom (extending coverage)",
       "stamp": "viridian_tree_border_left",
       "x": 0,
       "y": 12
     },
     {
-      "_comment": "Tree border — left edge bottom 2",
       "stamp": "viridian_tree_cluster_sw",
       "x": 0,
       "y": 24
     },
     {
-      "_comment": "Tree cluster — right side top",
-      "stamp": "map079_tree_cluster_37_21",
-      "x": 44,
-      "y": 0
-    },
-    {
-      "_comment": "Tree cluster — right side bottom",
+      "_comment": "Bottom-left fill",
       "stamp": "viridian_tree_cluster_sw",
-      "x": 44,
-      "y": 14
+      "x": 0,
+      "y": 30
     },
+
     {
-      "_comment": "Tree row along top edge",
+      "_comment": "=== TREE BORDERS - TOP EDGE ===  Section 1 (x=10-17)",
       "stamp": "viridian_tree_row_top",
       "x": 10,
       "y": 0
     },
     {
-      "_comment": "Tree row along top edge 2",
+      "_comment": "Section 2 — right of north exit gap (x=26-33)",
       "stamp": "viridian_tree_row_top",
-      "x": 18,
+      "x": 26,
       "y": 0
     },
     {
-      "_comment": "Tree row along top edge 3",
+      "_comment": "Section 3 (x=34-41)",
       "stamp": "viridian_tree_row_top",
-      "x": 28,
+      "x": 34,
       "y": 0
     },
+
     {
-      "_comment": "Tree cluster bottom left",
+      "_comment": "=== TREE BORDERS - RIGHT EDGE ===",
       "stamp": "viridian_tree_cluster_sw",
-      "x": 0,
+      "x": 42,
+      "y": 0
+    },
+    {
+      "stamp": "viridian_tree_cluster_sw",
+      "x": 42,
+      "y": 6
+    },
+    {
+      "stamp": "viridian_tree_cluster_sw",
+      "x": 42,
+      "y": 12
+    },
+    {
+      "stamp": "viridian_tree_cluster_sw",
+      "x": 42,
+      "y": 18
+    },
+    {
+      "stamp": "viridian_tree_cluster_sw",
+      "x": 42,
+      "y": 24
+    },
+    {
+      "stamp": "viridian_tree_cluster_sw",
+      "x": 42,
       "y": 30
     },
+
     {
-      "_comment": "Tree cluster — south border left of entrance",
+      "_comment": "=== TREE BORDERS - BOTTOM EDGE ===  Left of south entrance",
       "stamp": "map001_tree_cluster_26_27",
-      "x": 4,
+      "x": 2,
       "y": 32
     },
     {
-      "_comment": "Tree cluster — south border right of entrance",
+      "_comment": "Right of south entrance",
       "stamp": "map001_tree_cluster_26_27",
+      "x": 26,
+      "y": 32
+    },
+
+    {
+      "_comment": "=== INTERIOR TREES — fill empty areas ===  Upper-west trees between border and houses",
+      "stamp": "tree_2x2",
+      "x": 5,
+      "y": 3
+    },
+    {
+      "_comment": "Upper-center-left",
+      "stamp": "tree_2x2",
+      "x": 18,
+      "y": 4
+    },
+    {
+      "_comment": "Upper-center-right",
+      "stamp": "tree_2x2",
+      "x": 27,
+      "y": 4
+    },
+    {
+      "_comment": "Trees in northwest area",
+      "stamp": "tree_2x2",
+      "x": 18,
+      "y": 7
+    },
+    {
+      "_comment": "Trees near east branch top",
+      "stamp": "tree_2x2",
       "x": 28,
-      "y": 32
+      "y": 7
     },
     {
-      "_comment": "Tree cluster — right side mid",
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 44,
-      "y": 22
+      "_comment": "Trees southwest of Lab",
+      "stamp": "tree_2x2",
+      "x": 8,
+      "y": 23
     },
     {
-      "_comment": "Tree cluster — right bottom",
-      "stamp": "viridian_tree_cluster_sw",
-      "x": 44,
+      "_comment": "Trees between lab and south entrance (west of path)",
+      "stamp": "tree_2x2",
+      "x": 16,
+      "y": 28
+    },
+    {
+      "_comment": "Trees between lab and south entrance (east of path)",
+      "stamp": "tree_2x2",
+      "x": 28,
+      "y": 28
+    },
+    {
+      "_comment": "Extra tree south area",
+      "stamp": "tree_2x2",
+      "x": 10,
+      "y": 27
+    },
+
+    {
+      "_comment": "=== LAMPPOSTS ===  Near Oak's Lab west",
+      "stamp": "lamppost",
+      "x": 17,
+      "y": 18
+    },
+    {
+      "_comment": "Near Oak's Lab east",
+      "stamp": "lamppost",
+      "x": 28,
+      "y": 18
+    },
+    {
+      "_comment": "South entrance west",
+      "stamp": "lamppost",
+      "x": 20,
       "y": 29
     },
     {
-      "_comment": "Lamppost near Oak's Lab",
+      "_comment": "South entrance east",
       "stamp": "lamppost",
-      "x": 19,
-      "y": 18
+      "x": 25,
+      "y": 29
     },
     {
-      "_comment": "Lamppost near Oak's Lab (east)",
+      "_comment": "Near west houses on path",
       "stamp": "lamppost",
-      "x": 30,
-      "y": 18
+      "x": 12,
+      "y": 10
     },
     {
-      "_comment": "Lamppost at south entrance",
+      "_comment": "Near pokecenter on path",
       "stamp": "lamppost",
-      "x": 22,
-      "y": 28
+      "x": 31,
+      "y": 10
     },
     {
-      "_comment": "Lamppost at south entrance (east)",
+      "_comment": "North road lamppost",
       "stamp": "lamppost",
-      "x": 27,
-      "y": 28
+      "x": 20,
+      "y": 6
     },
     {
-      "_comment": "Fence south border left",
+      "_comment": "Crossroads north lamppost",
+      "stamp": "lamppost",
+      "x": 20,
+      "y": 13
+    },
+
+    {
+      "_comment": "=== FENCES ===  South border fence sections",
       "stamp": "pallet_fence_south",
       "x": 8,
       "y": 30
     },
     {
-      "_comment": "Fence south border right",
       "stamp": "pallet_fence_south",
-      "x": 36,
+      "x": 14,
       "y": 30
     },
     {
-      "_comment": "Sign post at town entrance",
+      "_comment": "Fence right of entrance",
+      "stamp": "pallet_fence_south",
+      "x": 26,
+      "y": 30
+    },
+    {
+      "stamp": "pallet_fence_south",
+      "x": 32,
+      "y": 30
+    },
+    {
+      "stamp": "pallet_fence_south",
+      "x": 38,
+      "y": 30
+    },
+
+    {
+      "_comment": "Sign at town entrance",
       "stamp": "sign_post",
-      "x": 21,
-      "y": 29
+      "x": 19,
+      "y": 30
     }
   ],
   "events": [
     {
       "id": 1,
-      "name": "SouthExit",
-      "x": 25,
+      "name": "SouthExit1",
+      "x": 23,
       "y": 34,
       "pages": [{
         "trigger": 1,
@@ -262,8 +384,22 @@
     },
     {
       "id": 2,
-      "name": "NorthExit",
-      "x": 25,
+      "name": "SouthExit2",
+      "x": 24,
+      "y": 34,
+      "pages": [{
+        "trigger": 1,
+        "through": true,
+        "commands": [
+          {"type": "transfer", "map_id": 850, "x": 15, "y": 0, "direction": 0, "fade": 1}
+        ],
+        "condition": {}
+      }]
+    },
+    {
+      "id": 3,
+      "name": "NorthExit1",
+      "x": 23,
       "y": 0,
       "pages": [{
         "trigger": 1,
@@ -275,10 +411,24 @@
       }]
     },
     {
-      "id": 3,
+      "id": 4,
+      "name": "NorthExit2",
+      "x": 24,
+      "y": 0,
+      "pages": [{
+        "trigger": 1,
+        "through": true,
+        "commands": [
+          {"type": "transfer", "map_id": 852, "x": 26, "y": 34, "direction": 0, "fade": 1}
+        ],
+        "condition": {}
+      }]
+    },
+    {
+      "id": 5,
       "name": "OakLabDoor",
-      "x": 25,
-      "y": 25,
+      "x": 23,
+      "y": 26,
       "pages": [{
         "trigger": 1,
         "through": false,
@@ -289,10 +439,10 @@
       }]
     },
     {
-      "id": 4,
+      "id": 6,
       "name": "PlayerHouseDoor",
-      "x": 10,
-      "y": 10,
+      "x": 12,
+      "y": 13,
       "pages": [{
         "trigger": 1,
         "through": false,
@@ -303,10 +453,10 @@
       }]
     },
     {
-      "id": 5,
+      "id": 7,
       "name": "RivalHouseDoor",
-      "x": 10,
-      "y": 18,
+      "x": 12,
+      "y": 21,
       "pages": [{
         "trigger": 1,
         "through": false,
@@ -317,38 +467,38 @@
       }]
     },
     {
-      "id": 6,
-      "name": "PokecenterDoor",
-      "x": 39,
-      "y": 11,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 863, "x": 7, "y": 13, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
-    },
-    {
-      "id": 7,
-      "name": "MartDoor",
-      "x": 38,
-      "y": 17,
-      "pages": [{
-        "trigger": 1,
-        "through": false,
-        "commands": [
-          {"type": "transfer", "map_id": 864, "x": 5, "y": 11, "direction": 0, "fade": 1}
-        ],
-        "condition": {}
-      }]
-    },
-    {
       "id": 8,
+      "name": "PokecenterDoor",
+      "x": 34,
+      "y": 12,
+      "pages": [{
+        "trigger": 1,
+        "through": false,
+        "commands": [
+          {"type": "transfer", "map_id": 866, "x": 7, "y": 13, "direction": 0, "fade": 1}
+        ],
+        "condition": {}
+      }]
+    },
+    {
+      "id": 9,
+      "name": "MartDoor",
+      "x": 33,
+      "y": 19,
+      "pages": [{
+        "trigger": 1,
+        "through": false,
+        "commands": [
+          {"type": "transfer", "map_id": 867, "x": 5, "y": 11, "direction": 0, "fade": 1}
+        ],
+        "condition": {}
+      }]
+    },
+    {
+      "id": 10,
       "name": "SouthHouseDoor",
-      "x": 39,
-      "y": 28,
+      "x": 36,
+      "y": 27,
       "pages": [{
         "trigger": 1,
         "through": false,
