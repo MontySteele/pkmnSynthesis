@@ -53,6 +53,11 @@ class MapCreator
       apply_events(map, spec["events"])
     end
 
+    # Apply warp patches (retarget transfer commands to new map IDs)
+    if spec["warp_patches"]
+      apply_warp_patches(map, spec["warp_patches"])
+    end
+
     # Apply tile overrides if present
     if spec["tile_overrides"]
       apply_tile_overrides(map, spec["tile_overrides"])
@@ -224,6 +229,29 @@ class MapCreator
     map.width = new_width
     map.height = new_height
     map
+  end
+
+  # ── Warp patches ──────────────────────────────────────────────────────
+
+  def apply_warp_patches(map, patches)
+    old_target = patches["old_target_map"]
+    new_target = patches["new_target_map"]
+    return unless old_target && new_target
+
+    count = 0
+    map.events.each do |id, ev|
+      ev.pages.each do |page|
+        next unless page.list
+        page.list.each do |cmd|
+          next unless cmd.code == 201  # Transfer Player
+          if cmd.parameters[1] == old_target
+            cmd.parameters[1] = new_target
+            count += 1
+          end
+        end
+      end
+    end
+    puts "  [PATCH] Retargeted #{count} warp(s): Map#{"%03d" % old_target} -> Map#{"%03d" % new_target}" if count > 0
   end
 
   # ── Tile overrides ─────────────────────────────────────────────────────

@@ -2,25 +2,43 @@
   "_comment": "Viridian City Mid Rework (Map710 -> Map854)",
   "_parity": {
     "original_map": 710,
-    "trainers": ["WORKER Dave"],
-    "items": ["BRIGHTPOWDER", "EARTHPLATE"],
+    "trainers": [
+      "WORKER Dave"
+    ],
+    "items": [
+      "BRIGHTPOWDER",
+      "EARTHPLATE"
+    ],
     "npcs": 6,
     "signs": 4,
-    "warps": ["House1 (83)", "Gym (856)", "PokeMart (81)", "Academy (458)", "PokemonCenter (371)", "House2 (84)", "TrainerHouse (38)"],
-    "special_events": ["Scientist items (ICEPICK/POWERPLANTKEY/GASMASK)", "Drunk man blocker", "Granddaughter NPC"],
+    "warps": [
+      "House1 (83)",
+      "Gym (856)",
+      "PokeMart (81)",
+      "Academy (458)",
+      "PokemonCenter (371)",
+      "House2 (84)",
+      "TrainerHouse (38)"
+    ],
+    "special_events": [
+      "Scientist items (ICEPICK/POWERPLANTKEY/GASMASK)",
+      "Drunk man blocker",
+      "Granddaughter NPC"
+    ],
     "notes": "Mid variant: has Trainer House, no TM08, gym sign says ?, extra gym guy pages for progression"
   },
-
   "mode": "clone",
   "map_id": 854,
   "clone_from": 710,
   "clear_events": true,
-  "bgm": { "name": "Viridian City", "volume": 100 },
+  "bgm": {
+    "name": "Viridian City",
+    "volume": 100
+  },
   "map_info": {
     "name": "Viridian City Mid (Synthesis)",
     "parent_id": 223
   },
-
   "events": [
     {
       "_comment": "Warp: House 1 door — simple fade warp to Map083",
@@ -30,16 +48,66 @@
       "y": 14,
       "pages": [
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "transfer", "map_id": 83, "x": 9, "y": 9, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 870,
+              "x": 9,
+              "y": 9,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -51,39 +119,173 @@
       "y": 18,
       "pages": [
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "text", "lines": ["It appears to be locked..."] }
+            {
+              "type": "text",
+              "lines": [
+                "It appears to be locked..."
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "transfer", "map_id": 856, "x": 36, "y": 42, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 122, "parameters": [152, 152, 0, 0, 8] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 856,
+              "x": 36,
+              "y": 42,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 122,
+              "parameters": [
+                152,
+                152,
+                0,
+                0,
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 287 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 287
+          }
         },
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "transfer", "map_id": 51, "x": 10, "y": 14, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 51,
+              "x": 10,
+              "y": 14,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 918 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 918
+          }
         }
       ]
     },
@@ -95,75 +297,875 @@
       "y": 28,
       "pages": [
         {
-          "graphic": { "character_name": "doors4", "direction": 2 },
+          "graphic": {
+            "character_name": "doors4",
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 44, "parameters": [{"_audio": "Entering Door"}]}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 18}, {"code": 15, "parameters": [2]}, {"code": 19}, {"code": 15, "parameters": [2]}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 44, "parameters": [{"_audio": "Entering Door"}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 19}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 37}, {"code": 4}, {"code": 38}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 37}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 4}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 38}}] },
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 208, "parameters": [0] },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 15, "parameters": [2]}, {"code": 18}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 16}, {"code": 15, "parameters": [2]}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 16}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "transfer", "map_id": 81, "x": 6, "y": 11, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 44,
+                        "parameters": [
+                          {
+                            "_audio": "Entering Door"
+                          }
+                        ]
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 19
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 44,
+                    "parameters": [
+                      {
+                        "_audio": "Entering Door"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 19
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 37
+                      },
+                      {
+                        "code": 4
+                      },
+                      {
+                        "code": 38
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 37
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 4
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 38
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 16
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 872,
+              "x": 6,
+              "y": 11,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "character_name": "doors4", "direction": 2 },
+          "graphic": {
+            "character_name": "doors4",
+            "direction": 2
+          },
           "trigger": 3,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [12, "get_character(0).onEvent?"] },
-            { "type": "raw", "code": 208, "parameters": [0], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 44, "parameters": [{"_audio": "Entering Door"}]}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 18}, {"code": 15, "parameters": [2]}, {"code": 19}, {"code": 15, "parameters": [2]}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 44, "parameters": [{"_audio": "Entering Door"}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 19}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 208, "parameters": [1], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 1}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 1}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 18}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 16}, {"code": 15, "parameters": [2]}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 16}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "script", "lines": ["setTempSwitchOn(\"A\")"] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 44,
+                        "parameters": [
+                          {
+                            "_audio": "Entering Door"
+                          }
+                        ]
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 19
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 44,
+                    "parameters": [
+                      {
+                        "_audio": "Entering Door"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 19
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 1
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 1
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 16
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 16
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 22 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
         }
       ]
     },
@@ -175,16 +1177,41 @@
       "y": 15,
       "pages": [
         {
-          "graphic": { "character_name": "BW003", "direction": 2 },
+          "graphic": {
+            "character_name": "BW003",
+            "direction": 2
+          },
           "trigger": 0,
           "move_type": 1,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Did you know that you can use your Pok\u00e9dex during ", "battles to identify the type of your opponent's Pok\u00e9mon?"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["It can come quite handy when facing weird fused Pok\u00e9mon!"] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Did you know that you can use your Pokédex during ",
+                "battles to identify the type of your opponent's Pokémon?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It can come quite handy when facing weird fused Pokémon!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -196,33 +1223,175 @@
       "y": 28,
       "pages": [
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door"}] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "transfer", "map_id": 458, "x": 9, "y": 13, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 874,
+              "x": 9,
+              "y": 13,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 3,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [12, "get_character(0).onEvent?"] },
-            { "type": "raw", "code": 208, "parameters": [0], "indent": 1 },
-            { "type": "raw", "code": 106, "parameters": [6], "indent": 1 },
-            { "type": "raw", "code": 208, "parameters": [1], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 1}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 1}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "script", "lines": ["setTempSwitchOn(\"A\")"] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                6
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 1
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 1
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 22 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
         }
       ]
     },
@@ -234,15 +1403,40 @@
       "y": 37,
       "pages": [
         {
-          "graphic": { "character_name": "BWBoy", "direction": 2 },
+          "graphic": {
+            "character_name": "BWBoy",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Fusing Pok\u00e9mon is a lot of fun!"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["You can learn all sorts of things about it at the Pok\u00e9mon ", "Academy!"] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Fusing Pokémon is a lot of fun!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "You can learn all sorts of things about it at the Pokémon ",
+                "Academy!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -254,23 +1448,82 @@
       "y": 14,
       "pages": [
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,24) "] },
-            { "type": "text", "lines": ["Uugh.!... Hic... Hold it right there!"] },
-            { "type": "script", "lines": ["pbCallBub(2,24) "] },
-            { "type": "text", "lines": ["Don't you go through here! It's a private property!"] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": false, "list": [{"code": 1}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 1}}] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Uugh.!... Hic... Hold it right there!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,24) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Don't you go through here! It's a private property!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": false,
+                    "list": [
+                      {
+                        "code": 1
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 1
+                  }
+                }
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 0,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 988 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 988
+          }
         }
       ]
     },
@@ -282,10 +1535,16 @@
       "y": 33,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 4,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 15 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 15
+          }
         }
       ]
     },
@@ -297,10 +1556,16 @@
       "y": 32,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 4,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 15 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 15
+          }
         }
       ]
     },
@@ -312,22 +1577,150 @@
       "y": 37,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [6, -1, 4] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 7}, {"code": 2}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 7}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 2}}], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 411, "parameters": [] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 6}, {"code": 3}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 6}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 3}}], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 7
+                      },
+                      {
+                        "code": 2
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 7
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 2
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 6
+                      },
+                      {
+                        "code": 3
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 6
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 3
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -339,21 +1732,135 @@
       "y": 38,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [6, -1, 4] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 7}, {"code": 2}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 7}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 2}}], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 411, "parameters": [] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 6}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 6}}], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 7
+                      },
+                      {
+                        "code": 2
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 7
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 2
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 6
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 6
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -365,45 +1872,141 @@
       "y": 19,
       "pages": [
         {
-          "graphic": { "character_name": "BW117", "direction": 2 },
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Sorry buddy, but the Gym Leader is out of town. You'll have ", "to come back in a while."] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Sorry buddy, but the Gym Leader is out of town. You'll have ",
+                "to come back in a while."
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "character_name": "BW117", "direction": 2 },
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["The Gym Leader still hasn't been back. "] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Apparently he's been spotted around the Cinnabar Island's ", "laboratory not too long ago..."] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "The Gym Leader still hasn't been back. "
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Apparently he's been spotted around the Cinnabar Island's ",
+                "laboratory not too long ago..."
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 10 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 10
+          }
         },
         {
-          "graphic": { "character_name": "BW117", "direction": 2 },
+          "graphic": {
+            "character_name": "BW117",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Are you looking for the Gym Leader?"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["He hasn't been back to the gym yet."] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["According to the latest rumors, he went back to his ", "secondary hideout in Johto."] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Hmm... I suppose you could take the train in ", "Saffron City if you wanted to track him down."] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Are you looking for the Gym Leader?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "He hasn't been back to the gym yet."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "According to the latest rumors, he went back to his ",
+                "secondary hideout in Johto."
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Hmm... I suppose you could take the train in ",
+                "Saffron City if you wanted to track him down."
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 385 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 385
+          }
         },
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 0,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 287 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 287
+          }
         }
       ]
     },
@@ -415,22 +2018,150 @@
       "y": 32,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [6, -1, 4] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 7}, {"code": 2}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 7}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 2}}], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 411, "parameters": [] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 6}, {"code": 3}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 6}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 3}}], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                6,
+                -1,
+                4
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 7
+                      },
+                      {
+                        "code": 2
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 7
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 2
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 411,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 6
+                      },
+                      {
+                        "code": 3
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 6
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 3
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -442,10 +2173,16 @@
       "y": 13,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 4,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 15 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 15
+          }
         }
       ]
     },
@@ -457,10 +2194,16 @@
       "y": 22,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 4,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 15 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 15
+          }
         }
       ]
     },
@@ -472,30 +2215,157 @@
       "y": 14,
       "pages": [
         {
-          "graphic": { "character_name": "BW008", "direction": 6 },
+          "graphic": {
+            "character_name": "BW008",
+            "direction": 6
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Good grief, Grandpa! Sleeping here of all places!"] },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": false, "list": [{"code": 36}, {"code": 16}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 36}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 16}}] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["It can't be helped.... We have to wait until he sobers up."] },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": false, "list": [{"code": 18}, {"code": 35}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 35}}] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Good grief, Grandpa! Sleeping here of all places!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": false,
+                    "list": [
+                      {
+                        "code": 36
+                      },
+                      {
+                        "code": 16
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 36
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "It can't be helped.... We have to wait until he sobers up."
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": false,
+                    "list": [
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 35
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 35
+                  }
+                }
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "character_name": "BW008", "direction": 2 },
+          "graphic": {
+            "character_name": "BW008",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["I managed to get grandpa to go home. He's doing much ", "better now!"] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I managed to get grandpa to go home. He's doing much ",
+                "better now!"
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 988 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 988
+          }
         }
       ]
     },
@@ -507,13 +2377,26 @@
       "y": 28,
       "pages": [
         {
-          "graphic": { "tile_id": 9736 },
+          "graphic": {
+            "tile_id": 9736
+          },
           "trigger": 0,
           "commands": [
-            { "type": "text", "lines": ["Pok\u00e9mon Academy"] },
-            { "type": "text", "lines": ["Learn all there is to know about Pok\u00e9mon!"] }
+            {
+              "type": "text",
+              "lines": [
+                "Pokémon Academy"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Learn all there is to know about Pokémon!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -525,18 +2408,33 @@
       "y": 14,
       "pages": [
         {
-          "graphic": { "character_name": "BW_oldman-drunk", "direction": 2 },
+          "graphic": {
+            "character_name": "BW_oldman-drunk",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "text", "lines": ["An old man is lying in the street, apparently very drunk."] }
+            {
+              "type": "text",
+              "lines": [
+                "An old man is lying in the street, apparently very drunk."
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 0,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 988 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 988
+          }
         }
       ]
     },
@@ -548,62 +2446,381 @@
       "y": 19,
       "pages": [
         {
-          "graphic": { "character_name": "BW (81)", "direction": 4 },
+          "graphic": {
+            "character_name": "BW (81)",
+            "direction": 4
+          },
           "trigger": 3,
           "commands": [
-            { "type": "raw", "code": 108, "parameters": ["Retirer apr\u00e8s 3.1"] },
-            { "type": "raw", "code": 408, "parameters": ["###"] },
-            { "type": "raw", "code": 111, "parameters": [0, 852, 1] },
-            { "type": "raw", "code": 121, "parameters": [255, 255, 1], "indent": 1 },
-            { "type": "raw", "code": 121, "parameters": [256, 256, 1], "indent": 1 },
-            { "type": "raw", "code": 121, "parameters": [257, 257, 1], "indent": 1 },
-            { "type": "raw", "code": 121, "parameters": [288, 288, 1], "indent": 1 },
-            { "type": "raw", "code": 121, "parameters": [289, 289, 1], "indent": 1 },
-            { "type": "raw", "code": 121, "parameters": [290, 290, 1], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "raw", "code": 108, "parameters": ["#"] },
-            { "type": "raw", "code": 408, "parameters": ["#"] },
-            { "type": "raw", "code": 408, "parameters": ["#"] },
-            { "type": "raw", "code": 408, "parameters": ["#"] },
-            { "type": "raw", "code": 408, "parameters": ["###"] },
-            { "type": "transfer", "map_id": 854, "x": 26, "y": 19, "direction": 6, "fade": 1 },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["\\PN!"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Remember me? I'm the scientist who helped you save ", "\\V[144] in Cinnabar Island!"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Now that Team Rocket is gone for good, I wanted to give ", "you these."] },
-            { "type": "raw", "code": 121, "parameters": [291, 291, 0] },
-            { "type": "raw", "code": 111, "parameters": [12, "!$game_switches[253]"] },
-            { "type": "script", "lines": ["Kernel.pbReceiveItem(:ICEPICK)\t"], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "raw", "code": 111, "parameters": [12, "!$game_switches[254]"] },
-            { "type": "script", "lines": ["Kernel.pbReceiveItem(:POWERPLANTKEY)\t"], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "raw", "code": 111, "parameters": [12, "!$game_switches[259]"] },
-            { "type": "script", "lines": ["Kernel.pbReceiveItem(:GASMASK)\t"], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["These should help you track down the remaining legendary ", "birds!"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Come see me in Cinnabar Island if you need any more info!"] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "self_switch", "ch": "A", "value": "ON" },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 108,
+              "parameters": [
+                "Retirer après 3.1"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 408,
+              "parameters": [
+                "###"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                0,
+                852,
+                1
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                255,
+                255,
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                256,
+                256,
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                257,
+                257,
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                288,
+                288,
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                289,
+                289,
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                290,
+                290,
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 108,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 408,
+              "parameters": [
+                "#"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 408,
+              "parameters": [
+                "###"
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 854,
+              "x": 26,
+              "y": 19,
+              "direction": 6,
+              "fade": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "\\PN!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Remember me? I'm the scientist who helped you save ",
+                "\\V[144] in Cinnabar Island!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Now that Team Rocket is gone for good, I wanted to give ",
+                "you these."
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                291,
+                291,
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "!$game_switches[253]"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "Kernel.pbReceiveItem(:ICEPICK)\t"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "!$game_switches[254]"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "Kernel.pbReceiveItem(:POWERPLANTKEY)\t"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "!$game_switches[259]"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "Kernel.pbReceiveItem(:GASMASK)\t"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "These should help you track down the remaining legendary ",
+                "birds!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Come see me in Cinnabar Island if you need any more info!"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON"
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 11 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 11
+          }
         },
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 0,
-          "commands": [],
-          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+          "commands": [
+
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
         }
       ]
     },
@@ -615,19 +2832,38 @@
       "y": 41,
       "pages": [
         {
-          "graphic": { "character_name": "BWObjects", "direction": 8 },
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["Kernel.pbItemBall(PBItems::BRIGHTPOWDER)"] },
-            { "type": "self_switch", "ch": "A", "value": "ON" }
+            {
+              "type": "script",
+              "lines": [
+                "Kernel.pbItemBall(PBItems::BRIGHTPOWDER)"
+              ]
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON"
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 0,
-          "commands": [],
-          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+          "commands": [
+
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
         }
       ]
     },
@@ -639,33 +2875,175 @@
       "y": 28,
       "pages": [
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 250, "parameters": [{"_audio": "Exit Door"}] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "transfer", "map_id": 38, "x": 8, "y": 12, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "Exit Door"
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 875,
+              "x": 8,
+              "y": 12,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 3,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [12, "get_character(0).onEvent?"] },
-            { "type": "raw", "code": 208, "parameters": [0], "indent": 1 },
-            { "type": "raw", "code": 106, "parameters": [6], "indent": 1 },
-            { "type": "raw", "code": 208, "parameters": [1], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 1}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 1}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "script", "lines": ["setTempSwitchOn(\"A\")"] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                6
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 1
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 1
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 22 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
         }
       ]
     },
@@ -677,10 +3055,16 @@
       "y": 32,
       "pages": [
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 4,
-          "commands": [],
-          "condition": { "switch1_valid": true, "switch1_id": 15 }
+          "commands": [
+
+          ],
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 15
+          }
         }
       ]
     },
@@ -692,16 +3076,41 @@
       "y": 32,
       "pages": [
         {
-          "graphic": { "character_name": "BW014", "direction": 2 },
+          "graphic": {
+            "character_name": "BW014",
+            "direction": 2
+          },
           "trigger": 0,
           "move_type": 3,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Man, I wish they would let me fight in the Trainer House!"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Pidgey and I have a lot of training to do before we're strong ", "enough!"] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Man, I wish they would let me fight in the Trainer House!"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Pidgey and I have a lot of training to do before we're strong ",
+                "enough!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -713,15 +3122,37 @@
       "y": 27,
       "pages": [
         {
-          "graphic": { "character_name": "016", "direction": 2 },
+          "graphic": {
+            "character_name": "016",
+            "direction": 2
+          },
           "trigger": 0,
           "move_type": 3,
           "commands": [
-            { "type": "raw", "code": 250, "parameters": [{"_audio": "016Cry"}] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Chirp! Chirp chirp!"] }
+            {
+              "type": "raw",
+              "code": 250,
+              "parameters": [
+                {
+                  "_audio": "016Cry"
+                }
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Chirp! Chirp chirp!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -733,15 +3164,39 @@
       "y": 34,
       "pages": [
         {
-          "graphic": { "character_name": "BW005", "direction": 2 },
+          "graphic": {
+            "character_name": "BW005",
+            "direction": 2
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["You're a trainer, right?"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["You should go to the Pok\u00e9mon League to test your abilities!"] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "You're a trainer, right?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "You should go to the Pokémon League to test your abilities!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -753,13 +3208,26 @@
       "y": 29,
       "pages": [
         {
-          "graphic": { "tile_id": 9736 },
+          "graphic": {
+            "tile_id": 9736
+          },
           "trigger": 0,
           "commands": [
-            { "type": "text", "lines": ["Trainer House"] },
-            { "type": "text", "lines": ["Come test your battling skills to win fabulous prizes!"] }
+            {
+              "type": "text",
+              "lines": [
+                "Trainer House"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Come test your battling skills to win fabulous prizes!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -771,13 +3239,26 @@
       "y": 37,
       "pages": [
         {
-          "graphic": { "tile_id": 9736 },
+          "graphic": {
+            "tile_id": 9736
+          },
           "trigger": 0,
           "commands": [
-            { "type": "text", "lines": ["Pok\u00e9mon Center"] },
-            { "type": "text", "lines": ["We'll heal your injured Pok\u00e9mon for free!"] }
+            {
+              "type": "text",
+              "lines": [
+                "Pokémon Center"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "We'll heal your injured Pokémon for free!"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -789,13 +3270,26 @@
       "y": 19,
       "pages": [
         {
-          "graphic": { "tile_id": 9736 },
+          "graphic": {
+            "tile_id": 9736
+          },
           "trigger": 0,
           "commands": [
-            { "type": "text", "lines": ["Viridian City Gym"] },
-            { "type": "text", "lines": ["Gym Leader: ?"] }
+            {
+              "type": "text",
+              "lines": [
+                "Viridian City Gym"
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Gym Leader: ?"
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     },
@@ -807,43 +3301,207 @@
       "y": 11,
       "pages": [
         {
-          "graphic": { "character_name": "BW (75)", "direction": 4 },
+          "graphic": {
+            "character_name": "BW (75)",
+            "direction": 4
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["You're looking for some wooden planks?"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["Sure, I've got them. But I'm not handing them to you unless ", "you beat me in a Pok\u00e9mon battle! What do you say?"] },
-            { "type": "raw", "code": 102, "parameters": [["Yes", "No"], 2] },
-            { "type": "raw", "code": 402, "parameters": [0, "Yes"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 1 },
-            { "type": "text", "lines": ["I'll give it all I've got!"], "indent": 1 },
-            { "type": "script", "lines": ["$PokemonGlobal.nextBattleBack=\"City\""], "indent": 1 },
-            { "type": "raw", "code": 111, "parameters": [12, "pbTrainerBattle(PBTrainers::WORKER,\"Dave\",_I(\"Woah! You're way better than I expected!\"),false,0,false)"], "indent": 1 },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 2 },
-            { "type": "text", "lines": ["You're good. Here are the wooden planks you asked for!"], "indent": 2 },
-            { "type": "script", "lines": ["Kernel.pbReceiveItem(PBItems::WOODENPLANKS)"], "indent": 2 },
-            { "type": "self_switch", "ch": "A", "value": "ON", "indent": 2 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 2 },
-            { "type": "raw", "code": 412, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 402, "parameters": [1, "No"] },
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "], "indent": 1 },
-            { "type": "text", "lines": ["I'm not giving you these wooden planks unless you fight me!"], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 404, "parameters": [] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "You're looking for some wooden planks?"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "Sure, I've got them. But I'm not handing them to you unless ",
+                "you beat me in a Pokémon battle! What do you say?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 102,
+              "parameters": [
+                [
+                  "Yes",
+                  "No"
+                ],
+                2
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 402,
+              "parameters": [
+                0,
+                "Yes"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I'll give it all I've got!"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "$PokemonGlobal.nextBattleBack=\"City\""
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "pbTrainerBattle(PBTrainers::WORKER,\"Dave\",_I(\"Woah! You're way better than I expected!\"),false,0,false)"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 2
+            },
+            {
+              "type": "text",
+              "lines": [
+                "You're good. Here are the wooden planks you asked for!"
+              ],
+              "indent": 2
+            },
+            {
+              "type": "script",
+              "lines": [
+                "Kernel.pbReceiveItem(PBItems::WOODENPLANKS)"
+              ],
+              "indent": 2
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON",
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 2
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 402,
+              "parameters": [
+                1,
+                "No"
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ],
+              "indent": 1
+            },
+            {
+              "type": "text",
+              "lines": [
+                "I'm not giving you these wooden planks unless you fight me!"
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 404,
+              "parameters": [
+
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 175 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 175
+          }
         },
         {
-          "graphic": { "character_name": "BW (75)", "direction": 2 },
+          "graphic": {
+            "character_name": "BW (75)",
+            "direction": 2
+          },
           "trigger": 0,
           "move_type": 3,
           "commands": [
-            { "type": "script", "lines": ["pbCallBub(2,@event_id) "] },
-            { "type": "text", "lines": ["So, what were those wooden planks for anyway?"] }
+            {
+              "type": "script",
+              "lines": [
+                "pbCallBub(2,@event_id) "
+              ]
+            },
+            {
+              "type": "text",
+              "lines": [
+                "So, what were those wooden planks for anyway?"
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 175, "self_switch_valid": true, "self_switch_ch": "A" }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 175,
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
         }
       ]
     },
@@ -855,19 +3513,40 @@
       "y": 20,
       "pages": [
         {
-          "graphic": { "character_name": "BWObjects", "direction": 8 },
+          "graphic": {
+            "character_name": "BWObjects",
+            "direction": 8
+          },
           "trigger": 0,
           "commands": [
-            { "type": "script", "lines": ["Kernel.pbItemBall(PBItems::EARTHPLATE)"] },
-            { "type": "self_switch", "ch": "A", "value": "ON" }
+            {
+              "type": "script",
+              "lines": [
+                "Kernel.pbItemBall(PBItems::EARTHPLATE)"
+              ]
+            },
+            {
+              "type": "self_switch",
+              "ch": "A",
+              "value": "ON"
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 375 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 375
+          }
         },
         {
-          "graphic": {},
+          "graphic": {
+          },
           "trigger": 0,
-          "commands": [],
-          "condition": { "self_switch_valid": true, "self_switch_ch": "A" }
+          "commands": [
+
+          ],
+          "condition": {
+            "self_switch_valid": true,
+            "self_switch_ch": "A"
+          }
         }
       ]
     },
@@ -879,76 +3558,884 @@
       "y": 37,
       "pages": [
         {
-          "graphic": { "character_name": "doors3", "direction": 2 },
+          "graphic": {
+            "character_name": "doors3",
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 121, "parameters": [960, 960, 0] },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 44, "parameters": [{"_audio": "Entering Door"}]}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 18}, {"code": 15, "parameters": [2]}, {"code": 19}, {"code": 15, "parameters": [2]}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 44, "parameters": [{"_audio": "Entering Door"}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 19}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 37}, {"code": 4}, {"code": 38}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 37}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 4}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 38}}] },
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 208, "parameters": [0] },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 15, "parameters": [2]}, {"code": 18}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 16}, {"code": 15, "parameters": [2]}, {"code": 0}]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 16}}] },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}] },
-            { "type": "raw", "code": 210, "parameters": [] },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "transfer", "map_id": 371, "x": 10, "y": 11, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 121,
+              "parameters": [
+                960,
+                960,
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 44,
+                        "parameters": [
+                          {
+                            "_audio": "Entering Door"
+                          }
+                        ]
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 19
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 44,
+                    "parameters": [
+                      {
+                        "_audio": "Entering Door"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 19
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 37
+                      },
+                      {
+                        "code": 4
+                      },
+                      {
+                        "code": 38
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 37
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 4
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 38
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 16
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 873,
+              "x": 10,
+              "y": 11,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         },
         {
-          "graphic": { "character_name": "doors3", "direction": 2 },
+          "graphic": {
+            "character_name": "doors3",
+            "direction": 2
+          },
           "trigger": 3,
           "commands": [
-            { "type": "raw", "code": 111, "parameters": [12, "get_character(0).onEvent?"] },
-            { "type": "raw", "code": 208, "parameters": [0], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 44, "parameters": [{"_audio": "Entering Door"}]}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 18}, {"code": 15, "parameters": [2]}, {"code": 19}, {"code": 15, "parameters": [2]}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 44, "parameters": [{"_audio": "Entering Door"}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 19}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 208, "parameters": [1], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [-1, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 1}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 1}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 209, "parameters": [0, {"_move_route": {"repeat": false, "skippable": true, "list": [{"code": 18}, {"code": 15, "parameters": [2]}, {"code": 17}, {"code": 15, "parameters": [2]}, {"code": 16}, {"code": 15, "parameters": [2]}, {"code": 0}]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 18}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 17}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 16}}], "indent": 1 },
-            { "type": "raw", "code": 509, "parameters": [{"_move_command": {"code": 15, "parameters": [2]}}], "indent": 1 },
-            { "type": "raw", "code": 210, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 0, "parameters": [], "indent": 1 },
-            { "type": "raw", "code": 412, "parameters": [] },
-            { "type": "script", "lines": ["setTempSwitchOn(\"A\")"] }
+            {
+              "type": "raw",
+              "code": 111,
+              "parameters": [
+                12,
+                "get_character(0).onEvent?"
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                0
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 44,
+                        "parameters": [
+                          {
+                            "_audio": "Entering Door"
+                          }
+                        ]
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 19
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 44,
+                    "parameters": [
+                      {
+                        "_audio": "Entering Door"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 19
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                -1,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 1
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 1
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 209,
+              "parameters": [
+                0,
+                {
+                  "_move_route": {
+                    "repeat": false,
+                    "skippable": true,
+                    "list": [
+                      {
+                        "code": 18
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 17
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 16
+                      },
+                      {
+                        "code": 15,
+                        "parameters": [
+                          2
+                        ]
+                      },
+                      {
+                        "code": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 18
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 17
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 16
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 509,
+              "parameters": [
+                {
+                  "_move_command": {
+                    "code": 15,
+                    "parameters": [
+                      2
+                    ]
+                  }
+                }
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 210,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 0,
+              "parameters": [
+
+              ],
+              "indent": 1
+            },
+            {
+              "type": "raw",
+              "code": 412,
+              "parameters": [
+
+              ]
+            },
+            {
+              "type": "script",
+              "lines": [
+                "setTempSwitchOn(\"A\")"
+              ]
+            }
           ],
-          "condition": { "switch1_valid": true, "switch1_id": 22 }
+          "condition": {
+            "switch1_valid": true,
+            "switch1_id": 22
+          }
         }
       ]
     },
@@ -960,16 +4447,66 @@
       "y": 22,
       "pages": [
         {
-          "graphic": { "direction": 2 },
+          "graphic": {
+            "direction": 2
+          },
           "trigger": 1,
           "commands": [
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [-255, -255, -255, 0]}, 6] },
-            { "type": "raw", "code": 106, "parameters": [8] },
-            { "type": "raw", "code": 208, "parameters": [1] },
-            { "type": "transfer", "map_id": 84, "x": 9, "y": 9, "direction": 0, "fade": 1 },
-            { "type": "raw", "code": 223, "parameters": [{"_tone": [0, 0, 0, 0]}, 6] }
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    -255,
+                    -255,
+                    -255,
+                    0
+                  ]
+                },
+                6
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 106,
+              "parameters": [
+                8
+              ]
+            },
+            {
+              "type": "raw",
+              "code": 208,
+              "parameters": [
+                1
+              ]
+            },
+            {
+              "type": "transfer",
+              "map_id": 871,
+              "x": 9,
+              "y": 9,
+              "direction": 0,
+              "fade": 1
+            },
+            {
+              "type": "raw",
+              "code": 223,
+              "parameters": [
+                {
+                  "_tone": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                6
+              ]
+            }
           ],
-          "condition": {}
+          "condition": {
+          }
         }
       ]
     }
