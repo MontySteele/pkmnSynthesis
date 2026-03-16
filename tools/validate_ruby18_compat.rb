@@ -109,6 +109,20 @@ def validate_file(path, errors, warnings)
         match_start = $~.begin(0)
         next if in_string_or_comment?(line, match_start)
 
+        # Skip symbol hash key false positive on ternary expressions (? ... :)
+        # e.g. `x = cond ? val : other` — the `: other` looks like a hash key
+        if description.include?("symbol hash key")
+          code_before = line[0...match_start]
+          is_ternary = false
+          code_before.each_char.with_index do |ch, ci|
+            if ch == "?" && ci > 0 && code_before[ci - 1] !~ /\w/
+              is_ternary = true
+              break
+            end
+          end
+          next if is_ternary
+        end
+
         entry = {
           file: rel_path,
           line: line_num,
