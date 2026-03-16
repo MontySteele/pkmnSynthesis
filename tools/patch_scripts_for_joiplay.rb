@@ -17,7 +17,7 @@
 #  12. Required after optional: def f(a=1, b)         →  def f(b, a=1)
 #  13. deprecate_constant:      deprecate_constant :X →  commented out (Ruby 2.3+)
 #  14. Private define_method:   obj.define_method(m)  →  obj.send(:define_method, m)
-#  15. File/Dir.exist?:         File.exist?(p)        →  File.exists?(p) (Ruby 1.8)
+#  15. File/Dir.exist?:         (DISABLED — JoiPlay Ruby supports exist?, removed exists?)
 #  16. .each_char:              str.each_char         →  str.split('').each
 #  17. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
 #
@@ -388,8 +388,8 @@ def patch_ruby19_apis(line)
     "#{$1}.send(:define_method, #{$2})"
   end
 
-  # 9. File.exist? / Dir.exist? → File.exists? / Dir.exists? (Ruby 1.8 uses 'exists?')
-  line = line.gsub(/(File|Dir)\.exist\?/, '\1.exists?')
+  # 9. File.exist? / Dir.exist? — keep as-is; JoiPlay's Ruby supports exist? and has removed exists?
+  # line = line.gsub(/(File|Dir)\.exist\?/, '\1.exists?')
 
   # 10. .each_char → .split('').each (Ruby 1.9+)
   line = line.gsub(/\.each_char\b/, ".split('').each")

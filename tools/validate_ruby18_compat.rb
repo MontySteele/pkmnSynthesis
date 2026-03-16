@@ -23,7 +23,8 @@ LINE_CHECKS = [
   [/(?:,\s*|[\(|]\s*)\*\*\w+/, "Double splat operator (**kwargs)", :error],
 
   # Method APIs that don't exist in 1.8
-  [/(?:File|Dir)\.exist\?/, "File/Dir.exist? (use .exists? in 1.8)", :error],
+  # File/Dir.exist? is supported by JoiPlay's Ruby; exists? has been removed
+  # [/(?:File|Dir)\.exist\?/, "File/Dir.exist? (use .exists? in 1.8)", :error],
   [/\.force_encoding\b/, ".force_encoding (no encoding API in 1.8)", :error],
   [/\.encode\(/, ".encode() (no encoding API in 1.8)", :error],
   [/Encoding::/, "Encoding constants (no Encoding class in 1.8)", :error],
