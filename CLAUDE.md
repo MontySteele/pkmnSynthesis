@@ -54,17 +54,21 @@ JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The
 | 12 | Required after optional params | `def f(a=1, b)` → `def f(b, a=1)` |
 | 13 | `deprecate_constant` | Commented out (Ruby 2.3+) |
 | 14 | Private `define_method` | `obj.define_method(m)` → `obj.send(:define_method, m)` |
-| 15 | `File/Dir.exist?` | → `File/Dir.exists?` (Ruby 1.8 only has `exists?`) |
+| 15 | `File/Dir.exists?` | → `File/Dir.exist?` (`exists?` removed in Ruby 3.0+; `exist?` works everywhere) |
 | 16 | `.each_char` | → `.split('').each` |
 | 17 | `Array#prepend` | → `Array#unshift` |
 
 ### Key Lesson: exist? vs exists?
 
-This was a major debugging saga. The direction of conversion depends on the Ruby version:
-- **Desktop (Ruby 1.9+/2.0+):** `exists?` is deprecated, use `exist?` — the original game code uses both
-- **JoiPlay (Ruby 1.8):** `exist?` does NOT exist, only `exists?` is available
-- The patcher MUST convert `exist?` → `exists?` for mobile builds (rule #15)
-- This rule was incorrectly disabled and re-enabled multiple times — see commits ed2889c and 80def0e
+This was a major debugging saga with three wrong turns:
+- **Commit 2313ec3**: Added `exist?` → `exists?` (assumed Ruby 1.8 only has `exists?`)
+- **Commit ed2889c**: Disabled conversion (user reported `exists?` undefined on JoiPlay)
+- **Commit 80def0e**: Re-enabled `exist?` → `exists?` (wrong — re-introduced the crash)
+- **Current fix**: Reversed direction to `exists?` → `exist?`
+
+The root cause: JoiPlay may load **`libmkxp30.so` (Ruby 3.0)**, not just `libmkxp18.so`. In Ruby 3.0, `exists?` was **removed entirely**. The method `exist?` works across ALL Ruby versions (1.8.7 through 3.x), so the patcher now normalizes everything to `exist?`.
+
+**Rule: Always convert `exists?` → `exist?`, never the other direction.**
 
 ## Key Tools
 

@@ -245,6 +245,36 @@ FIXTURES = [
     /def openMenu\(itemType, stock = \[\]\)/  # reordered
   ],
   [
+    "file_exists_to_exist",
+    <<~'RUBY',
+      if File.exists?(path)
+        puts "found"
+      end
+      Dir.mkdir(dir) unless Dir.exists?(dir)
+    RUBY
+    /File\.exist\?\(path\)/  # exists? → exist?
+  ],
+  [
+    "file_exist_unchanged",
+    <<~'RUBY',
+      if File.exist?(path)
+        puts "found"
+      end
+      Dir.mkdir(dir) unless Dir.exist?(dir)
+    RUBY
+    /File\.exist\?\(path\)/  # exist? must NOT be changed to exists?
+  ],
+  [
+    "game_class_exists_untouched",
+    <<~'RUBY',
+      if GameData::Item.exists?(:COINCASE)
+        puts "has coin case"
+      end
+      return if SaveData.exists?
+    RUBY
+    /GameData::Item\.exists\?\(:COINCASE\)/  # custom class exists? must NOT be touched
+  ],
+  [
     "deprecation_stub_integration",
     <<~'RUBY',
       module Deprecation

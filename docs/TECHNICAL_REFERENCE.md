@@ -239,9 +239,9 @@ Patches Ruby 1.9+/2.0+ syntax in game scripts for JoiPlay compatibility (Ruby 1.
 ruby tools/patch_scripts_for_joiplay.rb <scripts_dir>
 ```
 
-Handles 17 syntax transformations including safe navigation (`&.`), symbol hash keys, keyword arguments, `File/Dir.exist?` → `exists?`, and more. See the script header or `CLAUDE.md` for the full list.
+Handles 17 syntax transformations including safe navigation (`&.`), symbol hash keys, keyword arguments, `File/Dir.exists?` → `exist?`, and more. See the script header or `CLAUDE.md` for the full list.
 
-**Important:** JoiPlay's Ruby 1.8 only has `File.exists?`/`Dir.exists?`, NOT `File.exist?`/`Dir.exist?`. The patcher converts `exist?` → `exists?`. This has been a source of bugs — do not reverse this direction.
+**Important:** JoiPlay may use Ruby 3.0 (`libmkxp30.so`) where `exists?` is **removed**. The patcher converts `exists?` → `exist?` since `exist?` works across all Ruby versions. Do NOT reverse this to `exist?` → `exists?` — that direction causes crashes.
 
 ### validate_ruby18_compat.rb
 Scans `.rb` files for Ruby 1.9+/2.0+ syntax that would crash on JoiPlay's Ruby 1.8 runtime.
@@ -277,16 +277,17 @@ ruby tools/test_joiplay_patches.rb
 
 The mobile package is self-contained — users just extract and point JoiPlay at it.
 
-### JoiPlay Ruby 1.8 Constraints
-- No safe navigation operator (`&.`)
-- No symbol hash key syntax (`key: value`)
-- No keyword arguments in method definitions
-- No `File.exist?` / `Dir.exist?` (only `exists?`)
-- No `String#each_char`, `Array#prepend`, `String#bytesize`
+### JoiPlay Ruby Constraints
+JoiPlay ships multiple Ruby runtimes (`libmkxp18.so`, `libmkxp19.so`, `libmkxp30.so`). The RPG Maker XP plugin may load any of these. The patcher must produce code compatible across all:
+- No safe navigation operator (`&.`) — Ruby 1.8
+- No symbol hash key syntax (`key: value`) — Ruby 1.8
+- No keyword arguments in method definitions — Ruby 1.8
+- No `File.exists?` / `Dir.exists?` (removed in Ruby 3.0; use `exist?` which works everywhere)
+- No `String#each_char`, `Array#prepend`, `String#bytesize` — Ruby 1.8
 - No `deprecate_constant` (Ruby 2.3+)
 - No `define_method` as public call (private in 1.8)
-- No lookbehind regex assertions
-- No leading-dot method chains across lines
+- No lookbehind regex assertions — Ruby 1.8
+- No leading-dot method chains across lines — Ruby 1.8
 
 ---
 
