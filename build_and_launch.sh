@@ -587,6 +587,22 @@ class Fixnum
     self.chr.start_with?(*prefixes)
   end
 end
+
+# JoiPlay display fix: force fullscreen mode on mobile.
+# The game's pbSetResizeFactor uses Graphics.scale and Graphics.center which
+# position the viewport incorrectly on Android. Force fullscreen so JoiPlay
+# handles scaling instead.
+alias _original_pbSetResizeFactor pbSetResizeFactor rescue nil
+def pbSetResizeFactor(factor)
+  if !$ResizeInitialized
+    Graphics.resize_screen(Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT) rescue nil
+    $ResizeInitialized = true
+  end
+  begin
+    Graphics.fullscreen = true
+  rescue
+  end
+end
 RUBY
 
   # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime
