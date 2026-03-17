@@ -509,6 +509,9 @@ def patch_regex_braces(line)
     # Skip if it looks like it contains a real quantifier: {1,3} or {2}
     if inner =~ /\{\d+(?:,\d*)?\}/
       match
+    elsif inner.include?('#\{') || inner =~ /#\{/
+      # Contains string interpolation — don't escape braces
+      match
     else
       "/" + inner.gsub(/(?<!\\)\{/, '\\{').gsub(/(?<!\\)\}/, '\\}') + "/"
     end

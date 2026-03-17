@@ -575,6 +575,18 @@ unless 0.respond_to?(:digits)
     end
   end
 end
+
+# Fixnum#match / Fixnum#start_with? — Ruby 1.8 String#[] returns a Fixnum (byte
+# value) instead of a one-char String. Game code sometimes calls .match or
+# .start_with? on the result. Convert the Fixnum to its character first.
+class Fixnum
+  def match(pattern)
+    self.chr.match(pattern)
+  end
+  def start_with?(*prefixes)
+    self.chr.start_with?(*prefixes)
+  end
+end
 RUBY
 
   # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime
