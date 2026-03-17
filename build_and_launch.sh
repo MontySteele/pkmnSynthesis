@@ -462,9 +462,9 @@ package_mobile() {
   # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
-  # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.8)
-  # JoiPlay's RPG Maker XP plugin uses libmkxp18.so which embeds Ruby 1.8.
-  # 005_Deprecation.rb uses keyword args and **kwargs which Ruby 1.8 can't parse.
+  # Patch scripts for JoiPlay compatibility (Ruby 2.0+ syntax → Ruby 1.9)
+  # JoiPlay's RPG Maker XP plugin uses libmkxp19.so (Ruby 1.9) when
+  # "Use Ruby 1.8" is OFF. 005_Deprecation.rb uses Ruby 2.0+ keyword args.
   # It only prints developer warnings, so replacing it with a no-op stub is safe.
   local deprecation_script="$mobile_dir/Data/Scripts/001_Technical/001_Debugging/005_Deprecation.rb"
   if [ -f "$deprecation_script" ]; then
@@ -494,59 +494,23 @@ end
 RUBY
   fi
 
-  # Inject Ruby 1.8 polyfills for methods added in 1.9+/2.x.
+  # Inject Ruby 2.x polyfills for methods not available in Ruby 1.9.
   # These methods are used extensively across the game scripts and cannot be
   # reliably transformed by regex. A polyfill that adds missing methods is safer
   # and handles every call site automatically.
   #
   # Audit findings (active, non-commented usage counts):
-  #   Array#sample    — 61 calls (Ruby 1.9+)
   #   Comparable#clamp — 45 calls (Ruby 2.4+)
-  #   Array#shuffle   — 10 calls (Ruby 1.9+)
-  #   Array#rotate    —  1 call  (Ruby 1.9+)
   #   Integer#digits  —  1 call  (Ruby 2.1+)
-  local polyfill_script="$mobile_dir/Data/Scripts/001_Technical/000_Ruby18_Polyfills.rb"
-  info "Injecting Ruby 1.8 polyfills..."
+  #
+  # Note: Array#sample/shuffle/rotate are Ruby 1.9+ and available natively.
+  # Fixnum polyfills are no longer needed (Ruby 1.9 String#[] returns a String).
+  local polyfill_script="$mobile_dir/Data/Scripts/001_Technical/000_Ruby19_Polyfills.rb"
+  info "Injecting Ruby 2.x polyfills..."
   cat > "$polyfill_script" << 'RUBY'
-# Ruby 1.8 polyfills for JoiPlay compatibility.
-# Adds methods introduced in Ruby 1.9+ / 2.x that the game scripts use.
+# Ruby 2.x polyfills for JoiPlay compatibility (targeting Ruby 1.9).
+# Adds methods introduced in Ruby 2.x that the game scripts use.
 # Each polyfill is guarded so it only activates when the method is missing.
-
-# Array#sample (Ruby 1.9+) — 61 usages
-unless Array.method_defined?(:sample)
-  class Array
-    def sample(n = nil)
-      if n
-        sort_by { rand }.first(n)
-      else
-        self[rand(size)]
-      end
-    end
-  end
-end
-
-# Array#shuffle / #shuffle! (Ruby 1.9+) — 10 usages
-unless Array.method_defined?(:shuffle)
-  class Array
-    def shuffle
-      sort_by { rand }
-    end
-    def shuffle!
-      replace(sort_by { rand })
-    end
-  end
-end
-
-# Array#rotate (Ruby 1.9+) — 1 usage
-unless Array.method_defined?(:rotate)
-  class Array
-    def rotate(n = 1)
-      return [] if empty?
-      n = n % size
-      self[n..-1] + self[0...n]
-    end
-  end
-end
 
 # Comparable#clamp (Ruby 2.4+) — 45 usages
 # Applied to Numeric since that covers Integer/Float which are the actual receivers.
@@ -575,26 +539,142 @@ unless 0.respond_to?(:digits)
     end
   end
 end
+
+# Kernel.method_name polyfill — RGSS allows calling top-level methods via
+# Kernel.pbMethod(), but mkxp's Ruby treats them as private. This handler
+# intercepts those calls and uses send() to bypass the private restriction.
+# Cannot be done via patcher because some game code uses Kernel.X inside
+# def X to call the original (stripping Kernel. would cause infinite recursion).
+class << Kernel
+  def method_missing(sym, *args, &block)
+    if respond_to?(sym, true)
+      return __send__(sym, *args, &block)
+    end
+    super
+  end
+end
 RUBY
 
-  # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime
-  # (JoiPlay mkxp builds libmkxp18.so / libmkxp19.so / libmkxp30.so —
-  #  RPG Maker XP games load the Ruby 1.8 variant):
-  #   - Safe navigation operator (&.) → conditional && chains
-  #   - Symbol hash keys (key: val) → (:key => val)
-  #   - Keyword args in defs → options hash pattern
-  #   - Encoding/force_encoding → removed
-  #   - Symbol#to_proc → explicit blocks
-  #   - Array#to_h, String#bytesize, String#bytes → 1.8 equivalents
+  # Set mobile mode default: the game defaults on_mobile=false which uses
+  # desktop viewport positioning that renders off-screen on JoiPlay/Android.
+  # Patch the PokemonSystem initializer to default on_mobile=true.
+  local options_script="$mobile_dir/Data/Scripts/016_UI/015_UI_Options.rb"
+  if [ -f "$options_script" ]; then
+    info "Setting default mobile mode for JoiPlay..."
+    sed -i.bak 's/@on_mobile = false/@on_mobile = true/' "$options_script"
+    sed -i.bak 's/@screensize = (Settings::SCREEN_SCALE \* 2).floor - 1/@screensize = 4/' "$options_script"
+    rm -f "$options_script.bak"
+  fi
+
+  # Fix screen dimensions: JoiPlay/mkxp starts at 640x480 (RGSS default) and
+  # Graphics.resize_screen(512,384) silently fails. The game's viewports, windows,
+  # and UI are all sized using Settings::SCREEN_WIDTH/HEIGHT, so they must match
+  # the actual Graphics dimensions. Spriteset_Map creates class-level viewports at
+  # load time (before pbSetResizeFactor runs), so we must fix Settings directly.
+  local settings_script="$mobile_dir/Data/Scripts/001_Settings.rb"
+  if [ -f "$settings_script" ]; then
+    info "Patching screen dimensions to match JoiPlay native resolution (640x480)..."
+    sed -i.bak 's/SCREEN_WIDTH = 512/SCREEN_WIDTH = 640/' "$settings_script"
+    sed -i.bak 's/SCREEN_HEIGHT = 384/SCREEN_HEIGHT = 480/' "$settings_script"
+    rm -f "$settings_script.bak"
+  fi
+
+  # Patch pbSetResizeFactor for JoiPlay: the original uses Graphics.scale/center
+  # which mispositions viewports on Android. Use resize_screen only — let JoiPlay
+  # handle the physical display scaling natively.
+  local mkxp_compat="$mobile_dir/Data/Scripts/001_Technical/001_MKXP_Compatibility.rb"
+  if [ -f "$mkxp_compat" ]; then
+    info "Patching pbSetResizeFactor for JoiPlay display..."
+    ruby -e '
+      lines = File.readlines(ARGV[0])
+      out, skip = [], false
+      lines.each do |l|
+        if l =~ /^def pbSetResizeFactor/
+          skip = true
+          out << "def pbSetResizeFactor(factor)\n"
+          out << "  if !$ResizeInitialized\n"
+          out << "    Graphics.scale = 1.0 rescue nil\n"
+          out << "    $ResizeInitialized = true\n"
+          out << "  end\n"
+          out << "end\n"
+        elsif skip
+          skip = false if l =~ /^end/
+        else
+          out << l
+        end
+      end
+      File.write(ARGV[0], out.join)
+    ' "$mkxp_compat"
+  fi
+
+  # Fix IntroScreen.rb: the original game defines dispose/disposed?/wait methods
+  # outside the GenOneStyle class (as top-level methods, i.e. private on Object).
+  # This works in RGSS but causes "private method 'dispose' called for #<GenOneStyle>"
+  # on mkxp19/mkxp30. Fix by reopening the class to define them as instance methods.
+  local intro_script="$mobile_dir/Data/Scripts/052_AddOns/IntroScreen.rb"
+  if [ -f "$intro_script" ]; then
+    info "Fixing IntroScreen.rb GenOneStyle methods for mkxp compatibility..."
+    cat >> "$intro_script" << 'RUBY'
+
+# JoiPlay fix: re-open GenOneStyle to define instance methods that were
+# mistakenly placed at top level (private on Object -> NoMethodError on mkxp).
+class GenOneStyle
+  def dispose
+    Kernel.pbClearText()
+    pbFadeOutAndHide(@sprites)
+    pbDisposeSpriteHash(@sprites)
+    @viewport.dispose
+    @disposed = true
+  end
+
+  def disposed?
+    return @disposed
+  end
+
+  def wait(frames)
+    return if @skip
+    frames.times do
+      @currentFrame += 1
+      updatePressStartAnimation(@currentFrame)
+      @sprites["effect"].ox += @speed
+      Graphics.update
+      Input.update
+      if continueKeyPressed?
+        @skip = true
+        return
+      end
+    end
+  end
+end
+RUBY
+  fi
+
+  # Fix OverworldShadows.rb: @charbitmap is nil during initial sprite creation
+  # (before the first update cycle sets it). The disposed? check crashes with
+  # "private method 'disposed?' called for nil:NilClass".
+  local shadow_script="$mobile_dir/Data/Scripts/052_AddOns/OverworldShadows.rb"
+  if [ -f "$shadow_script" ]; then
+    info "Fixing OverworldShadows.rb nil @charbitmap crash..."
+    sed -i.bak 's/if @charbitmap\.disposed? || @character/if !@charbitmap || @charbitmap.disposed? || @character/' "$shadow_script"
+    rm -f "$shadow_script.bak"
+  fi
+
+  # Patch Ruby 2.0+ syntax for JoiPlay's Ruby 1.9 runtime
+  # (JoiPlay with "Use Ruby 1.8" OFF loads libmkxp19.so):
+  #   - Safe navigation (&.) → conditional chains
+  #   - Keyword args / double splat → options hash pattern
+  #   - Leading-dot chains → joined lines
+  #   - .match?, .to_h, chomp:true, Array#prepend → 1.9 equivalents
+  #   - File.exists?/Dir.exists? → cross-version safe alternatives
   if [ -d "$mobile_dir/Data/Scripts" ]; then
-    info "Patching Ruby 1.9+/2.0+ syntax for JoiPlay compatibility..."
+    info "Patching Ruby 2.0+ syntax for JoiPlay compatibility..."
     ruby "$PROJECT_DIR/tools/patch_scripts_for_joiplay.rb" "$mobile_dir/Data/Scripts" || \
       warn "Script patching failed — mobile package may not work on JoiPlay"
 
-    # Validate patched scripts for residual Ruby 1.8 incompatibilities
-    info "Validating patched scripts for Ruby 1.8 compatibility..."
+    # Validate patched scripts for residual Ruby 2.0+ incompatibilities
+    info "Validating patched scripts for Ruby 1.9 compatibility..."
     ruby "$PROJECT_DIR/tools/validate_ruby18_compat.rb" --post-patch "$mobile_dir/Data/Scripts" || \
-      warn "Ruby 1.8 compatibility issues detected — review output above"
+      warn "Ruby 1.9 compatibility issues detected — review output above"
   fi
 
   # Include setup instructions

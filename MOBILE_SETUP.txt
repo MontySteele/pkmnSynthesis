@@ -64,7 +64,20 @@ local storage. If the game won't launch, the most likely cause is
 Google Drive syncing your Downloads folder — see Troubleshooting below.
 
 
-STEP 3: Add the game in JoiPlay
+STEP 3: Configure the RPG Maker XP Plugin
+------------------------------------------
+This step is REQUIRED or the game will crash on launch.
+
+- Open JoiPlay
+- Tap the gear icon (Settings) in the top right
+- Tap "RPG Maker XP" (the plugin settings)
+- Find the option "Use Ruby 1.8" and make sure it is OFF (disabled)
+  (The mobile build is patched for Ruby 1.9. If "Use Ruby 1.8" is ON,
+   the game will crash with script errors.)
+- Go back to the main screen
+
+
+STEP 4: Add the game in JoiPlay
 -------------------------------
 - Open JoiPlay
 - Tap the "+" button to add a new game
@@ -75,7 +88,7 @@ STEP 3: Add the game in JoiPlay
 - Tap the checkmark to save
 
 
-STEP 4: Play!
+STEP 5: Play!
 -------------
 - Tap "Pokemon: Synthesis" in JoiPlay's game list
 - The game should launch. First load may take a moment.
@@ -93,9 +106,10 @@ TROUBLESHOOTING
     the new ZIP to your phone.
 
 "Script error: NoMethodError / undefined method"
-  - This means a Ruby compatibility issue slipped through the patcher.
-    JoiPlay uses Ruby 1.8, which is missing many methods from newer Ruby.
-  - Note the script name and line number from the error dialog.
+  - First, make sure "Use Ruby 1.8" is OFF in JoiPlay's RPG Maker XP
+    plugin settings (see Step 3 above). This is the most common cause.
+  - If the setting is correct, this means a Ruby compatibility issue
+    slipped through the patcher. Note the script name and line number.
   - Rebuild the mobile package (./build_and_launch.sh --mobile) — the
     patcher is regularly updated to fix these issues.
   - If the error persists after rebuilding, report it as an issue with

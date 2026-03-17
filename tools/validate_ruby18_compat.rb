@@ -1,9 +1,9 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
-# Validates that patched game scripts are compatible with Ruby 1.8 (JoiPlay).
+# Validates that patched game scripts are compatible with Ruby 1.9 (JoiPlay).
 #
 # This script simulates the patcher output by running patch_scripts_for_joiplay.rb
-# on a temporary copy of the scripts, then scans the result for known Ruby 1.9+/2.0+
+# on a temporary copy of the scripts, then scans the result for known Ruby 2.0+
 # patterns that would crash at runtime.
 #
 # Usage: ruby validate_ruby18_compat.rb <scripts_dir>
@@ -12,71 +12,38 @@
 require 'fileutils'
 require 'tempfile'
 
-# ── Known Ruby 1.9+/2.0+ incompatibility patterns ──
+# ── Known Ruby 2.0+ incompatibility patterns ──
+# Target runtime: Ruby 1.9 (JoiPlay with "Use Ruby 1.8" OFF → libmkxp19.so)
 # Each check: [regex, description, severity]
 # severity: :error (will crash), :warn (might crash depending on context)
 
 LINE_CHECKS = [
-  # Syntax features
-  [/(?<!\w)&\./, "Safe navigation operator (&.)", :error],
-  [/(?<!:)\b\w+:\s(?!:)(?!.*=>)/, "Ruby 1.9 symbol hash key syntax (key: value)", :warn],
-  [/(?:,\s*|[\(|]\s*)\*\*\w+/, "Double splat operator (**kwargs)", :error],
-  [/,\s*\)/, "Trailing comma before closing paren (Ruby 1.8 syntax error)", :error],
-  [/^\s+\./, "Leading-dot method chain (Ruby 1.8 syntax error)", :error],
+  # Syntax features (2.0+)
+  [/(?<!\w)&\./, "Safe navigation operator (&.) — Ruby 2.3+", :error],
+  [/(?:,\s*|[\(|]\s*)\*\*\w+/, "Double splat operator (**kwargs) — Ruby 2.0+", :error],
+  [/^\s+\./, "Leading-dot method chain — Ruby 2.0+", :error],
 
-  # Method APIs that don't exist in 1.8
-  # File.exist? works everywhere. Dir.exist? does NOT exist in Ruby 1.8 (added in 1.9).
-  # Dir.exist?/Dir.exists? should be converted to File.directory? by the patcher.
-  [/Dir\.exists?\?/, "Dir.exist?/Dir.exists? (not in Ruby 1.8, use File.directory?)", :error],
+  # File/Dir methods — cross-version safety
+  [/Dir\.exists?\?/, "Dir.exist?/Dir.exists? (use File.directory? for cross-version safety)", :error],
   [/File\.exists\?/, "File.exists? (removed in Ruby 3.0, use File.exist?)", :error],
-  [/\.match\?\(/, ".match? (Ruby 2.4+, use .match)", :error],
-  [/\.force_encoding\b/, ".force_encoding (no encoding API in 1.8)", :error],
-  [/\.encode\(/, ".encode() (no encoding API in 1.8)", :error],
-  [/Encoding::/, "Encoding constants (no Encoding class in 1.8)", :error],
-  [/\.bytesize\b/, ".bytesize (use .length in 1.8)", :error],
-  [/\.bytes\b(?!\s*\{)/, ".bytes (use .unpack('C*') in 1.8)", :error],
-  [/\.to_h\b(?!\s*\{)/, ".to_h (Array#to_h is Ruby 2.1+)", :error],
-  [/\.chars\b(?!\s*\{)/, ".chars without block (Ruby 1.9+)", :warn],
-  [/\.each_char\b/, ".each_char (Ruby 1.9+, use .split('').each)", :warn],
-  # Array#sample is Ruby 1.9+ but handled by polyfill (000_Ruby18_Polyfills.rb), not patching.
-  # This is informational only — will be present in patched output but safe at runtime.
-  # [/\.sample\b/, ".sample (Ruby 1.9+, polyfilled for JoiPlay)", :info],
-  [/\.prepend\b/, ".prepend (String#prepend is Ruby 1.9+)", :error],
-  [/(?<!Graphics)\.freeze\b/, ".freeze (harmless but unnecessary in 1.8)", :warn],
-  [/\.\w+\(&:\w+[?!]?\)/, "Symbol#to_proc (&:method) (Ruby 1.9+)", :error],
-  [/readlines\([^)]+,\s*chomp:\s*true\)/, "chomp: true keyword arg (Ruby 2.4+)", :error],
+
+  # Method APIs that don't exist in 1.9
+  [/\.match\?\(/, ".match? — Ruby 2.4+, use .match", :error],
+  [/\.to_h\b(?!\s*\{)/, ".to_h — Array#to_h is Ruby 2.1+", :error],
+  [/\.prepend\b/, ".prepend — Array#prepend is Ruby 2.5+ (String#prepend is 1.9+ OK)", :warn],
+
+  # Keyword features
+  [/readlines\([^)]+,\s*chomp:\s*true\)/, "chomp: true keyword arg — Ruby 2.4+", :error],
 
   # Class/Module methods
-  [/^\s*deprecate_constant\b/, "deprecate_constant (Ruby 2.3+)", :error],
-  [/\w+\.define_method\(/, "Public define_method call (private in 1.8)", :error],
-  [/\w+\.public_send\(/, "public_send (Ruby 1.9+, use send)", :error],
-  [/\brespond_to_missing\?\b/, "respond_to_missing? (Ruby 1.9+)", :warn],
-  [/\bdefine_singleton_method\b/, "define_singleton_method (Ruby 1.9+)", :error],
+  [/^\s*deprecate_constant\b/, "deprecate_constant — Ruby 2.3+", :error],
+  [/\w+\.define_method\(/, "Public define_method call (private in 1.9)", :error],
 
-  # Keyword arguments in def
-  [/^\s*def\s+\S+\([^)]*\w+:\s[^)]+\)\s*$/, "Keyword arguments in def (Ruby 2.0+)", :error],
+  # Keyword arguments in def (Ruby 2.0+)
+  [/^\s*def\s+\S+\([^)]*\w+:\s[^)]+\)\s*$/, "Keyword arguments in def — Ruby 2.0+", :error],
 
   # Kernel / Object methods
-  [/\b__dir__\b/i, "__dir__ (Ruby 2.0+)", :error],
-  [/\b__callee__\b/, "__callee__ (Ruby 1.9+)", :error],
-  [/\bHash\.try_convert\b/, "Hash.try_convert (Ruby 1.9+)", :error],
-  [/\bArray\.try_convert\b/, "Array.try_convert (Ruby 1.9+)", :error],
-
-  # Hash methods
-  [/\.key\?\(/, ".key? (Hash#key? is Ruby 1.9+, use .has_key?)", :error],
-  [/\.key\b(?!\s*=>)(?!\?)/, ".key (Hash#key is Ruby 1.9+, use .index)", :warn],
-
-  # Proc / Lambda
-  [/->\s*[\({]/, "Stabby lambda (-> {})", :error],
-  [/\.curry\b/, ".curry (Ruby 1.9+)", :error],
-
-  # Regex
-  [/\(\?<=/, "Lookbehind assertion in regex (may not work in 1.8)", :warn],
-  [/\(\?<!/, "Negative lookbehind in regex (may not work in 1.8)", :warn],
-  [/\\h\b/, "\\h hex digit shorthand in regex (Ruby 1.9+)", :warn],
-
-  # String
-  [/\?\w\s*==\s*\d/, "?char returns String in 1.9+ but Integer in 1.8", :warn],
+  [/\b__dir__\b/i, "__dir__ — Ruby 2.0+", :error],
 ]
 
 # Patterns that are OK in comments/strings but bad in code
@@ -119,20 +86,6 @@ def validate_file(path, errors, warnings)
       if line =~ pattern
         match_start = $~.begin(0)
         next if in_string_or_comment?(line, match_start)
-
-        # Skip symbol hash key false positive on ternary expressions (? ... :)
-        # e.g. `x = cond ? val : other` — the `: other` looks like a hash key
-        if description.include?("symbol hash key")
-          code_before = line[0...match_start]
-          is_ternary = false
-          code_before.each_char.with_index do |ch, ci|
-            if ch == "?" && ci > 0 && code_before[ci - 1] !~ /\w/
-              is_ternary = true
-              break
-            end
-          end
-          next if is_ternary
-        end
 
         entry = {
           file: rel_path,
@@ -191,7 +144,7 @@ if !post_patch_mode
   end
 end
 
-puts "Scanning for Ruby 1.8 incompatibilities..."
+puts "Scanning for Ruby 2.0+ incompatibilities (target: Ruby 1.9)..."
 puts "=" * 70
 
 errors = []
@@ -213,12 +166,12 @@ end
 # ── Report ──
 
 if errors.empty? && warnings.empty?
-  puts "\nAll clear! No Ruby 1.8 incompatibilities detected after patching."
+  puts "\nAll clear! No Ruby 2.0+ incompatibilities detected after patching."
   exit 0
 end
 
 if errors.any?
-  puts "\n#{"ERROR".ljust(8)} #{errors.length} issue(s) that WILL crash on Ruby 1.8:"
+  puts "\n#{"ERROR".ljust(8)} #{errors.length} issue(s) that WILL crash on Ruby 1.9:"
   puts "-" * 70
   errors.group_by { |e| e[:desc] }.each do |desc, group|
     puts "\n  #{desc} (#{group.length} occurrence#{'s' if group.length > 1}):"
@@ -231,7 +184,7 @@ if errors.any?
 end
 
 if warnings.any?
-  puts "\n#{"WARN".ljust(8)} #{warnings.length} issue(s) that MAY cause problems on Ruby 1.8:"
+  puts "\n#{"WARN".ljust(8)} #{warnings.length} issue(s) that MAY cause problems on Ruby 1.9:"
   puts "-" * 70
   warnings.group_by { |w| w[:desc] }.each do |desc, group|
     puts "\n  #{desc} (#{group.length} occurrence#{'s' if group.length > 1}):"
