@@ -587,23 +587,46 @@ class Fixnum
     self.chr.start_with?(*prefixes)
   end
 end
-
-# JoiPlay display fix: force fullscreen mode on mobile.
-# The game's pbSetResizeFactor uses Graphics.scale and Graphics.center which
-# position the viewport incorrectly on Android. Force fullscreen so JoiPlay
-# handles scaling instead.
-alias _original_pbSetResizeFactor pbSetResizeFactor rescue nil
-def pbSetResizeFactor(factor)
-  if !$ResizeInitialized
-    Graphics.resize_screen(Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT) rescue nil
-    $ResizeInitialized = true
-  end
-  begin
-    Graphics.fullscreen = true
-  rescue
-  end
-end
 RUBY
+
+  # Set mobile mode default: the game defaults on_mobile=false which uses
+  # desktop viewport positioning that renders off-screen on JoiPlay/Android.
+  # Patch the PokemonSystem initializer to default on_mobile=true.
+  local options_script="$mobile_dir/Data/Scripts/016_UI/015_UI_Options.rb"
+  if [ -f "$options_script" ]; then
+    info "Setting default mobile mode for JoiPlay..."
+    sed -i.bak 's/@on_mobile = false/@on_mobile = true/' "$options_script"
+    sed -i.bak 's/@screensize = (Settings::SCREEN_SCALE \* 2).floor - 1/@screensize = 4/' "$options_script"
+    rm -f "$options_script.bak"
+  fi
+
+  # Force fullscreen on JoiPlay: the game's pbSetResizeFactor uses
+  # Graphics.scale/center which renders the viewport off-screen on Android.
+  local mkxp_compat="$mobile_dir/Data/Scripts/001_Technical/001_MKXP_Compatibility.rb"
+  if [ -f "$mkxp_compat" ]; then
+    info "Patching pbSetResizeFactor for JoiPlay fullscreen..."
+    ruby -e '
+      lines = File.readlines(ARGV[0])
+      out, skip = [], false
+      lines.each do |l|
+        if l =~ /^def pbSetResizeFactor/
+          skip = true
+          out << "def pbSetResizeFactor(factor)\n"
+          out << "  if !$ResizeInitialized\n"
+          out << "    Graphics.resize_screen(Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT) rescue nil\n"
+          out << "    $ResizeInitialized = true\n"
+          out << "  end\n"
+          out << "  Graphics.fullscreen = true rescue nil\n"
+          out << "end\n"
+        elsif skip
+          skip = false if l =~ /^end/
+        else
+          out << l
+        end
+      end
+      File.write(ARGV[0], out.join)
+    ' "$mkxp_compat"
+  fi
 
   # Patch Ruby 1.9+/2.0+ syntax for JoiPlay's Ruby 1.8 runtime
   # (JoiPlay mkxp builds libmkxp18.so / libmkxp19.so / libmkxp30.so —
