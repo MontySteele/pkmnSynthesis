@@ -36,7 +36,7 @@ Key flags: `--inject` (re-inject only), `--launch` (launch only), `--build-only`
 
 JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The original game scripts use Ruby 1.9+/2.0+ syntax that crashes on Ruby 1.8. The mobile build runs `tools/patch_scripts_for_joiplay.rb` to downgrade syntax.
 
-**The patcher (`tools/patch_scripts_for_joiplay.rb`) handles 22 transformations:**
+**The patcher (`tools/patch_scripts_for_joiplay.rb`) handles 23 transformations:**
 
 | # | Transform | Example |
 |---|-----------|---------|
@@ -62,6 +62,7 @@ JoiPlay's RPG Maker XP plugin uses `libmkxp18.so` which embeds **Ruby 1.8**. The
 | 20 | `.to_h` | → `.inject({}) { \|h,(k,v)\| h[k]=v; h }` (`Array#to_h` is Ruby 2.1+) |
 | 21 | `.bytesize` | → `.length` (in Ruby 1.8, `String#length` is byte length) |
 | 22 | `.bytes` | → `.unpack('C*')` (`String#bytes` is Ruby 1.9+) |
+| 23 | `.key?` | → `.has_key?` (`Hash#key?` is Ruby 1.9+; `has_key?` works in all versions) |
 
 ### Key Lesson: exist? vs exists?
 

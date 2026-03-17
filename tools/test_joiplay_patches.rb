@@ -110,7 +110,7 @@ FIXTURES = [
         puts trainer
       end
     RUBY
-    /auto_level = _kw.key\?\(:auto_level\)/
+    /auto_level = _kw.has_key\?\(:auto_level\)/
   ],
   [
     "encoding_removal",
@@ -315,6 +315,16 @@ FIXTURES = [
       result = /pattern/.match?("test string")
     RUBY
     /\.match\(/  # match? → match
+  ],
+  [
+    "hash_key_question_to_has_key",
+    <<~'RUBY',
+      if cache.key?(sprite_key)
+        return cache[sprite_key]
+      end
+      result = pokemon_map.key?(headNum) ? pokemon_map[headNum] : []
+    RUBY
+    /\.has_key\?\(sprite_key\)/
   ],
   [
     "string_prepend_unchanged",
@@ -543,6 +553,9 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       end
       if line =~ /\w+\.define_method\(/
         residual_issues << "#{name}:#{lineno + 1}: residual public define_method: #{line.strip}"
+      end
+      if line =~ /\.key\?\(/ && line !~ /has_key\?\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual .key?() (Ruby 1.9+, use .has_key?): #{line.strip}"
       end
     end
   end

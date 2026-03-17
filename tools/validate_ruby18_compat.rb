@@ -54,7 +54,7 @@ LINE_CHECKS = [
   [/\bdefine_singleton_method\b/, "define_singleton_method (Ruby 1.9+)", :error],
 
   # Keyword arguments in def
-  [/^\s*def\s+\S+\([^)]*\w+:\s*[^)]+\)\s*$/, "Keyword arguments in def (Ruby 2.0+)", :error],
+  [/^\s*def\s+\S+\([^)]*\w+:\s[^)]+\)\s*$/, "Keyword arguments in def (Ruby 2.0+)", :error],
 
   # Kernel / Object methods
   [/\b__dir__\b/i, "__dir__ (Ruby 2.0+)", :error],
@@ -63,6 +63,7 @@ LINE_CHECKS = [
   [/\bArray\.try_convert\b/, "Array.try_convert (Ruby 1.9+)", :error],
 
   # Hash methods
+  [/\.key\?\(/, ".key? (Hash#key? is Ruby 1.9+, use .has_key?)", :error],
   [/\.key\b(?!\s*=>)(?!\?)/, ".key (Hash#key is Ruby 1.9+, use .index)", :warn],
 
   # Proc / Lambda

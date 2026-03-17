@@ -454,6 +454,11 @@ package_mobile() {
   # Copy Game.ini (required by JoiPlay to identify the game)
   [ -f "$GAME_DIR/Game.ini" ] && cp "$GAME_DIR/Game.ini" "$mobile_dir/"
 
+  # Copy Game.exe (JoiPlay requires an .exe file as the "Executable" entry —
+  # it doesn't run it, the RPG Maker XP plugin takes over, but it won't
+  # recognize the game without one)
+  [ -f "$GAME_DIR/Game.exe" ] && cp "$GAME_DIR/Game.exe" "$mobile_dir/"
+
   # Copy script archive if present (Scripts.rxdata holds RGSS scripts)
   [ -f "$DATA_DIR/Scripts.rxdata" ] && cp "$DATA_DIR/Scripts.rxdata" "$mobile_dir/Data/" 2>/dev/null || true
 
@@ -598,7 +603,6 @@ RUBY
   # Remove things JoiPlay doesn't need that may have been copied
   rm -rf "$mobile_dir"/.git \
          "$mobile_dir"/.originals \
-         "$mobile_dir"/*.exe \
          "$mobile_dir"/*.dll \
          "$mobile_dir"/System \
          "$mobile_dir"/Game.rgssad \
@@ -606,16 +610,29 @@ RUBY
          "$mobile_dir"/Game.rgss3a \
          2>/dev/null || true
 
+  # NOTE: Game.exe must remain in the package. JoiPlay only accepts
+  # .exe/.sh/.py/.html as the "Executable" — it doesn't run the exe,
+  # the RPG Maker XP plugin takes over.
+
   # Create the ZIP (use max compression)
   info "Creating $zip_name (this may take a minute)..."
   cd "$PROJECT_DIR"
   if command -v zip &>/dev/null; then
     zip -9 -r -q "$zip_name" "$(basename "$mobile_dir")"
+  elif command -v powershell.exe &>/dev/null || command -v powershell &>/dev/null; then
+    # Git Bash on Windows: use PowerShell's Compress-Archive
+    local ps_src ps_dst
+    ps_src="$(cygpath -w "$PROJECT_DIR/$(basename "$mobile_dir")")"
+    ps_dst="$(cygpath -w "$PROJECT_DIR/$zip_name")"
+    powershell.exe -NoProfile -Command \
+      "Compress-Archive -Path '${ps_src}' -DestinationPath '${ps_dst}' -Force" || \
+      error "PowerShell Compress-Archive failed"
   elif command -v tar &>/dev/null; then
     tar czf "${zip_name%.zip}.tar.gz" "$(basename "$mobile_dir")"
     zip_name="${zip_name%.zip}.tar.gz"
+    warn "Created .tar.gz instead of .zip (install 'zip' for better Android compatibility)"
   else
-    error "Neither zip nor tar found. Install zip: sudo apt install zip"
+    error "No zip, PowerShell, or tar found. Install zip or run on a system with PowerShell."
   fi
 
   # Clean up the staging directory

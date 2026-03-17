@@ -18,9 +18,10 @@
 #  13. deprecate_constant:      deprecate_constant :X →  commented out (Ruby 2.3+)
 #  14. Private define_method:   obj.define_method(m)  →  obj.send(:define_method, m)
 #  15. File/Dir.exists?:        File.exists? → File.exist?  (exists? removed in Ruby 3.0+)
-#  16. .each_char:              str.each_char         →  str.split('').each
-#  17. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
-#  18. .match?:                 str.match?(pat)       →  str.match(pat)  (match? is Ruby 2.4+)
+#  16. .match?:                 str.match?(pat)       →  str.match(pat)  (match? is Ruby 2.4+)
+#  17. .key?:                   hash.key?(k)          →  hash.has_key?(k)  (key? is Ruby 1.9+)
+#  18. .each_char:              str.each_char         →  str.split('').each
+#  19. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -306,7 +307,7 @@ def patch_keyword_args_in_def(lines)
 
         # Extract keyword values from _kw hash
         keywords.each do |name, default|
-          result << "#{indent}  #{name} = _kw.key?(:#{name}) ? _kw[:#{name}] : #{default}\n"
+          result << "#{indent}  #{name} = _kw.has_key?(:#{name}) ? _kw[:#{name}] : #{default}\n"
         end
 
         i += 1
@@ -402,10 +403,13 @@ def patch_ruby19_apis(line)
   #     String#match and Regexp#match both exist in Ruby 1.8 and return truthy/falsy.
   line = line.gsub(/\.match\?\(/, '.match(')
 
-  # 11. .each_char → .split('').each (Ruby 1.9+)
+  # 11. .key? → .has_key? (Hash#key? is Ruby 1.9+; has_key? works in all versions)
+  line = line.gsub(/\.key\?\(/, '.has_key?(')
+
+  # 12. .each_char → .split('').each (Ruby 1.9+)
   line = line.gsub(/\.each_char\b/, ".split('').each")
 
-  # 12. Array#prepend → Array#unshift (Ruby 2.5+ alias)
+  # 13. Array#prepend → Array#unshift (Ruby 2.5+ alias)
   #     Only convert when clearly an Array method (not String#prepend which exists in 1.8).
   #     Heuristic: skip if the argument is a string literal (String#prepend use case).
   line = line.gsub(/\.prepend\(([^)]*)\)/) do
