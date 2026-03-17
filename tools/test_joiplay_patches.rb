@@ -1,7 +1,7 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 # Test harness for JoiPlay patcher — validates that patch_scripts_for_joiplay.rb
-# produces output that compiles under Ruby 1.8.
+# produces output compatible with Ruby 1.9 (JoiPlay with "Use Ruby 1.8" OFF).
 #
 # Can run in three modes:
 #   1. Local:    ruby test_joiplay_patches.rb
@@ -12,16 +12,14 @@
 #   3. Docker:   ruby test_joiplay_patches.rb --docker
 #                Builds a Ruby 1.8 container and compiles patched code inside it.
 #
-# The test fixtures exercise every transform the patcher handles:
-#   - Safe navigation (&.)
-#   - Symbol hash keys (key: val)
-#   - Keyword args in defs
-#   - Encoding/force_encoding removal
-#   - Symbol#to_proc (&:method)
-#   - chomp: true
-#   - Array#to_h
-#   - String#bytesize
-#   - String#bytes
+# The test fixtures exercise every transform the patcher handles (14 total):
+#   - Safe navigation (&.)              - Keyword args in defs
+#   - Double splat (**kwargs)           - Leading-dot chains
+#   - .match?                           - deprecate_constant
+#   - .to_h                             - chomp: true
+#   - Array#prepend                     - Private define_method
+#   - File.exists?/Dir.exist?           - File.write
+#   - Backslash paths
 
 require "fileutils"
 require "tmpdir"
@@ -31,7 +29,7 @@ PATCHER = File.expand_path("patch_scripts_for_joiplay.rb", __dir__)
 
 # ── Test fixtures ──
 # Each fixture is a [name, input_ruby, expected_pattern] triple.
-# input_ruby:       code using Ruby 1.9+/2.0+ features
+# input_ruby:       code using Ruby 2.0+ features
 # expected_pattern:  regex that the patched output must match (nil = just check it compiles)
 FIXTURES = [
   [
@@ -54,36 +52,6 @@ FIXTURES = [
       val = a&.b&.c
     RUBY
     /&&/  # both &. should be converted
-  ],
-  [
-    "symbol_hash_keys",
-    <<~'RUBY',
-      opts = { name: "Pikachu", level: 25, shiny: true }
-    RUBY
-    /:name =>/
-  ],
-  [
-    "symbol_hash_keys_in_method_call",
-    <<~'RUBY',
-      Pokemon.create(name: "Eevee", type: :normal)
-    RUBY
-    /:name => "Eevee"/
-  ],
-  [
-    "symbol_hash_keys_skip_strings",
-    <<~'RUBY',
-      msg = "key: value is fine in a string"
-      opts = { real_key: 42 }
-    RUBY
-    /key: value/  # string content must NOT be transformed
-  ],
-  [
-    "symbol_hash_keys_skip_comments",
-    <<~'RUBY',
-      # This comment has key: value syntax
-      x = { actual: 1 }
-    RUBY
-    /# This comment has key: value syntax/
   ],
   [
     "keyword_args_simple",
@@ -113,21 +81,6 @@ FIXTURES = [
     /auto_level = _kw.has_key\?\(:auto_level\)/
   ],
   [
-    "encoding_removal",
-    <<~'RUBY',
-      text = data.force_encoding(Encoding::UTF_8)
-    RUBY
-    nil  # just check it doesn't contain force_encoding
-  ],
-  [
-    "symbol_to_proc",
-    <<~'RUBY',
-      names = items.map(&:name)
-      values = list.select(&:valid?)
-    RUBY
-    /map \{ \|_e\| _e\.name \}/
-  ],
-  [
     "chomp_keyword",
     <<~'RUBY',
       lines = File.readlines("data.txt", chomp: true)
@@ -142,59 +95,20 @@ FIXTURES = [
     /\.inject\(\{\}\)/
   ],
   [
-    "string_bytesize",
-    <<~'RUBY',
-      len = str.bytesize
-    RUBY
-    /\.length/
-  ],
-  [
-    "string_bytes",
-    <<~'RUBY',
-      raw = str.bytes
-    RUBY
-    /\.unpack\('C\*'\)/
-  ],
-  [
     "combined_transforms",
     <<~'RUBY',
       def process(input, verbose: false)
         data = input&.strip
-        items = data.force_encoding(Encoding::UTF_8)
-        names = items.split(",").map(&:strip)
-        opts = { mode: "fast", count: names.bytesize }
         lines = File.readlines("f.txt", chomp: true)
         result = lines.to_h
         path = File.exists?("x") ? "x" : "y"
-        names.each_char { |c| puts c }
         arr = [2, 3]
         arr.prepend(1)
         deprecate_constant :OLD
+        File.write("out.txt", result.inspect)
       end
     RUBY
     /_kw = \{\}/  # keyword args patched
-  ],
-  [
-    "no_false_positive_ternary",
-    <<~'RUBY',
-      x = condition ? "yes" : "no"
-    RUBY
-    /condition \? "yes" : "no"/  # must NOT be transformed
-  ],
-  [
-    "no_false_positive_namespace",
-    <<~'RUBY',
-      path = SaveData::FILE_PATH
-    RUBY
-    /SaveData::FILE_PATH/  # :: must NOT be transformed
-  ],
-  [
-    "trailing_comma_in_call",
-    <<~'RUBY',
-      download_file(url, path,)
-      draw_text("hello", x + 80, 40,)
-    RUBY
-    /download_file\(url, path\)/
   ],
   [
     "double_splat_kwargs",
@@ -220,36 +134,6 @@ FIXTURES = [
     /sort_by.*\.first/  # joined onto one or two lines
   ],
   [
-    "ternary_with_method_colon",
-    <<~'RUBY',
-      y = cond ? obj.front_sprite_y: @default_y
-    RUBY
-    /front_sprite_y:/  # must NOT transform the ternary colon
-  ],
-  [
-    "lookbehind_regex",
-    <<~'RUBY',
-      id = str.scan(/(?<=H)\d+/).first
-    RUBY
-    /\(H\)/  # lookbehind converted to capturing group
-  ],
-  [
-    "regex_literal_braces",
-    <<~'RUBY',
-      line.gsub!(/{SPRITER_CREDITS}/, credits_text)
-    RUBY
-    /\\{SPRITER_CREDITS\\}/  # braces escaped
-  ],
-  [
-    "required_after_optional",
-    <<~'RUBY',
-      def openMenu(stock = [], itemType)
-        puts itemType
-      end
-    RUBY
-    /def openMenu\(itemType, stock = \[\]\)/  # reordered
-  ],
-  [
     "file_exists_to_exist",
     <<~'RUBY',
       if File.exists?(path)
@@ -267,7 +151,7 @@ FIXTURES = [
       end
       Dir.mkdir(dir) unless Dir.exist?(dir)
     RUBY
-    /File\.directory\?\(path\)/  # Dir.exist? → File.directory? (Dir.exist? not in Ruby 1.8)
+    /File\.directory\?\(path\)/  # Dir.exist? → File.directory?
   ],
   [
     "deprecate_constant",
@@ -289,16 +173,6 @@ FIXTURES = [
     /target\.send\(:define_method, name\)/  # public call → send
   ],
   [
-    "each_char_to_split",
-    <<~'RUBY',
-      str.each_char { |c| puts c }
-      "hello".each_char do |ch|
-        result << ch
-      end
-    RUBY
-    /\.split\(''\)\.each/  # each_char → split('').each
-  ],
-  [
     "array_prepend_to_unshift",
     <<~'RUBY',
       arr.prepend(1)
@@ -317,29 +191,12 @@ FIXTURES = [
     /\.match\(/  # match? → match
   ],
   [
-    "hash_key_question_to_has_key",
-    <<~'RUBY',
-      if cache.key?(sprite_key)
-        return cache[sprite_key]
-      end
-      result = pokemon_map.key?(headNum) ? pokemon_map[headNum] : []
-    RUBY
-    /\.has_key\?\(sprite_key\)/
-  ],
-  [
     "string_prepend_unchanged",
     <<~'RUBY',
       name.prepend("Mr. ")
       buf.prepend('prefix')
     RUBY
     /\.prepend\("Mr\. "\)/  # String#prepend must NOT become unshift
-  ],
-  [
-    "negative_lookbehind",
-    <<~'RUBY',
-      cleaned = str.gsub(/(?<!\\)\./, "_")
-    RUBY
-    nil  # just check it compiles (negative lookbehind removed)
   ],
   [
     "file_exist_unchanged",
@@ -382,7 +239,7 @@ FIXTURES = [
         end
       end
     RUBY
-    nil  # this is already 1.8-safe — just verify it compiles
+    nil  # this is already 1.9-safe — just verify it compiles
   ],
   [
     "windows_backslash_paths",
@@ -392,6 +249,14 @@ FIXTURES = [
       msg = "\\se[]Congratulations!"
     RUBY
     /Graphics\/Battlers\/spritesheets_autogen\//
+  ],
+  [
+    "file_write_to_file_open",
+    <<~'RUBY',
+      File.write("output.txt", data)
+      File.write(path, contents)
+    RUBY
+    /File\.open\("output\.txt", 'w'\)/  # File.write → File.open(..., 'w') { |f| f.write }
   ],
 ].freeze
 
@@ -526,9 +391,9 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
     end
   end
 
-  # Additional check: verify no Ruby 1.9+ syntax remains in patched output
+  # Additional check: verify no Ruby 2.0+ syntax remains in patched output
   puts
-  puts "Checking for residual Ruby 1.9+ syntax..."
+  puts "Checking for residual Ruby 2.0+ syntax..."
   residual_issues = []
   FIXTURES.each do |name, _, _|
     patched_path = File.join(fixture_dir, "#{name}.rb")
@@ -541,23 +406,11 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       if line =~ /&\./
         residual_issues << "#{name}:#{lineno + 1}: residual safe navigation: #{line.strip}"
       end
-      if line =~ /force_encoding/
-        residual_issues << "#{name}:#{lineno + 1}: residual force_encoding: #{line.strip}"
-      end
       if line =~ /\*\*\w+/ && line !~ /^\s*#/
         residual_issues << "#{name}:#{lineno + 1}: residual double splat: #{line.strip}"
       end
       if line =~ /(?<!\w)deprecate_constant\b/ && line !~ /^\s*#/
         residual_issues << "#{name}:#{lineno + 1}: residual deprecate_constant: #{line.strip}"
-      end
-      if line =~ /\.each_char\b/
-        residual_issues << "#{name}:#{lineno + 1}: residual each_char: #{line.strip}"
-      end
-      if line =~ /\(\?<=/ || line =~ /\(\?<!/
-        residual_issues << "#{name}:#{lineno + 1}: residual lookbehind: #{line.strip}"
-      end
-      if line =~ /\.bytesize\b/
-        residual_issues << "#{name}:#{lineno + 1}: residual bytesize: #{line.strip}"
       end
       if line =~ /\.match\?\(/
         residual_issues << "#{name}:#{lineno + 1}: residual .match?(): #{line.strip}"
@@ -568,26 +421,17 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       if line =~ /Dir\.exists?\?/
         residual_issues << "#{name}:#{lineno + 1}: residual Dir.exist(s)? (should be File.directory?): #{line.strip}"
       end
-      if line =~ /\.\w+\(&:\w+[?!]?\)/
-        residual_issues << "#{name}:#{lineno + 1}: residual Symbol#to_proc (&:method): #{line.strip}"
-      end
       if line =~ /readlines\([^)]+,\s*chomp:\s*true\)/
         residual_issues << "#{name}:#{lineno + 1}: residual chomp: true: #{line.strip}"
       end
-      if line =~ /,\s*\)/
-        residual_issues << "#{name}:#{lineno + 1}: residual trailing comma: #{line.strip}"
-      end
       if line =~ /\w+\.define_method\(/
         residual_issues << "#{name}:#{lineno + 1}: residual public define_method: #{line.strip}"
-      end
-      if line =~ /\.key\?\(/ && line !~ /has_key\?\(/
-        residual_issues << "#{name}:#{lineno + 1}: residual .key?() (Ruby 1.9+, use .has_key?): #{line.strip}"
       end
     end
   end
 
   if residual_issues.empty?
-    puts "  No residual 1.9+ syntax found."
+    puts "  No residual 2.0+ syntax found."
   else
     residual_issues.each { |issue| puts "  WARNING: #{issue}" }
   end
