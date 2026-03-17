@@ -22,6 +22,7 @@
 #  17. .key?:                   hash.key?(k)          →  hash.has_key?(k)  (key? is Ruby 1.9+)
 #  18. .each_char:              str.each_char         →  str.split('').each
 #  19. Array#prepend:           arr.prepend(x)        →  arr.unshift(x)
+#  20. Windows backslash paths: "Graphics\\Battlers\\" →  "Graphics/Battlers/" (Linux/Android)
 #
 # Usage: ruby patch_scripts_for_joiplay.rb <scripts_dir>
 
@@ -421,6 +422,18 @@ def patch_ruby19_apis(line)
     else
       ".unshift(#{captured})"
     end
+  end
+
+  # 14. File.write → File.open(..., 'w') { |f| f.write(...) }  (Ruby 1.9+)
+  line = line.gsub(/File\.write\(([^,]+),\s*(.+)\)/) do
+    "File.open(#{$1}, 'w') { |_fw| _fw.write(#{$2}) }"
+  end
+
+  # 15. Windows backslash paths → forward slashes (JoiPlay runs on Linux/Android)
+  #     Only convert inside string literals where the path starts with "Graphics\\"
+  #     to avoid breaking escape sequences like \\n, \\se[], etc.
+  line = line.gsub(/"(Graphics(?:\\\\[^"]*)+)"/) do
+    '"' + $1.gsub('\\\\', '/') + '"'
   end
 
   line

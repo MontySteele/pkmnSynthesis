@@ -384,6 +384,15 @@ FIXTURES = [
     RUBY
     nil  # this is already 1.8-safe — just verify it compiles
   ],
+  [
+    "windows_backslash_paths",
+    <<~'RUBY',
+      SPRITESHEET_FOLDER_PATH = "Graphics\\Battlers\\spritesheets_autogen\\"
+      intro_frames_path = "Graphics\\Pictures\\Intro\\INTRO-%03d"
+      msg = "\\se[]Congratulations!"
+    RUBY
+    /Graphics\/Battlers\/spritesheets_autogen\//
+  ],
 ].freeze
 
 # ── Helpers ──
@@ -399,23 +408,40 @@ def write_fixture(dir, name, code)
   path
 end
 
-def check_ruby18_syntax_docker(fixture_dir)
-  # Write a Dockerfile that compiles all .rb files under Ruby 1.8
-  dockerfile = <<~DOCKER
-    FROM ruby:1.8.7-p374
+def ruby18_dockerfile
+  # Build Ruby 1.8.7 from source — the old ruby:1.8.7 and centos:6 images are EOL.
+  # Uses Ubuntu 20.04 (has old enough OpenSSL/gcc to compile Ruby 1.8.7).
+  # Copies updated config.guess/config.sub from autotools-dev for ARM64 support.
+  <<~'DOCKER'
+    FROM ubuntu:20.04
+    ENV DEBIAN_FRONTEND=noninteractive
+    RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential wget ca-certificates libssl-dev libreadline-dev zlib1g-dev autotools-dev \
+      && rm -rf /var/lib/apt/lists/*
+    RUN wget -q https://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p374.tar.gz \
+      && tar xzf ruby-1.8.7-p374.tar.gz \
+      && cd ruby-1.8.7-p374 \
+      && cp /usr/share/misc/config.guess . \
+      && cp /usr/share/misc/config.sub . \
+      && ./configure --disable-install-doc --prefix=/usr/local 2>&1 | tail -1 \
+      && make -j"$(nproc)" 2>&1 | tail -1 \
+      && make install \
+      && cd / && rm -rf ruby-1.8.7-p374*
+    RUN ruby --version
     COPY scripts/ /scripts/
-    RUN for f in /scripts/*.rb; do ruby -c "$f"; done
+    RUN failed=0; \
+        for f in /scripts/*.rb; do \
+          echo "Checking $f..."; \
+          ruby -c "$f" 2>&1 || failed=$((failed+1)); \
+        done; \
+        echo ""; \
+        if [ $failed -gt 0 ]; then \
+          echo "FAILED: $failed file(s) had syntax errors"; \
+          exit 1; \
+        else \
+          echo "All files passed syntax check"; \
+        fi
   DOCKER
-
-  # Fall back to a publicly available Ruby 1.8 image if the exact tag doesn't exist
-  dockerfile_alt = <<~DOCKER
-    FROM centos:6
-    RUN yum install -y ruby && ruby --version
-    COPY scripts/ /scripts/
-    RUN for f in /scripts/*.rb; do ruby -c "$f" 2>&1; done
-  DOCKER
-
-  [dockerfile, dockerfile_alt]
 end
 
 # ── Main test runner ──
@@ -606,43 +632,28 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
     puts "Docker Ruby 1.8 compilation check"
     puts "=" * 40
 
-    docker_ctx = File.join(tmpdir, "docker_ctx")
-    FileUtils.mkdir_p(docker_ctx)
-    FileUtils.cp_r(fixture_dir, File.join(docker_ctx, "scripts"))
-
-    dockerfile_path = File.join(docker_ctx, "Dockerfile")
-    File.write(dockerfile_path, <<~DOCKER)
-      FROM centos:6
-      RUN yum install -y ruby 2>/dev/null && ruby --version
-      COPY scripts/ /scripts/
-      RUN failed=0; \\
-          for f in /scripts/*.rb; do \\
-            echo "Checking $f..."; \\
-            ruby -c "$f" 2>&1 || failed=$((failed+1)); \\
-          done; \\
-          echo ""; \\
-          if [ $failed -gt 0 ]; then \\
-            echo "FAILED: $failed file(s) had syntax errors"; \\
-            exit 1; \\
-          else \\
-            echo "All files passed syntax check"; \\
-          fi
-    DOCKER
-
     # Check Docker daemon is available
     _, _, docker_st = Open3.capture3("docker", "info")
     unless docker_st.success?
       puts "SKIP: Docker daemon not available — run with Docker running to test Ruby 1.8 compilation."
       puts "      Local pattern-matching tests still passed above."
     else
-      puts "Building Docker image (this may take a moment on first run)..."
+      docker_ctx = File.join(tmpdir, "docker_ctx")
+      FileUtils.mkdir_p(docker_ctx)
+      FileUtils.cp_r(fixture_dir, File.join(docker_ctx, "scripts"))
+
+      dockerfile_path = File.join(docker_ctx, "Dockerfile")
+      File.write(dockerfile_path, ruby18_dockerfile)
+
+      puts "Building Docker image with Ruby 1.8.7 from source..."
+      puts "(first run compiles Ruby — may take a few minutes, subsequent runs use cache)"
       tag = "joiplay-ruby18-test"
       build_out, build_err, build_st = Open3.capture3(
         "docker", "build", "-t", tag, docker_ctx
       )
 
       if build_st.success?
-        puts "Docker build succeeded — all patched files compile under Ruby 1.8!"
+        puts "Docker build succeeded — all patched files compile under Ruby 1.8.7!"
         puts build_out.lines.select { |l| l.include?("Checking") || l.include?("passed") || l.include?("ruby") }.join if verbose
       else
         puts "Docker build FAILED:"
