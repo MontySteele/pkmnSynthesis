@@ -2,7 +2,7 @@
 
 ## Overview
 
-This report documents the Johto→Kanto map transplant pipeline: replacing Kanto region tile layouts with Johto region equivalents while preserving all events, trainers, dialogue, and warps.
+This report documents the Johto→Kanto map transplant pipeline: replacing Kanto region tile layouts with Johto region equivalents while preserving all events, trainers, dialogue, and warps. Small interiors keep their original Kanto tiles.
 
 ## Results Summary
 
@@ -10,124 +10,115 @@ This report documents the Johto→Kanto map transplant pipeline: replacing Kanto
 |--------|-------|
 | Kanto maps in scope | 408 |
 | Maps matched to Johto | 407 (99.8%) |
-| Maps transplanted | 388 (score ≥ 50) |
-| Events processed | 7,513 |
-| Events kept in place | 2,541 (33.8%) |
-| Events relocated via BFS | 4,972 (66.2%) |
-| Events on non-walkable tiles | 45 (0.6%) |
-| Validation pass rate | 1,931 / 1,941 (99.5%) |
-| Dialogue injection compatibility | 100% (0 failures across 62 files) |
+| Small interiors self-mapped (keep Kanto) | 217 |
+| Maps actually transplanted | 166 (score ≥ 50) |
+| Events processed | 5,113 |
+| Events kept in place | 1,840 (36.0%) |
+| Events relocated via BFS | 3,273 (64.0%) |
+| Events on non-walkable tiles | 29 (0.6%) |
+| Out-of-bounds warps fixed | 259 |
+| Validation pass rate | 823 / 831 (99.0%) |
+| Dialogue injection compatibility | 100% (0 failures) |
+| Max Johto map reuse | 3x (capped) |
+| Visual diversity per phase | 73-98% unique |
 
 ## Tools Built
 
-| Tool | Lines | Purpose |
-|------|-------|---------|
-| `tools/map_classifier.rb` | 277 | Bulk map metadata extraction + type classification |
-| `tools/match_maps.rb` | 380 | Kanto→Johto compatibility scoring + greedy assignment |
-| `tools/transplant_events.rb` | 466 | Tile swap + BFS event relocation + warp retargeting |
-| `tools/generate_transplant_spec.rb` | 140 | Generates transplant spec from match results |
-| `tools/validate_transplant.rb` | 292 | Post-transplant validation (events, walkability, warps) |
-| `build_transplanted.sh` | ~200 | Integration wrapper for transplant + build pipeline |
+| Tool | Purpose |
+|------|---------|
+| `tools/map_classifier.rb` | Bulk map metadata extraction + type classification |
+| `tools/match_maps.rb` | Kanto→Johto scoring + greedy assignment with self-mapping |
+| `tools/transplant_events.rb` | Tile swap + anti-stacking BFS relocation + warp retargeting |
+| `tools/generate_transplant_spec.rb` | Generates transplant spec from match results |
+| `tools/validate_transplant.rb` | Post-transplant validation (events, walkability, warps) |
+| `tools/validate_reuse.rb` | Johto map reuse tracking + visual diversity scoring |
+| `tools/validate_encounters.rb` | Trainer/wild Pokemon level progression validation |
+| `tools/fix_warp_coords.rb` | Fixes out-of-bounds warp coordinates post-transplant |
+| `build_transplanted.sh` | Integration wrapper for transplant + build pipeline |
 
 ## Pipeline
 
 ```
 1. Classify all 808 maps → map_classification.json
-2. Match Kanto maps to Johto → map_matches.json
-3. Generate transplant spec → transplant_full_spec.json
+2. Match Kanto to Johto → map_matches.json (self-maps small interiors)
+3. Generate transplant spec → transplant_full_spec.json (166 maps)
 4. Run transplant → modifies game_data/Data/Map###.rxdata
-5. Inject dialogue → works on transplanted maps (event IDs preserved)
-6. Validate → validate_transplant.rb + existing validators
-7. Launch game
+5. Fix warp coordinates → fix_warp_coords.rb
+6. Inject dialogue → works on transplanted maps (event IDs preserved)
+7. Validate → validate_transplant.rb + validate_reuse.rb + validate_encounters.rb
+8. Launch game
 ```
 
-## Classifier Improvements
+## Matching Strategy
 
-The initial classifier matched only 206 of 408 maps. After improvements:
+### Three-pass approach:
+1. **Pre-pass: Self-map small interiors** — 217 maps with dimensions ≤25×20 keep their original Kanto tiles. This preserves visual quality for small rooms and frees Johto maps for larger areas.
+2. **Pass 1: Unique assignment** — 150 Kanto maps get unique 1:1 Johto matches. Priority goes to routes, cities, and caves (the most visible areas).
+3. **Pass 2: Controlled reuse** — 40 remaining maps share Johto maps, capped at 3x maximum per Johto map.
 
-- **Added name-based interior detection**: Hotel, House, Cafe, Shop, etc.
-- **Expanded tileset keywords**: Interior2, Sewers, boat, arena, etc.
-- **Added dimension-based fallback**: small maps (≤30×30) without Route/City in name → interior
-- **Cross-type matching**: interior↔special, cave↔dungeon
+### Reuse distribution:
+- 128 Johto maps used 1x (unique)
+- 6 Johto maps used 2x
+- 17 Johto maps used 3x
+- 57 Johto maps unused (headroom)
 
-Result: 507 maps classified as interior (was 203), 407 of 408 matched (was 206).
+### Visual diversity by game phase:
+| Phase | Unique Johto / Total | Diversity |
+|-------|---------------------|-----------|
+| Early game (Pallet→Pewter) | 27 / 37 | 73.0% |
+| Mid game (Cerulean→Celadon) | 46 / 53 | 86.8% |
+| Late game (Saffron→Cinnabar) | 33 / 35 | 94.3% |
+| Endgame (Victory Road+) | 13 / 15 | 86.7% |
+
+## Encounter Validation
+
+Trainers and wild Pokemon are validated against expected level progression:
+- **1,020 trainers** found across 157 maps
+- **200 OK**, 10 WARN, 51 ERROR (errors are mostly rematch/NG+ variants with scaled levels — pre-existing, not transplant-caused)
+- **88 wild encounter tables** checked
+- Trainers remain in their correct locations (Brock in Pewter Gym, Elite Four in Victory Road, etc.)
 
 ## Known Issues
 
-### 1. Non-walkable event placement (45 events, 3 maps)
+### 1. Non-walkable event placement (29 events)
 
-**Maps affected**: 660, 556, 703
+BFS anti-stacking relocation can't always find unoccupied walkable tiles. 29 of 5,113 events (0.6%) are on non-walkable tiles. Impact is low — these events are unreachable but won't crash.
 
-**Root cause**: These Kanto maps were matched to Johto maps with very low walkability:
-- Map695 (Burned Tower_old): **0% walkable tiles**
-- Map585 (Bell Tower 5F): 18.1% walkable
-- Map289 (Pokémon Center): 28.7% walkable
+### 2. Pre-existing warp issues
 
-When BFS can't find any walkable tile, events remain at their original position on an impassable tile.
+Some maps have warps to maps outside the `Map001-Map808` range. These are pre-existing in the source game, not transplant-caused.
 
-**Impact**: Low — 45 of 7,513 events (0.6%). These events will likely be unreachable in-game but won't crash. The affected maps are Silph Co. 2F (660), Pokemon Tower F3 (556), and Cinnabar Lab (703).
+### 3. Route/city reuse
 
-**Fix options**:
-1. Skip these 3 transplants (keep original Kanto tiles)
-2. Use a "force-place" mode that ignores passability
-3. Find better Johto matches for these maps
+A few routes share the same Johto tile layout (max 3x). Notable: Route 46 used for Routes 15/19/20, Route 37 used for Routes 2/2/9. This creates some visual repetition for outdoor areas.
 
-### 2. Pre-existing warp issues (5 maps)
+### 4. Event relocation quality
 
-Maps 212, 665, 044, 663, 236, 131 have warps pointing to maps outside the `Map001-Map808` range. These are **pre-existing** in the source Kanto maps — not caused by transplant.
-
-### 3. Johto map reuse (201 maps share Johto targets)
-
-Only 207 unique Johto maps were available, but 407 Kanto maps needed matches. This means 201 Kanto maps share the same Johto tile layout as another Kanto map. For interiors this is fine (most PokeMarts look alike), but for routes/cities it means some areas will look identical.
-
-### 4. Event relocation distance
-
-66.2% of events needed relocation. While BFS finds the nearest walkable tile, events may end up far from their intended position. This is cosmetically imperfect — trainers might stand in odd places relative to terrain features.
+64% of events needed relocation. Anti-stacking BFS finds nearby walkable tiles but doesn't consider event purpose (trainer line-of-sight, NPC accessibility, etc.).
 
 ## What Went Well
 
-1. **Injection compatibility**: The key architectural bet — that injection uses event IDs, not positions — proved correct. Zero injection failures post-transplant.
-2. **Same-ID transplant strategy**: Writing output to the same map IDs as the source eliminated all warp retargeting complexity.
-3. **Existing tooling**: The project's validate_composition.rb already had passability checking and BFS, making the transplant tool straightforward to build.
-4. **Classifier iteration**: Going from 206 → 407 matches with heuristic improvements was fast and effective.
-
-## What Could Be Better
-
-1. **Walkability edge cases**: The BFS search should handle 0% walkable maps by either skipping the transplant or relaxing passability requirements.
-2. **Visual review**: We generated before/after PNGs but didn't do systematic visual review of all 388 transplanted maps.
-3. **1:many Johto reuse**: A smarter assignment algorithm could minimize visual repetition by distributing Johto maps more evenly.
-4. **Event relocation quality**: Currently BFS finds the *nearest* walkable tile. A better approach would consider event purpose (trainers need line-of-sight, NPCs need accessible positions, warps need edge placement).
-
-## Files Produced
-
-| File | Description |
-|------|-------------|
-| `map_classification.json` | Metadata for all 808 maps |
-| `map_matches.json` | Kanto→Johto pairings with scores |
-| `transplant_full_spec.json` | 388 transplant entries |
-| `transplant_full_report.json` | Detailed transplant results |
-| `transplant_full_log.txt` | Transplant execution log |
-| `docs/map_transplant_testing.md` | Testing strategy document |
-| `docs/map_transplant_report.md` | This report |
-| `before_*.png` / `after_*.png` | Visual comparison renders |
-| `test_transplant_spec.json` | Small batch test spec |
+1. **Injection compatibility**: Injection uses event IDs, not positions — zero failures post-transplant.
+2. **Self-mapping strategy**: Keeping 217 small interiors as Kanto originals dramatically reduced transplant scope and Johto reuse.
+3. **Anti-stacking BFS**: Two-pass approach (keep → relocate) prevents event clustering.
+4. **Warp fixer**: Post-transplant coordinate clamping fixed 259 out-of-bounds warps automatically.
 
 ## Reproduction
 
 ```bash
 # Fresh build from scratch
 git clone <this-repo> && cd pkmnSynthesis
-
-# Option A: Use the wrapper script
-./build_transplanted.sh
-
-# Option B: Manual steps
 git clone --depth 1 https://github.com/infinitefusion/infinitefusion-e18 game_data
+
+# Run pipeline
 ruby tools/transplant_events.rb game_data transplant_full_spec.json
+ruby tools/fix_warp_coords.rb game_data
 ./build_and_launch.sh --inject
 
 # Validation
 ruby tools/validate_transplant.rb game_data transplant_full_report.json
+ruby tools/validate_reuse.rb map_matches.json map_classification.json
+ruby tools/validate_encounters.rb game_data
 ruby tools/validate_switches.rb game_data
 ruby tools/smoke_test.rb game_data
 ```
