@@ -37,19 +37,77 @@ end
 # ─── Level progression table ──────────────────────────────────────────
 
 LEVEL_PROGRESSION = {
+  # ── Early game (Pallet → Pewter) ──
   "pallet_town" => { maps: [42, 43, 48, 77, 78, 76, 97, 185, 205], levels: [1, 10], desc: "Starting area" },
   "route_1" => { maps: [78, 97, 185], levels: [2, 5], desc: "First route" },
   "viridian_city" => { maps: [79, 80, 81, 83, 84, 85, 371, 458, 710, 711, 746, 38, 375, 40, 669, 655], levels: [2, 10], desc: "First city" },
+  "route_2" => { maps: [86, 90, 92, 222], levels: [3, 8], desc: "Viridian to Pewter" },
   "viridian_forest" => { maps: [491], levels: [3, 7], desc: "Forest dungeon" },
-  "pewter_city" => { maps: [91, 93, 380, 386, 392, 382, 96, 385, 381, 470, 459, 460], levels: [8, 14], desc: "First gym" },
-  "mt_moon" => { maps: [102, 103, 104, 105, 116, 117, 494, 496, 515, 699], levels: [8, 14], desc: "First cave" },
-  "cerulean_city" => { maps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 384, 387, 388, 389, 461, 462, 383, 178, 390], levels: [15, 25], desc: "Second gym" },
-  "vermilion_city" => { maps: [16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 37, 61, 155, 161, 226, 394, 395, 396, 463, 464, 546], levels: [20, 30], desc: "Third gym" },
-  "celadon_city" => { maps: [95, 408, 414, 542, 405, 510, 406, 407, 432, 433, 434, 435, 436, 514, 431], levels: [25, 35], desc: "Fourth gym" },
-  "saffron_city" => { maps: [108, 122, 133, 215, 152, 191, 192, 179, 151, 110, 111, 112, 113, 114, 115], levels: [30, 40], desc: "Fighting/Psychic gym" },
+  "pewter_city" => { maps: [91, 93, 380, 386, 392, 382, 96, 385, 381, 470, 459, 460], levels: [8, 14], desc: "First gym (Rock)" },
+
+  # ── Mt. Moon → Cerulean ──
+  "route_3" => { maps: [490], levels: [8, 12], desc: "Pewter to Mt. Moon" },
+  "mt_moon" => { maps: [102, 103, 104, 105, 116, 117, 494, 496, 515, 699, 767, 801, 802, 827, 828], levels: [8, 14], desc: "First cave" },
+  "route_4" => { maps: [106, 233, 236, 291], levels: [10, 14], desc: "Mt. Moon to Cerulean" },
+  "cerulean_city" => { maps: [1, 2, 3, 4, 5, 6, 7, 384, 387, 388, 389, 461, 462, 383, 178, 390], levels: [15, 25], desc: "Second gym (Water)" },
+  "route_24_25" => { maps: [8, 9, 10, 11], levels: [15, 22], desc: "Nugget Bridge / Bill's area" },
+
+  # ── Cerulean → Vermilion ──
+  "route_5" => { maps: [12, 13, 14, 15], levels: [15, 20], desc: "Cerulean to Saffron gate" },
+  "route_6" => { maps: [16, 18], levels: [15, 20], desc: "Saffron gate to Vermilion" },
+  "vermilion_city" => { maps: [19, 20, 21, 22, 23, 24, 25, 26, 37, 61, 226, 394, 395, 396, 463, 464, 546], levels: [20, 30], desc: "Third gym (Electric)" },
+  "ss_anne" => { maps: [17, 27, 28, 29, 30, 31, 32, 34, 35, 36, 201], levels: [18, 25], desc: "S.S. Anne" },
+  "route_11" => { maps: [155, 161], levels: [20, 25], desc: "Vermilion east" },
+  "digletts_cave" => { maps: [140, 398, 399], levels: [15, 22], desc: "Diglett's Cave" },
+
+  # ── Rock Tunnel → Lavender ──
+  "route_9" => { maps: [351, 495], levels: [20, 25], desc: "Cerulean to Rock Tunnel" },
+  "rock_tunnel" => { maps: [349, 350, 512, 513, 800], levels: [20, 28], desc: "Rock Tunnel" },
+  "route_10" => { maps: [154], levels: [20, 25], desc: "Rock Tunnel to Lavender" },
+  "lavender_town" => { maps: [50, 419, 420, 421, 422], levels: [25, 32], desc: "Lavender Town" },
+  "pokemon_tower" => { maps: [142, 400, 401, 402, 403, 467, 468, 469, 556], levels: [25, 35], desc: "Pokemon Tower" },
+
+  # ── Celadon area ──
+  "route_8" => { maps: [409, 410, 411], levels: [25, 30], desc: "Lavender to Saffron gate" },
+  "route_7" => { maps: [413, 415], levels: [25, 30], desc: "Saffron gate to Celadon" },
+  "celadon_city" => { maps: [62, 63, 64, 65, 95, 408, 414, 542, 405, 510, 406, 407,
+                              432, 433, 434, 435, 436, 514, 431, 450, 451, 452, 453, 454,
+                              465, 466, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507,
+                              508, 509, 768, 771], levels: [25, 35], desc: "Fourth gym (Grass)" },
+  "rocket_hideout" => { maps: [45, 449, 455, 456, 457, 446, 447, 448], levels: [25, 35], desc: "Team Rocket Hideout (Celadon)" },
+  "celadon_sewers" => { maps: [72, 372, 431], levels: [25, 35], desc: "Celadon Sewers" },
+
+  # ── South routes (Cycling Road → Fuchsia) ──
+  "route_12" => { maps: [159], levels: [25, 32], desc: "South of Lavender" },
+  "route_13" => { maps: [437], levels: [25, 32], desc: "South route" },
+  "route_14" => { maps: [440], levels: [25, 32], desc: "South route" },
+  "route_15" => { maps: [444], levels: [28, 35], desc: "South route to Fuchsia" },
+  "route_16_17_18" => { maps: [438, 516, 146, 517, 518], levels: [28, 35], desc: "Cycling Road" },
   "fuchsia_city" => { maps: [472, 476, 60, 479, 473, 87, 481, 482, 477, 478], levels: [30, 40], desc: "Poison gym" },
-  "cinnabar_island" => { maps: [98, 130, 188, 221, 125, 189, 190, 207, 219, 135, 136, 206, 208, 209], levels: [35, 45], desc: "Fire gym" },
-  "victory_road" => { maps: [304, 306, 307, 303, 314, 315, 316, 317, 318, 328, 341], levels: [40, 55], desc: "Pre-Elite Four" },
+  "safari_zone" => { maps: [443, 445, 484, 485, 486, 487, 488, 715, 717, 718, 473, 804], levels: [22, 40], desc: "Safari Zone" },
+
+  # ── Saffron / Silph Co. ──
+  "saffron_city" => { maps: [108, 120, 122, 133, 141, 153, 156, 180, 182, 183, 184,
+                              194, 196, 199, 200, 215, 232, 152, 191, 192, 179, 151,
+                              110, 111, 112, 113, 114, 115, 701, 702, 772, 803, 825, 829], levels: [30, 40], desc: "Fighting/Psychic gym" },
+  "silph_co" => { maps: [121, 212, 660, 661, 662, 663, 665, 666, 667, 668, 757, 807], levels: [30, 40], desc: "Silph Co. (all floors)" },
+
+  # ── Water routes / Seafoam / Cinnabar ──
+  "route_19_20" => { maps: [57, 58], levels: [30, 38], desc: "Water routes to Seafoam" },
+  "seafoam_islands" => { maps: [808, 53, 54, 55], levels: [30, 40], desc: "Seafoam Islands" },
+  "route_21" => { maps: [59], levels: [35, 42], desc: "Cinnabar to Pallet" },
+  "cinnabar_island" => { maps: [98, 130, 188, 221, 125, 189, 190, 207, 219, 135, 136, 206, 208, 209, 721, 703], levels: [35, 45], desc: "Fire gym" },
+  "pokemon_mansion" => { maps: [173, 174, 181, 187], levels: [35, 45], desc: "Pokemon Mansion" },
+  "power_plant" => { maps: [144, 197, 198], levels: [30, 42], desc: "Power Plant" },
+
+  # ── Endgame ──
+  "route_22" => { maps: [171], levels: [35, 45], desc: "Viridian west" },
+  "route_23" => { maps: [143], levels: [40, 50], desc: "Victory Road approach" },
+  "victory_road" => { maps: [304, 306, 307], levels: [40, 50], desc: "Victory Road" },
+  "elite_four" => { maps: [148, 260, 303, 314, 315, 316, 317, 318, 328, 341], levels: [45, 65], desc: "Indigo Plateau / Elite Four" },
+
+  # ── Viridian Gym (revisit — late game) ──
+  "viridian_gym" => { maps: [85], levels: [40, 50], desc: "Viridian Gym (Giovanni)" },
 }
 
 WARN_TOLERANCE = 5   # Levels outside expected range but within tolerance => WARN
