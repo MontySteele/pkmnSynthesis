@@ -53,9 +53,23 @@ INDOOR_TILESET_KEYWORDS = %w[
   indoor inside house building gym center mart museum lab office
   school hospital department store hotel mansion room floor
   headquarters hq ship ss cabin
+  interior2 sewers sewer boat arena tower hideout tunnel warehouse
+  basement prison jail elevator lighthouse observatory dojo plaza
 ].freeze
 
-CAVE_TILESET_KEYWORDS = %w[cave tunnel underground cavern grotto].freeze
+CAVE_TILESET_KEYWORDS = %w[cave underground cavern grotto].freeze
+
+INTERIOR_NAME_KEYWORDS = %w[
+  hotel house cafe shop store lab center room dojo club
+  mart pokemart pokecenter museum school hospital
+  headquarters bar nightclub boutique arena warehouse
+  station lighthouse observatory condominiums fan
+  gate shed barn elevator office gym dept floor
+  chamber hall kitchen bedroom lounge lobby salon
+  apartment suite studio gallery library theater theatre
+  factory mill foundry power plant nursery daycare
+  radio tower dept store mansion hideout
+].freeze
 
 def classify_map(name, width, height, tileset_name)
   ts_lower = (tileset_name || "").downcase
@@ -67,7 +81,7 @@ def classify_map(name, width, height, tileset_name)
   end
 
   # Dungeon check (name-based)
-  if name_str =~ /\b(Tower|Mansion|Tunnel|Hideout)\b/i
+  if name_str =~ /\b(Tunnel|Hideout)\b/i
     return "dungeon"
   end
 
@@ -76,13 +90,24 @@ def classify_map(name, width, height, tileset_name)
     return "outdoor_route"
   end
 
+  # Interior check by name (common building types) — BEFORE outdoor_city
+  # so that "Saffron City Hotel" etc. get classified as interior
+  if width <= 40 && height <= 40 && INTERIOR_NAME_KEYWORDS.any? { |kw| name_str.downcase.include?(kw) }
+    return "interior"
+  end
+
+  # Interior check (small map with indoor tileset)
+  if width <= 40 && height <= 40 && INDOOR_TILESET_KEYWORDS.any? { |kw| ts_lower.include?(kw) }
+    return "interior"
+  end
+
   # City/Town check (name-based)
   if name_str =~ /\b(City|Town|Island)\b/i
     return "outdoor_city"
   end
 
-  # Interior check (small map with indoor tileset)
-  if width <= 25 && height <= 25 && INDOOR_TILESET_KEYWORDS.any? { |kw| ts_lower.include?(kw) }
+  # Dimension-based fallback: small maps that aren't routes/cities are likely interiors
+  if width <= 30 && height <= 30 && !name_str.match?(/\b(Route|City|Town|Island|Forest|Safari|Park)\b/i)
     return "interior"
   end
 

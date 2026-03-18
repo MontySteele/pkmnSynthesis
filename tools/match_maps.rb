@@ -67,13 +67,23 @@ JOHTO_MAP_IDS = [
 KANTO_SET = KANTO_MAP_IDS.to_a.freeze
 JOHTO_SET = JOHTO_MAP_IDS.to_a.freeze
 
+# Compatible types: allow cross-type matching for similar categories
+COMPATIBLE_TYPES = {
+  "interior" => ["interior", "special"],
+  "special"  => ["special", "interior"],
+  "cave"     => ["cave", "dungeon"],
+  "dungeon"  => ["dungeon", "cave"],
+  "outdoor_city"  => ["outdoor_city"],
+  "outdoor_route" => ["outdoor_route"],
+}.freeze
+
 # ---------------------------------------------------------------------------
 # Tileset category heuristic
 # ---------------------------------------------------------------------------
 
 TILESET_CATEGORIES = {
   "outdoor" => %w[outdoor_city outdoor_route outdoor_town outdoor_special],
-  "indoor"  => %w[indoor_house indoor_shop indoor_gym indoor_pokecenter
+  "indoor"  => %w[interior indoor indoor_house indoor_shop indoor_gym indoor_pokecenter
                    indoor_generic indoor_building indoor_lab indoor_mansion],
   "cave"    => %w[cave cave_floor dungeon underground],
   "special" => %w[special battle title_screen cutscene]
@@ -85,8 +95,8 @@ def tileset_category(map_type)
   end
   # Fallback: derive from the type string itself
   return "outdoor" if map_type.to_s.include?("outdoor") || map_type.to_s.include?("route")
-  return "indoor"  if map_type.to_s.include?("indoor")
-  return "cave"    if map_type.to_s.include?("cave")
+  return "indoor"  if map_type.to_s.include?("indoor") || map_type.to_s.include?("interior")
+  return "cave"    if map_type.to_s.include?("cave") || map_type.to_s.include?("dungeon")
   "other"
 end
 
@@ -124,6 +134,19 @@ def score_pair(kanto, johto)
     breakdown["capacity"] = [20 * ratio, 0].max.round(1)
   end
 
+  # NPC count similarity bonus (0-10)
+  k_npc = kanto["npc_count"] || 0
+  j_npc = johto["npc_count"] || 0
+  npc_diff = (k_npc - j_npc).abs
+  breakdown["npc_similarity"] = [10 - npc_diff, 0].max
+
+  # Type match bonus (0-10) — exact type match gets a bonus
+  if kanto["type"] == johto["type"]
+    breakdown["type_match"] = 10
+  else
+    breakdown["type_match"] = 0
+  end
+
   total = breakdown.values.inject(0) { |s, v| s + v }.round(1)
   [total, breakdown]
 end
@@ -141,10 +164,10 @@ TYPE_DISPLAY_ORDER = %w[
 ].freeze
 
 def type_group(t)
-  return "Cities & Towns" if t =~ /outdoor_city|outdoor_town/
-  return "Routes"         if t =~ /outdoor_route/
-  return "Outdoor Other"  if t =~ /outdoor/
-  return "Interiors"      if t =~ /indoor/
+  return "Cities & Towns"   if t =~ /outdoor_city|outdoor_town/
+  return "Routes"           if t =~ /outdoor_route/
+  return "Outdoor Other"    if t =~ /outdoor/
+  return "Interiors"        if t =~ /indoor|interior/
   return "Caves & Dungeons" if t =~ /cave|dungeon|underground/
   "Other"
 end
@@ -188,7 +211,8 @@ def main
 
   kanto_maps.each do |km|
     kt = km["type"] || "unknown"
-    pool = johto_by_type[kt] || []
+    compatible = COMPATIBLE_TYPES[kt] || [kt]
+    pool = compatible.flat_map { |t| johto_by_type[t] || [] }.uniq
     scored = pool.map do |jm|
       total, breakdown = score_pair(km, jm)
       { "johto" => jm, "score" => total, "breakdown" => breakdown }
@@ -227,7 +251,7 @@ def main
       break
     end
 
-    if best && best["score"] >= 20
+    if best && best["score"] >= 10
       assignments[kid] = best
       used_johto[best["johto"]["map_id"]] = true
     else
@@ -272,7 +296,7 @@ def main
     reason = if (candidates[km["map_id"]] || []).empty?
                "no Johto candidate with matching type"
              else
-               "no viable Johto candidate (best score < 20 or all taken)"
+               "no viable Johto candidate (best score < 10 or all taken)"
              end
     { "map_id" => km["map_id"], "name" => km["name"], "type" => km["type"], "reason" => reason }
   end
