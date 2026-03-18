@@ -1,7 +1,7 @@
 # encoding: utf-8
 #!/usr/bin/env ruby
 # Test harness for JoiPlay patcher — validates that patch_scripts_for_joiplay.rb
-# produces output that compiles under Ruby 1.8.
+# produces output compatible with Ruby 1.9 (JoiPlay with "Use Ruby 1.8" OFF).
 #
 # Can run in three modes:
 #   1. Local:    ruby test_joiplay_patches.rb
@@ -12,16 +12,14 @@
 #   3. Docker:   ruby test_joiplay_patches.rb --docker
 #                Builds a Ruby 1.8 container and compiles patched code inside it.
 #
-# The test fixtures exercise every transform the patcher handles:
-#   - Safe navigation (&.)
-#   - Symbol hash keys (key: val)
-#   - Keyword args in defs
-#   - Encoding/force_encoding removal
-#   - Symbol#to_proc (&:method)
-#   - chomp: true
-#   - Array#to_h
-#   - String#bytesize
-#   - String#bytes
+# The test fixtures exercise every transform the patcher handles (14 total):
+#   - Safe navigation (&.)              - Keyword args in defs
+#   - Double splat (**kwargs)           - Leading-dot chains
+#   - .match?                           - deprecate_constant
+#   - .to_h                             - chomp: true
+#   - Array#prepend                     - Private define_method
+#   - File.exists?/Dir.exist?           - File.write
+#   - Backslash paths
 
 require "fileutils"
 require "tmpdir"
@@ -31,7 +29,7 @@ PATCHER = File.expand_path("patch_scripts_for_joiplay.rb", __dir__)
 
 # ── Test fixtures ──
 # Each fixture is a [name, input_ruby, expected_pattern] triple.
-# input_ruby:       code using Ruby 1.9+/2.0+ features
+# input_ruby:       code using Ruby 2.0+ features
 # expected_pattern:  regex that the patched output must match (nil = just check it compiles)
 FIXTURES = [
   [
@@ -54,36 +52,6 @@ FIXTURES = [
       val = a&.b&.c
     RUBY
     /&&/  # both &. should be converted
-  ],
-  [
-    "symbol_hash_keys",
-    <<~'RUBY',
-      opts = { name: "Pikachu", level: 25, shiny: true }
-    RUBY
-    /:name =>/
-  ],
-  [
-    "symbol_hash_keys_in_method_call",
-    <<~'RUBY',
-      Pokemon.create(name: "Eevee", type: :normal)
-    RUBY
-    /:name => "Eevee"/
-  ],
-  [
-    "symbol_hash_keys_skip_strings",
-    <<~'RUBY',
-      msg = "key: value is fine in a string"
-      opts = { real_key: 42 }
-    RUBY
-    /key: value/  # string content must NOT be transformed
-  ],
-  [
-    "symbol_hash_keys_skip_comments",
-    <<~'RUBY',
-      # This comment has key: value syntax
-      x = { actual: 1 }
-    RUBY
-    /# This comment has key: value syntax/
   ],
   [
     "keyword_args_simple",
@@ -110,22 +78,7 @@ FIXTURES = [
         puts trainer
       end
     RUBY
-    /auto_level = _kw.key\?\(:auto_level\)/
-  ],
-  [
-    "encoding_removal",
-    <<~'RUBY',
-      text = data.force_encoding(Encoding::UTF_8)
-    RUBY
-    nil  # just check it doesn't contain force_encoding
-  ],
-  [
-    "symbol_to_proc",
-    <<~'RUBY',
-      names = items.map(&:name)
-      values = list.select(&:valid?)
-    RUBY
-    /map \{ \|_e\| _e\.name \}/
+    /auto_level = _kw.has_key\?\(:auto_level\)/
   ],
   [
     "chomp_keyword",
@@ -142,54 +95,20 @@ FIXTURES = [
     /\.inject\(\{\}\)/
   ],
   [
-    "string_bytesize",
-    <<~'RUBY',
-      len = str.bytesize
-    RUBY
-    /\.length/
-  ],
-  [
-    "string_bytes",
-    <<~'RUBY',
-      raw = str.bytes
-    RUBY
-    /\.unpack\('C\*'\)/
-  ],
-  [
     "combined_transforms",
     <<~'RUBY',
       def process(input, verbose: false)
         data = input&.strip
-        items = data.force_encoding(Encoding::UTF_8)
-        names = items.split(",").map(&:strip)
-        opts = { mode: "fast", count: names.bytesize }
         lines = File.readlines("f.txt", chomp: true)
         result = lines.to_h
+        path = File.exists?("x") ? "x" : "y"
+        arr = [2, 3]
+        arr.prepend(1)
+        deprecate_constant :OLD
+        File.write("out.txt", result.inspect)
       end
     RUBY
     /_kw = \{\}/  # keyword args patched
-  ],
-  [
-    "no_false_positive_ternary",
-    <<~'RUBY',
-      x = condition ? "yes" : "no"
-    RUBY
-    /condition \? "yes" : "no"/  # must NOT be transformed
-  ],
-  [
-    "no_false_positive_namespace",
-    <<~'RUBY',
-      path = SaveData::FILE_PATH
-    RUBY
-    /SaveData::FILE_PATH/  # :: must NOT be transformed
-  ],
-  [
-    "trailing_comma_in_call",
-    <<~'RUBY',
-      download_file(url, path,)
-      draw_text("hello", x + 80, 40,)
-    RUBY
-    /download_file\(url, path\)/
   ],
   [
     "double_splat_kwargs",
@@ -215,34 +134,88 @@ FIXTURES = [
     /sort_by.*\.first/  # joined onto one or two lines
   ],
   [
-    "ternary_with_method_colon",
+    "file_exists_to_exist",
     <<~'RUBY',
-      y = cond ? obj.front_sprite_y: @default_y
+      if File.exists?(path)
+        puts "found"
+      end
+      Dir.mkdir(dir) unless Dir.exists?(dir)
     RUBY
-    /front_sprite_y:/  # must NOT transform the ternary colon
+    /File\.exist\?\(path\)/  # File.exists? → File.exist?
   ],
   [
-    "lookbehind_regex",
+    "dir_exist_to_file_directory",
     <<~'RUBY',
-      id = str.scan(/(?<=H)\d+/).first
+      if Dir.exist?(path)
+        puts "found"
+      end
+      Dir.mkdir(dir) unless Dir.exist?(dir)
     RUBY
-    /\(H\)/  # lookbehind converted to capturing group
+    /File\.directory\?\(path\)/  # Dir.exist? → File.directory?
   ],
   [
-    "regex_literal_braces",
+    "deprecate_constant",
     <<~'RUBY',
-      line.gsub!(/{SPRITER_CREDITS}/, credits_text)
-    RUBY
-    /\\{SPRITER_CREDITS\\}/  # braces escaped
-  ],
-  [
-    "required_after_optional",
-    <<~'RUBY',
-      def openMenu(stock = [], itemType)
-        puts itemType
+      module MyModule
+        MY_OLD_CONST = 42
+        deprecate_constant :MY_OLD_CONST
       end
     RUBY
-    /def openMenu\(itemType, stock = \[\]\)/  # reordered
+    /# deprecate_constant/  # must be commented out
+  ],
+  [
+    "private_define_method",
+    <<~'RUBY',
+      target.define_method(name) do |*args|
+        method(name).call(*args)
+      end
+    RUBY
+    /target\.send\(:define_method, name\)/  # public call → send
+  ],
+  [
+    "array_prepend_to_unshift",
+    <<~'RUBY',
+      arr.prepend(1)
+      items.prepend(first_item)
+    RUBY
+    /\.unshift\(/  # Array#prepend → unshift
+  ],
+  [
+    "match_question_to_match",
+    <<~'RUBY',
+      if name.match?(/^B\d+H\d+$/)
+        puts "valid"
+      end
+      result = /pattern/.match?("test string")
+    RUBY
+    /\.match\(/  # match? → match
+  ],
+  [
+    "string_prepend_unchanged",
+    <<~'RUBY',
+      name.prepend("Mr. ")
+      buf.prepend('prefix')
+    RUBY
+    /\.prepend\("Mr\. "\)/  # String#prepend must NOT become unshift
+  ],
+  [
+    "file_exist_unchanged",
+    <<~'RUBY',
+      if File.exist?(path)
+        puts "found"
+      end
+    RUBY
+    /File\.exist\?\(path\)/  # File.exist? must stay as-is (works in all Ruby versions)
+  ],
+  [
+    "game_class_exists_untouched",
+    <<~'RUBY',
+      if GameData::Item.exists?(:COINCASE)
+        puts "has coin case"
+      end
+      return if SaveData.exists?
+    RUBY
+    /GameData::Item\.exists\?\(:COINCASE\)/  # custom class exists? must NOT be touched
   ],
   [
     "deprecation_stub_integration",
@@ -266,7 +239,24 @@ FIXTURES = [
         end
       end
     RUBY
-    nil  # this is already 1.8-safe — just verify it compiles
+    nil  # this is already 1.9-safe — just verify it compiles
+  ],
+  [
+    "windows_backslash_paths",
+    <<~'RUBY',
+      SPRITESHEET_FOLDER_PATH = "Graphics\\Battlers\\spritesheets_autogen\\"
+      intro_frames_path = "Graphics\\Pictures\\Intro\\INTRO-%03d"
+      msg = "\\se[]Congratulations!"
+    RUBY
+    /Graphics\/Battlers\/spritesheets_autogen\//
+  ],
+  [
+    "file_write_to_file_open",
+    <<~'RUBY',
+      File.write("output.txt", data)
+      File.write(path, contents)
+    RUBY
+    /File\.open\("output\.txt", 'w'\)/  # File.write → File.open(..., 'w') { |f| f.write }
   ],
 ].freeze
 
@@ -283,23 +273,40 @@ def write_fixture(dir, name, code)
   path
 end
 
-def check_ruby18_syntax_docker(fixture_dir)
-  # Write a Dockerfile that compiles all .rb files under Ruby 1.8
-  dockerfile = <<~DOCKER
-    FROM ruby:1.8.7-p374
+def ruby18_dockerfile
+  # Build Ruby 1.8.7 from source — the old ruby:1.8.7 and centos:6 images are EOL.
+  # Uses Ubuntu 20.04 (has old enough OpenSSL/gcc to compile Ruby 1.8.7).
+  # Copies updated config.guess/config.sub from autotools-dev for ARM64 support.
+  <<~'DOCKER'
+    FROM ubuntu:20.04
+    ENV DEBIAN_FRONTEND=noninteractive
+    RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential wget ca-certificates libssl-dev libreadline-dev zlib1g-dev autotools-dev \
+      && rm -rf /var/lib/apt/lists/*
+    RUN wget -q https://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p374.tar.gz \
+      && tar xzf ruby-1.8.7-p374.tar.gz \
+      && cd ruby-1.8.7-p374 \
+      && cp /usr/share/misc/config.guess . \
+      && cp /usr/share/misc/config.sub . \
+      && ./configure --disable-install-doc --prefix=/usr/local 2>&1 | tail -1 \
+      && make -j"$(nproc)" 2>&1 | tail -1 \
+      && make install \
+      && cd / && rm -rf ruby-1.8.7-p374*
+    RUN ruby --version
     COPY scripts/ /scripts/
-    RUN for f in /scripts/*.rb; do ruby -c "$f"; done
+    RUN failed=0; \
+        for f in /scripts/*.rb; do \
+          echo "Checking $f..."; \
+          ruby -c "$f" 2>&1 || failed=$((failed+1)); \
+        done; \
+        echo ""; \
+        if [ $failed -gt 0 ]; then \
+          echo "FAILED: $failed file(s) had syntax errors"; \
+          exit 1; \
+        else \
+          echo "All files passed syntax check"; \
+        fi
   DOCKER
-
-  # Fall back to a publicly available Ruby 1.8 image if the exact tag doesn't exist
-  dockerfile_alt = <<~DOCKER
-    FROM centos:6
-    RUN yum install -y ruby && ruby --version
-    COPY scripts/ /scripts/
-    RUN for f in /scripts/*.rb; do ruby -c "$f" 2>&1; done
-  DOCKER
-
-  [dockerfile, dockerfile_alt]
 end
 
 # ── Main test runner ──
@@ -384,9 +391,9 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
     end
   end
 
-  # Additional check: verify no Ruby 1.9+ syntax remains in patched output
+  # Additional check: verify no Ruby 2.0+ syntax remains in patched output
   puts
-  puts "Checking for residual Ruby 1.9+ syntax..."
+  puts "Checking for residual Ruby 2.0+ syntax..."
   residual_issues = []
   FIXTURES.each do |name, _, _|
     patched_path = File.join(fixture_dir, "#{name}.rb")
@@ -399,15 +406,32 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
       if line =~ /&\./
         residual_issues << "#{name}:#{lineno + 1}: residual safe navigation: #{line.strip}"
       end
-      # Check for force_encoding
-      if line =~ /force_encoding/
-        residual_issues << "#{name}:#{lineno + 1}: residual force_encoding: #{line.strip}"
+      if line =~ /\*\*\w+/ && line !~ /^\s*#/
+        residual_issues << "#{name}:#{lineno + 1}: residual double splat: #{line.strip}"
+      end
+      if line =~ /(?<!\w)deprecate_constant\b/ && line !~ /^\s*#/
+        residual_issues << "#{name}:#{lineno + 1}: residual deprecate_constant: #{line.strip}"
+      end
+      if line =~ /\.match\?\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual .match?(): #{line.strip}"
+      end
+      if line =~ /File\.exists\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual File.exists?: #{line.strip}"
+      end
+      if line =~ /Dir\.exists?\?/
+        residual_issues << "#{name}:#{lineno + 1}: residual Dir.exist(s)? (should be File.directory?): #{line.strip}"
+      end
+      if line =~ /readlines\([^)]+,\s*chomp:\s*true\)/
+        residual_issues << "#{name}:#{lineno + 1}: residual chomp: true: #{line.strip}"
+      end
+      if line =~ /\w+\.define_method\(/
+        residual_issues << "#{name}:#{lineno + 1}: residual public define_method: #{line.strip}"
       end
     end
   end
 
   if residual_issues.empty?
-    puts "  No residual 1.9+ syntax found."
+    puts "  No residual 2.0+ syntax found."
   else
     residual_issues.each { |issue| puts "  WARNING: #{issue}" }
   end
@@ -452,43 +476,28 @@ Dir.mktmpdir("joiplay_test") do |tmpdir|
     puts "Docker Ruby 1.8 compilation check"
     puts "=" * 40
 
-    docker_ctx = File.join(tmpdir, "docker_ctx")
-    FileUtils.mkdir_p(docker_ctx)
-    FileUtils.cp_r(fixture_dir, File.join(docker_ctx, "scripts"))
-
-    dockerfile_path = File.join(docker_ctx, "Dockerfile")
-    File.write(dockerfile_path, <<~DOCKER)
-      FROM centos:6
-      RUN yum install -y ruby 2>/dev/null && ruby --version
-      COPY scripts/ /scripts/
-      RUN failed=0; \\
-          for f in /scripts/*.rb; do \\
-            echo "Checking $f..."; \\
-            ruby -c "$f" 2>&1 || failed=$((failed+1)); \\
-          done; \\
-          echo ""; \\
-          if [ $failed -gt 0 ]; then \\
-            echo "FAILED: $failed file(s) had syntax errors"; \\
-            exit 1; \\
-          else \\
-            echo "All files passed syntax check"; \\
-          fi
-    DOCKER
-
     # Check Docker daemon is available
     _, _, docker_st = Open3.capture3("docker", "info")
     unless docker_st.success?
       puts "SKIP: Docker daemon not available — run with Docker running to test Ruby 1.8 compilation."
       puts "      Local pattern-matching tests still passed above."
     else
-      puts "Building Docker image (this may take a moment on first run)..."
+      docker_ctx = File.join(tmpdir, "docker_ctx")
+      FileUtils.mkdir_p(docker_ctx)
+      FileUtils.cp_r(fixture_dir, File.join(docker_ctx, "scripts"))
+
+      dockerfile_path = File.join(docker_ctx, "Dockerfile")
+      File.write(dockerfile_path, ruby18_dockerfile)
+
+      puts "Building Docker image with Ruby 1.8.7 from source..."
+      puts "(first run compiles Ruby — may take a few minutes, subsequent runs use cache)"
       tag = "joiplay-ruby18-test"
       build_out, build_err, build_st = Open3.capture3(
         "docker", "build", "-t", tag, docker_ctx
       )
 
       if build_st.success?
-        puts "Docker build succeeded — all patched files compile under Ruby 1.8!"
+        puts "Docker build succeeded — all patched files compile under Ruby 1.8.7!"
         puts build_out.lines.select { |l| l.include?("Checking") || l.include?("passed") || l.include?("ruby") }.join if verbose
       else
         puts "Docker build FAILED:"

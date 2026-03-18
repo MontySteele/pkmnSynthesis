@@ -37,6 +37,14 @@ This will:
 
 If mkxp-z doesn't work, install Wine as a fallback (`sudo apt install wine`) — the launcher detects it automatically.
 
+### Android (JoiPlay)
+
+```bash
+./build_and_launch.sh --mobile
+```
+
+This creates `PokemonSynthesis_Mobile.zip` — transfer it to your phone and open with JoiPlay + the RPG Maker XP plugin (both free on the Play Store). See `MOBILE_SETUP.txt` for detailed instructions.
+
 ### Other Options
 
 ```bash
@@ -86,4 +94,10 @@ ruby tools/validate_switches.rb game_data
 
 # Dry-run all injections
 ./build_and_launch.sh --dry-run
+
+# Check scripts for JoiPlay/Ruby 1.8 compatibility
+ruby tools/validate_ruby18_compat.rb game_data/Data/Scripts
+
+# Run JoiPlay patcher unit tests
+ruby tools/test_joiplay_patches.rb
 ```

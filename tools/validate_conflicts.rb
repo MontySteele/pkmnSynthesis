@@ -10,6 +10,7 @@
 # Usage: ruby tools/validate_conflicts.rb
 
 require 'json'
+require 'set'
 
 dialogue_dir = File.join(File.dirname(__FILE__), "..", "dialogue_changes")
 
@@ -111,4 +112,5 @@ if errors.empty?
 else
   puts "#{errors.length} issues found:"
   errors.each { |e| puts "  #{e}" }
+  exit 1
 end

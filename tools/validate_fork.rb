@@ -25,8 +25,8 @@ abort("Map807.rxdata not found") unless File.exist?(map_path)
 original = Marshal.load(File.binread(map_path))
 
 # Apply injection to a temp copy
-tmp_dir = "/tmp/fork_validate_#{$$}"
-FileUtils.mkdir_p(tmp_dir)
+require 'tmpdir'
+tmp_dir = Dir.mktmpdir("fork_validate_")
 FileUtils.cp(map_path, File.join(tmp_dir, "Map807.rxdata"))
 
 fork_json = File.join(File.dirname(__FILE__), "..", "dialogue_changes", "silph_fork.json")
@@ -34,7 +34,8 @@ abort("silph_fork.json not found") unless File.exist?(fork_json)
 
 # Run injection
 inject_tool = File.join(File.dirname(__FILE__), "inject_dialogue.rb")
-result = `ruby #{inject_tool} #{tmp_dir} #{fork_json} 2>&1`
+require 'open3'
+result, _err, _st = Open3.capture3("ruby", inject_tool, tmp_dir, fork_json)
 puts "=== Injection Output ==="
 puts result
 puts
@@ -230,11 +231,23 @@ warnings << "Event 8: Missing Switch 630 set" unless switch_630
 # === VALIDATE INDENT NESTING ===
 puts "\n=== Validating Command Nesting ==="
 [["Event 4", cmds], ["Event 10", cmds10]].each do |name, cmdlist|
-  indent_stack = [0]
+  max_indent = 0
+  prev_indent = 0
   cmdlist.each_with_index do |cmd, i|
-    if cmd.indent > indent_stack.last + 1
-      errors << "#{name} cmd#{i}: Indent jump from #{indent_stack.last} to #{cmd.indent} (code #{cmd.code})"
+    # Indent should never jump by more than 1 from the previous command
+    if cmd.indent > prev_indent + 1
+      errors << "#{name} cmd#{i}: Indent jump from #{prev_indent} to #{cmd.indent} (code #{cmd.code})"
     end
+    # Indent should never go negative
+    if cmd.indent < 0
+      errors << "#{name} cmd#{i}: Negative indent #{cmd.indent} (code #{cmd.code})"
+    end
+    max_indent = cmd.indent if cmd.indent > max_indent
+    prev_indent = cmd.indent
+  end
+  # The last command (code 0, end of list) should be at indent 0
+  if cmdlist.any? && cmdlist.last.indent != 0
+    errors << "#{name}: Final command not at indent 0 (at indent #{cmdlist.last.indent})"
   end
 
   # Verify all branches are properly closed
@@ -252,7 +265,7 @@ puts "\n=== Validating Command Nesting ==="
     errors << "#{name}: Mismatched conditional opens (#{cond_opens}) vs closes (#{cond_closes})"
   end
 
-  puts "  #{name}: #{opens} choices (#{closes} ends), #{cond_opens} conditionals (#{cond_closes} ends)"
+  puts "  #{name}: max indent #{max_indent}, #{opens} choices (#{closes} ends), #{cond_opens} conditionals (#{cond_closes} ends)"
 end
 
 # === SUMMARY ===
@@ -270,3 +283,5 @@ end
 
 # Cleanup
 FileUtils.rm_rf(tmp_dir)
+
+exit(errors.any? ? 1 : 0)

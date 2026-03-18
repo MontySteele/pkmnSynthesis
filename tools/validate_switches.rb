@@ -54,7 +54,8 @@ Dir.glob(File.join(data_dir, "Map*.rxdata")).sort.each do |f|
           if [355, 655].include?(cmd.code)
             s = cmd.parameters[0].to_s
             SYNTH_SWITCHES.each do |sw|
-              used[sw] << "Map#{map_id} E#{eid} P#{pi} cmd#{ci} (script)" if s.include?(sw.to_s)
+              # Use word boundary match to avoid false positives (e.g. "11300" matching "1130")
+              used[sw] << "Map#{map_id} E#{eid} P#{pi} cmd#{ci} (script)" if s =~ /\b#{sw}\b/
             end
           end
         end
@@ -147,3 +148,7 @@ end
 puts "\n=== Max switch ID in base game: #{max_switch} ==="
 puts "Our switches: 1130, 1131"
 puts max_switch < 1130 ? "SAFE: well above max used ID" : "WARNING: base game uses switches >= 1130"
+
+# Exit with non-zero status if any collisions found
+has_collisions = SYNTH_SWITCHES.any? { |sw| !used[sw].empty? }
+exit 1 if has_collisions
