@@ -72,12 +72,19 @@ $stderr.puts "Filter: min_score >= #{min_score}"
 
 skipped_review = 0
 skipped_score = 0
+skipped_self_mapped = 0
 transplants = []
 
 matches.each do |m|
   # Skip entries flagged for manual review
   if m["manual_review_needed"]
     skipped_review += 1
+    next
+  end
+
+  # Skip self-mapped entries (small interiors kept as original Kanto)
+  if m["self_mapped"] || m["kanto_map_id"] == m["assigned_johto_id"]
+    skipped_self_mapped += 1
     next
   end
 
@@ -128,6 +135,7 @@ $stderr.puts "Total matches:          #{total}"
 $stderr.puts "Included (score >= #{min_score}): #{included}"
 $stderr.puts "Skipped (low score):    #{skipped_score}"
 $stderr.puts "Skipped (manual review):#{skipped_review}"
+$stderr.puts "Skipped (self-mapped):  #{skipped_self_mapped}"
 $stderr.puts ""
 
 if transplants.any?
