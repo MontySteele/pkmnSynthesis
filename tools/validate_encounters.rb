@@ -71,7 +71,7 @@ LEVEL_PROGRESSION = {
   "route_8" => { maps: [409, 410, 411], levels: [25, 30], desc: "Lavender to Saffron gate" },
   "route_7" => { maps: [413, 415], levels: [25, 30], desc: "Saffron gate to Celadon" },
   "celadon_city" => { maps: [62, 63, 64, 65, 95, 408, 414, 542, 405, 510, 406, 407,
-                              432, 433, 434, 435, 436, 514, 431, 450, 451, 452, 453, 454,
+                              432, 433, 434, 435, 436, 514, 450, 451, 452, 453, 454,
                               465, 466, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507,
                               508, 509, 768, 771], levels: [25, 35], desc: "Fourth gym (Grass)" },
   "rocket_hideout" => { maps: [45, 449, 455, 456, 457, 446, 447, 448], levels: [25, 35], desc: "Team Rocket Hideout (Celadon)" },
@@ -83,7 +83,7 @@ LEVEL_PROGRESSION = {
   "route_14" => { maps: [440], levels: [25, 32], desc: "South route" },
   "route_15" => { maps: [444], levels: [28, 35], desc: "South route to Fuchsia" },
   "route_16_17_18" => { maps: [438, 516, 146, 517, 518], levels: [28, 35], desc: "Cycling Road" },
-  "fuchsia_city" => { maps: [472, 476, 60, 479, 473, 87, 481, 482, 477, 478], levels: [30, 40], desc: "Poison gym" },
+  "fuchsia_city" => { maps: [472, 476, 60, 479, 87, 481, 482, 477, 478], levels: [30, 40], desc: "Poison gym" },
   "safari_zone" => { maps: [443, 445, 484, 485, 486, 487, 488, 715, 717, 718, 473, 804], levels: [22, 40], desc: "Safari Zone" },
 
   # ── Saffron / Silph Co. ──
