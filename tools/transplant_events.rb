@@ -93,9 +93,15 @@ def cell_walkable?(x, y, tiles, xsize, ysize, zsize, passages)
   true
 end
 
-def find_nearest_walkable(x, y, tiles, xsize, ysize, zsize, passages)
-  return [x, y] if x >= 0 && x < xsize && y >= 0 && y < ysize &&
-                    cell_walkable?(x, y, tiles, xsize, ysize, zsize, passages)
+def find_nearest_walkable(x, y, tiles, xsize, ysize, zsize, passages, occupied = nil)
+  occupied ||= Set.new
+
+  # Check original position first
+  if x >= 0 && x < xsize && y >= 0 && y < ysize &&
+     cell_walkable?(x, y, tiles, xsize, ysize, zsize, passages) &&
+     !occupied.include?([x, y])
+    return [x, y]
+  end
 
   visited = Set.new
   # Clamp starting search to within bounds
@@ -106,7 +112,8 @@ def find_nearest_walkable(x, y, tiles, xsize, ysize, zsize, passages)
   head = 0
 
   # Check the clamped start first
-  if cell_walkable?(start_x, start_y, tiles, xsize, ysize, zsize, passages)
+  if cell_walkable?(start_x, start_y, tiles, xsize, ysize, zsize, passages) &&
+     !occupied.include?([start_x, start_y])
     return [start_x, start_y]
   end
 
@@ -117,14 +124,15 @@ def find_nearest_walkable(x, y, tiles, xsize, ysize, zsize, passages)
       nx, ny = cx + dx, cy + dy
       next if nx < 0 || ny < 0 || nx >= xsize || ny >= ysize
       next unless visited.add?([nx, ny])
-      if cell_walkable?(nx, ny, tiles, xsize, ysize, zsize, passages)
+      if cell_walkable?(nx, ny, tiles, xsize, ysize, zsize, passages) &&
+         !occupied.include?([nx, ny])
         return [nx, ny]
       end
       queue << [nx, ny]
     end
   end
 
-  # Fallback: no walkable tile found anywhere
+  # Fallback: no walkable tile found anywhere — allow stacking as last resort
   [start_x, start_y]
 end
 
@@ -198,44 +206,55 @@ def perform_transplant(data_dir, spec, tilesets, dry_run)
   }
 
   new_events = {}
+  occupied = Set.new  # Track occupied tiles to prevent event stacking
 
+  # First pass: keep events that are already on walkable tiles (claim their positions)
   source_events.each do |event_id, event|
     orig_x, orig_y = event.x, event.y
     in_bounds = orig_x >= 0 && orig_x < tgt_td[:xsize] &&
                 orig_y >= 0 && orig_y < tgt_td[:ysize]
 
     if in_bounds && cell_walkable?(orig_x, orig_y, tgt_td[:tiles], tgt_td[:xsize], tgt_td[:ysize], tgt_td[:zsize], passages)
-      # Position is walkable on target, keep it
       new_events[event_id] = Marshal.load(Marshal.dump(event))
+      occupied.add([orig_x, orig_y])
       report["events_kept_in_place"] << {
         "event_id" => event_id,
         "name" => event.name,
         "position" => [orig_x, orig_y]
       }
-    else
-      # Need to relocate
-      reason = in_bounds ? "tile not walkable" : "out of bounds"
-      new_x, new_y = find_nearest_walkable(
-        orig_x, orig_y,
-        tgt_td[:tiles], tgt_td[:xsize], tgt_td[:ysize], tgt_td[:zsize],
-        passages
-      )
-
-      relocated_event = Marshal.load(Marshal.dump(event))
-      relocated_event.x = new_x
-      relocated_event.y = new_y
-      new_events[event_id] = relocated_event
-
-      entry = {
-        "event_id" => event_id,
-        "name" => event.name,
-        "from" => [orig_x, orig_y],
-        "to" => [new_x, new_y],
-        "reason" => reason
-      }
-      report["events_relocated"] << entry
-      $stderr.puts "  Event #{event_id} (#{event.name}): (#{orig_x},#{orig_y}) -> (#{new_x},#{new_y}) [#{reason}]"
     end
+  end
+
+  # Second pass: relocate events that need new positions (avoiding occupied tiles)
+  source_events.each do |event_id, event|
+    next if new_events.key?(event_id)  # Already placed in first pass
+
+    orig_x, orig_y = event.x, event.y
+    in_bounds = orig_x >= 0 && orig_x < tgt_td[:xsize] &&
+                orig_y >= 0 && orig_y < tgt_td[:ysize]
+    reason = in_bounds ? "tile not walkable" : "out of bounds"
+
+    new_x, new_y = find_nearest_walkable(
+      orig_x, orig_y,
+      tgt_td[:tiles], tgt_td[:xsize], tgt_td[:ysize], tgt_td[:zsize],
+      passages, occupied
+    )
+
+    occupied.add([new_x, new_y])
+    relocated_event = Marshal.load(Marshal.dump(event))
+    relocated_event.x = new_x
+    relocated_event.y = new_y
+    new_events[event_id] = relocated_event
+
+    entry = {
+      "event_id" => event_id,
+      "name" => event.name,
+      "from" => [orig_x, orig_y],
+      "to" => [new_x, new_y],
+      "reason" => reason
+    }
+    report["events_relocated"] << entry
+    $stderr.puts "  Event #{event_id} (#{event.name}): (#{orig_x},#{orig_y}) -> (#{new_x},#{new_y}) [#{reason}]"
   end
 
   output_map.events = new_events
