@@ -121,12 +121,12 @@ def score_pair(kanto, johto)
   end
 
   # Walkability similarity (0-20)
-  walk_diff = ((kanto["walkable_pct"] || 50.0) - (johto["walkable_pct"] || 50.0)).abs
+  walk_diff = ((kanto["walkable_tile_pct"] || 50.0) - (johto["walkable_tile_pct"] || 50.0)).abs
   breakdown["walkability"] = [20 - walk_diff, 0].max.round(1)
 
   # Event capacity (0-20)
   kanto_events = kanto["event_count"] || 0
-  johto_walkable = (johto["walkable_pct"] || 50.0) * johto["width"] * johto["height"] / 100.0
+  johto_walkable = (johto["walkable_tile_pct"] || 50.0) * johto["width"] * johto["height"] / 100.0
   if kanto_events == 0 || johto_walkable >= kanto_events
     breakdown["capacity"] = 20
   else
@@ -231,16 +231,17 @@ def main
   end
 
   # ---------------------------------------------------------------------------
-  # Step 4: Global greedy assignment
+  # Step 4: Global greedy assignment (two-pass: unique first, then reuse)
   # ---------------------------------------------------------------------------
 
   # Sort Kanto maps by event_count descending
   sorted_kanto = kanto_maps.sort_by { |km| -(km["event_count"] || 0) }
 
-  used_johto = {}
-  assignments = {}   # kanto_id => {johto, score, breakdown}
-  unmatched = []
+  used_johto = {}        # johto_id => count of times used
+  assignments = {}       # kanto_id => {johto, score, breakdown}
+  first_pass_unmatched = []
 
+  # Pass 1: Unique 1:1 matching (each Johto map used at most once)
   sorted_kanto.each do |km|
     kid = km["map_id"]
     best = nil
@@ -253,7 +254,34 @@ def main
 
     if best && best["score"] >= 10
       assignments[kid] = best
-      used_johto[best["johto"]["map_id"]] = true
+      used_johto[best["johto"]["map_id"]] = (used_johto[best["johto"]["map_id"]] || 0) + 1
+    else
+      first_pass_unmatched << km
+    end
+  end
+
+  # Pass 2: Allow reuse of Johto maps for remaining unmatched Kanto maps
+  # A Johto map can be reused if it's a good enough fit (score >= 10)
+  unmatched = []
+  johto_reuse_count = {}  # track how many times each Johto map is reused
+  max_reuse = 3           # cap reuse to avoid one Johto map matching too many
+
+  first_pass_unmatched.each do |km|
+    kid = km["map_id"]
+    best = nil
+    (candidates[kid] || []).each do |c|
+      jid = c["johto"]["map_id"]
+      reuse = johto_reuse_count[jid] || 0
+      next if reuse >= max_reuse
+      best = c
+      break
+    end
+
+    if best && best["score"] >= 10
+      assignments[kid] = best.merge("reused" => true)
+      jid = best["johto"]["map_id"]
+      johto_reuse_count[jid] = (johto_reuse_count[jid] || 0) + 1
+      used_johto[jid] = (used_johto[jid] || 0) + 1
     else
       unmatched << km
     end
@@ -288,6 +316,7 @@ def main
       "johto_dims"      => "#{jm["width"]}x#{jm["height"]}",
       "score"           => a["score"],
       "score_breakdown" => a["breakdown"],
+      "reused"          => a["reused"] ? true : false,
       "alternatives"    => alt_out
     }
   end
@@ -301,7 +330,8 @@ def main
     { "map_id" => km["map_id"], "name" => km["name"], "type" => km["type"], "reason" => reason }
   end
 
-  unused_johto_ids = JOHTO_SET - used_johto.keys
+  unique_johto_used = used_johto.keys
+  unused_johto_ids = JOHTO_SET - unique_johto_used
   unused_out = unused_johto_ids.map do |jid|
     jm = map_index[jid]
     if jm
@@ -311,14 +341,19 @@ def main
     end
   end
 
+  reused_count = assignments.count { |_, a| a["reused"] }
+  unique_match_count = assignments.size - reused_count
+
   result = {
     "generated_at" => Time.now.utc.iso8601,
     "summary" => {
-      "kanto_maps_total"   => kanto_maps.size,
-      "kanto_maps_matched" => assignments.size,
+      "kanto_maps_total"     => kanto_maps.size,
+      "kanto_maps_matched"   => assignments.size,
+      "kanto_maps_unique"    => unique_match_count,
+      "kanto_maps_reused"    => reused_count,
       "kanto_maps_unmatched" => unmatched.size,
-      "johto_maps_used"    => used_johto.size,
-      "johto_maps_unused"  => unused_out.size
+      "johto_maps_used"      => unique_johto_used.size,
+      "johto_maps_unused"    => unused_out.size
     },
     "matches"        => matches_out,
     "unmatched_kanto" => unmatched_out,
@@ -338,8 +373,10 @@ def main
   puts
   puts "  Kanto maps in scope:   #{kanto_maps.size}"
   puts "  Successfully matched:  #{assignments.size}"
+  puts "    - Unique (1:1):      #{unique_match_count}"
+  puts "    - Reused Johto map:  #{reused_count}"
   puts "  Unmatched (review):    #{unmatched.size}"
-  puts "  Johto maps used:       #{used_johto.size}"
+  puts "  Johto maps used:       #{unique_johto_used.size}"
   puts "  Johto maps unused:     #{unused_out.size}"
   puts
 
