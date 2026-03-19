@@ -553,6 +553,7 @@ class << Kernel
     super
   end
 end
+
 RUBY
 
   # Set mobile mode default: the game defaults on_mobile=false which uses
@@ -566,25 +567,16 @@ RUBY
     rm -f "$options_script.bak"
   fi
 
-  # Fix screen dimensions: JoiPlay/mkxp starts at 640x480 (RGSS default) and
-  # Graphics.resize_screen(512,384) silently fails. The game's viewports, windows,
-  # and UI are all sized using Settings::SCREEN_WIDTH/HEIGHT, so they must match
-  # the actual Graphics dimensions. Spriteset_Map creates class-level viewports at
-  # load time (before pbSetResizeFactor runs), so we must fix Settings directly.
-  local settings_script="$mobile_dir/Data/Scripts/001_Settings.rb"
-  if [ -f "$settings_script" ]; then
-    info "Patching screen dimensions to match JoiPlay native resolution (640x480)..."
-    sed -i.bak 's/SCREEN_WIDTH = 512/SCREEN_WIDTH = 640/' "$settings_script"
-    sed -i.bak 's/SCREEN_HEIGHT = 384/SCREEN_HEIGHT = 480/' "$settings_script"
-    rm -f "$settings_script.bak"
-  fi
-
-  # Patch pbSetResizeFactor for JoiPlay: the original uses Graphics.scale/center
-  # which mispositions viewports on Android. Use resize_screen only — let JoiPlay
-  # handle the physical display scaling natively.
+  # Screen dimensions: keep the game's native 512x384 (don't patch Settings).
+  # Patching to 640x480 broke battle backgrounds, transitions, and anything
+  # with hardcoded 512x384 assumptions.
+  #
+  # Patch pbSetResizeFactor: the original calls Graphics.scale and Graphics.center
+  # which cause viewport offset on JoiPlay (game content renders off-screen).
+  # Keep the resize_screen call (may or may not work) but skip scale/center.
   local mkxp_compat="$mobile_dir/Data/Scripts/001_Technical/001_MKXP_Compatibility.rb"
   if [ -f "$mkxp_compat" ]; then
-    info "Patching pbSetResizeFactor for JoiPlay display..."
+    info "Patching pbSetResizeFactor for JoiPlay (skip scale/center)..."
     ruby -e '
       lines = File.readlines(ARGV[0])
       out, skip = [], false
@@ -593,9 +585,18 @@ RUBY
           skip = true
           out << "def pbSetResizeFactor(factor)\n"
           out << "  if !$ResizeInitialized\n"
-          out << "    Graphics.scale = 1.0 rescue nil\n"
+          out << "    Graphics.resize_screen(Settings::SCREEN_WIDTH, Settings::SCREEN_HEIGHT) rescue nil\n"
           out << "    $ResizeInitialized = true\n"
           out << "  end\n"
+          out << "end\n"
+          out << "\n"
+          out << "# JoiPlay fix: Graphics.resize_screen(512,384) silently fails, leaving\n"
+          out << "# Graphics.width/height at 640/480. Game code positions elements using\n"
+          out << "# Graphics.height (e.g. y = Graphics.height - box_height), placing them\n"
+          out << "# off-screen. Override to return Settings values for consistent 512x384.\n"
+          out << "module Graphics\n"
+          out << "  def self.width; Settings::SCREEN_WIDTH; end\n"
+          out << "  def self.height; Settings::SCREEN_HEIGHT; end\n"
           out << "end\n"
         elsif skip
           skip = false if l =~ /^end/
@@ -657,6 +658,17 @@ RUBY
     info "Fixing OverworldShadows.rb nil @charbitmap crash..."
     sed -i.bak 's/if @charbitmap\.disposed? || @character/if !@charbitmap || @charbitmap.disposed? || @character/' "$shadow_script"
     rm -f "$shadow_script.bak"
+  fi
+
+  # Fix ThreeBallDown transition crash: the animation pattern array has 8
+  # entries (matching original 512/64=8 columns), but 640/64=10 columns causes
+  # out-of-bounds nil access → "TypeError: coerce must return [x, y]".
+  local transitions_script="$mobile_dir/Data/Scripts/009_Scenes/001_Transitions.rb"
+  if [ -f "$transitions_script" ]; then
+    info "Fixing ThreeBallDown transition for 640x480 resolution..."
+    sed -i.bak 's/\[0,4,1,6,7,2,5,3\]\[j\]/[0,4,1,6,7,2,5,3][j % 8]/' "$transitions_script"
+    sed -i.bak 's/(cy-i-1)\*8+\[0,4,1,6,7,2,5,3\]/(cy-i-1)*cx+[0,4,1,6,7,2,5,3]/' "$transitions_script"
+    rm -f "$transitions_script.bak"
   fi
 
   # Patch Ruby 2.0+ syntax for JoiPlay's Ruby 1.9 runtime
