@@ -540,6 +540,26 @@ unless 0.respond_to?(:digits)
   end
 end
 
+# Private pb* method fix — RGSS (RPG Maker's runtime) does not enforce Ruby's
+# method visibility rules. Game developers freely use `private` in class bodies
+# (e.g. PokemonFusionScene has `private` on line 1 — every method is private)
+# while still calling those methods with explicit receivers from outside the
+# class. This works on desktop (mkxp-z mimics RGSS leniency) but crashes on
+# JoiPlay's vanilla Ruby 1.9, which enforces standard visibility.
+#
+# 20 files across the game use bare `private` at the class level. Rather than
+# patching each one, this hook makes all pb* methods (RPG Maker's naming
+# convention for utility/game functions) public when defined — matching RGSS
+# behavior so that scene.pbStartScreen(...), screen.pbShowPokedex(...), etc.
+# all work regardless of where `private` appears in the class body.
+class Module
+  def method_added(name)
+    return unless name.to_s[0, 2] == 'pb'
+    public name
+  rescue
+  end
+end
+
 # Kernel.method_name polyfill — RGSS allows calling top-level methods via
 # Kernel.pbMethod(), but mkxp's Ruby treats them as private. This handler
 # intercepts those calls and uses send() to bypass the private restriction.

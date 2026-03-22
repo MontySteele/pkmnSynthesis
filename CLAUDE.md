@@ -61,7 +61,7 @@ Symbol hash keys, Encoding/force\_encoding, Symbol#to\_proc (&:method), .bytesiz
 ### Additional mobile fixes (in build_and_launch.sh):
 
 - **005_Deprecation.rb**: Replaced with a no-op stub (uses Ruby 2.0+ keyword args too complex for regex patching)
-- **Ruby 2.x polyfills**: Injected as `000_Ruby19_Polyfills.rb` — provides `Comparable#clamp`, `Integer#digits`, and `Kernel.method_missing` for private method forwarding
+- **Ruby 2.x polyfills**: Injected as `000_Ruby19_Polyfills.rb` — provides `Comparable#clamp`, `Integer#digits`, `Module#method_added` hook to make `pb*` methods public (RGSS doesn't enforce visibility but JoiPlay does — 20 game files use bare `private` at class level), and `Kernel.method_missing` for private method forwarding
 - **OverworldShadows.rb**: Nil guard for `@charbitmap` — prevents "private method `disposed?` called for nil:NilClass" crash during sprite initialization
 - **IntroScreen.rb**: GenOneStyle method fix — moves `dispose`/`disposed?`/`wait` from top-level to instance methods
 - **Screen dimensions**: Patched to 640x480 to match JoiPlay native resolution
