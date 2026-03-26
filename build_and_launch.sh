@@ -680,6 +680,28 @@ RUBY
     rm -f "$shadow_script.bak"
   fi
 
+  # Fix OutfitsGameplayUtils.rb: refreshPlayerOutfit() is a top-level method
+  # (private on Object), but putOnHat() calls it as $game_map.refreshPlayerOutfit()
+  # which crashes on JoiPlay with "private method 'refreshPlayerOutfit' called
+  # for #<Game_Map>". Remove the explicit receiver to match the other call sites.
+  local outfit_utils="$mobile_dir/Data/Scripts/050_Outfits/utils/OutfitsGameplayUtils.rb"
+  if [ -f "$outfit_utils" ]; then
+    info "Fixing OutfitsGameplayUtils.rb private method call..."
+    sed -i.bak 's/\$game_map\.refreshPlayerOutfit()/refreshPlayerOutfit()/' "$outfit_utils"
+    rm -f "$outfit_utils.bak"
+  fi
+
+  # Fix LayeredClothes_Menus.rb: same pattern as above — display_outfit_preview()
+  # is a top-level method (LayeredClothes.rb:332), but selectHat() line 197 calls
+  # it as selector.display_outfit_preview() on an OutfitSelector instance.
+  # The other 3 call sites in the same function correctly omit the receiver.
+  local clothes_menus="$mobile_dir/Data/Scripts/050_Outfits/UI/LayeredClothes_Menus.rb"
+  if [ -f "$clothes_menus" ]; then
+    info "Fixing LayeredClothes_Menus.rb private method call..."
+    sed -i.bak 's/selector\.display_outfit_preview()/display_outfit_preview()/' "$clothes_menus"
+    rm -f "$clothes_menus.bak"
+  fi
+
   # Fix ThreeBallDown transition crash: the animation pattern array has 8
   # entries (matching original 512/64=8 columns), but 640/64=10 columns causes
   # out-of-bounds nil access → "TypeError: coerce must return [x, y]".
